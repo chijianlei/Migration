@@ -1,0 +1,15 @@
+testdiff --git a/build.gradle b/build.gradle
+index a955ca8..e05d52f 100644
+--- a/build.gradle
++++ b/build.gradle
+@@ -6,8 +6,8 @@
+         google()
+     }
+     dependencies {
+-        classpath 'com.android.tools.build:gradle:3.4.0'
+-        classpath 'com.google.gms:google-services:4.2.0'
++        classpath 'com.android.tools.build:gradle:3.4.1'
++        classpath 'com.google.gms:google-services:4.3.0'
+     }
+ }
+ repositories {

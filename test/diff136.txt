@@ -1,0 +1,15 @@
+testdiff --git a/TMessagesProj/jni/tgnet/Datacenter.cpp b/TMessagesProj/jni/tgnet/Datacenter.cpp
+index db203cc..b2cb313 100644
+--- a/TMessagesProj/jni/tgnet/Datacenter.cpp
++++ b/TMessagesProj/jni/tgnet/Datacenter.cpp
+@@ -1228,6 +1228,10 @@
+     return authKeyPerm != nullptr;
+ }
+ 
++int64_t Datacenter::getPermanentAuthKeyId() {
++    return authKeyPermId;
++}
++
+ bool Datacenter::hasAuthKey(ConnectionType connectionType, int32_t allowPendingKey) {
+     return getAuthKey(connectionType, false, nullptr, allowPendingKey) != nullptr;
+ }

@@ -1,0 +1,16 @@
+testdiff --git a/TMessagesProj/src/main/java/org/telegram/ui/Components/SizeNotifierFrameLayout.java b/TMessagesProj/src/main/java/org/telegram/ui/Components/SizeNotifierFrameLayout.java
+index 6dc3792..a307d62 100644
+--- a/TMessagesProj/src/main/java/org/telegram/ui/Components/SizeNotifierFrameLayout.java
++++ b/TMessagesProj/src/main/java/org/telegram/ui/Components/SizeNotifierFrameLayout.java
+@@ -112,10 +112,10 @@
+     }
+ 
+     public void notifyHeightChanged() {
+-        if (delegate != null) {
+             if (parallaxEffect != null) {
+                 parallaxScale = parallaxEffect.getScale(getMeasuredWidth(), getMeasuredHeight());
+             }
++        if (delegate != null) {
+             keyboardHeight = getKeyboardHeight();
+             final boolean isWidthGreater = AndroidUtilities.displaySize.x > AndroidUtilities.displaySize.y;
+             post(() -> {

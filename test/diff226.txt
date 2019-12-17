@@ -1,0 +1,64 @@
+testdiff --git a/TMessagesProj/src/main/java/org/telegram/ui/ChannelAdminLogActivity.java b/TMessagesProj/src/main/java/org/telegram/ui/ChannelAdminLogActivity.java
+index 5545c7d..3a66c4f 100644
+--- a/TMessagesProj/src/main/java/org/telegram/ui/ChannelAdminLogActivity.java
++++ b/TMessagesProj/src/main/java/org/telegram/ui/ChannelAdminLogActivity.java
+@@ -62,7 +62,7 @@
+ import org.telegram.messenger.BuildVars;
+ import org.telegram.messenger.ChatObject;
+ import org.telegram.messenger.ContactsController;
+-import org.telegram.messenger.DataQuery;
++import org.telegram.messenger.MediaDataController;
+ import org.telegram.messenger.FileLoader;
+ import org.telegram.messenger.FileLog;
+ import org.telegram.messenger.ImageReceiver;
+@@ -336,6 +336,11 @@
+                         if (messagesDict.indexOfKey(event.id) >= 0) {
+                             continue;
+                         }
++                        if (event.action instanceof TLRPC.TL_channelAdminLogEventActionParticipantToggleAdmin) {
++                            if (event.action.prev_participant instanceof TLRPC.TL_channelParticipantCreator && !(event.action.new_participant instanceof TLRPC.TL_channelParticipantCreator)) {
++                                continue;
++                            }
++                        }
+                         minEventId = Math.min(minEventId, event.id);
+                         added = true;
+                         MessageObject messageObject = new MessageObject(currentAccount, event, messages, messagesByDays, currentChat, mid);
+@@ -1454,14 +1459,14 @@
+         } else {
+             if (messageObject.isVoice()) {
+                 return 2;
+-            } else if (messageObject.isSticker()) {
++            } else if (messageObject.isSticker() || messageObject.isAnimatedSticker()) {
+                 TLRPC.InputStickerSet inputStickerSet = messageObject.getInputStickerSet();
+                 if (inputStickerSet instanceof TLRPC.TL_inputStickerSetID) {
+-                    if (!DataQuery.getInstance(currentAccount).isStickerPackInstalled(inputStickerSet.id)) {
++                    if (!MediaDataController.getInstance(currentAccount).isStickerPackInstalled(inputStickerSet.id)) {
+                         return 7;
+                     }
+                 } else if (inputStickerSet instanceof TLRPC.TL_inputStickerSetShortName) {
+-                    if (!DataQuery.getInstance(currentAccount).isStickerPackInstalled(inputStickerSet.short_name)) {
++                    if (!MediaDataController.getInstance(currentAccount).isStickerPackInstalled(inputStickerSet.short_name)) {
+                         return 7;
+                     }
+                 }
+@@ -1730,18 +1735,18 @@
+ 
+     @Override
+     public void onTransitionAnimationStart(boolean isOpen, boolean backward) {
++        if (isOpen) {
+         NotificationCenter.getInstance(currentAccount).setAllowedNotificationsDutingAnimation(new int[]{NotificationCenter.chatInfoDidLoad, NotificationCenter.dialogsNeedReload,
+                 NotificationCenter.closeChats, NotificationCenter.messagesDidLoad, NotificationCenter.botKeyboardDidLoad/*, NotificationCenter.botInfoDidLoad*/});
+         NotificationCenter.getInstance(currentAccount).setAnimationInProgress(true);
+-        if (isOpen) {
+             openAnimationEnded = false;
+         }
+     }
+ 
+     @Override
+     public void onTransitionAnimationEnd(boolean isOpen, boolean backward) {
+-        NotificationCenter.getInstance(currentAccount).setAnimationInProgress(false);
+         if (isOpen) {
++            NotificationCenter.getInstance(currentAccount).setAnimationInProgress(false);
+             openAnimationEnded = true;
+         }
+     }

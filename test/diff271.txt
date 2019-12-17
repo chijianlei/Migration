@@ -1,0 +1,32 @@
+testdiff --git a/TMessagesProj/src/main/java/org/telegram/ui/Components/voip/VoIPHelper.java b/TMessagesProj/src/main/java/org/telegram/ui/Components/voip/VoIPHelper.java
+index 9b69b1e..0d3f5af 100644
+--- a/TMessagesProj/src/main/java/org/telegram/ui/Components/voip/VoIPHelper.java
++++ b/TMessagesProj/src/main/java/org/telegram/ui/Components/voip/VoIPHelper.java
+@@ -22,6 +22,7 @@
+ import android.widget.TextView;
+ import android.widget.Toast;
+ 
++import org.telegram.messenger.AccountInstance;
+ import org.telegram.messenger.AndroidUtilities;
+ import org.telegram.messenger.ApplicationLoader;
+ import org.telegram.messenger.BuildVars;
+@@ -214,7 +215,8 @@
+ 				try{
+ 					long accessHash=Long.parseLong(d[1]);
+ 					showRateAlert(context, null, call.call_id, accessHash, UserConfig.selectedAccount, true);
+-				}catch(Exception x){}
++				} catch (Exception x) {
++				}
+ 				return;
+ 			}
+ 		}
+@@ -407,7 +409,8 @@
+ 								MessagesController.getInstance(currentAccount).processUpdates(updates, false);
+ 							}
+ 							if(includeLogs[0] && log.exists() && req.rating<4){
+-								SendMessagesHelper.prepareSendingDocument(log.getAbsolutePath(), log.getAbsolutePath(), null, TextUtils.join(" ", problemTags), "text/plain", VOIP_SUPPORT_ID, null, null, null);
++								AccountInstance accountInstance = AccountInstance.getInstance(UserConfig.selectedAccount);
++								SendMessagesHelper.prepareSendingDocument(accountInstance, log.getAbsolutePath(), log.getAbsolutePath(), null, TextUtils.join(" ", problemTags), "text/plain", VOIP_SUPPORT_ID, null, null, null);
+ 								Toast.makeText(context, LocaleController.getString("CallReportSent", R.string.CallReportSent), Toast.LENGTH_LONG).show();
+ 							}
+ 						}

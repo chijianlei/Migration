@@ -1,0 +1,15 @@
+testdiff --git a/TMessagesProj/src/main/java/org/telegram/ui/Cells/ProfileSearchCell.java b/TMessagesProj/src/main/java/org/telegram/ui/Cells/ProfileSearchCell.java
+index 62b2225..7765cf5 100644
+--- a/TMessagesProj/src/main/java/org/telegram/ui/Cells/ProfileSearchCell.java
++++ b/TMessagesProj/src/main/java/org/telegram/ui/Cells/ProfileSearchCell.java
+@@ -399,7 +399,9 @@
+                         statusString = LocaleController.getString("ChannelPublic", R.string.ChannelPublic).toLowerCase();
+                     }
+                 } else {
+-                    if (TextUtils.isEmpty(chat.username)) {
++                    if (chat.has_geo) {
++                        statusString = LocaleController.getString("MegaLocation", R.string.MegaLocation);
++                    } else if (TextUtils.isEmpty(chat.username)) {
+                         statusString = LocaleController.getString("MegaPrivate", R.string.MegaPrivate).toLowerCase();
+                     } else {
+                         statusString = LocaleController.getString("MegaPublic", R.string.MegaPublic).toLowerCase();

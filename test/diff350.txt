@@ -1,0 +1,7 @@
+testdiff --git a/TMessagesProj/src/main/res/drawable-xxhdpi/miniplayer_close.png b/TMessagesProj/src/main/res/drawable-xxhdpi/miniplayer_close.png
+old mode 100755
+new mode 100644
+index 20aa1fd..b37f8a2
+--- a/TMessagesProj/src/main/res/drawable-xxhdpi/miniplayer_close.png
++++ b/TMessagesProj/src/main/res/drawable-xxhdpi/miniplayer_close.png
+Binary files differ

@@ -1,0 +1,287 @@
+long var = C . TIME_UNSET
+if ( var == C . TIME_UNSET )
+return String . format ( "" , var / 1024.0f )
+return String . format ( "" , var / 1024.0f / 1024.0f )
+return String . format ( "" , var / 1024.0f / 1024.0f / 1024.0f )
+if ( var != Matrix . ScaleToFit . FILL )
+mobileDataDownloadMask [ var ] = var . getInt ( var , var | var | var | var | var )
+for ( int var = 0 ; var < 7 ; var ++ )
+var = var . getBoolean ( "" , true )
+masksArray = wifiDownloadMask
+masksArray = roamingDownloadMask
+masksArray = mobileDataDownloadMask
+var |= var
+var |= var
+var |= var
+var |= var
+var |= var
+if ( ( mobileDataDownloadMask [ var ] & var ) != 0 || ( wifiDownloadMask [ var ] & var ) != 0 || ( roamingDownloadMask [ var ] & var ) != 0 |= var )
+var |= var
+if ( ( mobileDataDownloadMask [ var ] & var ) != 0 || ( wifiDownloadMask [ var ] & var ) != 0 || ( roamingDownloadMask [ var ] & var ) != 0 |= var )
+var |= var
+if ( ( mobileDataDownloadMask [ var ] & var ) != 0 || ( wifiDownloadMask [ var ] & var ) != 0 || ( roamingDownloadMask [ var ] & var ) != 0 |= var )
+var |= var
+if ( ( mobileDataDownloadMask [ var ] & var ) != 0 || ( wifiDownloadMask [ var ] & var ) != 0 || ( roamingDownloadMask [ var ] & var ) != 0 |= var )
+var |= var
+if ( ( var & var ) != 0 var )
+newDownloadObjectsAvailable ( var )
+if ( ( var & var ) != 0 var )
+newDownloadObjectsAvailable ( var )
+for ( int var = 0 ; var < var . size ( var ) ; var ++ )
+FileLoader . getInstance ( var ) . cancelLoadFile ( ( TLRPC . Document ) var . object )
+if ( ( var & var ) != 0 var )
+newDownloadObjectsAvailable ( var )
+if ( ( var & var ) != 0 var )
+newDownloadObjectsAvailable ( var )
+for ( int var = 0 ; var < var . size ( var ) ; var ++ )
+for ( int var = 0 ; var < var . size ( var ) ; var ++ )
+if ( ( var & var ) == 0 )
+MessagesStorage . getInstance ( var ) . clearDownloadQueue ( var )
+if ( ( var & var ) == 0 )
+MessagesStorage . getInstance ( var ) . clearDownloadQueue ( var )
+if ( ( var & var ) == 0 )
+MessagesStorage . getInstance ( var ) . clearDownloadQueue ( var )
+if ( ( var & var ) == 0 )
+MessagesStorage . getInstance ( var ) . clearDownloadQueue ( var )
+MessagesStorage . getInstance ( var ) . clearDownloadQueue ( var )
+return canDownloadMedia ( var . messageOwner )
+if ( MessageObject . isPhoto ( var ) || MessageObject . isStickerMessage ( var ) = var . isVoiceMessage ( var ) = var . isRoundVideoMessage ( var ) = var . isVideoMessage ( var ) = var . isMusicMessage ( var ) = var . isGifMessage ( var ) = var = var )
+if ( MessageObject . isVoiceMessage ( var ) = var )
+var = var
+var = var
+var = var
+var = var
+var = wifiMaxFileSize [ maskToIndex ] ( var )
+if ( ApplicationLoader . isRoaming ( var ) )
+var = mobileDataDownloadMask [ var ]
+var = mobileMaxFileSize [ maskToIndex ] ( var )
+return ( var == var || MessageObject . getMessageSize ( var ) <= var ) && ( var & var ) != 0
+if ( ! var )
+var |= wifiDownloadMask [ var ]
+var |= roamingDownloadMask [ var ]
+var |= mobileDataDownloadMask [ var ]
+if ( var == var = var == var = var == var = var == var = var == var = var == var = var == var = var )
+if ( var == var = var )
+if ( var == var = var )
+if ( var == var = var )
+MessagesStorage . getInstance ( var ) . getDownloadQueue ( var )
+if ( ( var & var ) != 0 && ( var & var ) != 0 && var . isEmpty ( var ) )
+MessagesStorage . getInstance ( var ) . getDownloadQueue ( var )
+MessagesStorage . getInstance ( var ) . getDownloadQueue ( var )
+MessagesStorage . getInstance ( var ) . getDownloadQueue ( var )
+if ( ( var & var ) != 0 && ( var & var ) != 0 && var . isEmpty ( var ) )
+if ( var . isEmpty ( var ) )
+newDownloadObjectsAvailable ( var )
+newDownloadObjectsAvailable ( var )
+if ( var . type == var )
+newDownloadObjectsAvailable ( var )
+if ( var . type == var )
+newDownloadObjectsAvailable ( var )
+if ( var . type == var )
+var . put ( var , var )
+var . add ( new WeakReference var ( var ) )
+ArrayList < MessageObject > var = var . get ( var )
+for ( int var = 0 , var var = var . var ( var ) ; var < var ; var ++ )
+for ( int var = 0 , var var = var . var ( var ) ; var < var ; var ++ )
+var . get ( var ) . onSuccessDownload ( var )
+MessagesController . getInstance ( var ) . sendTyping ( var , 3 , 0 )
+String var = FileLoader . getExtensionByMime ( var . mime_type )
+if ( "" . equals ( var . mime_type ) )
+if ( var . mime_type != null = "" )
+if ( var != 0 && var > 0 )
+if ( var != 0 && var == var )
+clearOperaion ( var )
+if ( var || var != var || var . size ( ) + var . size ( ) >= var )
+if ( var > 0 )
+if ( var != null )
+clearOperaion ( var )
+clearOperaion ( var )
+clearOperaion ( var )
+if ( ! TextUtils . isEmpty ( var ) && ! var . contains ( "" + Integer . MIN_VALUE ) )
+if ( var != 0 || var > 0 )
+if ( var > 0 var )
+if ( var != 0 var )
+if ( var != 0 || var < var var )
+if ( var != 0 || var < var var )
+if ( var != 0 || var < var var )
+if ( ! TextUtils . isEmpty ( var ) && ! var . contains ( "" + Integer . MIN_VALUE ) )
+return Utilities . MD5 ( var . url ) + "" + ImageLoader . getHttpUrlExtension ( var . url , getExtensionByMime ( var . mime_type ) . mime_type )
+return Utilities . MD5 ( var . url ) + "" + ImageLoader . getHttpUrlExtension ( var . url , getExtensionByMime ( var . mime_type ) . mime_type )
+return "" + var . getId ( var ) + "" + var
+if ( var . getId ( var ) < 0 && var . messageOwner . media . webpage != null )
+var . id . add ( var . getId ( var ) )
+var . id . add ( var . getId ( var ) )
+return "" . equals ( var ) || "" . equals ( var ) || "" . equals ( var )
+if ( var . isPaused ( ) )
+if ( ! var . endsWith ( "" ) && ! var . endsWith ( "" ) && ! var . endsWith ( "" ) && ! var . endsWith ( "" ) )
+var . setImageBitmapByKey ( var , var , false , false )
+if ( var . selfThumb = var = var )
+if ( var . selfThumb )
+boolean var = false
+for ( int var = 0 ; var < var . size ( ) ; var ++ )
+( ( AnimatedFileDrawable ) var ) . recycle
+int var = Math . min ( 15 , ( ( ActivityManager ) ApplicationLoader . applicationContext . getSystemService ( Context . ACTIVITY_SERVICE ) . ACTIVITY_SERVICE ) . getMemoryClass / 7 ) * 1024 * 1024
+int var = 2
+for ( int var = var ; var < var ; var ++ )
+final String var = var . getKey ( )
+int var = var . getTag ( var != 0 )
+var . setTag ( var = var , var != 0 )
+final boolean var = var . isCurrentKeyQuality ( )
+var . replaceImageReceiver ( var , var , var , var != 0 )
+var . addImageReceiver ( var , var , var , var != 0 )
+var . addImageReceiver ( var , var , var , var != 0 )
+TLRPC . Document var = var . getDocument ( )
+if ( var . messageOwner . var != null && var . messageOwner . var . length ( ) > 0 )
+var = new File ( var . messageOwner . var )
+if ( var == null )
+String var = var . getFileName ( )
+generateThumb ( var . getFileType ( ) , var , var )
+if ( var != 0 || var <= 0 || var instanceof String || var )
+var . selfThumb = var != 0
+var . addImageReceiver ( var , var , var , var != 0 )
+String var = var . getKey ( )
+cancelLoadingForImageReceiver ( var , 0 )
+var . setImageBitmapByKey ( var , var , false , true )
+var . setImageBitmapByKey ( var , var , true , true )
+if ( var == null && var . isNeedsQualityThumb ( ) && var . isCurrentKeyQuality ( ) && var instanceof MessageObject )
+var = null
+if ( var != null )
+String var = FileLoader . getExtensionByMime ( var . mime_type )
+if ( var . mime_type != null && var . mime_type . equals ( "" ) = "" = "" )
+var = var + "" + var
+var = ! MessageObject . isGifDocument ( var ) && ! MessageObject . isRoundVideoDocument ( ( TLRPC . Document ) var ) && ! MessageObject . canPreviewDocument ( var )
+String var = var . getFilter ( )
+var = var . getCacheType ( )
+Boolean var = var . thumbs . get ( var )
+var . selfThumb = var
+if ( var . cacheImage . selfThumb )
+ImageLoader . getInstance ( ) . cancelLoadingForImageReceiver ( this , 0 )
+if ( ( var == null && var == null ) || ( var != null && ! ( var instanceof TLRPC . TL_fileLocation ) && ! ( var instanceof TLRPC . TL_fileEncryptedLocation ) && ! ( var instanceof TLRPC . TL_document ) && ! ( var instanceof WebFile ) && ! ( var instanceof TLRPC . TL_documentEncrypted ) && ! ( var instanceof TLRPC . PhotoSize ) && ! ( var instanceof SecureDocument ) && ! ( var instanceof String ) ) )
+for ( int var = 0 ; var < 3 ; var ++ )
+var = var
+var = 1
+ImageLoader . getInstance ( ) . cancelLoadingForImageReceiver ( this , 0 )
+var . didSetImage ( this , var != null || var != null || var != null , var == null )
+var = var . secureFile . dc_id + "" + var . secureFile . id
+var = var . volume_id + "" + var . local_id
+var = "" + FileRefController . getKeyForParentObject ( var )
+var = var . location . volume_id + "" + var . location . local_id
+var = Utilities . MD5 ( var . url )
+if ( var . dc_id != 0 = null )
+var = var . dc_id + "" + var . id
+var = Utilities . MD5 ( ( String ) var )
+if ( var == null && var && var instanceof MessageObject )
+var = var . volume_id + "" + var . local_id
+TLRPC . TL_photoStrippedSize var = ( TLRPC . TL_photoStrippedSize ) var
+var = "" + FileRefController . getKeyForParentObject ( var )
+if ( var instanceof TLRPC . TL_photoSize || var instanceof TLRPC . TL_photoCachedSize )
+var = var . location . volume_id + "" + var . location . local_id
+if ( var instanceof String )
+var = Utilities . MD5 ( ( String ) var )
+recycleBitmap ( var , 1 )
+recycleBitmap ( var , 0 )
+recycleBitmap ( null , 2 )
+var = null
+recycleBitmap ( var , 0 )
+recycleBitmap ( var , 1 )
+recycleBitmap ( null , 2 )
+recycleBitmap ( var , 0 )
+recycleBitmap ( var , 1 )
+recycleBitmap ( null , 2 )
+recycleBitmap ( var , 0 )
+recycleBitmap ( var , 1 )
+recycleBitmap ( null , 2 )
+var . didSetImage ( this , var != null || var != null || var != null , var == null )
+return var instanceof ExtendedBitmapDrawable || var instanceof ExtendedBitmapDrawable || var instanceof ExtendedBitmapDrawable
+return ( ( AnimatedFileDrawable ) var ) . getOrientation
+ImageLoader . getInstance ( ) . cancelLoadingForImageReceiver ( this , 0 )
+recycleBitmap ( null , 1 )
+recycleBitmap ( null , 2 )
+recycleBitmap ( null , 0 )
+recycleBitmap ( null , 2 )
+recycleBitmap ( null , 0 )
+recycleBitmap ( null , 1 )
+recycleBitmap ( null , 2 )
+for ( int var = 0 ; var < 3 ; var ++ )
+for ( int var = 0 ; var < 3 ; var ++ )
+for ( int var = 0 ; var < 3 ; var ++ )
+if ( var != null || var != null || var != null )
+if ( var != null && ( var . fileLocation != null || var . thumbLocation != null || var . var != null ) )
+setImage ( var . fileLocation , var . filter , var . var , var . thumbLocation , var . thumbFilter , var . size , var . ext , var . parentObject , var . cacheType )
+if ( Math . abs ( var - var ) > 0.00001f )
+if ( Math . abs ( var - var ) > 0.00001f )
+int var = ( int ) Math . floor ( var * var )
+int var = ( int ) Math . floor ( var * var )
+ImageLoader . getInstance ( ) . removeImage ( var )
+if ( var == var && var != null )
+if ( var == var && var != null == var && var != null )
+setImage ( var , var , var , var , var , var , var , var , var )
+boolean var = var instanceof AnimatedFileDrawable && ! ( ( AnimatedFileDrawable ) var ) . hasBitmap
+var = true
+var = true
+drawDrawable ( var , var , int ( var * 255 ) * 255 , var , var )
+if ( var != null != null = var != null = var )
+if ( var != null = var )
+drawDrawable ( var , var , int ( var * 255 ) * 255 , null , true )
+if ( var != null != null != null )
+return ( ( AnimatedFileDrawable ) var ) . getAnimatedBitmap
+if ( var instanceof AnimatedFileDrawable )
+return ( ( AnimatedFileDrawable ) var ) . getAnimatedBitmap
+if ( var instanceof BitmapDrawable )
+if ( var instanceof BitmapDrawable )
+var = ( ( AnimatedFileDrawable ) var ) . getAnimatedBitmap
+if ( var instanceof AnimatedFileDrawable )
+var = ( ( AnimatedFileDrawable ) var ) . getAnimatedBitmap
+if ( var instanceof BitmapDrawable )
+if ( var instanceof BitmapDrawable )
+if ( var instanceof AnimatedFileDrawable )
+if ( var instanceof AnimatedFileDrawable )
+return var != null || var != null || var != null || var != null
+return var != null || var != null || var != null
+return var != null
+if ( var instanceof AnimatedFileDrawable )
+( ( AnimatedFileDrawable ) var ) . start
+if ( var instanceof AnimatedFileDrawable )
+( ( AnimatedFileDrawable ) var ) . stop
+return var instanceof AnimatedFileDrawable && ( ( AnimatedFileDrawable ) var ) . isRunning
+if ( var = var = var )
+var = var != null && var == null
+var . invalidate ( )
+var . invalidate ( var , var , var + var , var + var )
+var . didSetImage ( this , var != null || var != null || var != null , var == null )
+if ( var == 1 )
+if ( var == 1 )
+cleanupPlayer ( var , var , false )
+audioPlayer . releasePlayer ( )
+videoPlayer . releasePlayer ( )
+audioPlayer . releasePlayer ( )
+videoPlayer . releasePlayer ( )
+if ( ! DownloadController . getInstance ( var ) . canDownloadMedia ( var ) )
+boolean var = SharedConfig . streamMedia && var . isMusic ( ) && ( int ) var . getDialogId ( ) != 0
+if ( var . isRoundVideo ( ) )
+if ( currentTextureViewContainer != null && currentTextureViewContainer . getVisibility ( ) != View . VISIBLE )
+currentTextureViewContainer . setVisibility ( View . VISIBLE )
+cleanupPlayer ( true , true , true )
+currentTextureViewContainer . setVisibility ( View . VISIBLE )
+audioPlayer . releasePlayer ( )
+long var = audioPlayer . getDuration ( )
+if ( playingMessageObject . isMusic ( ) )
+if ( audioPlayer != null != null )
+audioPlayer . releasePlayer ( )
+playingMessageObject = null
+if ( var . writeSampleData ( var , var , var , false ) )
+didWriteData ( var , var , false , false )
+didWriteData ( var , var , true , true )
+if ( var . writeSampleData ( var , var , var , false ) )
+didWriteData ( var , var , false , false )
+didWriteData ( var , var , true , var )
+var . set ( var , var , var , var , var , var / var , var )
+if ( var != null && var . mime_type != null && var . mime_type . equals ( "" ) )
+if ( var != null && var . mime_type != null && var . mime_type . equals ( "" ) )
+if ( var != null && var . mime_type != null && var . mime_type . equals ( "" ) )
+return var . fwd_from . from_id == var || var . fwd_from . saved_from_peer != null && var . fwd_from . saved_from_peer . user_id == var
+if ( var . media != null && var . media . document != null )
+return var . media . document . size
+if ( var . media instanceof TLRPC . TL_messageMediaWebPage )
+return var . media . webpage . photo instanceof TLRPC . TL_photo
+var = var . media . webpage . var

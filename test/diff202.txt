@@ -1,0 +1,13 @@
+testdiff --git a/TMessagesProj/src/main/java/org/telegram/ui/Cells/BaseCell.java b/TMessagesProj/src/main/java/org/telegram/ui/Cells/BaseCell.java
+index ce7e4dd..20978b1 100644
+--- a/TMessagesProj/src/main/java/org/telegram/ui/Cells/BaseCell.java
++++ b/TMessagesProj/src/main/java/org/telegram/ui/Cells/BaseCell.java
+@@ -15,8 +15,6 @@
+ import android.view.ViewConfiguration;
+ import android.view.ViewGroup;
+ 
+-import com.airbnb.lottie.LottieDrawable;
+-
+ public abstract class BaseCell extends ViewGroup {
+ 
+     private final class CheckForTap implements Runnable {

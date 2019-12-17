@@ -1,0 +1,14 @@
+testdiff --git a/TMessagesProj/src/main/java/org/telegram/ui/Components/MediaActionDrawable.java b/TMessagesProj/src/main/java/org/telegram/ui/Components/MediaActionDrawable.java
+index 246e737..08e3211 100644
+--- a/TMessagesProj/src/main/java/org/telegram/ui/Components/MediaActionDrawable.java
++++ b/TMessagesProj/src/main/java/org/telegram/ui/Components/MediaActionDrawable.java
+@@ -169,6 +169,9 @@
+             } else {
+                 transitionAnimationTime = 220.0f;
+             }
++            if (animatingTransition) {
++                currentIcon = nextIcon;
++            }
+             animatingTransition = true;
+             nextIcon = icon;
+             savedTransitionProgress = transitionProgress;

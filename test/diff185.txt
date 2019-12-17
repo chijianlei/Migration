@@ -1,0 +1,15 @@
+testdiff --git a/TMessagesProj/src/main/java/org/telegram/ui/ActionBar/DarkAlertDialog.java b/TMessagesProj/src/main/java/org/telegram/ui/ActionBar/DarkAlertDialog.java
+index 1c9f7db..f5117d2 100644
+--- a/TMessagesProj/src/main/java/org/telegram/ui/ActionBar/DarkAlertDialog.java
++++ b/TMessagesProj/src/main/java/org/telegram/ui/ActionBar/DarkAlertDialog.java
+@@ -2,10 +2,6 @@
+ 
+ import android.content.Context;
+ 
+-/**
+- * Created by grishka on 27.09.2017.
+- */
+-
+ public class DarkAlertDialog extends AlertDialog{
+ 	public DarkAlertDialog(Context context, int progressStyle){
+ 		super(context, progressStyle);

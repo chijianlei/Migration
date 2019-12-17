@@ -1,0 +1,22 @@
+testdiff --git a/TMessagesProj/jni/libtgvoip/BlockingQueue.h b/TMessagesProj/jni/libtgvoip/BlockingQueue.h
+index df7eda3..347a502 100644
+--- a/TMessagesProj/jni/libtgvoip/BlockingQueue.h
++++ b/TMessagesProj/jni/libtgvoip/BlockingQueue.h
+@@ -12,8 +12,6 @@
+ #include "threading.h"
+ #include "utils.h"
+ 
+-using namespace std;
+-
+ namespace tgvoip{
+ 
+ template<typename T>
+@@ -80,7 +78,7 @@
+ 		return r;
+ 	}
+ 
+-	list<T> queue;
++	std::list<T> queue;
+ 	size_t capacity;
+ 	//tgvoip_lock_t lock;
+ 	Semaphore semaphore;

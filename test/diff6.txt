@@ -1,0 +1,17 @@
+testdiff --git a/TMessagesProj/jni/libtgvoip/VoIPController.cpp b/TMessagesProj/jni/libtgvoip/VoIPController.cpp
+index 467c0c1..d39bc5a 100755
+--- a/TMessagesProj/jni/libtgvoip/VoIPController.cpp
++++ b/TMessagesProj/jni/libtgvoip/VoIPController.cpp
+@@ -2388,10 +2388,10 @@
+ 						stm->jitterBuffer->SetMinPacketCount((uint32_t) ServerConfig::GetSharedInstance()->GetInt("jitter_initial_delay_20", 6));
+ 					stm->decoder=NULL;
+ 				}else if(stm->type==STREAM_TYPE_VIDEO){
+-					if(!stm->packetReassembler){
++					/*if(!stm->packetReassembler){
+ 						stm->packetReassembler=make_shared<PacketReassembler>();
+ 						stm->packetReassembler->SetCallback(bind(&VoIPController::ProcessIncomingVideoFrame, this, placeholders::_1, placeholders::_2, placeholders::_3, placeholders::_4));
+-					}
++					}*/
+ 				}else{
+ 					LOGW("Unknown incoming stream type: %d", stm->type);
+ 					continue;

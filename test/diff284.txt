@@ -1,0 +1,13 @@
+testdiff --git a/TMessagesProj/src/main/java/org/telegram/ui/LogoutActivity.java b/TMessagesProj/src/main/java/org/telegram/ui/LogoutActivity.java
+index 6a735f4..8a39714 100644
+--- a/TMessagesProj/src/main/java/org/telegram/ui/LogoutActivity.java
++++ b/TMessagesProj/src/main/java/org/telegram/ui/LogoutActivity.java
+@@ -128,7 +128,7 @@
+             } else if (position == cacheRow) {
+                 presentFragment(new CacheControlActivity());
+             } else if (position == phoneRow) {
+-                presentFragment(new ChangePhoneHelpActivity());
++                presentFragment(new ActionIntroActivity(ActionIntroActivity.ACTION_TYPE_CHANGE_PHONE_NUMBER));
+             } else if (position == supportRow) {
+                 showDialog(AlertsCreator.createSupportAlert(LogoutActivity.this));
+             } else if (position == logoutRow) {

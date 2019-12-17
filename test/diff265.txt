@@ -1,0 +1,46 @@
+testdiff --git a/TMessagesProj/src/main/java/org/telegram/ui/Components/URLSpanBrowser.java b/TMessagesProj/src/main/java/org/telegram/ui/Components/URLSpanBrowser.java
+index 517bf98..e244d83 100644
+--- a/TMessagesProj/src/main/java/org/telegram/ui/Components/URLSpanBrowser.java
++++ b/TMessagesProj/src/main/java/org/telegram/ui/Components/URLSpanBrowser.java
+@@ -9,6 +9,7 @@
+ package org.telegram.ui.Components;
+ 
+ import android.net.Uri;
++import android.text.TextPaint;
+ import android.text.style.URLSpan;
+ import android.view.View;
+ 
+@@ -16,8 +17,19 @@
+ 
+ public class URLSpanBrowser extends URLSpan {
+ 
++    private TextStyleSpan.TextStyleRun style;
++
+     public URLSpanBrowser(String url) {
++        this(url, null);
++    }
++
++    public URLSpanBrowser(String url, TextStyleSpan.TextStyleRun run) {
+         super(url);
++        style = run;
++    }
++
++    public TextStyleSpan.TextStyleRun getStyle() {
++        return style;
+     }
+ 
+     @Override
+@@ -25,4 +37,13 @@
+         Uri uri = Uri.parse(getURL());
+         Browser.openUrl(widget.getContext(), uri);
+     }
++
++    @Override
++    public void updateDrawState(TextPaint p) {
++        super.updateDrawState(p);
++        if (style != null) {
++            style.applyStyle(p);
++        }
++        p.setUnderlineText(true);
++    }
+ }

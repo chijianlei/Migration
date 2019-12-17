@@ -1,0 +1,15 @@
+File var = FileLoader . getPathToAttach ( var , true )
+File var = FileLoader . getPathToAttach ( var , true )
+onAnimationEndCheck ( false )
+onAnimationEndCheck ( false )
+onCloseAnimationEnd
+onOpenAnimationEnd
+onAnimationEndCheck ( true )
+onAnimationEndCheck ( false )
+onAnimationEndCheck ( false )
+onAnimationEndCheck ( false )
+onAnimationEndCheck ( false )
+onAnimationEndCheck ( false )
+if ( TextUtils . isEmpty ( var ) || var != null && var != null && var . equals ( var ) )
+if ( TextUtils . isEmpty ( var ) || var != null && var != null && var . equals ( var ) )
+if ( var != null && ! TextUtils . isEmpty ( var . about ) )

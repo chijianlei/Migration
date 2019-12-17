@@ -1,0 +1,21 @@
+testdiff --git a/TMessagesProj/src/main/java/org/telegram/ui/Components/PhotoViewerCaptionEnterView.java b/TMessagesProj/src/main/java/org/telegram/ui/Components/PhotoViewerCaptionEnterView.java
+index 76b1b77..7810d6e 100644
+--- a/TMessagesProj/src/main/java/org/telegram/ui/Components/PhotoViewerCaptionEnterView.java
++++ b/TMessagesProj/src/main/java/org/telegram/ui/Components/PhotoViewerCaptionEnterView.java
+@@ -42,6 +42,7 @@
+ import org.telegram.messenger.FileLog;
+ import org.telegram.messenger.R;
+ import org.telegram.messenger.UserConfig;
++import org.telegram.tgnet.TLRPC;
+ import org.telegram.ui.ActionBar.Theme;
+ 
+ import java.lang.reflect.Field;
+@@ -686,4 +687,8 @@
+             }
+         }
+     }
++
++    public void setAllowTextEntitiesIntersection(boolean value) {
++        messageEditText.setAllowTextEntitiesIntersection(value);
++    }
+ }

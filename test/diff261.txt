@@ -1,0 +1,13 @@
+testdiff --git a/TMessagesProj/src/main/java/org/telegram/ui/Components/TermsOfServiceView.java b/TMessagesProj/src/main/java/org/telegram/ui/Components/TermsOfServiceView.java
+index 569a176..9069162 100644
+--- a/TMessagesProj/src/main/java/org/telegram/ui/Components/TermsOfServiceView.java
++++ b/TMessagesProj/src/main/java/org/telegram/ui/Components/TermsOfServiceView.java
+@@ -104,7 +104,7 @@
+                         }
+                         if (response instanceof TLRPC.TL_boolTrue) {
+                             MessagesController.getInstance(currentAccount).performLogout(0);
+-                        } else {
++                        } else if (error == null || error.code != -1000) {
+                             String errorText = LocaleController.getString("ErrorOccurred", R.string.ErrorOccurred);
+                             if (error != null) {
+                                 errorText += "\n" + error.text;

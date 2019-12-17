@@ -1,0 +1,6 @@
+testdiff --git a/TMessagesProj/src/main/res/drawable-xhdpi/sim_new.png b/TMessagesProj/src/main/res/drawable-xhdpi/sim_new.png
+new file mode 100644
+index 0000000..088e1b3
+--- /dev/null
++++ b/TMessagesProj/src/main/res/drawable-xhdpi/sim_new.png
+Binary files differ

@@ -1,0 +1,6 @@
+testdiff --git a/TMessagesProj/src/main/res/drawable-xxhdpi/groups_create.png b/TMessagesProj/src/main/res/drawable-xxhdpi/groups_create.png
+new file mode 100644
+index 0000000..ef9e6a3
+--- /dev/null
++++ b/TMessagesProj/src/main/res/drawable-xxhdpi/groups_create.png
+Binary files differ

@@ -1,0 +1,15 @@
+testdiff --git a/TMessagesProj/src/main/java/org/telegram/ui/Components/InstantCameraView.java b/TMessagesProj/src/main/java/org/telegram/ui/Components/InstantCameraView.java
+index 9b8e8bf..1f8073b 100644
+--- a/TMessagesProj/src/main/java/org/telegram/ui/Components/InstantCameraView.java
++++ b/TMessagesProj/src/main/java/org/telegram/ui/Components/InstantCameraView.java
+@@ -128,8 +128,8 @@
+     private Bitmap lastBitmap;
+ 
+     private int[] position = new int[2];
+-    private int cameraTexture[] = new int[1];
+-    private int oldCameraTexture[] = new int[1];
++    private int[] cameraTexture = new int[1];
++    private int[] oldCameraTexture = new int[1];
+     private float cameraTextureAlpha = 1.0f;
+ 
+     private AnimatorSet animatorSet;

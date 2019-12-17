@@ -1,0 +1,12 @@
+testdiff --git a/TMessagesProj/jni/tgnet/Request.h b/TMessagesProj/jni/tgnet/Request.h
+index 45f3dcf..ff5bcb1 100644
+--- a/TMessagesProj/jni/tgnet/Request.h
++++ b/TMessagesProj/jni/tgnet/Request.h
+@@ -11,7 +11,6 @@
+ 
+ #include <stdint.h>
+ #include <vector>
+-#include <bits/unique_ptr.h>
+ #include "Defines.h"
+ 
+ #ifdef ANDROID

@@ -1,0 +1,13 @@
+testdiff --git a/TMessagesProj/src/main/java/org/telegram/ui/PhotoCropActivity.java b/TMessagesProj/src/main/java/org/telegram/ui/PhotoCropActivity.java
+index 73e7f80..c1fb4ea 100644
+--- a/TMessagesProj/src/main/java/org/telegram/ui/PhotoCropActivity.java
++++ b/TMessagesProj/src/main/java/org/telegram/ui/PhotoCropActivity.java
+@@ -405,7 +405,7 @@
+     public void onFragmentDestroy() {
+         super.onFragmentDestroy();
+         if (bitmapKey != null) {
+-            if (ImageLoader.getInstance().decrementUseCount(bitmapKey) && !ImageLoader.getInstance().isInCache(bitmapKey)) {
++            if (ImageLoader.getInstance().decrementUseCount(bitmapKey) && !ImageLoader.getInstance().isInMemCache(bitmapKey, false)) {
+                 bitmapKey = null;
+             }
+         }

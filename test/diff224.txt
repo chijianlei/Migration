@@ -1,0 +1,20 @@
+testdiff --git a/TMessagesProj/src/main/java/org/telegram/ui/ChangeNameActivity.java b/TMessagesProj/src/main/java/org/telegram/ui/ChangeNameActivity.java
+index 65c31d7..daea935 100644
+--- a/TMessagesProj/src/main/java/org/telegram/ui/ChangeNameActivity.java
++++ b/TMessagesProj/src/main/java/org/telegram/ui/ChangeNameActivity.java
+@@ -194,14 +194,11 @@
+     @Override
+     public void onTransitionAnimationEnd(boolean isOpen, boolean backward) {
+         if (isOpen) {
+-            AndroidUtilities.runOnUIThread(new Runnable() {
+-                @Override
+-                public void run() {
++            AndroidUtilities.runOnUIThread(() -> {
+                     if (firstNameField != null) {
+                         firstNameField.requestFocus();
+                         AndroidUtilities.showKeyboard(firstNameField);
+                     }
+-                }
+             }, 100);
+         }
+     }

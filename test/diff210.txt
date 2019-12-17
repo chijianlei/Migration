@@ -1,0 +1,12 @@
+testdiff --git a/TMessagesProj/src/main/java/org/telegram/ui/Cells/InviteUserCell.java b/TMessagesProj/src/main/java/org/telegram/ui/Cells/InviteUserCell.java
+index f85cdf2..8552e6e 100644
+--- a/TMessagesProj/src/main/java/org/telegram/ui/Cells/InviteUserCell.java
++++ b/TMessagesProj/src/main/java/org/telegram/ui/Cells/InviteUserCell.java
+@@ -20,7 +20,6 @@
+ import org.telegram.ui.Components.AvatarDrawable;
+ import org.telegram.ui.Components.BackupImageView;
+ import org.telegram.ui.Components.CheckBox2;
+-import org.telegram.ui.Components.GroupCreateCheckBox;
+ import org.telegram.ui.Components.LayoutHelper;
+ 
+ public class InviteUserCell extends FrameLayout {

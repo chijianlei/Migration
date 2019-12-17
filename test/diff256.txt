@@ -1,0 +1,13 @@
+testdiff --git a/TMessagesProj/src/main/java/org/telegram/ui/Components/SharingLocationsAlert.java b/TMessagesProj/src/main/java/org/telegram/ui/Components/SharingLocationsAlert.java
+index 9bd2f89..3275d22 100644
+--- a/TMessagesProj/src/main/java/org/telegram/ui/Components/SharingLocationsAlert.java
++++ b/TMessagesProj/src/main/java/org/telegram/ui/Components/SharingLocationsAlert.java
+@@ -276,7 +276,7 @@
+             View view;
+             switch (viewType) {
+                 case 0:
+-                    view = new SharingLiveLocationCell(context, false);
++                    view = new SharingLiveLocationCell(context, false, 54);
+                     //view.setBackgroundDrawable(Theme.getSelectorDrawable(false));
+                     break;
+                 case 1:

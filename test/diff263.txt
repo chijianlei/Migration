@@ -1,0 +1,29 @@
+testdiff --git a/TMessagesProj/src/main/java/org/telegram/ui/Components/ThemeEditorView.java b/TMessagesProj/src/main/java/org/telegram/ui/Components/ThemeEditorView.java
+index 5cbbfbb..63e119c 100644
+--- a/TMessagesProj/src/main/java/org/telegram/ui/Components/ThemeEditorView.java
++++ b/TMessagesProj/src/main/java/org/telegram/ui/Components/ThemeEditorView.java
+@@ -1015,7 +1015,7 @@
+                     }
+                 });
+                 animatorSet.start();
+-                listAdapter.notifyItemChanged(currentThemeDesriptionPosition);
++                listView.getAdapter().notifyItemChanged(currentThemeDesriptionPosition);
+             }
+         }
+ 
+@@ -1149,12 +1149,13 @@
+                     ArrayList<CharSequence> names = new ArrayList<>();
+                     for (int a = 0, N = listAdapter.items.size(); a < N; a++) {
+                         ArrayList<ThemeDescription> themeDescriptions = listAdapter.items.get(a);
+-                        String name = themeDescriptions.get(0).getCurrentKey().toLowerCase();
++                        String key = themeDescriptions.get(0).getCurrentKey();
++                        String name = key.toLowerCase();
+                         int found = 0;
+                         for (String q : search) {
+                             if (name.contains(q)) {
+                                 searchResults.add(themeDescriptions);
+-                                names.add(generateSearchName(name, q));
++                                names.add(generateSearchName(key, q));
+                                 break;
+                             }
+                         }

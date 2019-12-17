@@ -1,0 +1,6 @@
+testdiff --git a/TMessagesProj/src/main/res/drawable-xhdpi/phone_change.png b/TMessagesProj/src/main/res/drawable-xhdpi/phone_change.png
+deleted file mode 100755
+index 9fe6bd8..0000000
+--- a/TMessagesProj/src/main/res/drawable-xhdpi/phone_change.png
++++ /dev/null
+Binary files differ

@@ -1,0 +1,129 @@
+testdiff --git a/TMessagesProj/src/main/java/org/telegram/ui/ActionBar/ActionBarLayout.java b/TMessagesProj/src/main/java/org/telegram/ui/ActionBar/ActionBarLayout.java
+index debd27e..88bdef2 100644
+--- a/TMessagesProj/src/main/java/org/telegram/ui/ActionBar/ActionBarLayout.java
++++ b/TMessagesProj/src/main/java/org/telegram/ui/ActionBar/ActionBarLayout.java
+@@ -167,6 +167,7 @@
+     private int[][] animateStartColors = new int[2][];
+     private int[][] animateEndColors = new int[2][];
+     private ThemeDescription[][] themeAnimatorDescriptions = new ThemeDescription[2][];
++    private ThemeDescription[] presentingFragmentDescriptions;
+     private ThemeDescription.ThemeDescriptionDelegate[] themeAnimatorDelegate = new ThemeDescription.ThemeDescriptionDelegate[2];
+     private AnimatorSet themeAnimatorSet;
+     private float themeAnimationValue;
+@@ -452,6 +453,9 @@
+             fragmentView.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+         }
+         lastFragment.onResume();
++        if (themeAnimatorSet != null) {
++            presentingFragmentDescriptions = lastFragment.getThemeDescriptions();
++        }
+     }
+ 
+     public boolean onTouchEvent(MotionEvent ev) {
+@@ -476,7 +480,7 @@
+                     int dx = Math.max(0, (int) (ev.getX() - startedTrackingX));
+                     int dy = Math.abs((int) ev.getY() - startedTrackingY);
+                     velocityTracker.addMovement(ev);
+-                    if (maybeStartTracking && !startedTracking && dx >= AndroidUtilities.getPixelsInCM(0.4f, true) && Math.abs(dx) / 3 > dy) {
++                    if (!inPreviewMode && maybeStartTracking && !startedTracking && dx >= AndroidUtilities.getPixelsInCM(0.4f, true) && Math.abs(dx) / 3 > dy) {
+                         BaseFragment currentFragment = fragmentsStack.get(fragmentsStack.size() - 1);
+                         if (currentFragment.canBeginSlide()) {
+                             prepareForMoving(ev);
+@@ -832,6 +836,10 @@
+             }
+         }
+ 
++        if (themeAnimatorSet != null) {
++            presentingFragmentDescriptions = fragment.getThemeDescriptions();
++        }
++
+         if (needAnimation || preview) {
+             if (useAlphaAnimations && fragmentsStack.size() == 1) {
+                 presentFragmentInternalRemoveOld(removeLast, currentFragment);
+@@ -839,6 +847,9 @@
+                 transitionAnimationStartTime = System.currentTimeMillis();
+                 transitionAnimationInProgress = true;
+                 onOpenAnimationEndRunnable = () -> {
++                    if (currentFragment != null) {
++                        currentFragment.onTransitionAnimationEnd(false, false);
++                    }
+                     fragment.onTransitionAnimationEnd(true, false);
+                     fragment.onBecomeFullyVisible();
+                 };
+@@ -848,7 +859,9 @@
+                     backgroundView.setVisibility(VISIBLE);
+                     animators.add(ObjectAnimator.ofFloat(backgroundView, "alpha", 0.0f, 1.0f));
+                 }
+-
++                if (currentFragment != null) {
++                    currentFragment.onTransitionAnimationStart(false, false);
++                }
+                 fragment.onTransitionAnimationStart(true, false);
+                 currentAnimation = new AnimatorSet();
+                 currentAnimation.playTogether(animators);
+@@ -875,9 +888,15 @@
+                         presentFragmentInternalRemoveOld(removeLast, currentFragment);
+                         containerView.setTranslationX(0);
+                     }
++                    if (currentFragment != null) {
++                        currentFragment.onTransitionAnimationEnd(false, false);
++                    }
+                     fragment.onTransitionAnimationEnd(true, false);
+                     fragment.onBecomeFullyVisible();
+                 };
++                if (currentFragment != null) {
++                    currentFragment.onTransitionAnimationStart(false, false);
++                }
+                 fragment.onTransitionAnimationStart(true, false);
+                 AnimatorSet animation = null;
+                 if (!preview) {
+@@ -932,6 +951,10 @@
+                 backgroundView.setAlpha(1.0f);
+                 backgroundView.setVisibility(VISIBLE);
+             }
++            if (currentFragment != null) {
++                currentFragment.onTransitionAnimationStart(false, false);
++                currentFragment.onTransitionAnimationEnd(false, false);
++            }
+             fragment.onTransitionAnimationStart(true, false);
+             fragment.onTransitionAnimationEnd(true, false);
+             fragment.onBecomeFullyVisible();
+@@ -1091,6 +1114,9 @@
+             previousFragment.onTransitionAnimationStart(true, true);
+             currentFragment.onTransitionAnimationStart(false, false);
+             previousFragment.onResume();
++            if (themeAnimatorSet != null) {
++                presentingFragmentDescriptions = previousFragment.getThemeDescriptions();
++            }
+             currentActionBar = previousFragment.actionBar;
+             if (!previousFragment.hasOwnBackground && fragmentView.getBackground() == null) {
+                 fragmentView.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+@@ -1305,6 +1331,12 @@
+                 }
+             }
+         }
++        if (presentingFragmentDescriptions != null) {
++            for (int i = 0; i < presentingFragmentDescriptions.length; i++) {
++                String key = presentingFragmentDescriptions[i].getCurrentKey();
++                presentingFragmentDescriptions[i].setColor(Theme.getColor(key), false, false);
++            }
++        }
+     }
+ 
+     @Keep
+@@ -1371,6 +1403,7 @@
+                             themeAnimatorDelegate[a] = null;
+                         }
+                         Theme.setAnimatingColor(false);
++                        presentingFragmentDescriptions = null;
+                         themeAnimatorSet = null;
+                     }
+                 }
+@@ -1385,6 +1418,7 @@
+                             themeAnimatorDelegate[a] = null;
+                         }
+                         Theme.setAnimatingColor(false);
++                        presentingFragmentDescriptions = null;
+                         themeAnimatorSet = null;
+                     }
+                 }

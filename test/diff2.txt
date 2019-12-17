@@ -1,0 +1,11 @@
+testdiff --git a/TMessagesProj/jni/Application.mk b/TMessagesProj/jni/Application.mk
+index 23dc086..b39ba14 100644
+--- a/TMessagesProj/jni/Application.mk
++++ b/TMessagesProj/jni/Application.mk
+@@ -1,3 +1,3 @@
+ APP_PLATFORM := android-14
+ NDK_TOOLCHAIN_VERSION := clang
+-APP_STL := gnustl_static
+\ No newline at end of file
++APP_STL := c++_static
+\ No newline at end of file

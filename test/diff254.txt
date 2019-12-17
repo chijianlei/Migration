@@ -1,0 +1,80 @@
+testdiff --git a/TMessagesProj/src/main/java/org/telegram/ui/Components/ScrollSlidingTabStrip.java b/TMessagesProj/src/main/java/org/telegram/ui/Components/ScrollSlidingTabStrip.java
+index 5d24acb..34c5105 100644
+--- a/TMessagesProj/src/main/java/org/telegram/ui/Components/ScrollSlidingTabStrip.java
++++ b/TMessagesProj/src/main/java/org/telegram/ui/Components/ScrollSlidingTabStrip.java
+@@ -27,6 +27,7 @@
+ import org.telegram.messenger.AndroidUtilities;
+ import org.telegram.messenger.FileLoader;
+ import org.telegram.messenger.ImageLocation;
++import org.telegram.messenger.MessageObject;
+ import org.telegram.messenger.R;
+ import org.telegram.tgnet.TLObject;
+ import org.telegram.tgnet.TLRPC;
+@@ -153,6 +154,7 @@
+         tabsContainer.addView(tab);
+         tab.setSelected(position == currentPosition);
+         BackupImageView imageView = new BackupImageView(getContext());
++        imageView.setLayerNum(1);
+         imageView.setRoundRadius(AndroidUtilities.dp(15));
+ 
+         AvatarDrawable avatarDrawable = new AvatarDrawable();
+@@ -175,6 +177,7 @@
+         tabsContainer.addView(tab);
+         tab.setSelected(position == currentPosition);
+         BackupImageView imageView = new BackupImageView(getContext());
++        imageView.setLayerNum(1);
+         imageView.setAspectFit(true);
+         tab.addView(imageView, LayoutHelper.createFrame(30, 30, Gravity.CENTER));
+ 
+@@ -229,6 +232,7 @@
+             Object parentObject = child.getTag(R.id.parent_tag);
+             TLRPC.Document sticker = (TLRPC.Document) child.getTag(R.id.object_tag);
+             ImageLocation imageLocation;
++
+             if (object instanceof TLRPC.Document) {
+                 TLRPC.PhotoSize thumb = FileLoader.getClosestPhotoSizeWithSize(sticker.thumbs, 90);
+                 imageLocation = ImageLocation.getForDocument(thumb, sticker);
+@@ -238,10 +242,19 @@
+             } else {
+                 continue;
+             }
++            if (imageLocation == null) {
++                continue;
++            }
+             BackupImageView imageView = (BackupImageView) ((FrameLayout) child).getChildAt(0);
++            if (object instanceof TLRPC.Document && MessageObject.isAnimatedStickerDocument(sticker)) {
++                imageView.setImage(ImageLocation.getForDocument(sticker), "30_30", imageLocation, null, 0, parentObject);
++            } else if (imageLocation.lottieAnimation) {
++                imageView.setImage(imageLocation, "30_30", "tgs", null, parentObject);
++            } else {
+             imageView.setImage(imageLocation, null, "webp", null, parentObject);
+         }
+     }
++    }
+ 
+     @Override
+     protected void onScrollChanged(int l, int t, int oldl, int oldt) {
+@@ -273,14 +286,23 @@
+             } else {
+                 continue;
+             }
++            if (imageLocation == null) {
++                continue;
++            }
+             BackupImageView imageView = (BackupImageView) ((FrameLayout) child).getChildAt(0);
+             if (a < newStart || a >= newStart + count) {
+                 imageView.setImageDrawable(null);
+             } else {
++                if (object instanceof TLRPC.Document && MessageObject.isAnimatedStickerDocument(sticker)) {
++                    imageView.setImage(ImageLocation.getForDocument(sticker), "30_30", imageLocation, null, 0, parentObject);
++                } else if (imageLocation.lottieAnimation) {
++                    imageView.setImage(imageLocation, "30_30", "tgs", null, parentObject);
++                } else {
+                 imageView.setImage(imageLocation, null, "webp", null, parentObject);
+             }
+         }
+     }
++    }
+ 
+     @Override
+     protected void onDraw(Canvas canvas) {

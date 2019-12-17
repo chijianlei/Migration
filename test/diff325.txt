@@ -1,0 +1,6 @@
+testdiff --git a/TMessagesProj/src/main/res/drawable-mdpi/nearby_l.png b/TMessagesProj/src/main/res/drawable-mdpi/nearby_l.png
+new file mode 100644
+index 0000000..8ac5a0a
+--- /dev/null
++++ b/TMessagesProj/src/main/res/drawable-mdpi/nearby_l.png
+Binary files differ

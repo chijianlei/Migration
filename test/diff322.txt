@@ -1,0 +1,6 @@
+testdiff --git a/TMessagesProj/src/main/res/drawable-mdpi/map_pin2.png b/TMessagesProj/src/main/res/drawable-mdpi/map_pin2.png
+new file mode 100644
+index 0000000..b54ba74
+--- /dev/null
++++ b/TMessagesProj/src/main/res/drawable-mdpi/map_pin2.png
+Binary files differ

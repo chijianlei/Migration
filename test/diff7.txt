@@ -1,0 +1,14 @@
+testdiff --git a/TMessagesProj/jni/libtgvoip/client/android/tg_voip_jni.cpp b/TMessagesProj/jni/libtgvoip/client/android/tg_voip_jni.cpp
+index 9f5df69..9371e8d 100644
+--- a/TMessagesProj/jni/libtgvoip/client/android/tg_voip_jni.cpp
++++ b/TMessagesProj/jni/libtgvoip/client/android/tg_voip_jni.cpp
+@@ -295,9 +295,6 @@
+ 			cfg.statsDumpFilePath=jni::JavaStringToStdString(env, statsDumpPath);
+ 		}
+ 
+-		// remove before push
+-		cfg.enableVideoReceive=cfg.enableVideoSend=true;
+-
+ 		((VoIPController*)(intptr_t)inst)->SetConfig(cfg);
+ 	}
+ 

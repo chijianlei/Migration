@@ -1,0 +1,16 @@
+testdiff --git a/TMessagesProj/src/main/java/org/telegram/ui/Components/EmptyTextProgressView.java b/TMessagesProj/src/main/java/org/telegram/ui/Components/EmptyTextProgressView.java
+index adf4cc8..bb2edc2 100644
+--- a/TMessagesProj/src/main/java/org/telegram/ui/Components/EmptyTextProgressView.java
++++ b/TMessagesProj/src/main/java/org/telegram/ui/Components/EmptyTextProgressView.java
+@@ -108,9 +108,9 @@
+             int x = (width - child.getMeasuredWidth()) / 2;
+             int y;
+             if (showAtCenter) {
+-                y = (height / 2 - child.getMeasuredHeight()) / 2;
++                y = (height / 2 - child.getMeasuredHeight()) / 2 + getPaddingTop();
+             } else {
+-                y = (height - child.getMeasuredHeight()) / 2;
++                y = (height - child.getMeasuredHeight()) / 2 + getPaddingTop();
+             }
+             child.layout(x, y, x + child.getMeasuredWidth(), y + child.getMeasuredHeight());
+         }

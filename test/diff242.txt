@@ -1,0 +1,23 @@
+testdiff --git a/TMessagesProj/src/main/java/org/telegram/ui/Components/EditTextBoldCursor.java b/TMessagesProj/src/main/java/org/telegram/ui/Components/EditTextBoldCursor.java
+index 449db5a..cee202f 100644
+--- a/TMessagesProj/src/main/java/org/telegram/ui/Components/EditTextBoldCursor.java
++++ b/TMessagesProj/src/main/java/org/telegram/ui/Components/EditTextBoldCursor.java
+@@ -471,9 +471,7 @@
+                         mCursorDrawable = ((Drawable[]) mCursorDrawableField.get(editor))[0];
+                     }
+                 }
+-                if (mCursorDrawable == null) {
+-                    return;
+-                }
++                if (mCursorDrawable != null) {
+                 long mShowCursor = mShowCursorField.getLong(editor);
+                 boolean showCursor = (SystemClock.uptimeMillis() - mShowCursor) % (2 * 500) < 500 && isFocused();
+                 if (showCursor) {
+@@ -501,6 +499,7 @@
+                     canvas.restore();
+                 }
+             }
++            }
+         } catch (Throwable ignore) {
+ 
+         }

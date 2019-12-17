@@ -1,0 +1,6 @@
+testdiff --git a/TMessagesProj/src/main/res/drawable-xhdpi/ghost.png b/TMessagesProj/src/main/res/drawable-xhdpi/ghost.png
+new file mode 100644
+index 0000000..a241d80
+--- /dev/null
++++ b/TMessagesProj/src/main/res/drawable-xhdpi/ghost.png
+Binary files differ

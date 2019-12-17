@@ -1,0 +1,6 @@
+testdiff --git a/TMessagesProj/src/main/res/drawable-xhdpi/menu_location.png b/TMessagesProj/src/main/res/drawable-xhdpi/menu_location.png
+new file mode 100644
+index 0000000..cecfbf0
+--- /dev/null
++++ b/TMessagesProj/src/main/res/drawable-xhdpi/menu_location.png
+Binary files differ

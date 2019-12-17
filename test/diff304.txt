@@ -1,0 +1,5 @@
+testdiff --git a/TMessagesProj/src/main/res/drawable-hdpi/channelintro.png b/TMessagesProj/src/main/res/drawable-hdpi/channelintro.png
+index c46fcb3..85f044e 100644
+--- a/TMessagesProj/src/main/res/drawable-hdpi/channelintro.png
++++ b/TMessagesProj/src/main/res/drawable-hdpi/channelintro.png
+Binary files differ

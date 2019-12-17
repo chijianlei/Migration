@@ -1,0 +1,48 @@
+testdiff --git a/TMessagesProj/src/main/java/org/telegram/ui/Components/URLSpanUserMention.java b/TMessagesProj/src/main/java/org/telegram/ui/Components/URLSpanUserMention.java
+index 9207cee..723e2ef 100644
+--- a/TMessagesProj/src/main/java/org/telegram/ui/Components/URLSpanUserMention.java
++++ b/TMessagesProj/src/main/java/org/telegram/ui/Components/URLSpanUserMention.java
+@@ -16,10 +16,16 @@
+ public class URLSpanUserMention extends URLSpanNoUnderline {
+ 
+     private int currentType;
++    private TextStyleSpan.TextStyleRun style;
+ 
+     public URLSpanUserMention(String url, int type) {
++        this(url, type, null);
++    }
++
++    public URLSpanUserMention(String url, int type, TextStyleSpan.TextStyleRun run) {
+         super(url);
+         currentType = type;
++        style = run;
+     }
+ 
+     @Override
+@@ -28,16 +34,19 @@
+     }
+ 
+     @Override
+-    public void updateDrawState(TextPaint ds) {
+-        super.updateDrawState(ds);
++    public void updateDrawState(TextPaint p) {
++        super.updateDrawState(p);
+         if (currentType == 2) {
+-            ds.setColor(0xffffffff);
++            p.setColor(0xffffffff);
+         } else if (currentType == 1) {
+-            ds.setColor(Theme.getColor(Theme.key_chat_messageLinkOut));
++            p.setColor(Theme.getColor(Theme.key_chat_messageLinkOut));
+         } else {
+-            ds.setColor(Theme.getColor(Theme.key_chat_messageLinkIn));
++            p.setColor(Theme.getColor(Theme.key_chat_messageLinkIn));
+         }
+-
+-        ds.setUnderlineText(false);
++        if (style != null) {
++            style.applyStyle(p);
++        } else {
++            p.setUnderlineText(false);
++        }
+     }
+ }

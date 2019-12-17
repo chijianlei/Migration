@@ -1,0 +1,13 @@
+testdiff --git a/TMessagesProj/src/main/res/values/ids.xml b/TMessagesProj/src/main/res/values/ids.xml
+index 870eed7..1a03de7 100644
+--- a/TMessagesProj/src/main/res/values/ids.xml
++++ b/TMessagesProj/src/main/res/values/ids.xml
+@@ -4,6 +4,8 @@
+     <item name="menu_italic" type="id"/>
+     <item name="menu_link" type="id"/>
+     <item name="menu_mono" type="id"/>
++    <item name="menu_strike" type="id"/>
++    <item name="menu_underline" type="id"/>
+     <item name="menu_groupbolditalic" type="id"/>
+     <item name="parent_tag" type="id"/>
+     <item name="object_tag" type="id"/>

@@ -1,0 +1,1 @@
+View var = getChildAt ( var )	View var = getChildAt ( 0 )

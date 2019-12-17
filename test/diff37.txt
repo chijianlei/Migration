@@ -1,0 +1,5 @@
+testdiff --git a/TMessagesProj/jni/rlottie/src/lottie/lottieproxymodel.cpp b/TMessagesProj/jni/rlottie/src/lottie/lottieproxymodel.cpp
+new file mode 100755
+index 0000000..e69de29
+--- /dev/null
++++ b/TMessagesProj/jni/rlottie/src/lottie/lottieproxymodel.cpp

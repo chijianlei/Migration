@@ -1,0 +1,13 @@
+testdiff --git a/TMessagesProj/src/main/java/org/telegram/ui/Cells/ManageChatUserCell.java b/TMessagesProj/src/main/java/org/telegram/ui/Cells/ManageChatUserCell.java
+index b5bf226..66155cd 100644
+--- a/TMessagesProj/src/main/java/org/telegram/ui/Cells/ManageChatUserCell.java
++++ b/TMessagesProj/src/main/java/org/telegram/ui/Cells/ManageChatUserCell.java
+@@ -263,6 +263,8 @@
+                 statusTextView.setTextColor(statusColor);
+                 if (currentChat.participants_count != 0) {
+                     statusTextView.setText(LocaleController.formatPluralString("Members", currentChat.participants_count));
++                } else if (currentChat.has_geo) {
++                    statusTextView.setText(LocaleController.getString("MegaLocation", R.string.MegaLocation));
+                 } else if (TextUtils.isEmpty(currentChat.username)) {
+                     statusTextView.setText(LocaleController.getString("MegaPrivate", R.string.MegaPrivate));
+                 } else {

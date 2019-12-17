@@ -1,0 +1,15 @@
+testdiff --git a/TMessagesProj/src/main/java/org/telegram/ui/ActionBar/ActionBar.java b/TMessagesProj/src/main/java/org/telegram/ui/ActionBar/ActionBar.java
+index f5bb64e..ac2fcd6 100644
+--- a/TMessagesProj/src/main/java/org/telegram/ui/ActionBar/ActionBar.java
++++ b/TMessagesProj/src/main/java/org/telegram/ui/ActionBar/ActionBar.java
+@@ -648,6 +648,10 @@
+         menu.openSearchField(!isSearchFieldVisible, text, animated);
+     }
+ 
++    public void setSearchFieldText(String text) {
++        menu.setSearchFieldText(text);
++    }
++
+     @Override
+     public void setEnabled(boolean enabled) {
+         super.setEnabled(enabled);

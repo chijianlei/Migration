@@ -1,0 +1,6 @@
+testdiff --git a/TMessagesProj/src/main/res/drawable-hdpi/groupsintro.png b/TMessagesProj/src/main/res/drawable-hdpi/groupsintro.png
+new file mode 100644
+index 0000000..95516f1
+--- /dev/null
++++ b/TMessagesProj/src/main/res/drawable-hdpi/groupsintro.png
+Binary files differ

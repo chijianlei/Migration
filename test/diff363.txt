@@ -1,0 +1,625 @@
+testdiff --git a/TMessagesProj/src/main/res/values-pt-rBR/strings.xml b/TMessagesProj/src/main/res/values-pt-rBR/strings.xml
+index c530004..a8ede29 100644
+--- a/TMessagesProj/src/main/res/values-pt-rBR/strings.xml
++++ b/TMessagesProj/src/main/res/values-pt-rBR/strings.xml
+@@ -28,7 +28,7 @@
+     <string name="SentAppCodeTitle">Confira suas mensagens no Telegram</string>
+     <string name="SentSmsCodeTitle">Inserir c車digo</string>
+     <string name="SentCallCode">Estamos ligando para o seu telefone **%1$s**.\n\nN?o atenda, o Telegram processar芍 tudo automaticamente.</string>
+-    <string name="SentCallOnly">N車s te ligaremos em **%1$s** para ditar o c車digo.</string>
++    <string name="SentCallOnly">Te ligaremos no **%1$s** para ditar o c車digo.</string>
+     <string name="CallText">Telegram ir芍 te ligar em %1$d:%2$02d</string>
+     <string name="SmsText">Vamos te enviar um SMS em %1$d:%2$02d</string>
+     <string name="Calling">Estamos te ligando...</string>
+@@ -49,7 +49,7 @@
+     <string name="OtherLoginCode">Seu c車digo de login 谷 **%1$s**. Digite ele no app do Telegram no qual voc那 est芍 tentando fazer o login.\n\nN?o informe esse c車digo para ningu谷m.</string>
+     <!--signup view-->
+     <string name="YourName">Seu nome</string>
+-    <string name="RegisterText2">Por favor, digite seu nome completo e coloque uma foto de perfil.</string>
++    <string name="RegisterText2">Digite seu nome completo e coloque uma foto de perfil.</string>
+     <string name="FirstName">Nome (obrigat車rio)</string>
+     <string name="LastName">Sobrenome (opcional)</string>
+     <string name="CancelRegistration">Cancelar registro</string>
+@@ -202,6 +202,8 @@
+     <string name="Bold">Negrito</string>
+     <string name="Italic">It芍lico</string>
+     <string name="Mono">Mono</string>
++    <string name="Strike">Tachado</string>
++    <string name="Underline">Sublinhado</string>
+     <string name="Regular">Regular</string>
+     <string name="ContactsPermissionAlert">O **Telegram** precisa acessar seus contatos para que voc那 possa se comunicar com seus amigos em todos os seus dispositivos. Seus contatos ser?o continuamente sincronizados na nuvem fortemente criptografada do Telegram.</string>
+     <string name="ContactsPermissionAlertNotNow">AGORA N?O</string>
+@@ -225,12 +227,15 @@
+     <string name="MegaDeleteAlert">Espere! Apagar este grupo remover芍 todos os membros e todas as mensagens ser?o perdidas. Apagar o grupo mesmo assim?</string>
+     <string name="ActionCreateMega">Grupo criado</string>
+     <string name="MegaAddedBy">un1 adicionou voc那 ao grupo</string>
+-    <string name="MegaLeaveAlert">Voc那 tem certeza de que deseja sair do grupo?</string>
++    <string name="MegaLeaveAlert">Tem certeza de que deseja sair do grupo?</string>
+     <string name="MegaLeaveAlertWithName">Tem certeza de que deseja sair de **%1$s**?</string>
+     <string name="GroupUserCantAdd">Desculpe, voc那 n?o pode adicionar esse usu芍rio a grupos.</string>
+     <string name="GroupUserAddLimit">Desculpe, este grupo est芍 lotado.</string>
+     <string name="GroupUserLeftError">Desculpe, esse usu芍rio decidiu sair deste grupo. Por isso, voc那 n?o pode convid芍-lo de volta.</string>
+-    <string name="GroupUserCantAdmin">Desculpe, muitos administradores neste canal.</string>
++    <string name="GroupUserCantAdmin">Desculpe, h芍 muitos administradores neste grupo.</string>
++    <string name="PublicChannelsTooMuch">Desculpe, o usu芍rio j芍 tem muitos grupos ou canais p迆blicos. Por favor, pe?a que ele apague ou transfira um dos grupos ou canais existentes primeiro.</string>
++    <string name="LocatedChannelsTooMuch">Desculpe, o usu芍rio j芍 tem muitos grupos baseados em localiza??o. Por favor, pe?a que ele apague um dos grupos existentes primeiro.</string>
++    <string name="YourLocatedChannelsTooMuch">Desculpe, voc那 j芍 tem muitos grupos com base em localiza??o. Por favor, apague um dos seus grupos existentes primeiro.</string>
+     <string name="GroupUserCantBot">Desculpe, h芍 bots demais neste grupo.</string>
+     <string name="ActionPinnedText">un1 fixou \"%1$s\"</string>
+     <string name="ActionPinnedNoText">un1 fixou uma mensagem</string>
+@@ -266,6 +271,7 @@
+     <string name="ChannelSettingsChangedAlert">Voc那 alterou algumas configura??es neste canal. Aplicar altera??es?</string>
+     <string name="ChannelPublic">Canal P迆blico</string>
+     <string name="MegaPublic">Grupo P迆blico</string>
++    <string name="MegaLocation">Grupo Baseado em Localiza??o</string>
+     <string name="ChannelPublicInfo">Canais p迆blicos podem ser encontrados na busca. Qualquer um pode entrar.</string>
+     <string name="MegaPublicInfo">Grupos p迆blicos podem ser encontrados na busca, o hist車rico 谷 dispon赤vel para todos e qualquer um pode entrar.</string>
+     <string name="ChannelPrivate">Canal Privado</string>
+@@ -275,6 +281,7 @@
+     <string name="ChannelLinkTitle">Link permanente</string>
+     <string name="ChannelInviteLinkTitle">Link de Convite</string>
+     <string name="ChannelAddMembers">Adicionar membros</string>
++    <string name="GroupAddMembers">Adicionar Membros</string>
+     <string name="LeaveChannel">Sair do Canal</string>
+     <string name="LeaveChannelMenu">Sair do Canal</string>
+     <string name="ChannelSettings">Configura??es</string>
+@@ -283,7 +290,7 @@
+     <string name="ChannelSilentBroadcast">Mensagem Silenciosa</string>
+     <string name="ChannelAlertTitle">O que 谷 um Canal?</string>
+     <string name="ChannelAlertText">Canais s?o uma ferramenta de transmiss?o de suas mensagens para audi那ncias ilimitadas.</string>
+-    <string name="ChannelAlertCreate">CRIAR CANAL</string>
++    <string name="ChannelAlertCreate2">Criar Canal</string>
+     <string name="LinkInUse">Desculpe, esse nome j芍 est芍 em uso.</string>
+     <string name="LinkInvalid">Desculpe, esse nome 谷 inv芍lido.</string>
+     <string name="LinkInvalidShort">Nome do canal deve ter pelo menos 5 caracteres.</string>
+@@ -314,7 +321,7 @@
+     <string name="ChannelDelete">Apagar Canal</string>
+     <string name="ChannelDeleteMenu">Apagar Canal</string>
+     <string name="ChannelDeleteAlert">Espere! Apagar esse canal remover芍 todos os membros e todas as mensagens ser?o perdidas. Apagar assim mesmo?</string>
+-    <string name="ChannelLeaveAlert">Voc那 tem certeza de que deseja sair do canal?</string>
++    <string name="ChannelLeaveAlert">Tem certeza de que deseja sair do canal?</string>
+     <string name="ChannelLeaveAlertWithName">Tem certeza de que deseja sair de **%1$s**?</string>
+     <string name="ChannelDeleteInfo">Voc那 perder芍 todas as mensagens desse canal.</string>
+     <string name="ChannelEdit">Editar</string>
+@@ -324,7 +331,8 @@
+     <string name="ActionChannelRemovedPhoto">Foto do canal removida</string>
+     <string name="ActionChannelChangedTitle">Nome do canal alterado para un2</string>
+     <string name="ChangePublicLimitReached">Desculpe, voc那 reservou muitos nomes p迆blicos. Voc那 pode remover o link p迆blico de um de seus grupos ou canais, ou criar de forma privada.</string>
+-    <string name="ChannelCreator">Criador</string>
++    <string name="ChannelCreator">Dono</string>
++    <string name="ChannelAdministrator">Administrador</string>
+     <string name="ChannelAdmin">Admin</string>
+     <string name="ChannelMute">SILENCIAR</string>
+     <string name="ChannelUnmute">RESTAURAR SOM</string>
+@@ -348,6 +356,7 @@
+     <string name="ChannelUserCantAdmin">Desculpe, muitos administradores neste canal.</string>
+     <string name="ChannelUserCantBot">Desculpe, h芍 bots demais neste canal.</string>
+     <string name="ChannelUserAddLimit">Desculpe, voc那 s車 pode adicionar os primeiros 200 membros ao canal. Note que um n迆mero ilimitado de pessoas podem entrar via link do canal.</string>
++    <string name="ChannelTooMuch">Desculpe, voc那 谷 um membro de muitos grupos e canais. Por favor, saia de alguns antes de criar um novo.</string>
+     <string name="ChannelAddedBy">un1 adicionou voc那 ao canal</string>
+     <string name="ChannelJoined">Voc那 entrou neste canal</string>
+     <string name="ChannelMegaJoined">Voc那 entrou neste grupo</string>
+@@ -360,7 +369,7 @@
+     <string name="ChannelMessageVideo">%1$s postou um v赤deo</string>
+     <string name="ChannelMessageContact2">%1$s postou um contato %2$s</string>
+     <string name="ChannelMessagePoll2">%1$s postou uma enquete %2$s</string>
+-    <string name="ChannelMessageMap">%1$s postou uma foto</string>
++    <string name="ChannelMessageMap">%1$s postou uma localiza??o</string>
+     <string name="ChannelMessageLiveLocation">%1$@ postou uma localiza??o em tempo real</string>
+     <string name="ChannelMessageDocument">%1$s postou um arquivo</string>
+     <string name="ChannelMessageGIF">%1$s postou um GIF</string>
+@@ -388,6 +397,19 @@
+     <string name="EditAdminGroupDeleteMessages">Apagar Mensagens</string>
+     <string name="EditAdminAddAdmins">Adicionar Novos Admins</string>
+     <string name="EditAdminRemoveAdmin">Dispensar admin</string>
++    <string name="EditAdminGroupTransfer">Transferir Posse do Grupo</string>
++    <string name="EditAdminChannelTransfer">Transferir Posse do Canal</string>
++    <string name="EditAdminTransferAlertTitle">Verifica??o de Seguran?a</string>
++    <string name="EditAdminTransferAlertText">Voc那 pode transferir este grupo para **%1$s** somente se tiver:</string>
++    <string name="EditChannelAdminTransferAlertText">Voc那 pode transferir este canal para **%1$s** somente se tiver:</string>
++    <string name="EditAdminTransferAlertText1">Ativado a **Verifica??o em Duas Etapas** h芍 mais de **7 dias**.</string>
++    <string name="EditAdminTransferAlertText2">Conectado a este dispositivo h芍 mais de **24 horas**.</string>
++    <string name="EditAdminTransferAlertText3">Por favor, volte mais tarde.</string>
++    <string name="EditAdminTransferSetPassword">Definir Senha</string>
++    <string name="EditAdminTransferReadyAlertText">Isso transferir芍 os direitos de **dono** de **%1$s** para **%2$s**.</string>
++    <string name="EditAdminTransferChangeOwner">Alterar Dono</string>
++    <string name="EditAdminTransferGroupToast">**%1$s** agora 谷 o dono do grupo.</string>
++    <string name="EditAdminTransferChannelToast">**%1$s** agora 谷 o dono do canal.</string>
+     <string name="EditAdminBanUsers">Banir Usu芍rios</string>
+     <string name="EditAdminAddUsers">Adicionar Usu芍rios</string>
+     <string name="EditAdminAddUsersViaLink">Convidar Usu芍rios via Link</string>
+@@ -423,6 +445,7 @@
+     <string name="UserRestrictionsBlock">Banir e remover do grupo</string>
+     <string name="UserRestrictionsApplyChanges">Aplicar Altera??es?</string>
+     <string name="UserRestrictionsApplyChangesText">Voc那 alterou as permiss?es deste usu芍rio em **%1$s**. Aplicar altera??es?</string>
++    <string name="UserRestrictionsCustom">Personalizado</string>
+     <string name="ManageGroup">Gerenciar Grupo</string>
+     <string name="ManageChannel">Gerenciar Canal</string>
+     <string name="ManageGroupMenu">Gerenciar grupo</string>
+@@ -445,6 +468,8 @@
+     <string name="TypePublic">P迆blico</string>
+     <string name="TypePrivateGroup">Privado</string>
+     <string name="TypePublicGroup">P迆blico</string>
++    <string name="TypeLocationGroup">Link</string>
++    <string name="TypeLocationGroupEdit">Toque para adicionar um link permanente</string>
+     <string name="ChoosePhoto">Escolher Foto</string>
+     <string name="ChooseTakePhoto">Tirar foto</string>
+     <string name="ChooseFromGallery">Enviar da galeria</string>
+@@ -460,10 +485,10 @@
+     <string name="LinkedChannel">Canal Vinculado</string>
+     <string name="DiscussionChannelHelp">Escolha um grupo para conversas que ser芍 exibido em seu canal.</string>
+     <string name="DiscussionChannelHelp2">Tudo que voc那 postar no canal ser芍 encaminhado para este grupo.</string>
+-    <string name="DiscussionChannelGroupSetHelp">Um link para **%1$s** 谷 exibido no rodap谷 para todos os inscritos.</string>
++    <string name="DiscussionChannelGroupSetHelp">Um link para **%1$s** 谷 exibido no painel inferior para todos os inscritos.</string>
+     <string name="DiscussionGroupHelp">O canal **%1$s** est芍 vinculado a este grupo de conversas.</string>
+     <string name="DiscussionGroupHelp2">Todas as novas mensagens postadas neste canal ser?o encaminhadas ao grupo.</string>
+-    <string name="DiscussionCreateGroup">Criar Novo Grupo</string>
++    <string name="DiscussionCreateGroup">Criar Grupo</string>
+     <string name="DiscussionUnlinkGroup">Desvincular Grupo</string>
+     <string name="DiscussionUnlinkChannel">Desvincular Canal</string>
+     <string name="DiscussionUnlink">Desvincular</string>
+@@ -543,6 +568,9 @@
+     <string name="EventLogUnpinnedMessages">un1 desafixou essa mensagem:</string>
+     <string name="EventLogStopPoll">un1 encerrou a enquete:</string>
+     <string name="EventLogDeletedMessages">un1 apagou esta mensagem:</string>
++    <string name="EventLogChangedLocation">un1 alterou o local do grupo para \"%1$s\"</string>
++    <string name="EventLogRemovedLocation">un1 removeu a localiza??o do grupo</string>
++    <string name="EventLogChangedOwnership">transferiu a posse para %1$s</string>
+     <string name="EventLogChangedStickersSet">un1 alterou o pacote de sticker do grupo</string>
+     <string name="EventLogRemovedStickersSet">un1 removeu o pacote de sticker do grupo</string>
+     <string name="EventLogChangedLinkedGroup">un1 definiu un2 como o grupo de conversas deste canal.</string>
+@@ -674,8 +702,9 @@
+     <string name="NoRecent">Nada recente</string>
+     <string name="Message">Mensagem</string>
+     <string name="TypeMessage">Mensagem</string>
++    <string name="ShareMyPhone">COMPARTILHAR MEU N?MERO</string>
+     <string name="ShareMyContactInfo">Compartilhar meu contato</string>
+-    <string name="AddToContacts">Adicionar aos contatos</string>
++    <string name="AddToContacts">Add Contato</string>
+     <string name="EncryptedPlaceholderTitleIncoming">%s te convidou para um chat secreto.</string>
+     <string name="EncryptedPlaceholderTitleOutgoing">Voc那 convidou %s para um chat secreto.</string>
+     <string name="EncryptedDescriptionTitle">Chats Secretos:</string>
+@@ -711,13 +740,22 @@
+     <string name="OpenUrlOption2">Permitir que **%1$s** me envie mensagens</string>
+     <string name="CancelSending">Cancelar o envio</string>
+     <string name="BotPermissionGameAlert">Permitir que %1$s passe seu nome no Telegram e ID (n?o o seu n迆mero de telefone) para p芍ginas que voc那 abrir com esse bot?</string>
++    <string name="ReportSpamLocation">GRUPO SEM RELA??O COM O LOCAL?</string>
++    <string name="ReportUnrelatedGroup">Denunciar grupo sem rela??o</string>
++    <string name="ReportUnrelatedGroupText">Por favor, nos diga se este grupo n?o est芍 relacionado com este local:\n\n**%1$s**</string>
++    <string name="ReportUnrelatedGroupTextNoAddress">Por favor, nos diga se este grupo n?o est芍 relacionado com este local.</string>
+     <string name="ReportSpam">DENUNCIAR SPAM</string>
++    <string name="ReportSpamTitle">Denunciar spam</string>
++    <string name="BlockUserTitle">Bloquear %1$s</string>
++    <string name="ReportSpamUser">BLOQUEAR</string>
+     <string name="ReportSpamAndLeave">DENUNCIAR SPAM E SAIR</string>
+     <string name="AddContactChat">ADICIONAR CONTATO</string>
++    <string name="AddContactFullChat">ADD %1$s A CONTATOS</string>
+     <string name="ViewContact">VER CONTATO</string>
+-    <string name="ReportSpamAlert">Voc那 tem certeza de que deseja denunciar este usu芍rio por spam?</string>
+-    <string name="ReportSpamAlertGroup">Voc那 tem certeza de que deseja denunciar este grupo por spam?</string>
+-    <string name="ReportSpamAlertChannel">Voc那 tem certeza de que deseja denunciar este canal por spam?</string>
++    <string name="BlockUserAlert">Deseja bloquear as mensagens e chamadas de **%1$s** no Telegram?</string>
++    <string name="ReportSpamAlert">Tem certeza de que deseja denunciar este usu芍rio por spam?</string>
++    <string name="ReportSpamAlertGroup">Tem certeza de que deseja denunciar este grupo por spam?</string>
++    <string name="ReportSpamAlertChannel">Tem certeza de que deseja denunciar este canal por spam?</string>
+     <string name="NobodyLikesSpam1">Desculpe, voc那 s車 pode enviar mensagens para contatos m迆tuos no momento.</string>
+     <string name="NobodyLikesSpam2">Desculpe. No momento, voc那 s車 pode adicionar contatos m迆tuos a grupos.</string>
+     <string name="NobodyLikesSpam3">Desculpe, no momento voc那 est芍 restringido de postar em grupos p迆blicos.</string>
+@@ -787,9 +825,9 @@
+     <string name="HoldToAudio">Segure para gravar 芍udio. Toque para v赤deo.</string>
+     <string name="HoldToVideo">Segure para gravar v赤deo. Toque para 芍udio.</string>
+     <string name="DiscardVoiceMessageTitle">Descartar Mensagem de Voz</string>
+-    <string name="DiscardVoiceMessageDescription">Voc那 tem certeza de que deseja parar de gravar e descartar sua mensagem de voz?</string>
++    <string name="DiscardVoiceMessageDescription">Tem certeza de que deseja parar de gravar e descartar sua mensagem de voz?</string>
+     <string name="DiscardVideoMessageTitle">Descartar Mensagem de V赤deo</string>
+-    <string name="DiscardVideoMessageDescription">Voc那 tem certeza de que deseja parar de gravar e descartar sua mensagem de v赤deo?</string>
++    <string name="DiscardVideoMessageDescription">Tem certeza de que deseja parar de gravar e descartar sua mensagem de v赤deo?</string>
+     <string name="DiscardVoiceMessageAction">Descartar</string>
+     <string name="AttachMediaRestricted">Os admins do grupo restringiram voc那 de enviar m赤dias aqui at谷 %1$s</string>
+     <string name="AttachInlineRestricted">Os admins do grupo restringiram voc那 de usar conte迆do inline aqui at谷 %1$s.</string>
+@@ -821,6 +859,7 @@
+     <string name="InstallGoogleMaps">Instalar Google Maps?</string>
+     <string name="ScamMessage">FRAUDE</string>
+     <string name="ViaBot">via</string>
++    <string name="MessageNotFound">A mensagem n?o existe.</string>
+     <!--notification-->
+     <string name="MessageLifetimeChanged">"%1$s alterou o timer de autodestrui??o para %2$s "</string>
+     <string name="MessageLifetimeChangedOutgoing">Voc那 alterou o timer de autodestrui??o para %1$s</string>
+@@ -956,6 +995,8 @@
+     <string name="UpdateContactsMessage">O Telegram detectou muitos contatos n?o sincronizados, voc那 gostaria de sincroniz芍-los agora? Escolha \'OK\' se voc那 est芍 usando seu pr車prio celular, cart?o SIM e conta do Google.</string>
+     <string name="SortedByName">Listado por Nome</string>
+     <string name="SortedByLastSeen">Listado por Visto por ?ltimo</string>
++    <string name="AddContactByPhone">Adicionar %1$s</string>
++    <string name="PhoneNumberSearch">N迆mero de telefone</string>
+     <!--group create view-->
+     <string name="SendMessageTo">Adicionar pessoas...</string>
+     <string name="SoftUserLimitAlert">Voc那 poder芍 adicionar mais usu芍rios ap車s finalizar a cria??o do grupo e convert那-lo em supergrupo.</string>
+@@ -972,12 +1013,12 @@
+     <string name="EmailCopied">Email copiado para a 芍rea de transfer那ncia</string>
+     <string name="InviteToGroupByLink">Convidar para o Grupo via Link</string>
+     <string name="InviteLink">Link de Convite</string>
+-    <string name="RevokeAlert">Voc那 tem certeza de que deseja desativar o link de convite? Se fizer isso, ningu谷m conseguir芍 us芍-lo.</string>
++    <string name="RevokeAlert">Tem certeza de que deseja desativar o link de convite? Se fizer isso, ningu谷m conseguir芍 us芍-lo.</string>
+     <string name="RevokeAlertNewLink">O link de convite anterior foi desativado. Um novo link foi gerado.</string>
+     <string name="RevokeButton">Desativar</string>
+     <string name="RevokeLink">Desativar Link</string>
+-    <string name="RevokeLinkAlert">Voc那 tem certeza de que deseja desativar o link **%1$s**?\n\nO grupo \"**%2$s**\" se tornar芍 privado.</string>
+-    <string name="RevokeLinkAlertChannel">Voc那 tem certeza de que deseja desativar o link **%1$s**?\n\nO canal \"**%2$s**\" se tornar芍 privado.</string>
++    <string name="RevokeLinkAlert">Tem certeza de que deseja desativar o link **%1$s**?\n\nO grupo \"**%2$s**\" se tornar芍 privado.</string>
++    <string name="RevokeLinkAlertChannel">Tem certeza de que deseja desativar o link **%1$s**?\n\nO canal \"**%2$s**\" se tornar芍 privado.</string>
+     <string name="CopyLink">Copiar Link</string>
+     <string name="ShareLink">Compartilhar Link</string>
+     <string name="LinkInfo">Qualquer pessoa que tenha o Telegram instalado poder芍 participar do seu grupo seguindo esse link.</string>
+@@ -1005,12 +1046,12 @@
+     <string name="ConvertGroupInfo2">**Em supergrupos:**\n\n? Novos membros podem ver todo o hist車rico do chat\n? Mensagens apagadas somem para todos os membros\n? Admins podem adicionar uma descri??o no grupo\n? O criador pode definir um link p迆blico para o grupo</string>
+     <string name="ConvertGroupInfo3">**Nota:** essa a??o n?o pode ser desfeita.</string>
+     <!--contact info view-->
+-    <string name="ShareContact">Compartilhar</string>
+-    <string name="AddContact">Adicionar</string>
++    <string name="ShareContact">Compartilhar contato</string>
++    <string name="AddContact">Adicionar contato</string>
+     <string name="AddContactTitle">Adicionar contato</string>
+     <string name="ContactNotRegistered">%1$s ainda n?o est芍 no Telegram. Gostaria de fazer um convite?</string>
+     <string name="Invite">Convidar</string>
+-    <string name="BlockContact">Bloquear</string>
++    <string name="BlockContact">Bloquear usu芍rio</string>
+     <string name="BlockUser">Bloquear usu芍rio</string>
+     <string name="UserBlocked">Usu芍rio bloqueado</string>
+     <string name="UserUnblocked">Usu芍rio desbloqueado</string>
+@@ -1024,7 +1065,8 @@
+     <string name="ContactJob">Trabalho</string>
+     <string name="ContactBirthday">Nascimento</string>
+     <string name="ContactJobTitle">Cargo</string>
+-    <string name="CreateNewContact">Criar Novo Contato</string>
++    <string name="CreateNewContact">Novo Contato</string>
++    <string name="NewContact">Novo Contato</string>
+     <string name="AddToExistingContact">Adicionar ao Contato Existente</string>
+     <string name="UserBio">Bio</string>
+     <string name="UserBioDetail">Adicione algumas palavras sobre voc那</string>
+@@ -1044,6 +1086,11 @@
+     <string name="EncryptionKeyLink">https://telegram.org/faq/br#chats-secretos</string>
+     <string name="NumberUnknown">Desconhecido</string>
+     <string name="PhoneHidden">Desconhecido</string>
++    <string name="MobileHidden">N迆mero oculto</string>
++    <string name="MobileHiddenExceptionInfo">O n迆mero de telefone ficar芍 vis赤vel assim que %1$s te adicionar como contato.</string>
++    <string name="MobileVisibleInfo">Quando voc那 tocar em **CONCLU?DO**, o seu n迆mero ficar芍 vis赤vel para %1$s.</string>
++    <string name="SharePhoneNumberWith">Compartilhar meu n迆mero com %1$s</string>
++    <string name="NowInContacts">%1$s agora est芍 em seus Contatos.</string>
+     <string name="Info">Info</string>
+     <string name="Phone">Telefone</string>
+     <string name="SharedContent">Conte迆do compartilhado</string>
+@@ -1136,7 +1183,7 @@
+     <string name="ThemeGraphite">Grafite</string>
+     <string name="ThemeArcticBlue">Azul ?rtico</string>
+     <string name="ThemeBlue">Azul</string>
+-    <string name="DeleteThemeAlert">Voc那 tem certeza de que deseja apagar este tema?</string>
++    <string name="DeleteThemeAlert">Tem certeza de que deseja apagar este tema?</string>
+     <string name="IncorrectTheme">Arquivo de tema incorreto</string>
+     <string name="EnterThemeName">Insira o nome do tema</string>
+     <string name="CloseEditor">FECHAR EDITOR</string>
+@@ -1154,7 +1201,7 @@
+     <string name="SelectColor">Selecionar cor</string>
+     <string name="ColorThemes">Tema de Cores</string>
+     <string name="ShowAllThemes">Mostrar Todos os Temas</string>
+-    <string name="CreateNewThemeMenu">Criar novo tema</string>
++    <string name="CreateNewThemeMenu">Criar tema</string>
+     <string name="CreateNewThemeHelp">Toque no 赤cone da paleta para visualizar a lista de elementos de cada tela - e edit芍-los.</string>
+     <string name="CreateNewThemeAlert">Voc那 pode criar seu pr車prio tema alterando as cores dentro do aplicativo.\n\nVoc那 sempre pode voltar para o tema padr?o do Telegram aqui.</string>
+     <!--settings view-->
+@@ -1214,6 +1261,9 @@
+     <string name="NotificationsTurnOff">Desativar</string>
+     <string name="BlockedUsers">Usu芍rios Bloqueados</string>
+     <string name="BlockedUsersInfo">Usu芍rios bloqueados n?o conseguem entrar em contato com voc那 e n?o veem o seu Visto por ?ltimo.</string>
++    <string name="BlockUserMultiTitle">Bloquear Usu芍rio</string>
++    <string name="BlockUserChatsTitle">CHATS</string>
++    <string name="BlockUserContactsTitle">CONTATOS</string>
+     <string name="LogOut">Sair</string>
+     <string name="NoSound">Sem som</string>
+     <string name="Default">Padr?o</string>
+@@ -1221,7 +1271,8 @@
+     <string name="OnlyIfSilent">"Somente no silencioso "</string>
+     <string name="BackgroundBlurred">Desfoque</string>
+     <string name="BackgroundMotion">Movimento</string>
+-    <string name="ChatBackground">Papel de Parede</string>
++    <string name="ChangeChatBackground">Alterar Papel de Parede</string>
++    <string name="ChatBackground">Alterar Papel de Parede</string>
+     <string name="ResetChatBackgrounds">Redefinir Pap谷is de Parede</string>
+     <string name="ResetChatBackgroundsInfo">Remove todos os pap谷is de parede enviados e restaura os pr谷-instalados.</string>
+     <string name="ResetChatBackgroundsAlertTitle">Redefinir pap谷is de parede</string>
+@@ -1379,7 +1430,8 @@
+     <string name="RepeatNotifications">Repetir Notifica??es</string>
+     <string name="PhoneNumberHelp">Voc那 pode alterar seu n迆mero do Telegram aqui. Sua conta e todos os seus dados 〞 mensagens, m赤dia, contatos, etc. ser?o movidos para o novo n迆mero.\n\n**Importante:** todos os seus contatos do Telegram ter?o seu **novo n迆mero** adicionado 角s listas de contatos deles, desde que tenham seu n迆mero antigo e voc那 n?o os tenha bloqueado no Telegram.</string>
+     <string name="PhoneNumberAlert">Todos os seus contatos do Telegram ter?o seu novo n迆mero adicionado 角s listas de contatos deles, desde que tenham seu n迆mero antigo e voc那 n?o os tenha bloqueado no Telegram.</string>
+-    <string name="PhoneNumberChange">ALTERAR N?MERO</string>
++    <string name="PhoneNumberChange2">Alterar N迆mero</string>
++    <string name="PhoneNumberChangeTitle">Alterar n迆mero</string>
+     <string name="ChangePhoneNewNumber">Novo n迆mero</string>
+     <string name="ChangePhoneHelp">Vamos enviar um SMS com um c車digo de confirma??o para o seu novo n迆mero.</string>
+     <string name="ChangePhoneNumberOccupied">O n迆mero %1$s j芍 possui uma conta do Telegram. Por favor, exclua esta conta antes de migrar para o novo n迆mero.</string>
+@@ -1395,6 +1447,9 @@
+     <string name="SmartNotifications">Notifica??es Inteligentes</string>
+     <string name="NotificationsExceptions">Exce??es</string>
+     <string name="NotificationsAddAnException">Adicionar Exce??o</string>
++    <string name="NotificationsDeleteAllException">Apagar Todas as Exce??es</string>
++    <string name="NotificationsDeleteAllExceptionTitle">Apagar todas as exce??es</string>
++    <string name="NotificationsDeleteAllExceptionAlert">Tem certeza de que deseja apagar todas as exce??es?</string>
+     <string name="NotificationsNewException">Nova Exce??o</string>
+     <string name="NoExceptions">Esta se??o ir芍 listar todos os chats que possuem configura??es n?o-padr?o.\n\nVoc那 pode personalizar notifica??es para um chat abrindo o perfil do mesmo e escolhendo \'Notifica??es\'.</string>
+     <string name="EmptyExceptions">Nenhum</string>
+@@ -1503,6 +1558,11 @@
+     <string name="SettingsNoResults">Nenhum resultado encontrado</string>
+     <string name="SettingsNoRecent">Nenhuma busca recente</string>
+     <string name="SettingsSearchFaq">FAQ</string>
++    <string name="DistanceUnits">Unidades de Dist?ncia</string>
++    <string name="DistanceUnitsTitle">Unidades de dist?ncia</string>
++    <string name="DistanceUnitsAutomatic">Autom芍tico</string>
++    <string name="DistanceUnitsKilometers">Quil?metros</string>
++    <string name="DistanceUnitsMiles">Milhas</string>
+     <!--cache view-->
+     <string name="LocalDatabase">Banco de Dados Local</string>
+     <string name="LocalDatabaseClear">Limpar todos os textos em cache?</string>
+@@ -1711,7 +1771,7 @@
+     <string name="PassportLanguage_VI">Vietnamita</string>
+     <!--sessions view-->
+     <string name="SessionsTitle">Sess?es Ativas</string>
+-    <string name="CurrentSession">Sess?o atual</string>
++    <string name="CurrentSession">Sess?o Atual</string>
+     <string name="NoOtherSessions">Nenhuma outra sess?o ativa</string>
+     <string name="NoOtherSessionsInfo">Voc那 pode entrar no Telegram em outros celulares, tablets e computadores usando o mesmo n迆mero de telefone. Todos os seus dados ser?o sincronizados.</string>
+     <string name="OtherSessions">Sess?es Ativas</string>
+@@ -1719,11 +1779,11 @@
+     <string name="TerminateSessionInfo">Toque em uma sess?o para termin芍-la.</string>
+     <string name="TerminateSessionQuestion">Encerrar essa sess?o?</string>
+     <string name="ClearOtherSessionsHelp">Sai de todos os dispositivos, exceto este.</string>
+-    <string name="AreYouSureSessions">Voc那 tem certeza de que deseja terminar todas as outras sess?es?</string>
++    <string name="AreYouSureSessions">Tem certeza de que deseja terminar todas as outras sess?es?</string>
+     <string name="TerminateAllSessions">Terminar todas as outras sess?es</string>
+     <string name="UnofficialApp">aplicativo n?o oficial</string>
+     <string name="NoOtherWebSessions">Nenhum login ativo.</string>
+-    <string name="NoOtherWebSessionsInfo">Voc那 pode entrar em sites que s?o compat赤veis com o login com o Telegram.</string>
++    <string name="NoOtherWebSessionsInfo">Em sites compat赤veis, voc那 pode fazer o login com o Telegram.</string>
+     <string name="OtherWebSessions">Sites conectados</string>
+     <string name="WebSessionsTitle">Entrou com o Telegram</string>
+     <string name="TerminateWebSessionInfo">Toque para desconectar de sua conta do Telegram.</string>
+@@ -1731,7 +1791,7 @@
+     <string name="TerminateWebSessionStop">Bloquear %1$s</string>
+     <string name="TerminateAllWebSessions">Desconectar Todos os Sites</string>
+     <string name="AreYouSureWebSessions">Tem certeza de que deseja desconectar de todos os sites em que voc那 logou usando o Telegram?</string>
+-    <string name="ClearOtherWebSessionsHelp">Voc那 pode entrar em sites que s?o compat赤veis com o login com o Telegram.</string>
++    <string name="ClearOtherWebSessionsHelp">Em sites compat赤veis, voc那 pode fazer o login com o Telegram.</string>
+     <string name="LoginAttempts">Tentativas incompletas de login</string>
+     <string name="LoginAttemptsInfo">Os dispositivos acima n?o possuem acesso 角s suas mensagens. O c車digo foi inserido corretamente, mas a senha n?o.</string>
+     <!--passcode view-->
+@@ -1794,19 +1854,22 @@
+     <string name="Map">Mapa</string>
+     <string name="Satellite">Sat谷lite</string>
+     <string name="Hybrid">H赤brido</string>
+-    <string name="MetersAway">m de dist?ncia</string>
+-    <string name="KMetersAway">km de dist?ncia</string>
++    <string name="MetersAway2">%1$s metros de dist?ncia</string>
++    <string name="KMetersAway2">%1$s km de dist?ncia</string>
++    <string name="FootsAway">%1$s p谷s de dist?ncia</string>
++    <string name="MilesAway">%1$s milhas de dist?ncia</string>
+     <string name="SendLocation">Enviar minha localiza??o atual</string>
+-    <string name="SendLiveLocation">Compartilhar Localiza??o em Tempo Real...</string>
++    <string name="SendLiveLocation">Compartilhar em Tempo Real...</string>
+     <string name="StopLiveLocation">Parar Compartilhamento</string>
+     <string name="StopLiveLocationAlertToUser">Tem certeza de que deseja parar de compartilhar sua localiza??o com %1$s?</string>
+     <string name="StopLiveLocationAlertToGroup">Tem certeza de que deseja parar de compartilhar sua localiza??o com %1$s?</string>
+     <string name="StopLiveLocationAlertAll">Tem certeza de que deseja parar de compartilhar sua localiza??o em tempo real?</string>
+-    <string name="SendLiveLocationInfo">Atualizada em tempo real enquanto voc那 se move</string>
++    <string name="SendLiveLocationInfo">Atualizada enquanto voc那 se move</string>
+     <string name="SendSelectedLocation">Enviar localiza??o selecionada</string>
+     <string name="ShareLocation">Localiza??o</string>
+     <string name="SharedPlace">Local</string>
+     <string name="AccurateTo">Precis?o de %1$s</string>
++    <string name="AwayTo">%1$s de dist?ncia</string>
+     <string name="NearbyPlaces">Ou escolha um lugar</string>
+     <string name="ShowNearbyPlaces">Deslize para ver lugares pr車ximos</string>
+     <string name="LiveLocations">Localiza??es em Tempo Real</string>
+@@ -1823,6 +1886,23 @@
+     <string name="LiveLocationAlertPrivate">Escolha por quanto tempo %1$s ver芍 sua localiza??o precisa.</string>
+     <string name="LiveLocationAlertGroup">Escolha por quanto tempo as pessoas nesse chat ir?o ver a sua localiza??o em tempo real.</string>
+     <string name="GpsDisabledAlert">Seu GPS parece estar desativado, ative-o para acessar as fun??es de localiza??o.</string>
++    <string name="PeopleNearby">Pessoas Pr車ximas</string>
++    <string name="AddPeopleNearby">Adicionar Pessoas Pr車ximas</string>
++    <string name="PeopleNearbyAccessInfo">Adicione rapidamente pessoas pr車ximas que estejam visualizando esta se??o e descubra grupos locais.\n\nPor favor, ative o acesso 角 localiza??o para ativar esse recurso.</string>
++    <string name="PeopleNearbyHeader">Pessoas pr車ximas</string>
++    <string name="PeopleNearbyAllowAccess">Permitir Acesso</string>
++    <string name="PeopleNearbyGpsInfo">Adicione rapidamente pessoas pr車ximas que estejam visualizando esta se??o e descubra grupos locais.\n\nPor favor, ative os servi?os de localiza??o para ativar este recurso.</string>
++    <string name="PeopleNearbyGps">Ativar</string>
++    <string name="ChatsNearbyHeader">Grupos pr車ximos</string>
++    <string name="PeopleNearbyInfo">Pe?a ao seu amigo por perto para abrir esta p芍gina para trocar n迆meros de telefone.</string>
++    <string name="PeopleNearbyEmpty">Buscando por pessoas nas proximidades...</string>
++    <string name="NearbyCreateGroup">Criar um Grupo Local</string>
++    <string name="NearbyStartGroup">Iniciar Grupo</string>
++    <string name="NearbyCreateGroupInfo">Qualquer pessoa pr車xima a este local (vizinhos, colegas de trabalho ou de classe, participantes do evento, visitantes de um local) ver芍 seu grupo na se??o Pessoas Pr車ximas.</string>
++    <string name="NearbyCreateGroupInfo2">Se voc那 iniciar um grupo n?o relacionado com este local, poder芍 ficar restrito e n?o poder芍 criar novos grupos baseados em localiza??o.</string>
++    <string name="ChatSetLocation">Definir Localiza??o</string>
++    <string name="ChatSetThisLocation">Definir esta localiza??o</string>
++    <string name="ChatSetLocationInfo">As pessoas poder?o encontrar seu grupo na se??o \"Pessoas Pr車ximas\".</string>
+     <!--photo gallery view-->
+     <string name="ShowAllMedia">Mostrar todas as m赤dias</string>
+     <string name="ShowAllFiles">Mostrar todos os arquivos</string>
+@@ -1869,8 +1949,8 @@
+     <string name="BlurOff">Desativado</string>
+     <string name="BlurLinear">Linear</string>
+     <string name="BlurRadial">Radial</string>
+-    <string name="AreYouSureDeletePhoto">Voc那 tem certeza de que deseja apagar esta foto?</string>
+-    <string name="AreYouSureDeleteVideo">Voc那 tem certeza de que deseja apagar este v赤deo?</string>
++    <string name="AreYouSureDeletePhoto">Tem certeza de que deseja apagar esta foto?</string>
++    <string name="AreYouSureDeleteVideo">Tem certeza de que deseja apagar este v赤deo?</string>
+     <string name="AreYouSureDeleteGIF">Tem certeza de que deseja apagar esse GIF?</string>
+     <string name="DiscardChanges">Descartar mudan?as?</string>
+     <string name="ClearSearch">Limpar hist車rico de busca?</string>
+@@ -1899,6 +1979,7 @@
+     <string name="SetAdditionalPasswordInfo">"Voc那 pode configurar uma senha que ser芍 requisitada quando voc那 entrar em um novo aparelho, al谷m do c車digo que voc那 receber芍 por SMS. "</string>
+     <string name="YourPassword">Sua senha</string>
+     <string name="PleaseEnterCurrentPassword">Insira sua senha</string>
++    <string name="PleaseEnterCurrentPasswordTransfer">Por favor, digite sua senha para finalizar a transfer那ncia.</string>
+     <string name="PleaseEnterFirstPassword">Insira uma senha</string>
+     <string name="PleaseEnterPassword">Digite a sua nova senha</string>
+     <string name="PleaseReEnterPassword">Digite a sua senha novamente</string>
+@@ -1911,7 +1992,7 @@
+     <string name="YourEmailSkipWarning">Aten??o</string>
+     <string name="YourEmailSkipWarningText">? s谷rio!\n\nSe voc那 esquecer a sua senha, voc那 perder芍 o acesso 角 sua conta do Telegram. N?o h芍 nenhuma forma de recuper芍-la.</string>
+     <string name="YourEmailAlmostThere">Quase l芍!</string>
+-    <string name="YourEmailAlmostThereText">Por favor, verifique o seu email (n?o esque?a da pasta spam) para completar a configura??o da verifica??o em duas etapas.</string>
++    <string name="YourEmailAlmostThereText">Por favor, verifique o seu email para completar a configura??o da Verifica??o em Duas Etapas (n?o esque?a da pasta spam).</string>
+     <string name="YourPasswordSuccess">Tudo certo!</string>
+     <string name="YourPasswordSuccessText">A sua senha para a verifica??o em duas etapas est芍 ativada.</string>
+     <string name="YourEmailSuccessText">Seu email de recupera??o para a Verifica??o em Duas Etapas est芍 ativo.</string>
+@@ -1919,7 +2000,7 @@
+     <string name="TurnPasswordOff">Desativar senha</string>
+     <string name="SetRecoveryEmail">Definir Email de Recupera??o</string>
+     <string name="ChangeRecoveryEmail">Alterar email de recupera??o</string>
+-    <string name="TurnPasswordOffQuestion">Voc那 tem certeza de que deseja desativar a sua senha?</string>
++    <string name="TurnPasswordOffQuestion">Tem certeza de que deseja desativar a sua senha?</string>
+     <string name="CancelPasswordQuestion">Deseja mesmo desistir de configurar a verifica??o em duas etapas?</string>
+     <string name="CancelEmailQuestion">Deseja mesmo desistir de configurar o email de recupera??o?</string>
+     <string name="TurnPasswordOffPassport">Aten??o! Todos os dados salvos no seu Telegram Passport ser?o perdidos!</string>
+@@ -1951,7 +2032,7 @@
+     <string name="PasswordCode">C車digo</string>
+     <string name="PasswordReset">Senha desativada</string>
+     <string name="ResendCode">Reenviar c車digo</string>
+-    <string name="ResendCodeInfo">O c車digo de verfica??o foi enviado para seu email.</string>
++    <string name="ResendCodeInfo">O c車digo de verifica??o foi enviado para o seu email.</string>
+     <string name="EnabledPasswordText">Voc那 ativou a Verifica??o em Duas Etapas.\nToda vez que voc那 entrar na sua conta em um novo aparelho, ser芍 preciso digitar a senha que voc那 configurar aqui.</string>
+     <!--data settings-->
+     <string name="DataSettings">Dados e Armazenamento</string>
+@@ -1979,22 +2060,22 @@
+     <!--privacy settings-->
+     <string name="PrivacySettings">Privacidade e Seguran?a</string>
+     <string name="PrivacyTitle">Privacidade</string>
+-    <string name="PrivacyLastSeen">?ltimo Acesso</string>
++    <string name="PrivacyLastSeen">?ltimo Acesso e Online</string>
+     <string name="PrivacyProfilePhoto">Foto de Perfil</string>
+     <string name="PrivacyProfilePhotoTitle">Quem pode ver minha foto de perfil?</string>
+     <string name="PrivacyProfilePhotoInfo">Voc那 pode restringir quem pode ver sua foto de perfil com precis?o granular.</string>
+-    <string name="PrivacyProfilePhotoInfo2">Essas configura??es substituir?o os valores acima.</string>
++    <string name="PrivacyProfilePhotoInfo2">Voc那 pode adicionar usu芍rios ou grupos inteiros como exce??es que substituir?o as configura??es acima.</string>
+     <string name="PrivacyPhone">N迆mero de Telefone</string>
+     <string name="PrivacyPhoneTitle">Quem pode ver meu n迆mero?</string>
+     <string name="PrivacyPhoneInfo">Usu芍rios que j芍 tiverem o seu n迆mero salvo nos contatos tamb谷m ir?o ver no Telegram.</string>
+-    <string name="PrivacyPhoneInfo2">Voc那 pode adicionar um usu芍rio ou um grupo inteiro como uma exce??o que substituir芍 as configura??es acima.</string>
++    <string name="PrivacyPhoneInfo2">Voc那 pode adicionar usu芍rios ou grupos inteiros como exce??es que substituir?o as configura??es acima.</string>
+     <string name="PrivacyForwards">Mensagens Encaminhadas</string>
+     <string name="PrivacyForwardsEverybody">Link para sua conta</string>
+     <string name="PrivacyForwardsContacts">? um link se permitido pelas configura??es abaixo</string>
+     <string name="PrivacyForwardsNobody">N?o 谷 um link para sua conta</string>
+     <string name="PrivacyForwardsTitle">Quem pode adicionar um link para minha conta ao encaminhar minhas mensagens?</string>
+     <string name="PrivacyForwardsInfo">Quando encaminhadas para outros chats, as mensagens enviadas n?o ter?o um link para sua conta.</string>
+-    <string name="PrivacyForwardsInfo2">Essas configura??es substituir?o os valores acima.</string>
++    <string name="PrivacyForwardsInfo2">Voc那 pode adicionar usu芍rios ou grupos inteiros como exce??es que substituir?o as configura??es acima.</string>
+     <string name="PrivacyForwardsMessageLine">Reinhardt, precisamos encontrar m迆sicas novas.</string>
+     <string name="PrivacyP2PHeader">Ponta a Ponta</string>
+     <string name="PrivacyP2P">Ponta a Ponta em Chamadas</string>
+@@ -2029,11 +2110,12 @@
+     <string name="DeleteAccountHelp">Se voc那 n?o acessar sua conta ao menos uma vez nesse per赤odo, sua conta ser芍 apagada junto com todas as suas mensagens e contatos.</string>
+     <string name="LastSeenTitle">Quem pode ver o seu ?ltimo Acesso?</string>
+     <string name="AddExceptions">Definir exce??es</string>
+-    <string name="CustomHelp">Importante: voc那 n?o poder芍 ver quando foi o ?ltimo Acesso das pessoas com quem voc那 n?o compartilha o seu ?ltimo Acesso. Em vez disso, voc那 ver芍 o 迆ltimo acesso aproximado (recentemente; h芍 uma semana; h芍 um m那s).</string>
++    <string name="AddToExceptions">Adicionar 角s exce??es</string>
++    <string name="CustomHelp">Voc那 n?o poder芍 ver o ?ltimo Acesso e status online das pessoas com quem voc那 n?o compartilha o seu. Em vez disso, voc那 ver芍 o 迆ltimo acesso aproximado (recentemente; h芍 uma semana; h芍 um m那s).</string>
+     <string name="PrivacySettingsChangedAlert">Voc那 alterou algumas configura??es de privacidade. Aplicar mudan?as?</string>
+     <string name="AlwaysShareWith">Sempre Mostrar Para</string>
+     <string name="NeverShareWith">Nunca Mostrar Para</string>
+-    <string name="CustomShareSettingsHelp">Essas configura??es ir?o sobrepor os valores acima.</string>
++    <string name="CustomShareSettingsHelp">Voc那 pode adicionar usu芍rios ou grupos inteiros como exce??es que substituir?o as configura??es acima.</string>
+     <string name="AlwaysShareWithTitle">Sempre Mostrar</string>
+     <string name="NeverShareWithTitle">Nunca Mostrar</string>
+     <string name="EmpryUsersPlaceholder">Adicionar Usu芍rios</string>
+@@ -2056,6 +2138,7 @@
+     <string name="SuggestContactsAlert">Isso apagar芍 todos os dados sobre as pessoas com quem voc那 conversa frequentemente, e tamb谷m os bots inline que voc那 provavelmente usaria.</string>
+     <string name="PrivacyAddAnException">Adicionar Usu芍rios ou Grupos</string>
+     <string name="PrivacyExceptions">Exce??es</string>
++    <string name="BlockedEmpty">Ningu谷m</string>
+     <!--edit video view-->
+     <string name="SendingVideo">Enviando v赤deo...</string>
+     <string name="SendingGif">Enviando GIF...</string>
+@@ -2186,13 +2269,13 @@
+     <string name="InvalidCode">C車digo inv芍lido</string>
+     <string name="PhoneNumberFlood">Desculpe, voc那 apagou e recriou sua conta muitas vezes recentemente. Aguarde alguns dias antes de tentar novamente.</string>
+     <string name="InvalidFirstName">Nome inv芍lido</string>
+-    <string name="InvalidLastName">Sobrenome inv芍lido</string>
++    <string name="InvalidLastName">Desculpe, este sobrenome n?o pode ser usado</string>
+     <string name="Loading">Carregando...</string>
+     <string name="NoPlayerInstalled">Voc那 n?o possui um reprodutor de v赤deo, instale um para continuar</string>
+-    <string name="NoMailInstalled">Por favor, envie um email para sms@stel.com e conte-nos sobre seu problema.</string>
++    <string name="NoMailInstalled">Por favor, envie um email descrevendo o problema para sms@stel.com.</string>
+     <string name="NoHandleAppInstalled">Voc那 n?o possui um aplicativo que suporte o tipo de arquivo \'%1$s\', por favor instale um para continuar</string>
+     <string name="InviteUser">Esse usu芍rio ainda n?o tem o Telegram, deseja enviar um convite?</string>
+-    <string name="AreYouSure">Voc那 tem certeza?</string>
++    <string name="AreYouSure">Tem certeza?</string>
+     <string name="AddToTheGroupTitle">Adicionar %1$s ao chat %2$s?</string>
+     <string name="AddToTheGroupForwardCount">N迆mero de mensagens antigas para encaminhar:</string>
+     <string name="AddToTheGroup">Adicionar %1$s ao grupo?</string>
+@@ -2205,16 +2288,16 @@
+     <string name="SendMessagesTo">Enviar mensagens para %1$s?</string>
+     <string name="SendGameTo">Compartilhar jogo com %1$s?</string>
+     <string name="SendContactTo">Enviar contato para %1$s?</string>
+-    <string name="AreYouSureLogout">Voc那 tem certeza de que desejar sair?\n\nNote que voc那 pode usar o Telegram em todos os seus dispositivos ao mesmo tempo.\n\nLembre-se, sair apaga todos os seus Chats Secretos.</string>
++    <string name="AreYouSureLogout">Tem certeza de que desejar sair?\n\nNote que voc那 pode usar o Telegram em todos os seus dispositivos ao mesmo tempo.\n\nLembre-se, sair apaga todos os seus Chats Secretos.</string>
+     <string name="DeleteFewChatsTitle">Apagar %1$s</string>
+     <string name="ClearFewChatsTitle">Limpar %1$s</string>
+     <string name="ClearCacheFewChatsTitle">Limpar cache para %1$s</string>
+     <string name="AreYouSureDeleteFewChats">Tem certeza de que deseja apagar os chats selecionados?</string>
+     <string name="AreYouSureClearHistoryFewChats">Tem certeza de que deseja limpar o hist車rico dos chats selecionados?</string>
+     <string name="AreYouSureClearHistoryCacheFewChats">Apagar todo os textos e m赤dias armazenadas em cache dos chats selecionados?</string>
+-    <string name="AreYouSureDeleteAndExit">Voc那 tem certeza de que deseja apagar e sair do grupo?</string>
++    <string name="AreYouSureDeleteAndExit">Tem certeza de que deseja apagar e sair do grupo?</string>
+     <string name="AreYouSureDeleteAndExitName">Tem certeza de que deseja apagar e sair do grupo **%1$s**?</string>
+-    <string name="AreYouSureDeleteThisChat">Voc那 tem certeza de que deseja apagar esse chat?</string>
++    <string name="AreYouSureDeleteThisChat">Tem certeza de que deseja apagar esse chat?</string>
+     <string name="AreYouSureDeleteThisChatWithUser">Tem certeza de que deseja apagar o chat com **%1$s**?</string>
+     <string name="AreYouSureDeleteThisChatSavedMessages">Tem certeza que deseja apagar as **Mensagens Salvas**?</string>
+     <string name="AreYouSureDeleteThisChatWithSecretUser">Tem certeza de que deseja apagar o hist車rico do chat secreto com **%1$s**?</string>
+@@ -2230,16 +2313,16 @@
+     <string name="AreYouSureShareMyContactInfoUser">Tem certeza de que deseja compartilhar seu n迆mero de telefone %1$s com **%2$s**?</string>
+     <string name="AreYouSureShareMyContactInfo">Tem certeza de que deseja compartilhar seu n迆mero de telefone?</string>
+     <string name="AreYouSureBlockContact2">Deseja mesmo bloquear **%1$s**?</string>
+-    <string name="AreYouSureUnblockContact">Voc那 tem certeza de que deseja desbloquear este contato?</string>
+-    <string name="AreYouSureDeleteContact">Voc那 tem certeza de que deseja apagar este contato?</string>
++    <string name="AreYouSureUnblockContact">Tem certeza de que deseja desbloquear este contato?</string>
++    <string name="AreYouSureDeleteContact">Tem certeza de que deseja apagar este contato?</string>
+     <string name="AreYouSureSecretChatTitle">Chat secreto</string>
+-    <string name="AreYouSureSecretChat">Voc那 tem certeza de que deseja iniciar um chat secreto?</string>
+-    <string name="AreYouSureRegistration">Voc那 tem certeza de que deseja cancelar o registro?</string>
+-    <string name="StopVerification">Deseja interromper o processo de verifica??o do n迆mero de telefone?</string>
++    <string name="AreYouSureSecretChat">Tem certeza de que deseja iniciar um chat secreto?</string>
++    <string name="AreYouSureRegistration">Tem certeza de que deseja cancelar o registro?</string>
++    <string name="StopVerification">Deseja interromper o processo de verifica??o?</string>
+     <string name="AreYouSureClearHistoryWithUser">Tem certeza de que deseja limpar o hist車rico do chat com **%1$s**?</string>
+     <string name="AreYouSureClearHistoryWithSecretUser">Tem certeza de que deseja limpar o hist車rico do chat secreto com **%1$s**?</string>
+     <string name="AreYouSureClearHistoryWithChat">Tem certeza de que deseja limpar o hist車rico do chat em **%1$s**?</string>
+-    <string name="AreYouSureClearHistory">Voc那 tem certeza de que deseja limpar o hist車rico?</string>
++    <string name="AreYouSureClearHistory">Tem certeza de que deseja apagar todas as mensagens neste chat?</string>
+     <string name="AreYouSureClearHistorySavedMessages">Tem certeza que deseja limpar as **Mensagens Salvas**?</string>
+     <string name="AreYouSureClearHistoryChannel">Apagar todos os textos e m赤dias em cache desse canal?</string>
+     <string name="AreYouSureClearHistoryGroup">Apagar todo o texto e m赤dia em cache desse grupo?</string>
+@@ -2287,13 +2370,13 @@
+     <string name="TosDeclineDeleteAccount">Aten??o, isso apagar芍 irreversivelmente sua conta do Telegram, juntamente com todos os dados armazenados na nuvem do Telegram.\n\nImportante: em vez de perder tudo, voc那 pode Cancelar agora e exportar seus dados antes de apagar a conta. Para fazer isso, abra o Telegram Desktop atualizado e v芍 em Configura??es &gt; Exportar Dados do Telegram.</string>
+     <!--permissions-->
+     <string name="PermissionContacts">Para que voc那 se conecte aos seus amigos em todos os dispositivos, seus contatos ser?o sincronizados continuamente com os servidores fortemente criptografados do Telegram.</string>
+-    <string name="PermissionStorage">Telegram precisa acessar seu armazenamento para que voc那 possa enviar e salvar fotos, v赤deos, m迆sicas e outras m赤dias.</string>
++    <string name="PermissionStorage">O Telegram precisa de acesso ao armazenamento para que voc那 possa enviar e salvar fotos, v赤deos, m迆sicas e outras m赤dias.</string>
+     <string name="PermissionNoAudio">Telegram precisa acessar seu microfone para que voc那 possa enviar mensagens de voz.</string>
+     <string name="PermissionNoAudioVideo">Telegram precisa acessar seu microfone para que voc那 possa gravar v赤deos.</string>
+-    <string name="PermissionNoCamera">Telegram precisa acessar sua c?mera para que voc那 possa capturar fotos e v赤deos.</string>
++    <string name="PermissionNoCamera">O Telegram precisa de acesso 角 c?mera para que voc那 possa tirar fotos e v赤deos. Por favor, ative a permiss?o nas Configura??es.</string>
+     <string name="PermissionNoLocation">Telegram precisa acessar sua localiza??o para que voc那 possa compartilhar com seus amigos.</string>
+     <string name="PermissionNoLocationPosition">O Telegram precisa acessar sua localiza??o</string>
+-    <string name="PermissionDrawAboveOtherApps">O Telegram precisa de acesso para aparecer sobre outros apps a fim de reproduzir v赤deos no modo PiP.</string>
++    <string name="PermissionDrawAboveOtherApps">Para reproduzir v赤deos no modo PiP, o Telegram precisa de acesso para aparecer sobre outros apps.</string>
+     <string name="PermissionOpenSettings">CONFIGURA??ES</string>
+     <string name="PermissionXiaomiLockscreen">Por favor, permita que o Telegram seja mostrado na tela de bloqueio para que as chamadas possam funcionar corretamente.</string>
+     <!--Intro view-->
+@@ -2363,7 +2446,7 @@
+     <string name="CallBack">Ligar de Volta</string>
+     <string name="CallAgain">Ligar Novamente</string>
+     <string name="DefaultRingtone">Padr?o</string>
+-    <string name="ConfirmDeleteCallLog">Voc那 tem certeza de que deseja apagar essa entrada do registro de chamadas?</string>
++    <string name="ConfirmDeleteCallLog">Tem certeza de que deseja apagar essa entrada do registro de chamadas?</string>
+     <string name="CallViaTelegram">Chamada do Telegram</string>
+     <string name="VoipAudioRoutingEarpiece">Auricular</string>
+     <string name="VoipAudioRoutingSpeaker">Alto-falante</string>

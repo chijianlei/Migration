@@ -1,0 +1,20 @@
+testdiff --git a/TMessagesProj/jni/tgnet/Datacenter.h b/TMessagesProj/jni/tgnet/Datacenter.h
+index a5aa578..403552a 100644
+--- a/TMessagesProj/jni/tgnet/Datacenter.h
++++ b/TMessagesProj/jni/tgnet/Datacenter.h
+@@ -12,7 +12,6 @@
+ #include <stdint.h>
+ #include <vector>
+ #include <map>
+-#include <bits/unique_ptr.h>
+ #include "Defines.h"
+ 
+ class TL_future_salt;
+@@ -54,6 +53,7 @@
+     bool isHandshaking(HandshakeType type);
+     bool hasAuthKey(ConnectionType connectionTyoe, int32_t allowPendingKey);
+     bool hasPermanentAuthKey();
++    int64_t getPermanentAuthKeyId();
+     bool isExportingAuthorization();
+     bool hasMediaAddress();
+     void resetInitVersion();

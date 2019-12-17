@@ -1,0 +1,19 @@
+testdiff --git a/TMessagesProj/jni/rlottie/src/vector/config.h b/TMessagesProj/jni/rlottie/src/vector/config.h
+new file mode 100755
+index 0000000..116e029
+--- /dev/null
++++ b/TMessagesProj/jni/rlottie/src/vector/config.h
+@@ -0,0 +1,13 @@
++#ifndef CONFIG_H
++#define CONFIG_H
++
++//enable logging
++//#define LOTTIE_LOGGING_SUPPORT
++
++//enable static building of image loader
++//#define LOTTIE_STATIC_IMAGE_LOADER
++
++//enable lottie model caching
++//#define LOTTIE_CACHE_SUPPORT
++
++#endif  // CONFIG_H

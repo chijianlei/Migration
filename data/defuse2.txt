@@ -1,0 +1,15 @@
+Bitmap var = BitmapFactory . decodeFile ( FileLoader . getPathToAttach ( var , true ) , true . toString , var )	File var = FileLoader . getPathToAttach ( var , true )
+Bitmap var = BitmapFactory . decodeFile ( FileLoader . getPathToAttach ( var , true ) , true . toString , var )	File var = FileLoader . getPathToAttach ( var , true )
+onCloseAnimationEnd ( false )	onAnimationEndCheck ( false )
+onOpenAnimationEnd ( false )	onAnimationEndCheck ( false )
+onCloseAnimationEnd ( var )	onCloseAnimationEnd
+onOpenAnimationEnd ( var )	onOpenAnimationEnd
+onAnimationEndCheck ( true , false )	onAnimationEndCheck ( true )
+onAnimationEndCheck ( false , true )	onAnimationEndCheck ( false )
+onAnimationEndCheck ( false , true )	onAnimationEndCheck ( false )
+onAnimationEndCheck ( false , true )	onAnimationEndCheck ( false )
+onCloseAnimationEnd ( false )	onAnimationEndCheck ( false )
+onOpenAnimationEnd ( false )	onAnimationEndCheck ( false )
+if ( var == null || var . length ( ) == 0 )	if ( TextUtils . isEmpty ( var ) || var != null && var != null && var . equals ( var ) )
+if ( var != null && var != null && var . equals ( var ) )	if ( TextUtils . isEmpty ( var ) || var != null && var != null && var . equals ( var ) )
+if ( var != null )	if ( var != null && ! TextUtils . isEmpty ( var . about ) )
