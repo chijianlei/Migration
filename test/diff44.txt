@@ -1,80 +1,43 @@
-testdiff --git a/TMessagesProj/jni/rlottie/src/lottie/rapidjson/error/en.h b/TMessagesProj/jni/rlottie/src/lottie/rapidjson/error/en.h
-new file mode 100755
-index 0000000..2db838b
---- /dev/null
-+++ b/TMessagesProj/jni/rlottie/src/lottie/rapidjson/error/en.h
-@@ -0,0 +1,74 @@
-+// Tencent is pleased to support the open source community by making RapidJSON available.
-+// 
-+// Copyright (C) 2015 THL A29 Limited, a Tencent company, and Milo Yip. All rights reserved.
-+//
-+// Licensed under the MIT License (the "License"); you may not use this file except
-+// in compliance with the License. You may obtain a copy of the License at
-+//
-+// http://opensource.org/licenses/MIT
-+//
-+// Unless required by applicable law or agreed to in writing, software distributed 
-+// under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR 
-+// CONDITIONS OF ANY KIND, either express or implied. See the License for the 
-+// specific language governing permissions and limitations under the License.
+testdiff --git a/src/scratchpad/src/org/apache/poi/hwpf/model/types/FibRgLw95AbstractType.java b/src/scratchpad/src/org/apache/poi/hwpf/model/types/FibRgLw95AbstractType.java
+index d1a03a6..45b9764 100644
+--- a/src/scratchpad/src/org/apache/poi/hwpf/model/types/FibRgLw95AbstractType.java
++++ b/src/scratchpad/src/org/apache/poi/hwpf/model/types/FibRgLw95AbstractType.java
+@@ -18,6 +18,8 @@
+ 
+ package org.apache.poi.hwpf.model.types;
+ 
++import java.util.Objects;
 +
-+#ifndef RAPIDJSON_ERROR_EN_H_
-+#define RAPIDJSON_ERROR_EN_H_
-+
-+#include "error.h"
-+
-+#ifdef __clang__
-+RAPIDJSON_DIAG_PUSH
-+RAPIDJSON_DIAG_OFF(switch-enum)
-+RAPIDJSON_DIAG_OFF(covered-switch-default)
-+#endif
-+
-+RAPIDJSON_NAMESPACE_BEGIN
-+
-+//! Maps error code of parsing into error message.
-+/*!
-+    \ingroup RAPIDJSON_ERRORS
-+    \param parseErrorCode Error code obtained in parsing.
-+    \return the error message.
-+    \note User can make a copy of this function for localization.
-+        Using switch-case is safer for future modification of error codes.
-+*/
-+inline const RAPIDJSON_ERROR_CHARTYPE* GetParseError_En(ParseErrorCode parseErrorCode) {
-+    switch (parseErrorCode) {
-+        case kParseErrorNone:                           return RAPIDJSON_ERROR_STRING("No error.");
-+
-+        case kParseErrorDocumentEmpty:                  return RAPIDJSON_ERROR_STRING("The document is empty.");
-+        case kParseErrorDocumentRootNotSingular:        return RAPIDJSON_ERROR_STRING("The document root must not be followed by other values.");
-+    
-+        case kParseErrorValueInvalid:                   return RAPIDJSON_ERROR_STRING("Invalid value.");
-+    
-+        case kParseErrorObjectMissName:                 return RAPIDJSON_ERROR_STRING("Missing a name for object member.");
-+        case kParseErrorObjectMissColon:                return RAPIDJSON_ERROR_STRING("Missing a colon after a name of object member.");
-+        case kParseErrorObjectMissCommaOrCurlyBracket:  return RAPIDJSON_ERROR_STRING("Missing a comma or '}' after an object member.");
-+    
-+        case kParseErrorArrayMissCommaOrSquareBracket:  return RAPIDJSON_ERROR_STRING("Missing a comma or ']' after an array element.");
-+
-+        case kParseErrorStringUnicodeEscapeInvalidHex:  return RAPIDJSON_ERROR_STRING("Incorrect hex digit after \\u escape in string.");
-+        case kParseErrorStringUnicodeSurrogateInvalid:  return RAPIDJSON_ERROR_STRING("The surrogate pair in string is invalid.");
-+        case kParseErrorStringEscapeInvalid:            return RAPIDJSON_ERROR_STRING("Invalid escape character in string.");
-+        case kParseErrorStringMissQuotationMark:        return RAPIDJSON_ERROR_STRING("Missing a closing quotation mark in string.");
-+        case kParseErrorStringInvalidEncoding:          return RAPIDJSON_ERROR_STRING("Invalid encoding in string.");
-+
-+        case kParseErrorNumberTooBig:                   return RAPIDJSON_ERROR_STRING("Number too big to be stored in double.");
-+        case kParseErrorNumberMissFraction:             return RAPIDJSON_ERROR_STRING("Miss fraction part in number.");
-+        case kParseErrorNumberMissExponent:             return RAPIDJSON_ERROR_STRING("Miss exponent in number.");
-+
-+        case kParseErrorTermination:                    return RAPIDJSON_ERROR_STRING("Terminate parsing due to Handler error.");
-+        case kParseErrorUnspecificSyntaxError:          return RAPIDJSON_ERROR_STRING("Unspecific syntax error.");
-+
-+        default:                                        return RAPIDJSON_ERROR_STRING("Unknown error.");
-+    }
-+}
-+
-+RAPIDJSON_NAMESPACE_END
-+
-+#ifdef __clang__
-+RAPIDJSON_DIAG_POP
-+#endif
-+
-+#endif // RAPIDJSON_ERROR_EN_H_
+ import org.apache.poi.util.Internal;
+ import org.apache.poi.util.LittleEndian;
+ 
+@@ -155,25 +157,10 @@
+     }
+ 
+     @Override
+-    public int hashCode()
+-    {
+-        final int prime = 31;
+-        int result = 1;
+-        result = prime * result + field_1_cbMac;
+-        result = prime * result + field_2_reserved1;
+-        result = prime * result + field_3_reserved2;
+-        result = prime * result + field_4_reserved3;
+-        result = prime * result + field_5_reserved4;
+-        result = prime * result + field_6_ccpText;
+-        result = prime * result + field_7_ccpFtn;
+-        result = prime * result + field_8_ccpHdd;
+-        result = prime * result + field_9_ccpMcr;
+-        result = prime * result + field_10_ccpAtn;
+-        result = prime * result + field_11_ccpEdn;
+-        result = prime * result + field_12_ccpTxbx;
+-        result = prime * result + field_13_ccpHdrTxbx;
+-        result = prime * result + field_14_reserved5;
+-        return result;
++    public int hashCode() {
++        return Objects.hash(field_1_cbMac, field_2_reserved1, field_3_reserved2, field_4_reserved3, field_5_reserved4,
++            field_6_ccpText, field_7_ccpFtn, field_8_ccpHdd, field_9_ccpMcr, field_10_ccpAtn, field_11_ccpEdn,
++            field_12_ccpTxbx, field_13_ccpHdrTxbx, field_14_reserved5);
+     }
+ 
+     public String toString()

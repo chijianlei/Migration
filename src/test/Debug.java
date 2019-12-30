@@ -25,8 +25,8 @@ import org.eclipse.jgit.treewalk.CanonicalTreeParser;
 public class Debug {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		String versionCommit="ff5735503e068a6f1cada09b977f633df7caf98d";//需要分析的Commit Hash		
-		String path="J:\\Telegram-Android";//对应项目在本地Repo的路径
+		String versionCommit="d72bd78c19dfb7b57395a66ae8d9269d59a87bd2";//需要分析的Commit Hash		
+		String path="D:\\workspace\\poi\\";//对应项目在本地Repo的路径
 		FileRepositoryBuilder builder = new FileRepositoryBuilder();
 		builder.setMustExist(true);
 		builder.addCeilingDirectory(new File(path));

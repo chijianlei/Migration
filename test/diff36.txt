@@ -1,42 +1,32 @@
-testdiff --git a/TMessagesProj/jni/rlottie/src/lottie/lottieparser.h b/TMessagesProj/jni/rlottie/src/lottie/lottieparser.h
-new file mode 100755
-index 0000000..1c2bf96
---- /dev/null
-+++ b/TMessagesProj/jni/rlottie/src/lottie/lottieparser.h
-@@ -0,0 +1,36 @@
-+/* 
-+ * Copyright (c) 2018 Samsung Electronics Co., Ltd. All rights reserved.
-+ * 
-+ * This library is free software; you can redistribute it and/or
-+ * modify it under the terms of the GNU Lesser General Public
-+ * License as published by the Free Software Foundation; either
-+ * version 2.1 of the License, or (at your option) any later version.
-+ * 
-+ * This library is distributed in the hope that it will be useful,
-+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
-+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-+ * Lesser General Public License for more details.
-+ * 
-+ * You should have received a copy of the GNU Lesser General Public
-+ * License along with this library; if not, write to the Free Software
-+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
-+ */
+testdiff --git a/src/scratchpad/src/org/apache/poi/hwpf/model/StdfBase.java b/src/scratchpad/src/org/apache/poi/hwpf/model/StdfBase.java
+index e4c18b7..395d129 100644
+--- a/src/scratchpad/src/org/apache/poi/hwpf/model/StdfBase.java
++++ b/src/scratchpad/src/org/apache/poi/hwpf/model/StdfBase.java
+@@ -16,6 +16,8 @@
+ ==================================================================== */
+ package org.apache.poi.hwpf.model;
+ 
++import java.util.Objects;
 +
-+#ifndef LOTTIEPARSER_H
-+#define LOTTIEPARSER_H
-+
-+#include "lottiemodel.h"
-+
-+class LottieParserImpl;
-+class LottieParser {
-+public:
-+    ~LottieParser();
-+    LottieParser(char* str, const char *dir_path);
-+    std::shared_ptr<LOTModel> model();
-+    bool hasParsingError();
-+private:
-+    LottieParserImpl   *d;
-+    bool parsingError = false;
-+};
-+
-+#endif // LOTTIEPARSER_H
+ import org.apache.poi.hwpf.model.types.StdfBaseAbstractType;
+ import org.apache.poi.util.Internal;
+ 
+@@ -59,16 +61,8 @@
+     }
+ 
+     @Override
+-    public int hashCode()
+-    {
+-        final int prime = 31;
+-        int result = 1;
+-        result = prime * result + field_1_info1;
+-        result = prime * result + field_2_info2;
+-        result = prime * result + field_3_info3;
+-        result = prime * result + field_4_bchUpe;
+-        result = prime * result + field_5_grfstd;
+-        return result;
++    public int hashCode() {
++        return Objects.hash(field_1_info1, field_2_info2, field_3_info3, field_4_bchUpe, field_5_grfstd);
+     }
+ 
+     public byte[] serialize()

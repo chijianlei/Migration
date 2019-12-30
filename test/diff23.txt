@@ -1,48 +1,43 @@
-testdiff --git a/TMessagesProj/jni/rlottie/licenses/COPYING.PIX b/TMessagesProj/jni/rlottie/licenses/COPYING.PIX
-new file mode 100755
-index 0000000..5826f3c
---- /dev/null
-+++ b/TMessagesProj/jni/rlottie/licenses/COPYING.PIX
-@@ -0,0 +1,42 @@
-+The following is the MIT license, agreed upon by most contributors.
-+Copyright holders of new code should use this license statement where
-+possible. They may also add themselves to the list below.
+testdiff --git a/src/scratchpad/src/org/apache/poi/hwpf/model/FibRgW97.java b/src/scratchpad/src/org/apache/poi/hwpf/model/FibRgW97.java
+index fcf3527..c3b0f6b 100644
+--- a/src/scratchpad/src/org/apache/poi/hwpf/model/FibRgW97.java
++++ b/src/scratchpad/src/org/apache/poi/hwpf/model/FibRgW97.java
+@@ -16,6 +16,8 @@
+ ==================================================================== */
+ package org.apache.poi.hwpf.model;
+ 
++import java.util.Objects;
 +
-+/*
-+ * Copyright 1987, 1988, 1989, 1998  The Open Group
-+ * Copyright 1987, 1988, 1989 Digital Equipment Corporation
-+ * Copyright 1999, 2004, 2008 Keith Packard
-+ * Copyright 2000 SuSE, Inc.
-+ * Copyright 2000 Keith Packard, member of The XFree86 Project, Inc.
-+ * Copyright 2004, 2005, 2007, 2008, 2009, 2010 Red Hat, Inc.
-+ * Copyright 2004 Nicholas Miell
-+ * Copyright 2005 Lars Knoll & Zack Rusin, Trolltech
-+ * Copyright 2005 Trolltech AS
-+ * Copyright 2007 Luca Barbato
-+ * Copyright 2008 Aaron Plattner, NVIDIA Corporation
-+ * Copyright 2008 Rodrigo Kumpera
-+ * Copyright 2008 Andr¨¦ Tupinamb¨¢
-+ * Copyright 2008 Mozilla Corporation
-+ * Copyright 2008 Frederic Plourde
-+ * Copyright 2009, Oracle and/or its affiliates. All rights reserved.
-+ * Copyright 2009, 2010 Nokia Corporation
-+ *
-+ * Permission is hereby granted, free of charge, to any person obtaining a
-+ * copy of this software and associated documentation files (the "Software"),
-+ * to deal in the Software without restriction, including without limitation
-+ * the rights to use, copy, modify, merge, publish, distribute, sublicense,
-+ * and/or sell copies of the Software, and to permit persons to whom the
-+ * Software is furnished to do so, subject to the following conditions:
-+ *
-+ * The above copyright notice and this permission notice (including the next
-+ * paragraph) shall be included in all copies or substantial portions of the
-+ * Software.
-+ *
-+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
-+ * THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
-+ * DEALINGS IN THE SOFTWARE.
-+ */
+ import org.apache.poi.hwpf.model.types.FibRgW97AbstractType;
+ import org.apache.poi.util.Internal;
+ 
+@@ -86,25 +88,10 @@
+ 
+     @Override
+     @SuppressWarnings( "deprecation" )
+-    public int hashCode()
+-    {
+-        final int prime = 31;
+-        int result = 1;
+-        result = prime * result + field_10_reserved10;
+-        result = prime * result + field_11_reserved11;
+-        result = prime * result + field_12_reserved12;
+-        result = prime * result + field_13_reserved13;
+-        result = prime * result + field_14_lidFE;
+-        result = prime * result + field_1_reserved1;
+-        result = prime * result + field_2_reserved2;
+-        result = prime * result + field_3_reserved3;
+-        result = prime * result + field_4_reserved4;
+-        result = prime * result + field_5_reserved5;
+-        result = prime * result + field_6_reserved6;
+-        result = prime * result + field_7_reserved7;
+-        result = prime * result + field_8_reserved8;
+-        result = prime * result + field_9_reserved9;
+-        return result;
++    public int hashCode() {
++        return Objects.hash(field_1_reserved1, field_2_reserved2, field_3_reserved3, field_4_reserved4,
++            field_5_reserved5, field_6_reserved6, field_7_reserved7, field_8_reserved8, field_9_reserved9,
++            field_10_reserved10, field_11_reserved11, field_12_reserved12, field_13_reserved13, field_14_lidFE);
+     }
+ 
+ }

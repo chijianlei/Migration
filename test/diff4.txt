@@ -1,29 +1,30 @@
-testdiff --git a/TMessagesProj/jni/image.c b/TMessagesProj/jni/image.c
-index 5aa93f9..b3e4517 100644
---- a/TMessagesProj/jni/image.c
-+++ b/TMessagesProj/jni/image.c
-@@ -59,7 +59,7 @@
- }
+testdiff --git a/src/java/org/apache/poi/hpsf/Section.java b/src/java/org/apache/poi/hpsf/Section.java
+index 5c78402..89802a0 100644
+--- a/src/java/org/apache/poi/hpsf/Section.java
++++ b/src/java/org/apache/poi/hpsf/Section.java
+@@ -21,6 +21,7 @@
+ import java.io.IOException;
+ import java.io.OutputStream;
+ import java.io.UnsupportedEncodingException;
++import java.util.Arrays;
+ import java.util.Date;
+ import java.util.HashMap;
+ import java.util.HashSet;
+@@ -940,16 +941,8 @@
+      */
+     @Override
+     public int hashCode() {
+-        long hashCode = 0;
+-        hashCode += getFormatID().hashCode();
+-        final Property[] pa = getProperties();
+-        for (Property aPa : pa) {
+-            hashCode += aPa.hashCode();
++        return Arrays.deepHashCode(new Object[]{getFormatID(),getProperties()});
+         }
+-        return Math.toIntExact(hashCode & 0x0ffffffffL);
+-    }
+-
+-
  
- static inline uint64_t getColors(const uint8_t *p) {
--    return p[0] + (p[1] << 16) + ((uint64_t) p[2] << 32);
-+    return p[0] + (p[1] << 16) + ((uint64_t) p[2] << 32) + ((uint64_t) p[3] << 48);
- }
- 
- static inline uint64_t getColors565(const uint8_t *p) {
-@@ -134,6 +134,7 @@
-             pix[yi] = res;              \
-             pix[yi + 1] = res >> 16;    \
-             pix[yi + 2] = res >> 32;    \
-+            pix[yi + 3] = res >> 48;    \
-             rgballsum += rgb[x + (start) * w] - 2 * rgb[x + (middle) * w] + rgb[x + (end) * w]; \
-             rgbsum += rgballsum; \
-             y++; \
-@@ -235,6 +236,7 @@
-                 pix[yi] = res;              \
-                 pix[yi + 1] = res >> 16;    \
-                 pix[yi + 2] = res >> 32;    \
-+                pix[yi + 3] = res >> 48;    \
-                 rgballsum += rgb[x + (start) * w] - 2 * rgb[x + (middle) * w] + rgb[x + (end) * w]; \
-                 rgbsum += rgballsum;        \
-                 y++;                        \
+     /**
+      * @see Object#toString()

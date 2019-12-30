@@ -1,52 +1,49 @@
-testdiff --git a/TMessagesProj/jni/rlottie/src/lottie/lottiekeypath.h b/TMessagesProj/jni/rlottie/src/lottie/lottiekeypath.h
-new file mode 100755
-index 0000000..527788f
---- /dev/null
-+++ b/TMessagesProj/jni/rlottie/src/lottie/lottiekeypath.h
-@@ -0,0 +1,46 @@
-+/*
-+ * Copyright (c) 2018 Samsung Electronics Co., Ltd. All rights reserved.
-+ *
-+ * This library is free software; you can redistribute it and/or
-+ * modify it under the terms of the GNU Lesser General Public
-+ * License as published by the Free Software Foundation; either
-+ * version 2.1 of the License, or (at your option) any later version.
-+ *
-+ * This library is distributed in the hope that it will be useful,
-+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
-+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-+ * Lesser General Public License for more details.
-+ *
-+ * You should have received a copy of the GNU Lesser General Public
-+ * License along with this library; if not, write to the Free Software
-+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
-+ */
-+
-+#ifndef LOTTIEKEYPATH_H
-+#define LOTTIEKEYPATH_H
-+
-+#include "vglobal.h"
-+#include <string>
-+#include <vector>
-+
-+class LOTKeyPath{
-+public:
-+    LOTKeyPath(const std::string &keyPath);
-+    bool matches(const std::string &key, uint depth);
-+    uint nextDepth(const std::string key, uint depth);
-+    bool fullyResolvesTo(const std::string key, uint depth);
-+
-+    bool propagate(const std::string key, uint depth) {
-+        return skip(key) ? true : (depth < size()) || (mKeys[depth] == "**");
-+    }
-+    bool skip(const std::string &key) const { return key == "__";}
-+private:
-+    bool isGlobstar(uint depth) const {return mKeys[depth] == "**";}
-+    bool isGlob(uint depth) const {return mKeys[depth] == "*";}
-+    bool endsWithGlobstar() const { return mKeys.back() == "**"; }
-+    uint size() const {return mKeys.size() - 1;}
-+private:
-+    std::vector<std::string> mKeys;
-+};
-+
-+#endif //LOTTIEKEYPATH_H
+testdiff --git a/src/scratchpad/src/org/apache/poi/hwpf/model/PICF.java b/src/scratchpad/src/org/apache/poi/hwpf/model/PICF.java
+index ee7a11a..44ab740 100644
+--- a/src/scratchpad/src/org/apache/poi/hwpf/model/PICF.java
++++ b/src/scratchpad/src/org/apache/poi/hwpf/model/PICF.java
+@@ -111,38 +111,12 @@
+     }
+ 
+     @Override
+-    public int hashCode()
+-    {
+-        final int prime = 31;
+-        int result = 1;
+-        result = prime * result + field_10_padding2;
+-        result = prime * result + field_11_dxaGoal;
+-        result = prime * result + field_12_dyaGoal;
+-        result = prime * result + field_13_mx;
+-        result = prime * result + field_14_my;
+-        result = prime * result + field_15_dxaReserved1;
+-        result = prime * result + field_16_dyaReserved1;
+-        result = prime * result + field_17_dxaReserved2;
+-        result = prime * result + field_18_dyaReserved2;
+-        result = prime * result + field_19_fReserved;
+-        result = prime * result + field_1_lcb;
+-        result = prime * result + field_20_bpp;
+-        result = prime * result + Arrays.hashCode( field_21_brcTop80 );
+-        result = prime * result + Arrays.hashCode( field_22_brcLeft80 );
+-        result = prime * result + Arrays.hashCode( field_23_brcBottom80 );
+-        result = prime * result + Arrays.hashCode( field_24_brcRight80 );
+-        result = prime * result + field_25_dxaReserved3;
+-        result = prime * result + field_26_dyaReserved3;
+-        result = prime * result + field_27_cProps;
+-        result = prime * result + field_2_cbHeader;
+-        result = prime * result + field_3_mm;
+-        result = prime * result + field_4_xExt;
+-        result = prime * result + field_5_yExt;
+-        result = prime * result + field_6_swHMF;
+-        result = prime * result + field_7_grf;
+-        result = prime * result + field_8_padding;
+-        result = prime * result + field_9_mmPM;
+-        return result;
++    public int hashCode() {
++        return Arrays.deepHashCode(new Object[]{field_1_lcb, field_2_cbHeader, field_3_mm, field_4_xExt, field_5_yExt,
++            field_6_swHMF, field_7_grf, field_8_padding, field_9_mmPM, field_10_padding2, field_11_dxaGoal,
++            field_12_dyaGoal, field_13_mx, field_14_my, field_15_dxaReserved1, field_16_dyaReserved1, field_17_dxaReserved2,
++            field_18_dyaReserved2, field_19_fReserved, field_20_bpp, field_21_brcTop80, field_22_brcLeft80,
++            field_23_brcBottom80, field_24_brcRight80, field_25_dxaReserved3, field_26_dyaReserved3, field_27_cProps});
+     }
+ 
+ }

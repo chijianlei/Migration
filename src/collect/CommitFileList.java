@@ -37,10 +37,10 @@ public class CommitFileList {
 	 */
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
-		String versionCommit="28eb8dfd0ef959fd5ad7d5d22f1d32879707c0a0";//需要分析的Commit Hash		
-		String path="J:\\Telegram\\";//对应项目在本地Repo的路径
-		autoExtraction(versionCommit, path);
-//		getChangeList(versionCommit, path);
+		String versionCommit="66471836f584d5c73be18367e1db4c4783b0cb48";//需要分析的Commit Hash		
+		String path="D:\\workspace\\poi\\";//对应项目在本地Repo的路径
+//		autoExtraction(versionCommit, path);
+		getChangeList(versionCommit, path);
 	}
 	public static void getChangeList(String versionCommit, String classPath) throws Exception {
 		FileRepositoryBuilder builder = new FileRepositoryBuilder();
