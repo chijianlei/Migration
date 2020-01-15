@@ -45,13 +45,13 @@ public class FilterDefuse {
 	public static HashMap<ITree, ArrayList<ITree>> parBlockMap2 = new HashMap<ITree, ArrayList<ITree>>();
 	
 	public static void main (String args[]) throws Exception{
-		String path = "J:\\Telegram_test\\";
+		String path = "J:\\Vulnerability_commit\\";
 		File rootFile = new File(path);
 		File[] fileList = rootFile.listFiles();
 		FilterDefuse defuse = new FilterDefuse();
-		for(int i=6;i<fileList.length;i++) {
+		for(int i=0;i<fileList.length;i++) {
 			String cpPath = fileList[i].getAbsolutePath();
-			defuse.collectDiffwithDefUse(cpPath, "txt", true, false, "");
+			defuse.collectDiffwithDefUse(cpPath, "lineNum", true, false, "");
 		}		
 	}
 	
@@ -59,21 +59,27 @@ public class FilterDefuse {
 		Boolean ifOnlyChange, Boolean ifPrintDef, String filter) throws Exception {//获取DefUse	
 		Split sp = new Split();		
 		ArrayList<Migration> migrats = FileFilter.readMigrationList(path, filter);
-		String jpath = "jsons\\";
+		String repoName = "";
+		if(migrats.size()!=0)
+			repoName = migrats.get(0).getRepoName();
+		else
+			return;
 		int count = 0;//计数
+		String txtName = (new File(path)).getName();
+		String jpath = "jsons\\"+txtName+"\\";
 		File jFile = new File(jpath);
 		if(!jFile.exists())
 			jFile.mkdirs();
-		if(jFile.listFiles().length!=0) {
-			throw new Exception("Plz clean dir!");
-		}		
-		String txtName = (new File(path)).getName();
+		if(jFile.listFiles().length!=0&&outMode.equals("json"))
+			throw new Exception("pla clean dir!");
 		File output = new File("data\\defuse_"+txtName+".txt");
 		BufferedWriter wr = new BufferedWriter(new FileWriter(output));
 		File output1 = new File("data\\src-val_"+txtName+".txt");
 		File output2 = new File("data\\tgt-val_"+txtName+".txt");		
 		BufferedWriter wr1 = new BufferedWriter(new FileWriter(output1));
 		BufferedWriter wr2 = new BufferedWriter(new FileWriter(output2));
+		File output3 = new File("data_num\\"+repoName+"_"+txtName+".txt");
+		BufferedWriter wr3 = new BufferedWriter(new FileWriter(output3));
 //		ArrayList<String> includes1 = readIncludes("src");
 //		ArrayList<String> includes2 = readIncludes("dst");
 //		for(String include : includes1) {
@@ -120,10 +126,10 @@ public class FilterDefuse {
 	        System.out.println(blockMap1.size());
 	        System.out.println(blockMap2.size());
 	        
-	        for(SubTree st : sub1) {
-	        	ITree root = st.getRoot();
-	        	System.out.println("StID:"+root.getId());	             	       		       	
-	        }
+//	        for(SubTree st : sub1) {
+//	        	ITree root = st.getRoot();
+//	        	System.out.println("StID:"+root.getId());	             	       		       	
+//	        }
 	        if(ifOnlyChange==true) {
 				for(SubTree st : sub1) {
 					ITree t = st.getRoot();
@@ -145,11 +151,11 @@ public class FilterDefuse {
 	        System.out.println("subSize:"+sub1.size());	
 			System.out.println("changeSize:"+changedSTree.size());	
 			for(SubTree srcT : changedSTree) {					
-				System.out.println("===================");
+//				System.out.println("===================");
 				HashSet<Definition> usedDefs1 = new HashSet<Definition>();
 				HashSet<Definition> usedDefs2 = new HashSet<Definition>();
 				ITree sRoot = srcT.getRoot();
-				System.out.println("CheckMapping "+sRoot.getId()+":"+srcT.getMiName());
+//				System.out.println("CheckMapping "+sRoot.getId()+":"+srcT.getMiName());
 				String src = Output.subtree2src(srcT);	
 				
 	    		if(outMode=="txt") {
@@ -165,7 +171,7 @@ public class FilterDefuse {
 				int labelCount = 0;
 				for(ITree leaf : leaves1) {
 					String label = leaf.getLabel();
-					System.out.println("label"+label);
+//					System.out.println("label"+label);
 					if(!label.equals(""))
 						labelCount++;
 					String type = sTC.getTypeLabel(leaf);
@@ -188,8 +194,8 @@ public class FilterDefuse {
 							if(def1.getDefLabelID()==leaf.getId()) {
 								leaf.setLabel("var");
 							}
-							System.out.println(leaf.getId()+","+def1.getDefLabelID());
-							System.out.println(def1.getType()+","+def1.getVarName());
+//							System.out.println(leaf.getId()+","+def1.getDefLabelID());
+//							System.out.println(def1.getType()+","+def1.getVarName());
 						}
 					}
 				}
@@ -200,8 +206,68 @@ public class FilterDefuse {
 				if(dstT==null)
 					continue;//子树没有对应子树，被删除
 				ITree dRoot = dstT.getRoot();
-	    		System.out.println(sRoot.getId()+"->"+dRoot.getId());	    		
+//	    		System.out.println(sRoot.getId()+"->"+dRoot.getId());	    		
 	    		
+				List<ITree> nodes1 = sRoot.getDescendants();
+				nodes1.add(sRoot);//srcT所有节点
+				List<ITree> nodes2 = dRoot.getDescendants();
+				nodes2.add(dRoot);//dstT所有节点
+				int sBeginLine = 0;
+				int sLastLine = 0;
+				int sBeginCol = 0;
+				int sLastCol = 0;
+				int dBeginLine = 0;
+				int dLastLine = 0;
+				int dBeginCol = 0;
+				int dLastCol = 0;
+				if(outMode=="lineNum") {
+					for(ITree node : nodes1) {
+						int line = node.getLine();
+						int col = node.getColumn();
+						int lastLine = node.getLastLine();
+						int lastCol = node.getLastColumn();
+						System.out.println("lastLine:"+lastLine);
+						if(sBeginLine==0&&line!=0) {
+							sBeginLine = line;
+						}else if(line < sBeginLine&&line!=0) {
+							sBeginLine = line;
+						}//begin line
+						if(sBeginCol==0&&col!=0) {
+							sBeginCol = col;
+						}else if(col < sBeginCol&&col!=0) {
+							sBeginCol = col;
+						}//begin col
+						if(lastLine > sLastLine) {
+							sLastLine = lastLine;
+						}//last line
+						if(lastCol > sLastCol) {
+							sLastCol = lastCol;
+						}//last col
+					}									
+					for(ITree node : nodes2) {
+						int line = node.getLine();
+						int col = node.getColumn();
+						int lastLine = node.getLastLine();
+						int lastCol = node.getLastColumn();
+						if(dBeginLine==0&&line!=0) {
+							dBeginLine = line;
+						}else if(line < dBeginLine&&line!=0) {
+							dBeginLine = line;
+						}//begin line
+						if(dBeginCol==0&&col!=0) {
+							dBeginCol = col;
+						}else if(col < dBeginCol&&col!=0) {
+							dBeginCol = col;
+						}//begin col
+						if(dLastLine < lastLine) {
+							dLastLine = lastLine;
+						}//last line
+						if(dLastCol < lastCol) {
+							dLastCol = lastCol;
+						}//last col
+					}
+				}
+				
 				ArrayList<ITree> leaves2 = new ArrayList<ITree>();
 				Utils.traverse2Leaf(dRoot, leaves2);
 				for(ITree leaf : leaves2) {
@@ -221,8 +287,8 @@ public class FilterDefuse {
 										usedDefs2.add(def2);
 										leaf.setLabel("var");	
 									}
-									System.out.println(leaf.getId()+","+def2.getDefLabelID());
-									System.out.println(def2.getType()+","+def2.getVarName());
+//									System.out.println(leaf.getId()+","+def2.getDefLabelID());
+//									System.out.println(def2.getType()+","+def2.getVarName());
 								}
 							}							
 							if(def2.getDefLabelID()==leaf.getId()) {
@@ -310,12 +376,20 @@ public class FilterDefuse {
 					TreeContext dt = buildTC(dstT);
 					printJson(jpath, count, st, dt);
 					count++;
+				}else if(outMode=="lineNum") {
+					wr3.append(migrat.getMiName()+":"+sBeginLine+","+sLastLine+","
+							+sBeginCol+","+sLastCol+"->");
+					wr3.append(dBeginLine+","+dLastLine+","
+							+dBeginCol+","+dLastCol);
+					wr3.newLine();
+					wr3.flush();
 				}
 			}			
 		}	
 		wr.close();
 		wr1.close();
 		wr2.close();
+		wr3.close();
 		System.out.println("errCount:"+errCount);
 	}
 	

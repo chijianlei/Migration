@@ -169,11 +169,13 @@ public class FileFilter {
 			throw new Exception("file is not existed!");
 		BufferedReader br = new BufferedReader(new FileReader(diffFile));
 		String tmpline = br.readLine();
+		String repoName = tmpline;
+		tmpline = br.readLine();
 		String srcHash = tmpline.split(";")[0];
 		String dstHash = tmpline.split(";")[1];
 		while((tmpline=br.readLine())!=null) {
 			String path1 = tmpline.split(";")[0];
-			String path2 = tmpline.split(";")[1];				
+			String path2 = tmpline.split(";")[1];
 			path1 = cpFile.getPath()+"//"+srcHash+"//"+path1;
 			path2 = cpFile.getPath()+"//"+dstHash+"//"+path2;
 			File srcFile = new File(path1);
@@ -192,7 +194,8 @@ public class FileFilter {
 			Matcher m = Matchers.getInstance().getMatcher(tc1.getRoot(), tc2.getRoot());
 	        m.match();
 	        MappingStore mappings = m.getMappings();
-			Migration mi = new Migration(tc1, tc2, mappings, srcFile.getName());
+			Migration mi = new Migration(tc1, tc2, mappings, srcFile.getAbsolutePath());
+			mi.setRepoName(repoName);
 			System.out.println("Mapping size: "+mappings.asSet().size());
 			mi.setSrcHash(srcHash);
 			mi.setDstHash(dstHash);

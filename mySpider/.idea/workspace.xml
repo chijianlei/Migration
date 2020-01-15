@@ -1,7 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9fcd345c-e3dc-4b9a-9838-280f493b8a95" name="Default Changelist" comment="" />
+    <list default="true" id="9fcd345c-e3dc-4b9a-9838-280f493b8a95" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/defuse0.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/defuse1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/defuse2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/defuse3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/defuse4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/defuse_cp13.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/defuse_cp13.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/defuse_cp14.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/defuse_cp14.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/defuse_cp15.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/defuse_cp15.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/defuse_cp16.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/defuse_cp16.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/defuse_cp17.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/defuse_cp17.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/defuse_cp19.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/defuse_cp19.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/defuse_cp2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/defuse_cp2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/defuse_cp20.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/defuse_cp20.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/src-val0.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/src-val1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/src-val2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/src-val3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/src-val4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/src-val_cp13.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/src-val_cp13.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/src-val_cp14.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/src-val_cp14.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/src-val_cp15.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/src-val_cp15.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/src-val_cp16.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/src-val_cp16.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/src-val_cp17.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/src-val_cp17.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/src-val_cp19.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/src-val_cp19.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/src-val_cp2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/src-val_cp2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/src-val_cp20.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/src-val_cp20.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/tgt-val0.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/tgt-val1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/tgt-val2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/tgt-val3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/tgt-val4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/tgt-val_cp13.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/tgt-val_cp13.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/tgt-val_cp14.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/tgt-val_cp14.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/tgt-val_cp15.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/tgt-val_cp15.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/tgt-val_cp16.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/tgt-val_cp16.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/tgt-val_cp17.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/tgt-val_cp17.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/tgt-val_cp19.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/tgt-val_cp19.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/tgt-val_cp2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/tgt-val_cp2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/tgt-val_cp20.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/tgt-val_cp20.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../defuse.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../defuse.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../raw.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../raw.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src-val.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../src-val.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/collect/FileFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/collect/FileFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/collect/FilterDefuse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/collect/FilterDefuse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tgt-val.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../tgt-val.txt" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +79,7 @@
         <entry file="file://$PROJECT_DIR$/mySpider/spiders/getapi.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="54">
-              <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+              <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -40,7 +87,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mySpider/getapi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
+            <state relative-caret-position="1809">
               <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
@@ -106,6 +153,9 @@
       <find>Public Method</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -121,12 +171,13 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="163" />
     <option name="y" value="217" />
     <option name="width" value="1402" />
     <option name="height" value="876" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -156,8 +207,9 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Seq2seq" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Pycharm/Understand_analysis" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -314,17 +366,17 @@
       <workItem from="1570048751928" duration="69000" />
       <workItem from="1571883532409" duration="46000" />
       <workItem from="1572473754089" duration="628000" />
+      <workItem from="1578701224216" duration="1236000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115529000" />
+    <option name="totallyTimeSpent" value="116765000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.195629" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1977612" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -485,7 +537,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mySpider/getapi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
+        <state relative-caret-position="1809">
           <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
@@ -496,7 +548,7 @@
     <entry file="file://$PROJECT_DIR$/mySpider/spiders/getapi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
-          <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
         </state>
       </provider>
     </entry>

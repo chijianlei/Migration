@@ -2,6 +2,8 @@ package test;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Map;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -9,15 +11,29 @@ import org.apache.commons.exec.CommandLine;
 import org.apache.commons.exec.DefaultExecuteResultHandler;
 import org.apache.commons.exec.DefaultExecutor;
 import org.apache.commons.exec.ExecuteException;
+import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.lib.Ref;
+import org.eclipse.jgit.lib.Repository;
+import org.eclipse.jgit.storage.file.FileRepositoryBuilder;
 
 public class test {
 	public static void main(String[] args) throws Exception{	
-		String test = "@@ -35,7 +35,7 @@";
-		Pattern p = Pattern.compile("\\d{1,}");//这个2是指连续数字的最少个数  
-		Matcher m = p.matcher(test);   
-		while(m.find()) {
-			System.out.println(m.group());
+		String classPath = "J:\\git_repo\\okhttp";
+		FileRepositoryBuilder builder = new FileRepositoryBuilder();
+		builder.setMustExist(true);
+		builder.addCeilingDirectory(new File(classPath));
+		builder.findGitDir(new File(classPath));
+		Repository repo;
+		repo = builder.build();
+		Map<String, Ref> maps = repo.getAllRefs();
+		for(Map.Entry<String, Ref> entry : maps.entrySet()) {
+			String key = entry.getKey();
+			System.out.println(repo.shortenRefName(key));
 		}
+//		Set<String> refs = repo.getRemoteNames();
+//		for(String name : refs) {
+//			System.out.println(name);
+//		}
 	}
 
 	private void test1() throws Exception, IOException {
