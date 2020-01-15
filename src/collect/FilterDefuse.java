@@ -99,12 +99,13 @@ public class FilterDefuse {
 			blocks2.clear();
 			parBlockMap1.clear();
 			parBlockMap2.clear();
-			String miName = migrat.getMiName();
+			String miName_src = migrat.getMiName_src();
+			String miName_dst = migrat.getMiName_dst();
 			TreeContext sTC = migrat.getSrcT();
 			TreeContext dTC = migrat.getDstT();
 			MappingStore mappings = migrat.getMappings();
 			
-			System.out.println("Analyse:"+miName);
+			System.out.println("Analyse:"+miName_src);
 			Matcher m = Matchers.getInstance().getMatcher(sTC.getRoot(), dTC.getRoot());
 	        m.match();
 			ArrayList<SubTree> changedSTree = new ArrayList<>();
@@ -116,8 +117,8 @@ public class FilterDefuse {
 	        HashMap<String, ArrayList<Definition>> defMap2 = transferDefs(defs2);
 	        HashMap<ITree, ArrayList<Definition>> blockMap1 = transferBlockMap(defs1, sTC, "src");
 	        HashMap<ITree, ArrayList<Definition>> blockMap2 = transferBlockMap(defs2, dTC, "tgt");
-			ArrayList<SubTree> sub1 = sp.splitSubTree(sTC, miName);//Subtree中割裂过block,注意
-			sp.splitSubTree(dTC, miName);//先计算action,再split ST
+			ArrayList<SubTree> sub1 = sp.splitSubTree(sTC, miName_src);//Subtree中割裂过block,注意
+			sp.splitSubTree(dTC, miName_src);//先计算action,再split ST
 	        
 			System.out.println(defs1.size());
 	        System.out.println(defs2.size());
@@ -377,7 +378,7 @@ public class FilterDefuse {
 					printJson(jpath, count, st, dt);
 					count++;
 				}else if(outMode=="lineNum") {
-					wr3.append(migrat.getMiName()+":"+sBeginLine+","+sLastLine+","
+					wr3.append(miName_src+";"+miName_dst+";"+sBeginLine+","+sLastLine+","
 							+sBeginCol+","+sLastCol+"->");
 					wr3.append(dBeginLine+","+dLastLine+","
 							+dBeginCol+","+dLastCol);

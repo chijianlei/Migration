@@ -194,7 +194,7 @@ public class FileFilter {
 			Matcher m = Matchers.getInstance().getMatcher(tc1.getRoot(), tc2.getRoot());
 	        m.match();
 	        MappingStore mappings = m.getMappings();
-			Migration mi = new Migration(tc1, tc2, mappings, srcFile.getAbsolutePath());
+			Migration mi = new Migration(tc1, tc2, mappings, srcFile.getAbsolutePath(), dstFile.getAbsolutePath());
 			mi.setRepoName(repoName);
 			System.out.println("Mapping size: "+mappings.asSet().size());
 			mi.setSrcHash(srcHash);
