@@ -80,6 +80,10 @@ public class FilterDefuse {
 		BufferedWriter wr2 = new BufferedWriter(new FileWriter(output2));
 		File output3 = new File("data_num\\"+repoName+"_"+txtName+".txt");
 		BufferedWriter wr3 = new BufferedWriter(new FileWriter(output3));
+		File output4 = new File("data_var\\"+repoName+"_"+txtName+"_defs_src.txt");
+		BufferedWriter wr4 = new BufferedWriter(new FileWriter(output4));
+		File output5 = new File("data_var\\"+repoName+"_"+txtName+"_defs_dst.txt");
+		BufferedWriter wr5 = new BufferedWriter(new FileWriter(output5));
 //		ArrayList<String> includes1 = readIncludes("src");
 //		ArrayList<String> includes2 = readIncludes("dst");
 //		for(String include : includes1) {
@@ -153,6 +157,8 @@ public class FilterDefuse {
 			System.out.println("changeSize:"+changedSTree.size());	
 			for(SubTree srcT : changedSTree) {					
 //				System.out.println("===================");
+				HashMap<String, String> replaceMap_src = new HashMap<String, String>();
+				HashMap<String, String> replaceMap_dst = new HashMap<String, String>();
 				HashSet<Definition> usedDefs1 = new HashSet<Definition>();
 				HashSet<Definition> usedDefs2 = new HashSet<Definition>();
 				ITree sRoot = srcT.getRoot();
@@ -178,6 +184,10 @@ public class FilterDefuse {
 					String type = sTC.getTypeLabel(leaf);
 					if(type.equals("literal")) {
 						leaf.setLabel(Output.deleteLiteral(leaf, sTC));
+//						if(label.contains("\"")) 
+//							replaceMap_src.put("@@"+label+"@@", "None");
+//						else
+//							replaceMap_src.put("$$"+label+"$$", "num");//replace Literal
 					}					
 					ArrayList<Definition> stringList = defMap1.get(label);
 					if(stringList!=null) {
@@ -188,12 +198,14 @@ public class FilterDefuse {
 								if(blockList.contains(def1)) {
 									if(leaf.getId()>def1.getDefLabelID()) {
 										leaf.setLabel("var");
-										usedDefs1.add(def1);									
+										usedDefs1.add(def1);
+										replaceMap_src.put(label, "var");
 									}											
 								}
 							}							
 							if(def1.getDefLabelID()==leaf.getId()) {
 								leaf.setLabel("var");
+								replaceMap_src.put(label, "var");
 							}
 //							System.out.println(leaf.getId()+","+def1.getDefLabelID());
 //							System.out.println(def1.getType()+","+def1.getVarName());
@@ -276,6 +288,10 @@ public class FilterDefuse {
 					String type = dTC.getTypeLabel(leaf);
 					if(type.equals("literal")) {
 						leaf.setLabel(Output.deleteLiteral(leaf, dTC));
+//						if(label.contains("\"")) 
+//							replaceMap_dst.put("@@"+label+"@@", "None");
+//						else
+//							replaceMap_dst.put("$$"+label+"$$", "num");//replace Literal
 					}	
 					ArrayList<Definition> stringList = defMap2.get(label);
 					if(stringList!=null) {
@@ -286,7 +302,8 @@ public class FilterDefuse {
 								if(blockList.contains(def2)) {
 									if(leaf.getId()>def2.getDefLabelID()) {
 										usedDefs2.add(def2);
-										leaf.setLabel("var");	
+										leaf.setLabel("var");
+										replaceMap_dst.put(label, "var");
 									}
 //									System.out.println(leaf.getId()+","+def2.getDefLabelID());
 //									System.out.println(def2.getType()+","+def2.getVarName());
@@ -294,6 +311,7 @@ public class FilterDefuse {
 							}							
 							if(def2.getDefLabelID()==leaf.getId()) {
 								leaf.setLabel("var");
+								replaceMap_dst.put(label, "var");
 							}
 						}
 					}
@@ -384,6 +402,20 @@ public class FilterDefuse {
 							+dBeginCol+","+dLastCol);
 					wr3.newLine();
 					wr3.flush();
+					for(Map.Entry<String, String> entry : replaceMap_src.entrySet()) {
+						String varName = entry.getKey();
+						String label = entry.getValue();
+						wr4.append(varName+"->"+label+";");
+					}
+					wr4.newLine();
+					wr4.flush();
+					for(Map.Entry<String, String> entry : replaceMap_dst.entrySet()) {
+						String varName = entry.getKey();
+						String label = entry.getValue();
+						wr5.append(varName+"->"+label+";");
+					}
+					wr5.newLine();
+					wr5.flush();
 				}
 			}			
 		}	
@@ -391,6 +423,8 @@ public class FilterDefuse {
 		wr1.close();
 		wr2.close();
 		wr3.close();
+		wr4.close();
+		wr5.close();
 		System.out.println("errCount:"+errCount);
 	}
 	
