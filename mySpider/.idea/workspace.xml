@@ -2,52 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fcd345c-e3dc-4b9a-9838-280f493b8a95" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../data/defuse0.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../data/defuse1.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../data/defuse2.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../data/defuse3.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../data/defuse4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/defuse_cp13.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/defuse_cp13.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/defuse_cp14.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/defuse_cp14.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/defuse_cp15.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/defuse_cp15.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/defuse_cp16.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/defuse_cp16.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/defuse_cp17.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/defuse_cp17.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/defuse_cp19.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/defuse_cp19.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/defuse_cp2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/defuse_cp2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/defuse_cp20.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/defuse_cp20.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/defuse_cp13.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/defuse_cp14.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/defuse_cp15.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/defuse_cp16.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/defuse_cp17.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/defuse_cp18.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/defuse_cp19.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/defuse_cp2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/defuse_cp20.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../data/src-val0.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../data/src-val1.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../data/src-val2.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../data/src-val3.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../data/src-val4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/src-val_cp13.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/src-val_cp13.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/src-val_cp14.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/src-val_cp14.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/src-val_cp15.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/src-val_cp15.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/src-val_cp16.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/src-val_cp16.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/src-val_cp17.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/src-val_cp17.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/src-val_cp19.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/src-val_cp19.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/src-val_cp2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/src-val_cp2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/src-val_cp20.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/src-val_cp20.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/src-val_cp13.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/src-val_cp14.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/src-val_cp15.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/src-val_cp16.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/src-val_cp17.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/src-val_cp18.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/src-val_cp19.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/src-val_cp2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/src-val_cp20.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../data/tgt-val0.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../data/tgt-val1.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../data/tgt-val2.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../data/tgt-val3.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../data/tgt-val4.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/tgt-val_cp13.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/tgt-val_cp13.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/tgt-val_cp14.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/tgt-val_cp14.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/tgt-val_cp15.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/tgt-val_cp15.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/tgt-val_cp16.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/tgt-val_cp16.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/tgt-val_cp17.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/tgt-val_cp17.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/tgt-val_cp19.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/tgt-val_cp19.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/tgt-val_cp2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/tgt-val_cp2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../data/tgt-val_cp20.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../data/tgt-val_cp20.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../defuse.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../defuse.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/tgt-val_cp13.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/tgt-val_cp14.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/tgt-val_cp15.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/tgt-val_cp16.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/tgt-val_cp17.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/tgt-val_cp18.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/tgt-val_cp19.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/tgt-val_cp2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../data/tgt-val_cp20.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../raw.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../raw.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src-val.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../src-val.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/collect/FileFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/collect/FileFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/collect/FilterDefuse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/collect/FilterDefuse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tgt-val.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../tgt-val.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,16 +73,19 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mySpider/spiders/getapi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+            <state relative-caret-position="729">
+              <caret line="27" column="43" lean-forward="true" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+              <folding>
+                <element signature="e#24#37#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mySpider/getapi.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1809">
@@ -126,18 +127,6 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../20190827-ChangeImpactAnalysis/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -172,10 +161,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="163" />
-    <option name="y" value="217" />
-    <option name="width" value="1402" />
-    <option name="height" value="876" />
+    <option name="x" value="-1928" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -367,16 +356,17 @@
       <workItem from="1571883532409" duration="46000" />
       <workItem from="1572473754089" duration="628000" />
       <workItem from="1578701224216" duration="1236000" />
+      <workItem from="1580948528327" duration="36000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116765000" />
+    <option name="totallyTimeSpent" value="116801000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1977612" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19989339" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -515,6 +505,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../20190827-ChangeImpactAnalysis/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../../20190827-ChangeImpactAnalysis/LoadLSIModel.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="702">
@@ -525,12 +525,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../20190827-ChangeImpactAnalysis/test.py">
+    <entry file="file://$PROJECT_DIR$/mySpider/spiders/getapi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        <state relative-caret-position="729">
+          <caret line="27" column="43" lean-forward="true" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#24#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -542,13 +542,6 @@
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mySpider/spiders/getapi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
         </state>
       </provider>
     </entry>
