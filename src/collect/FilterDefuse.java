@@ -17,6 +17,7 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
 
+import gumtreediff.actions.ActionGenerator;
 import gumtreediff.actions.model.Action;
 import gumtreediff.gen.jdt.JdtTreeGenerator;
 import gumtreediff.gen.srcml.SrcmlCppTreeGenerator;
@@ -47,10 +48,12 @@ import utils.Utils;
 
 public class FilterDefuse {
 	private static LinkedHashSet<API> apis = new LinkedHashSet<API>();
-
+	private static HashMap<SubTree, SubTree> treePairs = new HashMap<SubTree, SubTree>();
+    private static int count = 0;
+	
 	public static void main (String args[]) throws Exception{
-		String path = "K:\\Vulnerability_commit\\";
-		String outMode = "lineNum";
+		String path = "J:\\Vulnerability_commit\\";
+		String outMode = "json";
 		String dataDir = "data\\";
 		String numDir = "data_num\\";
 		String checkDir = "data_check\\";
@@ -62,13 +65,22 @@ public class FilterDefuse {
 			FileOperation.delAllFile(varDir);
 			FileOperation.delAllFile(checkDir);
 		}
+		if(outMode.equals("json")) {
+			String jpath = "jsons\\";
+			File jFile = new File(jpath);
+			if(!jFile.exists())
+				jFile.mkdirs();
+			if(jFile.listFiles().length!=0&&outMode.equals("json"))
+				throw new Exception("pls clean dir!");
+		}		
 		File rootFile = new File(path);
 		File[] fileList = rootFile.listFiles();
 		FilterDefuse defuse = new FilterDefuse();
 		for(int i=0;i<fileList.length;i++) {
 			String cpPath = fileList[i].getAbsolutePath();
 			defuse.collectDiffwithDefUse(cpPath, outMode, true, false, "");
-		}		
+		}	
+		System.out.println("DuplicateNum:"+count);
 	}
 	
 	public void collectDiffwithDefUse(String path, String outMode, 
@@ -80,14 +92,11 @@ public class FilterDefuse {
 			repoName = migrats.get(0).getRepoName();
 		else
 			return;
-		int count = 0;//计数
 		String txtName = (new File(path)).getName();
-		String jpath = "jsons\\"+txtName+"\\";
+		String jpath = "jsons\\";
 		File jFile = new File(jpath);
 		if(!jFile.exists())
 			jFile.mkdirs();
-		if(jFile.listFiles().length!=0&&outMode.equals("json"))
-			throw new Exception("pla clean dir!");
 
 		String outPath = "data\\defuse_"+txtName+".txt";
 		String outPath1 = "data\\src-val_"+txtName+".txt";
@@ -122,9 +131,7 @@ public class FilterDefuse {
 	        HashMap<String, ArrayList<Definition>> defMap1 = defuse.transferDefs(defs1);
 	        HashMap<String, ArrayList<Definition>> defMap2 = defuse.transferDefs(defs2);
 	        HashMap<ITree, ArrayList<Definition>> blockMap1 = defuse.transferBlockMap(defs1, sTC, "src");
-	        HashMap<ITree, ArrayList<Definition>> blockMap2 = defuse.transferBlockMap(defs2, dTC, "tgt");
-	        HashMap<ITree, ArrayList<Definition>> functionMap1 = defuse.transfer2FunctionMap(defs1, sTC.getRoot(), sTC);
-	        HashMap<ITree, ArrayList<Definition>> functionMap2 = defuse.transfer2FunctionMap(defs2, dTC.getRoot(), dTC);	        
+	        HashMap<ITree, ArrayList<Definition>> blockMap2 = defuse.transferBlockMap(defs2, dTC, "tgt");        
 	        ArrayList<SubTree> sub1 = sp.splitSubTree(sTC, miName_src);//Subtree中割裂过block,注意
 	        ArrayList<SubTree> sub2 = sp.splitSubTree(dTC, miName_src);//先计算action,再split ST
 			HashMap<Integer, HashMap<String, String>> usedDefs2Map = new HashMap<Integer, HashMap<String, String>>();
@@ -377,10 +384,14 @@ public class FilterDefuse {
 						printTxt(outPath, outPath1, outPath2, buffer);
 					}
 				}else if(outMode=="json") {
+					srcT = absTree(srcT);
+					dstT = absTree(dstT);
 					TreeContext st = defuse.buildTC(srcT);
 					TreeContext dt = defuse.buildTC(dstT);
-					printJson(jpath, count, st, dt);
-					count++;
+					if(checkSim(st, dt)==false) {
+						printJson(jpath, st, dt);
+						treePairs.put(srcT, dstT);
+					}					
 				}else if(outMode=="lineNum") {
 //					if(sRoot.getId()==806) {
 //						for(Map.Entry<String, String> entry : replaceMap_src.entrySet()) {
@@ -466,6 +477,53 @@ public class FilterDefuse {
 		return buffer;
 	}
 	
+	static private SubTree absTree(SubTree st) {
+		ITree root = st.getRoot();
+		List<ITree> desList = root.getDescendants();
+		for(ITree node : desList) {
+			String label = node.getLabel();
+			try {
+				Integer.parseInt(label);
+				node.setLabel("num");
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+		return st;
+	}
+	
+	static private Boolean checkSim(TreeContext tc1, TreeContext tc2) {
+		Boolean full_sim = false;
+		Defuse defuse = new Defuse();
+		for(Map.Entry<SubTree, SubTree> entry : treePairs.entrySet()) {
+			SubTree st1 = entry.getKey();
+			SubTree st2 = entry.getValue();
+			try {
+				TreeContext tc1_used = defuse.buildTC(st1);
+				TreeContext tc2_used = defuse.buildTC(st2);
+				Matcher m1 = Matchers.getInstance().getMatcher(tc1.getRoot(), tc1_used.getRoot());
+	            m1.match();
+	            MappingStore mappings1 = m1.getMappings();
+	            ActionGenerator g1 = new ActionGenerator(tc1.getRoot(), tc1_used.getRoot(), mappings1); 
+	            List<Action> actions1 = g1.generate();
+				Matcher m2 = Matchers.getInstance().getMatcher(tc2.getRoot(), tc2_used.getRoot());
+	            m2.match();
+	            MappingStore mappings2 = m2.getMappings();
+	            ActionGenerator g2 = new ActionGenerator(tc2.getRoot(), tc2_used.getRoot(), mappings2); 
+	            List<Action> actions2 = g2.generate();
+	            
+	            if(actions1.size()==0&&actions2.size()==0) {
+	            	full_sim = true;
+	            	count++;
+	            	return full_sim;
+	            }
+			} catch (Exception e) {
+				continue;// TODO: handle exception
+			}
+		}
+		return full_sim;
+	}
+	
 	static private String getText(TreeContext tc1, TreeContext tc2, SubTree srcT, SubTree dstT) throws Exception {
 		String buffer = "";
 		String src = Output.subtree2src(srcT);
@@ -499,20 +557,22 @@ public class FilterDefuse {
 		wr2.close();
 	}
 	
-	static private void printJson(String jpath, int count, TreeContext srcT, TreeContext dstT) throws Exception {
+	static private void printJson(String jpath, TreeContext srcT, TreeContext dstT) throws Exception {
 		File dir = new File(jpath);
 		if(!dir.exists()) {
 			dir.mkdirs(); 
 		}
+		File[] files = dir.listFiles();
+		int fileSize = files.length;
 		if(srcT!=null) {
-			String out = jpath+"pair"+String.valueOf(count)+"_src.json";
+			String out = jpath+"pair"+String.valueOf(fileSize/2)+"_src.json";
 			BufferedWriter wr = new BufferedWriter(new FileWriter(new File(out)));
 			wr.append(TreeIoUtils.toJson(srcT).toString());
 			wr.flush();
 			wr.close();
 		}
 		if(dstT!=null) {
-			String out1 = jpath+"pair"+String.valueOf(count)+"_tgt.json";
+			String out1 = jpath+"pair"+String.valueOf(fileSize/2)+"_tgt.json";
 			BufferedWriter wr1 = new BufferedWriter(new FileWriter(new File(out1)));
 			wr1.append(TreeIoUtils.toJson(dstT).toString());
 			wr1.flush();
