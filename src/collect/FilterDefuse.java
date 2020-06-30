@@ -1,45 +1,28 @@
 package collect;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
-import java.util.Set;
-
 import gumtreediff.actions.ActionGenerator;
 import gumtreediff.actions.model.Action;
-import gumtreediff.gen.jdt.JdtTreeGenerator;
-import gumtreediff.gen.srcml.SrcmlCppTreeGenerator;
 import gumtreediff.io.TreeIoUtils;
 import gumtreediff.matchers.MappingStore;
 import gumtreediff.matchers.Matcher;
 import gumtreediff.matchers.Matchers;
 import gumtreediff.tree.ITree;
-import gumtreediff.tree.Tree;
 import gumtreediff.tree.TreeContext;
 import split.Split;
 import structure.API;
-import structure.Boundary;
 import structure.Definition;
 import structure.Migration;
 import structure.SubTree;
-import structure.Transform;
 import utils.Defuse;
 import utils.FileOperation;
 import utils.Output;
-import utils.ReadAPI;
 import utils.Utils;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.*;
 
 /*
  * statement-level single line extraction
@@ -52,8 +35,8 @@ public class FilterDefuse {
     private static int count = 0;
 	
 	public static void main (String args[]) throws Exception{
-		String path = "J:\\Vulnerability_commit\\";
-		String outMode = "json";
+		String path = "I:\\Vulnerability_commit_java\\";
+		String outMode = "lineNum";
 		String dataDir = "data\\";
 		String numDir = "data_num\\";
 		String checkDir = "data_check\\";
@@ -84,7 +67,7 @@ public class FilterDefuse {
 	}
 	
 	public void collectDiffwithDefUse(String path, String outMode, 
-		Boolean ifOnlyChange, Boolean ifPrintDef, String filter) throws Exception {//»ñÈ¡DefUse	
+		Boolean ifOnlyChange, Boolean ifPrintDef, String filter) throws Exception {//è·å–DefUse		
 		Split sp = new Split();			
 		ArrayList<Migration> migrats = FileFilter.readMigrationList(path, filter);
 		String repoName = "";
@@ -126,14 +109,14 @@ public class FilterDefuse {
 //			}else {
 //				System.out.println("not contains");
 //			}
-			ArrayList<Definition> defs1 = defuse.getDef(sTC, "src");//ÏÈ¼ÆËãaction,ÔÙÊÕ¼¯defs
+			ArrayList<Definition> defs1 = defuse.getDef(sTC, "src");//å…ˆè®¡ç®—action,å†æ”¶é›†defs
 	        ArrayList<Definition> defs2 = defuse.getDef(dTC, "tgt");	        
 	        HashMap<String, ArrayList<Definition>> defMap1 = defuse.transferDefs(defs1);
 	        HashMap<String, ArrayList<Definition>> defMap2 = defuse.transferDefs(defs2);
 	        HashMap<ITree, ArrayList<Definition>> blockMap1 = defuse.transferBlockMap(defs1, sTC, "src");
 	        HashMap<ITree, ArrayList<Definition>> blockMap2 = defuse.transferBlockMap(defs2, dTC, "tgt");        
-	        ArrayList<SubTree> sub1 = sp.splitSubTree(sTC, miName_src);//SubtreeÖĞ¸îÁÑ¹ıblock,×¢Òâ
-	        ArrayList<SubTree> sub2 = sp.splitSubTree(dTC, miName_src);//ÏÈ¼ÆËãaction,ÔÙsplit ST
+	        ArrayList<SubTree> sub1 = sp.splitSubTree(sTC, miName_src);//Subtreeä¸­å‰²è£‚è¿‡block,æ³¨æ„
+	        ArrayList<SubTree> sub2 = sp.splitSubTree(dTC, miName_src);//å…ˆè®¡ç®—action,å†split ST
 			HashMap<Integer, HashMap<String, String>> usedDefs2Map = new HashMap<Integer, HashMap<String, String>>();
 	        
 			System.out.println("def1size:"+defs1.size());
@@ -165,7 +148,7 @@ public class FilterDefuse {
 		        			break;
 		        		}
 		        	}
-				}//ÏÈÕÒ°üº¬actionµÄsubtree	
+				}//å…ˆæ‰¾åŒ…å«actionçš„subtree	
 	        }else {
 	        	changedSTree = sub1;
 	        }
@@ -232,14 +215,14 @@ public class FilterDefuse {
 				
 				SubTree dstT = defuse.checkMapping(srcT, mappings, dTC, sub2);
 				if(dstT==null)
-					continue;//×ÓÊ÷Ã»ÓĞ¶ÔÓ¦×ÓÊ÷£¬±»É¾³ı
+					continue;//å­æ ‘æ²¡æœ‰å¯¹åº”å­æ ‘ï¼Œè¢«åˆ é™¤
 				ITree dRoot = dstT.getRoot();
 //	    		System.out.println(sRoot.getId()+"->"+dRoot.getId());	    		
 	    		
 				List<ITree> nodes1 = sRoot.getDescendants();
-				nodes1.add(sRoot);//srcTËùÓĞ½Úµã
+				nodes1.add(sRoot);//srcTæ‰€æœ‰èŠ‚ç‚¹
 				List<ITree> nodes2 = dRoot.getDescendants();
-				nodes2.add(dRoot);//dstTËùÓĞ½Úµã
+				nodes2.add(dRoot);//dstTæ‰€æœ‰èŠ‚ç‚¹
 				int sBeginLine = 0;
 				int sLastLine = 0;
 				int sBeginCol = 0;
@@ -255,7 +238,7 @@ public class FilterDefuse {
 						int lastLine = node.getLastLine();
 						int lastCol = node.getLastColumn();
 						String type = sTC.getTypeLabel(node);
-						if(!type.equals("block")) {//Ìø¹ıblock½Úµã£¬¸Ã½Úµã»áµ¼ÖÂlastlineÎª´óÀ¨ºÅ½áÊøÎ»ÖÃ
+						if(!type.equals("block")) {//è·³è¿‡blockèŠ‚ç‚¹ï¼Œè¯¥èŠ‚ç‚¹ä¼šå¯¼è‡´lastlineä¸ºå¤§æ‹¬å·ç»“æŸä½ç½®
 							if(sBeginLine==0&&line!=0) {
 								sBeginLine = line;
 							}else if(line < sBeginLine&&line!=0) {
@@ -275,7 +258,7 @@ public class FilterDefuse {
 //							if(sRoot.getId()==16329) {
 //								System.err.println(node.getId()+type+":"+line+","+lastLine+","+col+","+lastCol);
 //							}
-						}else if(type.equals("empty_stmt"))//ÌØÊâÇé¿ö	
+						}else if(type.equals("empty_stmt"))//ç‰¹æ®Šæƒ…å†µ	
 							continue;
 					}									
 					for(ITree node : nodes2) {
@@ -284,7 +267,7 @@ public class FilterDefuse {
 						int lastLine = node.getLastLine();
 						int lastCol = node.getLastColumn();
 						String type = sTC.getTypeLabel(node);
-						if(!type.equals("block")) {//Ìø¹ıblock½Úµã£¬¸Ã½Úµã»áµ¼ÖÂlastlineÎª´óÀ¨ºÅ½áÊøÎ»ÖÃ
+						if(!type.equals("block")) {//è·³è¿‡blockèŠ‚ç‚¹ï¼Œè¯¥èŠ‚ç‚¹ä¼šå¯¼è‡´lastlineä¸ºå¤§æ‹¬å·ç»“æŸä½ç½®
 							if(dBeginLine==0&&line!=0) {
 								dBeginLine = line;
 							}else if(line < dBeginLine&&line!=0) {
@@ -301,7 +284,7 @@ public class FilterDefuse {
 							if(dLastCol < lastCol) {
 								dLastCol = lastCol;
 							}//last col
-						}else if(type.equals("empty_stmt"))//ÌØÊâÇé¿ö	
+						}else if(type.equals("empty_stmt"))//ç‰¹æ®Šæƒ…å†µ		
 							continue;						
 					}
 				}
@@ -354,8 +337,8 @@ public class FilterDefuse {
 				}else {
 					same = true;
 					replaceMap_dst = usedDefs2Map.get(dRoot.getId());
-				}//·¢ÏÖÓĞ²»Í¬subtree_srcÓ³Éäµ½Í¬Ò»subTree_dstÇé¿ö£¬matchingËã·¨ÎÊÌâÔİÊ±ÎŞ·¨½â¾ö
-				 //´¦Àí´ëÊ©ÎªÖ±½Ó¸´ÖÆÒ»·İreplaceMap_dst£¬Ìø¹ı				
+				}//å‘ç°æœ‰ä¸åŒsubtree_srcæ˜ å°„åˆ°åŒä¸€subTree_dstæƒ…å†µï¼Œmatchingç®—æ³•é—®é¢˜æš‚æ—¶æ— æ³•è§£å†³
+				 //å¤„ç†æªæ–½ä¸ºç›´æ¥å¤åˆ¶ä¸€ä»½replaceMap_dstï¼Œè·³è¿‡					
 				
 				src = Output.subtree2src(srcT);
 	    		String tar = Output.subtree2src(dstT);
@@ -366,11 +349,11 @@ public class FilterDefuse {
 		    		}
 		    		if(((float)src.length()/(float)tar.length())<0.25||((float)tar.length()/(float)src.length())<0.25) {
 		    			continue;
-		    		}//³¤¶ÈÏà²îÌ«¶àµÄ¾ä×ÓÖ±½ÓÌø¹ı
+		    		}//é•¿åº¦ç›¸å·®å¤ªå¤šçš„å¥å­ç›´æ¥è·³è¿‡
 		    		if(ifOnlyChange==true) {
 		    			if(src.equals(tar))
 			    			continue;
-		    		}//È¥µôÏàÍ¬¾ä×Ó
+		    		}//å»æ‰ç›¸åŒå¥å­
 	    		}	    			    		
 
 				if(same==false)
