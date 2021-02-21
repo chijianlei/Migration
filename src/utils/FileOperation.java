@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class FileOperation {
 
@@ -102,4 +103,26 @@ public class FileOperation {
 	       }
 	       return flag;
 	     }
+	 
+	public static void traverseFolder(String path, ArrayList<File> fileList) {
+		File dir = new File(path);
+		if (dir.exists()) {
+			File[] files = dir.listFiles();
+			if (files.length == 0) {
+				System.out.println("文件夹是空的!");
+			} else {
+				for (File file : files) {
+					if (file.isDirectory()) {
+						traverseFolder(file.getAbsolutePath(), fileList);
+					} else {
+						if(file.getName().contains(".java"))
+						fileList.add(file);
+					}
+				}
+			}
+		} else {
+			System.out.println("文件不存在!");
+		}		
+	}
+	 
 }

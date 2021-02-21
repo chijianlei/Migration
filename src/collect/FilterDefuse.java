@@ -35,19 +35,19 @@ public class FilterDefuse {
     private static int count = 0;
 	
 	public static void main (String args[]) throws Exception{
-		String path = "I:\\Vulnerability_commit_java\\";
+		String path = "I:\\Vulnerability_commit_android_cpp\\";
 		String outMode = "lineNum";
 		String dataDir = "data\\";
 		String numDir = "data_num\\";
 		String checkDir = "data_check\\";
 		String varDir = "data_var\\";
-		if(outMode.equals("txt"))
-			FileOperation.delAllFile(dataDir);
-		if(outMode.equals("lineNum")) {
-			FileOperation.delAllFile(numDir);
-			FileOperation.delAllFile(varDir);
-			FileOperation.delAllFile(checkDir);
-		}
+//		if(outMode.equals("txt"))
+//			FileOperation.delAllFile(dataDir);
+//		if(outMode.equals("lineNum")) {
+//			FileOperation.delAllFile(numDir);
+//			FileOperation.delAllFile(varDir);
+//			FileOperation.delAllFile(checkDir);
+//		}
 		if(outMode.equals("json")) {
 			String jpath = "jsons\\";
 			File jFile = new File(jpath);
@@ -55,12 +55,18 @@ public class FilterDefuse {
 				jFile.mkdirs();
 			if(jFile.listFiles().length!=0&&outMode.equals("json"))
 				throw new Exception("pls clean dir!");
-		}		
+		}	
+		
+		ArrayList<String> existList = checkExist(numDir);
 		File rootFile = new File(path);
-		File[] fileList = rootFile.listFiles();
-		FilterDefuse defuse = new FilterDefuse();
+		File[] fileList = rootFile.listFiles();	
 		for(int i=0;i<fileList.length;i++) {
-			String cpPath = fileList[i].getAbsolutePath();
+			File cpFile = fileList[i];
+			System.out.println(i+":"+cpFile.getName());
+			if(existList.contains(cpFile.getName()))
+				continue;
+			String cpPath = cpFile.getAbsolutePath();
+			FilterDefuse defuse = new FilterDefuse();
 			defuse.collectDiffwithDefUse(cpPath, outMode, true, false, "");
 		}	
 		System.out.println("DuplicateNum:"+count);
@@ -165,7 +171,7 @@ public class FilterDefuse {
 //				System.out.println("CheckMapping "+sRoot.getId()+":"+srcT.getMiName());
 				String src = Output.subtree2src(srcT);	
 				
-	    		if(outMode=="txt"&&(src.contains("error")&&src.contains("situation"))) {
+	    		if(outMode.equals("txt")&&(src.contains("error")&&src.contains("situation"))) {
 	    			errCount++;
     				continue;		    				    			
 	    		}
@@ -210,12 +216,17 @@ public class FilterDefuse {
 						}
 					}
 				}
-				if(labelCount==0)
+				if(labelCount==0) {
+					System.err.println("labelCount is 0");
 					continue;
+				}					
 				
 				SubTree dstT = defuse.checkMapping(srcT, mappings, dTC, sub2);
-				if(dstT==null)
+				if(dstT==null) {
+					System.err.println("no dstT searched");
 					continue;//子树没有对应子树，被删除
+				}
+					
 				ITree dRoot = dstT.getRoot();
 //	    		System.out.println(sRoot.getId()+"->"+dRoot.getId());	    		
 	    		
@@ -231,7 +242,7 @@ public class FilterDefuse {
 				int dLastLine = 0;
 				int dBeginCol = 0;
 				int dLastCol = 0;
-				if(outMode=="lineNum") {
+				if(outMode.equals("lineNum")) {
 					for(ITree node : nodes1) {
 						int line = node.getLine();
 						int col = node.getColumn();
@@ -342,7 +353,7 @@ public class FilterDefuse {
 				
 				src = Output.subtree2src(srcT);
 	    		String tar = Output.subtree2src(dstT);
-	    		if(outMode=="txt") {	    			
+	    		if(outMode.equals("txt")) {	    			
 		    		if(tar.contains("error")&&tar.contains("situation")) {
 		    			errCount++;
 		    			continue;
@@ -356,9 +367,12 @@ public class FilterDefuse {
 		    		}//去掉相同句子
 	    		}	    			    		
 
-				if(same==false)
+				if(same==false) {
+					System.err.println("No leaf is the same");
 					continue;//no leaf is the same
-				if(outMode=="txt") {
+				}
+					
+				if(outMode.equals("txt")) {
 					if(ifPrintDef==true) {
 						String buffer = getDefTxt(usedDefs1, usedDefs2, sTC, dTC, srcT, dstT);
 					    printTxt(outPath, outPath1, outPath2, buffer);
@@ -366,7 +380,7 @@ public class FilterDefuse {
 						String buffer = getText(sTC, dTC, srcT, dstT);
 						printTxt(outPath, outPath1, outPath2, buffer);
 					}
-				}else if(outMode=="json") {
+				}else if(outMode.equals("json")) {
 					srcT = absTree(srcT);
 					dstT = absTree(dstT);
 					TreeContext st = defuse.buildTC(srcT);
@@ -375,7 +389,7 @@ public class FilterDefuse {
 						printJson(jpath, st, dt);
 						treePairs.put(srcT, dstT);
 					}					
-				}else if(outMode=="lineNum") {
+				}else if(outMode.equals("lineNum")) {
 //					if(sRoot.getId()==806) {
 //						for(Map.Entry<String, String> entry : replaceMap_src.entrySet()) {
 //							String varName = entry.getKey();
@@ -474,6 +488,20 @@ public class FilterDefuse {
 		}
 		return st;
 	}
+	
+	static private ArrayList<String> checkExist(String outPath){
+		ArrayList<String> existList = new ArrayList<String>();
+		File outDir = new File(outPath);
+		File[] cpFiles = outDir.listFiles();
+		System.out.println(cpFiles.length);
+		for(File cpFile : cpFiles) {
+			String name = cpFile.getName();			
+			String[] tmp = name.split("\\.")[0].split("_");
+			String cpNum = tmp[tmp.length-1];
+			existList.add(cpNum);
+		}		
+		return existList;
+	}//断点重新开始任务用
 	
 	static private Boolean checkSim(TreeContext tc1, TreeContext tc2) {
 		Boolean full_sim = false;

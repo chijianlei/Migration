@@ -1,28 +1,10 @@
 package test;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import gumtreediff.actions.ActionGenerator;
 import gumtreediff.actions.model.Action;
-import gumtreediff.actions.model.Delete;
-import gumtreediff.actions.model.Insert;
-import gumtreediff.actions.model.Move;
-import gumtreediff.actions.model.Update;
-import gumtreediff.gen.jdt.JdtTreeGenerator;
 import gumtreediff.gen.srcml.SrcmlCppTreeGenerator;
-import gumtreediff.gen.srcml.SrcmlJavaTreeGenerator;
 import gumtreediff.io.ActionsIoUtils;
 import gumtreediff.io.TreeIoUtils;
-import gumtreediff.io.ActionsIoUtils.ActionSerializer;
 import gumtreediff.matchers.Mapping;
 import gumtreediff.matchers.MappingStore;
 import gumtreediff.matchers.Matcher;
@@ -31,21 +13,28 @@ import gumtreediff.tree.ITree;
 import gumtreediff.tree.TreeContext;
 import utils.Utils;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 public class TestGeneration {
 	
 	public static void main(String args[]) throws Exception{
 //		String path = "astra_frame_listener.cpp";
-		String path = "AccountInstance.java";
+		String path = "RegionSamplingThread.cpp";
 //		String path = "migrations_test\\astra_driver\\astra_driver.cpp";
 		File cppfile = new File(path);
-		TreeContext tc = new SrcmlJavaTreeGenerator().generateFromFile(cppfile);
+		TreeContext tc = new SrcmlCppTreeGenerator().generateFromFile(cppfile);
 		ITree root = tc.getRoot();
 		System.out.println(root.getId()+","+tc.getTypeLabel(root));
 //		String path2 = "astra_frame_listener2.cpp";
-		String path2 = "AccountInstance2.java";
+		String path2 = "RegionSamplingThread2.cpp";
 //		String path2 = "migrations_test\\astra_driver\\astra_driver2.cpp";
 		File cppfile2 = new File(path2);
-		TreeContext tc2 = new SrcmlJavaTreeGenerator().generateFromFile(cppfile2);          
+		TreeContext tc2 = new SrcmlCppTreeGenerator().generateFromFile(cppfile2);
         ITree root2 = tc2.getRoot();
         System.out.println(root2.getId()+","+tc2.getTypeLabel(root2));
         

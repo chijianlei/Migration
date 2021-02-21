@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fcd345c-e3dc-4b9a-9838-280f493b8a95" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/../.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.settings/org.eclipse.jdt.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/../.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UseScrapy.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../data/defuse0.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../data/defuse1.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../data/defuse2.txt" beforeDir="false" />
@@ -44,8 +47,41 @@
       <change beforePath="$PROJECT_DIR$/../data/tgt-val_cp19.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../data/tgt-val_cp2.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../data/tgt-val_cp20.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mySpider/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mySpider/api.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mySpider/api1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mySpider/api_full_v22.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mySpider/api_v22.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mySpider/api_v23.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mySpider/api_v24.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mySpider/api_v25.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mySpider/api_v26.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mySpider/api_v27.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mySpider/backup/api_v22.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mySpider/backup/api_v23.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mySpider/backup/api_v24.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mySpider/backup/api_v25.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mySpider/backup/api_v26.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mySpider/backup/api_v27.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mySpider/backup/api_v28.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mySpider/full_api.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mySpider/getapi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mySpider/items.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mySpider/middlewares.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mySpider/pipelines.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mySpider/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mySpider/spiders/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mySpider/spiders/fdroid.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mySpider/spiders/getapi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mySpider/spiders/giturl.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mySpider/spiders/itcase.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../raw.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../raw.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/collect/FileFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/collect/FileFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/collect/FilterDefuse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/collect/FilterDefuse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/test/TestGeneration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../src/test/TestGeneration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testGraph.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../testGraph.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testGraph2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../testGraph2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../testMapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../testMapping.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,52 +91,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mySpider/spiders/itcase.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mySpider/spiders/fdroid.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mySpider/spiders/getapi.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="729">
-              <caret line="27" column="43" lean-forward="true" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
-              <folding>
-                <element signature="e#24#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mySpider/getapi.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1809">
-              <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#17#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../20190517-PredictToChange/LSI-SplitText.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1890">
+            <state relative-caret-position="756">
               <caret line="75" column="84" selection-start-line="75" selection-start-column="84" selection-end-line="75" selection-end-column="84" />
             </state>
           </provider>
@@ -161,7 +155,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1928" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
@@ -172,16 +166,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="mySpider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mySpider" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mySpider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mySpider" type="462c0819:PsiDirectoryNode" />
               <item name="mySpider" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -192,7 +182,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -357,16 +346,17 @@
       <workItem from="1572473754089" duration="628000" />
       <workItem from="1578701224216" duration="1236000" />
       <workItem from="1580948528327" duration="36000" />
+      <workItem from="1607421054480" duration="11000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116801000" />
+    <option name="totallyTimeSpent" value="116812000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19989339" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20202559" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -405,9 +395,7 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/mySpider/spiders/UseScrapy.py" />
-    <entry file="file://$PROJECT_DIR$/mySpider/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/mySpider/__init__.py" />
     <entry file="file://D:/Program Files/Python3.7.3/Lib/xml/etree/ElementTree.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3286">
@@ -444,13 +432,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mySpider/items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/mySpider/items.py" />
     <entry file="file://D:/Program Files/Python3.7.3/Lib/site-packages/torch/cuda/__init__.pyi">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="837">
@@ -477,23 +459,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mySpider/test.py" />
     <entry file="file://$PROJECT_DIR$/../../gumtree/test.py" />
-    <entry file="file://$PROJECT_DIR$/mySpider/spiders/itcase.py">
+    <entry file="file://$PROJECT_DIR$/mySpider/spiders/itcase.py" />
+    <entry file="file://$PROJECT_DIR$/mySpider/spiders/fdroid.py" />
+    <entry file="file://$PROJECT_DIR$/../../20190827-ChangeImpactAnalysis/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="405">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mySpider/spiders/fdroid.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/mySpider/spiders/getapi.py" />
+    <entry file="file://$PROJECT_DIR$/mySpider/getapi.py" />
     <entry file="file://$PROJECT_DIR$/../../20190517-PredictToChange/LSI-SplitText.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1890">
+        <state relative-caret-position="756">
           <caret line="75" column="84" selection-start-line="75" selection-start-column="84" selection-end-line="75" selection-end-column="84" />
         </state>
       </provider>
@@ -505,42 +487,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../20190827-ChangeImpactAnalysis/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../20190827-ChangeImpactAnalysis/LoadLSIModel.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="702">
           <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
           <folding>
             <element signature="e#44#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mySpider/spiders/getapi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="27" column="43" lean-forward="true" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mySpider/getapi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1809">
-          <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
           </folding>
         </state>
       </provider>

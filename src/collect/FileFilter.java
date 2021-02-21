@@ -1,36 +1,18 @@
 package collect;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Map;
-import java.util.Set;
-
-import javax.annotation.processing.Filer;
-import javax.lang.model.element.Element;
-import javax.tools.FileObject;
-import javax.tools.JavaFileObject;
-
-import structure.API;
-import structure.Migration;
-import utils.ReadAPI;
-
-import javax.tools.JavaFileManager.Location;
-
 import gumtreediff.gen.srcml.SrcmlCppTreeGenerator;
 import gumtreediff.gen.srcml.SrcmlJavaTreeGenerator;
 import gumtreediff.matchers.MappingStore;
 import gumtreediff.matchers.Matcher;
 import gumtreediff.matchers.Matchers;
 import gumtreediff.tree.TreeContext;
+import structure.API;
+import structure.Migration;
+import utils.FileOperation;
+import utils.ReadAPI;
+
+import java.io.*;
+import java.util.*;
 
 public class FileFilter {
 	private static LinkedHashSet<API> apis = new LinkedHashSet<API>();
@@ -184,28 +166,131 @@ public class FileFilter {
 				throw new Exception("srcfile is not existed!");
 			}
 			System.out.println("Analyse:"+ srcFile.getName());
+			Calendar calendar = Calendar.getInstance();
+			Date time = calendar.getTime();
+			System.out.println(time);
 			File dstFile = new File(path2);	
 			if (!dstFile.exists()) {
 				br.close();
 				throw new Exception("dstfile is not existed!");
 			}
-			TreeContext tc1 = new SrcmlJavaTreeGenerator().generateFromFile(srcFile);
-			TreeContext tc2 = new SrcmlJavaTreeGenerator().generateFromFile(dstFile);
-			Matcher m = Matchers.getInstance().getMatcher(tc1.getRoot(), tc2.getRoot());
-	        m.match();
-	        MappingStore mappings = m.getMappings();
-			Migration mi = new Migration(tc1, tc2, mappings, srcFile.getAbsolutePath(), dstFile.getAbsolutePath());
-			mi.setRepoName(repoName);
-			System.out.println("Mapping size: "+mappings.asSet().size());
-			mi.setSrcHash(srcHash);
-			mi.setDstHash(dstHash);
-			migrates.add(mi);			
+			try {
+				TreeContext tc1 = new SrcmlCppTreeGenerator().generateFromFile(srcFile);
+				TreeContext tc2 = new SrcmlCppTreeGenerator().generateFromFile(dstFile);
+				Matcher m = Matchers.getInstance().getMatcher(tc1.getRoot(), tc2.getRoot());
+		        m.match();
+		        MappingStore mappings = m.getMappings();
+				Migration mi = new Migration(tc1, tc2, mappings, srcFile.getAbsolutePath(), dstFile.getAbsolutePath());
+				mi.setRepoName(repoName);
+				System.out.println("Mapping size: "+mappings.asSet().size());
+				mi.setSrcHash(srcHash);
+				mi.setDstHash(dstHash);
+				migrates.add(mi);
+			} catch (Exception e) {
+				continue;
+				// TODO: handle exception
+			}												
 		}	
 		br.close();
 		return migrates;
 	}
 	
-	
+	public static ArrayList<Migration> readTufanoList(String path) throws Exception{
+		ArrayList<Migration> migrates = new ArrayList<Migration>();
+		File cpFile = new File(path);
+		String hashID = cpFile.getName();
+		System.err.println("Analyse:"+ cpFile.getName());
+		String srcDiffPath = cpFile.getAbsolutePath()+"\\P_dir\\";
+		String dstDiffPath = cpFile.getAbsolutePath()+"\\F_dir\\";
+		ArrayList<File> srcList = new ArrayList<File>();		
+		ArrayList<File> dstList = new ArrayList<File>();
+		FileOperation.traverseFolder(srcDiffPath, srcList);
+		FileOperation.traverseFolder(dstDiffPath, dstList);
+		if(srcList.size()==0||dstList.size()==0) {
+			System.err.println("file is not existed!");
+			return migrates;
+		}		
+	    System.out.println("FileSize:"+srcList.size()+","+dstList.size());
+		if(srcList.size()>dstList.size()) {
+			System.err.println("file number is not the same!");
+			return migrates;
+		}
+		
+		for(File srcFile : srcList) {
+			if(srcFile.length()>1048000)
+				continue;// skip the file that bigger than 2MB
+		    if(srcFile.getName().equals("Run.java"))
+		    	continue;//This file takes too much time to analyze
+			String beforeName = srcFile.getName();
+			int count = 0;
+			File targetFile = null;
+			List<File> targetList = new ArrayList<File>();
+			for(File dstFile : dstList) {
+				String afterName = dstFile.getName();
+				if(afterName.equals(beforeName)) {
+					count++;
+					targetList.add(dstFile);
+				}
+			}
+			if(count==0) {
+				throw new Exception("dstfile is not existed!");
+			}else if(count ==1) {
+				targetFile = targetList.get(0);
+			}else if(count>1){
+				String targetPath = srcFile.getAbsolutePath();
+				String[] targetPaths = targetPath.split("\\\\");
+				targetPath = targetPath.replace("P_dir", "F_dir");
+				Boolean find = false;
+				for(File tmpFile : targetList) {
+					if(tmpFile.getAbsolutePath().equals(targetPath)) {
+						targetFile = tmpFile;
+						find = true;
+					}
+				}
+					
+				if(find==false) {//find the file that has the most similar score
+					int score = 0;
+					System.err.println("contain the duplicate!");
+					for(File tmpFile : targetList) {
+						String[] tmpPaths = tmpFile.getAbsolutePath().split("\\\\");
+						int tmpScore = 0;
+						for(int i=0;i<tmpPaths.length-1&&i<targetPaths.length-1;i++) {
+							if(tmpPaths[i].equals(targetPaths[i]))
+								tmpScore++;
+						}
+						if(tmpScore>score) {
+							score = tmpScore;
+							targetFile = tmpFile;
+							find = true;
+						}else if(score!=0&&tmpScore==score) {
+							System.err.println(targetFile.getAbsolutePath());
+							throw new Exception("Duplicate dst file!");
+						}							
+					}
+				}
+			}
+			System.out.println("Analyse:"+ beforeName+", Size:"+srcFile.length());
+			
+			Calendar calendar = Calendar.getInstance();
+			Date time = calendar.getTime();
+			System.out.println(time);
+			try {
+				TreeContext tc1 = new SrcmlJavaTreeGenerator().generateFromFile(srcFile);
+				TreeContext tc2 = new SrcmlJavaTreeGenerator().generateFromFile(targetFile);
+				Matcher m = Matchers.getInstance().getMatcher(tc1.getRoot(), tc2.getRoot());
+		        m.match();
+		        MappingStore mappings = m.getMappings();
+				Migration mi = new Migration(tc1, tc2, mappings, srcFile.getAbsolutePath(), targetFile.getAbsolutePath());
+				mi.setRepoName(hashID);
+				System.out.println("Mapping size: "+mappings.asSet().size());
+				migrates.add(mi);
+			} catch (Exception e) {
+				continue;
+				// TODO: handle exception
+			}	
+		}			
+		return migrates;
+	}
 	
 	
 	
