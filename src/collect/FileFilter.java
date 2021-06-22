@@ -219,7 +219,7 @@ public class FileFilter {
 		for(File srcFile : srcList) {
 			if(srcFile.length()>1048000)
 				continue;// skip the file that bigger than 2MB
-		    if(srcFile.getName().equals("Run.java"))
+		    if(srcFile.getName().equals("Run.java")||srcFile.getName().equals("DatabaseVersioningService.java"))
 		    	continue;//This file takes too much time to analyze
 			String beforeName = srcFile.getName();
 			int count = 0;
