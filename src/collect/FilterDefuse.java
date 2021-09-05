@@ -35,12 +35,18 @@ public class FilterDefuse {
     private static int count = 0;
 	
 	public static void main (String args[]) throws Exception{
-		String path = "I:\\Vulnerability_commit_android_cpp\\";
+		String path = "I:\\20210714-Srqtrans_testcase\\Vulnerability_testcase\\";
 		String outMode = "lineNum";
-		String dataDir = "data\\";
 		String numDir = "data_num\\";
 		String checkDir = "data_check\\";
 		String varDir = "data_var\\";
+//		multiCollect(path, outMode, numDir);
+		String cpPath = path+"cp19";
+		FilterDefuse defuse = new FilterDefuse();
+		defuse.collectDiffwithDefUse(cpPath, outMode, true, false, "");
+	}
+	
+	public static void multiCollect(String path, String outMode, String numDir) throws Exception {
 //		if(outMode.equals("txt"))
 //			FileOperation.delAllFile(dataDir);
 //		if(outMode.equals("lineNum")) {
@@ -60,6 +66,7 @@ public class FilterDefuse {
 		ArrayList<String> existList = checkExist(numDir);
 		File rootFile = new File(path);
 		File[] fileList = rootFile.listFiles();	
+		System.out.println(fileList.length);
 		for(int i=0;i<fileList.length;i++) {
 			File cpFile = fileList[i];
 			System.out.println(i+":"+cpFile.getName());

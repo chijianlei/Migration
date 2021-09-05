@@ -14,16 +14,18 @@ import utils.ReadAPI;
 import java.io.*;
 import java.util.*;
 
+import org.apache.commons.io.FileUtils;
+
 public class FileFilter {
 	private static LinkedHashSet<API> apis = new LinkedHashSet<API>();
 	
 	public static void main(String[] args) throws Exception{	
 		String path = "apis";
-		apis = ReadAPI.readAPI(path);
+//		apis = ReadAPI.readAPI(path);
 //		for(String api : apis) {
 //			System.out.println(api);
 //		}
-		FileFilter.Filter("J:\\test1\\");
+//		FileFilter.Filter("J:\\test1\\");
 	}
 	
 	public static void Filter(String path) throws Exception {
@@ -39,7 +41,7 @@ public class FileFilter {
 		}
 		for(File dir : dirs) {
 			System.out.println("Analyse "+dir.getName());
-			if(dir.listFiles().length!=3) {//Á½¸öcommitÎÄ¼þ¼Ð£¬Ò»¸ödiffsÎÄ±¾ÎÄ¼þ
+			if(dir.listFiles().length!=3) {//two commit dirs and the diff logs
 				wr.close();
 				throw new Exception("Error!");
 			}
@@ -61,7 +63,7 @@ public class FileFilter {
 				Boolean preserve = false;
 				Boolean containsImport = false;
 				ArrayList<String> tmpImports = new ArrayList<String>();
-				while((tmpline1=br1.readLine())!=null) {//´ÓsrcFileËÑË÷°üº¬APIÎÄ¼þ
+				while((tmpline1=br1.readLine())!=null) {//ï¿½ï¿½srcFileï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½APIï¿½Ä¼ï¿½
 					if(tmpline1.contains("import")) {
 						if(tmpline1.split(" ").length<2)
 							continue;
@@ -87,7 +89,7 @@ public class FileFilter {
 				br1.close();
 				containsImport = false;//reset
 				tmpImports = new ArrayList<String>();//reset
-				while((tmpline1=br2.readLine())!=null) {//´ÓtgtFileËÑË÷°üº¬APIÎÄ¼þ
+				while((tmpline1=br2.readLine())!=null) {//ï¿½ï¿½tgtFileï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½APIï¿½Ä¼ï¿½
 					if(tmpline1.contains("import")) {
 						if(tmpline1.split(" ").length<2)
 							continue;
@@ -120,8 +122,7 @@ public class FileFilter {
 			br.close();
 		}
 		wr.close();
-	}
-	
+	}	
 
 	private static HashMap<String, HashSet<String>> getImportList() throws Exception {
 		if(apis.size()==0)
@@ -155,6 +156,7 @@ public class FileFilter {
 		tmpline = br.readLine();
 		String srcHash = tmpline.split(";")[0];
 		String dstHash = tmpline.split(";")[1];
+		
 		while((tmpline=br.readLine())!=null) {
 			String path1 = tmpline.split(";")[0];
 			String path2 = tmpline.split(";")[1];
@@ -175,8 +177,9 @@ public class FileFilter {
 				throw new Exception("dstfile is not existed!");
 			}
 			try {
-				TreeContext tc1 = new SrcmlCppTreeGenerator().generateFromFile(srcFile);
-				TreeContext tc2 = new SrcmlCppTreeGenerator().generateFromFile(dstFile);
+				TreeContext tc1 = new SrcmlJavaTreeGenerator().generateFromFile(srcFile);
+				//need to be changed by different languages
+				TreeContext tc2 = new SrcmlJavaTreeGenerator().generateFromFile(dstFile);
 				Matcher m = Matchers.getInstance().getMatcher(tc1.getRoot(), tc2.getRoot());
 		        m.match();
 		        MappingStore mappings = m.getMappings();
@@ -290,10 +293,7 @@ public class FileFilter {
 			}	
 		}			
 		return migrates;
-	}
-	
-	
-	
+	}	
 	
 	
 }

@@ -37,8 +37,8 @@ public class CommitFileList {
 	 */
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
-		String versionCommit="66471836f584d5c73be18367e1db4c4783b0cb48";//需要分析的Commit Hash		
-		String path="D:\\workspace\\poi\\";//对应项目在本地Repo的路径
+		String versionCommit="66471836f584d5c73be18367e1db4c4783b0cb48";//锟斤拷要锟斤拷锟斤拷锟斤拷Commit Hash		
+		String path="D:\\workspace\\poi\\";//锟斤拷应锟斤拷目锟节憋拷锟斤拷Repo锟斤拷路锟斤拷
 //		autoExtraction(versionCommit, path);
 		getChangeList(versionCommit, path);
 	}
@@ -119,8 +119,8 @@ public class CommitFileList {
 		CommandLine cmdLine = CommandLine.parse(line);
 		DefaultExecuteResultHandler resultHandler = new DefaultExecuteResultHandler();
 		DefaultExecutor executor = new DefaultExecutor();			 			
-		executor.setExitValue(1);	//设置命令执行退出值为1，如果命令成功执行并且没有错误，则返回1		
-		executor.setWorkingDirectory(new File(classPath));//设置工作目录
+		executor.setExitValue(1);	//锟斤拷锟斤拷锟斤拷锟斤拷执锟斤拷锟剿筹拷值为1锟斤拷锟斤拷锟斤拷锟斤拷锟缴癸拷执锟叫诧拷锟斤拷没锟叫达拷锟斤拷锟津返伙拷1		
+		executor.setWorkingDirectory(new File(classPath));//锟斤拷锟矫癸拷锟斤拷目录
 		executor.execute(cmdLine, resultHandler);
 		Thread.sleep(1000);
 				
@@ -160,7 +160,7 @@ public class CommitFileList {
 		BufferedWriter wr1 = new BufferedWriter(new FileWriter(tagPath));
 		wr.append(oldCommitName+";"+newCommitName);
 		wr.newLine();
-		wr.flush();//第一行添加commit hash
+		wr.flush();//锟斤拷一锟斤拷锟斤拷锟絚ommit hash
 		wr1.append("newCommit:\n"+newCommit.getFullMessage());
 		wr1.newLine();
 		wr1.append("oldCommit:\n"+oldCommit.getFullMessage());
@@ -182,8 +182,8 @@ public class CommitFileList {
 		CommandLine cmdLine1 = CommandLine.parse(line1);
 		DefaultExecuteResultHandler resultHandler1 = new DefaultExecuteResultHandler();
 		DefaultExecutor executor1 = new DefaultExecutor();			 			
-		executor1.setExitValue(1);	//设置命令执行退出值为1，如果命令成功执行并且没有错误，则返回1		
-		executor1.setWorkingDirectory(new File(classPath));//设置工作目录
+		executor1.setExitValue(1);	//锟斤拷锟斤拷锟斤拷锟斤拷执锟斤拷锟剿筹拷值为1锟斤拷锟斤拷锟斤拷锟斤拷锟缴癸拷执锟叫诧拷锟斤拷没锟叫达拷锟斤拷锟津返伙拷1		
+		executor1.setWorkingDirectory(new File(classPath));//锟斤拷锟矫癸拷锟斤拷目录
 		executor1.execute(cmdLine1, resultHandler1);
 		Thread.sleep(1000);
 		
@@ -206,10 +206,10 @@ public class CommitFileList {
 			String oldFilePath = entry.getOldPath();
 			String newFilePath = entry.getNewPath();
 			if(oldFilePath.contains("/dev/null")||newFilePath.contains("/dev/null")) {
-				continue;//发现有删除文件或者添加文件的情况，显示路径为这个，不需要这种changepair
+				continue;//锟斤拷锟斤拷锟斤拷删锟斤拷锟侥硷拷锟斤拷锟斤拷锟斤拷锟斤拷募锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷示路锟斤拷为锟斤拷锟斤拷锟斤拷锟斤拷锟揭拷锟斤拷锟絚hangepair
 			}else if(oldFilePath.contains(".java")&&newFilePath.contains(".java")){
 				filterDiffs.add(entry);
-			}//删除的文件commit中找不到
+			}//删锟斤拷锟斤拷锟侥硷拷commit锟斤拷锟揭诧拷锟斤拷
         }
 		return filterDiffs;
 	}
