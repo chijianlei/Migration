@@ -12,51 +12,50 @@ public class FileOperation {
 
 	 public static void copyFile(File sourcefile,File targetFile) throws IOException{
 		 File parent = targetFile.getParentFile();
-		 //Èç¹û±£´æÂ·¾¶²»´æÔÚ£¬Ôò´´½¨Â·¾¶
 		 if(!parent.exists()){
 			parent.mkdirs();
 		 }
-	     //ĞÂ½¨ÎÄ¼şÊäÈëÁ÷²¢¶ÔËü½øĞĞ»º³å        
+		//æ–°å»ºæ–‡ä»¶è¾“å…¥æµå¹¶å¯¹å®ƒè¿›è¡Œç¼“å†²
 		 FileInputStream input=new FileInputStream(sourcefile);	        
 		 BufferedInputStream inbuff=new BufferedInputStream(input);	        
-	     //ĞÂ½¨ÎÄ¼şÊä³öÁ÷²¢¶ÔËü½øĞĞ»º³å
+		//æ–°å»ºæ–‡ä»¶è¾“å‡ºæµå¹¶å¯¹å®ƒè¿›è¡Œç¼“å†²
 	     FileOutputStream out=new FileOutputStream(targetFile);
 	     BufferedOutputStream outbuff=new BufferedOutputStream(out);  
-	     //»º³åÊı×é   
+	     ///ç¼“å†²æ•°ç»„   
 	     byte[] b=new byte[1024*5];
 	     int len=0;
 	     while((len=inbuff.read(b))!=-1){
 	    	 outbuff.write(b, 0, len);
 	     }        
 	        
-	     outbuff.flush(); //Ë¢ĞÂ´Ë»º³åµÄÊä³öÁ÷                
-	     inbuff.close();//¹Ø±ÕÁ÷  
+	     outbuff.flush(); //åˆ·æ–°æ­¤ç¼“å†²çš„è¾“å‡ºæµ           
+	     inbuff.close();//å…³é—­æµ
 	     outbuff.close();
 	     out.close();
 	     input.close();     
 	 }
 	 
 	 public static void copyDirectiory(String sourceDir,String targetDir) throws IOException{	        	        
-		 //ĞÂ½¨Ä¿±êÄ¿Â¼
+		 //æ–°å»ºç›®æ ‡ç›®å½•
 		 File source = new File(sourceDir);
 		 File target = new File(targetDir);
 		 if(!target.exists()){
 			 target.mkdirs();
 		 }        	        
-		 //»ñÈ¡Ô´ÎÄ¼ş¼Ğµ±ÏÂµÄÎÄ¼ş»òÄ¿Â¼	        
+		//è·å–æºæ–‡ä»¶å¤¹å½“ä¸‹çš„æ–‡ä»¶æˆ–ç›®å½•	  	        
 		 File[] file=source.listFiles();
 		 for (int i = 0; i < file.length; i++) {	            
 			 if(file[i].isFile()){	                
-				 //Ô´ÎÄ¼ş	                
+				//æºæ–‡ä»¶	               
 				 File sourceFile=file[i];	                   
-				 //Ä¿±êÎÄ¼ş	                
+				//ç›®æ ‡æ–‡ä»¶	                
 				 File targetFile=new File(new File(targetDir).getAbsolutePath()+File.separator+file[i].getName());	                	                
 				 copyFile(sourceFile, targetFile);	            	           
 			 }	            	            	            
 			 if(file[i].isDirectory()){	               
-				 //×¼±¸¸´ÖÆµÄÔ´ÎÄ¼ş¼Ğ	               
+				//å‡†å¤‡å¤åˆ¶çš„æºæ–‡ä»¶å¤¹               
 				 String dir1=sourceDir+"\\"+file[i].getName();	               
-				 //×¼±¸¸´ÖÆµÄÄ¿±êÎÄ¼ş¼Ğ	               
+				//å‡†å¤‡å¤åˆ¶çš„ç›®æ ‡æ–‡ä»¶å¤¹	               
 				 String dir2=targetDir+"\\"+file[i].getName();	                	                
 				 copyDirectiory(dir1, dir2);	            
 			 }	        
@@ -65,15 +64,15 @@ public class FileOperation {
 	 
 	 public static void delFolder(String folderPath) {
 	     try {
-	        delAllFile(folderPath); //É¾³ıÍêÀïÃæËùÓĞÄÚÈİ
+	        delAllFile(folderPath); //åˆ é™¤å®Œé‡Œé¢æ‰€æœ‰å†…å®¹
 	        String filePath = folderPath;
 	        filePath = filePath.toString();
 	        java.io.File myFilePath = new java.io.File(filePath);
-	        myFilePath.delete(); //É¾³ı¿ÕÎÄ¼ş¼Ğ
+	        myFilePath.delete(); //åˆ é™¤ç©ºæ–‡ä»¶å¤¹
 	     } catch (Exception e) {
 	       e.printStackTrace(); 
 	     }
-	}//É¾³ıÖ¸¶¨ÎÄ¼ş¼ĞÏÂËùÓĞÎÄ¼şparam path ÎÄ¼ş¼ĞÍêÕû¾ø¶ÔÂ·¾¶
+	}//åˆ é™¤æŒ‡å®šæ–‡ä»¶å¤¹ä¸‹æ‰€æœ‰æ–‡ä»¶param path æ–‡ä»¶å¤¹å®Œæ•´ç»å¯¹è·¯å¾„
 	 
 	 public static boolean delAllFile(String path) {
 	       boolean flag = false;
@@ -96,8 +95,8 @@ public class FileOperation {
 	             temp.delete();
 	          }
 	          if (temp.isDirectory()) {
-	             delAllFile(path + "/" + tempList[i]);//ÏÈÉ¾³ıÎÄ¼ş¼ĞÀïÃæµÄÎÄ¼ş
-	             delFolder(path + "/" + tempList[i]);//ÔÙÉ¾³ı¿ÕÎÄ¼ş¼Ğ
+	             delAllFile(path + "/" + tempList[i]);//å…ˆåˆ é™¤æ–‡ä»¶å¤¹é‡Œé¢çš„æ–‡ä»¶
+	             delFolder(path + "/" + tempList[i]);//å†åˆ é™¤ç©ºæ–‡ä»¶å¤¹
 	             flag = true;
 	          }
 	       }
@@ -109,7 +108,7 @@ public class FileOperation {
 		if (dir.exists()) {
 			File[] files = dir.listFiles();
 			if (files.length == 0) {
-				System.out.println("ÎÄ¼ş¼ĞÊÇ¿ÕµÄ!");
+				System.out.println("error length!");
 			} else {
 				for (File file : files) {
 					if (file.isDirectory()) {
@@ -121,7 +120,7 @@ public class FileOperation {
 				}
 			}
 		} else {
-			System.out.println("ÎÄ¼ş²»´æÔÚ!");
+			System.out.println("dir not exists");
 		}		
 	}
 	 

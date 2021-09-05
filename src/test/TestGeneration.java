@@ -2,6 +2,10 @@ package test;
 
 import gumtreediff.actions.ActionGenerator;
 import gumtreediff.actions.model.Action;
+import gumtreediff.actions.model.Delete;
+import gumtreediff.actions.model.Insert;
+import gumtreediff.actions.model.Move;
+import gumtreediff.actions.model.Update;
 import gumtreediff.gen.srcml.SrcmlCppTreeGenerator;
 import gumtreediff.io.ActionsIoUtils;
 import gumtreediff.io.TreeIoUtils;
@@ -24,14 +28,14 @@ public class TestGeneration {
 	
 	public static void main(String args[]) throws Exception{
 //		String path = "astra_frame_listener.cpp";
-		String path = "RegionSamplingThread.cpp";
+		String path = "DefaultActionInvocation2.java";
 //		String path = "migrations_test\\astra_driver\\astra_driver.cpp";
 		File cppfile = new File(path);
 		TreeContext tc = new SrcmlCppTreeGenerator().generateFromFile(cppfile);
 		ITree root = tc.getRoot();
 		System.out.println(root.getId()+","+tc.getTypeLabel(root));
 //		String path2 = "astra_frame_listener2.cpp";
-		String path2 = "RegionSamplingThread2.cpp";
+		String path2 = "DefaultActionInvocation.java";
 //		String path2 = "migrations_test\\astra_driver\\astra_driver2.cpp";
 		File cppfile2 = new File(path2);
 		TreeContext tc2 = new SrcmlCppTreeGenerator().generateFromFile(cppfile2);
@@ -99,21 +103,21 @@ public class TestGeneration {
 //        }
         
         System.out.println("ActionSize:" + actions.size());
-//        for (Action a : actions) {
-//            ITree src = a.getNode();
-//            if (a instanceof Move) {
-//                ITree dst = mappings.getDst(src);
-//                System.out.println(((Move)a).toString());
-//            } else if (a instanceof Update) {
-//                ITree dst = mappings.getDst(src);
-//                System.out.println(((Update)a).toString());
-//            } else if (a instanceof Insert) {
-//                ITree dst = a.getNode();
-//                System.out.println(((Insert)a).toString());
-//            } else if (a instanceof Delete) {
-//            	System.out.println(((Delete)a).toString());
-//            }
-//        }
+        for (Action a : actions) {
+            ITree src = a.getNode();
+            if (a instanceof Move) {
+                ITree dst = mappings.getDst(src);
+                System.out.println(((Move)a).toString());
+            } else if (a instanceof Update) {
+                ITree dst = mappings.getDst(src);
+                System.out.println(((Update)a).toString());
+            } else if (a instanceof Insert) {
+                ITree dst = a.getNode();
+                System.out.println(((Insert)a).toString());
+            } else if (a instanceof Delete) {
+            	System.out.println(((Delete)a).toString());
+            }
+        }
         
 //		System.out.println(ActionsIoUtils.toXml(tc, g.getActions(), m.getMappings()).toString());    
         
