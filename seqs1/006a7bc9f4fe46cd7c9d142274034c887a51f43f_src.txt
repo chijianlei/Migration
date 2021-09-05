@@ -1,0 +1,2 @@
+RLog . e ( "Initialization failed, have you forgotten to apply plugin: 'com.chenenyu.router' in application module" )  
+if ( intercept ( context , entry . getValue ( ) ) )  

@@ -1,0 +1,3 @@
+LinkedHashSet < PhysicalTable > physicalTables = currentTableGroupTableNames . stream ( ) . map ( TableName : : asName ) . map ( tableName -> buildPhysicalTableWithDependency ( tableName , availableTableDefinitions , dictionaries ) ) . collect ( Collectors . toCollection ( LinkedHashSet : : new ) )  
+currentTableDefinition . getDependentTableNames ( ) . forEach ( tableName -> { if ( ! physicalTableDictionary . containsKey ( tableName ) ) { physicalTableDictionary . put ( tableName . asName ( ) , buildPhysicalTableWithDependency ( tableName . asName ( ) , availableTableDefinitions , dictionaries ) ) ; } } )  
+ConfigPhysicalTable currentTableBuilt = currentTableDefinition . build ( dictionaries , getDataSourceMetadataService ( ) )  

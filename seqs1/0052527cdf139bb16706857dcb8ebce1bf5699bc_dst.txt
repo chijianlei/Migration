@@ -1,0 +1,2 @@
+textView . setBackgroundColor ( getResources ( ) . getColor ( android . R . color . black ) )  
+super ( context , DATABASE_NAME , null , 2 )  

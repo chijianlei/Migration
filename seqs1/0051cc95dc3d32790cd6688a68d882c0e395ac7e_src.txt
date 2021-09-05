@@ -1,0 +1,7 @@
+byte [ ] buffer = new byte [ 1024 ]  
+private static String getLibPath ( Class < ? > c )  
+return new java . io . File ( c . getProtectionDomain ( ) . getCodeSource ( ) . getLocation ( ) . getPath ( ) ) . getAbsolutePath ( )  
+String jarPath = new java . io . File ( MainScreen . class . getProtectionDomain ( ) . getCodeSource ( ) . getLocation ( ) . getPath ( ) ) . getAbsolutePath ( )  
+ArrayList < String > cmdarray = new ArrayList < String > ( )  
+String libPath = new java . io . File ( AmplitudeAudioInputStream . class . getProtectionDomain ( ) . getCodeSource ( ) . getLocation ( ) . getPath ( ) ) . getAbsolutePath ( )  
+cmdarray . add ( "-Xmx8g" )  

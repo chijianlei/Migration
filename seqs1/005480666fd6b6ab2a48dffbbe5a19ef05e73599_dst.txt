@@ -1,0 +1,2 @@
+accessPoint . update ( connectionConfig , mLastInfo , mLastNetworkInfo )  
+cachedAccessPoints . add ( accessPoint )  

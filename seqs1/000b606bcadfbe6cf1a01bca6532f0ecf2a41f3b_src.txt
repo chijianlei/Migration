@@ -1,0 +1,2 @@
+String surname , subject , text , textCss , from , email , state , path , pathCss , pickupLocation , returnLocation , insurancePac , carModel , rentalEnd , rentalStart , claimId_str , orderId_str , clerkComment , towingAddress  
+text = String . format ( text , surname , carModel , pickupLocation , rentalStart , returnLocation , rentalEnd , orderId_str , towingAddress , insurancePac ) ; 

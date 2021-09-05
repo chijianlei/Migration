@@ -1,0 +1,5 @@
+for ( int i = 1 ; i < listLength ; i ++ )  
+realOffsets . put ( sortedList . get ( 0 ) , 0L )  
+return ImmutableMap . copyOf ( realOffsets )  
+return blob . getOffset ( ) <= position && position < blob . getOffset ( ) + blobSize  
+if ( bulkObject . getOffset ( ) <= position && position < bulkObject . getOffset ( ) + bulkObject . getLength ( ) )  

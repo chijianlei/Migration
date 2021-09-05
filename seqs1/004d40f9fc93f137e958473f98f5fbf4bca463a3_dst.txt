@@ -1,0 +1,3 @@
+if ( detail . getEvent ( ) . equals ( "add money type" ) )  
+} else if ( detail . getEvent ( ) . equals ( "add borrowing" ) )  
+} else if ( detail . getEvent ( ) . equals ( "repay borrowing" ) )  

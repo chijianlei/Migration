@@ -1,0 +1,28 @@
+switch ( msg . what ) { case MSG_SUCCESS : detailActivityTime . setText ( Constants . activity_starttime + " 鑷" + Constants . activity_endttime ) ; detailActivityLocation . setText ( Constants . seller_address ) ; detailActivityDescri . setText ( Constants . activity_detail ) ; downloadImage ( Constants . activity_img ) ; break  
+imageLoader . displayImage ( str , activityDetailImage , new ImageLoadingListener ( ) { public void onLoadingStarted ( String s , View view ) { } public void onLoadingFailed ( String s , View view , FailReason failReason ) { } public void onLoadingComplete ( String s , View view , Bitmap bitmap ) { Constants . activity_bitmap = bitmap ; } public void onLoadingCancelled ( String s , View view ) { } } )  
+public static int currIndex = 0  
+viewPager . setCurrentItem ( 0 )  
+ViewPager . OnPageChangeListener ( )  
+int one = offset * 2 + bmpW  
+int two = one * 2  
+@ Override public void onPageScrolled ( int position , float positionOffset , int positionOffsetPixels )  
+@ Override public void onPageSelected ( int position )  
+Animation animation = new TranslateAnimation ( one * currIndex , one * position , 0 , 0 )  
+currIndex = position  
+animation . setFillAfter ( true )  
+animation . setDuration ( 300 )  
+imageView . startAnimation ( animation )  
+@ Override public void onPageScrollStateChanged ( int state )  
+switch ( i ) { case 0 : getFromLocal ( ) ; break ; case 1 : getFromCamera ( ) ; break  
+getFromCamera ( )  
+switch ( i ) { case 0 : Intent intent = new Intent ( Intent . ACTION_PICK , null ) ; intent . setDataAndType ( MediaStore . Images . Media . EXTERNAL_CONTENT_URI , "image/*" ) ; startActivityForResult ( intent , IMAGE_REQUEST_CODE ) ; break ; case 1 : Intent intent1 = new Intent ( MediaStore . ACTION_IMAGE_CAPTURE ) ; intent1 . putExtra ( MediaStore . EXTRA_OUTPUT , Uri . fromFile ( new File ( Environment . getExternalStorageDirectory ( ) , "photo1.JPG" ) ) ) ; startActivityForResult ( intent1 , CAMERA_REQUEST_CODE ) ; break  
+Intent intent = new Intent ( Intent . ACTION_PICK , null )  
+intent . setDataAndType ( MediaStore . Images . Media . EXTERNAL_CONTENT_URI , "image/*" )  
+startActivityForResult ( intent , IMAGE_REQUEST_CODE )  
+Intent intent1 = new Intent ( MediaStore . ACTION_IMAGE_CAPTURE )  
+intent1 . putExtra ( MediaStore . EXTRA_OUTPUT , Uri . fromFile ( new File ( Environment . getExternalStorageDirectory ( ) , "photo1.JPG" ) ) )  
+startActivityForResult ( intent1 , CAMERA_REQUEST_CODE )  
+");
+                            for(int i=0; i<count; i++){
+                                JSONObject jo = jsonArray.getJSONObject(i);
+                                TicketDetailItem tmp = new TicketDetailItem(jo.getString(" 

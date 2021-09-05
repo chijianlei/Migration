@@ -1,0 +1,1 @@
+if ( dictionary . contains ( word ) )  

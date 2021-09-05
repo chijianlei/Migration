@@ -1,0 +1,14 @@
+if ( aIsHostile && a . inBattle )  
+diceA = getRandomInt ( a . energy )  
+if ( ! aIsHostile && a . inBattle )  
+diceA = 0  
+if ( bIsHostile && b . inBattle )  
+diceB = getRandomInt ( b . energy )  
+if ( ! aIsHostile && a . inBattle )  
+diceB = 0  
+if ( a . inBattle && b . inBattle )  
+if ( diceA >= diceB )  
+a . energy = b . energy / 2  
+b . energy = 0  
+b . energy = a . energy / 2  
+a . energy = 0  

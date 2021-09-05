@@ -1,0 +1,5 @@
+public class PreviewPanel extends JGPPanel implements Observer , GnuplotRunner . ImageConsumer  
+public PreviewPanel ( PlotController plotController , PlottableDataController plottableDataController , LabelController labelController ) 
+plotScript = "set terminal pngcairo size 600,400\n" + plotScript ; 
+@ Override public void readImage ( Image image )  
+LOG . info ( "Refreshed preview" )  

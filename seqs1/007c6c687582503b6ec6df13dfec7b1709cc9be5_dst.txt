@@ -1,0 +1,13 @@
+File f2 = new File ( path2 + "metrics2.csv" )  
+List < String > listHashsOrigin = IOUtils . readAnyFile ( projectName + "/hashs_origin.txt" )  
+for ( int i = 0 ; i < listHashsOrigin . size ( ) ; i ++ )  
+System . out . println ( i + "/" + listHashsOrigin . size ( ) )  
+String h = listHashsOrigin . get ( i )  
+String pathOutput = Paths . PATH_DATA + projectName + "/metrics2/"  
+String pathOutput2 = Paths . PATH_DATA + projectName + "/metrics2/commit_" + hash + "/"  
+filterCSVFile ( Paths . PATH_DATA + projectName + "/metrics/commit_" + hash + "/" , pathOutput2 , IOUtils . readAnyFile ( projectName + "/elementsToGetMetrics.txt" ) )  
+public static void filterBugListById ( String projectName )  
+String projectName = "apache_derby"  
+Filter . filterBugListByProject ( projectName )  
+for ( String s : report . getElements ( ) )  
+bugs . add ( e )  

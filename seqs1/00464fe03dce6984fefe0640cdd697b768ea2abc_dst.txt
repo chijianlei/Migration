@@ -1,0 +1,3 @@
+length ( ) > 1 ? new Character ( singular . charAt ( singular . length ( ) - 2 ) ) : null  
+if ( prev != null && vowels . indexOf ( prev . charValue ( ) ) >= 0 )  
+if ( prev != null && ( prev . charValue ( ) == 'c' || prev . charValue ( ) == 's' ) )  

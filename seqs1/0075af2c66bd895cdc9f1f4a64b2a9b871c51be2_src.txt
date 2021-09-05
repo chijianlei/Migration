@@ -1,0 +1,4 @@
+if ( ( info = client . inspectContainer ( name ) ) != null )  
+if ( info . state ( ) . running ( ) )  
+client . waitContainer ( info . id ( ) ) ; 
+client . removeContainer ( info . id ( ) ) ; 

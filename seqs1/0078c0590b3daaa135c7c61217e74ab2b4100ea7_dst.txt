@@ -1,0 +1,4 @@
+this . pager . setVisible ( numPages > 1 )  
+this . totalSpan . setInnerText ( totalText )  
+private List < SituationSummaryBean > situations = new ArrayList < SituationSummaryBean > ( )  
+private int itemsPerPage = 10 ; 

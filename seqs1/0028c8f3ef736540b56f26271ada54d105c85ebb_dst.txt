@@ -1,0 +1,2 @@
+if ( roboY + roboRadius >= bottomBorder )  
+touchedEdge = true  

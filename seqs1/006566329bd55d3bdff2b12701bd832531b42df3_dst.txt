@@ -1,0 +1,42 @@
+KMField . setEditable ( false )  
+catch ( java . text . ParseException ex )  
+ex . printStackTrace ( )  
+jPanel3Layout . setHorizontalGroup ( jPanel3Layout . createParallelGroup ( javax . swing . GroupLayout . Alignment . LEADING ) . addComponent ( KMField , javax . swing . GroupLayout . DEFAULT_SIZE , 212 , Short . MAX_VALUE ) )  
+jPanel3Layout . setVerticalGroup ( jPanel3Layout . createParallelGroup ( javax . swing . GroupLayout . Alignment . LEADING ) . addGroup ( javax . swing . GroupLayout . Alignment . TRAILING , jPanel3Layout . createSequentialGroup ( ) . addGap ( 0 , 0 , Short . MAX_VALUE ) . addComponent ( KMField , javax . swing . GroupLayout . PREFERRED_SIZE , javax . swing . GroupLayout . DEFAULT_SIZE , javax . swing . GroupLayout . PREFERRED_SIZE ) ) )  
+private int selectService ( String placa )  
+return - 1  
+private void updateService ( int idCliente , String placa , String modelo , int km , boolean situacao , String obs )  
+updateService ( id , jFormattedTextField1 . getText ( ) , jFormattedTextField2 . getText ( ) , km , jCheckBox1 . isSelected ( ) , jTextPane1 . getText ( ) )  
+MServiceTable . setVisible ( true )  
+KMField . setText ( "150000" )  
+jButton1 . setText ( "Excluir" ) ; 
+String KM = KMField . getText ( )  
+private javax . swing . JFormattedTextField KMField  
+PreparedStatement psta = Mul . prepareStatement ( sql2 )  
+ResultSet ra = psta . executeQuery ( )  
+if ( ra . next ( ) ) { 
+fullname = ra . getString ( "nome" )  
+fullname += ra . getString ( "lname" ) ; 
+ra . close ( )  
+psta . close ( )  
+catch ( Exception e )  
+private ArrayList < ArrayList < Object >> getData ( String placa )  
+ArrayList < ArrayList < Object >> data = new ArrayList < > ( )  
+String sql2 = "SELECT rowid, * FROM servico WHERE Placa=?"  
+while ( rs . next ( ) ) 
+row . add ( rs . getInt ( "rowid" ) ) ; 
+row . add ( rs . getString ( "Placa" ) ) ; 
+row . add ( rs . getString ( "Quilometragem" ) ) ; 
+row . add ( rs . getString ( "Modelo" ) ) ; 
+row . add ( rs . getBoolean ( "Situacao" ) ) ; 
+row . add ( rs . getInt ( "Idcliente" ) ) ; 
+row . add ( rs . getString ( "Obs" ) ) ; 
+catch ( Exception e )  
+System . err . println ( "04-07-01: " + e . getClass ( ) . getName ( ) + ": " + e . getMessage ( ) )  
+ArrayList < ArrayList < Object >> data = getData ( placa )  
+int i = data . size ( )  
+list [ n ] = data . get ( n )  
+list [ n ] = data . get ( n )  
+model . addRow ( data )  
+DefaultTableModel model = ( DefaultTableModel ) jTable . getModel ( )  
+Object [ ] rowData = null  

@@ -1,0 +1,7 @@
+chunks . forEach ( b : : put )  
+HttpMessage . Version version = ( message . version ( ) == null ? HttpMessage . Version . HTTP_1_1 : message . version ( ) )  
+if ( ( version . equals ( HttpMessage . Version . HTTP_1_1 ) && message . getPropertyOrEmptyString ( "connection" ) . equalsIgnoreCase ( "close" ) ) || ( version . equals ( HttpMessage . Version . HTTP_1_0 ) && ! message . getPropertyOrEmptyString ( "connection" ) . equalsIgnoreCase ( "keep-alive" ) ) )  
+buffer = readAll ( scanner . inputStream ( ) )  
+private final ScheduledExecutorService executor = Executors . newSingleThreadScheduledExecutor ( )  
+private final Map < Long , ScheduledFuture > scheduledFutureHashMap = new ConcurrentHashMap < > ( )  
+private final AtomicLong atomicLong = new AtomicLong ( )  

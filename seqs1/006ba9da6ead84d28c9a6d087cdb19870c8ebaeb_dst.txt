@@ -1,0 +1,4 @@
+if ( ! todo . containsKey ( preferredRegister ) && ! ig . graph . get ( tl . getKey ( ) ) . intfs . contains ( preferredRegister ) )  
+colors . put ( tl . getKey ( ) , colors . get ( preferredRegister ) )  
+todo . remove ( tl . getKey ( ) )  
+return true  

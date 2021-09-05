@@ -1,0 +1,10 @@
+am . requestAudioFocus ( afm , AudioManager . STREAM_NOTIFICATION , AudioManager . AUDIOFOCUS_GAIN_TRANSIENT )  
+int maxVol = am . getStreamMaxVolume ( AudioManager . STREAM_NOTIFICATION )  
+int curVol = am . getStreamVolume ( AudioManager . STREAM_NOTIFICATION )  
+am . setStreamVolume ( AudioManager . STREAM_NOTIFICATION , maxVol , 0 )  
+mMediaPlayer . prepare ( )  
+mMediaPlayer . setAudioStreamType ( AudioManager . STREAM_NOTIFICATION )  
+catch ( IOException ex )  
+am . setStreamVolume ( AudioManager . STREAM_NOTIFICATION , vol , 0 )  
+private static final String MODIFY_AUDIO_SETTINGS = "android.permission.MODIFY_AUDIO_SETTINGS"  
+private static final String [ ] PERMISSIONS = new String [ ] { READ_SMS , SEND_SMS , RECEIVE_SMS , RECEIVE_MMS , WRITE_SMS , WAKE_LOCK , DISABLE_KEYGUARD , VIBRATE , READ_PHONE_STATE , GET_ACCOUNTS , BILLING , RECEIVE_C2DM , INTERNET , ACCESS_NETWORK_STATE , CALL_PHONE , READ_LOGS , ACCESS_FINE_LOCATION , READ_EXTERNAL_STORAGE , WRITE_EXTERNAL_STORAGE , MODIFY_AUDIO_SETTINGS 

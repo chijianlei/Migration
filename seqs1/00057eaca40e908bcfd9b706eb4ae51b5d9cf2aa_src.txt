@@ -1,0 +1,10 @@
+protected LinkedList < Permission > registeredPermissions = new LinkedList < Permission > ( )  
+this . updatePermissions ( player , null )  
+Set < String > playerPermArray = worldData . getPermissionsHandler ( ) . getAllPlayersPermissions ( player . getName ( ) , false )  
+for ( Permission permission : registeredPermissions )  
+if ( ! perms . contains ( name ) )  
+perms . add ( name )  
+Map < String , Boolean > children = getAllChildren ( name , new HashSet < String > ( ) )  
+if ( permission . getName ( ) . equalsIgnoreCase ( node ) )  
+return permission . getChildren ( )  
+return null  

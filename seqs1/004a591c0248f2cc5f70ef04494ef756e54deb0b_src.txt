@@ -1,0 +1,1 @@
+@ CommandMethod ( path = "town remove request" , requiredArgs = 1 ) public void rejectRequest ( CommandSender s , String playerName )  

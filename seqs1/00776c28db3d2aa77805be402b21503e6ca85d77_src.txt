@@ -1,0 +1,3 @@
+@ GeneratedValue ( strategy = GenerationType . AUTO ) private String id  
+public String getId ( )  
+public void setId ( String id )  

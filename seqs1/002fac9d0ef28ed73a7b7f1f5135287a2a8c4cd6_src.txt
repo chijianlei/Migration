@@ -1,0 +1,26 @@
+Iterable < QuestionChoices > choices = adminUtils . selectCurrentQuestionChoices ( testsID )  
+MainUtils mainUtils = new MainUtils ( )  
+if ( test_idObj . getId ( ) <= 0 ) return false  
+getId ( ) <= 0 ) return false  
+mainUtils . showThis ( "User null" )  
+mainUtils . showThis ( "Test null" )  
+mainUtils . showThis ( "User null" )  
+mainUtils . showThis ( "Test null" )  
+public Iterable < UserAnswers > getAllUserTests ( )  
+Iterable < UserAnswers > userTestList = userAnswerDao . findAll ( )  
+@ Autowired UserAnswersDao userAnswerDao  
+for ( TestQuestions question : question_list )  
+if ( ! isAlreadyAnswered ( user_user , question ) && ! isPinPointed ( user_user , question ) )  
+userAnswerDao . delete ( ( long ) pined_answerId )  
+public ArrayList < Tests > getAvailableTests ( HttpServletRequest request )  
+if ( token_user == null ) return null  
+token_user == null ) return null  
+Iterable < Tests > tests = testsDao . findAll ( )  
+if ( tests == null ) return null  
+tests == null ) return null  
+ArrayList < Tests > availableTests = new ArrayList < Tests > ( )  
+for ( Tests test : tests )  
+if ( ! testAlreadyStarted ( token_user , test ) )  
+availableTests . add ( test )  
+return availableTests . isEmpty ( ) ? null : availableTests  
+availableTests . isEmpty ( ) ? null : availableTests  

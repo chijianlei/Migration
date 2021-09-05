@@ -1,0 +1,1 @@
+int month = cal . get ( Calendar . MONTH ) + 1  

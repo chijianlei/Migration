@@ -1,0 +1,21 @@
+if ( options . getRetentionTime ( ) == null )  
+options . setRetentionTime ( nakadiSettings . getDefaultTopicRetentionMs ( ) )  
+LOG . error ( "Failed to wait for timeline switch" , e )  
+if ( oldRetentionTime == null )  
+throw new InternalNakadiException ( "Empty value for retention time in existing EventType" )  
+private static final long TOPIC_RETENTION_MIN_MS = 100  
+private static final long TOPIC_RETENTION_MAX_MS = 200  
+private static final long TOPIC_RETENTION_TIME_MS = 150  
+Assert . assertEquals ( TOPIC_RETENTION_TIME_MS , eventTypeCaptor . getValue ( ) . getOptions ( ) . getRetentionTime ( ) . longValue ( ) )  
+Assert . assertEquals ( TOPIC_RETENTION_TIME_MS , eventTypeCaptor . getValue ( ) . getOptions ( ) . getRetentionTime ( ) . longValue ( ) )  
+getEventType ( eventTypeName ) . andExpect ( status ( ) . is2xxSuccessful ( ) ) . andExpect ( content ( ) . string ( new StringContains ( "\"options\":{\"retention_time\":150}" ) ) )  
+defaultEventType . getOptions ( ) . setRetentionTime ( 201L )  
+postEventType ( defaultEventType ) . andExpect ( status ( ) . is4xxClientError ( ) ) . andExpect ( content ( ) . string ( new StringContains ( "Field \\\"options.retention_time\\\" can not be more than 200" ) ) )  
+defaultEventType . getOptions ( ) . setRetentionTime ( 99L )  
+postEventType ( defaultEventType ) . andExpect ( status ( ) . is4xxClientError ( ) ) . andExpect ( content ( ) . string ( new StringContains ( "Field \\\"options.retention_time\\\" can not be less than 100" ) ) )  
+when ( topicRepository . createTopic ( 0 , 150L ) ) . thenReturn ( "test-topic" )  
+eventTypeOptions . setRetentionTime ( 100L )  
+eventTypeOptions2 . setRetentionTime ( 200L )  
+eventTypeOptions . setRetentionTime ( 100L )  
+eventTypeOptions2 . setRetentionTime ( 200L )  
+public EventTypeTestBuilder ( )  

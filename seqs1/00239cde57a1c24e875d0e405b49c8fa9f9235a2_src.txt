@@ -1,0 +1,6 @@
+private MediaActionSound mCameraSound  
+mCameraSound = new MediaActionSound ( )  
+mCameraSound . load ( MediaActionSound . SHUTTER_CLICK )  
+SaveImageInBackgroundData data = new SaveImageInBackgroundData ( )  
+if ( Settings . System . getInt ( mContext . getContentResolver ( ) , Settings . System . SCREENSHOT_SOUND , 1 ) == 1 ) 
+mCameraSound . play ( MediaActionSound . SHUTTER_CLICK )  

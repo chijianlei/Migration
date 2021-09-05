@@ -1,0 +1,5 @@
+private static String QUERY_STORAGE = "SQL"  
+String createVertexTable = "CREATE TABLE IF NOT EXISTS " + VERTEX_TABLE + " (" + ID_STRING + " INT PRIMARY KEY AUTO_INCREMENT, " + "type VARCHAR(32) NOT NULL, " + "hash INT NOT NULL" + ")"  
+String createEdgeTable = "CREATE TABLE IF NOT EXISTS " + EDGE_TABLE + " (" + ID_STRING + " INT PRIMARY KEY AUTO_INCREMENT, " + "type VARCHAR(32) NOT NULL ," + "hash INT NOT NULL, " + "srcVertexHash INT NOT NULL, " + "dstVertexHash INT NOT NULL" + ")"  
+String query = "SELECT * FROM VERTEX WHERE " + ID_STRING + " = " + vertexId  
+graph . putEdge ( edge )  

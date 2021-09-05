@@ -1,0 +1,1 @@
+exchangeRateContainer = ( ViewGroup ) flex . getSubView ( getActivity ( ) , rootView , R . id . exchange_rate_container )  

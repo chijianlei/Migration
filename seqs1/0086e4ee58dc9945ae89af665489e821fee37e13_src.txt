@@ -1,0 +1,1 @@
+private boolean isFactor ( long number , long divisor )  

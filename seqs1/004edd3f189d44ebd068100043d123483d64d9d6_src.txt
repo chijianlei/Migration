@@ -1,0 +1,6 @@
+expectNotThrowsException ( "throwIfNullOrEmpty_Array" , ( ) -> { throwIfNullOrEmpty ( array ) ; } )  
+throwIfNullOrEmpty ( array )  
+expectNotThrowsException ( "throwIfNullOrEmpty_Array" , ( ) -> { throwIfNullOrEmpty ( emptyArray ) ; } )  
+expectNotThrowsException ( "throwIfNullOrWhiteSpace_Array" , ( ) -> { throwIfNullOrWhiteSpace ( array ) ; } )  
+throwIfNullOrWhiteSpace ( array )  
+expectNotThrowsException ( "throwIfNullOrWhiteSpace_Array" , ( ) -> { throwIfNullOrWhiteSpace ( emptyArray ) ; } )  

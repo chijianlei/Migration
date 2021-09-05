@@ -1,0 +1,5 @@
+final File rootDir = new File ( baseDir , rootDirectoryRelPath )  
+sourceFileLocation = new File ( rootDir , sourceRelPath ) . getCanonicalFile ( ) . getAbsolutePath ( )  
+LOG . error ( "Failed to locate resource '" + sourceFile . getFqName ( ) )  
+issueBuilder . line ( line )  
+return Optional . ofNullable ( fileSystem . inputFile ( f -> f . absolutePath ( ) . equals ( normalizedPath ) ) )  

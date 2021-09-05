@@ -1,0 +1,7 @@
+byte [ ] buffer = new byte [ 65536 ]  
+private static String getLibPath ( Class < ? > c )  
+return new java . io . File ( c . getProtectionDomain ( ) . getCodeSource ( ) . getLocation ( ) . toURI ( ) ) . getAbsolutePath ( )  
+String jarPath = getLibPath ( MainScreen . class )  
+ArrayList < String > cmdarray = new ArrayList < String > ( )  
+String libPath = getLibPath ( AmplitudeAudioInputStream . class )  
+cmdarray . add ( "-Xmx1g" )  

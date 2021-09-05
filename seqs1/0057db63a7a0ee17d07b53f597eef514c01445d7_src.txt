@@ -1,0 +1,3 @@
+String pass = userEdit . getText ( ) . toString ( )  
+String passConfirm = userEdit . getText ( ) . toString ( )  
+String email = userEdit . getText ( ) . toString ( )  

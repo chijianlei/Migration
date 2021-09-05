@@ -1,0 +1,1 @@
+mPhoneNumberView . setError ( getString ( R . string . register_error ) )  

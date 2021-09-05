@@ -1,0 +1,2 @@
+@ SpringBootApplication @ Import ( { AuthenticationApplication . class , ExperimentApplication . class , RealizationApplication . class , RegistrationApplication . class , TeamApplication . class , UserApplication . class , App . class } ) public class ServicesInOneApplication  
+if ( environment . getProperty ( "reset" ) != null )  

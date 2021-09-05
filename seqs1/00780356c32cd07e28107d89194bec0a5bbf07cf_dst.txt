@@ -1,0 +1,13 @@
+editOtherUser ( ) ; 
+Assert . assertTrue ( checkElementTextViewRoboReturn ( "Bishopric Second Counselor" ) )  
+Assert . assertTrue ( checkElementTextViewRoboReturn ( "Faapili, Muipu" ) )  
+Assert . assertTrue ( checkElementTextViewRoboReturn ( "Tutunoa, Joe Liuafi" ) )  
+Assert . assertTrue ( checkElementTextViewRoboReturn ( "Elders Quorum First Counselor" ) )  
+Assert . assertTrue ( checkElementTextViewRoboReturn ( "Tautali, Tamafaiga" ) )  
+Thread . sleep ( 2000 )  
+clickItemByXpathRoboText ( "Priests Quorum" )  
+Thread . sleep ( 2000 )  
+clickButtonByXpath ( "TopYoungMen" )  
+clickButtonByXpath ( "TopOrganizations" )  
+clickButtonByXpath ( "TopOrganizations" )  
+Assert . assertTrue ( checkElementTextViewRoboReturn ( "Elder Kawika Tupuola" ) )  

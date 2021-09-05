@@ -1,0 +1,35 @@
+public int [ ] getPosition ( String city )  
+if ( records [ i ] . getCityName ( ) . equals ( city ) )  
+positions [ 0 ] = - 1  
+public int [ ] getHandle ( String city )  
+handles [ count ] = records [ i ] . getHandle ( )  
+handles [ 0 ] = - 1  
+assertEquals ( 4 , hashTable . getPosition ( "Blacksburg" ) [ 0 ] )  
+assertEquals ( - 1 , hashTable . getPosition ( "XXX" ) [ 0 ] )  
+assertEquals ( 1 , hashTable . getHandle ( "Blacksburg" ) [ 0 ] )  
+assertEquals ( - 1 , hashTable . getPosition ( "XXX" ) [ 0 ] )  
+public void testRemove ( )  
+assertEquals ( 4 , hashTable . getPosition ( "Blacksburg" ) [ 0 ] )  
+assertEquals ( 1 , hashTable . getHandle ( "Blacksburg" ) [ 0 ] )  
+assertEquals ( - 1 , hashTable . getPosition ( "Blacksburg" ) [ 0 ] )  
+hashTable . remove ( hashTable . getPosition ( "Blacksburg" ) [ 0 ] )  
+assertEquals ( - 1 , hashTable . getHandle ( "Blacksburg" ) [ 0 ] )  
+assertEquals ( 9 , hashTable . hash ( "Blackburg" , 10 ) )  
+public MemManager ( int poolSize , int hashSize )  
+int k [ ] = hashTable . getPosition ( city . city )  
+System . out . println ( "Inserted record of size " + size + " in memory pool location " + handle + " and hashtable location " + ( k [ k [ hashSize ] - 1 ] ) + "." )  
+int [ ] pos = hashTable . getPosition ( city )  
+if ( pos [ 0 ] != - 1 ) { 
+int [ ] handles = hashTable . getHandle ( city )  
+int size = memPool . read ( handles [ 0 ] ) ; 
+freeBList . deallocate ( handles [ 0 ] , size )  
+hashTable . remove ( pos [ 0 ] ) ; 
+System . out . println ( "Removed " + city + " at memory position " + handles [ 0 ] + "." )  
+int pos [ ] = hashTable . getPosition ( city ) ; 
+if ( pos [ 0 ] != - 1 ) { 
+int [ ] handles = hashTable . getHandle ( city )  
+int size = memPool . read ( handles [ i ] ) ; 
+byte [ ] space = new byte [ size ]  
+get ( space , handles [ i ] + 1 , size )  
+City c = ( City ) Serializable . deserialize ( space )  
+System . out . println ( handles [ i ] + "; " + c . x + " " + c . y + " " + c . city )  

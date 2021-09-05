@@ -1,0 +1,12 @@
+if ( attributes != null ) 
+while ( attributes . values ( ) . iterator ( ) . hasNext ( ) )  
+Attribute a = attributes . values ( ) . iterator ( ) . next ( )  
+if ( attributes != null ) 
+writer . write ( "attribute=" + a . getName ( ) + ";" + a . getAttributeType ( ) . getMinecraftId ( ) + ";" + a . getAmount ( ) + ";" + a . getOperation ( ) . getId ( ) + ";" + a . getUUID ( ) . toString ( ) )  
+catch ( Exception e ) {  
+if ( attributes != null ) 
+while ( attributes . values ( ) . iterator ( ) . hasNext ( ) )  
+Attribute a = attributes . values ( ) . iterator ( ) . next ( )  
+if ( attributes != null ) 
+writer . write ( "attribute=" + a . getName ( ) + ";" + a . getAttributeType ( ) . getMinecraftId ( ) + ";" + a . getAmount ( ) + ";" + a . getOperation ( ) . getId ( ) + ";" + a . getUUID ( ) . toString ( ) )  
+catch ( Exception e ) {  

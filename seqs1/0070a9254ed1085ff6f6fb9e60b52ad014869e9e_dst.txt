@@ -1,0 +1,1 @@
+if ( ( int ) jSpinnerMaxAlerte . getValue ( ) < ( int ) jSpinnerMinAlerte . getValue ( ) )  

@@ -1,0 +1,4 @@
+catch ( Exception e )  
+jobFailures . add ( getFailureLog ( failures . get ( i ) ) )  
+sb . append ( str + "\n" )  
+logData . append ( line ) . append ( "\n" )  

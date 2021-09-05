@@ -1,0 +1,1 @@
+static boolean enableLayoutOnPaint = true  

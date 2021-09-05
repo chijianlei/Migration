@@ -1,0 +1,1 @@
+return StringUtils . trimToNull ( StringUtils . removeAllChars ( string , "\n\r,&;$#!()^%" ) )  

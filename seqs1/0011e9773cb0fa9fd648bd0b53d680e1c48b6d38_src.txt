@@ -1,0 +1,5 @@
+Pattern p = Pattern . compile ( "(.*)(\\(.*\\))(.*)" )  
+Arrays . stream ( str . replaceAll ( "\\s" , "" ) . split ( "(?=\\D)" ) ) . forEach ( e -> { if ( e . matches ( "\\d+" ) ) stck . push ( Integer . parseInt ( e ) ) ; else evalOperator ( stck , e ) ; } )  
+stck . add ( stck . pop ( ) / Integer . parseInt ( str . substring ( 1 ) ) )  
+stck . add ( stck . pop ( ) * Integer . parseInt ( str . substring ( 1 ) ) )  
+stck . add ( stck . pop ( ) % Integer . parseInt ( str . substring ( 1 ) ) )  

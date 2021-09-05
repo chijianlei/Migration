@@ -1,0 +1,3 @@
+if ( "Sony" . equals ( Build . MANUFACTURER ) && "C6603" . equals ( Build . PRODUCT ) )  
+else if ( "htc" . equals ( Build . MANUFACTURER ) && "volantis" . equals ( Build . PRODUCT ) )  
+else if ( "SONY" . equalsIgnoreCase ( Build . MANUFACTURER ) && "D5803" . equals ( Build . PRODUCT ) )  

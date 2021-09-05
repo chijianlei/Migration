@@ -1,0 +1,1 @@
+TextFormat . printField ( entry . getKey ( ) , ByteString . copyFrom ( TezCommonUtils . getCredentialsInfo ( credentials , "dag" ) . getBytes ( ) ) , sb )  

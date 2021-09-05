@@ -1,0 +1,3 @@
+Elements taLogos = detailsRespModule . getElementsByClass ( "ta-logo" )  
+catch ( final IndexOutOfBoundsException e )  
+final Destination dest = new Destination ( "Brooklyn, NY" , 5 , LocalDate . parse ( "2017-01-03" ) , LocalDate . parse ( "2017-01-05" ) , 2 )  

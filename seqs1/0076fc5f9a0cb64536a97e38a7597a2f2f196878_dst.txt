@@ -1,0 +1,6 @@
+public interface ISender  
+boolean send ( String recipient , String body , String subject )  
+boolean send ( String recipient , String body , String subject )  
+boolean send ( String recipient , String body , String subject )  
+boolean send ( String recipient , String body , String subject )  
+final String password = "" ; 

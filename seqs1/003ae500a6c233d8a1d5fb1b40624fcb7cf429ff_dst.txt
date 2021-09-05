@@ -1,0 +1,3 @@
+final String messageToLog = new SimpleDateFormat ( "dd-MM-yyyy HH:mm:ss " ) . format ( date ) + message + "\n"  
+Date date = new Date ( )  
+final String messageToLog = new SimpleDateFormat ( "dd-MM-yyyy HH:mm:ss " ) . format ( date ) + message + "\n"  

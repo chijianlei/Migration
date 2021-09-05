@@ -1,0 +1,6 @@
+this . demoPoints = ControlPointsCalculator . computeDemoRectangle ( DemonstrationActivity . this . viewWidth , DemonstrationActivity . this . viewHeight )  
+float deltaX = viewWidth / ( float ) ( NumDemoEdges + 2 )  
+float centerY = viewHeight / 2  
+float deltaY = viewHeight / ( float ) ( NumDemoEdges + 2 )  
+float centerX = viewWidth / 2 - ( deltaX / 2.0F )  
+private static float currentY  

@@ -1,0 +1,3 @@
+setGridWidth ( ( Integer ) gridWidthText . getValue ( ) )  
+setGridHeight ( ( Integer ) gridWidthText . getValue ( ) )  
+setGridWidth ( ( Integer ) gridHeightText . getValue ( ) )  

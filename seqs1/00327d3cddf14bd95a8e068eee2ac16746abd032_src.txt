@@ -1,0 +1,10 @@
+while ( ! state . isTerminate ( ) ) 
+StringVector vector = extractFeatures ( state )  
+String label = getLabel ( state , vector )  
+private String label  
+public String setLabel ( String label )  
+this . label = label  
+private String getMoveLabel ( String move , String depLabel )  
+this . move = move ; 
+this . depLabel = depLabel ; 
+return move + ":" + depLabel  

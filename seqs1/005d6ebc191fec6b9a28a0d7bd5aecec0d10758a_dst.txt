@@ -1,0 +1,4 @@
+@ Deployment ( resources = { "org/activiti/engine/test/bpmn/event/end/TerminateEndEventTest.testTerminateInCallActivityConcurrentCallActivity.bpmn" , "org/activiti/engine/test/bpmn/event/end/TerminateEndEventTest.testTerminateAfterUserTask.bpmn" , "org/activiti/engine/test/api/oneTaskProcess.bpmn20.xml" } ) public void testTerminateInCallActivityConcurrentCallActivity ( ) throws Exception  
+serviceTaskInvokedCount = 0  
+ProcessInstance pi = runtimeService . startProcessInstanceByKey ( "terminateEndEventInCallActivityConcurrentCallActivity" )  
+assertProcessEnded ( pi . getId ( ) )  

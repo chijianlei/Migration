@@ -1,0 +1,3 @@
+itemList . put ( "email" , ContactsContract . CommonDataKinds . Email . DATA )  
+TextView text_email = ( TextView ) findViewById ( R . id . text_email )  
+String phone = map . get ( "number" )  

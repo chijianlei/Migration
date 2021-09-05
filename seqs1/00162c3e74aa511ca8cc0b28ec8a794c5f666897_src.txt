@@ -1,0 +1,24 @@
+int [ ] [ ] adjacencyMatrix = new int [ n ] [ n ]  
+ArrayList < Integer > [ ] adjacencyList = new ArrayList [ n ]  
+for ( int i = 0 ; i < m ; i ++ )  
+int vert = scanner . nextInt ( )  
+breadthFirstSearch ( n , a , b , adjacencyList )  
+private static void breadthFirstSearch ( int n , int a , int b , ArrayList < Integer > [ ] adjacencyList )  
+int [ ] path = new int [ n * n ]  
+int [ ] visited = new int [ n ]  
+int length = 0  
+boolean found = false  
+verticeQueue . enqueue ( a )  
+visited [ a - 1 ] = 1  
+path [ length ] = a  
+while ( ! verticeQueue . isEmpty ( ) )  
+int currentVertice = verticeQueue . dequeue ( )  
+if ( currentVertice == b )  
+found = true  
+for ( int i : adjacencyList [ currentVertice - 1 ] )  
+path [ ++ length ] = i  
+if ( ! found )  
+System . out . println ( - 1 )  
+System . out . println ( length )  
+for ( int i = 0 ; i < length ; i ++ )  
+System . out . print ( path [ i ] + " " )  

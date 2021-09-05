@@ -1,0 +1,33 @@
+private List < DrawType > mTypeList = new ArrayList < > ( )  
+mTypeList . add ( new DrawType ( MyAction . Type . scrawl , R . drawable . inner_white_shadow ) )  
+mTypeList . add ( new DrawType ( MyAction . Type . scrawl , R . drawable . neon_01_10 ) )  
+mTypeList . add ( new DrawType ( MyAction . Type . scrawl , R . drawable . simple_02_10 ) )  
+mTypeList . add ( new DrawType ( MyAction . Type . scrawl , R . drawable . simple_03_11 ) )  
+mTypeList . add ( new DrawType ( MyAction . Type . scrawl , R . drawable . simple_04_11 ) )  
+mTypeList . add ( new DrawType ( MyAction . Type . scrawl , R . drawable . special_03_11 ) )  
+mTypeList . add ( new DrawType ( MyAction . Type . scrawl , R . drawable . special_01_08 ) )  
+mTypeList . add ( new DrawType ( MyAction . Type . scrawl , R . drawable . pattern_01_03 ) )  
+mTypeList . add ( new DrawType ( MyAction . Type . scrawl , R . drawable . pattern_05_01 ) )  
+mTypeList . add ( new DrawType ( MyAction . Type . scrawl , R . drawable . special_02_10 ) )  
+mTypeList . add ( new DrawType ( MyAction . Type . scrawl , R . drawable . roll_01_12_h ) )  
+mTypeList . add ( new DrawType ( MyAction . Type . undo , R . drawable . undo ) )  
+mTypeList . add ( new DrawType ( MyAction . Type . redo , R . drawable . redo ) )  
+mTypeList . add ( new DrawType ( MyAction . Type . eraser , R . drawable . eraser ) )  
+DrawType drawType = mTypeList . get ( position )  
+holder . mImg . setImageResource ( drawType . getIconResourseId ( ) )  
+return mTypeList . size ( )  
+class MyViewHolder extends RecyclerView . ViewHolder  
+private final ImageView mImg  
+public MyViewHolder ( View itemView )  
+super ( itemView )  
+mImg = ( ImageView ) itemView . findViewById ( R . id . img )  
+mImg . setOnClickListener ( new View . OnClickListener ( ) { @ Override public void onClick ( View v ) { int layoutPosition = getLayoutPosition ( ) ; } } )  
+View . OnClickListener ( )  
+@ Override public void onClick ( View v )  
+setColor ( color )  
+
+private Paint mBitmapPaint  
+private boolean mIsUp = false  
+@ Override 
+
+int startDrawActionLocation = getNowStartDrawPosition ( )  

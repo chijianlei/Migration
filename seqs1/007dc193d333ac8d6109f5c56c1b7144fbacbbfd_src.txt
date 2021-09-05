@@ -1,0 +1,16 @@
+LinkedList < E > Queue  
+Queue = new LinkedList < E > ( )  
+this . Queue . clear ( )  
+@ Override public E dequeue ( )  
+@ Override public int length ( )  
+@ Override public boolean isEmpty ( )  
+@ Override public void reverse ( )  
+Queue < String > queue = null  
+while ( sc . hasNext ( ) )  
+if ( "enqueue" . equals ( command ) )  
+String item = sc . next ( )  
+} else if ( "dequeue" . equals ( command ) )  
+} else if ( "length" . equals ( command ) )  
+} else if ( "isEmpty" . equals ( command ) )  
+} else if ( "clear" . equals ( command ) )  
+} else if ( "reverse" . equals ( command ) )  

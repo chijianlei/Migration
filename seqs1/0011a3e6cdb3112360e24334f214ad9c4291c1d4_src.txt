@@ -1,0 +1,4 @@
+if ( f != null && modulesManager != null && ! modulesManager . hasFileBeenModifiedSinceLastInstalled ( f ) )  
+modulesManager . saveLastInstalledTimestamp ( f , new Date ( ) )  
+modified = modulesManager . hasFileBeenModifiedSinceLastInstalled ( file )  
+modulesManager . saveLastInstalledTimestamp ( file , new Date ( ) )  

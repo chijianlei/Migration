@@ -1,0 +1,5 @@
+if ( hintCategory != null )  
+category = hintCategory . getTitle ( )  
+public HintCategory getObjHintCategory ( )  
+public void setObjHintCategory ( HintCategory hintCategory )  
+public void setHintCategoryDao ( HintCategoryDao hintCategoryDao )  

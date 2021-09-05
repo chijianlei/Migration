@@ -1,0 +1,18 @@
+public static final String ACTIVE_MARKER = "1"  
+if ( requestId > 0 )  
+detail . setDemographicId ( demographicId )  
+detail . setStatus ( ConsultationRequest . ACTIVE_MARKER )  
+detail . setServiceList ( ( new ConsultationServiceConverter ( ) ) . getAllAsTransferObjects ( getLoggedInInfo ( ) , consultationManager . getConsultationServices ( ) ) )  
+RxInformation rx = new RxInformation ( )  
+detail . setAllergies ( rx . getAllergies ( detail . getDemographicId ( ) . toString ( ) ) )  
+detail . setCurrentMeds ( rx . getCurrentMedication ( detail . getDemographicId ( ) . toString ( ) ) )  
+@ GET @ Path ( "/getAttachments" ) @ Produces ( MediaType . APPLICATION_JSON ) public List < String > getAttachments ( @ QueryParam ( "requestId" ) Integer requestIdInt , @ QueryParam ( "demographicId" ) String demographicId )  
+request = consultationDetailConverter . getAsExistingDomainObject ( getLoggedInInfo ( ) , data , consultationManager . getRequest ( getLoggedInInfo ( ) , data . getId ( ) ) )  
+public ConsultationRequest getAsExistingDomainObject ( LoggedInInfo loggedInInfo , ConsultationDetailTo1 t , ConsultationRequest d ) throws ConversionException  
+return getAsExistingDomainObject ( loggedInInfo , t , new ConsultationRequest ( ) )  
+if ( demo == null )  
+return null  
+private Date referralDate  
+private String status  
+private String sendTo  
+private String urgency  

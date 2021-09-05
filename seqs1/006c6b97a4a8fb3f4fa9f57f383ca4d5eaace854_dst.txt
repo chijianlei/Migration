@@ -1,0 +1,8 @@
+return ! ( getX ( ) >= bounds . getX ( ) & getY ( ) >= bounds . getY ( ) & getX ( ) + getWidth ( ) <= bounds . getX ( ) + bounds . getWidth ( ) & getY ( ) + getHeight ( ) <= bounds . getY ( ) + bounds . getHeight ( ) )  
+@ Override public void paint ( Graphics g ) 
+world . paint ( g )  
+gamePanelLayout . setVerticalGroup ( gamePanelLayout . createParallelGroup ( javax . swing . GroupLayout . Alignment . LEADING ) . addGap ( 0 , 302 , Short . MAX_VALUE ) )  
+gamePanelLayout . setHorizontalGroup ( gamePanelLayout . createParallelGroup ( javax . swing . GroupLayout . Alignment . LEADING ) . addGap ( 0 , 402 , Short . MAX_VALUE ) )  
+getContentPane ( ) . add ( gamePanel , java . awt . BorderLayout . CENTER )  
+java . util . logging . Logger . getLogger ( GameWindow . class . getName ( ) ) . log ( java . util . logging . Level . SEVERE , null , ex )  
+window . setVisible ( true )  

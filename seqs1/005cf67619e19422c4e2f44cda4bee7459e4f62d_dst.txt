@@ -1,0 +1,7 @@
+if ( account . isTwoFactorAuthentication ( ) )  
+pAccount . setAuthenticatorSecret ( key . getKey ( ) )  
+pAccount . setTwoFactorAuthentication ( account . isTwoFactorAuthentication ( ) )  
+pAccount . setTwoFactorAuthentication ( account . isTwoFactorAuthentication ( ) )  
+if ( account . getProfile ( ) == null )  
+@ Transactional public Account updateAccount ( Account account , String auditUser )  
+return serviceFactory . getAccountService ( ) . loadAccountBasicInfoByUsername ( session . getAccount ( ) . getUsername ( ) )  

@@ -1,0 +1,16 @@
+super ( CITY_TABLE , "WARREN COUNTY" , "MO" , DispatchGlobalDispatchParser . PLACE_FOLLOWS_ADDR )  
+@ Override public boolean parseMsg ( String subject , String body , Data data )  
+if ( pt >= 0 )  
+data . strCross = data . strCross . substring ( 0 , pt ) . trim ( )  
+return true  
+private class MyInfoField extends BaseInfoField  
+@ Override public void parse ( String field , Data data )  
+field = LINE_BREAK_PTN . matcher ( field ) . replaceAll ( ". " )  
+super . parse ( field , data )  
+private static final String [ ] CITY_TABLE = new String [ ] { "WARREN COUNTY" , "ASPENHOFF" , "DUTZOW" , "FORISTELL" , "INNSBROOK" , "MARTHASVILLE" , "MINDEN" , "PENDLETON" , "TRELOAR" , "TRUESDALE" , "WARRENTON" , "WRIGHT CITY" , "WASHINGTON" , "HAWK POINT" , "TROY" , "TRUXTON" , "WENTZVILLE" 
+choyvp nofgenpg pynff OnfrCnefreGrfg  
+choyvp ZBJneeraPbhaglCnefreGrfg ( )  
+frgCnefre ( arj ZBJneeraPbhaglCnefre ( ) , "JNEERA PBHAGL" , "ZB" )  
+qbGrfg ( "G16" , "(Qvfcngpu) Pnyy Ahzore: 1271949 QVERPGRQ CNGEBY 1 UNG GEVPX YA JEVTUG PVGL PebffFgerrgf: J FREIVPR EQ A 0.01 zv FJ ERYVNOYR FGBENTR Qrfpevcgvba:" , "VQ:1271949" , "PNYY:QVERPGRQ CNGEBY" , "NQQE:1 UNG GEVPX YA" , "PVGL:JEVTUG PVGL" , "K:J FREIVPR EQ A 0.01 zv FJ ERYVNOYR FGBENTR" )  
+choyvp fgngvp ibvq znva ( Fgevat [ ] netf )  
+arj ZBJneeraPbhaglCnefreGrfg ( ) . trarengrGrfgf ( "G1" )  

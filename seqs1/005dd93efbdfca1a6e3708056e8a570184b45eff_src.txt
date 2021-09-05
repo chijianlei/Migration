@@ -1,0 +1,1 @@
+switch ( permissionType ) { case READ : entry . setReadACLs ( acls ) ; break ; case WRITE : entry . setWriteACLs ( acls ) ; break ; case ADMIN : entry . setAdminACLs ( acls ) ; break ; case BROWSE : entry . setBrowseACLs ( acls ) ; default : 

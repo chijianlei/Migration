@@ -1,0 +1,10 @@
+public LeastMeanSquaresFilter ( double alphaLearningRate , double [ ] weights )  
+this . weights = weights  
+LeastMeanSquaresFilter lmsPredict = new LeastMeanSquaresFilter ( this . alphaLearningRate , this . weights )  
+private void process ( Collection < DataPoint > dataPoints )  
+double actuarAr1 = weights [ 0 ]  
+double actuarAr2 = weights [ 1 ]  
+assertThat ( actuarAr1 ) . isBetween ( expectedAr1 - maxError , expectedAr1 + maxError )  
+assertThat ( actuarAr2 ) . isBetween ( expectedAr2 - maxError , expectedAr2 + maxError )  
+@ Path ( "/" ) @ Produces ( value = MediaType . APPLICATION_JSON ) @ Consumes ( value = MediaType . APPLICATION_JSON ) public class RestPing  
+@ GET @ Path ( "/" ) public Response ping ( @ Context Dispatcher dispatcher )  

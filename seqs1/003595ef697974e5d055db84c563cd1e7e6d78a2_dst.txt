@@ -1,0 +1,5 @@
+private static final String VERSION_STRING = "Lhings Java SDK v2.4 - ja010"  
+private Timer timer = new Timer ( )  
+if ( socketMan == null ) 
+socketMan = ( SocketManager ) new UDPSocketManager ( ) ; 
+loop ( )  

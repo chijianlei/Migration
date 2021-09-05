@@ -1,0 +1,8 @@
+for ( String attributeId : mappedGroupAttributeIds )  
+Attribute attribute = attributes . get ( attributeId )  
+if ( attribute == null )  
+_log . debug ( "LDAP group attribute " + attribute . toString ( ) )  
+for ( String attributeId : mappedUserAttributeIds )  
+Attribute attribute = attributes . get ( attributeId )  
+if ( attribute == null )  
+_log . debug ( "LDAP user attribute " + attribute . toString ( ) )  

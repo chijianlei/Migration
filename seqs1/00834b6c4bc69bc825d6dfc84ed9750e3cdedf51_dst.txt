@@ -1,0 +1,4 @@
+return null  
+Random tRandom = new Random ( ( aWorld . getSeed ( ) + ( getScale小oordinates ( aX , 96 ) ) + ( 7 * ( getScale小oordinates ( aZ , 96 ) ) ) ) )  
+double amount = tRandom . nextInt ( GT_Mod . gregtechproxy . mUndergroundOilMaxAmount ) + tRandom . nextDouble ( )  
+ChunkPosition tPos = new ChunkPosition ( getScale小oordinates ( aX , 16 ) , 1 , getScale小oordinates ( aZ , 16 ) )  

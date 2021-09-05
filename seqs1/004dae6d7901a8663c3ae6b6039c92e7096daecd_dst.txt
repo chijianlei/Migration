@@ -1,0 +1,2 @@
+return new ComplexSymbolFactory . ComplexSymbol ( "" , type , new Location ( yyline , yycolumn , yychar ) , new Location ( yyline , yycolumn + length , yychar + length ) )  
+return new ComplexSymbolFactory . ComplexSymbol ( "" , type , new Location ( yyline , yycolumn , yychar ) , new Location ( yyline , yycolumn + length , yychar + length ) , value )  

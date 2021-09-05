@@ -1,0 +1,2 @@
+return ConfigLoader . getInstance ( ) . get ( Config . BLUETOOTH_ADDRESS , mManagerService . getAddress ( ) )  
+return ConfigLoader . getInstance ( ) . get ( Config . MAC_ADDRESS , mMacAddress )  

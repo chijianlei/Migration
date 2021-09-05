@@ -1,0 +1,23 @@
+boolean returnList = true  
+for ( int i = 0 ; i < bookList . size ( ) ; i ++ )  
+while ( moreBooks )  
+System . out . println ( "You have the following books checked out under your name:" + "\n" + "Please enter the number of the book you would like to return." )  
+if ( r . getlibraryCard ( ) == returnUser )  
+System . out . println ( "Book ID: " + r . getIndex ( ) + "Title: " + r . getTitle ( ) )  
+System . out . println ( "Book ID: " + r . getIndex ( ) + "\n" + "Title: " + r . getTitle ( ) )  
+r . setLibraryCard ( 0 ) ; 
+System . out . println ( r . getTitle ( ) + "has successfully been returned." )  
+for ( int i = 0 ; i < bookList . size ( ) ; i ++ )  
+int bookCounter = 0  
+if ( r . getlibraryCard ( ) == returnUser )  
+System . out . println ( "Book ID: " + r . getIndex ( ) + "\n" + "Title: " + r . getTitle ( ) )  
+bookCounter ++  
+if ( bookCounter == 0 )  
+System . out . println ( "You do not have any additional books checked out under your name." )  
+System . out . println ( "Have a great day! Goodbye!" )  
+keepReturning = false  
+System . out . println ( "Would you like to return another book?" )  
+String anotherBook = input . nextLine ( )  
+if ( anotherBook . equalsIgnoreCase ( "no" ) )  
+System . out . println ( "Have a great day! Goodbye!" )  
+keepReturning = false  

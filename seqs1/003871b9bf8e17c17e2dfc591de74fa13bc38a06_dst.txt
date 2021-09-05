@@ -1,0 +1,4 @@
+downloadFile ( url , file , false )  
+final int size = inputStream . read ( buffer , 0 , BUFFER_SIZE )  
+if ( size == - 1 ) break  
+outputStream . write ( buffer , 0 , size )  

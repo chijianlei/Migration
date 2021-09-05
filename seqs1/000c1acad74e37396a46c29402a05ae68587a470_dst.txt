@@ -1,0 +1,2 @@
+String url = endpointUrl + "/projects/" + urlEncode ( repositoryName )  
+return method . getResponseBodyAsString ( )  

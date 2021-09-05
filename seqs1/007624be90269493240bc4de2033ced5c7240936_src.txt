@@ -1,0 +1,16 @@
+public int containerWidth = 20  
+public int containerHeight = 20  
+public int containerDepth = 20  
+public double zoom = 0.08  
+public ArrayList < Parcel > generateRotations ( )  
+result . add ( this )  
+result . add ( this . rotateWidth ( ) )  
+result . add ( this . rotateHeight ( ) . rotateWidth ( ) )  
+result . add ( this . rotateHeight ( ) )  
+result . add ( this . rotateHeight ( ) . rotateLength ( ) )  
+result . add ( this . rotateLength ( ) )  
+public Parcel clone ( )  
+return new Parcel ( length , height , width , value , type )  
+typeA = new Parcel ( 10 , 10 , 10 , 3 , 1 )  
+typeB = new Parcel ( 10 , 15 , 20 , 4 , 2 )  
+typeC = new Parcel ( 15 , 15 , 15 , 5 , 3 )  

@@ -1,0 +1,30 @@
+for ( ExamRank rank : ranks ) 
+Connection con = DBUtil . getInstance ( ) . getReadWriteConnection ( )  
+Connection con = DBUtil . getInstance ( ) . getReadWriteConnection ( )  
+Connection con = DBUtil . getInstance ( ) . getReadWriteConnection ( )  
+Connection con = DBUtil . getInstance ( ) . getReadWriteConnection ( )  
+Connection con = DBUtil . getInstance ( ) . getReadWriteConnection ( )  
+Connection con = DBUtil . getInstance ( ) . getReadWriteConnection ( )  
+Connection con = DBUtil . getInstance ( ) . getReadWriteConnection ( )  
+Connection con = DBUtil . getInstance ( ) . getReadWriteConnection ( )  
+String filePath1 = "2016/city/arts1.txt"  
+String filePath3 = "2016/city/arts2.txt"  
+String filePath5 = "2016/city/arts3.txt"  
+String filePath7 = "2016/city/arts4.txt"  
+String filePath2 = "2016/city/sci1.txt"  
+String filePath4 = "2016/city/sci2.txt"  
+String filePath6 = "2016/city/sci3.txt"  
+String filePath8 = "2016/city/sci4.txt"  
+stmt = con . prepareStatement ( sql )  
+DBUtil . setStatementArgs ( stmt , args )  
+stmt = con . prepareStatement ( "INSERT INTO wish_batch(wish_id,city_id,batch,parent_id,classify) VALUES(?,?,?,?,?)" , PreparedStatement . RETURN_GENERATED_KEYS )  
+String filePath1 = "2016/school/arts1.txt"  
+String filePath3 = "2016/school/arts2.txt"  
+String filePath5 = "2016/school/arts3.txt"  
+String filePath7 = "2016/school/arts4.txt"  
+String filePath2 = "2016/school/sci1.txt"  
+String filePath4 = "2016/school/sci2.txt"  
+String filePath6 = "2016/school/sci3.txt"  
+String filePath8 = "2016/school/sci4.txt"  
+public static int addSchoolBatch ( long swish_id , long unique_id , int type ) throws Exception  
+Connection con = DBUtil . getInstance ( ) . getReadWriteConnection ( )  

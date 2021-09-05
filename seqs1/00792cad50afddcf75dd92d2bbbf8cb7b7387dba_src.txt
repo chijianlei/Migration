@@ -1,0 +1,1 @@
+if ( Logic . validMove ( this , m ) )  

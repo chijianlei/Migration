@@ -1,0 +1,10 @@
+final AsyncSubject < AwsDataCenterInfo > subject = AsyncSubject . create ( )  
+public class PeriodicDataCenterInfoResolver extends ChainableSelfInfoResolver  
+private static final Logger logger = LoggerFactory . getLogger ( PeriodicDataCenterInfoResolver . class )  
+super ( Observable . timer ( 0 , config . getDataCenterResolveIntervalSec ( ) , TimeUnit . SECONDS , scheduler ) . flatMap ( new Func1 < Long , Observable < ? extends DataCenterInfo >> ( ) { @ Override public Observable < ? extends DataCenterInfo > call ( Long aLong ) { logger . debug ( "Re-resolving datacenter info" ) ; Observable returnObservable = dataCenterInfoFunc . call ( ) ; return returnObservable . onErrorResumeNext ( new Func1 < Throwable , Observable > ( ) { @ Override public Observable call ( Throwable throwable ) { logger . warn ( "failed to Resolve datacenter info, skipping this round" , throwable ) ; return Observable . empty ( ) ; } } ) ; } } ) . map ( new Func1 < DataCenterInfo , InstanceInfo . Builder > ( ) { @ Override public InstanceInfo . Builder call ( DataCenterInfo dataCenterInfo ) { return new InstanceInfo . Builder ( ) . withDataCenterInfo ( dataCenterInfo ) ; } } ) )  
+@ Override public Observable < ? extends DataCenterInfo > call ( )  
+logger . debug ( "Re-resolving datacenter info" )  
+return LocalDataCenterInfo . forDataCenterType ( config . getMyDataCenterType ( ) )  
+Func1 < DataCenterInfo , InstanceInfo . Builder > ( )  
+@ Override public InstanceInfo . Builder call ( DataCenterInfo dataCenterInfo )  
+return new InstanceInfo . Builder ( ) . withDataCenterInfo ( dataCenterInfo )  

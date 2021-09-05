@@ -1,0 +1,4 @@
+public MainPnl ( )  
+filterInTf . setText ( filterInTf . getText ( ) . replaceAll ( "(\\\\?)|(/?)" , "" ) )  
+filterOutTf . setText ( filterOutTf . getText ( ) . replaceAll ( "(\\\\?)|(/?)" , "" ) )  
+protected long waitTime = 1200000  

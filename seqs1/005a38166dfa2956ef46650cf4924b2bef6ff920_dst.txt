@@ -1,0 +1,9 @@
+opts . inJustDecodeBounds = false  
+path = Uri . parse ( path ) . getPath ( )  
+originaBitmap = BitmapFactory . decodeFile ( path , opts )  
+bindDataToAdapter ( originaBitmap )  
+mTakePhoto . setOnClickListener ( new View . OnClickListener ( ) { @ Override public void onClick ( View v ) { if ( ! photoTaken ) mCameraView . captureImage ( ) ; else { mTakePhoto . setImageDrawable ( null ) ; photoTaken = false ; mCameraView . setVisibility ( View . VISIBLE ) ; mSwitchCamera . setVisibility ( View . VISIBLE ) ; mImageView . setVisibility ( View . GONE ) ; mToggleFlash . setVisibility ( View . VISIBLE ) ; awCamera . setContinueButtonVisibility ( View . GONE ) ; } } } )  
+View . OnClickListener ( )  
+@ Override public void onClick ( View v )  
+mCameraView . captureImage ( )  
+mCameraView . setVisibility ( View . VISIBLE )  

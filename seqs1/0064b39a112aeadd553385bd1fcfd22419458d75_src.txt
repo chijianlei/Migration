@@ -1,0 +1,2 @@
+@ SuppressWarnings ( "deprecation" ) @ Schedule ( second = "*/5" , minute = "*" , hour = "*" , persistent = true ) public void reloadProdCat ( )  
+if ( qName . equals ( "Product" ) )  

@@ -1,0 +1,7 @@
+private Timer rssiTimer  
+rssiTimer . cancel ( )  
+TimerTask task = new TimerTask ( ) 
+TimerTask task = new TimerTask ( ) 
+@ Override public void run ( ) 
+gatt . readRemoteRssi ( )  
+rssiTimer . schedule ( task , 0 , 500 )  

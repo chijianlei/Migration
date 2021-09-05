@@ -1,0 +1,6 @@
+public interface ISender  
+boolean send ( ) throws EmailException  
+void getMassage ( String massage ) throws EmailException  
+void getEmail ( String email )  
+void getUser ( int id )  
+private String ToEmail = ""  

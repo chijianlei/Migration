@@ -1,0 +1,2 @@
+if ( line . charAt ( endIndex - 1 ) == '/' )  
+writer . println ( line )  

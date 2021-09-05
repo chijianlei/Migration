@@ -1,0 +1,2 @@
+if ( dataString != null )  
+i . setType ( "image/*" )  

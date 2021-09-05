@@ -1,0 +1,14 @@
+@ Override public void onTick ( int seconds )  
+@ Override public void onStart ( int seconds )  
+public void dispose ( )  
+@ Override public void onTick ( int seconds )  
+@ Override public void onStart ( int seconds )  
+switch ( operationNr ) { case 1 : cLabel . setText ( "Move your phone to the left!" ) ; break ; case 2 : cLabel . setText ( "Move your phone to the right!" ) ; break ; case 3 : cLabel . setText ( "Move your phone down!" ) ; break ; case 4 : cLabel . setText ( "Move your phone up!" ) ; break ; case 5 : cLabel . setText ( "Move your phone away from you!" ) ; break ; case 6 : cLabel . setText ( "Move your phone towards you!" ) ; break ; default : break  
+switch ( operationNr ) { case 1 : if ( accelData . x <= - delta ) { System . out . println ( "Left Succes!" ) ; base . x = - 1 * accelData . x ; taskCompleted ( ) ; } break ; case 2 : if ( accelData . x >= delta ) { System . out . println ( "Right Succes!" ) ; base . x = - 1 * accelData . x ; taskCompleted ( ) ; } break ; case 3 : if ( accelData . y <= - delta ) { System . out . println ( "Down Succes!" ) ; base . y = - 1 * accelData . y ; taskCompleted ( ) ; } break ; case 4 : if ( accelData . y >= delta ) { System . out . println ( "Up Succes!" ) ; base . y = - 1 * accelData . y ; taskCompleted ( ) ; } break ; case 5 : if ( accelData . z <= - delta ) { System . out . println ( "Away Succes!" ) ; base . z = - 1 * accelData . z ; taskCompleted ( ) ; } break ; case 6 : if ( accelData . z >= delta ) { System . out . println ( "Toward Succes!" ) ; base . z = - 1 * accelData . z ; taskCompleted ( ) ; } break ; default : break  
+@ Override public final int getReward ( )  
+@ Override public void onTick ( int seconds )  
+@ Override public void onStart ( int seconds )  
+@ Override public void update ( )  
+public void resume ( )  
+protected void generatePossibleEvent ( )  
+public void eventFinished ( int rewards )  

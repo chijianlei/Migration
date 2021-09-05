@@ -1,0 +1,7 @@
+public void deleteFile ( String fileName ) throws IOException  
+if ( ! checkRemoteFileExists ( fileName ) )  
+public void createDirectory ( String directoryRequest )  
+public void deleteDirectory ( String directoryName ) throws IOException  
+if ( ftpClient . getStatus ( targetDirectory ) . equals ( "250" ) )  
+if ( ! ftpClient . removeDirectory ( "/" + directoryName ) )  
+@ Test public void test_createConnection_worksAsExpected ( )  

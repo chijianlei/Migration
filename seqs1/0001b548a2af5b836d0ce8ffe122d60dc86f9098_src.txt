@@ -1,0 +1,7 @@
+executor . awaitTermination ( 2 , TimeUnit . MINUTES )  
+catch ( InterruptedException e )  
+this . identifyingDataTracker . close ( )  
+this . activitySender . close ( )  
+this . httpConnection . close ( )  
+public interface ErrorCollector  
+private Executor executor  

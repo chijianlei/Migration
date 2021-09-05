@@ -1,0 +1,6 @@
+List < Map < String , String >> res = dbc . selectAllFromTableWhereFieldEqValue ( "plane" , "planeType" , type )  
+Plane p = new Plane ( Utility . convertIntString ( ligne . get ( "planeId" ) ) , ligne . get ( "planeType" ) )  
+dbc . close ( )  
+List < Map < String , String >> res = dbc . selectAllFromTableWhereFieldEqValue ( "plane" , "planeId" , Integer . toString ( id ) )  
+Plane p = new Plane ( Utility . convertIntString ( ligne . get ( "_id" ) ) , ligne . get ( "planeType" ) )  
+dbc . close ( )  

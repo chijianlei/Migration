@@ -1,0 +1,1 @@
+@ RequestMapping ( value = "/connexion" , method = RequestMethod . POST ) public boolean connexion ( @ RequestBody String c ) throws UnsupportedEncodingException  

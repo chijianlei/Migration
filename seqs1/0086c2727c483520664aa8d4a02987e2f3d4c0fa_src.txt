@@ -1,0 +1,3 @@
+super . atAgentStart ( event )  
+protected void initialize ( ) 
+if ( message != null ) 

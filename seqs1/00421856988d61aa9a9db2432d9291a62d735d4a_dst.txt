@@ -1,0 +1,40 @@
+private final long maxHeapSize  
+private final int maxInFlightRpcs  
+private long currentWriteBufferSize = 0  
+private long operationSequenceGenerator = 0  
+@ VisibleForTesting final Map < Long , RequestAccountant > activeRequests = new HashMap < > ( )  
+private long lastOperationChange = System . currentTimeMillis ( )  
+public HeapSizeManager ( long maxHeapSize , int maxInflightRpcs )  
+this . maxHeapSize = maxHeapSize  
+this . maxInFlightRpcs = maxInflightRpcs  
+public long getMaxHeapSize ( )  
+public synchronized void waitUntilAllOperationsAreDone ( ) throws InterruptedException  
+boolean updated = false  
+nextLogOrSweep = System . currentTimeMillis ( ) + COMPLETION_GRACE_PERIOD_MILLIS  
+long now = System . currentTimeMillis ( )  
+wait ( WAIT_MILLIS )  
+LOG . trace ( "flush() completed" )  
+public synchronized void initializeOperation ( RequestAccountant callback ) throws InterruptedException  
+lastOperationChange = System . currentTimeMillis ( )  
+lastOperationChange = System . currentTimeMillis ( )  
+notifyAll ( )  
+private final ExceptionListener exceptionListener  
+public BigtableBufferedMutator ( Configuration configuration , TableName tableName , int maxInflightRpcs , long maxHeapSize , BigtableClient client , BigtableOptions options , ExecutorService executorService , BufferedMutator . ExceptionListener listener )  
+InetAddress host = options . getDataHost ( )  
+InetAddress host = options . getDataHost ( )  
+private void doMutation ( final Mutation mutation ) throws IOException  
+this . heapSize = mutation . heapSize ( )  
+catch ( InterruptedException e )  
+Thread . currentThread ( ) . interrupt ( )  
+accountant . request = batchExecutor . issueRequest ( mutation )  
+( hasExceptions . get ( ) ) { ArrayList < MutationException > mutationExceptions = null ; synchronized ( globalExceptions )  
+mutationExceptions = new ArrayList < > ( globalExceptions )  
+globalExceptions . clear ( )  
+hasExceptions . set ( false )  
+class RequestAccountant implements FutureCallback < GeneratedMessage >  
+hasExceptions . set ( true )  
+@ Override public void onSuccess ( GeneratedMessage ignored )  
+RequestAccountant callback = underTest . sizeManager . activeRequests . values ( ) . iterator ( ) . next ( )  
+callback . onSuccess ( null )  
+Assert . assertFalse ( underTest . hasInflightRequests ( ) )  
+underTest . hasExceptions . set ( true )  

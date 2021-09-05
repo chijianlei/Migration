@@ -1,0 +1,2 @@
+int articleIdIndex = mArticleCursor . getColumnIndex ( "articleId" )  
+mUrl = new URL ( "//hacker-news.firebaseio.com/v0/item/" + ArticleId + ".json?print=pretty" )  

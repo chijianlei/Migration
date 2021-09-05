@@ -1,0 +1,14 @@
+private int length  
+regGrid = ( RegularGrid3i ) ( is . get_voxel_cube ( ) )  
+length = regGrid . get_number_of_voxels ( )  
+for ( int i = 0 ; i < length ; i ++ ) 
+imageStack = new short [ length ]  
+GradientFunction gradient = GradientFunctionFactory . get_gradient_function ( vc , GradientFunctionType . CENTRAL_DIFFERENCES , GradientCachingMethod . ON_THE_FLY )  
+sortedData = new int [ length ]  
+segmentData = new int [ length ]  
+distanceData = new short [ length ]  
+for ( int i = 0 ; i < length ; i ++ )  
+for ( int i = 0 ; i < length ; i ++ )  
+set_progress_attributes ( "Immersing..." , 0 , 3 * ( regGrid . get_number_of_voxels ( ) >> 10 ) , 0 )  
+length = regGrid . get_number_of_voxels ( ) - rangeOffsets [ i ]  
+public class WatershedModule extends GMPanel implements YModule , YObserver  

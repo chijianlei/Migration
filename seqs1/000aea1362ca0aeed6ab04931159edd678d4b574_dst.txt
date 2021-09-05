@@ -1,0 +1,2 @@
+String q = "DELETE FROM bar " + "WHERE symbol IN (SELECT symbol FROM indexlist WHERE index = 'NYSE' OR index = 'Nasdaq' OR index = 'DJIA' OR index = 'SP500' OR index = 'ETF' OR index = 'Stock Index') "  
+String q = "DELETE FROM bar " + "WHERE symbol IN (SELECT symbol FROM indexlist WHERE index = 'NYSE' OR index = 'Nasdaq' OR index = 'DJIA' OR index = 'SP500' OR index = 'ETF' OR index = 'Stock Index') " + "AND start IN (SELECT * FROM (SELECT * FROM generate_series('2012-01-01'::date, now()::date, '1 day') AS alldates) t WHERE alldates NOT IN (SELECT * FROM tradingdays))"  

@@ -1,0 +1,6 @@
+@ Provider @ Priority ( Priorities . AUTHENTICATION ) public class AuthenticationFilter implements ContainerRequestFilter  
+@ Override public boolean isUserInRole ( String acceptedRole )  
+return role . equals ( acceptedRole )  
+@ Path ( "entity.comment" ) public class CommentFacadeREST extends AbstractFacade < Comment >  
+@ Path ( "entity.normaluser" ) public class NormalUserFacadeREST extends AbstractFacade < NormalUser >  
+@ Path ( "entity.request" ) public class RequestFacadeREST extends AbstractFacade < Request >  

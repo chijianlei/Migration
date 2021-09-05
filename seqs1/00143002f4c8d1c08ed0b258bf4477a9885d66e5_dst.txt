@@ -1,0 +1,1 @@
+lineOptions . color ( getResources ( ) . getColor ( R . color . colorRed ) )  

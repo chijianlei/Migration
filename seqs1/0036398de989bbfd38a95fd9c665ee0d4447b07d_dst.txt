@@ -1,0 +1,2 @@
+return ! extrinsicState . isFailing ( ) && ( UserParameter . KEEP_RUNNING_ALWAYS . equals ( keepRunning ) || UserParameter . KEEP_RUNNING_ON_SUCCESS . equals ( keepRunning ) )  
+return extrinsicState . isFailing ( ) && ( UserParameter . KEEP_RUNNING_ALWAYS . equals ( keepRunning ) || UserParameter . KEEP_RUNNING_ON_ERROR . equals ( keepRunning ) )  

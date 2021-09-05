@@ -1,0 +1,17 @@
+if ( CheckedEnteryError == VALIDDATA || CheckedEnteryError == 0 )  
+for ( int i = 0 ; i < s . length ; i ++ ) 
+DetailArray [ i ] = s [ i ]  
+View view = inflate . inflate ( R . layout . profile_deatil_view_recycler , parent , false )  
+@ Override public void onBindViewHolder ( ProfileDetailViewHolder holder , int position )  
+holder . DeatilView . setText ( new DetailHandleModel ( ) . DeatilDisplay ( position ) )  
+@ Override public void onStudentDetailInteraction ( )  
+private TextView [ ] ValidationViews = new TextView [ 6 ]  
+EditText [ ] StudentDetails = new EditText [ 6 ]  
+String [ ] s = new String [ 6 ]  
+s [ i - 1 ] = StudentDetails [ i - 1 ] . getText ( ) . toString ( )  
+if ( s [ i - 1 ] . length ( ) == 0 ) 
+if ( CheckedEnteryError == VALIDDATA || CheckedEnteryError == 0 )  
+if ( mListener != null )  
+DetailHandleModel . studentRegistrationDetail ( s )  
+public interface OnFragmentInteractionListener  
+void onStudentDetailInteraction ( )  

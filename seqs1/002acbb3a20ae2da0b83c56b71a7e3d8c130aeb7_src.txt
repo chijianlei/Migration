@@ -1,0 +1,6 @@
+ruleFactory . getPropertiesRule ( ) . apply ( nodeName , node . get ( "properties" ) , jclass , schema )  
+addConstructors ( jclass , getConstructorProperties ( node , ruleFactory . getGenerationConfig ( ) . isConstructorsRequiredPropertiesOnly ( ) ) )  
+@ Test @ SuppressWarnings ( { "rawtypes" , "unchecked" } ) public void extendsBuilderMethods ( ) throws Exception  
+Method builderMethod = supertype . getDeclaredMethod ( "withParent" , String . class )  
+assertThat ( builderMethod . getReturnType ( ) , is ( equalTo ( supertype ) ) )  
+Method builderMethodOverride = subtype . getDeclaredMethod ( "withParent" , String . class )  

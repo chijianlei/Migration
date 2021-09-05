@@ -1,0 +1,9 @@
+throw new ClientUnauthorizedComputeException ( "Not authorized to use snapshot " + snapId + " by " + ctx . getUser ( ) . getName ( ) )  
+if ( ! ( ex . getCause ( ) instanceof ExecutionException ) )  
+lastEx = ex  
+throw Exceptions . toUndeclared ( new ClientUnauthorizedComputeException ( "Not authorized to delete volume by " + ctx . getUser ( ) . getName ( ) ) )  
+VmVolumeAttachment attachment = VmInstances . lookupVolumeAttachment ( input )  
+catch ( Exception ex )  
+throw new ClientUnauthorizedComputeException ( "Not authorized to attach volume " + volumeId + " by " + ctx . getUser ( ) . getName ( ) )  
+throw new ClientUnauthorizedComputeException ( "Not authorized to detach volume " + volumeId + " by " + ctx . getUser ( ) . getName ( ) )  
+throw new ClientUnauthorizedComputeException ( "Not authorized to detach volume from instance " + instanceId + " by " + ctx . getUser ( ) . getName ( ) )  

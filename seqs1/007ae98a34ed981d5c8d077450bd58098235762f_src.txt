@@ -1,0 +1,4 @@
+this . _commandExecutionHandler . andThen ( result -> { this . displayResult ( result ) ; return null ; } ) . apply ( command )  
+this . _idRange = Arrays . stream ( Range . enumerateRanges ( ranges ) ) . map ( id -> { System . err . printf ( "deleting task at id %d%n" , id ) ; return id ; } ) . filter ( id -> ! Storage . getInstance ( ) . get ( id ) . isDeleted ( ) ) . toArray ( )  
+System . err . printf ( "deleting task at id %d%n" , id )  
+Task task = allTask . get ( index )  

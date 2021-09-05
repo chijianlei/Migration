@@ -1,0 +1,12 @@
+StringBuilder additionalTags = new StringBuilder ( "lineNo=\"" )  
+additionalTags . append ( "textId=\"" ) . append ( textId . toString ( ) ) . append ( "\" " )  
+additionalTags . append ( "chapterId=\"" ) . append ( chapterId . toString ( ) ) . append ( "\" " )  
+attributeNameToValue . put ( "textId" , textId . toString ( ) )  
+attributeNameToValue . put ( "chapterId" , chapterId . toString ( ) )  
+attributeNameToValue . put ( "lineNo" , Integer . toString ( paragraphOrderNumber ) )  
+public enum WikiTagType { SUBTITLE ( "{{袩芯写蟹邪谐芯谢芯胁芯泻|\"" ) , TWO_EQUAL ( "==" ) , THREE_EQUAL ( "===" ) , FOUR_EQUAL ( "====" ) , TWO_QUOTES ( "\'\'" ) , THREE_QUOTES ( "\'\'\'" ) , IMAGE ( "{{袠谢谢褞褋褌褉邪褑懈褟}}" ) , DOUBLE_END_BRACKET ( "}}" ) , NEW_LINE ( "\n" ) , FOOTNOTE ( "{{ref|" )  
+public Date getInsertionTime ( )  
+public void setInsertionTime ( Date insertionTime )  
+this . insertionTime = insertionTime  
+private Date insertionTime  
+bookmark . setInsertionTime ( new Date ( ) )  

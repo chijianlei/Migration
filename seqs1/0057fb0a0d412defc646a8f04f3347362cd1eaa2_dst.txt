@@ -1,0 +1,4 @@
+UserState userState = getCurrentUserStateLocked ( )  
+if ( ! userState . isUiAutomationSuppressingOtherServices ( ) )  
+if ( readConfigurationForUserStateLocked ( userState ) )  
+onUserStateChangedLocked ( userState )  

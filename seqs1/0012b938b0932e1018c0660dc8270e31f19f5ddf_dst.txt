@@ -1,0 +1,6 @@
+response = response . replace ( "'   class='status_reduzida'>" , "\",\n \"status\": \"" )  
+response = response . replace ( "'   class='status_reduzida'>" , "\",\n \"status\": \"" )  
+response = response . replace ( "'   class='status_reduzida'>" , "\",\n \"status\": \"" )  
+response = response . replace ( "'   class='status_reduzida'>" , "\",\n \"status\": \"" )  
+response = response . replace ( "'   class='status_reduzida'>" , "\",\n \"status\": \"" )  
+response = response . replace ( "&#227;" , "茫" )  

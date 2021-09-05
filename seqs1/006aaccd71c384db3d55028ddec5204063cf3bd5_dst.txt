@@ -1,0 +1,4 @@
+switch ( state ) { case "on" : expire = ( lifetime != null ) ? Math . max ( 0 , System . currentTimeMillis ( ) + lifetime ) : - 1 ; break ; case "off" : expire = 0 ; break ; default : 
+throw new IllegalArgumentException ( "Invalid sticky state : " + state )  
+if ( ! matches ( pnfsId ) )  
+if ( al == null && rp == null && storage == null && cache == null && ! all )  

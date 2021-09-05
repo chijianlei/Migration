@@ -1,0 +1,1 @@
+inReader = new InputStreamReader ( conn . getErrorStream ( ) )  

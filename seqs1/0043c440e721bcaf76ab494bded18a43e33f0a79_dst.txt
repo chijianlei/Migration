@@ -1,0 +1,16 @@
+return ( str . hashCode ( ) + num . hashCode ( ) + flo . hashCode ( ) + boo . hashCode ( ) + _null . hashCode ( ) )  
+this . arrdouble = value  
+public ArrayList < Double > getArrdouble ( )  
+this . arrnum = value  
+public ArrayList < Long > getArrnum ( )  
+this . arrstr = value  
+public ArrayList < String > getArrstr ( )  
+this . arrboo = value  
+public ArrayList < Boolean > getArrboo ( )  
+this . arrnull = value  
+public ArrayList < Arrnull > getArrnull ( )  
+this . arrobj = value  
+public ArrayList < Arrobj > getArrobj ( )  
+return ( str . hashCode ( ) + num . hashCode ( ) + flo . hashCode ( ) + boo . hashCode ( ) )  
+return ( _1one . hashCode ( ) )  
+return ( a . hashCode ( ) + _b______ . hashCode ( ) + with_some_spaces . hashCode ( ) + _new . hashCode ( ) )  

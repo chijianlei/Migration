@@ -1,0 +1,1 @@
+error ( "Then expression smust have scalar units." , wh . getThen ( ) , null )  

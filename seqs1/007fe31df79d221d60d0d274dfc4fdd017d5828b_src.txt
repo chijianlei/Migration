@@ -1,0 +1,4 @@
+if ( ! autoTrackerMarking && trackerPanel . isAutoRefresh )  
+for ( int i = 0 ; i < 20000 ; i ++ )  
+trackerPanel . refreshTrackData ( )  
+testTimer . setInitialDelay ( 20 )  

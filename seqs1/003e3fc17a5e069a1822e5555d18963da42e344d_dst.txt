@@ -1,0 +1,4 @@
+if ( contest . getIsSharedContestInForeignColab ( ) )  
+if ( contest != null && contest . getIsSharedContestInForeignColab ( ) )  
+activitiesService = new RefreshingRestService ( CoLabService . ACTIVITY , ConfigurationAttributeKey . PARTNER_COLAB_LOCATION , ConfigurationAttributeKey . PARTNER_COLAB_PORT )  
+proposal = new Proposal ( new Proposal ( proposalService ) , 0 , contest , proposalsContext . getContestPhase ( request ) , null )  

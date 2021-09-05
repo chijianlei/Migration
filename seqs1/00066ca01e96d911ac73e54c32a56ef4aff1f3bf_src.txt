@@ -1,0 +1,23 @@
+public void windowActivated ( WindowEvent e )  
+base . handleActivated ( Editor . this )  
+fileMenu . insert ( sketchbookMenu , 2 )  
+fileMenu . insert ( examplesMenu , 3 )  
+int offset = 0  
+for ( JMenu menu : base . getBoardsCustomMenus ( ) )  
+toolsMenu . insert ( menu , numTools + offset )  
+offset ++  
+toolsMenu . insert ( serialMenu , numTools + offset )  
+protected void buildMenuBar ( ) throws Exception  
+JMenuBar menubar = new JMenuBar ( )  
+menubar . add ( buildEditMenu ( ) )  
+final JMenu sketchMenu = new JMenu ( _ ( "Sketch" ) )  
+sketchMenu . addMenuListener ( new StubMenuListener ( ) { @ Override public void menuSelected ( MenuEvent e ) { buildSketchMenu ( sketchMenu ) ; sketchMenu . revalidate ( ) ; validate ( ) ; } } )  
+StubMenuListener ( )  
+@ Override public void menuSelected ( MenuEvent e )  
+buildSketchMenu ( sketchMenu )  
+sketchMenu . revalidate ( )  
+validate ( )  
+buildSketchMenu ( sketchMenu )  
+menubar . add ( sketchMenu )  
+menubar . add ( buildHelpMenu ( ) )  
+setJMenuBar ( menubar )  

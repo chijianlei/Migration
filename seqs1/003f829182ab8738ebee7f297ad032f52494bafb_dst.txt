@@ -1,0 +1,1 @@
+@ JsonIgnoreProperties ( ignoreUnknown = true ) public class Task  

@@ -1,0 +1,1 @@
+mProgressDialog = ProgressDialog . show ( GalleryShowActivity . this , " " , "姝ｅ湪涓婁紶绗 + (progressIndex + 1) + " � � � � � � � � � � � � , true )  

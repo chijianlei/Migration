@@ -1,0 +1,3 @@
+public enum BrowserPageAction { RELOAD ( Task . RELOAD_BROWSER , null ) , RELOAD_FROM_CACHE ( Task . RELOAD_BROWSER_FROM_CACHE , null )  
+actionByteBuffer = ByteBuffer . wrap ( actionBytes )  
+public ByteBuffer getActionByteBuffer ( )  

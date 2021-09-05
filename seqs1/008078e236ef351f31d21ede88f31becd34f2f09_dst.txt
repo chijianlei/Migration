@@ -1,0 +1,2 @@
+return new Builder ( ac , ugen , this . map )  
+this . b = Builder . build ( ac , out ) . prepend ( new NoteOnLinearFadeIn ( ac , 1500.0f ) ) . label ( "rise" ) . prepend ( new Gain ( ac , 1 , 0 f ) ) . label ( "noteGain" ) . prepend ( new WavePlayer ( ac , freq , Buffer . SQUARE ) ) . label ( "waveplayer" )  

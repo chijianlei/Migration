@@ -1,0 +1,8 @@
+throw new IOException ( "Unable to obtain file descriptor on this OS version: " + e . getMessage ( ) )  
+@ TargetApi ( Build . VERSION_CODES . HONEYCOMB_MR1 ) class FdHelperHoneycomb  
+static int getFd ( ParcelFileDescriptor descriptor )  
+return descriptor . getFd ( )  
+return FdHelperHoneycomb . getFd ( parcelFd )  
+throw new IOException ( "Unable to obtain file descriptor on this OS version: " + e . getMessage ( ) )  
+Log . e ( "exec" , "Failed to set window size due to " + e . getMessage ( ) )  
+Log . e ( "exec" , "Failed to set UTF mode due to " + e . getMessage ( ) )  

@@ -1,0 +1,3 @@
+statement instanceof SQLDeleteStatement )  
+statement instanceof SQLUpdateStatement )  
+

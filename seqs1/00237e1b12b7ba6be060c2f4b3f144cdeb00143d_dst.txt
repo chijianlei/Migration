@@ -1,0 +1,1 @@
+if ( ! Character . isJavaIdentifierStart ( line . charAt ( 0 ) ) && line . charAt ( 0 ) != '<' )  

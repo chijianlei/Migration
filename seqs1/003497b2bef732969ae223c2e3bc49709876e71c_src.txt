@@ -1,0 +1,2 @@
+if ( gSpeed > 0 )  
+if ( gSpeed < 0 )  

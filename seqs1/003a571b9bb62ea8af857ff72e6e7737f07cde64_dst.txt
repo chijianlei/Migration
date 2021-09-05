@@ -1,0 +1,6 @@
+public void play ( )  
+mIsPlaying = true  
+mHandler . sendMessageDelayed ( obtainMsg ( ) , mIntervalTime )  
+public void pause ( )  
+mHandler . removeMessages ( 0 )  
+mIsPlaying = false  

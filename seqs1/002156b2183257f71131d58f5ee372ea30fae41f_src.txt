@@ -1,0 +1,3 @@
+return save ( new NodeImpl ( fields ) )  
+catch ( ValidationException e )  
+throw new RuntimeException ( "Validation failed." , e )  

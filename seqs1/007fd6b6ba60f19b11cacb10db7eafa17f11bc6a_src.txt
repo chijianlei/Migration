@@ -1,0 +1,4 @@
+String returnMessage = SUCCESS_MESSAGE  
+returnMessage = dm . register ( AA )  
+private String sqlQuery = "INSERT INTO USER(UserEmail, UserPassword," + " UserName, UserDepartment, UserRank) VALUES (?, ?, ?, ?, ?)"  
+result = "" + ID + rank  

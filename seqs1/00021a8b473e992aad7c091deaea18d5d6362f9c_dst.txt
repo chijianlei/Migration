@@ -1,0 +1,34 @@
+return IntStream . range ( 0 , bitext . length ) . parallel ( ) . boxed ( ) . sorted ( ( x , y ) -> { int xPos = x , yPos = y , xId = bitext [ x ] , yId = bitext [ y ] ; if ( xId < 0 && yId < 0 ) { return 0 ; } else if ( xId < 0 ) { return 1 ; } else if ( yId < 0 ) { return - 1 ; } while ( xId >= 0 && yId >= 0 ) { if ( xId == yId ) { xId = bitext [ ++ xPos ] ; yId = bitext [ ++ yPos ] ; } else { return vocabulary . get ( xId ) . compareTo ( vocabulary . get ( yId ) ) ; } } int xLength = xPos - x + ( xId >= 0 ? 1 : 0 ) ; int yLength = yPos - y + ( yId >= 0 ? 1 : 0 ) ; return xLength - yLength ; } ) . limit ( numPositions ) . mapToInt ( i -> i ) . toArray ( )  
+while ( xId >= 0 && yId >= 0 )  
+if ( xId == yId )  
+xId = bitext [ ++ xPos ]  
+yId = bitext [ ++ yPos ]  
+return vocabulary . get ( xId ) . compareTo ( vocabulary . get ( yId ) )  
+if ( xId < 0 && yId < 0 )  
+if ( xId < 0 )  
+xLength = xPos - x + ( xId >= 0 ? 1 : 0 )  
+return - 1  
+for ( int i = 0 ; i < sa . length ; ++ i )  
+for ( int corpusPos = sa [ i ] ; bitext [ corpusPos ] >= 0 ; ++ corpusPos )  
+if ( sb . length ( ) > 0 ) sb . append ( " " )  
+sb . length ( ) > 0 ) sb . append ( " " )  
+sb . append ( vocabulary . get ( bitext [ corpusPos ] ) )  
+Span nSpan = new Span ( firstSuffix , 1 ) , nnSpan = new Span ( firstSuffix , 2 ) , nnnSpan = new Span ( firstSuffix , 3 )  
+Span nSpanThis = new Span ( suffix , 1 )  
+Span nnSpanThis = new Span ( suffix , 2 )  
+Span nnnSpanThis = new Span ( suffix , 3 )  
+nSpan = nSpanThis  
+nnCnt = checkSpan ( nnSpan , nnSpanThis , nnStart , i , nnCnt , minOccurrences , sampleSize , queryCache )  
+for ( int i = startSa ; i < endSa && hits . size ( ) < maxHits ; i += stepSize ) { int corpusPosition = srcSuffixArray [ i ] ; assert srcBitext [ corpusPosition ] >= 0  
+public class Span  
+this . tokens = tokens  
+this . hashCode = MurmurHash . hash32 ( tokens , tokens . length , 1 )  
+int [ ] tokens = new int [ order ]  
+for ( int i = 0 ; i < order ; ++ i )  
+tokens [ i ] = suffix . get ( i )  
+catch ( Exception e )  
+if ( ! ( o instanceof Span ) )  
+if ( this . tokens . length == otherSpan . tokens . length )  
+return findBound ( query , isSource , lowerBound , startFrom , sa . length - 1 )  
+while ( low <= high ) { final int mid = ( low + high ) >>> 1 ; assert mid < sa . length ; final int corpusPos = sa [ mid ] ; assert corpusPos >= 0  
+private SentencePair ( int corpusPosition ) { int j = corpusPosition ; assert srcBitext [ j ] >= 0 ; while ( srcBitext [ j ] >= 0 ) j ++ ; srcEndExclusive = j ; j = corpusPosition - 1 ; while ( j >= 0 && srcBitext [ j ] >= 0 ) j -- ; srcStartInclusive = j + 1 ; tgtEndExclusive = fromSentenceOffset ( srcBitext [ srcEndExclusive ] ) ; assert tgtEndExclusive > 0 : String . valueOf ( tgtEndExclusive ) ; assert fromSentenceOffset ( tgtBitext [ tgtEndExclusive ] ) == srcEndExclusive : String . format ( "%d %d" , fromSentenceOffset ( tgtBitext [ tgtEndExclusive ] ) , srcEndExclusive )  

@@ -1,0 +1,5 @@
+playerList . forEach ( p -> p . sendMessage ( ChatColor . GOLD + p . getName ( ) + ChatColor . WHITE + " is sleeping (" + ChatColor . YELLOW + nbPlayersSleeping + ChatColor . WHITE + "/" + ChatColor . GREEN + playerList . size ( ) + ChatColor . WHITE + ")" ) )  
+getLogger ( ) . info ( player . getName ( ) + " leaves bed -> " + nbPlayersSleeping + "/" + playerList . size ( ) )  
+playerList . forEach ( p -> p . sendMessage ( ChatColor . GOLD + p . getName ( ) + ChatColor . WHITE + " leaves his bed (" + ChatColor . YELLOW + nbPlayersSleeping + ChatColor . WHITE + "/" + ChatColor . GREEN + playerList . size ( ) + ChatColor . WHITE + ")" ) )  
+getLogger ( ) . info ( player . getName ( ) + " leaves game -> " + nbPlayersSleeping + "/" + playerList . size ( ) )  
+playerList . forEach ( p -> p . sendMessage ( ChatColor . GOLD + p . getName ( ) + ChatColor . WHITE + " leaves his bed (" + ChatColor . YELLOW + nbPlayersSleeping + ChatColor . WHITE + "/" + ChatColor . GREEN + playerList . size ( ) + ChatColor . WHITE + ")" ) )  

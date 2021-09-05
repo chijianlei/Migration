@@ -1,0 +1,3 @@
+for ( int i = 0 ; i < scrollView . getAdapter ( ) . getItemCount ( ) ; i ++ )  
+itemPicker . setAdapter ( new ShopAdapter ( data ) )  
+@ Override public void onCurrentItemChanged ( @ Nullable RecyclerView . ViewHolder viewHolder , int position )  

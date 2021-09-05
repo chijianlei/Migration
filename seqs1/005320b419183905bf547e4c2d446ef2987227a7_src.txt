@@ -1,0 +1,1 @@
+Size theTextSize = new Size ( 200 , 10 )  

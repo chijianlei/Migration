@@ -1,0 +1,6 @@
+ApiError [ ] errors = ApiError . values ( )  
+if ( errormsgId < errors . length ) 
+if ( errors [ errormsgId ] != ApiError . EXCEPTION ) 
+showErrorScreen ( "Server reported: " + errors [ errormsgId ] . getDescription ( ) )  
+showErrorScreen ( getString ( R . string . error_enroll_serverdied ) )  
+protected void showErrorScreen ( String errormsg , final String rightButtonString , final int rightButtonScreen , final String leftButtonString , final int leftButtonScreen )  

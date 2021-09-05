@@ -1,0 +1,5 @@
+log ( indent + "(View) Node Id: " + nId )  
+ObjectParser boundsParser = new ObjectParser ( "bounds" ) . addParser ( ulBoundParser ) . addParser ( lrBoundParser )  
+Node < ? extends Definition , ? > task1 = diagram . getGraph ( ) . getNode ( "_88233779-B395-4B8C-A086-9EF43698426C" )  
+Node < ? extends Definition , ? > task2 = diagram . getGraph ( ) . getNode ( "_AE5BF0DC-B720-4FDE-9499-5ED89D41FB1A" )  
+Node < ? extends Definition , ? > task3 = diagram . getGraph ( ) . getNode ( "_6063D302-9D81-4C86-920B-E808A45377C2" )  

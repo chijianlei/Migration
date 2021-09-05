@@ -1,0 +1,1 @@
+SUCC_FAIL_ONLY != null ? "true" . equals ( SUCC_FAIL_ONLY ) : false  

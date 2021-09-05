@@ -1,0 +1,10 @@
+gameState = GameState . Draw_card_discarded  
+public void chooseHandCard ( int cardIndex )  
+if ( gameState == GameState . Discard_card_selected )  
+Card temp = state . getPlayerHands ( ) [ playerTurn ] . replaceCard ( cardIndex , state . getDiscardPile ( ) . pop ( ) )  
+state . getDiscardPile ( ) . push ( temp )  
+if ( gameState == GameState . Draw_card_selected )  
+Card temp = state . getPlayerHands ( ) [ playerTurn ] . replaceCard ( cardIndex , state . getDrawPile ( ) . pop ( ) )  
+state . getDiscardPile ( ) . push ( temp )  
+if ( gameState == GameState . Draw_card_discarded )  
+state . getPlayerHands ( ) [ playerTurn ] . flipCard ( cardIndex )  

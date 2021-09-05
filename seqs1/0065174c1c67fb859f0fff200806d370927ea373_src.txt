@@ -1,0 +1,35 @@
+public CatEmotion ( FdActivity c )  
+opinions = new ArrayList < Opinion > ( )  
+state = EMOTION . HAPPY  
+context = c  
+scale = 0  
+tm = new Timer ( "tm" )  
+public void reCalcFace ( )  
+if ( scale > 120 ) scale = 120  
+scale > 120 ) scale = 120  
+if ( scale < - 180 ) scale = - 180  
+scale < - 180 ) scale = - 180  
+context . runOnUiThread ( new Runnable ( ) { @ Override public void run ( ) { if ( default_display ) { String test = Float . toString ( scale ) ; if ( scale <= - 166 ) { state = EMOTION . CRYING ; } else if ( scale <= - 133 ) { state = EMOTION . DISGUSTED ; } else if ( scale <= - 100 ) { state = EMOTION . SADDER ; } else if ( scale <= - 66 ) { state = EMOTION . SAD ; } else if ( scale <= - 33 ) { state = EMOTION . ANNOYED ; } else if ( scale <= 33 ) { state = EMOTION . HAPPY ; } else if ( scale <= 66 ) { state = EMOTION . HAPPY_TONGUE ; } else if ( scale <= 100 ) { state = EMOTION . HAPPIER ; } else { state = EMOTION . HEARTS ; } } } } )  
+Runnable ( )  
+@ Override public void run ( )  
+String test = Float . toString ( scale )  
+if ( scale <= - 166 )  
+state = EMOTION . CRYING  
+if ( scale <= - 133 )  
+state = EMOTION . DISGUSTED  
+if ( scale <= - 100 )  
+state = EMOTION . SADDER  
+if ( scale <= - 66 )  
+state = EMOTION . SAD  
+if ( scale <= - 33 )  
+state = EMOTION . ANNOYED  
+if ( scale <= 33 )  
+state = EMOTION . HAPPY  
+if ( scale <= 66 )  
+state = EMOTION . HAPPY_TONGUE  
+if ( scale <= 100 )  
+state = EMOTION . HAPPIER  
+state = EMOTION . HEARTS  
+public void detectedSmile ( )  
+reCalcFace ( )  
+public void detectedFrown ( )  

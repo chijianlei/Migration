@@ -1,0 +1,6 @@
+NodeUtilities . MAX_INTER_LATENCY = PhysicalDataProvider . getMaxLatency ( )  
+private static double maxLatency = 0  
+if ( latency > maxLatency ) 
+maxLatency = latency  
+public static double getMaxLatency ( )  
+public static double getIntraDCLatency ( int dcID )  

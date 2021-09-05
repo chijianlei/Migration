@@ -1,0 +1,3 @@
+String nameSpaceRotation = FeedbackControllerToolbox . class . getSimpleName ( )  
+String nameSpacePosition = FeedbackControllerToolbox . class . getSimpleName ( )  
+String varnamePosition = handName + "ErrorPosition"  

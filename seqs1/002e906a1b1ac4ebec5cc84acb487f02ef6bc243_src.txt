@@ -1,0 +1,1 @@
+public void getLecturesHours ( HttpServletRequest request , HttpServletResponse response ) throws IOException  

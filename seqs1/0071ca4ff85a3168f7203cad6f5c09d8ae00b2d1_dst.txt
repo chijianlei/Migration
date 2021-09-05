@@ -1,0 +1,1 @@
+return l . getWorld ( ) . getName ( ) + ":" + strDbl ( l . getX ( ) , 2 ) + ":" + strDbl ( l . getY ( ) , 2 ) + ":" + strDbl ( l . getZ ( ) , 2 ) + ":" + String . valueOf ( Float . floatToIntBits ( l . getYaw ( ) ) ) . replace ( '.' , '_' ) + ":" + String . valueOf ( Float . floatToIntBits ( l . getPitch ( ) ) ) . replace ( '.' , '_' ) ; 

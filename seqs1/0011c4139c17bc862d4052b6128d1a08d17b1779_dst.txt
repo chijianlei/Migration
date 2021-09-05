@@ -1,0 +1,3 @@
+flightModeSpinner . setSelection ( Integer . parseInt ( newString . split ( "m" ) [ 1 ] . replaceAll ( "\\s+" , "" ) ) )  
+for ( int i = 0 ; i < pidEditText . length ; i ++ )  
+bluetoothSerial . print ( "M" + flightModeSpinner . getSelectedItemPosition ( ) )  

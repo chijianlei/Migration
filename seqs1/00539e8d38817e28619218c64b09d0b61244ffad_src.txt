@@ -1,0 +1,2 @@
+String original = part . substring ( pos , i - 1 )  
+String original = part . substring ( pos , i - 1 )  

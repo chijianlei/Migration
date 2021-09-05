@@ -1,0 +1,2 @@
+updateRanges ( range , r . getRuleIntervals ( ) )  
+res = res + ruleSize + r . getOccurrences ( ) . size ( ) * 2  

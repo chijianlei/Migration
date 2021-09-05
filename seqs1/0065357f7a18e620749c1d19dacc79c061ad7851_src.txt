@@ -1,0 +1,5 @@
+public interface Token extends Textual  
+Object getIndex ( )  
+if ( successorWord == null )  
+flag = false  
+String seq = "丨賲丿-丕賱賴"  

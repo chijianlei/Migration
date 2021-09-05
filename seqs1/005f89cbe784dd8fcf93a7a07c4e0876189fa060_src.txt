@@ -1,0 +1,5 @@
+return new CacheKey ( requirement . getNamespace ( ) , requirement . getDirectives ( ) , requirement . getAttributes ( ) )  
+CacheKey ( String namespace , Map < String , String > directives , Map < String , Object > attributes )  
+this . hashcode = calculateHashCode ( namespace , directives , attributes )  
+private static int calculateHashCode ( String namespace , Map < String , String > directives , Map < String , Object > attributes )  
+if ( v1 == null && v2 == null || v1 != null && v1 . equals ( v2 ) )  

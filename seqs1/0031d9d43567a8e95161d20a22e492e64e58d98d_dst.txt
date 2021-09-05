@@ -1,0 +1,7 @@
+panel . addField ( "Obj_arg2" , dbInfo . getFieldString ( 2 ) , dbInfo . getFieldTypeString ( 2 ) , null , data . get ( "Obj_arg2" ) , "Default" )  
+panel . addField ( "Obj_arg3" , dbInfo . getFieldString ( 3 ) , dbInfo . getFieldTypeString ( 3 ) , null , data . get ( "Obj_arg3" ) , "Default" )  
+panel . addField ( "Obj_arg4" , dbInfo . getFieldString ( 4 ) , dbInfo . getFieldTypeString ( 4 ) , null , data . get ( "Obj_arg4" ) , "Default" )  
+panel . addField ( "Obj_arg5" , dbInfo . getFieldString ( 5 ) , dbInfo . getFieldTypeString ( 5 ) , null , data . get ( "Obj_arg5" ) , "Default" )  
+panel . addField ( "Obj_arg6" , dbInfo . getFieldString ( 6 ) , dbInfo . getFieldTypeString ( 6 ) , null , data . get ( "Obj_arg6" ) , "Default" )  
+panel . addField ( "Obj_arg7" , dbInfo . getFieldString ( 7 ) , dbInfo . getFieldTypeString ( 7 ) , null , data . get ( "Obj_arg7" ) , "Default" )  
+Object val = combo . getSelectedIndex ( ) - 1  

@@ -1,0 +1,25 @@
+executeLong ( wrap ( runnable ) , false )  
+private boolean tryExecuteWithActiveTransaction ( SparkTxRunnable runnable ) throws TransactionFailureException  
+TransactionalDatasetContext datasetContext = activeDatasetContext . get ( )  
+private void executeLong ( SparkTxRunnable runnable , boolean asyncCommit ) throws TransactionFailureException  
+catch ( InterruptedException e )  
+Thread . currentThread ( ) . interrupt ( )  
+Transaction transaction = txClient . startLong ( )  
+throw new TransactionFailureException ( "Failed to commit explicit transaction " + transaction )  
+activeDatasetContext . remove ( )  
+catch ( Throwable t )  
+activeDatasetContext . remove ( )  
+Transactions . invalidateQuietly ( txClient , transaction )  
+throw Transactions . asTransactionFailure ( t )  
+private TransactionalDatasetContext ( Transaction transaction , DynamicDatasetCache datasetCache , boolean asyncCommit )  
+this . completion = asyncCommit ? new CountDownLatch ( 1 ) : null  
+asyncCommit ? new CountDownLatch ( 1 ) : null  
+= asyncCommit ? new CountDownLatch ( 1 ) : null  
+void useSyncCommit ( )  
+this . completion = null  
+@ Override public boolean commitOnJobEnded ( )  
+LOG . debug ( "Awaiting completion for {}" , transaction . getWritePointer ( ) )  
+@ Test public void testExplicitTransaction ( ) throws Exception  
+SparkManager sparkManager = applicationManager . getSparkManager ( ExplicitTransactionSpark . class . getSimpleName ( ) )  
+sparkManager . start ( ImmutableMap . of ( "source.stream" , "SparkStream" , "result.all.dataset" , "SparkResult" , "result.threshold" , "2" , "result.threshold.dataset" , "SparkThresholdResult" ) )  
+Tasks . waitFor ( ImmutableSet . of ( "brown" , "fox" , "bear" ) , new Callable < Set < String >> ( ) { @ Override public Set < String > call ( ) throws Exception { resultManager . flush ( ) ; LOG . info ( "Reading from threshold result" ) ; CloseableIterator < KeyValue < byte [ ] , byte [ ] >> itor = resultTable . scan ( null , null ) ; try { return ImmutableSet . copyOf ( Iterators . transform ( itor , new Function < KeyValue < byte [ ] , byte [ ] > , String > ( ) { @ Override public String apply ( KeyValue < byte [ ] , byte [ ] > input ) { String word = Bytes . toString ( input . getKey ( ) ) ; LOG . info ( "{}, {}" , word , Bytes . toInt ( input . getValue ( ) ) ) ; return word ; } } ) ) ; } finally { itor . close ( ) ; } } } , 1 , TimeUnit . MINUTES , 1 , TimeUnit . SECONDS )  

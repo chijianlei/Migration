@@ -1,0 +1,1 @@
+GraphicalHelper . screen2logical ( absoluteRequestLocation , hostGraphicalEditPart )  

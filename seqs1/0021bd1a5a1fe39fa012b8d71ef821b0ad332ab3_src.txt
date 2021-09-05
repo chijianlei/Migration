@@ -1,0 +1,4 @@
+public class DownloadRequest  
+private final URL url  
+private final long size  
+public DownloadRequest ( URL url , long size )  

@@ -1,0 +1,2 @@
+Color foreground = Color . white  
+urlField != null ) urlField . setPreferredSize ( new Dimension ( width , height / 6 ) )  

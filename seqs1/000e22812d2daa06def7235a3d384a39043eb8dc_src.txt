@@ -1,0 +1,4 @@
+while ( - 1 != ( bytes = inputStream . read ( buffer ) ) )  
+String fullMessage = curMsg . substring ( endIdx - 16 , endIdx + end . length ( ) )  
+Log . i ( TAG , "Message " + fullMessage )  
+catch ( InterruptedException e ) { e . printStackTrace ( ) ; break  

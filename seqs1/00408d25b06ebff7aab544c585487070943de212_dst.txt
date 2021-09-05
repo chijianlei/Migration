@@ -1,0 +1,3 @@
+@ WebServlet ( "/helloservlet" ) public class LogicServlet extends HttpServlet  
+public LogicServlet ( ) 
+masterControl = MasterController . getInstance ( )  

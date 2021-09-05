@@ -1,0 +1,4 @@
+@ Query ( "SELECT * FROM memobox WHERE name=?" ) public List < MemoBox > findByName ( String s )  
+@ Query ( "SELECT * FROM memobox WHERE id=?" ) public MemoBox findById ( UUID s )  
+@ Query ( "DELETE FROM memobox WHERE name=?" ) public List < MemoBox > deleteByName ( String s )  
+@ Query ( "DELETE FROM memobox id=?" ) public List < MemoBox > deleteById ( UUID s )  

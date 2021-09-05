@@ -1,0 +1,8 @@
+return ResponseEntity . ok ( statisticService . getMoneyStatictics ( ) )  
+List < Map > getMoneyStatictics ( )  
+@ Override public List < Map > getMoneyStatictics ( )  
+public class StatisticServiceTest  
+List < Map > statisctics = statisticService . getMoneyStatictics ( )  
+@ Test public void getBoughtStatistics ( )  
+@ Test public void getMoneyStatistisc ( )  
+List < Map > statisctics = statisticService . getMoneyStatictics ( )  

@@ -1,0 +1,2 @@
+if ( maxYVisible < jsMinFloatValue ) maxYVisible = jsMinFloatValue  
+maxYVisible < jsMinFloatValue ) maxYVisible = jsMinFloatValue  

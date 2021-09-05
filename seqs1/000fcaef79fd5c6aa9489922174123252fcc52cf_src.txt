@@ -1,0 +1,2 @@
+return new ArrayInput ( null , bindToken )  
+return new ArrayInput ( value . toArray ( ) , bindToken )  

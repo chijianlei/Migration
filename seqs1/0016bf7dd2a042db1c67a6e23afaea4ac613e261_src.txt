@@ -1,0 +1,14 @@
+for ( String [ ] strings : rows )  
+insertPerson ( con , personID , Integer . parseInt ( strings [ 1 ] ) , nummerHess , strings [ 29 ] , strings [ 17 ] , datum , calendarFieldsSet , strings [ 46 ] , strings [ 63 ] , strings [ 78 ] , anredeTradID , fakultaetenID , fundortID , titelTradID )  
+currentSourceID = 0  
+currentSourceID = 0  
+currentSourceID = 0  
+currentSourceID = 0  
+currentSourceID = 0  
+throw new ImportException ( "Connection refused: " + e . getMessage ( ) , e )  
+private int insertIntoTableOneAttributeNoForeignKeys ( Connection con , String table , String entry ) throws ImportException  
+PreparedStatement stmt = con . prepareStatement ( sqlQuery )  
+} catch ( SQLException e )  
+throw new ImportException ( String . format ( "A %s could not be inserted" , entry ) + e . getMessage ( ) )  
+try ( Connection con = DriverManager . getConnection ( dbURL , DBUserKeys . adminUser , DBUserKeys . adminPassword ) )  
+throw new ImportException ( "Could not be validated: " + entry + "in" + table + "\n" + e . getSQLState ( ) )  

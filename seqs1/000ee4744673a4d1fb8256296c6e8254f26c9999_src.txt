@@ -1,0 +1,8 @@
+private void startInstances ( ProcessState state , Service service )  
+private void startInstances ( List < Instance > instancesToStart )  
+protected void start ( final Instance instance )  
+Map < String , Object > launchConfigData = serviceDiscoveryServer . buildLaunchData ( service )  
+instance = objectManager . create ( Instance . class , props )  
+Map < String , Object > data = new HashMap < > ( )  
+data . putAll ( DataUtils . getFields ( service ) )  
+data . putAll ( ( Map < ? extends String , ? extends Object > ) data . get ( ServiceDiscoveryConstants . FIELD_LAUNCH_CONFIG ) )  

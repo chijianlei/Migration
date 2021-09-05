@@ -1,0 +1,9 @@
+public class JWTLoginFilter extends GenericFilterBean  
+private static final Logger LOGGER = LoggerFactory . getLogger ( JWTLoginFilter . class )  
+public JWTLoginFilter ( String jwtSecret , AuthenticationManager authenticationManager )  
+public JWTLoginFilter createJWTFilter ( ) throws Exception  
+return new JWTLoginFilter ( jwtSecret , authenticationManager ( ) )  
+@ RequestMapping ( value = "events/{id}" , method = { RequestMethod . POST , RequestMethod . PUT } , produces = MediaType . APPLICATION_JSON_VALUE ) public ResponseEntity < Event > updateEvent ( @ AuthenticationPrincipal User user , @ PathVariable String id , @ RequestBody Event eventToUpdate )  
+@ RequestMapping ( value = "events/{id}" , method = RequestMethod . DELETE , produces = MediaType . APPLICATION_JSON_VALUE ) public ResponseEntity < Map < String , String >> delete ( @ AuthenticationPrincipal User user , @ PathVariable String id )  
+@ RequestMapping ( value = "events/add" , method = RequestMethod . POST , produces = MediaType . APPLICATION_JSON_VALUE ) public ResponseEntity < Map < String , String >> create ( @ AuthenticationPrincipal User user , @ Valid @ RequestBody Event newEvent )  
+public interface EventRepository extends MongoRepository < Event , String >  

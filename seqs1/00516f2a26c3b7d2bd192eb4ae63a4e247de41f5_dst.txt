@@ -1,0 +1,15 @@
+MatchList . setCurrentMatchId ( getIntent ( ) . getStringExtra ( MatchDetailFragment . ARG_MATCH_ID ) )  
+if ( currentPeriod < countPeriods + 1 )  
+period . setText ( "Break" )  
+isStopped = true  
+isAdditional = false  
+timeWhenStopped = timePeriod * ( currentPeriod )  
+timeWhenAdditionalStopped = 0  
+mChronometer . stop ( )  
+mChronometer . setBase ( SystemClock . elapsedRealtime ( ) - timeWhenStopped )  
+additionalChronometer . stop ( )  
+currentPeriod ++  
+if ( currentPeriod > countPeriods )  
+period . setText ( "Full time" )  
+additionalChronometer . setBase ( SystemClock . elapsedRealtime ( ) )  
+Snackbar . make ( view , "Full time" , Snackbar . LENGTH_LONG ) . setAction ( "Action" , null ) . show ( )  

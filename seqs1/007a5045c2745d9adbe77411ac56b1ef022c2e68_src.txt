@@ -1,0 +1,13 @@
+@ RunWith ( RobolectricGradleTestRunner . class ) @ Config ( constants = BuildConfig . class , sdk = 21 ) @ TargetApi ( Build . VERSION_CODES . GINGERBREAD ) public class SwrveGoogleUnitTest extends SwrveBaseTest  
+SwrveTestUtils . removeSwrveSDKSingletonInstance ( )  
+@ After public void tearDown ( ) throws Exception  
+SwrveTestUtils . removeSwrveSDKSingletonInstance ( )  
+@ Test public void testProcessIntentWithDeeplink ( ) throws Exception  
+Swrve swrve = ( Swrve ) SwrveSDK . createInstance ( activity , 1 , "apiKey" , config )  
+config . setSenderId ( "12345" )  
+config . setPushRegistrationAutomatic ( false )  
+swrve . onCreate ( activity )  
+swrve . setRegistrationId ( "manual_reg_id" )  
+JSONObject deviceValuesToSend = swrve . getDeviceInfo ( )  
+assertEquals ( "manual_reg_id" , deviceValuesToSend . get ( "swrve.gcm_token" ) )  
+swrve . onDestroy ( activity )  

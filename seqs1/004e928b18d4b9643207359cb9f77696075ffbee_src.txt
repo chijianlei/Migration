@@ -1,0 +1,23 @@
+String CLOSE = "closed"  
+@ GET ( "/repos/{owner}/{repo}/issues" ) Call < List < Issue >> getIssuesForReposList ( @ Path ( "owner" ) String owner , @ Path ( "repo" ) String repo , @ Nullable @ Query ( "state" ) String state )  
+private GitDateService mGitDateService  
+private GitDateService mGitDateService  
+public class ReposIssueFragment extends NetworkFragment < List < Issue >> implements OnCardTouchListener  
+@ Override public void onViewCreated ( View view , @ Nullable Bundle savedInstanceState )  
+super . onViewCreated ( view , savedInstanceState )  
+networkQueue ( ) . enqueue ( GithubService . createIssuesService ( ) . getIssuesForReposList ( mOwner , mRepo , IssuesService . OPEN ) )  
+List < String > state = new ArrayList < > ( )  
+state . add ( IssuesService . OPEN )  
+ArrayAdapter < String > spinnerAdapter = new ArrayAdapter < > ( getActivity ( ) , android . R . layout . simple_spinner_dropdown_item , state )  
+mSpinner . setAdapter ( spinnerAdapter )  
+@ Override public void onItemSelected ( AdapterView < ? > adapterView , View view , int i , long l )  
+if ( i == 0 )  
+mSpinner . setOnItemSelectedListener ( mOnItemSelectedListener )  
+@ Override public void respondSuccess ( List < Issue > data )  
+LinearLayoutManager layoutManager = new LinearLayoutManager ( getActivity ( ) )  
+mRecyclerView . setAdapter ( mIssueAdapter )  
+@ BindView ( R . id . user_recycler_search ) RecyclerView mRecycler  
+mRecycler . post ( new Runnable ( ) { @ Override public void run ( ) { if ( mCurrentPage == 1 ) { mLinearLayoutManager = new LinearLayoutManager ( getActivity ( ) ) ; mRecycler . setLayoutManager ( mLinearLayoutManager ) ; mQuickSearchAdapter = new SearchReposAdapter ( data . items ) ; mQuickSearchAdapter . openLoadMore ( 30 ) ; mRecycler . setAdapter ( mQuickSearchAdapter ) ; mQuickSearchAdapter . setOnLoadMoreListener ( SearchReposFragment . this ) ; mCurrentPage ++ ; return ; } if ( mCurrentPage > mLastPage ) { mQuickSearchAdapter . loadComplete ( ) ; } else { mQuickSearchAdapter . addData ( data . items ) ; mCurrentPage ++ ; } } } )  
+mRecycler . setLayoutManager ( mLinearLayoutManager )  
+mRecycler . setAdapter ( mQuickSearchAdapter )  
+mRecycler . addOnItemTouchListener ( new OnItemClickListener ( ) { @ Override public void SimpleOnItemClick ( BaseQuickAdapter baseQuickAdapter , View view , int i ) { SearchRepos . Items repos = ( SearchRepos . Items ) baseQuickAdapter . getItem ( i ) ; String owner = repos . owner . login ; String repo = repos . name ; String defaultBranch = repos . default_branch ; Intent intent = new Intent ( getActivity ( ) , ReposActivity . class ) ; intent . putExtra ( "owner" , owner ) ; intent . putExtra ( "repo" , repo ) ; intent . putExtra ( "defaultBranch" , defaultBranch ) ; startActivity ( intent ) ; } } )  

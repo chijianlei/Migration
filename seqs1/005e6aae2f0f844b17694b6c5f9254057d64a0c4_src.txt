@@ -1,0 +1,7 @@
+for ( TimestampedData2f range : ranges ) 
+for ( TimeStampedPolarCoordD polar : polars ) 
+double dX = ( scale * polar . getData ( ) . getR ( ) * Math . cos ( polar . getData ( ) . getR ( ) ) ) + centreX  
+double dY = ( scale * polar . getData ( ) . getR ( ) * Math . sin ( polar . getData ( ) . getR ( ) ) ) + centreY  
+double dX = ( scale * polar . getR ( ) * Math . cos ( polar . getR ( ) ) ) + centreX  
+double dY = ( scale * polar . getR ( ) * Math . sin ( polar . getR ( ) ) ) + centreY  
+path . moveTo ( dX , dY )  

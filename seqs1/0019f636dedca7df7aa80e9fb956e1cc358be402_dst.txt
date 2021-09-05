@@ -1,0 +1,8 @@
+public Country ( int colour )  
+filename = "info.txt"  
+color = colour  
+scanInfo ( )  
+try ( BufferedReader br = new BufferedReader ( new FileReader ( filename ) ) )  
+if ( country [ 1 ] . equals ( "" + color ) )  
+public int getColor ( )  
+private String calcValue ( int thing )  

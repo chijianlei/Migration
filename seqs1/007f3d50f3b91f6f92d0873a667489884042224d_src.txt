@@ -1,0 +1,6 @@
+Query q = dataSourceMgr . getSession ( ) . createQuery ( hql )  
+q . setString ( "sourcesystemCd" , getSourcesystemCd ( ) )  
+q . setString ( "sourcesystemCd" , getSourcesystemCd ( ) )  
+q . executeUpdate ( )  
+q = dataSourceMgr . getSession ( ) . createQuery ( hql )  
+i2b2DemoDataWriter . cleanOldRecords ( )  

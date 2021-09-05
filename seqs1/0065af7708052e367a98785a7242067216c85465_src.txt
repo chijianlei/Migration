@@ -1,0 +1,2 @@
+if ( matches ( textPos , patternLookaheadPos + 1 ) )  
+return charMatches && matches ( textPos + 1 , pp )  

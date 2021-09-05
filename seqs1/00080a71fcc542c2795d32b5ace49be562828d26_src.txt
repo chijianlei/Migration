@@ -1,0 +1,8 @@
+for ( Collidable c : this . collidables )  
+@ Override public void timePassed ( )  
+Point applyPoint = this . getVelocity ( ) . applyToPoint ( this . center ) ; 
+Line trajectory = new Line ( this . center , applyPoint ) ; 
+CollisionInfo info = this . gameEnvironment . getClosestCollision ( trajectory ) ; 
+if ( info . getCollisionObject ( ) != null ) { 
+this . setVelocity ( info . getCollisionObject ( ) . hit ( info . getCollisionPoint ( ) , this . velocity ) )  
+this . moveOneStep ( )  

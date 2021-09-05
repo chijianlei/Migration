@@ -1,0 +1,19 @@
+if ( pos + mapWidth < size && DungeonTileSheet . wallStitcheable . contains ( map [ pos + mapWidth ] ) )  
+return DungeonTileSheet . stitchWallOverhangTile ( tile , ( pos + 1 ) % mapWidth != 0 ? map [ pos + 1 + mapWidth ] : - 1 , map [ pos + mapWidth ] , pos % mapWidth != 0 ? map [ pos - 1 + mapWidth ] : - 1 )  
+if ( DungeonTileSheet . wallStitcheable . contains ( Dungeon . level . map [ cell ] ) || ( DungeonTileSheet . doorTiles . contains ( Dungeon . level . map [ cell ] ) && cell + mapWidth < mapLength && DungeonTileSheet . wallStitcheable . contains ( Dungeon . level . map [ cell + mapWidth ] ) ) )  
+if ( ! DungeonTileSheet . wallStitcheable . contains ( Dungeon . level . map [ cell + mapWidth ] ) && ! DungeonTileSheet . doorTiles . contains ( Dungeon . level . map [ cell + mapWidth ] ) )  
+cellIndex = getColorIndexForCell ( cell + mapWidth )  
+if ( DungeonTileSheet . wallStitcheable . contains ( Dungeon . level . map [ cell - 1 ] ) || DungeonTileSheet . doorTiles . contains ( Dungeon . level . map [ cell - 1 ] ) )  
+if ( DungeonTileSheet . wallStitcheable . contains ( Dungeon . level . map [ cell + 1 ] ) || DungeonTileSheet . doorTiles . contains ( Dungeon . level . map [ cell + 1 ] ) )  
+if ( ! wall ( cell + mapWidth ) )  
+if ( ! fogHidden ( cell + mapWidth ) )  
+curr = BLOCK_ALL  
+curr = BLOCK_NONE  
+if ( ! wall ( cell + 1 ) && ! door ( cell + 1 ) )  
+if ( ! wall ( cell - 1 ) && ! door ( cell - 1 ) )  
+curr += 2  
+if ( cell % mapWidth != 0 && fogHidden ( cell - 1 ) )  
+private boolean fogHidden ( int cell )  
+if ( cell < 0 || cell >= Dungeon . level . length ( ) ) return false  
+level . length ( ) ) return false  
+return ( ! Dungeon . level . visited [ cell ] && ! Dungeon . level . mapped [ cell ] )  

@@ -1,0 +1,52 @@
+final MintChatBot parent = MintChatBot . getInstance ( )  
+final ChatBotConfig config = parent . getCBConfig ( )  
+final Player player = event . getPlayer ( )  
+final Messages messages = parent . getMessages ( )  
+final VaultChatBridge vaultchat = parent . getVaultChat ( )  
+String responce  
+if ( ! player . hasPlayedBefore ( ) )  
+responce = messages . getResponceIfMatch ( "firstJoinResponce" )  
+responce = messages . getResponceIfMatch ( "joinResponce" )  
+if ( responce == null || responce . equals ( "" ) )  
+responce = responce . replace ( "%player" , player . getName ( ) )  
+if ( vaultchat != null )  
+responce = responce . replace ( "%prefix" , vaultchat . getPlayerPrefix ( player ) )  
+responce = responce . replace ( "%suffix" , vaultchat . getPlayerSuffix ( player ) )  
+responce = responce . replace ( "%prefix" , "" )  
+responce = responce . replace ( "%suffix" , "" )  
+final String msg = responce  
+new BukkitRunnable ( ) { public void run ( ) { MintChatBot . getInstance ( ) . say ( msg ) ; } } . runTaskLater ( parent , config . getResponceDelayTicks ( ) )  
+BukkitRunnable ( )  
+public void run ( )  
+MintChatBot . getInstance ( ) . say ( msg )  
+Configuration . Builder builder = new Configuration . Builder ( )  
+builder . addServer ( config . getServerHostname ( ) , config . getServerPort ( ) )  
+public class IRCListener extends ListenerAdapter implements Listener  
+@ Override public void onConnect ( ConnectEvent event ) throws Exception  
+@ Override public void onDisconnect ( DisconnectEvent event ) throws Exception  
+@ Override public void onJoin ( JoinEvent event ) throws Exception  
+@ Override public void onKick ( KickEvent event ) throws Exception  
+@ Override public void onPart ( PartEvent event ) throws Exception  
+@ Override public void onQuit ( QuitEvent event ) throws Exception  
+@ Override public void onMessage ( MessageEvent event ) throws Exception  
+@ EventHandler ( priority = EventPriority . MONITOR , ignoreCancelled = true ) public void onPlayerChat ( final AsyncPlayerChatEvent event )  
+final String format = plugin . getMessages ( ) . getResponceIfMatch ( "minecraft_chat" )  
+String message = IRCColor . convRES2IRC ( format . replace ( "%name" , event . getPlayer ( ) . getName ( ) ) . replace ( "%message" , event . getMessage ( ) ) )  
+bot . sendIRC ( ) . message ( config . getChannel ( ) , message )  
+@ EventHandler ( priority = EventPriority . MONITOR , ignoreCancelled = true ) public void onPlayerJoin ( final PlayerJoinEvent event )  
+final String format = plugin . getMessages ( ) . getResponceIfMatch ( "minecraft_join" )  
+String message = IRCColor . convRES2IRC ( format . replace ( "%name" , event . getPlayer ( ) . getName ( ) ) )  
+bot . sendIRC ( ) . message ( config . getChannel ( ) , message )  
+@ EventHandler ( priority = EventPriority . MONITOR , ignoreCancelled = true ) public void onPlayerQuit ( final PlayerQuitEvent event )  
+final String format = plugin . getMessages ( ) . getResponceIfMatch ( "minecraft_quit" )  
+String message = IRCColor . convRES2IRC ( format . replace ( "%name" , event . getPlayer ( ) . getName ( ) ) )  
+bot . sendIRC ( ) . message ( config . getChannel ( ) , message )  
+@ EventHandler ( priority = EventPriority . MONITOR , ignoreCancelled = true ) public void onPlayerKick ( final PlayerKickEvent event )  
+final String format = plugin . getMessages ( ) . getResponceIfMatch ( "minecraft_kick" )  
+String message = IRCColor . convRES2IRC ( format . replace ( "%name" , event . getPlayer ( ) . getName ( ) ) . replace ( "%reason" , event . getReason ( ) ) )  
+bot . sendIRC ( ) . message ( config . getChannel ( ) , message )  
+public void onLunaChat ( final String name , final String message )  
+final String format = plugin . getMessages ( ) . getResponceIfMatch ( "minecraft_chat" )  
+String msg = IRCColor . convRES2IRC ( format . replace ( "%name" , name ) . replace ( "%message" , message ) )  
+bot . sendIRC ( ) . message ( config . getChannel ( ) , msg )  
+public void say ( final String message )  

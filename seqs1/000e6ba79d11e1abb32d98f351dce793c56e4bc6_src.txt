@@ -1,0 +1,11 @@
+osw . write ( mention + "\t" + mention_loc + "NIL" + "\t" + mention_type + "\n" )  
+public static final String FILEINPUTDIR = "data" + File . separator + "mention" + File . separator  
+public class Process  
+public static void main ( String [ ] args ) throws DocumentException , IOException  
+xmlParse . ParseDf ( fileName )  
+cmnGenMention . GetMention ( fileName , "df" )  
+cmnGenCandidate . GenCandidate ( fileName , "df" )  
+for ( String token : tokens )  
+sb . append ( token . split ( "/" ) [ 0 ] + "\t" )  
+else if ( - 1 != text . indexOf ( "author" ) ) { 
+

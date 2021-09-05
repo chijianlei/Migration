@@ -1,0 +1,2 @@
+for ( String col : cols ) { out . write ( "<td>" ) ; if ( col . equals ( "" ) ) { col = "NULL" ; }  
+out . write ( tmp )  

@@ -1,0 +1,5 @@
+private boolean isReady  
+isReady = true  
+if ( queue . peek ( ) == this )  
+execute0 ( )  
+if ( ! next . isReady )  

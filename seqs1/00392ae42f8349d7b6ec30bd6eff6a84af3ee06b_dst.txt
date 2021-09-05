@@ -1,0 +1,2 @@
+perMatches = matches . size ( ) / ( double ) matches . getLFGroup ( ) . size ( )  
+perMatchesOnMatching = matches . size ( ) / ( double ) matches . getMatchingLFGroup ( ) . size ( )  

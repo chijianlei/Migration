@@ -1,0 +1,6 @@
+for ( WFInventoryRequest . Item wfi : supplierItemList )  
+InventoryGoods g = ( InventoryGoods ) updateList . iterator ( ) . next ( )  
+g . setPrice ( wfi . getPrice ( ) )  
+g . setRemCount ( wfi . getRealCount ( ) )  
+g . setCount ( wfi . getRealCount ( ) )  
+sess . update ( g )  

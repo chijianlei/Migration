@@ -1,0 +1,1 @@
+mainArgs . logFile = System . getProperty ( "user.home" ) + File . separator + ".ganttproject.d" + File . separator + "ganttproject.log"  

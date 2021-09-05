@@ -1,0 +1,4 @@
+while ( - 1 != ( bytes = inputStream . read ( buffer ) ) )  
+String fullMessage = curMsg . substring ( 0 , endIdx + end . length ( ) )  
+Log . i ( TAG , "New weather data available " + fullMessage )  
+catch ( Exception e ) { e . printStackTrace ( ) ; break  

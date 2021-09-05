@@ -1,0 +1,10 @@
+public StudentClassContentWidget ( final PlanProgressDo planDo , String contentStyle , String lessonId , String status , String userId )  
+spanTxtToolTip . add ( golbalToolTip )  
+spanTxtToolTip . add ( new GlobalToolTip ( lessonName ) )  
+if ( ! page . equalsIgnoreCase ( UrlNavigationTokens . TRUE ) )  
+if ( ! page . equalsIgnoreCase ( UrlNavigationTokens . TRUE ) )  
+if ( planDo . getScoreStatus ( ) != null && planDo . getScoreStatus ( ) . equalsIgnoreCase ( "ScoreNotMet" ) )  
+styleName = styleName + "blueselected"  
+} else if ( planDo . getScoreStatus ( ) != null && planDo . getScoreStatus ( ) . equalsIgnoreCase ( "ScoreMet" ) )  
+styleName = styleName + "selected"  
+lessonContainer . add ( new StudentClassContentWidget ( dataList . get ( z ) , styleName , gooruOid , status , userId ) )  

@@ -1,0 +1,20 @@
+public int stratum = 3 ; 
+pl = new Player ( this , "/resources/pl_male.png" , keys )  
+pl . graceTimer = 100  
+pl . loadResources ( "/resources/pl_fem.png" )  
+Graphics2D g = ( Graphics2D ) g1  
+g . drawString ( "Player" , this . getWidth ( ) / 3 , this . getHeight ( ) / 3 + 50 )  
+g . drawString ( "Player" , this . getWidth ( ) / 3 , this . getHeight ( ) / 3 + 52 )  
+g . drawString ( "Difficulty" , this . getWidth ( ) / 3 , this . getHeight ( ) / 3 + 102 )  
+g . drawString ( "Room dimension" , this . getWidth ( ) / 3 , this . getHeight ( ) / 3 + 152 )  
+g . drawString ( "Back" , this . getWidth ( ) / 3 , this . getHeight ( ) / 3 + 202 )  
+if ( ge . mouse . getX ( ) > 280 && ge . mouse . getX ( ) < 350 && ge . mouse . getY ( ) > 395 && ge . mouse . getY ( ) < 420 )  
+if ( ge . mouse . isMousePressed ( ) )  
+ge . mainSettings = false  
+g . drawString ( "Save state" , this . getWidth ( ) / 3 + 5 , this . getHeight ( ) / 3 + 52 )  
+g . drawString ( "Load state" , this . getWidth ( ) / 3 + 5 , this . getHeight ( ) / 3 + 102 )  
+ge = new GameEngine ( )  
+g . drawString ( "Completed in " + ( ge . endMillis - ge . startMillis ) + " milliseconds!" , this . getWidth ( ) / 3 , this . getHeight ( ) / 3 + 100 )  
+this . setSize ( 860 , 682 )  
+int maxTimer = 2000  
+public static boolean aaronsLaptop = true  

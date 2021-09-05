@@ -1,0 +1,1 @@
+hashCode = varStore . hashCode ( ) + ( parent != null ? parent . hashCode : 0 )  

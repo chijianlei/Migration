@@ -1,0 +1,17 @@
+public static Boolean isScreenSW ( int smallestWidthDp )  
+DisplayMetrics displayMetrics = Resources . getSystem ( ) . getDisplayMetrics ( )  
+float widthDp = displayMetrics . widthPixels / displayMetrics . density  
+return screenSw >= smallestWidthDp  
+@ BindView ( R . id . browse_toolbar ) Toolbar toolbar  
+android . support . v4 . app . FragmentManager fragmentManager  
+setSupportActionBar ( toolbar )  
+if ( savedInstanceState == null && browseMoviesFragment == null )  
+private Boolean isTwoPane ( )  
+return detailsContainer != null  
+if ( isTwoPane ( ) )  
+MovieDetailsFragment movieDetailsFragment = MovieDetailsFragment . newInstance ( movie )  
+fragmentManager . beginTransaction ( ) . replace ( R . id . details_container , movieDetailsFragment ) . commit ( )  
+if ( DisplayMetricsUtils . isScreenSW ( 600 ) )  
+@ BindView ( R . id . toolbar_details ) Toolbar toolbar  
+setHasOptionsMenu ( true )  
+if ( ! isTwoPane )  

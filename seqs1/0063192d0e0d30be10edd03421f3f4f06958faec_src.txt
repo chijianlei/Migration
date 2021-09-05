@@ -1,0 +1,9 @@
+if ( left == - 1 && right == - 1 ) return 0  
+return 0  
+if ( left != - 1 && right == - 1 ) return - 1  
+return - 1  
+if ( left == - 1 && right != - 1 ) return 1  
+return 1  
+if ( left - right != 0 ) return left - right  
+return left - right  
+return String . CASE_INSENSITIVE_ORDER . compare ( lhs , rhs )  

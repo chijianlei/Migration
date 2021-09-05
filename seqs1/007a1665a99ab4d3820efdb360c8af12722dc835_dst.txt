@@ -1,0 +1,4 @@
+HttpPost req = new HttpPost ( url + "/rest/api/1.0/projects/" + this . getProjectKey ( pullRequestUrl ) + "/repos/" + this . getRepositoryName ( pullRequestUrl ) + "/pull-requests/" + "82" + "/comments" )  
+HttpPost req = new HttpPost ( url + "/rest/api/1.0/projects/" + this . getProjectKey ( pullRequestUrl ) + "/repos/" + this . getRepositoryName ( pullRequestUrl ) + "/pull-requests/" + "82" + "/comments" )  
+HttpPost req = new HttpPost ( url + "/rest/api/1.0/projects/" + this . getProjectKey ( pullRequestUrl ) + "/repos/" + this . getRepositoryName ( pullRequestUrl ) + "/pull-requests/" + "82" + "/comments" )  
+Matcher matcher = Pattern . compile ( "repos/(.*?)/pull-requests" ) . matcher ( pullRequestUrl )  

@@ -1,0 +1,4 @@
+if ( NetworkBridgeFilter . isAdvisoryInterpretedByNetworkBridge ( message ) )  
+if ( isDuplex ( ) && NetworkBridgeFilter . isAdvisoryInterpretedByNetworkBridge ( message ) )  
+if ( consumerInfo != null && consumerInfo . isNetworkSubscription ( ) && isAdvisoryInterpretedByNetworkBridge ( message ) )  
+public static boolean isAdvisoryInterpretedByNetworkBridge ( Message message )  

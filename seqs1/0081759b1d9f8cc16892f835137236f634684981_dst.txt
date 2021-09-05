@@ -1,0 +1,4 @@
+if ( isDestroyerRdy ( ) )  
+return 0  
+if ( player [ i ] . getEnemyNumber ( ) != 0 && player [ player [ i ] . getEnemyNumber ( ) - 1 ] . getIsAlive ( ) ) { 
+if ( schiff == 1 )  

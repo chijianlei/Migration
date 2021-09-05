@@ -1,0 +1,2 @@
+assertTrue ( stub . getChildren ( ) . get ( 0 ) instanceof InputText )  
+attributes . put ( MAXIMUM_LENGTH , "20" )  

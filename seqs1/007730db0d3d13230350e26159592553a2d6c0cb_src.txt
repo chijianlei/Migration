@@ -1,0 +1,8 @@
+public class MapController implements Renderer , OnTouchListener , OnScaleGestureListener , OnRotateGestureListener , OnGestureListener , OnShoveGestureListener  
+public MapController ( Activity mainApp , MapView view )  
+public boolean onDown ( MotionEvent event )  
+return true  
+public boolean onSingleTapUp ( MotionEvent event )  
+handleTapGesture ( event . getX ( ) , event . getY ( ) )  
+return true  
+if ( mScaleHandled || ( ! mShoveHandled && diff > PINCH_THRESHOLD * Math . min ( displayMetrics . widthPixels , displayMetrics . heightPixels ) ) )  

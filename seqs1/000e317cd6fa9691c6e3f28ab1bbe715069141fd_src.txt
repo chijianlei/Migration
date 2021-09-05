@@ -1,0 +1,31 @@
+private void handshake ( ) throws ServerOfflineException 
+catch ( ServerOfflineException e ) 
+return null  
+public QueryResponse fullStat ( ) 
+handshake ( )  
+QueryRequest req = new QueryRequest ( )  
+req . type = STAT  
+req . sessionID = generateSessionID ( )  
+req . setPayload ( token )  
+req . payload = ByteUtils . padArrayEnd ( req . payload , 4 ) ; 
+byte [ ] send = req . toBytes ( )  
+byte [ ] result = sendUDP ( send )  
+QueryResponse res = new QueryResponse ( result , true )  
+catch ( Exception e ) 
+private byte [ ] sendUDP ( byte [ ] input ) throws ServerOfflineException 
+while ( socket == null ) 
+socket = new DatagramSocket ( localPort ) ; 
+catch ( BindException e ) 
+++ localPort ; 
+InetAddress address = InetAddress . getByName ( serverAddress ) ; 
+DatagramPacket packet1 = new DatagramPacket ( input , input . length , address , queryPort )  
+socket . send ( packet1 )  
+byte [ ] out = new byte [ 1024 ]  
+DatagramPacket packet = new DatagramPacket ( out , out . length )  
+socket . setSoTimeout ( 500 ) ; 
+socket . receive ( packet )  
+return packet . getData ( )  
+public void renewQuery ( ) 
+cachedResponse = getQuery ( ) . fullStat ( )  
+MCQuery query = new MCQuery ( "vps2.dries007.net" , 25505 )  
+Thread . currentThread ( ) . wait ( 100 )  

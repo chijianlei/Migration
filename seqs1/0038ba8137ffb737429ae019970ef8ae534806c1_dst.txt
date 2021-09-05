@@ -1,0 +1,10 @@
+@ SuppressWarnings ( "unchecked" ) public BaseResponse route ( String uri , Method method , Map < String , String > params , Map < String , String > files )  
+String postJson = files . get ( "postData" )  
+catch ( NotYetImplementedException e )  
+@ SuppressWarnings ( "unchecked" ) public BaseResponse route ( String uri , Method method , Map < String , String > params , Map < String , String > files )  
+String postJson = files . get ( "postData" )  
+public Server ( ) throws IOException , DuplicateRouteException  
+super ( DEFAULT_PORT ) ; 
+System . out . println ( String . format ( "\nRunning Appium Espresso Server at port %d \n" , DEFAULT_PORT ) )  
+@ Override public Response serve ( String uri , Method method , Map < String , String > headers , Map < String , String > parms , Map < String , String > files )  
+response = router . route ( uri , method , parms , files )  

@@ -1,0 +1,4 @@
+ArrayList < List < Integer >> cycles_dfs1 = new ArrayList < > ( )  
+ArrayList < List < Integer >> cycles_dfs2 = new ArrayList < > ( )  
+ArrayList < List < Integer >> cycles_dfs3 = new ArrayList < > ( )  
+List < List < List < Integer >>> cycles_dfs = new ArrayList < > ( )  

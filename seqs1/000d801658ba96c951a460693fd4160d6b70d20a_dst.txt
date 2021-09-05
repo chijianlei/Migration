@@ -1,0 +1,4 @@
+byte [ ] bytes = new byte [ 2048 ]  
+byte [ ] bytes = new byte [ 2048 ]  
+byte [ ] bytes = new byte [ 2048 ]  
+byte [ ] bytes = new byte [ 2048 ]  

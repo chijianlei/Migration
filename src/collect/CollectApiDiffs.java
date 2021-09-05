@@ -1,23 +1,17 @@
 package collect;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashSet;
-
 import structure.API;
-import structure.Diff;
 import utils.ReadAPI;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
 
 public class CollectApiDiffs {
 
 	private static LinkedHashSet<API> apis = new LinkedHashSet<API>();
 	
-	public static void main(String[] args) throws Exception{
+	public static void main(String args[]) throws Exception{
 		String path = "apis";
 		apis = ReadAPI.readAPI(path);
 		System.out.println(apis.size());

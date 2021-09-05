@@ -1,0 +1,2 @@
+String year = Integer . parseInt ( date . substring ( 2 , 4 ) ) + ""  
+final String app_id = "a48b2d314a0bc596313f609f4752ba47"  

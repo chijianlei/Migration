@@ -1,0 +1,2 @@
+if ( node . getName ( ) . equals ( "Niv氓" ) )  
+String path = "/home/jep/NetBeansProjects/newsservice/newsservice-core/src/se/blinfo/newsservice/core/transform/newXMLDocument.xml"  

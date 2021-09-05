@@ -1,0 +1,12 @@
+enum Mode { STOP , MOVE_TO_BOTTOM , MOVE_TO_MIDDLE , MOVE_TO_TOP , PICK_UP_TO_MIDDLE , PICK_UP_TO_TOP  
+private HallArmControl ( Joystick xbox )  
+leftMiddleSensor = new DigitalInput ( HALL_L_MID_PORT )  
+leftMiddleSensor = new DigitalInput ( HALL_R_MID_PORT )  
+armMode = Mode . STOP  
+if ( xbox . getRawButton ( XBOX_BTN_X ) )  
+moving = Moving . STOPPED  
+startRumble ( RumbleSide . LEFT )  
+startRumble ( RumbleSide . LEFT )  
+private void startRumble ( RumbleSide side )  
+if ( side == RumbleSide . RIGHT )  
+hallArmControl . reset ( ) ; 

@@ -1,0 +1,6 @@
+public DictItem updateDictItem ( long dictItemId , long dictCollectionId , long dictVersionId , String itemCode , Map < Locale , String > itemNameMap , Map < Locale , String > itemDescriptionMap , long parentItemId , ServiceContext serviceContext ) throws NoSuchDictItemException , SystemException , NoSuchDictVersionException  
+for ( Locale locale : locales )  
+return dictItemLocalService . addDictItem ( getUserId ( ) , dictCollection . getDictCollectionId ( ) , dictItemCode , itemNameMap , itemDescriptionMap , parentItemId , serviceContext )  
+@ JSONWebService ( value = "update-dictitem" , method = "POST" ) public DictItem updateDictItem ( String dictCollectionCode , String dictItemCode , String dictItemName , String dictItemDescription , String parentDictItemCode ) throws SystemException , PortalException  
+for ( Locale locale : locales )  
+return dictItemLocalService . updateDictItem ( dictItem . getDictItemId ( ) , dictCollection . getDictCollectionId ( ) , 0 , dictItemCode , itemNameMap , itemDescriptionMap , parentItemId , serviceContext )  

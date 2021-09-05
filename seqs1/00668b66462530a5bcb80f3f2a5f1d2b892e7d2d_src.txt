@@ -1,0 +1,3 @@
+given ( ) . when ( ) . port ( this . port ) . get ( route + "/" + id ) . then ( ) . assertThat ( ) . statusCode ( 404 )  
+given ( ) . accept ( ContentType . JSON ) . body ( user ) . when ( ) . port ( this . port ) . put ( route + "/" + id ) . then ( ) . assertThat ( ) . statusCode ( 415 )  
+given ( ) . when ( ) . port ( this . port ) . delete ( route + "/" + id ) . then ( ) . assertThat ( ) . statusCode ( 204 )  

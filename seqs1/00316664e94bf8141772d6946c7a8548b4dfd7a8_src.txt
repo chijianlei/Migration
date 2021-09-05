@@ -1,0 +1,3 @@
+public class FunctionExtension implements PluginContext . Extension  
+"wycc.functions" , new PluginContext . ExtensionPoint ( )  
+@ Override public void register ( Extension extension )  

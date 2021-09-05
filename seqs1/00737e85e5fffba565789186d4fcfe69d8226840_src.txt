@@ -1,0 +1,5 @@
+this . team1goals = ( int ) e . getProperty ( "T1Score" )  
+this . team2goals = ( int ) e . getProperty ( "T2Score" )  
+this . team1sog = ( int ) e . getProperty ( "T1SOG" )  
+this . team2sog = ( int ) e . getProperty ( "T2SOG" )  
+this . period = ( int ) e . getProperty ( "Period" )  

@@ -1,0 +1,40 @@
+List < Allele > alts = var . getAlternateAlleles ( )  
+while ( genoIT . hasNext ( ) )  
+for ( Allele alt : alts )  
+if ( iterCount == 0 )  
+altGenoCount = 0  
+altSampleCount = 0  
+hetSampleCount = 0  
+homoVarSampleCount = 0  
+altGenoCounts . put ( alt , altGenoCount )  
+altSampleCounts . put ( alt , altSampleCount )  
+hetSampleCounts . put ( alt , hetSampleCount )  
+homoVarSampleCounts . put ( alt , homoVarSampleCount )  
+altGenoCount = altGenoCounts . get ( alt )  
+altSampleCount = altSampleCounts . get ( alt )  
+hetSampleCount = hetSampleCounts . get ( alt )  
+homoVarSampleCount = homoVarSampleCounts . get ( alt )  
+tmpAltGenoCount = geno . countAllele ( alt )  
+altGenoCount += tmpAltGenoCount  
+if ( tmpAltGenoCount > 0 )  
+altSampleCount ++ ; 
+if ( tmpAltGenoCount == 1 ) { 
+hetSampleCount ++  
+else if ( tmpAltGenoCount == 2 ) { 
+homoVarSampleCount ++  
+altGenoCounts . put ( alt , altGenoCount )  
+altSampleCounts . put ( alt , altSampleCount )  
+hetSampleCounts . put ( alt , hetSampleCount )  
+homoVarSampleCounts . put ( alt , homoVarSampleCount )  
+if ( UtilityBelt . determineAltType ( ref , alt ) == AltType . SNV )  
+if ( isTransition ( ref . getBaseString ( ) , alt . getBaseString ( ) ) )  
+genoTiCount ++  
+genoTvCount ++  
+public double getTiTv ( )  
+return getTiCount ( ) / getTvCount ( )  
+public double getGenoTiTv ( )  
+return getGenoTiCount ( ) / getGenoTvCount ( )  
+@ Test public void TestBasicSummaryValues ( ) throws IOException  
+TreeMap < String , VariantPoolHeavy > AllVPs = null  
+AllVPs = UtilityBelt . createHeavyVariantPools ( vcfArgs , true )  
+for ( Entry < String , VariantPoolSummary > entry : summaries . entrySet ( ) ) { VariantPoolSummary value = entry . getValue ( ) ; assertEquals ( 9 , value . getNumVars ( ) ) ; assertEquals ( 3 , value . getNumSamples ( ) ) ; assertEquals ( 9 , value . getNumSNVs ( ) ) ; assertEquals ( 0 , value . getNumMNVs ( ) ) ; assertEquals ( 0 , value . getNumIndels ( ) ) ; assertEquals ( 0 , value . getNumInsertions ( ) ) ; assertEquals ( 0 , value . getNumDeletions ( ) ) ; assert ( - 1.0 == value . getSmallestDeletion ( ) ) ; assert ( - 1.0 == value . getSmallestInsertion ( ) ) ; assert ( - 1.0 == value . getAvgDeletionSize ( ) ) ; assert ( - 1.0 == value . getAvgInsertionSize ( ) ) ; assert ( - 1.0 == value . getLargestDeletion ( ) ) ; assert ( - 1.0 == value . getLargestInsertion ( ) )  

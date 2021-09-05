@@ -1,0 +1,4 @@
+public enum EResourceType { LEARNINGOBJECT , TASK , COLLABORATIVEOBJECT , 
+if ( ( resourceType != null ) && resourceType . equals ( EResourceType . TASK ) )  
+if ( ( resourceType != null ) && resourceType . equals ( EResourceType . COLLABORATIVEOBJECT ) )  
+if ( ( resourceType != null ) && resourceType . equals ( EResourceType . LEARNINGOBJECT ) )  

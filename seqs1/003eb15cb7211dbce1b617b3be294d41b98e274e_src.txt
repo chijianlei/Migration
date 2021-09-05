@@ -1,0 +1,5 @@
+if ( fd != null )  
+segment = fd . open ( )  
+if ( segment == null )  
+logger . warn ( "illegal segment: " + filePath )  
+public void init2 ( StructType partitionColumns , InternalRow partitionValues , boolean returnBatch , RCOperator rsFilter ) throws IOException  

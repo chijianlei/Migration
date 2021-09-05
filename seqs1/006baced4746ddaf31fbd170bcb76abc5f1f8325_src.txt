@@ -1,0 +1,2 @@
+mFadeIn = AnimationUtils . loadAnimation ( context , R . anim . grow_fade_in_from_right )  
+mFadeOut = AnimationUtils . loadAnimation ( context , R . anim . shrink_fade_out_from_right )  

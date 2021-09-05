@@ -1,0 +1,4 @@
+Extractor ext = new Extractor ( )  
+ResultSet rs = conn . runQuery ( "SELECT COUNT(*) FROM basic_info" )  
+size = rs . getInt ( 1 )  
+ext . executeQuery ( ext . getQuery ( "basicInfoQuery" ) )  

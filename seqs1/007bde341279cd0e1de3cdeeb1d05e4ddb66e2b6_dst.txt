@@ -1,0 +1,1 @@
+else if ( s . isPlayerLockEnabled ( ) && ! s . isLockExpired ( ) && ! s . isUser ( p ) ) 

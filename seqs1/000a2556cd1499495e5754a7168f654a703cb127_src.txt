@@ -1,0 +1,5 @@
+source . doWindow ( sourceId , update + headerSize ( update ) )  
+WsHeaderFW wsHeader = wsFrameRW . wrap ( writeBuffer , SIZE_OF_LONG + SIZE_OF_BYTE , writeBuffer . capacity ( ) ) . length ( payload . sizeof ( ) ) . flagsAndOpcode ( flagsAndOpcode ) . build ( )  
+DataFW data = dataRW . wrap ( writeBuffer , 0 , writeBuffer . capacity ( ) ) . streamId ( targetId ) . payload ( p -> p . set ( ( b , o , m ) -> { int wsSize = wsHeader . sizeof ( ) ; b . putBytes ( o , wsHeader . buffer ( ) , wsHeader . offset ( ) , wsSize ) ; b . putBytes ( o + wsSize , payload . buffer ( ) , payload . offset ( ) , payload . sizeof ( ) ) ; return wsSize + payload . sizeof ( )  
+. extension ( e -> e . reset ( ) ) . build ( )  
+public void doHttpEnd ( long targetId ) 

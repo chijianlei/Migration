@@ -1,0 +1,3 @@
+if ( newDescription != null )  
+train . setDescription ( newDescription )  
+private void fromNodeButtonActionPerformed ( java . awt . event . ActionEvent evt )  

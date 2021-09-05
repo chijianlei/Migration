@@ -1,0 +1,4 @@
+private static final String HOST = "http://192.168.1.12:3000"  
+private LinkedHashMap < String , String > mUserList  
+public Paint getPaintColorFromUserId ( String userId )  
+return PaintHelper . createPaintFromRGB ( mUserList . get ( userId ) )  

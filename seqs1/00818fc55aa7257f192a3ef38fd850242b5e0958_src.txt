@@ -1,0 +1,7 @@
+catch ( IllegalAccessException e )  
+catch ( InvocationTargetException e )  
+public ExportDialog ( Frame owner , Exporter exporter )  
+JButton cancelButton = new JButton ( "Cancel" )  
+this . add ( controlPane , BorderLayout . PAGE_END )  
+public void setSaveDirectory ( File saveDirectory )  
+this . saveDirectory = saveDirectory  

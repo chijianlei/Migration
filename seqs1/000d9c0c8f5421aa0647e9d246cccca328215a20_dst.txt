@@ -1,0 +1,3 @@
+launcher = new Launcher ( )  
+launcher . dispose ( )  
+app . exit ( )  

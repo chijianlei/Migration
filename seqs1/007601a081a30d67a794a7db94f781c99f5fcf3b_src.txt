@@ -1,0 +1,2 @@
+String attchmentType = "profilePic"  
+Attachment attachment = registrationService . getAllAttachment ( registration . getRegistrationId ( ) )  

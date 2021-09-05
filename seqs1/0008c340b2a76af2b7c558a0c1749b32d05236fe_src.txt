@@ -1,0 +1,33 @@
+public static void main ( String args [ ] )  
+System . out . println ( "Welcome to Walmart Product Ranking Application" )  
+System . out . println ( "Enter Search item : " )  
+String term  
+Scanner scanIn = new Scanner ( System . in )  
+term = scanIn . nextLine ( )  
+scanIn . close ( )  
+SpringApplication app = new SpringApplication ( Runner . class )  
+app . setBannerMode ( Banner . Mode . OFF )  
+app . run ( term )  
+@ Override public void run ( String . . . args ) throws Exception  
+Set < Item > products = new TreeSet < Item > ( new CustomerReviewsComparator ( ) )  
+SearchApiInvoker searchApi = new SearchApiInvoker ( )  
+SearchApiResponse srchApiResp = ( SearchApiResponse ) searchApi . invoke ( args [ 0 ] )  
+if ( ! srchApiResp . getItems ( ) . isEmpty ( ) )  
+Item item = ( Item ) srchApiResp . getItems ( ) . get ( 0 )  
+ProductApiInvoker pdtApi = new ProductApiInvoker ( )  
+ReviewApiInvoker reviewApi = new ReviewApiInvoker ( )  
+JSONParser jsonParser = new JSONParser ( )  
+Object object = jsonParser . parse ( ( String ) pdtApi . invoke ( item . getItemId ( ) . intValue ( ) + "" ) )  
+JSONArray arrayObj = ( JSONArray ) object  
+ObjectMapper mapper = new ObjectMapper ( )  
+for ( int x = 0 ; x < arrayObj . size ( ) && x < 10 ; x ++ )  
+item = mapper . readValue ( arrayObj . get ( x ) . toString ( ) , Item . class )  
+ReviewApiResponse revResp = ( ReviewApiResponse ) reviewApi . invoke ( item . getItemId ( ) . intValue ( ) + "" )  
+if ( ( revResp . getReviewStatistics ( ) != null ) && org . apache . commons . lang3 . StringUtils . isNotEmpty ( revResp . getReviewStatistics ( ) . getAverageOverallRating ( ) ) )  
+item . setOverAllRating ( Float . parseFloat ( revResp . getReviewStatistics ( ) . getAverageOverallRating ( ) ) )  
+products . add ( item )  
+System . out . println ( "\n\n Order is Based on Overall Rating: \n\n " )  
+Iterator < Item > iterator = products . iterator ( ) ; 
+int count = 1  
+while ( iterator . hasNext ( ) )  
+System . out . println ( "Product : " + count ++ + " -------> \n\n" + iterator . next ( ) + " \n\n" ) ; 

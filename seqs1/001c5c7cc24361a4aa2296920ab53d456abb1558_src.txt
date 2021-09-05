@@ -1,0 +1,2 @@
+Rating rating = null  
+rating = server . insertRating ( params . rating )  

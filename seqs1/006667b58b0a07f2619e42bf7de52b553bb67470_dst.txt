@@ -1,0 +1,11 @@
+public BooleanExpression is ( String equivalentString )  
+return this . is ( value ( equivalentString ) )  
+if ( equivalentString == null )  
+if ( equivalentString . getIncludesNull ( ) )  
+final BooleanExpression is = new BooleanExpression ( new DBBinaryBooleanArithmetic ( this , equivalentString ) { @ Override public String toSQLString ( DBDatabase db ) { return db . getDefinition ( ) . doStringEqualsTransform ( super . first . toSQLString ( db ) , super . second . toSQLString ( db ) ) ; } @ Override protected String getEquationOperator ( DBDatabase db ) { return " = " ; } @ Override public boolean getIncludesNull ( ) { return false ; } } )  
+BooleanExpression is = new BooleanExpression ( new DBBinaryBooleanArithmetic ( this , equivalentString )  
+@ Override public String toSQLString ( DBDatabase db )  
+return db . getDefinition ( ) . doStringEqualsTransform ( super . first . toSQLString ( db ) , super . second . toSQLString ( db ) )  
+@ Override protected String getEquationOperator ( DBDatabase db )  
+@ Override public boolean getIncludesNull ( )  
+return false  

@@ -1,0 +1,3 @@
+public void setId ( int id )  
+public void setUserId ( int userId )  
+public void setEventId ( int eventId )  

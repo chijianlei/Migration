@@ -1,0 +1,5 @@
+if ( str . contains ( "(" ) )  
+Arrays . stream ( str . replaceAll ( "\\s|\\(|\\)" , "" ) . split ( "(?=\\D)" ) ) . forEach ( e -> { if ( e . matches ( "\\d+" ) ) stck . push ( Integer . parseInt ( e ) ) ; else evalOperator ( stck , e ) ; } )  
+stck . push ( stck . pop ( ) / Integer . parseInt ( str . substring ( 1 ) ) )  
+stck . push ( stck . pop ( ) * Integer . parseInt ( str . substring ( 1 ) ) )  
+stck . push ( stck . pop ( ) % Integer . parseInt ( str . substring ( 1 ) ) )  

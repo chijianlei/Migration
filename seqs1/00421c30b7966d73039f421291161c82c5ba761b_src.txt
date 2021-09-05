@@ -1,0 +1,6 @@
+@ SuppressWarnings ( { "rawtypes" } ) @ Test public void testItemCollectionContainingFiles ( )  
+Map < String , List < Object >> files = itemColTest . getFiles ( )  
+for ( Map . Entry < String , List < Object >> entry : files . entrySet ( ) )  
+String key = entry . getKey ( )  
+Object value = entry . getValue ( )  
+ArrayList list = ( ArrayList ) value  

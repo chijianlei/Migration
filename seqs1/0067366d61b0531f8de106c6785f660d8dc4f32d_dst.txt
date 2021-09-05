@@ -1,0 +1,2 @@
+public DrawableSticker ( Drawable drawable , float scale )  
+realBounds = new Rect ( 0 , 0 , ( int ) ( scale * getWidth ( ) ) , ( int ) ( scale * getHeight ( ) ) )  

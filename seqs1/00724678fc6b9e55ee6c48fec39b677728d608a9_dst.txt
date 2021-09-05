@@ -1,0 +1,11 @@
+return true  
+showUnsavedChangesDialog ( discardButtonClickListener )  
+private void showUnsavedChangesDialog ( DialogInterface . OnClickListener discardButtonClickListener )  
+AlertDialog . Builder builder = new AlertDialog . Builder ( this )  
+builder . setNegativeButton ( R . string . keep_editing , new DialogInterface . OnClickListener ( ) { public void onClick ( DialogInterface dialog , int id ) { if ( dialog != null ) { dialog . dismiss ( ) ; } } } )  
+DialogInterface . OnClickListener ( )  
+private void showUnsavedChangesDialog ( DialogInterface . OnClickListener discardButtonClickListener )  
+DialogInterface . OnClickListener ( )  
+public void onClick ( DialogInterface dialog , int id )  
+if ( dialog != null )  
+dialog . dismiss ( )  

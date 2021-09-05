@@ -1,0 +1,2 @@
+for ( Tile tile : tiles . values ( ) )  
+gardenSeed . garden = garden  

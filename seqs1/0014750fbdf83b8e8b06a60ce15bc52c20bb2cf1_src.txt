@@ -1,0 +1,3 @@
+String selection = obs . getListForTable ( ) . get ( liste . getAnchorSelectionIndex ( ) )  
+for ( int i = 0 ; i < table . getModel ( ) . getRowCount ( ) ; i ++ )  
+if ( table . getModel ( ) . getValueAt ( i , 1 ) . equals ( "  " + obs . getClubSelectionne ( ) ) )  

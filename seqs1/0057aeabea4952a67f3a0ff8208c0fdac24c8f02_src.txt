@@ -1,0 +1,40 @@
+MainFragment mainFragment = new MainFragment ( )  
+getSupportFragmentManager ( ) . beginTransaction ( ) . add ( R . id . container_main , mainFragment ) . commit ( )  
+navigationView = ( NavigationView ) findViewById ( R . id . left_drawer )  
+@ Override public void onActivityCreated ( Bundle savedInstanceState )  
+super . onActivityCreated ( savedInstanceState )  
+filterBundle = new Bundle ( )  
+@ Override public View onCreateView ( LayoutInflater inflater , ViewGroup container , Bundle savedInstanceState )  
+ArrayList < ShowThumbnail > showThumbnails = new ArrayList < > ( )  
+@ Override public void onStart ( )  
+super . onStart ( )  
+setInitialScrollerState ( )  
+gridView . setOnItemClickListener ( this )  
+gridView . setOnScrollListener ( this )  
+if ( totalItemCount == 0 ) 
+currentPage ++  
+visibleThreshold = 8  
+@ Override public void onScrollStateChanged ( AbsListView view , int scrollState )  
+public void showPopularMovies ( )  
+movieIsShown = true  
+tvIsShown = false  
+setInitialScrollerState ( )  
+imageAdapter . clear ( )  
+filterBundle . putString ( "SORTING_PARAM" , "popularity.desc" )  
+public void showMostRatedMovies ( )  
+movieIsShown = true  
+tvIsShown = false  
+setInitialScrollerState ( )  
+imageAdapter . clear ( )  
+filterBundle . putString ( "SORTING_PARAM" , "vote_average.desc" )  
+public void showPopularTv ( )  
+movieIsShown = false  
+tvIsShown = true  
+setInitialScrollerState ( )  
+imageAdapter . clear ( )  
+public void showMostRatedTv ( )  
+movieIsShown = false  
+tvIsShown = true  
+setInitialScrollerState ( )  
+imageAdapter . clear ( )  
+filterBundle . putString ( "SORTING_PARAM" , "vote_average.desc" )  

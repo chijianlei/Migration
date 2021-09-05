@@ -1,0 +1,141 @@
+SearchParameters . saveIdentificationParameters ( parameters , new File ( outputFolder , assayAccession + ".par" ) )  
+public class PRIDEModificationFactory  
+private static final Logger LOGGER = Logger . getLogger ( PRIDEModificationFactory . class )  
+private static final int MAX = Integer . MAX_VALUE  
+private static PRIDEModificationFactory instance  
+private static LinkedHashMap < String , PRIDEModification > modificationNameMap = new LinkedHashMap < > ( )  
+private static BidiMap modificationAccessionMap = new DualHashBidiMap ( )  
+private static double minimalModMass  
+private static double maximalModMass  
+private static HashMap < String , Object > modificationCache = new HashMap < > ( )  
+private final INIT_MODE mode  
+protected static enum INIT_MODE { ONLINE , OFFLINE  
+public static PRIDEModificationFactory getInstance ( INIT_MODE mode )  
+if ( instance == null )  
+instance = new PRIDEModificationFactory ( mode )  
+public static PRIDEModificationFactory getInstance ( )  
+if ( instance == null )  
+instance = new PRIDEModificationFactory ( INIT_MODE . OFFLINE )  
+private PRIDEModificationFactory ( INIT_MODE mode )  
+this . mode = mode  
+if ( mode . equals ( INIT_MODE . OFFLINE ) )  
+init ( )  
+catch ( IOException | InterruptedException ex )  
+LOGGER . error ( ex )  
+private void init ( File inputFile ) throws IOException  
+Collection < PRIDEModification > fromFile = getFromFile ( inputFile )  
+for ( PRIDEModification aUniMod : fromFile )  
+modificationNameMap . put ( aUniMod . getName ( ) , aUniMod )  
+modificationAccessionMap . put ( aUniMod . getAccession ( ) , aUniMod . getName ( ) )  
+private void init ( ) throws IOException , InterruptedException  
+Collection < PRIDEModification > fromFile = getFromPRIDE ( )  
+for ( PRIDEModification aUniMod : fromFile )  
+modificationNameMap . put ( aUniMod . getName ( ) , aUniMod )  
+modificationAccessionMap . put ( aUniMod . getAccession ( ) , aUniMod . getName ( ) )  
+public Object getModification ( ModificationAdapter adapter , String ptmName ) throws ParameterExtractionException  
+if ( ! modificationCache . containsKey ( ptmName ) )  
+LOGGER . info ( ptmName + " was cached" )  
+modificationCache . put ( ptmName , adapter . convertModification ( modificationNameMap . get ( refactorName ( ptmName ) ) ) )  
+return modificationCache . get ( ptmName )  
+private String refactorName ( String ptmName )  
+if ( ptmName . equalsIgnoreCase ( "iodoacetamide -site C" ) )  
+public Object getModificationFromAccession ( ModificationAdapter adapter , String ptmAccession ) throws ParameterExtractionException  
+String modName  
+Object convertModification = null  
+if ( ( modName = ( String ) modificationAccessionMap . get ( ptmAccession ) ) != null )  
+convertModification = adapter . convertModification ( modificationNameMap . get ( modName ) )  
+public String getModificationNameFromAccession ( String ptmAccession )  
+return ( String ) modificationAccessionMap . get ( ptmAccession )  
+public String getModificationAccessionFromName ( String ptmName )  
+return ( String ) modificationAccessionMap . getKey ( ptmName )  
+public LinkedHashMap < String , PRIDEModification > getModificationMap ( )  
+public BidiMap getAccessionMapping ( )  
+public static LinkedList < Modification > getAsapMods ( )  
+return getAsapMods ( modificationNameMap . size ( ) )  
+public static LinkedList < Modification > getAsapMods ( int nr )  
+LinkedList < Modification > pride_mods = new LinkedList < > ( )  
+DescriptiveStatistics massStats = new DescriptiveStatistics ( )  
+int count = nr  
+for ( PRIDEModification aMod : modificationNameMap . values ( ) )  
+Modification convertModification = new AsapModificationAdapter ( ) . convertModification ( aMod )  
+pride_mods . add ( convertModification )  
+massStats . addValue ( aMod . getMonoDeltaMass ( ) )  
+count --  
+if ( count == 0 )  
+minimalModMass = massStats . getMin ( )  
+maximalModMass = massStats . getMax ( )  
+public static double getMinimalModMass ( )  
+public static double getMaximalModMass ( )  
+private static TreeSet < PRIDEModification > getFromFile ( File inputFile ) throws IOException  
+JsonMarshaller marshaller = new JsonMarshaller ( )  
+LOGGER . debug ( "Getting modifications from file..." )  
+java . lang . reflect . Type type = new TypeToken < TreeSet < PRIDEModification >> ( ) { } . getType ( )  
+TypeToken < TreeSet < PRIDEModification >> ( )  
+return ( TreeSet < PRIDEModification > ) marshaller . fromJson ( type , inputFile )  
+public static void generatePRIDEModJson ( File jsonFile ) throws IOException  
+PRIDEModificationFactory factory = getInstance ( INIT_MODE . ONLINE )  
+LinkedHashMap < String , PRIDEModification > modificationMap1 = factory . getModificationMap ( )  
+TreeSet < PRIDEModification > mods = new TreeSet < > ( )  
+for ( PRIDEModification aMod : modificationMap1 . values ( ) )  
+mods . add ( aMod )  
+JsonMarshaller marshaller = new JsonMarshaller ( )  
+marshaller . saveObjectToJson ( mods , jsonFile )  
+public static TreeSet < PRIDEModification > getFromPRIDE ( ) throws InterruptedException , IOException  
+return getFromPRIDE ( new ArrayList < PrideFilter > ( ) )  
+public static TreeSet < PRIDEModification > getFromPRIDE ( File outputFile ) throws InterruptedException , IOException  
+return getFromPRIDE ( outputFile , new ArrayList < PrideFilter > ( ) )  
+public static TreeSet < PRIDEModification > getFromPRIDE ( Collection < PrideFilter > prideFilters ) throws InterruptedException , IOException  
+ModReader modReader = ModReader . getInstance ( )  
+System . out . println ( "Looking for modifications...;" )  
+ExecutorService executors = Executors . newFixedThreadPool ( Runtime . getRuntime ( ) . availableProcessors ( ) )  
+ArrayList < Future < PRIDEModification >> finishedMods = new ArrayList < > ( )  
+System . out . println ( "Gathering modification occurences from pride..." )  
+for ( uk . ac . ebi . pridemod . model . PTM aPTM : modReader . getPTMListByPatternName ( "" ) )  
+if ( finishedMods . size ( ) != MAX )  
+finishedMods . add ( executors . submit ( new UniModOccurenceGetter ( aPTM , prideFilters ) ) )  
+executors . shutdown ( )  
+executors . awaitTermination ( 100 , TimeUnit . DAYS )  
+TreeSet < PRIDEModification > mods = new TreeSet < > ( )  
+for ( Future < PRIDEModification > aUniModFuture : finishedMods )  
+PRIDEModification get = aUniModFuture . get ( )  
+if ( get . getFrequency ( ) > 0 | prideFilters . isEmpty ( ) )  
+Double monoDeltaMass = get . getMonoDeltaMass ( )  
+Double avgDeltaMass = get . getAveDeltaMass ( )  
+if ( monoDeltaMass != null && avgDeltaMass != null && monoDeltaMass != 0.0 && avgDeltaMass != 0.0 )  
+mods . add ( get )  
+catch ( ExecutionException ex )  
+LOGGER . error ( ex )  
+ex . printStackTrace ( )  
+public static TreeSet < PRIDEModification > getFromPRIDE ( File outputFile , Collection < PrideFilter > prideFilters ) throws InterruptedException , IOException  
+TreeSet < PRIDEModification > mods = getFromPRIDE ( prideFilters )  
+outputFile . getParentFile ( ) . mkdirs ( )  
+JsonMarshaller marshaller = new JsonMarshaller ( )  
+marshaller . saveObjectToJson ( mods , outputFile )  
+public static LinkedList < Object > orderModificationsToPrevalence ( Collection < String > ptmNames , ModificationAdapter adapter ) throws ParameterExtractionException  
+TreeSet < PRIDEModification > orderedModifications = orderModificationsToPrevalence ( ptmNames )  
+LinkedList < Object > orderedConvertedModifications = new LinkedList < > ( )  
+for ( PRIDEModification aModification : orderedModifications )  
+orderedConvertedModifications . add ( adapter . convertModification ( aModification ) )  
+public static TreeSet < PRIDEModification > orderModificationsToPrevalence ( Collection < String > ptmNames )  
+TreeSet < PRIDEModification > orderedModifications = new TreeSet < > ( )  
+for ( String aPTMName : ptmNames )  
+PRIDEModification uniModModification = modificationNameMap . get ( aPTMName )  
+if ( uniModModification != null )  
+orderedModifications . add ( uniModModification )  
+private static class UniModOccurenceGetter implements Callable < PRIDEModification >  
+private final uk . ac . ebi . pridemod . model . PTM aPTM  
+private Collection < PrideFilter > prideFilters = new ArrayList < > ( )  
+private UniModOccurenceGetter ( uk . ac . ebi . pridemod . model . PTM aPTM )  
+this . aPTM = aPTM  
+private UniModOccurenceGetter ( uk . ac . ebi . pridemod . model . PTM aPTM , Collection < PrideFilter > prideFilters )  
+this . aPTM = aPTM  
+this . prideFilters . addAll ( prideFilters )  
+@ Override public PRIDEModification call ( )  
+int size = 0  
+System . out . println ( "Querying " + aPTM . getName ( ) )  
+size = PrideWebService . getProjectCount ( aPTM . getAccession ( ) . replace ( ":" , "-" ) . replace ( " " , "_" ) . replace ( "/" , "" ) . replace ( "\\" , "" ) )  
+catch ( Exception e )  
+e . printStackTrace ( )  
+if ( aPTM instanceof UniModPTM )  
+return new PRIDEModification ( aPTM , size )  
+return new PRIDEModification ( aPTM , size )  

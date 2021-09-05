@@ -1,0 +1,3 @@
+@ ManyToOne @ JoinColumn ( name = "id_conta_matriz" , referencedColumnName = "id" , foreignKey = @ ForeignKey ( name = "ContaContaMatriz" ) ) private Conta contaMatriz  
+@ ManyToOne @ JoinColumn ( name = "id_pessoa" , referencedColumnName = "id" , foreignKey = @ ForeignKey ( name = "ContaPessoa" ) ) private Pessoa pessoa  
+@ JsonIgnore @ OneToMany ( mappedBy = "contaMatriz" ) private List < Conta > contasFilial = new ArrayList < Conta > ( )  

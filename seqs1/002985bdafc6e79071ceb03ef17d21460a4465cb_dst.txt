@@ -1,0 +1,5 @@
+return lastTimeUsed != null ? new Date ( lastTimeUsed . getTime ( ) ) : null  
+return createDate != null ? new Date ( createDate . getTime ( ) ) : null  
+return createDate != null ? new Date ( createDate . getTime ( ) ) : null  
+return updateDate != null ? new Date ( updateDate . getTime ( ) ) : null  
+return new DataDocument ( View . ID_KEY , id ) . append ( View . NAME_KEY , name ) . append ( View . TYPE_KEY , type ) . append ( View . DESCRIPTION_KEY , description ) . append ( View . CREATE_DATE_KEY , createDate ) . append ( View . CREATE_USER_KEY , createUser ) . append ( View . UPDATE_DATE_KEY , updateDate ) . append ( View . UPDATE_USER_KEY , updateUser )  

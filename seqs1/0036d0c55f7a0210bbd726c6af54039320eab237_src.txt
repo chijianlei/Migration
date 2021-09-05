@@ -1,0 +1,4 @@
+getLoaderManager ( ) . initLoader ( PET_LOADER , null , null )  
+@ Override public Loader < Cursor > onCreateLoader ( int id , Bundle args )  
+return new CursorLoader ( this , PetEntry . CONTENT_URI , PROJECTION , null , null , null ) ; 
+@ Override public void onLoadFinished ( Loader < Cursor > loader , Cursor data )  

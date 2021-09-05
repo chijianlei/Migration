@@ -1,0 +1,40 @@
+private final long maxHeapSize  
+private final int maxInFlightRpcs  
+private long currentWriteBufferSize = 0  
+private long operationSequenceGenerator = 0  
+@ VisibleForTesting final Map < Long , Long > pendingOperationsWithSize = new HashMap < > ( )  
+private long lastOperationChange = System . currentTimeMillis ( )  
+public HeapSizeManager ( long maxHeapSize , int maxInflightRpcs )  
+this . maxHeapSize = maxHeapSize  
+this . maxInFlightRpcs = maxInflightRpcs  
+public long getMaxHeapSize ( )  
+public synchronized void waitUntilAllOperationsAreDone ( ) throws InterruptedException  
+boolean performedWarning = false  
+if ( ! performedWarning && lastOperationChange + INTERVAL_NO_SUCCESS_WARNING < System . currentTimeMillis ( ) )  
+long lastUpdated = ( System . currentTimeMillis ( ) - lastOperationChange ) / 1000  
+wait ( WAIT_MILLIS )  
+LOG . info ( "flush() completed" )  
+public synchronized long registerOperationWithHeapSize ( long heapSize ) throws InterruptedException  
+lastOperationChange = System . currentTimeMillis ( )  
+lastOperationChange = System . currentTimeMillis ( )  
+notifyAll ( )  
+private final ExceptionListener exceptionListener  
+public BigtableBufferedMutator ( Configuration configuration , TableName tableName , int maxInflightRpcs , long maxHeapSize , BigtableClient client , BigtableOptions options , ExecutorService executorService , BufferedMutator . ExceptionListener listener )  
+InetAddress host = null  
+host = options . getDataTransportOptions ( ) . getHost ( )  
+private void doMutation ( final Mutation mutation ) throws RetriesExhaustedWithDetailsException  
+sequenceId = sizeManager . registerOperationWithHeapSize ( mutation . heapSize ( ) )  
+catch ( InterruptedException e )  
+Thread . currentThread ( ) . interrupt ( )  
+Futures . addCallback ( batchExecutor . issueRequest ( mutation ) , callback )  
+( hasExceptions . get ( ) ) { ArrayList < MutationException > mutationExceptions = null ; synchronized ( globalExceptions )  
+mutationExceptions = new ArrayList < > ( globalExceptions )  
+globalExceptions . clear ( )  
+hasExceptions . set ( false )  
+private class AccountingFutureCallback implements FutureCallback < GeneratedMessage >  
+hasExceptions . set ( true )  
+@ Override public void onSuccess ( GeneratedMessage ignored )  
+Long id = underTest . sizeManager . pendingOperationsWithSize . keySet ( ) . iterator ( ) . next ( )  
+underTest . sizeManager . operationComplete ( id )  
+Assert . assertTrue ( ! underTest . hasInflightRequests ( ) )  
+underTest . hasExceptions . set ( true )  

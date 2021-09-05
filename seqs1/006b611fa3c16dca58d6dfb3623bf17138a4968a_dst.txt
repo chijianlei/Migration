@@ -1,0 +1,1 @@
+if ( block . isAir ( world , new BlockPos ( x , y , z ) ) )  

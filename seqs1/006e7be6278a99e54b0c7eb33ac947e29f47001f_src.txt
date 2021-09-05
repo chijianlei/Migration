@@ -1,0 +1,10 @@
+private final List < QueryExpression > exps  
+this . exps = exps  
+public List < QueryExpression > getExps ( )  
+String expressions = exps . stream ( ) . map ( QueryExpression : : toString ) . collect ( Collectors . joining ( ", " ) )  
+( ( exps == null ) ? 0 : exps . hashCode ( ) )  
+: exps . hashCode ( ) )  
+if ( exps == null )  
+if ( other . exps != null ) 
+if ( ! exps . equals ( other . exps ) ) 
+functionCall . getExps ( ) . stream ( ) . forEach ( e -> e . accept ( this ) )  

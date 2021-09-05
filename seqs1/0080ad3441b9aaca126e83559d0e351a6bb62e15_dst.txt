@@ -1,0 +1,1 @@
+validationResults . add ( CloudSdkValidationResult . INVALID_JAVA_SDK )  

@@ -1,0 +1,3 @@
+final Map < Class < ? > , MutablePrimitive < ? >> cachedMutablePrimitives = new HashMap < > ( 7 )  
+pushElement ( leftObjects , currentLeftObject , index , lengthOfLeftSubArray , cachedMutablePrimitives )  
+pushElement ( rightObjects , currentRightObject , index , lengthOfRightSubArray , cachedMutablePrimitives )  

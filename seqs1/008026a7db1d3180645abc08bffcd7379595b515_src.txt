@@ -1,0 +1,11 @@
+for ( int i = 0 ; i < array . length ( ) ; i ++ )  
+mPager . setOnPageChangeListener ( new ViewPager . SimpleOnPageChangeListener ( ) { @ Override public void onPageScrollStateChanged ( int state ) { super . onPageScrollStateChanged ( state ) ; mUpButton . animate ( ) . alpha ( ( state == ViewPager . SCROLL_STATE_IDLE ) ? 1 f : 0 f ) . setDuration ( 300 ) ; } @ Override public void onPageSelected ( int position ) { if ( mCursor != null ) { mCursor . moveToPosition ( position ) ; } mSelectedItemId = mCursor . getLong ( ArticleLoader . Query . _ID ) ; mCurrentPosition = position ; updateUpButtonPosition ( ) ; } } )  
+mCurrentPosition = position  
+mUpButtonContainer . setOnApplyWindowInsetsListener ( new View . OnApplyWindowInsetsListener ( ) { @ Override public WindowInsets onApplyWindowInsets ( View view , WindowInsets windowInsets ) { view . onApplyWindowInsets ( windowInsets ) ; mTopInset = windowInsets . getSystemWindowInsetTop ( ) ; mUpButtonContainer . setTranslationY ( mTopInset ) ; updateUpButtonPosition ( ) ; return windowInsets ; } } )  
+View . OnApplyWindowInsetsListener ( ) 
+@ Override public WindowInsets onApplyWindowInsets ( View view , WindowInsets windowInsets ) 
+view . onApplyWindowInsets ( windowInsets )  
+mTopInset = windowInsets . getSystemWindowInsetTop ( )  
+mUpButtonContainer . setTranslationY ( mTopInset )  
+updateUpButtonPosition ( )  
+mStartId = ItemsContract . Items . getItemId ( getIntent ( ) . getData ( ) )  

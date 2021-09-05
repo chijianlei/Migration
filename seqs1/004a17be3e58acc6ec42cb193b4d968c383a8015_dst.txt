@@ -1,0 +1,3 @@
+final int column_index = cursor . getColumnIndex ( column )  
+camDirPath == null ? pContext . getExternalFilesDir ( Environment . DIRECTORY_PICTURES ) : new File ( camDirPath )  
+File dir = camDirPath == null ? pContext . getExternalFilesDir ( Environment . DIRECTORY_PICTURES ) : new File ( camDirPath )  

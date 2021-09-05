@@ -1,0 +1,4 @@
+public Configuration getFFConfig ( ) 
+this . config = plugin . getFFConfig ( )  
+if ( event . hasBlock ( ) && event . getClickedBlock ( ) . getTypeId ( ) == 92 ) 
+onPlayerRightClick ( p , event )  

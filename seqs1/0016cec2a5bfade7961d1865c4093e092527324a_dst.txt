@@ -1,0 +1,2 @@
+stmt = this . conn . prepareStatement ( "SELECT admin_id FROM admin_list WHERE admin_id = ?;" )  
+return true  

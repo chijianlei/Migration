@@ -1,0 +1,64 @@
+private int match [ ] [ ]  
+private int matrix [ ] [ ]  
+private int up [ ] [ ]  
+private int left [ ] [ ]  
+public static int GAP_OPEN = - 2  
+public static int GAP_EXT = - 1  
+matrix = new int [ MAX_LENGTH + 1 ] [ MAX_LENGTH + 1 ]  
+up = new int [ MAX_LENGTH + 1 ] [ MAX_LENGTH + 1 ]  
+left = new int [ MAX_LENGTH + 1 ] [ MAX_LENGTH + 1 ]  
+match = new int [ 256 ] [ 256 ]  
+public AlignmentBlock get_alignment ( String s1 , String s2 )  
+return ( double ) matrix [ m ] [ n ] / maxscore  
+private int match [ ] [ ]  
+private int matrix [ ] [ ]  
+private int up [ ] [ ]  
+private int left [ ] [ ]  
+matrix = new int [ MAX_LENGTH + 1 ] [ MAX_LENGTH + 1 ]  
+up = new int [ MAX_LENGTH + 1 ] [ MAX_LENGTH + 1 ]  
+left = new int [ MAX_LENGTH + 1 ] [ MAX_LENGTH + 1 ]  
+match = new int [ 256 ] [ 256 ]  
+public AlignmentBlock get_alignment ( String s1 , String s2 )  
+return ( double ) matrix [ m ] [ n ] / alignment_length / MATCH_SCORE  
+for ( address [ 0 ] = 1 ; gff_files . ready ( ) && address [ 0 ] <= genomeDb . num_genomes ; ++ address [ 0 ] ) 
+for ( trsc = 0 ; genes_iterator . hasNext ( ) && trsc < MAX_TRANSACTION_SIZE / 10 ; ++ trsc )  
+if ( Math . abs ( mRNA_len1 - mRNA_len2 ) <= Math . max ( mRNA_len1 , mRNA_len2 ) / 10 && pro_aligner . get_similarity ( ( String ) mRNA_node1 . getProperty ( "protein" ) , ( String ) mRNA_node2 . getProperty ( "protein" ) ) > 0.75 )  
+if ( seq_aligner . get_similarity ( RNA_seq1 , RNA_seq2 ) > 0.75 )  
+split_node . createRelationshipTo ( neighbor , r . getType ( ) )  
+for ( Relationship r : node . getRelationships ( Direction . INCOMING , RelTypes . RR , RelTypes . FR ) )  
+neighbor . createRelationshipTo ( split_node , r . getType ( ) )  
+if ( node . hasRelationship ( Direction . INCOMING , RelTypes . FF , RelTypes . RF ) )  
+node . createRelationshipTo ( split_node , RelTypes . FF )  
+split_node . createRelationshipTo ( node , RelTypes . RR )  
+node . setProperty ( "length" , pos + K - 1 )  
+curr_node . createRelationshipTo ( degenerate_node , RelTypes . FF ) ; 
+if ( position % ( seq_len / 100 + 1 ) == 0 ) 
+curr_node . createRelationshipTo ( new_node , RelTypes . values ( ) [ curr_side * 2 ] )  
+int l , pos , begin , g , s , loc , side  
+node . createRelationshipTo ( degenerate_node , RelTypes . FF )  
+System . out . print ( ( long ) position * 100 / seq_len + 1 + "%\r" )  
+if ( pos < ( int ) node . getProperty ( "length" ) - K )  
+first_split = true  
+split_node1 = split ( node , pos + 1 )  
+if ( loop = curr_node . equals ( node ) ) 
+src = split_node1  
+src = curr_node  
+split_node1 = node  
+if ( loop = curr_node . equals ( node ) ) 
+src = split_node1  
+src = curr_node  
+des = node  
+g = address [ 0 ]  
+split_node2 . createRelationshipTo ( degenerate_node , RelTypes . RF )  
+System . out . print ( ( long ) position * 100 / seq_len + 1 + "%\r" )  
+indexDb . get_pointer ( pointer , curr_index )  
+curr_node . createRelationshipTo ( degenerate_node , RelTypes . values ( ) [ curr_side * 2 ] )  
+fwd_kmer . canonical = fwd_kmer . compare ( rev_kmer ) == - 1  
+curr_node . createRelationshipTo ( sequence_node , RelTypes . values ( ) [ curr_side * 2 ] ) ; 
+genome_node . setProperty ( "sequence_ids" , sequence_ids )  
+switch ( args [ 0 ] ) { case "reconstruct" : seqLayer . reconstruct_genomes ( args [ 1 ] , args [ 2 ] ) ; break ; case "build" : K = Integer . parseInt ( args [ 1 ] ) ; if ( K < 6 || K > 256 ) { System . out . println ( "Please enter a proper K value ( 6 <= K <= 256 )." ) ; System . exit ( 1 ) ; } seqLayer . build ( args [ 3 ] , args [ 2 ] ) ; break ; case "add" : seqLayer . add ( args [ 2 ] , args [ 1 ] ) ; break ; case "annotate" : annLayer . annotate ( args [ 2 ] , args [ 1 ] ) ; break ; case "group" : annLayer . group_homologs ( args [ 1 ] ) ; break ; case "compare" : seqLayer . compare_pangenomes ( args [ 1 ] , args [ 2 ] ) ; break ; case "retrieve" : if ( args [ 1 ] . equals ( "genes" ) ) { seqLayer . retrieve_genes ( args [ 3 ] , args [ 2 ] ) ; } else if ( args [ 1 ] . equals ( "regions" ) ) { seqLayer . retrieve_regions ( args [ 3 ] , args [ 2 ] ) ; } else { print_help_comment ( ) ; System . exit ( 1 ) ; } break ; default : 
+K = Integer . parseInt ( args [ 1 ] )  
+if ( K < 6 || K > 256 )  
+System . out . println ( "Please enter a proper K value ( 6 <= K <= 256 )." )  
+System . exit ( 1 )  
+seqLayer . build ( args [ 3 ] , args [ 2 ] )  

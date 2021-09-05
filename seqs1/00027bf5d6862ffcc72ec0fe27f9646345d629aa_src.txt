@@ -1,0 +1,6 @@
+} else if ( type == FileType . SORTING_NUMERIC_QUERY_STANDALONE || type == FileType . SORTING_NUMERIC_QUERY_CLOUD || type == FileType . TEXT_PHRASE_QUERY_CLOUD || type == FileType . TEXT_PHRASE_QUERY_STANDALONE || type == FileType . TEXT_TERM_QUERY_CLOUD || type == FileType . TEXT_TERM_QUERY_STANDALONE || type == FileType . HIGHLIGHTING_QUERY_CLOUD || type == FileType . HIGHLIGHTING_QUERY_STANDALONE || type == FileType . SORTING_TEXT_QUERY_CLOUD || type == FileType . SORTING_TEXT_QUERY_STANDALONE || type == FileType . CLASSIC_TERM_FACETING_STANDALONE )  
+public class TestPlans  
+public static void execute ( ) throws IOException , InterruptedException  
+Util . postMessage ( "** Executing the benchmark test plan ..." , MessageType . BLUE_TEXT , false )  
+Tests . queryTestsStandalone ( Util . TEST_WITH_NUMBER_OF_DOCUMENTS )  
+Util . postMessage ( "** Executing the benchmark test plan [COMPLETE]..." , MessageType . BLUE_TEXT , false )  

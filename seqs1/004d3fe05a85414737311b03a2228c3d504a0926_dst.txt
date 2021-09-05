@@ -1,0 +1,2 @@
+if ( attackAreas . size ( ) >= 4 )  
+HttpSession session = request . getSession ( )  

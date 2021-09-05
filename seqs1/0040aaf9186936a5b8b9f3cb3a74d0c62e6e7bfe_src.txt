@@ -1,0 +1,1 @@
+public static final String TERM_CLEAN_PATTERN = "[^\\p{L}0-9|.|'|%\\-]"  

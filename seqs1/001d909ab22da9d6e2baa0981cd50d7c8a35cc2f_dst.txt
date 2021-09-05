@@ -1,0 +1,4 @@
+String estimateDate = ParamUtil . getString ( actionRequest , ProcessOrderDisplayTerms . ESTIMATE_DATE )  
+if ( Validator . isNotNull ( estimateDate ) )  
+deadline = DateTimeUtil . convertStringToFullDate ( estimateDate + StringPool . SPACE + estimateTime + StringPool . COLON + "00" )  
+public static String ESTIMATE_DATE = "estimateDate"  

@@ -1,0 +1,2 @@
+catch ( XmlPullParserException e )  
+mReadMessages . append ( "Error reading: " + e . toString ( ) )  

@@ -1,0 +1,2 @@
+( ( LivingEntity ) event . getEntity ( ) ) . damage ( event . getFinalDamage ( ) )  
+( ( LivingEntity ) event . getEntity ( ) ) . damage ( getDamage ( ) )  

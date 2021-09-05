@@ -1,0 +1,32 @@
+public void getUserLibrary ( ) throws IOException , JSONException  
+OkHttpClient client = new OkHttpClient . Builder ( ) . cookieJar ( new JavaNetCookieJar ( login . getCookieManager ( ) ) ) . connectTimeout ( 3 , TimeUnit . SECONDS ) . readTimeout ( 5 , TimeUnit . SECONDS ) . writeTimeout ( 5 , TimeUnit . SECONDS ) . build ( )  
+Request request = new Request . Builder ( ) . url ( "https://damp-anchorage-73052.herokuapp.com/userLibrary" ) . get ( ) . addHeader ( "cache-control" , "no-cache" ) . build ( )  
+Response response = client . newCall ( request ) . execute ( )  
+String jsonData = response . body ( ) . string ( )  
+if ( ! jsonData . startsWith ( "{" ) )  
+jsonData = "{songs:" + jsonData + "}"  
+Log . d ( "JSON DATA" , jsonData )  
+JSONObject temp = new JSONObject ( jsonData )  
+final JSONArray jsonArray = temp . getJSONArray ( "songs" )  
+handler . post ( new Runnable ( ) { @ Override public void run ( ) { String song_id = null ; String song_name = "" ; for ( int i = 0 ; i < jsonArray . length ( ) ; i ++ ) { try { song_id = jsonArray . getJSONObject ( i ) . getString ( "_id" ) ; if ( jsonArray . getJSONObject ( i ) . has ( "title" ) ) { song_name = jsonArray . getJSONObject ( i ) . getString ( "title" ) ; if ( song_name . equals ( myTitle ) ) { addPlaylistSong = song_id ; Log . d ( "songName" , song_name ) ; } } Log . d ( "playlistName" , song_id ) ; } catch ( JSONException e ) { e . printStackTrace ( ) ; } } Thread thread = new Thread ( new Runnable ( ) { @ Override public void run ( ) { try { addSongToPlaylist ( ) ; } catch ( IOException e ) { e . printStackTrace ( ) ; } } } ) ; thread . start ( ) ; } } )  
+Runnable ( )  
+@ Override public void run ( )  
+for ( int i = 0 ; i < jsonArray . length ( ) ; i ++ )  
+String song_id = null  
+String song_name = ""  
+song_id = jsonArray . getJSONObject ( i ) . getString ( "_id" )  
+if ( jsonArray . getJSONObject ( i ) . has ( "title" ) )  
+song_name = jsonArray . getJSONObject ( i ) . getString ( "title" )  
+if ( song_name . equals ( myTitle ) )  
+addPlaylistSong = song_id  
+Log . d ( "songName" , song_name )  
+Log . d ( "playlistName" , song_id )  
+catch ( JSONException e )  
+e . printStackTrace ( )  
+Thread thread = new Thread ( new Runnable ( ) { @ Override public void run ( ) { try { addSongToPlaylist ( ) ; } catch ( IOException e ) { e . printStackTrace ( ) ; } } } )  
+Runnable ( )  
+@ Override public void run ( )  
+addSongToPlaylist ( )  
+catch ( IOException e )  
+e . printStackTrace ( )  
+thread . start ( )  

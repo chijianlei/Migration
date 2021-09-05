@@ -1,0 +1,13 @@
+private boolean toCrownAsKing ( )  
+if ( myEdge . contains ( i ) || aiEdge . contains ( i ) ) 
+if ( ( neighbor . equals ( enemyPlayer ) || neighbor . equals ( enemyPlayerKing ) ) && ! isAtEdges ( index2 ) && getNeighbor ( index2 , indices [ i ] ) == null ) { 
+if ( greenSqrIndex . indexOf ( index2 ) != indexOfPath . get ( indexOfPath . size ( ) - 1 ) )  
+Icon icon = getNeighbor ( index , indices [ i ] )  
+if ( greenSqrIndex . indexOf ( index2 ) != indexOfPath . get ( indexOfPath . size ( ) - 1 ) )  
+String neighbor = icon . toString ( )  
+if ( greenSqrIndex . indexOf ( index2 ) != indexOfPath . get ( indexOfPath . size ( ) - 1 ) )  
+if ( icon != null )  
+squarePanels [ index2 ] . setBackground ( Color . RED )  
+squarePanels [ index2 + indices [ i ] ] . setBackground ( Color . CYAN )  
+eatSquares . add ( index2 + indices [ i ] )  
+checkForFood ( index2 + indices [ i ] )  

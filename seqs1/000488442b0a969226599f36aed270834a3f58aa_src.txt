@@ -1,0 +1,1 @@
+Document d = reader . read ( TestXml . class . getClassLoader ( ) . getResource ( "stu.xml" ) )  

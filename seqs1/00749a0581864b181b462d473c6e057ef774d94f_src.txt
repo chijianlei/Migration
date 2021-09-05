@@ -1,0 +1,8 @@
+posterList . add ( new Poster ( ) )  
+EditText searchEditText = ( EditText ) MenuItemCompat . getActionView ( menu . findItem ( R . id . searchEditText ) )  
+onSearchPoster ( searchString )  
+private List < Poster > posterList  
+private static int POSTER_THUMBNAIL_WIDTH = 500  
+@ Override public View getView ( int position , View convertView , ViewGroup parent )  
+ImageView imageView = ( ImageView ) convertView  
+imageView . setImageResource ( android . R . drawable . ic_menu_add )  

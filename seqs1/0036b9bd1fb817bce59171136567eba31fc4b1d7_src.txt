@@ -1,0 +1,5 @@
+for ( int j = 1 ; j <= ( 4 - bfCollection . index ( prefix ) ) ; j ++ )  
+MatchSequence newMS = superPattern . get ( i ) . clone ( )  
+newMS . get ( FieldType . SRC_IP ) . setMaskLen ( newprefix / 100 )  
+newMS . get ( FieldType . DST_IP ) . setMaskLen ( newprefix % 100 )  
+superPatternPrefix . add ( newMS )  

@@ -1,0 +1,6 @@
+private ServiceCouponAlarm . ICallback callback = message ->  
+if ( cursor == null )  
+runOnUIThread ( ( ) -> view . startCollection ( smsCouponCount ) )  
+if ( cursor . getCount ( ) < 1 )  
+JYLog . e ( "Collection failed - SMS Cursor is zero count!!!!!!" )  
+return 0  

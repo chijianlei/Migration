@@ -1,0 +1,5 @@
+System . out . println ( input . nextLine ( ) )  
+number = roomNumber  
+input . nextLine ( )  
+number = roomNumber  
+String output = ( "You are in " + name + ".\n\n" + description + "." + getItems ( ) + readExits ( ) )  

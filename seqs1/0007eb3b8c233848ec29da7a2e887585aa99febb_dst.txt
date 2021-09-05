@@ -1,0 +1,2 @@
+if ( ! MapHandler . areaOccupiedByFriendly ( chosenUnit , cursorX , cursorY ) || unitEntryingContainerUnit ( ) )  
+public static boolean areaOccupiedByFriendly ( Unit chosenUnit , int x , int y )  

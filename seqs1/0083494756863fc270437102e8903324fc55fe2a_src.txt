@@ -1,0 +1,1 @@
+public GoldenManager ( S_Manager input , Setup srcInput )  

@@ -1,0 +1,2 @@
+File appDir = new File ( System . getProperty ( "tomcat.test.basedir" ) , "webapps/examples" )  
+System . setProperty ( "java.util.logging.config.file" , new File ( System . getProperty ( "tomcat.test.basedir" ) , "conf/logging.properties" ) . toString ( ) )  

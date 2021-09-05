@@ -1,0 +1,8 @@
+int iNumOfPass = 8  
+if ( sScoreLabel . equals ( "e8" ) )  
+outlet ( 5 , .0f ) ; 
+outlet ( iNodeType , fHeadNodInterval * iNthTimesTempo ) ; 
+iArm0Vel = 50  
+iArm1Vel = 50  
+iArm2Vel = 50  
+iArm3Vel = 50  

@@ -1,0 +1,8 @@
+reqColTypes . add ( columnTypes . get ( Integer . parseInt ( anArrayColId ) ) )  
+rowTypeInfo = TypeInfoFactory . getStructTypeInfo ( columnNames , columnTypes )  
+this . objInspector = new CarbonObjectInspector ( ( StructTypeInfo ) rowTypeInfo )  
+rowTypeInfo = TypeInfoFactory . getStructTypeInfo ( columnNames , columnTypes )  
+this . objInspector = new CarbonObjectInspector ( ( StructTypeInfo ) rowTypeInfo )  
+serializedSize = 0  
+deserializedSize = 0  
+status = LAST_OPERATION . UNKNOWN  

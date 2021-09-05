@@ -1,0 +1,2 @@
+volumeNameConfigDataSource = dataSourceFactory . createVPlexVolumeNameDataSource ( project , vplexVolume . getLabel ( ) , srcSideStorageSystem , srcSideAssocVolume . getNativeId ( ) , haSideStorageSystem , haSideAsscoVolumeNativeId , null , null )  
+customizedVirtualVolumeName = customConfigHandler . getComputedCustomConfigValue ( CustomConfigConstants . VPLEX_DISTRIBUTED_VOLUME_NAME , vplexSystem . getSystemType ( ) , volumeNameConfigDataSource )  

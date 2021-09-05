@@ -1,0 +1,1 @@
+addPeerDiscovery ( MultiplexingDiscovery . forServices ( params , requiredServices ) )  

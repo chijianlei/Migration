@@ -1,0 +1,1 @@
+@ RequestMapping ( "/find" ) public ModelAndView findStudent ( @ RequestParam ( value = "data" , required = false ) String data , @ RequestParam ( value = "option" , required = false ) String option )  

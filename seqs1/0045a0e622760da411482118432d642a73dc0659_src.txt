@@ -1,0 +1,3 @@
+public interface FeatureMapper  
+switch ( entity . getStatus ( ) ) { case NOT_REALIZED : case REMOVED : case UNKNOWN : case PLANNED : return false ; case CONSTRUCTION : if ( entity instanceof AddressNode ) { AddressNode addressNode = ( AddressNode ) entity ; Building building = addressNode . getBuilding ( ) ; if ( building != null && building . getStatus ( ) . equals ( EntityStatus . PLANNED ) ) { return false ; } } return true ; case IN_USE : case IN_USE_NOT_MEASURED : return true ; default : 
+return true  

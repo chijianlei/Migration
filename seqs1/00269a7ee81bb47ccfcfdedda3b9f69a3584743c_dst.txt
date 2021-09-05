@@ -1,0 +1,54 @@
+");
+        
+        List<Usuario> u = business.getUsuariosByEvento(e.getId_evento());
+        final StringBuilder m = new StringBuilder();
+        m.append(" 
+");
+        
+        List<Usuario> u = business.getUsuariosByEvento(e.getId_evento());
+        final StringBuilder m = new StringBuilder();
+        m.append(" < h2 > Notificaci & oacute ; n < span style = 'font-size: 13px' > ( ")
+                .append(ZonedDateTime.now().format(DateTimeFormatter.ofPattern(" dd / MM / yyyy HH : mm ")))
+                .append(" ) < / span > < / h2 > < p > ")
+                .append(" Ha sido suspendido el evento ")
+                .append(changeHtmlChars(e.getTitulo()))
+                .append(" < b > \ "</p><p style='font-size: 12px'>diariosur</p>" )  
+notiplana . setEvento ( e )  
+if ( usi . isEmail_notifier ( ) )  
+Sendmail . mailThread ( usi . getEmail ( ) , "diariosur - Mensaje de actualizaci贸n de evento" , m . toString ( ) )  
+Evento e = business . getEventById ( eventId )  
+e . setFecha_inicio ( updateFechaInicio )  
+e . setFecha_fin ( updateFechaFin )  
+e . setTitulo ( updateTitulo )  
+e . setDescripcion ( updateDescripcion )  
+e . setHorario ( updateHorario )  
+e . setPrecio ( updatePrecio )  
+e . setLocalidad ( business . getLocalidadByName ( updateLocalidad ) )  
+business . updateEvent2 ( e )  
+");
+        
+        List<Usuario> u = business.getUsuariosByEvento(e.getId_evento());
+        final StringBuilder m = new StringBuilder();
+        m.append(" 
+Redirect . redirectToEventInfo ( e . getId_evento ( ) )  
+Evento original = em . find ( Evento . class , e . getId_evento ( ) )  
+em . merge ( original )  
+List < Etiqueta > eti = original . getEtiqueta ( )  
+for ( Etiqueta et : eti )  
+et . getEvento ( ) . remove ( original )  
+original . setEtiqueta ( e . getEtiqueta ( ) )  
+em . merge ( original )  
+List < Destinatario > di = original . getDestinatario ( )  
+for ( Destinatario d : di )  
+d . getEvento ( ) . remove ( original )  
+original . setDestinatario ( e . getDestinatario ( ) )  
+e . setAsiste ( original . getAsiste ( ) )  
+e . setMegusta ( original . getMegusta ( ) )  
+e . setSigue ( original . getSigue ( ) )  
+e . setComentarios ( original . getComentarios ( ) )  
+e . setNotificaciones ( original . getNotificaciones ( ) )  
+em . merge ( e )  
+em . flush ( )  
+List < Usuario > enviados = new ArrayList < > ( )  
+@ Override public List < Usuario > getUsuariosByEvento ( long evento )  
+@ Local public interface BusinessLocal  

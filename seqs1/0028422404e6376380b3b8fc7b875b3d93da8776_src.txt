@@ -1,0 +1,4 @@
+speaker = ( ( LinguisticParent ) e ) . getSpeaker ( )  
+for ( int i = 0 ; i < orderedTimes . length ; i ++ )  
+speaker = ( ( LinguisticParent ) e ) . getSpeaker ( )  
+String [ ] names = { speaker + ".dipl" , speaker + ".norm" } ; 

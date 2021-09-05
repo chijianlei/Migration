@@ -1,0 +1,17 @@
+refresh ( )  
+switch ( resultCode ) { case Constants . RESULT_CODE_WEB_PRODUCT : HashMap < Integer , UPCSearchProduct > items = data . getUpcProducts ( ) ; openDialog ( items ) ; break ; case Constants . RESULT_CODE_INV_UPDATE : 
+switch ( v . getId ( ) ) { case R . id . sign_in_button : signIn ( ) ; break ; case R . id . sign_out_button : signOut ( ) ; break ; case R . id . disconnect_button : revokeAccess ( ) ; break  
+switch ( resultCode ) { case Constants . RESULT_CODE_INV_LOCATION : IntentResultBus result = resultData . getParcelable ( Constants . EXTRA_INTENT_SERVICE_RESULT ) ; if ( result . getError ( ) != null ) Toast . makeText ( this , result . getError ( ) . errorMsg , Toast . LENGTH_LONG ) . show ( ) ; Intent intent = new Intent ( this , InventoryActivity . class ) ; intent . putStringArrayListExtra ( Constants . EXTRA_LOCATION , ( ArrayList < String > ) result . getLocations ( ) ) ; startActivity ( intent ) ; finish ( ) ; break  
+IntentResultBus result = resultData . getParcelable ( Constants . EXTRA_INTENT_SERVICE_RESULT )  
+Toast . makeText ( this , result . getError ( ) . errorMsg , Toast . LENGTH_LONG ) . show ( )  
+Intent intent = new Intent ( this , InventoryActivity . class )  
+intent . putStringArrayListExtra ( Constants . EXTRA_LOCATION , ( ArrayList < String > ) result . getLocations ( ) )  
+startActivity ( intent )  
+finish ( )  
+String SCOPE = "oauth2:https://docs.google.com/feeds/ https://docs.googleusercontent.com/ https://spreadsheets.google.com/feeds/"  
+@ Override protected void onPostExecute ( String result )  
+SharedPreferences sharedPref = PreferenceManager . getDefaultSharedPreferences ( SplashActivity . this )  
+SharedPreferences . Editor editor = sharedPref . edit ( )  
+editor . putString ( Constants . SHARED_PREF_SHEET_TOKEN , result )  
+editor . commit ( )  
+IntentService . getInventoryLocations ( SplashActivity . this , mReceiver )  

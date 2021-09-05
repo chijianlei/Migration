@@ -1,0 +1,4 @@
+return backTrace ( currState )  
+return this . adaptPosition ( maze . getGoalPosition ( ) )  
+GrowingTreeGenerator mg = new GrowingTreeGenerator ( )  
+System . out . println ( maze . getStartPosition ( ) . toString ( ) + ' ' + maze . getGoalPosition ( ) . toString ( ) )  

@@ -1,0 +1,11 @@
+desiredHeadingController . setPID ( SmartDashboard . getNumber ( "MoveToPos K[0][P]" , 0.1 ) , SmartDashboard . getNumber ( "MoveToPos K[0][I]" , 0 ) , SmartDashboard . getNumber ( "MoveToPos K[0][D]" , 0 ) )  
+rotateController . setPID ( SmartDashboard . getNumber ( "MoveToPos K[1][P]" , 0.02 ) , SmartDashboard . getNumber ( "MoveToPos K[1][I]" , 0 ) , SmartDashboard . getNumber ( "MoveToPos K[1][D]" , 0 ) )  
+private double val = 0  
+@ Override public void pidWrite ( double output )  
+val = output % 360  
+private PIDHelper pidhelper  
+desiredHeadingController . setPID ( SmartDashboard . getNumber ( "MoveToPos K[0][P]" , 0.1 ) , SmartDashboard . getNumber ( "MoveToPos K[0][I]" , 0 ) , SmartDashboard . getNumber ( "MoveToPos K[0][D]" , 0 ) )  
+desiredHeadingController . setOutputRange ( Double . MIN_VALUE , Double . MAX_VALUE )  
+double kp = SmartDashboard . getNumber ( "MoveToPos K[0][P]" , 0.1 )  
+System . out . println ( "Actual KP" + desiredHeadingController . getP ( ) )  
+SmartDashboard . putNumber ( "MoveToPos K[0][P]" , 0.1D )  

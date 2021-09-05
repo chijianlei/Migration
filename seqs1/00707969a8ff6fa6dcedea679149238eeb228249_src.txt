@@ -1,0 +1,3 @@
+if ( ore . getSort ( ) == Ore . OreSort . SELL )  
+inventory . sellInventory ( )  
+Texture myTexture = new Texture ( ( "pause-26.png" ) )  

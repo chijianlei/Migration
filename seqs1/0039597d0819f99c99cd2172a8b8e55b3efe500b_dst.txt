@@ -1,0 +1,3 @@
+if ( ! answered ( ) )  
+if ( ! answered ( ) )  
+StringBuilder str = new StringBuilder ( new TrainingLogQuestionLine ( currentQuestion ) . getResultString ( ) )  

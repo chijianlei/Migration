@@ -1,0 +1,3 @@
+@ Override public Callable < Map < Integer , Set < Cluster >>> create ( TransformerContext ctx ) 
+BinaryImage input = ( BinaryImage ) ctx . getValue ( BINARY_IMAGE_PIN )  
+Map < Integer , Set < Cluster >> runLengthRatios = RunLengthRatioGenerator . findRunLengthRatios ( input , iterations )  

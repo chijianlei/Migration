@@ -1,0 +1,18 @@
+final String jpqlQuery = "SELECT r FROM Personne r"  
+public List < Personne > getSpecificPersonne ( final String reference )  
+final String jpqlQuery = "SELECT r FROM Personne r WHERE r.name LIKE :ref"  
+public void deletePersonne ( final String idToDelete )  
+return new ToStringBuilder ( this ) . append ( "Personne{" ) . append ( "name = '" + this . name ) . append ( "' , dateCreation = '" + this . dateCreation ) . append ( "' , dateMAJ = '" + this . dateMiseAJour ) . append ( "', revenu = '" + this . revenu + "'}" ) . build ( )  
+if ( this == o ) return true  
+return new EqualsBuilder ( ) . append ( revenu , personne . revenu ) . append ( name , personne . name ) . append ( dateCreation , personne . dateCreation ) . append ( dateMiseAJour , personne . dateMiseAJour ) . isEquals ( )  
+@ Override public int hashCode ( )  
+return new HashCodeBuilder ( 17 , 37 ) . append ( name ) . append ( dateCreation ) . append ( dateMiseAJour ) . append ( revenu ) . toHashCode ( )  
+@ Id @ Column ( name = "PER_NAME" , nullable = false ) public String getName ( )  
+@ ElementCollection public List < Charge > getChargesPersonne ( )  
+@ GET @ Path ( "/{reference}" ) @ Produces ( MediaType . APPLICATION_JSON ) public Response getSpecificPersonne ( @ PathParam ( "reference" ) final String referenceToFind )  
+personneService . addPersonne ( personneToAdd )  
+builder = Response . ok ( )  
+@ DELETE @ Path ( "/{reference}" ) @ Produces ( MediaType . APPLICATION_JSON ) public Response deletePersonne ( @ PathParam ( "reference" ) final String referenceToDelete )  
+projetService . deleteProjet ( idToDelete )  
+public List < Personne > getSpecificPersonne ( final String personneToFind )  
+public void deletePersonne ( final String reference )  

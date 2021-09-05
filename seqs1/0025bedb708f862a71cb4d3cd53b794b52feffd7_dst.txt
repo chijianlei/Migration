@@ -1,0 +1,2 @@
+String year = date . substring ( 2 , 4 )  
+final String app_id = "API KEY HERE"  

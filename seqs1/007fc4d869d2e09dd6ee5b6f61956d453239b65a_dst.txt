@@ -1,0 +1,2 @@
+private List < FileMetadata > selectedFiles = new ArrayList < > ( )  
+public String initCreateMode ( DatasetVersion version , List < DataFile > newFilesList , List < FileMetadata > selectedFileMetadatasList )  

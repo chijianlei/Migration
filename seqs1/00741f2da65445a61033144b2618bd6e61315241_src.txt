@@ -1,0 +1,3 @@
+OLogManager . instance ( ) . warn ( this , "Caught I/O errors from %s (local socket=%s), trying to reconnect (error: %s)" , iNetwork , iNetwork . getLocalSocketAddress ( ) , exception )  
+OLogManager . instance ( ) . warn ( this , "Caught I/O errors, trying to reconnect (error: %s)" , exception )  
+@ Override public String getUserName ( )  

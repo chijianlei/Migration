@@ -1,0 +1,5 @@
+new BukkitRunnable ( ) { @ Override public void run ( ) { for ( Player player : Bukkit . getServer ( ) . getOnlinePlayers ( ) ) { if ( player . hasMetadata ( playedTimeTokenKey ) ) { List < MetadataValue > timestamp = player . getMetadata ( playedTimeTokenKey ) ; for ( MetadataValue value : timestamp ) { if ( value . getOwningPlugin ( ) == Dedication . this ) { backend . addPlaytime ( player , System . currentTimeMillis ( ) - value . asLong ( ) ) ; player . setMetadata ( playedTimeTokenKey , new PlayerDedication ( Dedication . this , System . currentTimeMillis ( ) ) ) ; break ; } } } } } } . runTaskTimer ( Dedication . this , TimeUnit . MINUTES . toMillis ( 5 ) , TimeUnit . MINUTES . toMillis ( 5 ) )  
+if ( player . hasMetadata ( playedTimeTokenKey ) )  
+if ( value . getOwningPlugin ( ) == Dedication . this )  
+backend . addPlaytime ( player , System . currentTimeMillis ( ) - value . asLong ( ) )  
+@ Override public void onDisable ( )  

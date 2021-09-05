@@ -1,0 +1,1 @@
+networkSSIDTextView = ( ( TextView ) findViewById ( R . id . SSID_id ) )  

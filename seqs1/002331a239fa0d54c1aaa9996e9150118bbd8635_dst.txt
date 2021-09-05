@@ -1,0 +1,66 @@
+private static boolean TEST_ROBINSON = false  
+private static boolean TEST_HAZARD = false  
+private static boolean TEST_PIRATES = false  
+LOGGER . fine ( "***[finishDrawingRobinsonCard] Robinson deck has " + robinsonDeck . getDrawPileSize ( ) + " cards left" )  
+LOGGER . fine ( "***[undoPhaseMinusOne] The phaseMinusOne flag is set to " + phaseMinusOne )  
+private void undoActiveAbility ( RobinsonCard card )  
+switch ( card . getCardAbility ( ) ) { case DOUBLE_ONE : LOGGER . fine ( "***[undoActiveAbility > DOUBLE_ONE] Undoing <Double 1x> ability" ) ; RobinsonCard doubleCard = ( RobinsonCard ) card ; RobinsonCard doubled = ( ( RobinsonCard ) card ) . getCardReference ( ) ; if ( doubled != null ) { LOGGER . fine ( "***[undoActiveAbility > DOUBLE_ONE] Need to clean up after double" ) ; doubled . unflagForDouble ( ) ; int index = player . getIndexOfCardInHand ( doubled ) ; CardView cardView = ( CardView ) playerHandLayout . getChildAt ( index ) ; cardView . clearDoubleOverlayImage ( ) ; LOGGER . fine ( "***[undoActiveAbility > DOUBLE_ONE] Strength before was " + currentPlayerStrength ) ; currentPlayerStrength -= doubled . getAttackStrength ( ) ; updateRobinsonStrength ( ) ; doubleCard . clearCardReference ( ) ; LOGGER . fine ( "***[undoActiveAbility > DOUBLE_ONE] Strength after is " + currentPlayerStrength ) ; } else { LOGGER . fine ( "***[undoActiveAbility > DOUBLE_ONE] Double hadn't been used" ) ; } break ; case COPY_ONE : LOGGER . fine ( "***[undoActiveAbility > COPY_ONE] Undoing <Copy 1x> ability" ) ; RobinsonCard copyCard = ( RobinsonCard ) card ; RobinsonCard copied = ( ( RobinsonCard ) card ) . getCardReference ( ) ; LOGGER . fine ( "***[undoActiveAbility > COPY_ONE] Affected card is <" + copied . getCardName ( ) + ">" ) ; LOGGER . fine ( "***[undoActiveAbility > COPY_ONE] Copy was from card <" + copyCard . getCardName ( ) + ">" ) ; LOGGER . fine ( "***[undoActiveAbility > COPY_ONE] isCopyingDouble: " + copyCard . isCopyingDouble ( ) ) ; LOGGER . fine ( "***[undoActiveAbility > COPY_ONE] isCopyingPhase: " + copyCard . isCopyingPhase ( ) ) ; if ( copied != null ) { if ( copyCard . isCopyingDouble ( ) || copyCard . isCopyingPhase ( ) ) { copyCard . clearCardReference ( ) ; undoActiveAbility ( copied ) ; } else { LOGGER . fine ( "***[undoActiveAbility > COPY_ONE] Copy was used for something we don't need to clean up after" ) ; } } else { LOGGER . fine ( "***[undoActiveAbility > COPY_ONE] Copy hadn't been used" ) ; } break ; case PHASE_MINUS_ONE : LOGGER . fine ( "***[undoActiveAbility > PHASE_MINUS_ONE] Undoing <Phase -1> ability" ) ; undoPhaseMinusOne ( true ) ; break ; case MINUS_ONE_LIFE : LOGGER . fine ( "***[undoActiveAbility > MINUS_ONE_LIFE] Undoing <-1 Life> ability" ) ; LOGGER . fine ( "***[undoActiveAbility > MINUS_ONE_LIFE] Before undoing ability player had -" + negativeLife + " life" ) ; negativeLife -- ; updatePlayerLifePoints ( ) ; LOGGER . fine ( "***[undoActiveAbility > MINUS_ONE_LIFE] Before undoing ability player has -" + negativeLife + " life" ) ; break ; case MINUS_TWO_LIFE : LOGGER . fine ( "***[undoActiveAbility > MINUS_TWO_LIFE] Undoing <-2 Life> ability" ) ; LOGGER . fine ( "***[undoActiveAbility > MINUS_TWO_LIFE] Before undoing ability player had -" + negativeLife + " life" ) ; negativeLife -= 2 ; updatePlayerLifePoints ( ) ; LOGGER . fine ( "***[undoActiveAbility > MINUS_TWO_LIFE] Before undoing ability player has -" + negativeLife + " life" ) ; break ; case STOP_DRAWING : LOGGER . fine ( "***[undoActiveAbility > STOP_DRAWING] Undoing <Stop> ability" ) ; numFreeDrawsLeft = numLostDraws ; numLostDraws = 0 ; updateNumDraws ( ) ; LOGGER . fine ( "***[undoActiveAbility > STOP_DRAWING] Player now has " + numFreeDrawsLeft + " draws left" ) ; break ; case HIGHEST_CARD_ZERO : LOGGER . fine ( "***[undoActiveAbility > HIGHEST_CARD_ZERO] Undoing <Highest Card Zero> ability" ) ; LOGGER . fine ( "***[undoActiveAbility > HIGHEST_CARD_ZERO] Previous highest card index BEFORE undoing ability is " + previousStrongestCard ) ; LOGGER . fine ( "***[undoActiveAbility > HIGHEST_CARD_ZERO] Player's strength BEFORE undoing ability is " + currentPlayerStrength ) ; CardView cardView = ( CardView ) playerHandLayout . getChildAt ( previousStrongestCard ) ; cardView . clearZeroOverlayImage ( ) ; LOGGER . fine ( "***[undoActiveAbility] Cleared overlay on card at index " + previousStrongestCard + " & removed flag" ) ; currentPlayerStrength += ( ( RobinsonCard ) player . peekCardInHand ( previousStrongestCard ) ) . getAttackStrength ( ) ; if ( fightingPlusOne ) currentPlayerStrength ++ ; updateRobinsonStrength ( ) ; LOGGER . fine ( "***[undoActiveAbility > HIGHEST_CARD_ZERO] Player's strength AFTER undoing ability is " + currentPlayerStrength ) ; previousStrongestCard = 0 ; highestCardZero -- ; LOGGER . fine ( "***[undoActiveAbility > HIGHEST_CARD_ZERO] Previous highest card index AFTER undoing ability is " + previousStrongestCard ) ; break ; default : LOGGER . fine ( "***[undoActiveAbility > default] The card passed didn't have an ability" ) ; break  
+LOGGER . fine ( "***[undoActiveAbility > DOUBLE_ONE] Undoing <Double 1x> ability" )  
+RobinsonCard doubleCard = ( RobinsonCard ) card  
+RobinsonCard doubled = ( ( RobinsonCard ) card ) . getCardReference ( )  
+if ( doubled != null )  
+LOGGER . fine ( "***[undoActiveAbility > DOUBLE_ONE] Need to clean up after double" )  
+doubled . unflagForDouble ( )  
+int index = player . getIndexOfCardInHand ( doubled )  
+CardView cardView = ( CardView ) playerHandLayout . getChildAt ( index )  
+cardView . clearDoubleOverlayImage ( )  
+LOGGER . fine ( "***[undoActiveAbility > DOUBLE_ONE] Strength before was " + currentPlayerStrength )  
+currentPlayerStrength -= doubled . getAttackStrength ( )  
+updateRobinsonStrength ( ) ; 
+doubleCard . clearCardReference ( )  
+LOGGER . fine ( "***[undoActiveAbility > DOUBLE_ONE] Strength after is " + currentPlayerStrength )  
+LOGGER . fine ( "***[undoActiveAbility > DOUBLE_ONE] Double hadn't been used" )  
+LOGGER . fine ( "***[undoActiveAbility > COPY_ONE] Undoing <Copy 1x> ability" )  
+RobinsonCard copyCard = ( RobinsonCard ) card  
+RobinsonCard copied = ( ( RobinsonCard ) card ) . getCardReference ( )  
+LOGGER . fine ( "***[undoActiveAbility > COPY_ONE] Affected card is <" + copied . getCardName ( ) + ">" )  
+LOGGER . fine ( "***[undoActiveAbility > COPY_ONE] Copy was from card <" + copyCard . getCardName ( ) + ">" )  
+LOGGER . fine ( "***[undoActiveAbility > COPY_ONE] isCopyingDouble: " + copyCard . isCopyingDouble ( ) )  
+LOGGER . fine ( "***[undoActiveAbility > COPY_ONE] isCopyingPhase: " + copyCard . isCopyingPhase ( ) )  
+if ( copied != null )  
+if ( copyCard . isCopyingDouble ( ) || copyCard . isCopyingPhase ( ) )  
+copyCard . clearCardReference ( )  
+undoActiveAbility ( copied )  
+LOGGER . fine ( "***[undoActiveAbility > COPY_ONE] Copy was used for something we don't need to clean up after" )  
+LOGGER . fine ( "***[undoActiveAbility > COPY_ONE] Copy hadn't been used" )  
+LOGGER . fine ( "***[undoActiveAbility > PHASE_MINUS_ONE] Undoing <Phase -1> ability" )  
+undoPhaseMinusOne ( true )  
+LOGGER . fine ( "***[undoActiveAbility > MINUS_ONE_LIFE] Undoing <-1 Life> ability" )  
+LOGGER . fine ( "***[undoActiveAbility > MINUS_ONE_LIFE] Before undoing ability player had -" + negativeLife + " life" )  
+negativeLife --  
+updatePlayerLifePoints ( ) ; 
+LOGGER . fine ( "***[undoActiveAbility > MINUS_ONE_LIFE] Before undoing ability player has -" + negativeLife + " life" )  
+LOGGER . fine ( "***[undoActiveAbility > MINUS_TWO_LIFE] Undoing <-2 Life> ability" )  
+LOGGER . fine ( "***[undoActiveAbility > MINUS_TWO_LIFE] Before undoing ability player had -" + negativeLife + " life" )  
+negativeLife -= 2  
+updatePlayerLifePoints ( ) ; 
+LOGGER . fine ( "***[undoActiveAbility > MINUS_TWO_LIFE] Before undoing ability player has -" + negativeLife + " life" )  
+LOGGER . fine ( "***[undoActiveAbility > STOP_DRAWING] Undoing <Stop> ability" )  
+numFreeDrawsLeft = numLostDraws  
+numLostDraws = 0  
+updateNumDraws ( ) ; 
+LOGGER . fine ( "***[undoActiveAbility > STOP_DRAWING] Player now has " + numFreeDrawsLeft + " draws left" )  
+LOGGER . fine ( "***[undoActiveAbility > HIGHEST_CARD_ZERO] Undoing <Highest Card Zero> ability" )  
+LOGGER . fine ( "***[undoActiveAbility > HIGHEST_CARD_ZERO] Previous highest card index BEFORE undoing ability is " + previousStrongestCard )  
+LOGGER . fine ( "***[undoActiveAbility > HIGHEST_CARD_ZERO] Player's strength BEFORE undoing ability is " + currentPlayerStrength )  
+CardView cardView = ( CardView ) playerHandLayout . getChildAt ( previousStrongestCard )  
+cardView . clearZeroOverlayImage ( )  
+LOGGER . fine ( "***[undoActiveAbility] Cleared overlay on card at index " + previousStrongestCard + " & removed flag" )  
+currentPlayerStrength += ( ( RobinsonCard ) player . peekCardInHand ( previousStrongestCard ) ) . getAttackStrength ( )  
+currentPlayerStrength ++  
+updateRobinsonStrength ( )  
+LOGGER . fine ( "***[undoActiveAbility > HIGHEST_CARD_ZERO] Player's strength AFTER undoing ability is " + currentPlayerStrength )  
+previousStrongestCard = 0  
+highestCardZero --  
+LOGGER . fine ( "***[undoActiveAbility > HIGHEST_CARD_ZERO] Previous highest card index AFTER undoing ability is " + previousStrongestCard )  
+LOGGER . fine ( "***[undoActiveAbility > default] The card passed didn't have an ability" )  

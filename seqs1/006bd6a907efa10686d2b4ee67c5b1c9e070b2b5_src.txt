@@ -1,0 +1,8 @@
+public InputStream openAPKExtensionInputStream ( String fileName ) throws IOException  
+Integer mainVersion = Integer . valueOf ( nativeGetHint ( "SDL_ANDROID_APK_EXPANSION_MAIN_FILE_VERSION" ) )  
+Integer patchVersion = Integer . valueOf ( nativeGetHint ( "SDL_ANDROID_APK_EXPANSION_PATCH_FILE_VERSION" ) )  
+expansionFile = Class . forName ( "com.android.vending.expansion.zipfile.APKExpansionSupport" ) . getMethod ( "getAPKExpansionZipFile" , Context . class , int . class , int . class ) . invoke ( null , this , mainVersion , patchVersion )  
+catch ( Exception ex )  
+catch ( Exception ex )  
+ex . printStackTrace ( )  
+throw new IOException ( )  

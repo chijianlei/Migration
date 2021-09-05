@@ -1,0 +1,33 @@
+assetManager . loadImage ( "assets/img/battleSequence/abilityButtonIce.png" , "ice_button" )  
+assetManager . loadImage ( "assets/img/battleSequence/abilityButtonIceHover.png" , "hover_ice_button" )  
+assetManager . loadImage ( "assets/img/battleSequence/abilityButtonHorn.png" , "horn_button" )  
+assetManager . loadImage ( "assets/img/battleSequence/abilityButtonWings.png" , "wings_button" )  
+assetManager . loadImage ( "assets/img/battleSequence/abilityButtonWingsHover.png" , "hover_wings_button" )  
+assetManager . loadAsset ( "assets/data/weapon/fist.weapon" , "fist" , Weapon . class )  
+assetManager . loadAsset ( "assets/data/weapon/goblinshotput.weapon" , "weapon_goblin" , Weapon . class )  
+if ( splash != null && g != null )  
+g . fillRect ( 26 , 189 , 300 , 28 ) ; 
+splash . update ( )  
+public enum Effect { DOUBLE_DAMAGE , GOBLIN_STENCH , FROSTBITE , NONE  
+switch ( this ) { case DOUBLE_DAMAGE : target . damage ( with . getAttackDamage ( ) ) ; break ; case GOBLIN_STENCH : target . damage ( 5 ) ; break ; case FROSTBITE : 
+if ( buffer . equals ( "DOUBLE_DAMAGE" ) ) 
+effect = Effect . DOUBLE_DAMAGE  
+enemyAttack = fighting . getAttack ( 0 )  
+this . fighting = areaInside . getBoss ( )  
+gui . update ( ( int ) mousePos . getX ( ) , ( int ) mousePos . getY ( ) )  
+switch ( playerWeapon . getEffect ( ) ) { case DOUBLE_DAMAGE : particleImage = getAssetManager ( ) . getImage ( "double_damage_particle" ) ; break ; case GOBLIN_STENCH : particleImage = getAssetManager ( ) . getImage ( "goblin_stench_particle" ) ; break ; case FROSTBITE : particleImage = getAssetManager ( ) . getImage ( "frostbite_particle" ) ; break  
+particles . add ( new Particle ( particleImage , ( int ) ( enemyRenderPosition . getX ( ) - 20 ) , ( int ) ( enemyRenderPosition . getY ( ) - 100 ) , 1100 ) )  
+GameState nextState = null  
+playerData . completeArea ( areaInside . getName ( ) )  
+nextState = new TownState ( playerData )  
+Enemy enemy = areaInside . getRandomEnemy ( )  
+Movie movie = getAssetManager ( ) . getAsset ( "enter_battle_" + enemy . getName ( ) , Movie . class )  
+nextState = new TransitionState ( movie , new BattleSequenceState ( enemy , playerData , backgroundImage , areaInside , enemyFightingOn + 1 ) )  
+Weapon weaponWon = areaInside . getRewardWeapon ( )  
+if ( ! playerData . getWeapons ( ) . contains ( weaponWon ) )  
+playerData . getWeapons ( ) . add ( weaponWon )  
+if ( particles != null )  
+for ( int i = 0 ; i < ( int ) ( timing . length / 2 ) ; i ++ )  
+enemyRenderPosition = new Point ( 500 , 335 - enemyAnimation . getCurrentImage ( ) . getHeight ( ) )  
+enemyRenderPosition = new Point ( 500 , 335 - enemyAnimation . getCurrentImage ( ) . getHeight ( ) )  
+for ( int i = 0 ; i < playerData . getWeapons ( ) . size ( ) ; i ++ )  

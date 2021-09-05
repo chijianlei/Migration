@@ -1,0 +1,2 @@
+while ( true )  
+System . out . println ( sb . substring ( 0 , sb . length ( ) - 2 ) )  

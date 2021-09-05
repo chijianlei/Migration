@@ -1,0 +1,4 @@
+database . execSQL ( "DELETE FROM spendings" )  
+database . execSQL ( "INSERT INTO spendings" + "(timestamp, amount, comment)" + "VALUES" + spending_sql )  
+database . execSQL ( "DELETE FROM buys" )  
+database . execSQL ( "INSERT INTO buys" + "(name, cost, priority, status)" + "VALUES" + buy_sql )  

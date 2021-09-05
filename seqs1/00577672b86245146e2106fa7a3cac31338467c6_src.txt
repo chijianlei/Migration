@@ -1,0 +1,8 @@
+for ( String table : esc . getDeNormCtx ( ) . getTableToRefCols ( ) . keySet ( ) )  
+Set < String > nonReachableFields = esc . getDeNormCtx ( ) . getNonReachableReferenceFields ( table )  
+if ( ! nonReachableFields . isEmpty ( ) )  
+log . info ( "Removing expression {} as columns {} are not available" , esc , nonReachableFields )  
+iterator . remove ( )  
+removedEsc . add ( esc )  
+removed = true  
+removedEsc . add ( esc )  

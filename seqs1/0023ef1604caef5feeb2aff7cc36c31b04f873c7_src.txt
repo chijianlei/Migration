@@ -1,0 +1,494 @@
+switch ( v . getId ( ) ) { case R . id . button_0 : ch = "0" ; break ; case R . id . button_1 : ch = "1" ; break ; case R . id . button_2 : ch = "2" ; break ; case R . id . button_3 : ch = "3" ; break ; case R . id . button_4 : ch = "4" ; break ; case R . id . button_5 : ch = "5" ; break ; case R . id . button_6 : ch = "6" ; break ; case R . id . button_7 : ch = "7" ; break ; case R . id . button_8 : ch = "8" ; break ; case R . id . button_9 : ch = "9" ; break ; case R . id . button_point : ch = "." ; break ; default : ch = "" ; break  
+Double . isInfinite ( Double . parseDouble ( activity . getResultText ( ) . toString ( ) ) ) || Double . isNaN ( Double . parseDouble ( activity . getResultText ( ) . toString ( ) ) ) ) { 
+
+ 
+lastChar == '鈭) {
+            return;
+        }
+        if ("+-*/^".indexOf(lastChar) >= 0) {
+            activity.setExpressionText(expCharSequence.subSequence(0, expLen - 1));
+        }
+
+
+        switch (v.getId()) {
+            case R.id.button_add:
+                activity.appendExpressionText("+");
+                break;
+            case R.id.button_min:
+                activity.appendExpressionText("-");
+                break;
+            case R.id.button_mul:
+                activity.appendExpressionText("*");
+                break;
+            case R.id.button_dev:
+                activity.appendExpressionText("/");
+                break;
+            case R.id.button_pow:
+                activity.appendExpressionText("^");
+                break;
+            default:
+                break;
+        }
+
+        activity.changeExpressionTextSize();
+    }
+}
+ 
+'鈭) {
+            return;
+        }
+        if ("+-*/^".indexOf(lastChar) >= 0) {
+            activity.setExpressionText(expCharSequence.subSequence(0, expLen - 1));
+        }
+
+
+        switch (v.getId()) {
+            case R.id.button_add:
+                activity.appendExpressionText("+");
+                break;
+            case R.id.button_min:
+                activity.appendExpressionText("-");
+                break;
+            case R.id.button_mul:
+                activity.appendExpressionText("*");
+                break;
+            case R.id.button_dev:
+                activity.appendExpressionText("/");
+                break;
+            case R.id.button_pow:
+                activity.appendExpressionText("^");
+                break;
+            default:
+                break;
+        }
+
+        activity.changeExpressionTextSize();
+    }
+}
+ 
+'鈭) {
+            return;
+        }
+        if ("+-*/^".indexOf(lastChar) >= 0) {
+            activity.setExpressionText(expCharSequence.subSequence(0, expLen - 1));
+        }
+
+
+        switch (v.getId()) {
+            case R.id.button_add:
+                activity.appendExpressionText("+");
+                break;
+            case R.id.button_min:
+                activity.appendExpressionText("-");
+                break;
+            case R.id.button_mul:
+                activity.appendExpressionText("*");
+                break;
+            case R.id.button_dev:
+                activity.appendExpressionText("/");
+                break;
+            case R.id.button_pow:
+                activity.appendExpressionText("^");
+                break;
+            default:
+                break;
+        }
+
+        activity.changeExpressionTextSize();
+    }
+}
+ 
+} else if ( ch == '鈭) { // 褰撳墠瀛楃鏄崟鐩繍绠楃鏍瑰彿
+                    if (numBuilder.length() != 0) {
+                        numStack.push(Double.parseDouble(numBuilder.toString()));
+
+                        operatorStack.push(OPERATION_MUL);
+                        numBuilder.setLength(0);
+                        numBuilder.trimToSize();
+                    }
+                    operatorStack.push(OPERATION_SQRT);
+                } else if (ch == ' 
+' && numBuilder.length() == 0) { // 褰撳墠瀛楃鏄崟鐩繍绠楃璐熷彿
+                    operatorStack.push(OPERATION_NEG);
+                } else { // 褰撳墠瀛楃鏄弻鐩繍绠楃
+                    if (numBuilder.length() == 0) {
+                        throw new ArrayStoreException("101");
+                    }
+                    numStack.push(Double.parseDouble(numBuilder.toString()));
+                    numBuilder.setLength(0);
+                    numBuilder.trimToSize();
+
+                    if (!operatorStack.empty()) {
+                        int innerPriority = getOperatorPriority(operatorStack.peek());
+                        int outerPriority = getOperatorPriority(operatorCharToInt(ch));
+
+                        while (innerPriority > outerPriority) {
+                            stackCalculate();
+                            if (operatorStack.empty()) {
+                                break;
+                            }
+                            innerPriority = getOperatorPriority(operatorStack.peek());
+                        }
+                    }
+                    operatorStack.push(operatorCharToInt(ch));
+                }
+            }
+
+            // 灏嗘渶鍚庝竴涓暟鍘嬪叆鏍            if (numBuilder.length() == 0) {
+                throw new ArrayStoreException("102");
+            }
+            numStack.push(Double.parseDouble(numBuilder.toString()));
+
+            while (!operatorStack.empty()) {
+                stackCalculate();
+            }
+
+            // 鏍堜腑鏈€鍚庝竴涓暟鍗崇粨鏋            // 璁剧疆缁撴灉鏍            if (!numStack.empty()) {
+                double result = numStack.pop();
+                // 鍒ゆ柇缁撴灉鏄惁涓烘暣鏁                if (result % 1 == 0) {
+                    resultText.setText(String.valueOf((int)result));
+                }
+                else {
+                    resultText.setText(String.valueOf(result));
+                }
+            } else {
+                throw new ArrayStoreException("103");
+            }
+        } catch (ArrayStoreException e) {
+            Log.d(TAG, e.getMessage());
+            Log.d(TAG, "error in calculate()");
+            Log.d(TAG, "expression: " + expressionText.getText());
+            Log.d(TAG, "result: " + resultText.getText());
+            Toast.makeText(MainActivity.this, "ERROR 1 >.<\nClick \"C\" to clear", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Log.d(TAG, "error in calculate()");
+            Log.d(TAG, "expression: " + expressionText.getText());
+            Log.d(TAG, "result: " + resultText.getText());
+            Toast.makeText(MainActivity.this, "ERROR 0 >.<\nClick \"C\" to clear", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    // char杞寲涓篿nt
+    // 鍖哄垎鍑忓彿鍜岃礋鍙    private int operatorCharToInt(char operator) {
+        switch (operator) {
+            case ' 
+' && numBuilder.length() == 0) { // 褰撳墠瀛楃鏄崟鐩繍绠楃璐熷彿
+                    operatorStack.push(OPERATION_NEG);
+                } else { // 褰撳墠瀛楃鏄弻鐩繍绠楃
+                    if (numBuilder.length() == 0) {
+                        throw new ArrayStoreException("101");
+                    }
+                    numStack.push(Double.parseDouble(numBuilder.toString()));
+                    numBuilder.setLength(0);
+                    numBuilder.trimToSize();
+
+                    if (!operatorStack.empty()) {
+                        int innerPriority = getOperatorPriority(operatorStack.peek());
+                        int outerPriority = getOperatorPriority(operatorCharToInt(ch));
+
+                        while (innerPriority > outerPriority) {
+                            stackCalculate();
+                            if (operatorStack.empty()) {
+                                break;
+                            }
+                            innerPriority = getOperatorPriority(operatorStack.peek());
+                        }
+                    }
+                    operatorStack.push(operatorCharToInt(ch));
+                }
+            }
+
+            // 灏嗘渶鍚庝竴涓暟鍘嬪叆鏍            if (numBuilder.length() == 0) {
+                throw new ArrayStoreException("102");
+            }
+            numStack.push(Double.parseDouble(numBuilder.toString()));
+
+            while (!operatorStack.empty()) {
+                stackCalculate();
+            }
+
+            // 鏍堜腑鏈€鍚庝竴涓暟鍗崇粨鏋            // 璁剧疆缁撴灉鏍            if (!numStack.empty()) {
+                double result = numStack.pop();
+                // 鍒ゆ柇缁撴灉鏄惁涓烘暣鏁                if (result % 1 == 0) {
+                    resultText.setText(String.valueOf((int)result));
+                }
+                else {
+                    resultText.setText(String.valueOf(result));
+                }
+            } else {
+                throw new ArrayStoreException("103");
+            }
+        } catch (ArrayStoreException e) {
+            Log.d(TAG, e.getMessage());
+            Log.d(TAG, "error in calculate()");
+            Log.d(TAG, "expression: " + expressionText.getText());
+            Log.d(TAG, "result: " + resultText.getText());
+            Toast.makeText(MainActivity.this, "ERROR 1 >.<\nClick \"C\" to clear", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Log.d(TAG, "error in calculate()");
+            Log.d(TAG, "expression: " + expressionText.getText());
+            Log.d(TAG, "result: " + resultText.getText());
+            Toast.makeText(MainActivity.this, "ERROR 0 >.<\nClick \"C\" to clear", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    // char杞寲涓篿nt
+    // 鍖哄垎鍑忓彿鍜岃礋鍙    private int operatorCharToInt(char operator) {
+        switch (operator) {
+            case ' 
+' && numBuilder.length() == 0) { // 褰撳墠瀛楃鏄崟鐩繍绠楃璐熷彿
+                    operatorStack.push(OPERATION_NEG);
+                } else { // 褰撳墠瀛楃鏄弻鐩繍绠楃
+                    if (numBuilder.length() == 0) {
+                        throw new ArrayStoreException("101");
+                    }
+                    numStack.push(Double.parseDouble(numBuilder.toString()));
+                    numBuilder.setLength(0);
+                    numBuilder.trimToSize();
+
+                    if (!operatorStack.empty()) {
+                        int innerPriority = getOperatorPriority(operatorStack.peek());
+                        int outerPriority = getOperatorPriority(operatorCharToInt(ch));
+
+                        while (innerPriority > outerPriority) {
+                            stackCalculate();
+                            if (operatorStack.empty()) {
+                                break;
+                            }
+                            innerPriority = getOperatorPriority(operatorStack.peek());
+                        }
+                    }
+                    operatorStack.push(operatorCharToInt(ch));
+                }
+            }
+
+            // 灏嗘渶鍚庝竴涓暟鍘嬪叆鏍            if (numBuilder.length() == 0) {
+                throw new ArrayStoreException("102");
+            }
+            numStack.push(Double.parseDouble(numBuilder.toString()));
+
+            while (!operatorStack.empty()) {
+                stackCalculate();
+            }
+
+            // 鏍堜腑鏈€鍚庝竴涓暟鍗崇粨鏋            // 璁剧疆缁撴灉鏍            if (!numStack.empty()) {
+                double result = numStack.pop();
+                // 鍒ゆ柇缁撴灉鏄惁涓烘暣鏁                if (result % 1 == 0) {
+                    resultText.setText(String.valueOf((int)result));
+                }
+                else {
+                    resultText.setText(String.valueOf(result));
+                }
+            } else {
+                throw new ArrayStoreException("103");
+            }
+        } catch (ArrayStoreException e) {
+            Log.d(TAG, e.getMessage());
+            Log.d(TAG, "error in calculate()");
+            Log.d(TAG, "expression: " + expressionText.getText());
+            Log.d(TAG, "result: " + resultText.getText());
+            Toast.makeText(MainActivity.this, "ERROR 1 >.<\nClick \"C\" to clear", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Log.d(TAG, "error in calculate()");
+            Log.d(TAG, "expression: " + expressionText.getText());
+            Log.d(TAG, "result: " + resultText.getText());
+            Toast.makeText(MainActivity.this, "ERROR 0 >.<\nClick \"C\" to clear", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    // char杞寲涓篿nt
+    // 鍖哄垎鍑忓彿鍜岃礋鍙    private int operatorCharToInt(char operator) {
+        switch (operator) {
+            case ' 
+' && numBuilder.length() == 0) { // 褰撳墠瀛楃鏄崟鐩繍绠楃璐熷彿
+                    operatorStack.push(OPERATION_NEG);
+                } else { // 褰撳墠瀛楃鏄弻鐩繍绠楃
+                    if (numBuilder.length() == 0) {
+                        throw new ArrayStoreException("101");
+                    }
+                    numStack.push(Double.parseDouble(numBuilder.toString()));
+                    numBuilder.setLength(0);
+                    numBuilder.trimToSize();
+
+                    if (!operatorStack.empty()) {
+                        int innerPriority = getOperatorPriority(operatorStack.peek());
+                        int outerPriority = getOperatorPriority(operatorCharToInt(ch));
+
+                        while (innerPriority > outerPriority) {
+                            stackCalculate();
+                            if (operatorStack.empty()) {
+                                break;
+                            }
+                            innerPriority = getOperatorPriority(operatorStack.peek());
+                        }
+                    }
+                    operatorStack.push(operatorCharToInt(ch));
+                }
+            }
+
+            // 灏嗘渶鍚庝竴涓暟鍘嬪叆鏍            if (numBuilder.length() == 0) {
+                throw new ArrayStoreException("102");
+            }
+            numStack.push(Double.parseDouble(numBuilder.toString()));
+
+            while (!operatorStack.empty()) {
+                stackCalculate();
+            }
+
+            // 鏍堜腑鏈€鍚庝竴涓暟鍗崇粨鏋            // 璁剧疆缁撴灉鏍            if (!numStack.empty()) {
+                double result = numStack.pop();
+                // 鍒ゆ柇缁撴灉鏄惁涓烘暣鏁                if (result % 1 == 0) {
+                    resultText.setText(String.valueOf((int)result));
+                }
+                else {
+                    resultText.setText(String.valueOf(result));
+                }
+            } else {
+                throw new ArrayStoreException("103");
+            }
+        } catch (ArrayStoreException e) {
+            Log.d(TAG, e.getMessage());
+            Log.d(TAG, "error in calculate()");
+            Log.d(TAG, "expression: " + expressionText.getText());
+            Log.d(TAG, "result: " + resultText.getText());
+            Toast.makeText(MainActivity.this, "ERROR 1 >.<\nClick \"C\" to clear", Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            Log.d(TAG, "error in calculate()");
+            Log.d(TAG, "expression: " + expressionText.getText());
+            Log.d(TAG, "result: " + resultText.getText());
+            Toast.makeText(MainActivity.this, "ERROR 0 >.<\nClick \"C\" to clear", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    // char杞寲涓篿nt
+    // 鍖哄垎鍑忓彿鍜岃礋鍙    private int operatorCharToInt(char operator) {
+        switch (operator) {
+            case ' 
+"鈭);
+                // 鍙湁缁撴灉鏃讹紝鎸変笅鏍瑰彿锛岃嚜鍔ㄨ绠楃粨鏋滅殑鏍瑰彿
+                if (expressionText.length() == 1){
+                    expressionText.append(resultText.getText());
+                    calculate();
+                }
+            }
+        });
+
+        functionButton = (Button) findViewById(R.id.button_equal);
+        functionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                expressionText.setText(" 
+"鈭);
+                // 鍙湁缁撴灉鏃讹紝鎸変笅鏍瑰彿锛岃嚜鍔ㄨ绠楃粨鏋滅殑鏍瑰彿
+                if (expressionText.length() == 1){
+                    expressionText.append(resultText.getText());
+                    calculate();
+                }
+            }
+        });
+
+        functionButton = (Button) findViewById(R.id.button_equal);
+        functionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                expressionText.setText(" 
+"鈭)
+                // 鍙湁缁撴灉鏃讹紝鎸変笅鏍瑰彿锛岃嚜鍔ㄨ绠楃粨鏋滅殑鏍瑰彿
+                if (expressionText.length() == 1)
+                    expressionText.append(resultText.getText())
+                    calculate()
+                
+            
+        )
+
+        functionButton = (Button) findViewById(R.id.button_equal)
+        functionButton.setOnClickListener(new View.OnClickListener() 
+            @Override
+            public void onClick(View v) 
+                expressionText.setText(" ");
+            }
+        });
+
+        functionButton = (Button) findViewById(R.id.button_clear);
+        functionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clearAll();
+            }
+        });
+
+        functionButton = (Button) findViewById(R.id.button_del);
+        functionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 鍒犻櫎涓€涓瓧绗                StringBuilder exp = new StringBuilder(expressionText.getText());
+                if (exp.length() == 0) {
+                    return;
+                }
+                exp.setLength(exp.length() - 1);
+                expressionText.setText(exp);
+
+                // 璁＄畻鍓╀綑琛ㄨ揪寮                if (exp.length() > 0) {
+                    // 琛ㄨ揪寮忔爮鏈€鍚庝竴涓瓧绗︽槸鏁板瓧
+                    if (Character.isDigit(exp.charAt(expressionText.length() - 1)) || exp.charAt(expressionText.length() - 1) == '.') {
+                        calculate();
+                    } else {
+                        resultText.setText(" 
+");
+            }
+        });
+
+        functionButton = (Button) findViewById(R.id.button_clear);
+        functionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clearAll();
+            }
+        });
+
+        functionButton = (Button) findViewById(R.id.button_del);
+        functionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 鍒犻櫎涓€涓瓧绗                StringBuilder exp = new StringBuilder(expressionText.getText());
+                if (exp.length() == 0) {
+                    return;
+                }
+                exp.setLength(exp.length() - 1);
+                expressionText.setText(exp);
+
+                // 璁＄畻鍓╀綑琛ㄨ揪寮                if (exp.length() > 0) {
+                    // 琛ㄨ揪寮忔爮鏈€鍚庝竴涓瓧绗︽槸鏁板瓧
+                    if (Character.isDigit(exp.charAt(expressionText.length() - 1)) || exp.charAt(expressionText.length() - 1) == '.') {
+                        calculate();
+                    } else {
+                        resultText.setText(" 
+");
+            }
+        });
+
+        functionButton = (Button) findViewById(R.id.button_clear);
+        functionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clearAll();
+            }
+        });
+
+        functionButton = (Button) findViewById(R.id.button_del);
+        functionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 鍒犻櫎涓€涓瓧绗                StringBuilder exp = new StringBuilder(expressionText.getText());
+                if (exp.length() == 0) {
+                    return;
+                }
+                exp.setLength(exp.length() - 1);
+                expressionText.setText(exp);
+
+                // 璁＄畻鍓╀綑琛ㄨ揪寮                if (exp.length() > 0) {
+                    // 琛ㄨ揪寮忔爮鏈€鍚庝竴涓瓧绗︽槸鏁板瓧
+                    if (Character.isDigit(exp.charAt(expressionText.length() - 1)) || exp.charAt(expressionText.length() - 1) == '.') {
+                        calculate();
+                    } else {
+                        resultText.setText(" 

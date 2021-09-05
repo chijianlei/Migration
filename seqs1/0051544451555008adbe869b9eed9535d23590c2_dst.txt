@@ -1,0 +1,1 @@
+static final int SIZE = 2048  

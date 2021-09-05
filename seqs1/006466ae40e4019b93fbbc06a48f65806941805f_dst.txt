@@ -1,0 +1,4 @@
+fLogger . info ( "Initialized with user : " + fUsername + " and chat id : " + fChatId + ". Offset set to : " + fOffset )  
+private static Stack < Dawai > fStack = new Stack < > ( ) ;  
+private static Stack < Dawai > fStack = new Stack < > ( ) ;  
+fStack . remove ( TIME_FRAME . DAY )  

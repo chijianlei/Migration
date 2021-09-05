@@ -1,0 +1,3 @@
+secondBook . setAuthor ( "Stephen King" )  
+this . name = name  
+Book [ ] tempBooks = baseController . getFirstHipster ( ) . getHipsterBooks ( )  

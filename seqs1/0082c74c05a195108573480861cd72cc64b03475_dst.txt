@@ -1,0 +1,5 @@
+double bestScore = Double . NEGATIVE_INFINITY  
+scoreBestRollout [ nestingLevel ] = Double . NEGATIVE_INFINITY  
+if ( score > scoreBestRollout [ nestingLevel ] )  
+public static boolean runVisible = true  
+evoAlg = new NTupleBanditEA ( kExplore , nNeighbours )  

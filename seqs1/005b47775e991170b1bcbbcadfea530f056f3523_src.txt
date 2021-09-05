@@ -1,0 +1,10 @@
+");
+		}
+		return null;
+	}
+
+
+	// 鞐办偘鞛: <= 
+	private Token logicalLessEqual(Token t1, Token t2) throws EvaluatorException {
+		if(t1.type == TOKEN_TYPE.INTEGER_VALUE && t2.type == TOKEN_TYPE.INTEGER_VALUE  ) { // i < = 
+			return new Token(TOKEN_TYPE.BOOLEAN_VALUE, t1.name+" 

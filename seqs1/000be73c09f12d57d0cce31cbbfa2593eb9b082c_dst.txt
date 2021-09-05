@@ -1,0 +1,141 @@
+jj_consume_token ( DRIVER )  
+jj_consume_token ( CODE_SECTION )  
+switch ( ( jj_ntk == - 1 ) ? jj_ntk_f ( ) : jj_ntk ) { case CODE_SECTION : { ; break ; } default : jj_la1 [ 11 ] = jj_gen ; break label_5  
+jj_la1 [ 11 ] = jj_gen  
+while ( true ) { jj_consume_token ( DRIVER ) ; switch ( ( jj_ntk == - 1 ) ? jj_ntk_f ( ) : jj_ntk ) { case INTEGER : { jj_consume_token ( INTEGER ) ; break ; } case LABEL_NAME : { jj_consume_token ( LABEL_NAME ) ; break ; } default : jj_la1 [ 12 ] = jj_gen ; jj_consume_token ( - 1 ) ; throw new ParseException ( ) ; } jj_consume_token ( NEWLINE ) ; label_8 : 
+jj_consume_token ( INTEGER )  
+switch ( ( jj_ntk == - 1 ) ? jj_ntk_f ( ) : jj_ntk ) { case NEWLINE : case LOCATION_COUNTER : case ORG : case INSN_0 : case INSN_0_WQ : case INSN_0_NOSUFF : case INSN_1_S : case INSN_LEA : case INSN_1_E : case INSN_SHIFT : case INSN_1_M : case INSN_JC : case INSN_B_E : case INSN_EXT : case INSN_IN : case INSN_OUT : case INSN_IO_S : case LABEL : { ; break ; } default : jj_la1 [ 13 ] = jj_gen ; break label_8  
+( ( jj_ntk == - 1 ) ? jj_ntk_f ( ) : jj_ntk )  
+jj_ntk_f ( ) : jj_ntk )  
+: jj_ntk )  
+jj_la1 [ 12 ] = jj_gen  
+( ( jj_ntk == - 1 ) ? jj_ntk_f ( ) : jj_ntk )  
+jj_ntk_f ( ) : jj_ntk )  
+: jj_ntk )  
+jj_la1 [ 13 ] = jj_gen  
+final public void Statement ( ) throws ParseException  
+switch ( ( jj_ntk == - 1 ) ? jj_ntk_f ( ) : jj_ntk ) { case LABEL : { Label ( ) ; jj_consume_token ( NEWLINE ) ; break ; } case LOCATION_COUNTER : case ORG : { LocationCounter ( ) ; jj_consume_token ( NEWLINE ) ; break ; } case INSN_0 : case INSN_0_WQ : case INSN_0_NOSUFF : case INSN_1_S : case INSN_LEA : case INSN_1_E : case INSN_SHIFT : case INSN_1_M : case INSN_JC : case INSN_B_E : case INSN_EXT : case INSN_IN : case INSN_OUT : case INSN_IO_S : { Instruction ( ) ; jj_consume_token ( NEWLINE ) ; break ; } case NEWLINE : { jj_consume_token ( NEWLINE ) ; break ; } default : 
+jj_la1 [ 14 ] = jj_gen  
+( ( jj_ntk == - 1 ) ? jj_ntk_f ( ) : jj_ntk )  
+jj_la1 [ 15 ] = jj_gen  
+jj_la1 [ 16 ] = jj_gen  
+( ( jj_ntk == - 1 ) ? jj_ntk_f ( ) : jj_ntk )  
+jj_consume_token ( INSN_0 )  
+switch ( ( jj_ntk == - 1 ) ? jj_ntk_f ( ) : jj_ntk ) { case CONSTANT : { FormatK ( ) ; jj_consume_token ( COMMA ) ; break ; } default : jj_la1 [ 18 ] = jj_gen ;  
+jj_la1 [ 17 ] = jj_gen  
+FormatG ( )  
+jj_la1 [ 18 ] = jj_gen  
+jj_consume_token ( INSN_LEA )  
+jj_la1 [ 19 ] = jj_gen  
+final public void Register ( ) throws ParseException  
+switch ( ( jj_ntk == - 1 ) ? jj_ntk_f ( ) : jj_ntk ) { case REG_8 : { jj_consume_token ( REG_8 ) ; break ; } case REG_16 : { jj_consume_token ( REG_16 ) ; break ; } case REG_32 : { jj_consume_token ( REG_32 ) ; break ; } case REG_64 : { jj_consume_token ( REG_64 ) ; break ; } default : 
+( ( jj_ntk == - 1 ) ? jj_ntk_f ( ) : jj_ntk )  
+jj_ntk_f ( ) : jj_ntk )  
+: jj_ntk )  
+jj_consume_token ( REG_8 )  
+jj_consume_token ( REG_16 )  
+jj_consume_token ( REG_32 )  
+jj_consume_token ( REG_64 )  
+jj_la1 [ 20 ] = jj_gen  
+jj_consume_token ( - 1 )  
+throw new ParseException ( )  
+catch ( ParseException ex )  
+error_recover ( ex , NEWLINE )  
+if ( jj_2_1 ( 2 ) )  
+Expression ( )  
+( ( jj_ntk == - 1 ) ? jj_ntk_f ( ) : jj_ntk )  
+jj_ntk_f ( ) : jj_ntk )  
+: jj_ntk )  
+jj_consume_token ( LBRACE )  
+switch ( ( jj_ntk == - 1 ) ? jj_ntk_f ( ) : jj_ntk ) { case REG_8 : { jj_consume_token ( REG_8 ) ; break ; } case REG_16 : { jj_consume_token ( REG_16 ) ; break ; } case REG_32 : { jj_consume_token ( REG_32 ) ; break ; } case REG_64 : { jj_consume_token ( REG_64 ) ; break ; } default : 
+( ( jj_ntk == - 1 ) ? jj_ntk_f ( ) : jj_ntk )  
+jj_ntk_f ( ) : jj_ntk )  
+: jj_ntk )  
+jj_consume_token ( REG_8 )  
+jj_consume_token ( REG_16 )  
+jj_consume_token ( REG_32 )  
+jj_consume_token ( REG_64 )  
+jj_la1 [ 21 ] = jj_gen  
+jj_consume_token ( - 1 )  
+throw new ParseException ( )  
+switch ( ( jj_ntk == - 1 ) ? jj_ntk_f ( ) : jj_ntk ) { case LBRACE : { jj_consume_token ( LBRACE ) ; switch ( ( jj_ntk == - 1 ) ? jj_ntk_f ( ) : jj_ntk ) { case REG_8 : { jj_consume_token ( REG_8 ) ; break ; } case REG_16 : { jj_consume_token ( REG_16 ) ; break ; } case REG_32 : { jj_consume_token ( REG_32 ) ; break ; } case REG_64 : { jj_consume_token ( REG_64 ) ; break ; } default : jj_la1 [ 22 ] = jj_gen ; jj_consume_token ( - 1 ) ; throw new ParseException ( ) ; } switch ( ( jj_ntk == - 1 ) ? jj_ntk_f ( ) : jj_ntk ) { case COMMA : { jj_consume_token ( COMMA ) ; switch ( ( jj_ntk == - 1 ) ? jj_ntk_f ( ) : jj_ntk ) { case REG_8 : { jj_consume_token ( REG_8 ) ; break ; } case REG_16 : { jj_consume_token ( REG_16 ) ; break ; } case REG_32 : { jj_consume_token ( REG_32 ) ; break ; } case REG_64 : { jj_consume_token ( REG_64 ) ; break ; } default : jj_la1 [ 23 ] = jj_gen ; jj_consume_token ( - 1 ) ; throw new ParseException ( ) ; } jj_consume_token ( COMMA ) ; jj_consume_token ( INTEGER ) ; break ; } default : jj_la1 [ 24 ] = jj_gen ; ; } jj_consume_token ( RBRACE ) ; break ; } default : jj_la1 [ 25 ] = jj_gen ;  
+( ( jj_ntk == - 1 ) ? jj_ntk_f ( ) : jj_ntk )  
+jj_ntk_f ( ) : jj_ntk )  
+: jj_ntk )  
+jj_consume_token ( COMMA )  
+switch ( ( jj_ntk == - 1 ) ? jj_ntk_f ( ) : jj_ntk ) { case REG_8 : { jj_consume_token ( REG_8 ) ; break ; } case REG_16 : { jj_consume_token ( REG_16 ) ; break ; } case REG_32 : { jj_consume_token ( REG_32 ) ; break ; } case REG_64 : { jj_consume_token ( REG_64 ) ; break ; } default : 
+( ( jj_ntk == - 1 ) ? jj_ntk_f ( ) : jj_ntk )  
+jj_ntk_f ( ) : jj_ntk )  
+: jj_ntk )  
+jj_consume_token ( REG_8 )  
+jj_consume_token ( REG_16 )  
+jj_consume_token ( REG_32 )  
+jj_consume_token ( REG_64 )  
+jj_la1 [ 22 ] = jj_gen  
+jj_consume_token ( - 1 )  
+throw new ParseException ( )  
+jj_consume_token ( COMMA )  
+jj_consume_token ( INTEGER )  
+jj_la1 [ 23 ] = jj_gen  
+jj_consume_token ( RBRACE )  
+jj_la1 [ 24 ] = jj_gen  
+catch ( ParseException ex )  
+error_recover ( ex , NEWLINE )  
+final public void FormatM ( ) throws ParseException  
+( ( jj_ntk == - 1 ) ? jj_ntk_f ( ) : jj_ntk )  
+jj_ntk_f ( ) : jj_ntk )  
+: jj_ntk )  
+Register ( )  
+jj_la1 [ 25 ] = jj_gen  
+Addressing ( )  
+catch ( ParseException ex )  
+error_recover ( ex , NEWLINE )  
+final public void FormatG ( ) throws ParseException  
+final public void FormatE ( ) throws ParseException  
+switch ( ( jj_ntk == - 1 ) ? jj_ntk_f ( ) : jj_ntk ) { case REG_8 : case REG_16 : case REG_32 : case REG_64 : { Register ( ) ; break ; } default : 
+( ( jj_ntk == - 1 ) ? jj_ntk_f ( ) : jj_ntk )  
+jj_ntk_f ( ) : jj_ntk )  
+: jj_ntk )  
+Label ( )  
+jj_la1 [ 26 ] = jj_gen  
+Addressing ( )  
+catch ( ParseException ex )  
+error_recover ( ex , NEWLINE )  
+switch ( ( jj_ntk == - 1 ) ? jj_ntk_f ( ) : jj_ntk ) { case CONSTANT : { ConstantExpression ( ) ; break ; } case REG_8 : case REG_16 : case REG_32 : case REG_64 : { FormatG ( ) ; break ; } default : 
+jj_la1 [ 27 ] = jj_gen  
+jj_la1 [ 28 ] = jj_gen  
+jj_la1 [ 29 ] = jj_gen  
+jj_consume_token ( - 1 )  
+switch ( ( jj_ntk == - 1 ) ? jj_ntk_f ( ) : jj_ntk ) { case TIMES : case DIVIDE : { ; break ; } default : jj_la1 [ 31 ] = jj_gen ; break label_10  
+jj_la1 [ 30 ] = jj_gen  
+jj_la1 [ 31 ] = jj_gen  
+jj_consume_token ( - 1 )  
+switch ( ( jj_ntk == - 1 ) ? jj_ntk_f ( ) : jj_ntk ) { case INTEGER : { jj_consume_token ( INTEGER ) ; break ; } case LOCATION_COUNTER : { jj_consume_token ( LOCATION_COUNTER ) ; break ; } case LABEL_NAME : { jj_consume_token ( LABEL_NAME ) ; break ; } case LBRACE : { jj_consume_token ( LBRACE ) ; Expression ( ) ; jj_consume_token ( RBRACE ) ; break ; } case MINUS : { jj_consume_token ( MINUS ) ; Primary ( ) ; break ; } default : 
+jj_la1 [ 32 ] = jj_gen  
+return ! jj_3_1 ( ) ;  
+for ( int i = 0 ; i < 34 ; i ++ ) jj_la1 [ i ] = - 1  
+for ( int i = 0 ; i < 34 ; i ++ ) jj_la1 [ i ] = - 1  
+jj_la1 [ i ] = - 1  
+for ( int i = 0 ; i < 34 ; i ++ ) jj_la1 [ i ] = - 1  
+jj_la1 [ i ] = - 1  
+for ( int i = 0 ; i < 34 ; i ++ ) jj_la1 [ i ] = - 1  
+jj_la1 [ i ] = - 1  
+token_source = tm  
+token = new Token ( )  
+jj_ntk = - 1  
+jj_gen = 0  
+for ( int i = 0 ; i < 34 ; i ++ ) jj_la1 [ i ] = - 1  
+jj_la1 [ i ] = - 1  
+for ( int i = 0 ; i < jj_2_rtns . length ; i ++ ) jj_2_rtns [ i ] = new JJCalls ( )  
+jj_2_rtns . length ; i ++ ) jj_2_rtns [ i ] = new JJCalls ( )  
+public void ReInit ( AssemblerTokenManager tm )  
+token_source = tm  
+token = new Token ( )  
+jj_ntk = - 1  
+jj_gen = 0  
+for ( int i = 0 ; i < 34 ; i ++ ) jj_la1 [ i ] = - 1  
+jj_la1 [ i ] = - 1  
+for ( int i = 0 ; i < jj_2_rtns . length ; i ++ ) jj_2_rtns [ i ] = new JJCalls ( )  
+jj_2_rtns . length ; i ++ ) jj_2_rtns [ i ] = new JJCalls ( )  
+if ( token . kind == kind )  
+for ( int i = 0 ; i < 34 ; i ++ )  

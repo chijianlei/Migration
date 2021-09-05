@@ -1,0 +1,1 @@
+public void getLecturesHours ( HttpServletRequest request , HttpServletResponse response , int day ) throws IOException , SQLException  

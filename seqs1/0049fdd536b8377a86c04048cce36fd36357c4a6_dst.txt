@@ -1,0 +1,14 @@
+if ( annoQualifiedName . equals ( NAMED_ANNO ) )  
+writeJavaFile ( clazz , abstractMethods , name , exceptions , contractsProvided , scope )  
+private void writeJavaFile ( TypeElement clazz , Set < ExecutableElement > abstractMethods , String name , boolean exceptions , List < TypeElement > contractsProvided , String scope ) throws IOException  
+String fullyQualifiedStubName = getFullyQualifiedStubName ( clazz )  
+String stubClazzName = getJustClassPart ( fullyQualifiedStubName )  
+writer . append ( "@Service\n@Generated(\"org.glassfish.hk2.stub.generator.StubProcessor\")\n" )  
+@ Stub @ Named ( InhabitantsGeneratorTest . ALICE ) @ PerLookup public static abstract class AliceBeanStub implements NamedBean  
+di . setImplementation ( "org.jvnet.hk2.metadata.tests.faux.stub.AbstractService_RandomBeanStub_hk2Stub" )  
+di . addAdvertisedContract ( "org.jvnet.hk2.metadata.tests.faux.stub.AbstractService_RandomBeanStub_hk2Stub" )  
+di . setImplementation ( "org.jvnet.hk2.metadata.tests.faux.stub.AbstractService_NamedBeanStub_hk2Stub" )  
+di . addAdvertisedContract ( "org.jvnet.hk2.metadata.tests.faux.stub.AbstractService_NamedBeanStub_hk2Stub" )  
+di . setImplementation ( "org.jvnet.hk2.metadata.tests.faux.stub.AbstractService_AliceBeanStub_hk2Stub" )  
+di . addAdvertisedContract ( "org.jvnet.hk2.metadata.tests.faux.stub.AbstractService_AliceBeanStub_hk2Stub" )  
+di . setScope ( PerLookup . class . getName ( ) )  

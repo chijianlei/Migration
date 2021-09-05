@@ -1,0 +1,5 @@
+descriptor = new gpsiScalarSpectralIndexDescriptor ( new gpsiJGAPVoxelCombiner ( fitness . getB ( ) , best [ 1 ] ) )  
+File dir = new File ( programsPath + "5/" )  
+this . rawDataset . assignFolds ( new byte [ ] { 4 , 0 , 1 } , null , new byte [ ] { 3 } )  
+engine . eval ( "function srt(a) { return Math.sqrt(Math.abs(a)); }" )  
+engine . eval ( "function rlog(a) { return a == 0.0 ? 0.0 : Math.log(Math.abs(a)); }" )  

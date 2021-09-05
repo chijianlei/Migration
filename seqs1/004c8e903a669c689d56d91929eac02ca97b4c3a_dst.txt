@@ -1,0 +1,97 @@
+
+clipboard = ( ClipboardManager ) getSystemService ( Context . CLIPBOARD_SERVICE )  
+manager = ( InputMethodManager ) getSystemService ( Context . INPUT_METHOD_SERVICE )  
+wakeLock = ( ( PowerManager ) getSystemService ( Context . POWER_SERVICE ) ) . newWakeLock ( 
+PowerManager . SCREEN_DIM_WAKE_LOCK , "demo" )  
+
+chatType = getIntent ( ) . getIntExtra ( "chatType" , CHATTYPE_SINGLE ) ; 
+toChatUsername = getIntent ( ) . getStringExtra ( "userId" )  
+
+
+} else  
+findViewById ( R . id . container_video_call ) . setVisibility ( View . GONE )  
+toChatUsername = getIntent ( ) . getStringExtra ( "groupId" )  
+
+if ( chatType == CHATTYPE_GROUP )  
+onGroupViewCreation ( )  
+onChatRoomViewCreation ( )  
+} else  
+ 
+
+groupListener = new GroupListener ( )  
+@ Override 
+
+runOnUiThread ( new Runnable ( ) { @ Override public void run ( ) { pd . dismiss ( ) ; room = EMChatManager . getInstance ( ) . getChatRoom ( toChatUsername ) ; if ( room != null ) { ( ( TextView ) findViewById ( R . id . name ) ) . setText ( room . getName ( ) ) ; } else { ( ( TextView ) findViewById ( R . id . name ) ) . setText ( toChatUsername ) ; } EMLog . d ( TAG , "join room success : " + room . getName ( ) ) ; conversation = EMChatManager . getInstance ( ) . getConversation ( toChatUsername ) ; conversation . markAllMessagesAsRead ( ) ; int msgCount = msgs != null ? msgs . size ( ) : 0 ; if ( msgCount < conversation . getAllMsgCount ( ) && msgCount < pagesize ) { String msgId = null ; if ( msgs != null && msgs . size ( ) > 0 ) { msgId = msgs . get ( 0 ) . getMsgId ( ) ; } conversation . loadMoreGroupMsgFromDB ( msgId , pagesize ) ; } adapter . refreshSelectLast ( ) ; } } ) ; } @ Override public void onError ( final int error , String errorMsg ) { EMLog . d ( TAG , "join room failure : " + error ) ; runOnUiThread ( new Runnable ( ) { @ Override public void run ( ) { pd . dismiss ( ) ; } } ) ; finish ( ) ; } } ) ; } protected void onActivityResult ( int requestCode , int resultCode , Intent data )  
+
+public void run ( ) { pd . dismiss ( )  
+if ( room != null ) { ( ( TextView ) findViewById ( R . id . name ) ) . setText ( room . getName ( ) ) ; } else { ( ( TextView ) findViewById ( R . id . name ) ) . setText ( toChatUsername ) ; } EMLog . d ( TAG , "join room success : " + room . getName ( ) ) ; conversation = EMChatManager . getInstance ( ) . getConversation ( toChatUsername ) ; conversation . markAllMessagesAsRead ( ) ; int msgCount = msgs != null ? msgs . size ( ) : 0 ; if ( msgCount < conversation . getAllMsgCount ( ) && msgCount < pagesize ) { String msgId = null ; if ( msgs != null && msgs . size ( ) > 0 ) { msgId = msgs . get ( 0 ) . getMsgId ( ) ; } conversation . loadMoreGroupMsgFromDB ( msgId , pagesize ) ; } adapter . refreshSelectLast ( ) ; } } ) ; } @ Override public void onError ( final int error , String errorMsg ) { EMLog . d ( TAG , "join room failure : " + error )  
+!= null )  
+( ( TextView ) findViewById ( R . id . name ) ) . setText ( room . getName ( ) ) ; } else  
+( ( TextView ) findViewById ( R . id . name ) ) . setText ( toChatUsername )  
+ 
+EMLog . d ( TAG , "join room success : " + room . getName ( ) )  
+conversation = EMChatManager . getInstance ( ) . getConversation ( toChatUsername )  
+conversation . markAllMessagesAsRead ( )  
+
+
+if ( msgCount < conversation . getAllMsgCount ( ) && msgCount < pagesize )  
+ 
+conversation . loadMoreGroupMsgFromDB ( msgId , pagesize )  
+conversation . loadMoreGroupMsgFromDB ( msgId , pagesize )  
+loadMoreGroupMsgFromDB ( msgId , pagesize )  
+msgId , pagesize )  
+ 
+
+adapter . refreshSelectLast ( )  
+
+
+listView . setOnScrollListener ( new ListScrollListener ( ) )  
+
+public void run ( ) { pd . dismiss ( )  
+)  
+finish ( ) ; } } ) ; } 
+
+} )  
+
+
+
+
+if ( msgs != null && msgs . size ( ) > 0 )  
+msgId = msgs . get ( 0 ) . getMsgId ( )  
+= msgs . get ( 0 ) . getMsgId ( )  
+getMsgId ( )  
+
+ 
+if ( chatType == CHATTYPE_SINGLE )  
+conversation . loadMoreMsgFromDB ( msgId , pagesize )  
+else  
+ 
+
+
+
+
+@ Override 
+hideKeyboard ( ) ; more . setVisibility ( View . GONE ) ; iv_emoticons_normal . setVisibility ( View . VISIBLE ) ; iv_emoticons_checked . setVisibility ( View . INVISIBLE ) ; emojiIconContainer . setVisibility ( View . GONE ) ; btnContainer . setVisibility ( View . GONE ) ; return false ; } } ) ; } protected void onGroupViewCreation ( ) { group = EMChatManager . getInstance ( ) . getGroup ( toChatUsername )  
+
+iv_emoticons_normal . setVisibility ( View . VISIBLE ) ; iv_emoticons_checked . setVisibility ( View . INVISIBLE )  
+emojiIconContainer . setVisibility ( View . GONE )  
+btnContainer . setVisibility ( View . GONE )  
+return false  
+
+
+
+
+String forward_msg_id = getIntent ( ) . getStringExtra ( "forward_msg_id" )  
+if ( forward_msg_id != null )  
+ 
+
+findViewById ( R . id . container_to_group ) . setVisibility ( View . GONE )  
+ 
+
+intent . putExtra ( "groupId" , username )  
+ 
+sortConversationByLastChatTime ( sortList )  
+} catch ( Exception e )  
+ 
+
+

@@ -1,0 +1,1 @@
+GameState . instance ( ) . getDungeon ( ) . removeNPC ( this . name )  

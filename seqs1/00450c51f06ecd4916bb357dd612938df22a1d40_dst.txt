@@ -1,0 +1,14 @@
+catch ( Exception e )  
+if ( model == null ) 
+listeners . fireBuildStarting ( myProject )  
+throw new CoreException ( new Status ( IStatus . ERROR , PLUGIN_ID , 0 , "Build Error!" , e ) )  
+if ( resource != null && resource . exists ( ) )  
+IMarker marker = DefaultBuildErrorDetailsHandler . getDefaultResource ( project , defaultResource ) . createMarker ( markerType )  
+marker . setAttribute ( IMarker . SEVERITY , severity )  
+marker . setAttribute ( IMarker . MESSAGE , formatted )  
+FileLine fl = rover . getHeader ( location . header , location . context )  
+if ( fl != null )  
+file = fl . file  
+line = fl . line  
+start = fl . start  
+end = fl . end  

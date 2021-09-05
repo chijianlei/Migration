@@ -1,0 +1,4 @@
+String targetFolder = BUCKET_NAME + "/public/" + folderName  
+String url = AMAZON_URL + uploadResult . getBucketName ( ) + "/" + filename  
+@ JsonIgnoreProperties ( ignoreUnknown = true ) @ JsonInclude ( JsonInclude . Include . NON_NULL ) @ Entity ( "BaseAd" ) public class BaseAd extends BaseModel  
+updateAd ( savedAd )  

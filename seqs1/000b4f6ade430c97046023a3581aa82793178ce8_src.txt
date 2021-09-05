@@ -1,0 +1,3 @@
+int rv  
+if ( test . isDirectory ( ) )  
+boolean exist = myClient . changeWorkingDirectory ( dir )  

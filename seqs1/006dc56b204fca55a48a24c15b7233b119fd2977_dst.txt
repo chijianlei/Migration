@@ -1,0 +1,84 @@
+switch ( msg . what ) { case MSG_SUCCESS : detailActivityTime . setText ( Constants . activity_starttime + " 鑷" + Constants . activity_endttime ) ; detailActivityLocation . setText ( Constants . seller_address ) ; detailActivityDescri . setText ( Constants . activity_detail ) ; downloadImage ( Constants . activity_img ) ; break ; case 2 : activityDetailImage . setBackground ( new BitmapDrawable ( Constants . activity_bitmap ) ) ; break  
+imageLoader . displayImage ( str , new ImageView ( getApplicationContext ( ) ) , new ImageLoadingListener ( ) { public void onLoadingStarted ( String s , View view ) { } public void onLoadingFailed ( String s , View view , FailReason failReason ) { } public void onLoadingComplete ( String s , View view , Bitmap bitmap ) { mHandler . sendEmptyMessage ( 2 ) ; Constants . activity_bitmap = bitmap ; } public void onLoadingCancelled ( String s , View view ) { } } )  
+public static int currIndex = 1  
+viewPager . setCurrentItem ( 1 )  
+ViewPager . OnPageChangeListener onPageChangeListener = new ViewPager . OnPageChangeListener ( )  
+int one = offset * 2 + bmpW  
+int two = one * 2  
+@ Override public void onPageScrolled ( int position , float positionOffset , int positionOffsetPixels )  
+@ Override public void onPageSelected ( int position )  
+Animation animation = new TranslateAnimation ( one * currIndex , one * position , 0 , 0 )  
+currIndex = position  
+animation . setFillAfter ( true )  
+animation . setDuration ( 300 )  
+imageView . startAnimation ( animation )  
+@ Override public void onPageScrollStateChanged ( int state )  
+switch ( i ) { case 0 : getFromLocal ( ) ; break ; case 1 : getAppVersionAndTakePermission ( ) ; break  
+getFromCamera ( )  
+switch ( i ) { case 0 : Intent intent = new Intent ( Intent . ACTION_PICK , null ) ; intent . setDataAndType ( MediaStore . Images . Media . EXTERNAL_CONTENT_URI , "image/*" ) ; startActivityForResult ( intent , IMAGE_REQUEST_CODE ) ; break ; case 1 : getAppVersionAndTakePermission ( ) ; break  
+Intent intent = new Intent ( Intent . ACTION_PICK , null )  
+intent . setDataAndType ( MediaStore . Images . Media . EXTERNAL_CONTENT_URI , "image/*" )  
+startActivityForResult ( intent , IMAGE_REQUEST_CODE )  
+"鎽勫儚澶存潈闄愭嫆缁, Toast.LENGTH_SHORT).show();
+            }
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+    private void getFromCamera(){
+        Intent intent1 = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        intent1.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(new File(Environment.getExternalStorageDirectory(), " 
+"鎽勫儚澶存潈闄愭嫆缁, Toast.LENGTH_SHORT).show();
+            }
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+    private void getFromCamera(){
+        Intent intent1 = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        intent1.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(new File(Environment.getExternalStorageDirectory(), " photo1 . JPG ")));
+        startActivityForResult(intent1, CAMERA_REQUEST_CODE);
+    }
+
+    private void initView(){
+        editBack = (ImageView) findViewById(R.id.edit_back);
+        editPublish = (Button) findViewById(R.id.edit_publish);
+        editActivityImage = (LinearLayout) findViewById(R.id.edit_activity_image);
+        editDetailImage = (ImageView)findViewById(R.id.detail_image);
+        editActivityName = (EditText) findViewById(R.id.edit_activity_name);
+        editActivityLocation = (TextView) findViewById(R.id.edit_activity_location);
+        editActivityLocation.setText(Constants.seller_address);
+        editActivityStart = (EditText) findViewById(R.id.edit_activity_starttime);
+        editActivityStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Calendar c = Calendar.getInstance();
+                new DatePickerDialog(PublishActivity.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        editActivityStart.setText(" 
+")));
+        startActivityForResult(intent1, CAMERA_REQUEST_CODE);
+    }
+
+    private void initView(){
+        editBack = (ImageView) findViewById(R.id.edit_back);
+        editPublish = (Button) findViewById(R.id.edit_publish);
+        editActivityImage = (LinearLayout) findViewById(R.id.edit_activity_image);
+        editDetailImage = (ImageView)findViewById(R.id.detail_image);
+        editActivityName = (EditText) findViewById(R.id.edit_activity_name);
+        editActivityLocation = (TextView) findViewById(R.id.edit_activity_location);
+        editActivityLocation.setText(Constants.seller_address);
+        editActivityStart = (EditText) findViewById(R.id.edit_activity_starttime);
+        editActivityStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Calendar c = Calendar.getInstance();
+                new DatePickerDialog(PublishActivity.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        editActivityStart.setText(" 
+");
+                            for(int i=0; i<count; i++){
+                                JSONObject jo = jsonArray.getJSONObject(i);
+                                if(jo.getString(" 

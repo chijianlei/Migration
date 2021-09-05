@@ -1,0 +1,2 @@
+addClientEvent ( Gmaps . class , "onMapMove" , CE_DUPLICATE_IGNORE )  
+addClientEvent ( Gmaps . class , "onMapZoom" , CE_DUPLICATE_IGNORE )  

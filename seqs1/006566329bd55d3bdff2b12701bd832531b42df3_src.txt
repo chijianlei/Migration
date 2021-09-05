@@ -1,0 +1,42 @@
+jTextField2 . setEditable ( false )  
+catch ( java . text . ParseException ex )  
+ex . printStackTrace ( )  
+jPanel3Layout . setHorizontalGroup ( jPanel3Layout . createParallelGroup ( javax . swing . GroupLayout . Alignment . LEADING ) . addComponent ( jTextField2 , javax . swing . GroupLayout . DEFAULT_SIZE , 212 , Short . MAX_VALUE ) )  
+jPanel3Layout . setVerticalGroup ( jPanel3Layout . createParallelGroup ( javax . swing . GroupLayout . Alignment . LEADING ) . addComponent ( jTextField2 , javax . swing . GroupLayout . PREFERRED_SIZE , javax . swing . GroupLayout . DEFAULT_SIZE , javax . swing . GroupLayout . PREFERRED_SIZE ) )  
+private int selectService ( String placa )  
+return - 1  
+private void updateService ( int idCliente , String placa , String modelo , int km , boolean situacao , String obs )  
+updateService ( IDField . getText ( ) , jTextField2 . getText ( ) , jFormattedTextField2 . getText ( ) , jCheckBox1 . isSelected ( ) , ClienteField . getText ( ) , jTextPane1 . getText ( ) , serviceId )  
+jTextField2 . setEditable ( true ) ; 
+jTextField2 . setText ( "150000" )  
+jButton1 . setText ( "Excluir" ) ; 
+String KM = jTextField2 . getText ( )  
+private javax . swing . JTextField jTextField2  
+PreparedStatement pst = Mul . prepareStatement ( sql2 )  
+ResultSet rs = pst . executeQuery ( )  
+if ( rs . next ( ) ) { 
+fullname = rs . getString ( "name" )  
+fullname += rs . getString ( "lname" ) ; 
+rs . close ( )  
+pst . close ( )  
+catch ( Exception e )  
+private Object [ ] [ ] getData ( String placa )  
+Object [ ] [ ] data = null  
+String sql2 = "SELECT rowid, * FROM servico WHERE Placa=" + placa  
+while ( rs . next ( ) ) 
+data [ i ] [ j ] = rs . getInt ( "rowid" ) ; j ++  
+data [ i ] [ j ] = rs . getString ( "Placa" ) ; j ++  
+data [ i ] [ j ] = rs . getString ( "Quilometragem" ) ; j ++  
+data [ i ] [ j ] = rs . getString ( "Modelo" ) ; j ++  
+data [ i ] [ j ] = rs . getBoolean ( "Situacao" ) ; j ++  
+data [ i ] [ j ] = rs . getInt ( "Idcliente" ) ; j ++  
+data [ i ] [ j ] = rs . getString ( "Obs" ) ; j = 0  
+catch ( Exception e )  
+JOptionPane . showMessageDialog ( this , "Erro. C贸digo: 04-07-01." , title , JOptionPane . ERROR_MESSAGE )  
+Object [ ] [ ] data = getData ( placa )  
+int i = data . length  
+for ( k = 0 ; k < j ; k ++ )  
+list [ k ] = data [ n ] [ k ]  
+model . addRow ( list )  
+DefaultTableModel model = ( DefaultTableModel ) jTable . getModel ( )  
+Object [ ] rowData = null  

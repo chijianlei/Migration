@@ -1,0 +1,23 @@
+public static PracticalGroupReport retrieve ( int reportID , String scenarioID )  
+stmt . setString ( 2 , scenarioID )  
+public static List < Report > retrieveDespatchedReportsByState ( String scenarioID , String stateID )  
+Connection conn = null  
+PreparedStatement stmt = null  
+conn = ConnectionManager . getConnection ( )  
+stmt . setString ( 1 , scenarioID )  
+stmt . setString ( 2 , stateID )  
+while ( rs . next ( ) )  
+Report report = new Report ( rs . getInt ( 1 ) , rs . getTimestamp ( 2 ) , rs . getString ( 3 ) , rs . getString ( 4 ) , rs . getString ( 5 ) , rs . getString ( 6 ) , rs . getInt ( 7 ) )  
+reports . add ( report )  
+catch ( SQLException e )  
+e . printStackTrace ( )  
+PreparedStatement stmt = null  
+ResultSet rs = null  
+conn = ConnectionManager . getConnection ( )  
+stmt = conn . prepareStatement ( "select max(reportID) as maxReportID from report" )  
+rs = stmt . executeQuery ( )  
+Connection conn = null  
+conn = ConnectionManager . getConnection ( )  
+preparedStatement . setInt ( 1 , dispatchStatus )  
+catch ( SQLException e )  
+e . printStackTrace ( )  

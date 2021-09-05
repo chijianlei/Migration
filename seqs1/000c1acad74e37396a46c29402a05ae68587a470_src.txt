@@ -1,0 +1,2 @@
+url = endpointUrl + "/projects/" + urlEncode ( repositoryName )  
+byte [ ] responseBody = method . getResponseBody ( )  

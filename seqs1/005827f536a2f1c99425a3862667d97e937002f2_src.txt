@@ -1,0 +1,4 @@
+public Configuration getConfig ( ) 
+this . config = plugin . getConfig ( )  
+if ( event . hasBlock ( ) && event . getClickedBlock ( ) . getTypeId ( ) == 92 ) 
+onPlayerRightClick ( p , event )  

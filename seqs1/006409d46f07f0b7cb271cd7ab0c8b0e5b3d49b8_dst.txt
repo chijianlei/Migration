@@ -1,0 +1,2 @@
+for ( ApplicationInstanceContainer container : getContainers ( ) )  
+returnobject . put ( container . getContainerLog ( lines ) )  

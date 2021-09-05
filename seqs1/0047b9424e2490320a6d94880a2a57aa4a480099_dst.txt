@@ -1,0 +1,25 @@
+c . gridx = 5  
+c . gridx = 5  
+c . gridy = 0  
+c . gridy = 0  
+storagePanel = new SetStoragePanel ( cpHeight , juliaViewer )  
+private Point origin , corner  
+private double realMin , realMax , imaginaryMin , imaginaryMax  
+double realWidth = realMax - realMin  
+double c = 255 f / ( ( double ) set . getDepth ( ) )  
+for ( int x = 0 ; x < img . getWidth ( ) ; x ++ )  
+double offsetX = ( realMin * img . getWidth ( ) ) / realWidth  
+double real = ( x + offsetX ) * ( realWidth / ( double ) img . getWidth ( ) )  
+for ( int y = 0 ; y < img . getHeight ( ) ; y ++ )  
+private void updateImage ( ) { 
+double imaginaryHeight = imaginaryMax - imaginaryMin  
+double offsetY = ( imaginaryMin * img . getHeight ( ) ) / imaginaryHeight  
+double imaginary = ( ( y + offsetY ) ) * ( imaginaryHeight / ( double ) img . getHeight ( ) )  
+int n = set . getPointDivergenceDepth ( new ComplexNumber ( real , imaginary ) )  
+int r = ( int ) ( n * c )  
+img . setRGB ( x , ( img . getHeight ( ) - 1 ) - y , new Color ( r , r , r ) . getRGB ( ) )  
+} catch ( ArrayIndexOutOfBoundsException e )  
+System . err . println ( e . getMessage ( ) + " x:" + x + " y:" + y )  
+@ Override public void mousePressed ( MouseEvent e )  
+origin = e . getPoint ( ) ; 
+public double getRealMax ( )  

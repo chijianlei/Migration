@@ -1,0 +1,13 @@
+private enum taskTypes { FLOAT , DEADLINE , EVENT } ; 
+public AddCommand ( String description , String deadline , String startDate , String endDate , Set < String > tags ) throws IllegalValueException { assert description != null  
+taskTypes taskType = checkTaskType ( deadline , startDate , endDate )  
+switch ( taskType ) { case FLOAT : this . toAdd = new FloatingTask ( new Description ( description ) , new UniqueTagList ( tagSet ) ) ; case DEADLINE : this . toAdd = new DeadlineTask ( new Description ( description ) , new DateTime ( deadline ) , new UniqueTagList ( tagSet ) ) ; case EVENT : 
+private taskTypes checkTaskType ( String deadline , String startDate , String endDate ) throws IllegalValueException  
+if ( deadline == null && startDate == null && endDate == null ) { 
+return taskTypes . FLOAT  
+return taskTypes . DEADLINE  
+if ( startDate != null && endDate != null )  
+return taskTypes . EVENT  
+throw new IllegalValueException ( "Too many/few DATETIME arguments!" )  
+return new CommandResult ( String . format ( MESSAGE_SUCCESS , toAdd ) )  
+return new AddCommand ( argsTokenizer . getPreamble ( ) . get ( ) , argsTokenizer . getValue ( PREFIX_DEADLINE ) . orElse ( null ) , argsTokenizer . getValue ( PREFIX_START_DATETIME ) . orElse ( null ) , argsTokenizer . getValue ( PREFIX_END_DATETIME ) . orElse ( null ) , ParserUtil . toSet ( argsTokenizer . getAllValues ( PREFIX_TAG ) ) )  

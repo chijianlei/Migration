@@ -1,0 +1,2 @@
+@ Override public Map < String , String > getHeaders ( ) throws AuthFailureError  
+return createBasicAuthHeader ( "user" , "password" )  

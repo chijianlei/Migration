@@ -1,0 +1,2 @@
+boolean loadImagesFinal = this . loadImages && ( loadOnCellular || ! isCellNetwork )  
+ImageLoader . getInstance ( ) . displayImage ( src , new NonViewAware ( src , size , ViewScaleType . FIT_INSIDE ) , opt , imageAware )  

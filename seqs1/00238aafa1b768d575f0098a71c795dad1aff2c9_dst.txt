@@ -1,0 +1,45 @@
+int testBoxX  
+int testBoxY  
+int width  
+int posX  
+int posY  
+int floor  
+String currentImage  
+setPreferredSize ( new Dimension ( 720 , 720 ) )  
+setVisible ( true )  
+@ Override public void paint ( Graphics graphics )  
+super . paint ( graphics )  
+for ( int i = 0 ; i < theWall . length ; i ++ )  
+for ( int j = 0 ; j < theWall . length ; j ++ )  
+if ( theWall [ i ] [ j ] == 1 )  
+PositionedImage wall = new PositionedImage ( "/Users/lica/GreenFox/dzlica-RPG_game/image/wall.png" , j * this . floor , i * this . floor )  
+wall . draw ( graphics )  
+if ( theWall [ i ] [ j ] == 0 )  
+PositionedImage background = new PositionedImage ( "/Users/lica/GreenFox/dzlica-RPG_game/image/floor.png" , j * this . floor , i * this . floor )  
+background . draw ( graphics )  
+MoveHero hero = new MoveHero ( this . currentImage , this . testBoxX , this . testBoxY )  
+hero . draw ( graphics )  
+public static void main ( String [ ] args )  
+JFrame frame = new JFrame ( "RPG Game" )  
+Board board = new Board ( )  
+frame . add ( board )  
+frame . setDefaultCloseOperation ( JFrame . EXIT_ON_CLOSE )  
+frame . setVisible ( true )  
+frame . pack ( )  
+frame . addKeyListener ( board )  
+@ Override public void keyTyped ( KeyEvent e )  
+@ Override public void keyPressed ( KeyEvent e )  
+@ Override public void keyReleased ( KeyEvent e )  
+if ( e . getKeyCode ( ) == KeyEvent . VK_UP )  
+currentImage = "/Users/lica/GreenFox/dzlica-RPG_game/image/hero-up.png"  
+testBoxY -= 72  
+if ( e . getKeyCode ( ) == KeyEvent . VK_DOWN )  
+currentImage = "/Users/lica/GreenFox/dzlica-RPG_game/image/hero-down.png"  
+testBoxY += 72  
+if ( e . getKeyCode ( ) == KeyEvent . VK_LEFT )  
+currentImage = "/Users/lica/GreenFox/dzlica-RPG_game/image/hero-left.png"  
+testBoxX -= 72  
+if ( e . getKeyCode ( ) == KeyEvent . VK_RIGHT )  
+currentImage = "/Users/lica/GreenFox/dzlica-RPG_game/image/hero-right.png"  
+testBoxX += 72  
+repaint ( )  

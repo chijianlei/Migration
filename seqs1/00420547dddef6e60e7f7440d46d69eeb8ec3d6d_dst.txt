@@ -1,0 +1,5 @@
+throw new SchedulerException ( null , "Unable to estimate the duration of action '" + a . getSimpleName ( ) + "' related to '" + e + "'" )  
+if ( d <= 0 )  
+throw new SchedulerException ( null , "The duration for action " + a . getSimpleName ( ) + " over '" + e + "' has been evaluated to a negative value (" + d + "). Unsupported" )  
+public LinearToAResourceActionDuration ( String rcId , double a , double b )  
+return ( int ) Math . round ( coefficient * x + offset )  

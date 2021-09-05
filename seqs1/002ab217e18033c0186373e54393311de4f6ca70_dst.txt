@@ -1,0 +1,6 @@
+@ Override protected Object doInBackground ( ) throws Exception 
+map = getMusicFolderChildren ( )  
+return null  
+FileList request = DriveUtil . service . files ( ) . list ( ) . setQ ( "mimeType = 'application/vnd.google-apps.folder' and title != 'Musica'" ) . execute ( )  
+List < File > children = request . getItems ( )  
+for ( File child : children ) 

@@ -1,0 +1,2 @@
+for ( ColumnDefinition colDef : columnDefinitions )  
+if ( colDef . getIndex ( ) == index )  

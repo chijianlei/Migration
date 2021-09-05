@@ -1,0 +1,2 @@
+LoggedUser . get ( ) . getUserTo ( ) . setId ( userId )  
+response . sendRedirect ( "meals" )  

@@ -1,0 +1,5 @@
+@ RequestMapping ( value = "/home" ) public String getWelcomPage ( @ RequestParam ( value = "lang" , required = false ) String lang , Model model )  
+@ RequestMapping ( value = "/contact" ) public String getContactPage ( @ RequestParam ( value = "lang" , required = false ) String lang , Model model )  
+private String BELONGSTOALLPAGE = "all"  
+if ( key . contains ( page ) || key . contains ( BELONGSTOALLPAGE ) )  
+innerTexts . put ( inputKey , resourceBundle . getString ( key ) )  

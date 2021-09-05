@@ -1,0 +1,20 @@
+public Layout buildLayout ( )  
+return buildLayout ( new Size ( 0.036 , 0.008 ) , 7 , 0.008f )  
+private double crop = 0.10  
+timer . scheduleAtFixedRate ( ( ) -> { MatOfKeyPoint newKeypoints = null ; Mat newDescriptors = null ; try { capture . read ( frame ) ; double [ ] angle = new double [ 1 ] ; Size newSize = new Size ( frame . width ( ) * ( 1 - 2 * crop ) , frame . height ( ) * ( 1 - 2 * crop ) ) ; Img frameImg = new Img ( frame , false ) . resize ( newSize ) ; src0 . setImage ( frameImg . toJfxImage ( ) ) ; Img deskewed_ = deskew ( frame , angle ) ; Img deskiewedCopy = new Img ( deskewed_ . getSrc ( ) , true ) ; src1 . setImage ( deskewed_ . toJfxImage ( ) ) ; newKeypoints = detect ( deskewed_ . getSrc ( ) ) ; newDescriptors = new Mat ( ) ; extractor . compute ( deskewed_ . getSrc ( ) , newKeypoints , newDescriptors ) ; deskewed_ . buildLayout ( ) . draw ( deskiewedCopy , new Scalar ( 0 , 255 , 0 ) , 1 ) ; src2 . setImage ( Tools . mat2jfxImage ( deskiewedCopy . getSrc ( ) ) ) ; Img stabilized = stabilize ( frame , stabilizedMat , deskewed_ . size ( ) , matcher , oldKeypoints [ 0 ] , newKeypoints , oldDescriptors [ 0 ] , newDescriptors , angle [ 0 ] , crop ) ; if ( stabilized != null ) { Img stabilizedCopy = new Img ( stabilized . getSrc ( ) , true ) ; if ( layout [ 0 ] == null ) layout [ 0 ] = stabilized . buildLayout ( ) ; layout [ 0 ] . draw ( stabilizedCopy , new Scalar ( 0 , 255 , 0 ) , 1 ) ; src3 . setImage ( stabilizedCopy . toJfxImage ( ) ) ; } count [ 0 ] ++ ; } catch ( Exception e ) { e . printStackTrace ( ) ; } finally { if ( ( count [ 0 ] % 50 ) == 0 ) { oldKeypoints [ 0 ] = newKeypoints ; oldDescriptors [ 0 ] = newDescriptors ; layout [ 0 ] = null ; } } } , 0 , 33 , TimeUnit . MILLISECONDS )  
+Img deskiewedCopy = new Img ( deskewed_ . getSrc ( ) , true )  
+src1 . setImage ( deskewed_ . toJfxImage ( ) )  
+deskewed_ . buildLayout ( ) . draw ( deskiewedCopy , new Scalar ( 0 , 255 , 0 ) , 1 )  
+src2 . setImage ( Tools . mat2jfxImage ( deskiewedCopy . getSrc ( ) ) )  
+Img stabilized = stabilize ( frame , stabilizedMat , deskewed_ . size ( ) , matcher , oldKeypoints [ 0 ] , newKeypoints , oldDescriptors [ 0 ] , newDescriptors , angle [ 0 ] , crop )  
+if ( ( count [ 0 ] % 50 ) == 0 )  
+if ( goodMatches . size ( ) > 20 )  
+Mat mask = new Mat ( new Size ( size . width / ( 1 - 2 * crop ) , size . height / ( 1 - 2 * crop ) ) , CvType . CV_8UC1 , new Scalar ( 255 ) )  
+try ( Img img = new Img ( src ) ; Img adaptativThreshold = img . cvtColor ( Imgproc . COLOR_BGR2GRAY ) . adaptativeThresHold ( 255 , Imgproc . ADAPTIVE_THRESH_MEAN_C , Imgproc . THRESH_BINARY_INV , 17 , 9 ) ; Img closed = adaptativThreshold . morphologyEx ( Imgproc . MORPH_CLOSE , Imgproc . MORPH_ELLIPSE , new Size ( 5 , 5 ) ) ; )  
+try ( Img img = new Img ( frame ) ; Img adaptativThreshold = img . cvtColor ( Imgproc . COLOR_BGR2GRAY ) . adaptativeThresHold ( 255 , Imgproc . ADAPTIVE_THRESH_MEAN_C , Imgproc . THRESH_BINARY_INV , 17 , 9 ) ; Img closed = adaptativThreshold . morphologyEx ( Imgproc . MORPH_CLOSE , Imgproc . MORPH_ELLIPSE , new Size ( 5 , 5 ) ) ; )  
+Imgproc . warpAffine ( frame , rotated , matrix , new Size ( frame . size ( ) . width , frame . size ( ) . height ) )  
+if ( x [ 0 ] <= x [ 1 ] && y [ 0 ] <= y [ 1 ] )  
+if ( level < 0 )  
+return this  
+if ( shards . isEmpty ( ) )  
+return this  

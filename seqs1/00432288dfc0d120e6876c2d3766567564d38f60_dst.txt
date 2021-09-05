@@ -1,0 +1,2 @@
+BufferedImage background = loadImage ( "hockeyField.png" )  
+g . setColor ( Color . BLACK )  

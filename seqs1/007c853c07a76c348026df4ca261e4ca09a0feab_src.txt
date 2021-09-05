@@ -1,0 +1,11 @@
+updateFuelLevel ( fuelLevel )  
+updateEstimatedKmLeft ( fuelConsumed )  
+public void updateOdometer ( double odometerReading )  
+if ( validOdometerReading ( odometerReading ) )  
+if ( this . fuelLevel == fuelLevel )  
+tankSize = fuelConsumed * 100 / ( this . fuelLevel - fuelLevel )  
+private void updateFuelConsumed ( double fuelConsumed )  
+if ( validFuelConsumedValue ( fuelConsumed ) )  
+updateFuelUsage ( )  
+this . fuelLevel = fuelLevel  
+updateFuelLeftRectangle ( )  

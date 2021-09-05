@@ -1,0 +1,7 @@
+return ( T [ ] ) this . models . toArray ( )  
+public T [ ] slice ( int begin )  
+return ( T [ ] ) this . models . subList ( begin , - 1 ) . toArray ( )  
+public T [ ] slice ( int begin , int end )  
+return ( T [ ] ) this . models . subList ( begin , end ) . toArray ( )  
+public interface Reflection  
+public < T , V extends T > T instantiate ( Class < V > clazz )  

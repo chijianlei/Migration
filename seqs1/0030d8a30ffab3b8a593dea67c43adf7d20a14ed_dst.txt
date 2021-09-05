@@ -1,0 +1,8 @@
+while ( true ) 
+byte [ ] responseMessageByteArray = new byte [ 4000 ]  
+onActiveOnvifDevice ( discoveredCamera )  
+cameraList . add ( discoveredCamera )  
+httpPort = localURL . getPort ( )  
+if ( httpPort == - 1 ) 
+httpPort = 80  
+private final String TEST_IP = "10.0.0.25"  

@@ -1,0 +1,8 @@
+public class BinaryGetResponse extends BinaryResponse  
+public BinaryGetResponse ( BinaryCommand command , ErrorCode error )  
+super ( command , error )  
+public BinaryGetResponse ( BinaryCommand command , Item item )  
+ByteBuffer message = create ( command , errorCode , extlen , keylen , datalen , cas )  
+buffer = createAndRewind ( command , errorCode , 0 , 0 , 0 , 0 )  
+static ByteBuffer create ( BinaryCommand command , ErrorCode errorCode , int extlen , int keylen , int datalen , long cas )  
+message . putShort ( ( short ) keylen )  

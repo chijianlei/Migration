@@ -1,0 +1,1 @@
+g2ds . setColor ( new Color ( 238 , 238 , 238 , 238 ) )  

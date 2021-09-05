@@ -1,0 +1,9 @@
+public Car ( int currentLocation , int currentDestination )  
+if ( ! locationsVisited . contains ( currentLocation ) )  
+locationsVisited . add ( currentLocation )  
+currentLocation = currentDestination  
+for ( int i = Simulator . random . nextInt ( possibleMoves . size ( ) - 1 ) % Simulator . NUMOFLOCATIONS ; i < possibleMoves . size ( ) ; i ++ ) 
+if ( ! locationsVisited . contains ( possibleMoves . get ( i ) . getDest ( ) ) )  
+currentDestination = possibleMoves . get ( i ) . getDest ( )  
+distanceToNextDestination = ( int ) possibleMoves . get ( i ) . getWeight ( ) ; 
+totalDistancetoNextLocation = distanceToNextDestination  

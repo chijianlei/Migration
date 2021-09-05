@@ -1,0 +1,12 @@
+public class App  
+public static void main ( String [ ] args )  
+Deck deck = new Deck ( )  
+deck = DeckService . generateDeck ( )  
+Hand hand1 = new Hand ( )  
+Hand hand2 = new Hand ( )  
+hand2 . setHandCards ( list2 )  
+System . out . println ( card . getCardValue ( ) . getCardValue ( ) + " of " + card . getSuit ( ) )  
+System . out . println ( "Hand #1 wins with higher " + hand1 . getRank ( ) )  
+System . out . println ( "Hand #2 wins with higher " + hand2 . getRank ( ) )  
+if ( pairedCards . size ( ) > 2 ) { 
+} else if ( pairedCardsSize == 4 && pairedCards . get ( 0 ) . getCardValue ( ) == pairedCards . get ( pairedCardsSize ) . getCardValue ( ) )  

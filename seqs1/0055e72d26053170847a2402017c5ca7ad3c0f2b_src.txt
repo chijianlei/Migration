@@ -1,0 +1,3 @@
+checkArgument ( isValidVelocity ( speedComponent . getX ( ) , speed , radius , frequency ) , "X velocity component is higher than 1 for the given origin-destination points, " + "velocity, radius and frequency values." )  
+checkArgument ( isValidVelocity ( speedComponent . getY ( ) , speed , radius , frequency ) , "Y velocity component is higher than 1 for the given origin-destination points, " + "velocity, radius and frequency values." )  
+checkArgument ( isValidVelocity ( speedComponent . getZ ( ) , speed , radius , frequency ) , "Z velocity component is higher than 1 for the given origin-destination points, " + "velocity, radius and frequency values." )  

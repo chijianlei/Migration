@@ -1,0 +1,5 @@
+input . nextLine ( )  
+number = input . nextInt ( )  
+input . nextLine ( )  
+number = input . nextInt ( )  
+String output = ( "You are in " + name + ".\n" + description + "." + getItems ( ) + readExits ( ) )  

@@ -1,0 +1,5 @@
+@ Named @ SessionScoped public class CustomerController implements Serializable  
+customer = customerService . findCustomerById ( customer . getId ( ) )  
+customer . getPets ( ) . add ( pet )  
+customerService . update ( customer )  
+public String prepareEdit ( Long id )  

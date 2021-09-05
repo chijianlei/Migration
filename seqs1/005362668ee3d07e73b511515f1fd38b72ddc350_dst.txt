@@ -1,0 +1,5 @@
+private volatile boolean isPending  
+this . isPending = this . queue . peek ( ) != this  
+this . isPending = this . queue . peek ( ) != this  
+execute0 ( )  
+if ( ! next . isPending )  

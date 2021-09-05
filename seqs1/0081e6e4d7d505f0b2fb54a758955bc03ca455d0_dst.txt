@@ -1,0 +1,4 @@
+outString [ 1 ] = "c  --- Radius(km) ---  --- Density (g/cm^3) ---"  
+outString [ 2 ] = "c                      ---   Vsv     (km/s) ---"  
+return outString  
+} 

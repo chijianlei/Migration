@@ -1,0 +1,1 @@
+private Set < String > ignoredMethods = new HashSet < String > ( Arrays . asList ( "equals" , "getInvocationHandler" , "set*" , "toString" , "getClass" , "notify" , "notifyAll" , "wait" , "hashCode" , "clone" , "is*" , "get*" ) )  

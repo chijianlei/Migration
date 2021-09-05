@@ -1,0 +1,5 @@
+private ValidatorState state  
+private Collection < ValidatorListener > listeners = new ArrayList ( )  
+final boolean hasChanged = ( ! setState . equals ( this . state ) )  
+@ Override public void synced ( final Binding binding )  
+setState ( new ValidatorStateImpl ( ValidatorState . Type . VALID ) )  

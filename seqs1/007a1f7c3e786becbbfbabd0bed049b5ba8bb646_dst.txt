@@ -1,0 +1,3 @@
+String [ ] allAliases = value . split ( "\\|(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)" , - 1 )  
+for ( String uniqueAlias : allAliases )  
+synonyms = synonyms . concat ( alias [ 1 ] ) . concat ( "$" )  

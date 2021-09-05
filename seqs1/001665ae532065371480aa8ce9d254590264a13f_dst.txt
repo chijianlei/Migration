@@ -1,0 +1,5 @@
+public class PreviewPanel extends JGPPanel implements Observer , GnuplotRunner . ImageConsumer , ComponentListener  
+public PreviewPanel ( PlotController plotController , PlottableDataController plottableDataController , LabelController labelController ) 
+plotScript = "set terminal pngcairo size " + previewWidth + "," + previewHeight + "\n" + plotScript  
+private void renderImage ( ) 
+LOG . info ( "Enabled preview refreshing" )  

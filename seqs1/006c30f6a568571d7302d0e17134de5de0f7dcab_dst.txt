@@ -1,0 +1,3 @@
+if ( ! parseElements . contains ( NATTY_TIME_FIELD ) && ( dateTime . isBefore ( reference ) || dateTime . isEqual ( reference ) ) )  
+if ( ! parseElements . contains ( NATTY_TIME_FIELD ) && ( dateTime . isBefore ( reference ) || dateTime . isEqual ( reference ) ) )  
+dateTime = LocalDateTime . of ( dateTime . toLocalDate ( ) , reference . toLocalTime ( ) . plusHours ( 1 ) )  

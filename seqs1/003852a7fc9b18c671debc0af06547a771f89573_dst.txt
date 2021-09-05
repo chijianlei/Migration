@@ -1,0 +1,4 @@
+if ( x + w > source . getWidth ( ) )  
+w = source . getWidth ( ) - x  
+if ( y + h > source . getHeight ( ) )  
+h = source . getHeight ( ) - y  

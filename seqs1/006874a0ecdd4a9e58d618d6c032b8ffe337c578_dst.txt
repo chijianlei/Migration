@@ -1,0 +1,3 @@
+else if ( current . getOwner ( ) != "Bank" && current . getOwner ( ) != plr . getName ( ) )  
+int value = plr . getMoney ( )  
+Player plr = getCurrentPlayer ( )  

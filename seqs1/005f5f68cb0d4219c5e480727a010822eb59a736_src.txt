@@ -1,0 +1,11 @@
+while ( queue . isEmpty ( ) ) { synchronized ( queue )  
+log ( "Queue is empty %s is waiting.\n" , Thread . currentThread ( ) . getName ( ) )  
+queue . wait ( )  
+Integer value  
+value = queue . remove ( )  
+queue . notifyAll ( )  
+while ( isQueueFull ( ) ) { synchronized ( queue )  
+log ( "Queue is full %s is waiting , size\n" , Thread . currentThread ( ) . getName ( ) , queue . size ( ) )  
+queue . wait ( )  
+queue . add ( data )  
+queue . notifyAll ( )  

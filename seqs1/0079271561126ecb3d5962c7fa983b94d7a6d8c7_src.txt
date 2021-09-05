@@ -1,0 +1,5 @@
+private int prevStartOfKey ; 
+if ( deleted == ' ' ) { 
+startOfKey = prevStartOfKey  
+startOfKey = prevStartOfKey ; 
+output . setText ( output . getText ( ) . substring ( 0 , location ) + code . get ( input . getText ( ) . substring ( startOfKey , input . getText ( ) . length ( ) - 1 ) ) )  

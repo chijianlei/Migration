@@ -1,0 +1,7 @@
+public Tile ( int r , int c ) 
+if ( SwingUtilities . isLeftMouseButton ( e ) ) 
+if ( SwingUtilities . isRightMouseButton ( e ) && ! isClicked ) 
+p . setIcon ( flaggedCellIcon )  
+isFlagged = true  
+p . setIcon ( hoveredCellIcon )  
+isFlagged = false  

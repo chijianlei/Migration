@@ -1,0 +1,28 @@
+makeTiles ( tileHandles , tileBelow2 , maxZoom )  
+makeTiles ( tileHandles , tileBelow3 , maxZoom )  
+makeTiles ( tileHandles , tileBelow4 , maxZoom )  
+tile . addChild ( tileBelow1 )  
+tile . addChild ( tileBelow2 )  
+tile . addChild ( tileBelow3 )  
+tile . addChild ( tileBelow4 )  
+return tileHandles . stream ( )  
+RawImageTileHandle ( final int zoom , final int column , final int row ) 
+RawImageTileHandle ( final int zoom , final int column , final int row , boolean gdalImage ) 
+private final List < TileHandle > children  
+return this . generateScaledTileFromChildren ( )  
+private BufferedImage generateScaledTileFromChildren ( ) throws TileStoreException 
+final Coordinate < Integer > resultCoordinate = RawImageTileReader . Origin . transform ( TileOrigin . UpperLeft , tileHandle . getColumn ( ) , tileHandle . getRow ( ) , this . matrix )  
+transformedChildren . add ( new RawImageTileHandle ( tileHandle . getZoomLevel ( ) , resultCoordinate . getX ( ) , resultCoordinate . getY ( ) , tileHandle . getImage ( ) ) )  
+. sort ( new Comparator < TileHandle > ( ) 
+@ Override public int compare ( TileHandle o1 , TileHandle o2 )  
+final int columnCompare = Integer . compare ( o1 . getColumn ( ) , o2 . getColumn ( ) )  
+final int rowCompare = Integer . compare ( o1 . getRow ( ) , o2 . getRow ( ) )  
+if ( columnCompare == 0 ) 
+if ( rowCompare == 0 ) 
+return 0  
+final BufferedImage rowShiftedTile = transformedChildren . get ( 0 ) . getImage ( )  
+final BufferedImage originTile = transformedChildren . get ( 1 ) . getImage ( )  
+final BufferedImage bothShiftedTile = transformedChildren . get ( 2 ) . getImage ( )  
+final BufferedImage columnShiftedTile = transformedChildren . get ( 3 ) . getImage ( )  
+final List < TileHandle > transformedChildren = new ArrayList < > ( )  
+private final Color noDataColor ; 

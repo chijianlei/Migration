@@ -1,0 +1,3 @@
+public Assignment createDefaultReferralAssignment ( String countyCode , String referralId , String caseLoadId )  
+return new Assignment ( countyCode , END_DATE , END_TIME , ESTABLISHED_FOR_CODE , referralId , caseLoadId , OUT_OF_STATE_CONTACT_ID , RESPONSIBILITY_DESCRIPTION , SECONDARY_ASSIGNMENT_ROLE_TYPE , startDate , startTime , TYPE_OF_ASSIGNMENT_CODE , WEIGHTING_NUMBER )  
+return assignment . createDefaultReferralAssignment ( countyCode , referralId , caseLoadId )  

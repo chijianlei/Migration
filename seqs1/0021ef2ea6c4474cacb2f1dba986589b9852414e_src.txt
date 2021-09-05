@@ -1,0 +1,3 @@
+if ( getFlexoConcept ( ) != null )  
+return super . delete ( context )  
+return super . delete ( )  

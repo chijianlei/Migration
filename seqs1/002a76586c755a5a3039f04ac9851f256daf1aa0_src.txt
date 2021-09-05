@@ -1,0 +1,3 @@
+if ( this . counter . get ( view . username . getText ( ) ) <= 3 )  
+loginModel . setSurname ( searchList . get ( 2 ) )  
+loginModel . setWins ( Integer . parseInt ( searchList . get ( 4 ) ) )  

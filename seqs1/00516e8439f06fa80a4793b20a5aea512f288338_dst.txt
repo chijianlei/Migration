@@ -1,0 +1,4 @@
+setTimestamp ( exchange . getProperty ( "CamelCreatedTimestamp" , Date . class ) )  
+@ Test public void testSingleEvent ( ) throws Exception  
+String event = String . format ( "%tF Test Single Event from %s" , System . currentTimeMillis ( ) , this . getClass ( ) . getSimpleName ( ) )  
+String event = String . format ( "%tF Test Multiple Events %d from %s" , System . currentTimeMillis ( ) , messageNumber , this . getClass ( ) . getSimpleName ( ) )  

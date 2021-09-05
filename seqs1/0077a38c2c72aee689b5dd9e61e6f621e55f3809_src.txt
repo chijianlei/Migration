@@ -1,0 +1,2 @@
+public char [ ] initARC ( char [ ] textregister )  
+textregister = arc4 . initARC ( textregister )  

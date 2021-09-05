@@ -1,0 +1,1 @@
+Integer area = Integer . parseInt ( iomObj . getattrvalue ( "Flaechenmass" ) )  

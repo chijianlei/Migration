@@ -1,0 +1,1 @@
+return getIconFromURI ( filepath )  

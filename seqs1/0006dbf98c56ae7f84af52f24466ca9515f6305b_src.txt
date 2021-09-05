@@ -1,0 +1,13 @@
+private static final String MISSING_ARTIFACT = "A web archive (WAR) artifact has not been configured."  
+private static final String INVALID_WAR_FILE = "The artifact name %s is invalid. " + "An artifact name maycontain only the ASCII letters 'a' through 'z' (case-insensitive), " + "and the digits '0' through '9'."  
+private static final String WAR_NAME_REGEX = "^[A-Za-z0-9_]+\\.war$"  
+private JTable table  
+AnActionButton refreshAction = new AnActionButton ( "Refresh" , AllIcons . Actions . Refresh )  
+@ Override public void actionPerformed ( AnActionEvent anActionEvent )  
+resetWidget ( )  
+webAppDeployViewPresenter . onRefresh ( )  
+ToolbarDecorator tableToolbarDecorator = ToolbarDecorator . createDecorator ( table ) . addExtraActions ( refreshAction ) . setToolbarPosition ( ActionToolbarPosition . TOP )  
+for ( AppServicePlan plan : appServicePlans )  
+cbExistAppServicePlan . addItem ( plan )  
+if ( Comparing . equal ( plan . id ( ) , webAppConfiguration . getAppServicePlan ( ) ) )  
+cbExistAppServicePlan . setSelectedItem ( plan )  

@@ -1,0 +1,26 @@
+'s diary md file was created: " + file.getAbsolutePath());
+	}
+
+	/**
+	 * 鏈棩銇棩瑷樸儠銈°偆銉倰鍙栧緱銇椼伨銇欍€	 * 
+	 * @param yearDir
+	 * @return
+	 */
+	protected File getTodayDiaryFile(final File yearDir) {
+		// 銉曘偂銈ゃ儷鍚嶃伅 igyyMMdd.html.src.md 褰㈠紡銆		final String yymmdd = new SimpleDateFormat("yyMMdd").format(settings.getToday());
+		return new File(yearDir, ("ig" + yymmdd + ".html.src.md"));
+	}
+
+	/**
+	 * 鏃ヨ銈枫偣銉嗐儬銇粖鏃ャ伄鏃ヨ銇仧銈併伄銉兗銉堛儑銈ｃ儸銈儓銉倰鍙栧緱銇椼伨銇欍€	 * 
+	 * 銉囥偅銉偗銉堛儶銇屽瓨鍦ㄣ仐銇亜鍫村悎銇柊瑕忎綔鎴愩仐銇俱仚銆	 * 
+	 * @param rootdir
+	 * @return
+	 * @throws IOException
+	 */
+	protected File getYearDir() throws IOException {
+		final String yyyy = new SimpleDateFormat("yyyy").format(settings.getToday());
+		final File yearDir = new File(settings.getRootdir(), yyyy);
+		if (yearDir.exists() == false) {
+			if (yearDir.mkdirs() == false) {
+				throw new IOException("Fail to create ' 

@@ -1,0 +1,4 @@
+catch ( SerialPortInUseException e )  
+e . printStackTrace ( )  
+catch ( UnsupportedPortTypeException e )  
+public TecanFrameContents sendReceive ( String cmd ) throws MaximumAttemptsException , IOException  

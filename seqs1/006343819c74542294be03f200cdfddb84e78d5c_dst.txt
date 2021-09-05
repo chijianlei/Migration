@@ -1,0 +1,7 @@
+@ Override protected void onPause ( )  
+isLoop = false  
+super . onPause ( )  
+for ( ApplicationInfo packageInfo : packages )  
+private class listener implements RecognitionListener  
+if ( splitInput . length > 2 && splitInput [ 0 ] . equalsIgnoreCase ( context . getString ( R . string . assistant ) ) )  
+openApp ( args )  

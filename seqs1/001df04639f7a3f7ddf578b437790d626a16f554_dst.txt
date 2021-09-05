@@ -1,0 +1,12 @@
+public BlockMA ( Material material ) 
+public class CommandGM extends CommandGameMode 
+@ Override public void processCommand ( ICommandSender sender , String [ ] arguments )  
+@ Override public void processCommand ( ICommandSender sender , String [ ] arguments )  
+EntityPlayerMP entityplayermp = arguments . length >= 2 ? getPlayer ( sender , arguments [ 1 ] ) : getCommandSenderAsPlayer ( sender )  
+arguments . length >= 2 ? getPlayer ( sender , arguments [ 1 ] ) : getCommandSenderAsPlayer ( sender )  
+entityplayermp = arguments . length >= 2 ? getPlayer ( sender , arguments [ 1 ] ) : getCommandSenderAsPlayer ( sender )  
+: getCommandSenderAsPlayer ( sender )  
+entityplayermp . setGameType ( WorldSettings . GameType . CREATIVE )  
+entityplayermp . fallDistance = 0.0f  
+ChatComponentTranslation chatComponentTranslation = new ChatComponentTranslation ( "Now Playing Creative" , new Object [ 0 ] )  
+entityplayermp . setGameType ( WorldSettings . GameType . CREATIVE )  

@@ -1,0 +1,1 @@
+domeModel . setDomeServer ( domeServer )  

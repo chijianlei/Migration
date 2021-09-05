@@ -1,0 +1,6 @@
+private final Semaphore lock = new Semaphore ( 1 )  
+public ParseGoogleSearches ( List < String > googleSearchURLs , List < String > imageURLs )  
+mInfoListItems = new ArrayList < InfoListItem > ( )  
+for ( int i = 0 ; i < this . mNumSearchQueries ; i ++ )  
+new ParseGoogleSearch ( googleSearchURL , imageURL ) . execute ( )  
+mInfoListItems . add ( infoListItem )  

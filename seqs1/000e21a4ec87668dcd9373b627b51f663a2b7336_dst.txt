@@ -1,0 +1,12 @@
+double d = 0.8d  
+return Math . log ( 1e-100 )  
+long bigram_key = ( ( ( long ) ( ( w2_index ) & twentyBitMask ) ) << 20 ) | ( w3_index & twentyBitMask )  
+long trigram_key = ( ( ( long ) ( w1_index ) & twentyBitMask ) << 40 ) | ( ( ( long ) ( w2_index ) ) & twentyBitMask ) << 20 | ( w3_index ) & twentyBitMask  
+long bigram_key_w1w2 = ( ( ( long ) w1_index ) & twentyBitMask ) << 20 | ( w2_index & twentyBitMask )  
+static boolean isPrint = false  
+if ( ! sanityCheck )  
+spotCheckCount ( languageModel , new String [ ] { "the" } , 19880264L )  
+spotCheckCount ( languageModel , new String [ ] { "in" , "terms" , "of" } , 31257L ) ; 
+spotCheckCount ( languageModel , new String [ ] { "romanian" , "independent" , "society" } , 30L )  
+spotCheckCount ( languageModel , new String [ ] { "XXXtotally" , "XXXunseen" , "XXXtrigram" } , 0L )  
+spotCheckContextNormalizes ( languageModel , new String [ ] { "romanian" , "independent" } )  

@@ -1,0 +1,23 @@
+ArrayList < Integer > replaceableTypes = updateReplaceableTypes ( templengths , cap , special , num )  
+if ( templengths [ 0 ] == 0 )  
+char [ ] temp = replaceCharacter ( newPassword , random , randomType , 0 )  
+templengths [ 0 ] = templengths [ 0 ] + 1  
+templengths [ randomType ] = templengths [ randomType ] - 1  
+replaceableTypes = updateReplaceableTypes ( templengths , cap , special , num )  
+if ( templengths [ 1 ] == 0 && num )  
+char [ ] temp = replaceCharacter ( newPassword , random , randomType , 1 )  
+templengths [ 1 ] = templengths [ 1 ] + 1  
+templengths [ randomType ] = templengths [ randomType ] - 1  
+replaceableTypes = updateReplaceableTypes ( templengths , cap , special , num )  
+if ( templengths [ 2 ] == 0 && special )  
+char [ ] temp = replaceCharacter ( newPassword , random , randomType , 2 )  
+templengths [ 2 ] = templengths [ 2 ] + 1  
+templengths [ randomType ] = templengths [ randomType ] - 1  
+replaceableTypes = updateReplaceableTypes ( templengths , cap , special , num )  
+if ( templengths [ 3 ] == 0 && cap )  
+char [ ] temp = replaceCharacter ( newPassword , random , randomType , 3 )  
+templengths [ 3 ] = templengths [ 3 ] + 1  
+templengths [ randomType ] = templengths [ randomType ] - 1  
+replaceableTypes = updateReplaceableTypes ( templengths , cap , special , num )  
+private char [ ] replaceCharacter ( String password , Random random , int randomType , int type )  
+char [ ] temp = password . toCharArray ( )  

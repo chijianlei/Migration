@@ -1,0 +1,5 @@
+Bitmap result = Bitmap . createBitmap ( images . get ( 0 ) . getWidth ( ) * imagesInRow , images . get ( 0 ) . getHeight ( ) * imagesInColumn , Bitmap . Config . ARGB_8888 )  
+for ( int i = 0 ; i < images . size ( ) ; i ++ )  
+canvas . drawBitmap ( images . get ( i ) , images . get ( i ) . getWidth ( ) * ( i % imagesInRow ) , images . get ( i ) . getHeight ( ) * ( i / imagesInRow ) , paint )  
+resultImage = result  
+return "Poster_" + Integer . toString ( PhotoAlbumHelper . CurrentPhotoAlbum . getId ( ) ) + "_" + ( new SimpleDateFormat ( "yyyy_MM_dd_HH_mm_ss" ) . format ( new Date ( ) ) ) + ".jpg"  

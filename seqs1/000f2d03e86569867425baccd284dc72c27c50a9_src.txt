@@ -1,0 +1,3 @@
+mActivityHelper . getFirebaseAuth ( ) . signInWithCredential ( newCredential ) . addOnFailureListener ( new TaskFailureLogger ( TAG , "Error linking with credential" ) ) . addOnCompleteListener ( new FinishListener ( newIdpResponse ) )  
+Log . e ( TAG , "Unexpected exception when signing in with credential" , task . getException ( ) )  
+mHelper . dismissDialog ( )  

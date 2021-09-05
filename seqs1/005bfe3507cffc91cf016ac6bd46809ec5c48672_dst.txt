@@ -1,0 +1,4 @@
+while ( true )  
+List < NameValuePair > params = URLEncodedUtils . parse ( response . next , StandardCharsets . UTF_8 )  
+FileUtils . writeStringToFile ( outFile , postListToString ( postList ) )  
+private static String postListToString ( List < WebhosePost > postList ) throws JsonProcessingException  

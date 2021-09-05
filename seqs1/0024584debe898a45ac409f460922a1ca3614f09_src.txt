@@ -1,0 +1,1 @@
+( ( TextView ) findViewById ( R . id . SSID_id ) ) . setText ( Utils . SSID )  

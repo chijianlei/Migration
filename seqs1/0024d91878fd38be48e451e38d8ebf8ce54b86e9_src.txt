@@ -1,0 +1,10 @@
+ModelAndView mv = new ModelAndView ( "web.home" )  
+@ RequestMapping ( value = "/create-account" , method = RequestMethod . POST , consumes = MediaType . APPLICATION_JSON_VALUE ) public @ ResponseBody Boolean addUser ( @ RequestBody Email email )  
+@ RequestMapping ( value = "/update-account" , method = RequestMethod . POST ) public @ ResponseBody Boolean updateUser ( @ RequestBody Email email )  
+@ RequestMapping ( value = "/del-account" , method = RequestMethod . POST , consumes = MediaType . APPLICATION_JSON_VALUE ) public @ ResponseBody Boolean delUser ( @ RequestBody Email email )  
+ModelAndView mv = new ModelAndView ( "web.page" )  
+@ RequestMapping ( value = "/list-face" , method = RequestMethod . GET , produces = MediaType . APPLICATION_JSON_VALUE ) public @ ResponseBody List < FaceAccount > listEmail ( @ RequestParam ( value = "page" , required = false , defaultValue = "1" ) int pageNumber ) throws ParseException  
+return faceAccountDao . findAllFaceAccounts ( )  
+@ RequestMapping ( value = "/create-account" , method = RequestMethod . POST , consumes = MediaType . APPLICATION_JSON_VALUE ) public @ ResponseBody Boolean addUser ( @ RequestBody FaceAccount account )  
+@ RequestMapping ( value = "/update-account" , method = RequestMethod . POST ) public @ ResponseBody Boolean updateUser ( @ RequestBody FaceAccount account )  
+@ RequestMapping ( value = "/del-account" , method = RequestMethod . POST , consumes = MediaType . APPLICATION_JSON_VALUE ) public @ ResponseBody Boolean delUser ( @ RequestBody FaceAccount account )  

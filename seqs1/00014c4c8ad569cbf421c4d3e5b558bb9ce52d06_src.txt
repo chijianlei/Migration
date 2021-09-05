@@ -1,0 +1,3 @@
+catch ( Exception ignored )  
+setColors ( font_color , background_color )  
+shadeSlider . addDecorator ( opacitySlider )  

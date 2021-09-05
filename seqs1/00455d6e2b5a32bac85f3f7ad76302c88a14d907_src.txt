@@ -1,0 +1,26 @@
+config . setJdbcUrl ( DB_URL ) ; 
+connection = connectionPool . getConnection ( ) ; 
+Statement stmt = connection . createStatement ( )  
+config . setJdbcUrl ( DB_URL ) ; 
+config . setPassword ( PASS )  
+connection = connectionPool . getConnection ( ) ; 
+sql = "SELECT `FIRM_NAME` FROM `client` WHERE `ID` = " + ClientId + " AND STATUS='REGISTERED' "  
+public String getECSconsignmentStatus ( int ConsignmentId , String Status )  
+config . setJdbcUrl ( DB_URL ) ; 
+connection = connectionPool . getConnection ( ) ; 
+String sql = "SELECT  STATUS   FROM    `consignementstatuslog` WHERE CGT_ID='" + ConsignmentId + "and STATUS='" + Status + "' ORDER BY id DESC LIMIT  0, 1"  
+Logger . getLogger ( EcsEntitiesControllerCaller . class . getName ( ) ) . log ( Level . SEVERE , null , ex )  
+config . setJdbcUrl ( DB_URL ) ; 
+config . setPassword ( PASS )  
+connection = connectionPool . getConnection ( ) ; 
+config . setMinConnectionsPerPartition ( 5 )  
+config . setPartitionCount ( 1 )  
+connectionPool = new BoneCP ( config ) ; 
+connectionPool . shutdown ( ) ; 
+config . setJdbcUrl ( DB_URL ) ; 
+config . setPassword ( PASS )  
+connection = connectionPool . getConnection ( ) ; 
+System . out . println ( p_changed_date )  
+INDCUST2 = "" + ClientName . substring ( 0 , 1 ) + count + ""  
+config . setJdbcUrl ( DB_URL ) ; 
+connection = connectionPool . getConnection ( ) ; 

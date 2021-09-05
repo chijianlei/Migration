@@ -1,0 +1,12 @@
+public BlockMA ( Material material ) 
+public class CommandGM extends CommandBase 
+public int getRequiredPermissionLevel ( ) 
+public void processCommand ( ICommandSender commandSender , String [ ] params ) 
+EntityPlayerMP entityplayermp = params . length >= 2 ? getPlayer ( commandSender , params [ 1 ] ) : getCommandSenderAsPlayer ( commandSender )  
+params . length >= 2 ? getPlayer ( commandSender , params [ 1 ] ) : getCommandSenderAsPlayer ( commandSender )  
+entityplayermp = params . length >= 2 ? getPlayer ( commandSender , params [ 1 ] ) : getCommandSenderAsPlayer ( commandSender )  
+: getCommandSenderAsPlayer ( commandSender )  
+entityplayermp . setGameType ( gametype )  
+entityplayermp . fallDistance = 0.0F  
+ChatComponentTranslation chatcomponenttranslation = new ChatComponentTranslation ( "gameMode." + gametype . getName ( ) , new Object [ 0 ] )  
+return WorldSettings . GameType . CREATIVE ;  

@@ -1,0 +1,8 @@
+if ( ( plugin . getConfig ( ) . isFGEnabled ( ) ) && ( plugin . getConfig ( ) . isRTEnabled ( ) ) && ( plugin . getPermMan ( ) . isUserAllowed ( event . getPlayer ( ) . getName ( ) , "fastgrow" ) ) ) 
+final ItemStack istack = new ItemStack ( Material . SAPLING , 1 , ( short ) 0 , block . getData ( ) )  
+if ( ! world . generateTree ( block . getLocation ( ) , treetype ) ) 
+world . dropItemNaturally ( block . getLocation ( ) , istack )  
+plugin . output ( "FG fail." )  
+if ( ( args [ 0 ] . equalsIgnoreCase ( "disable" ) ) || ( args [ 0 ] . equalsIgnoreCase ( "d" ) ) ) 
+if ( ( sender . isOp ( ) ) || ( sender . hasPermission ( "realtree.toggle.plugin" ) ) ) 
+if ( ( args [ 0 ] . equalsIgnoreCase ( "reload" ) ) || ( args [ 0 ] . equalsIgnoreCase ( "r" ) ) ) 

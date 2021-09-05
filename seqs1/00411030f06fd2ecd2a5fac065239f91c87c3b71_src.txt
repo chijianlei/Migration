@@ -1,0 +1,16 @@
+private static final String STUDY_A_FILE1 = "studyA_RNASeq.fasta"  
+private static final String STUDY_A_FILE2 = "studyA_conclusion.pdf"  
+private static final String STUDY_B_FILE1 = "studyB_cDNA.seq"  
+private static final String STUDY_B_FILE3 = "studyB_rna.fasta"  
+assertTrue ( "File " + STUDY_A_FILE1 + " is not listed" , values . get ( 0 ) . equals ( STUDY_A_FILE1 ) )  
+assertTrue ( "File " + STUDY_A_FILE2 + " is not listed" , values . get ( 1 ) . equals ( STUDY_A_FILE2 ) )  
+log ( "Verify the available status for " + STUDY_A_FILE1 + ", " + STUDY_A_FILE2 )  
+assertTrue ( "File " + STUDY_A_FILE1 + " should be available" , values . get ( 0 ) . equals ( "Yes" ) )  
+assertTrue ( "File " + STUDY_A_FILE2 + " should be unavailable" , values . get ( 1 ) . equals ( "No" ) )  
+_containerHelper . createSubfolder ( getProjectName ( ) , SOURCE_FOLDER_B )  
+assertTrue ( "File " + STUDY_B_FILE1 + " is not listed" , values . get ( 0 ) . equals ( STUDY_B_FILE1 ) )  
+assertTrue ( "File " + STUDY_B_FILE3 + " is not listed" , values . get ( 2 ) . equals ( STUDY_B_FILE3 ) )  
+log ( "Verify the available status for " + STUDY_B_FILE1 + ", " + STUDY_B_FILE3 )  
+assertTrue ( "File " + STUDY_B_FILE3 + " should be unavailable" , values . get ( 2 ) . equals ( "No" ) )  
+return BrowserType . CHROME  
+return Collections . singletonList ( "FileTransfer" )  

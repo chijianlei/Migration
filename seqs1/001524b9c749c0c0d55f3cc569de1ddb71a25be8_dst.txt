@@ -1,0 +1,4 @@
+private WebSocket createSocketAndConnect ( final String socketUrl ) throws InterruptedException , ExecutionException  
+return wsSlientProvider . get ( ) . prepareGet ( socketUrl ) . execute ( new WebSocketUpgradeHandler . Builder ( ) . addWebSocketListener ( new WebAppSocketListener ( ) ) . build ( ) ) . get ( )  
+return wsSlientProvider . get ( ) . prepareGet ( socketUrl ) . execute ( new WebSocketUpgradeHandler . Builder ( ) . addWebSocketListener ( new WebAppSocketListener ( ) ) . build ( ) ) . get ( )  
+RestUtils . unRegisterAgent ( localAddress )  

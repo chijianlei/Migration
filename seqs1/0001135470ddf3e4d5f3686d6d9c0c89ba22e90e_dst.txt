@@ -1,0 +1,5 @@
+importEntrance . setOnClickListener ( new View . OnClickListener ( ) { @ Override public void onClick ( View v ) { int permissionCheck = ContextCompat . checkSelfPermission ( MainActivity . this , Manifest . permission . WRITE_CALENDAR ) ; if ( permissionCheck == PackageManager . PERMISSION_GRANTED ) { pickFile ( ) ; closeDrawer ( 1000 ) ; } else { ActivityCompat . requestPermissions ( MainActivity . this , new String [ ] { Manifest . permission . WRITE_EXTERNAL_STORAGE } , PERMISSION_REQUEST_WIRTE_EXTERNAL_STORAGE ) ; closeDrawer ( 0 ) ; } StatManager . statEvent ( MainActivity . this , StatManager . EVENT_IMPORT_OPML_CLICK ) ; } } )  
+View . OnClickListener ( )  
+private void pickFile ( )  
+new MaterialFilePicker ( ) . withActivity ( MainActivity . this ) . withRequestCode ( OPML_FILE_SELECT_CODE ) . withFilterDirectories ( true ) . start ( )  
+closeDrawer ( 1000 )  

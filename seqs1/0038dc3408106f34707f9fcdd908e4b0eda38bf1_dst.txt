@@ -1,0 +1,10 @@
+for ( PeerInfo peer : peerList )  
+buffer = new byte [ 256 ]  
+buffer = message . getBytes ( )  
+leavePacket = new DatagramPacket ( buffer , 0 , buffer . length , peer . hostIP , peer . portNum )  
+dataSocket . send ( leavePacket )  
+catch ( IOException e )  
+System . out . println ( "Error:" + e )  
+dataSocket . close ( )  
+else if ( partsOfMessage [ 0 ] . equals ( "5" ) )  
+displayMessage ( partsOfMessage [ 1 ] , partsOfMessage [ 2 ] )  

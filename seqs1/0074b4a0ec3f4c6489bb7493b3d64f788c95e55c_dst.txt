@@ -1,0 +1,1 @@
+mVelocity = Velocity . getDestinationVelocity ( mSelfPos , mDestPos , mMaxSpeed )  

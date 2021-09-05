@@ -1,0 +1,9 @@
+@ Override public boolean onItemMove ( int fromPosition , int toPosition )  
+Collections . swap ( categoryList , fromPosition , toPosition )  
+notifyItemMoved ( fromPosition , toPosition )  
+mListener . onItemMove ( fromPosition , toPosition )  
+Log . d ( "ZHAP" , "1 moved from " + fromPosition + " to " + toPosition )  
+return true  
+private ItemTouchHelper mItemTouchHelper  
+Parcelable wrapped = Parcels . wrap ( categoryList . get ( position ) )  
+@ Override public void onItemMove ( int fromPosition , int toPosition )  

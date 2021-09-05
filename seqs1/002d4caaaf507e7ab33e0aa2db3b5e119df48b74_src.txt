@@ -1,0 +1,5 @@
+MainActivity . getmM ( ) . start ( this )  
+Log . d ( "BUG" , "PAUSED" )  
+super . onPause ( )  
+@ Override protected void onCreate ( Bundle savedInstanceState )  
+backPressed = true  

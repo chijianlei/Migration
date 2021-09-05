@@ -1,0 +1,14 @@
+public class Application  
+public Application ( String title , String version , String url )  
+this . title = title  
+public String getVersion ( )  
+public Application ( String title , String version , String url )  
+this . version = version  
+public String getUrl ( )  
+this . url = url  
+@ Produces public Application produceApplication ( )  
+Application application = new Application ( attributes . getValue ( "Implementation-Title" ) , attributes . getValue ( "Implementation-Version" ) , attributes . getValue ( "Implementation-URL" ) )  
+Application application = new Application ( attributes . getValue ( "Implementation-Title" ) , attributes . getValue ( "Implementation-Version" ) , attributes . getValue ( "Implementation-URL" ) )  
+Application application = new Application ( attributes . getValue ( "Implementation-Title" ) , attributes . getValue ( "Implementation-Version" ) , attributes . getValue ( "Implementation-URL" ) )  
+Application application = new Application ( attributes . getValue ( "Implementation-Title" ) , attributes . getValue ( "Implementation-Version" ) , attributes . getValue ( "Implementation-URL" ) )  
+@ Inject protected Application application  

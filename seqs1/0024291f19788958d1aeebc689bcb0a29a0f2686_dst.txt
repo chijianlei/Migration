@@ -1,0 +1,10 @@
+ByteBuffer responseData = this . storeClient . request ( requestData , true )  
+ByteBuffer responseData = this . storeClient . request ( requestData , true )  
+ByteBuffer responseData = tcpClient . request ( requestData , true )  
+ByteBuffer responseData = tcpClient . request ( requestData , true )  
+ByteBuffer responseData = this . contentClient . request ( requestData , false )  
+ByteBuffer responseData = this . bankClient . request ( requestData , false )  
+public ByteBuffer request ( ByteBuffer requestData , boolean autoClose ) throws IOException  
+out . close ( )  
+in . close ( )  
+clientSocket . close ( )  

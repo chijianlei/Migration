@@ -1,0 +1,3 @@
+if ( ownActive . hasCondition ( PokemonCondition . DAMAGEINCREASE10 ) || ownActive . hasCondition ( PokemonCondition . DESTINY ) || ownActive . hasCondition ( PokemonCondition . HARDEN20 ) || ownActive . hasCondition ( PokemonCondition . HARDEN30 ) || ownActive . hasCondition ( PokemonCondition . INVULNERABLE ) || ownActive . hasCondition ( PokemonCondition . NO_DAMAGE ) || ownActive . hasCondition ( PokemonCondition . RETALIATION ) ) 
+value = value + 1  
+gameModel . getGameModelParameters ( ) . getLieLowUsed_00287_BrocksDugtrio ( ) . add ( new Pair < Integer , Integer > ( this . card . getGameID ( ) , 3 ) )  

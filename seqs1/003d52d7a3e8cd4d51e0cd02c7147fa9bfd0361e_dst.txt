@@ -1,0 +1,3 @@
+public void uploadImage ( Student student )  
+auth . createUserWithEmailAndPassword ( student . getEmail ( ) , student . getPassword ( ) ) . addOnCompleteListener ( activity , listener )  
+usersRef . child ( student . getFirebaseKey ( ) ) . setValue ( student )  

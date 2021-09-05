@@ -1,0 +1,1 @@
+long planeSize = FormatTools . getPlaneSize ( this )  

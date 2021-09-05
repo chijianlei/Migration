@@ -1,0 +1,1 @@
+for ( int i = index ; i < index + blockLength || i < numOfAtoms ; i ++ )  

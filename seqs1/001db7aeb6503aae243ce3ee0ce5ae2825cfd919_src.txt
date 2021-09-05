@@ -1,0 +1,1 @@
+if ( c2 . getSN ( ) . getFinger ( ) == 't' && c1 . getSN ( ) . getHandPos ( ) . getLocation ( ) > c2 . getSN ( ) . getHandPos ( ) . getLocation ( ) )  

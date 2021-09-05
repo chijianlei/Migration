@@ -1,0 +1,17 @@
+addition ( symbolsList , numbersList )  
+if ( firstNo == "" )  
+minusFoundOnFront = true  
+if ( takenChar == '(' || takenChar == ')' )  
+symbolsList . add ( takenConstant )  
+minusFoundOnFront = false  
+String number = firstNo  
+numbersList . add ( "-" + number )  
+minusFoundOnFront = false  
+char addableConstant = takenConstant  
+symbolsList . add ( addableConstant )  
+firstNo = ""  
+String number = firstNo  
+numbersList . add ( number )  
+char addableConstant = takenConstant  
+symbolsList . add ( addableConstant )  
+firstNo = ""  

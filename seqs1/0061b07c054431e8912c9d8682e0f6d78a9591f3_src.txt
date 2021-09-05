@@ -1,0 +1,4 @@
+if ( TextUtils . isEmpty ( topSubId ) )  
+subId = mSubController . getDefaultDataSubId ( )  
+subId = Integer . parseInt ( topSubId )  
+protected void onSubInfoReady ( )  

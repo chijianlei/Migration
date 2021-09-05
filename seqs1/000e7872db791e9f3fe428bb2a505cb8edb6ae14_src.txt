@@ -1,0 +1,11 @@
+
+if ( ! ( double_equal ( tmpLat , mLastLat ) && double_equal ( tmpLon , mLastLon ) ) )  
+mLoc . lat = mLoc . lat + latoff  
+mLoc . lon = mLoc . lon + lonoff  
+if ( mContext != null )  
+SharedPreferences sp = mContext . getSharedPreferences ( SPF , 0 )  
+SharedPreferences . Editor ed = sp . edit ( )  
+ed . putString ( KLAT , dToS6 ( mLoc . lat ) )  
+ed . putString ( KLON , dToS6 ( mLoc . lon ) )  
+ed . commit ( )  
+catch ( Exception e ) {  

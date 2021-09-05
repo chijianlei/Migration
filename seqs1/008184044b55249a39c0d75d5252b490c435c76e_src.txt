@@ -1,0 +1,18 @@
+public class DiaryHolder  
+private SimpleDateFormat dateformat2 = new SimpleDateFormat ( "dd-M-yyyy" )  
+private String dateString  
+this . dateString = date  
+Date newdate = dateformat2 . parse ( dateString )  
+} catch ( ParseException e )  
+System . err . println ( "Invalid DATE!!!!!" )  
+System . err . println ( "Example: 01-01-2016" )  
+thoughts . add ( entry )  
+@ Override public String toString ( )  
+try ( Writer writer = new BufferedWriter ( new OutputStreamWriter ( new FileOutputStream ( "file/Diary.csv" , true ) ) ) )  
+writer . write ( diary . toString ( ) )  
+System . err . print ( "Missing File!" )  
+e . printStackTrace ( )  
+word = ( DiaryHolder [ ] ) ois . readObject ( )  
+} catch ( Exception e )  
+e . printStackTrace ( )  
+setBounds ( 50 , 50 , 800 , 300 )  

@@ -1,0 +1,1 @@
+return new EntityModelBase ( sqlService , dpsHelper , validator , operationHelper , entity )  

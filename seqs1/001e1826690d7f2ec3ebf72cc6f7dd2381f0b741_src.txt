@@ -1,0 +1,3 @@
+for ( final Node segment : segments )  
+final Integer length = ( Integer ) segment . getProperty ( LENGTH )  
+return Arrays . asList ( new Object [ ] [ ] { { Neo4jDeployment . EMBEDDED , Neo4jEngine . CORE_API , Neo4jGraphFormat . CSV } , { Neo4jDeployment . EMBEDDED , Neo4jEngine . CYPHER , Neo4jGraphFormat . CSV } , { Neo4jDeployment . IN_MEMORY , Neo4jEngine . CORE_API , Neo4jGraphFormat . GRAPHML } , { Neo4jDeployment . IN_MEMORY , Neo4jEngine . CYPHER , Neo4jGraphFormat . GRAPHML } , } )  

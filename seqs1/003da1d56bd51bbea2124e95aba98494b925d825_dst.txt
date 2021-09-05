@@ -1,0 +1,9 @@
+Toast . makeText ( getApplicationContext ( ) , "Onvolledig by Koop" , Toast . LENGTH_SHORT ) . show ( )  
+Verkoop = 0  
+Verkoop += 1  
+Verkoop += 2  
+Verkoop += 4  
+if ( Verkoop == 1 || Verkoop == 2 || Verkoop == 4 )  
+switch ( Verkoop ) { case 1 : VG = Double . parseDouble ( VG_Text . getText ( ) . toString ( ) ) ; VR = Double . parseDouble ( VR_Text . getText ( ) . toString ( ) ) ; VP = VR / VG ; VP_Text . setText ( Double . toString ( VP ) ) ; case 2 : VP = Double . parseDouble ( VP_Text . getText ( ) . toString ( ) ) ; VR = Double . parseDouble ( VR_Text . getText ( ) . toString ( ) ) ; VG = VR / VP ; VG_Text . setText ( Double . toString ( VG ) ) ; case 4 : 
+if ( Verkoop == 0 )  
+Toast . makeText ( getApplicationContext ( ) , "Onvolledig by Verkoop" , Toast . LENGTH_SHORT ) . show ( )  

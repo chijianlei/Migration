@@ -1,0 +1,2 @@
+String resourceName = useWhiteIcon ? "icon_silhouette" : "ic_launcher"  
+: "ic_launcher"  

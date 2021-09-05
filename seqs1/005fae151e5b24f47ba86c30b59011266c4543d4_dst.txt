@@ -1,0 +1,5 @@
+public static PieChartFragment newInstance ( List < ? > categoryList , boolean initImmediately )  
+displayPieChartForCategory ( ( List < Category > ) list )  
+displayPieChartForGeneric ( ( List < Location > ) list )  
+private void displayPieChartForCategory ( List < Category > categoryList )  
+private void displayPieChartForGeneric ( List < Location > list )  

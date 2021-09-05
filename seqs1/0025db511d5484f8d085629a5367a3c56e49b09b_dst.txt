@@ -1,0 +1,2 @@
+kit . read ( reader , cookie . getDocument ( ) , 0 )  
+content = new StringBuilder ( primaryFile . asText ( charset ) )  

@@ -1,0 +1,15 @@
+System . out . println ( "Numero de atividade de apresentacao: " + qntAtividadeApresentacao )  
+pularLinha ( )  
+System . out . println ( "Nome: " + nomeUsuario [ id ] + "\n" + "Cargo: " + cargoUsuario [ id ] + "\n" + emailUsuario [ id ] + "/n" )  
+exibirRecursosEmAndamento ( )  
+public static void exibirRecursosEmAndamento ( )  
+while ( n == 1 )  
+System . out . println ( "5 - Exibir Relatorio" )  
+System . out . println ( "6 - Consultar Usuario" )  
+System . out . println ( "7 - Consultar Recurso" )  
+System . out . println ( "8 - Sair " )  
+switch ( comando ) { case 1 : cadastrarUsuario ( ) ; break ; case 2 : cadastrarRecurso ( qntAuditorio , qntLaboratorio , qntProjetor , qntSalas ) ; break ; case 3 : alocarRecurso ( qntAuditorio , qntLaboratorio , qntProjetor , qntSalas ) ; break ; case 4 : editarRecurso ( ) ; break ; case 5 : relatorio ( ) ; break ; case 6 : consultarUsuario ( ) ; break ; case 7 : consultarRecurso ( ) ; break ; case 8 : n = 0 ; break  
+relatorio ( )  
+consultarUsuario ( )  
+consultarRecurso ( )  
+n = 0  

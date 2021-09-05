@@ -1,0 +1,1 @@
+String [ ] inScopeElements = { "applet" , "caption" , "html" , "table" , "td" , "th" , "marquee" , "object" , "template" , "tr" , "tbody" , "thead" , "tfoot" , 

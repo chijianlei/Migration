@@ -1,0 +1,6 @@
+public class ChatTCPClient1  
+public class ChatTCPServer  
+public static void main ( String [ ] args ) throws IOException , ClassNotFoundException  
+public interface IChatTCPImpl  
+abstract String receive ( )  
+abstract void send ( String mesageIn )  

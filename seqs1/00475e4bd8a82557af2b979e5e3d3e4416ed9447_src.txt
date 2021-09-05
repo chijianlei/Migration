@@ -1,0 +1,14 @@
+private static final String WOLVES_LEFT = "WOLVES_LEFT"  
+initializeLists ( )  
+wolvesLeft = prefs . getInt ( WOLVES_LEFT , 0 )  
+villagersLeft = prefs . getInt ( VILLAGERS_LEFT , 0 )  
+characters = gson . fromJson ( charactersJSON , cardList )  
+fragmentSwitcher . main ( )  
+private void initializeLists ( )  
+editor . putInt ( DAY_COUNTER , dayCounter )  
+editor . putInt ( WOLVES_LEFT , wolvesLeft )  
+editor . putInt ( VILLAGERS_LEFT , villagersLeft )  
+editor . putString ( "lastActivity" , getClass ( ) . getName ( ) )  
+wolvesLeft = 0  
+villagersLeft = 0  
+isGoodEnd = good  

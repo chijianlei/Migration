@@ -1,0 +1,4 @@
+ExpandableListAdapter listAdapter  
+listAdapter = new ExpandableListAdapter ( getContext ( ) , listDataHeader , listDataChild )  
+expListView . setAdapter ( listAdapter )  
+for ( int i = 0 ; i < listDataHeader . size ( ) ; i ++ )  

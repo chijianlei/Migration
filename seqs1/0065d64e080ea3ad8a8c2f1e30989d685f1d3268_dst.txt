@@ -1,0 +1,2 @@
+tutorialScreen . addAction ( Actions . sequence ( Actions . alpha ( 0.0f , 1.0f ) , Actions . run ( new Runnable ( ) { @ Override public void run ( ) { tutorialScreen . setVisible ( false ) ; } } ) ) )  
+begin ( )  

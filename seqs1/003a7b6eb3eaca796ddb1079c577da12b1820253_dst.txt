@@ -1,0 +1,10 @@
+throw new IllegalArgumentException ( "value cannot be null" )  
+String fieldName = null  
+queryName = parser . text ( )  
+if ( fieldName != null )  
+throw new ParsingException ( parser . getTokenLocation ( ) , "[regexp] query doesn't support multiple fields, found [" + fieldName + "] and [" + currentFieldName + "]" )  
+String fieldName = randomBoolean ( ) ? STRING_FIELD_NAME : randomAsciiOfLengthBetween ( 1 , 10 )  
+randomBoolean ( ) ? STRING_FIELD_NAME : randomAsciiOfLengthBetween ( 1 , 10 )  
+fieldName = randomBoolean ( ) ? STRING_FIELD_NAME : randomAsciiOfLengthBetween ( 1 , 10 )  
+: randomAsciiOfLengthBetween ( 1 , 10 )  
+String value = randomAsciiOfLengthBetween ( 1 , 10 )  

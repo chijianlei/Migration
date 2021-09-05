@@ -1,0 +1,12 @@
+String url = contentUrl  
+final String finalUrl = contentUrl  
+if ( ! holder . firstTextView . getText ( ) . toString ( ) . isEmpty ( ) ) 
+toCollapse . remove ( n . getFullName ( ) )  
+holder . firstTextView . setVisibility ( View . VISIBLE )  
+LayoutInflater inflater = ( ( Activity ) mContext ) . getLayoutInflater ( )  
+toCollapse . remove ( comment . getFullName ( ) )  
+holder . firstTextView . setVisibility ( View . VISIBLE )  
+holder . childrenNumber . setText ( "+" + childNumber )  
+if ( SettingValues . collapseComments )  
+holder . firstTextView . setVisibility ( View . VISIBLE )  
+holder . commentOverflow . setVisibility ( View . VISIBLE )  

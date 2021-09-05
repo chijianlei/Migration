@@ -1,0 +1,1 @@
+webSiteEjbHome = EJBUtilitaire . getEJBObjectRef ( JNDINames . WEBSITESBM_EJBHOME , WebSiteBmHome . class )  

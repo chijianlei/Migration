@@ -1,0 +1,4 @@
+if ( ( curTime - lastActiveTime ) > _SESSION_DURATION )  
+Utils . trackAdvertisementIdIfPossible ( _INSTANCE . appContext )  
+static boolean isPhone ( Context appContext )  
+if ( responseCode == 200 )  

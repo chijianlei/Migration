@@ -1,0 +1,6 @@
+Document nerDoc = new Document ( )  
+nerDoc . text = doNER ( doc . text )  
+nerDoc . metadata = doc . metadata  
+nerDoc . name = doc . name  
+NamedEntityRecorder ner = new NamedEntityRecorder ( outputPath )  
+ner . record ( doc )  

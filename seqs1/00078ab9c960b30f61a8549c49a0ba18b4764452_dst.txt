@@ -1,0 +1,6 @@
+@ Override public boolean isPortletEmbedded ( String portletId )  
+List < Portlet > embeddedPortlets = getEmbeddedPortlets ( )  
+for ( Portlet embeddedPortlet : embeddedPortlets )  
+if ( portletId . equals ( embeddedPortlet . getPortletId ( ) ) )  
+return false  
+return true  

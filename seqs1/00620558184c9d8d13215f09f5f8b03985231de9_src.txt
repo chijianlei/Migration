@@ -1,0 +1,3 @@
+int startTime = tt . getScheduledArrivalTime ( 0 )  
+dwellTimes [ i ] = tt . getScheduledDepartureTime ( i ) - tt . getScheduledArrivalTime ( i )  
+hopTimes [ i ] = tt . getScheduledArrivalTime ( i + 1 ) - tt . getScheduledDepartureTime ( i )  

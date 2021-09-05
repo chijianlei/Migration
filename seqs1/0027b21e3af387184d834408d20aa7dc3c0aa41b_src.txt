@@ -1,0 +1,40 @@
+public class Circle extends Obstacle  
+private double r  
+public Circle ( Vector2 position , Vector2 size )  
+this . position = position  
+this . size = size  
+this . r = size . x < size . y ? size . x / 2 : size . y / 2  
+size . x < size . y ? size . x / 2 : size . y / 2  
+= size . x < size . y ? size . x / 2 : size . y / 2  
+: size . y / 2  
+@ Override public int [ ] [ ] draw ( )  
+int arraySize = ( int ) ( r * 2 + 0.5 )  
+int [ ] [ ] ret = new int [ arraySize ] [ arraySize ]  
+for ( int i = 0 ; i < arraySize ; i ++ )  
+for ( int j = 0 ; j < arraySize ; j ++ )  
+ret [ i ] [ j ] = 
+( i - r ) * ( i - r ) + ( j - r ) * ( j - r ) <= r * r ? 1 : 0  
+- r ) * ( i - r ) + ( j - r ) * ( j - r ) <= r * r ? 1 : 0  
+: 0  
+@ Override public Vector2 [ ] hit ( Vector2 v1 , Vector2 v2 )  
+double [ ] ret = new double [ 4 ]  
+catch ( Exception e )  
+return null  
+@ Stateful public class Map implements IRadarMap , IMap  
+double ret [ ] = { Double . MAX_VALUE , Double . MAX_VALUE , Double . MAX_VALUE , Double . MAX_VALUE 
+Vector2 [ ] v  
+for ( Obstacle o : obstacles )  
+if ( ! overflow ( v [ 0 ] ) )  
+ret [ 0 ] = Double . MAX_VALUE  
+ret [ 1 ] = Double . MAX_VALUE  
+if ( ! overflow ( v [ 1 ] ) && ! ( v [ 0 ] . x == v [ 1 ] . x && v [ 0 ] . y == v [ 1 ] . y ) )  
+ret [ 2 ] = Double . MAX_VALUE  
+ret [ 3 ] = Double . MAX_VALUE  
+if ( ret [ 1 ] != ret [ 3 ] && ( ret [ 1 ] != Double . MAX_VALUE || ret [ 3 ] != Double . MAX_VALUE ) )  
+@ Override public int [ ] [ ] getMap ( )  
+int [ ] [ ] ret = new int [ ( int ) ( SIZE_X + 0.5 ) ] [ ( int ) ( SIZE_Y + 0.5 ) ]  
+ships = new ArrayList < > ( )  
+obstacles = new ArrayList < > ( )  
+Random rand = new Random ( )  
+if ( i + ( int ) ( obstacle . position . y ) < ( int ) ( SIZE_X + 0.5 ) )  
+if ( j + ( int ) ( obstacle . position . y ) < ( int ) ( SIZE_Y + 0.5 ) )  

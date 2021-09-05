@@ -1,0 +1,2 @@
+LoggedUser . setId ( userId )  
+response . sendRedirect ( "meals" )  

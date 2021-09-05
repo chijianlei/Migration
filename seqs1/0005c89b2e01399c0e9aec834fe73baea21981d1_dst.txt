@@ -1,0 +1,1 @@
+Gdx . app . error ( getClass ( ) . getSimpleName ( ) , "An " + e . getClass ( ) . getSimpleName ( ) + " has occurred. Reason: " + e . getMessage ( ) , e )  

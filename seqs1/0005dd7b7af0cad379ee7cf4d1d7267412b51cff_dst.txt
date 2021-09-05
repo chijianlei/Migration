@@ -1,0 +1,9 @@
+if ( tokens . length >= 2 && tokens [ 0 ] . toLowerCase ( ) . equals ( "delete" ) )  
+return getOperationIndex ( tokens [ 1 ] , DELETE_MODE )  
+if ( tokens . length >= 2 && tokens [ 0 ] . toLowerCase ( ) . equals ( "modify" ) )  
+return getOperationIndex ( tokens [ 1 ] , MODIFY_MODE )  
+public static int isValidComplete ( String input )  
+if ( operationIndex <= UserInterface . taskList . size ( ) )  
+case COMPLETE_MODE : UserInterface . completeIndex = operationIndex ; return operationIndex  
+} catch ( Exception e )  
+return - 1  

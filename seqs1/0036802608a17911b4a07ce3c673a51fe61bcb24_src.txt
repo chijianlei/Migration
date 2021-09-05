@@ -1,0 +1,23 @@
+} catch ( IOException e )  
+e . printStackTrace ( )  
+protected void timeStepping ( )  
+for ( int j = 1 ; j <= Constants . NTOT ; j ++ )  
+ETAE . setEntry ( 1 , Constants . AMPLITUDE * Math . sin ( 2.0 * Constants . PI * this . TDT / Constants . PERIOD ) ) ; 
+HE . setEntry ( 1 , ETAE . getEntry ( 1 ) + D . getEntry ( 1 ) ) ; 
+ETA . setEntry ( 1 , Constants . AMPLITUDE * Math . sin ( 2.0 * Constants . PI * this . T / Constants . PERIOD ) ) ; 
+H . setEntry ( 1 , ETA . getEntry ( 1 ) + D . getEntry ( 1 ) ) ; 
+prtime . write ( stringBuilder . toString ( ) )  
+prtime . flush ( )  
+NF += Constants . PINT  
+slope1 . write ( builder . toString ( ) )  
+slope1 . flush ( )  
+this . TRNN . setEntry ( j , this . ETAE . getEntry ( Constants . SP + 20 ) )  
+this . XTNN . setEntry ( j , ( this . GPT . get ( j ) - 1 ) * Constants . DX )  
+public WaveSimulatorSolver ( )  
+logger . info ( "Intialiasing WaveSimulatorSolver" )  
+timeStepping ( )  
+public static void main ( String [ ] args ) throws IOException  
+logger . info ( "Started Simulation......." )  
+WaveSimulatorSolver solver = new WaveSimulatorSolver ( )  
+solver . solve ( )  
+logger . info ( "Finished Running the simulation." )  

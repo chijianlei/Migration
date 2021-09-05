@@ -1,0 +1,3 @@
+node = new NodeImpl ( fields )  
+catch ( ValidationException e )  
+throw new RuntimeException ( "Validation failed." , e )  

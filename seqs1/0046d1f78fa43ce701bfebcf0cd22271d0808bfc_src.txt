@@ -1,0 +1,1 @@
+BaseDMNTypeImpl typeRef = ( BaseDMNTypeImpl ) model . getTypeRegistry ( ) . resolveType ( resolveNamespaceForTypeRef ( inputExpressionTypeRef , ic ) , inputExpressionTypeRef . getLocalPart ( ) )  

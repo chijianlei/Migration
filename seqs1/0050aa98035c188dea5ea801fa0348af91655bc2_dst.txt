@@ -1,0 +1,5 @@
+AxoObject o = new AxoObject ( "samplehold" , "high quality audio rate sample and hold using blit synthesis (bandwidth limited)" )  
+AxoObject o = new AxoObject ( "samplehold cheap" , "low-quality audio rate sample and hold using blit synthesis (not bandwidth limited)" )  
+AxoObject o = new AxoObject ( "xfade" , "crossfade between two inputs" )  
+o . inlets . add ( new InletFrac32Bipolar ( "pitchm" , "pitch    modulation" ) )  
+AxoObject o = new AxoObject ( "lfsr" , "linear feedback shift register cyclic pattern, audio rate" )  

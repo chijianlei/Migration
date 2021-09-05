@@ -1,0 +1,4 @@
+@ Override protected void onCurrentProfileChanged ( Profile oldProfile , Profile currentProfile )  
+username = currentProfile . getFirstName ( )  
+SharedPreferences cache = PreferenceManager . getDefaultSharedPreferences ( getApplicationContext ( ) )  
+cache . edit ( ) . putString ( LoginActivity . USERNAME_KEY , username ) . commit ( )  

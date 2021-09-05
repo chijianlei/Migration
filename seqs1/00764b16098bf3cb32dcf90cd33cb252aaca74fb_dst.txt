@@ -1,0 +1,11 @@
+for ( final String unitId : unitIDList )  
+unitConfig . getServiceConfigList ( ) . stream ( ) . forEach ( ( serviceConfig ) -> { serviceMap . get ( serviceConfig . getServiceTemplate ( ) . getType ( ) ) . add ( unitConfig ) ; } )  
+serviceMap . get ( serviceConfig . getServiceTemplate ( ) . getType ( ) ) . add ( unitConfig )  
+for ( final UnitConfig config : locationRegistryRemote . getUnitConfigsByLocation ( selectedLocationConfigHolder . getConfig ( ) . getId ( ) ) )  
+private RS unitRemote  
+if ( this . unitRemote != null )  
+this . unitRemote . removeDataObserver ( this )  
+this . unitRemote = remoteService  
+if ( unitRemote == null )  
+unitRemote . removeDataObserver ( this )  
+if ( unitRemote == null )  

@@ -1,0 +1,7 @@
+private static Map < String , TimecryptDataStore > storeCache = new HashMap < > ( )  
+TimecryptDataStore dataStore = new SimplePostgresqlDatabase ( )  
+public static TimecryptDataStore getDataStore ( TimecryptApiServlet servlet )  
+TimecryptDataStore dataStore = storeCache . get ( servlet . getClass ( ) . getSimpleName ( ) )  
+public class SimplePostgresqlDatabase implements TimecryptDataStore  
+private TimecryptDataStore dataStore  
+protected TimecryptDataStore getDataStore ( )  

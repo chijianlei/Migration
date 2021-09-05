@@ -1,0 +1,2 @@
+mBluetooth = null  
+mContext . unbindService ( mConnection )  

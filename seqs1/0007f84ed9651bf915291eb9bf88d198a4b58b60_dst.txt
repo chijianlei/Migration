@@ -1,0 +1,2 @@
+for ( int position = 0 ; position < list . size ( ) ; position ++ )  
+bytes = serializer . toBytes ( object )  

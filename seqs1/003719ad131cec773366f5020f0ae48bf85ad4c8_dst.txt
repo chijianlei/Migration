@@ -1,0 +1,1 @@
+assertThat ( ex . getMessage ( ) , startsWith ( "Failed to run 'CALL dbms.cluster.routing.getServers {}' on server." ) )  

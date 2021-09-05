@@ -1,0 +1,4 @@
+String command = "update Box set Status = 1, StartDate = GetDate(), " + "EndDate = (GetDate() + ?) where Id = ?"  
+pstmt . setInt ( 1 , box . getLifeTime ( ) )  
+pstmt . setInt ( 2 , findId )  
+pstmt . executeUpdate ( )  

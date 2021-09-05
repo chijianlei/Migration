@@ -1,0 +1,3 @@
+ArrayList < File > result = new ArrayList < File > ( dirs . length )  
+for ( int i = 0 ; i < dirs . length ; i ++ )  
+private final UserHandle mUser  

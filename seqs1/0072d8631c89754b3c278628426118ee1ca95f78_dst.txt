@@ -1,0 +1,6 @@
+this . connectTiles ( sidesUsed )  
+display_game . addView ( tv )  
+public void connectTiles ( String mix )  
+int numTiles = this . possibleTiles . size ( ) / 2  
+for ( int i = 0 ; i < numTiles ; i ++ )  
+this . possibleTiles . get ( i ) . setBSide ( this . possibleTiles . get ( i + numTiles ) )  

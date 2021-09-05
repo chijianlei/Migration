@@ -1,0 +1,3 @@
+return PendingIntent . getActivity ( context , getUniqueId ( ) , pendingIntent , PendingIntent . FLAG_CANCEL_CURRENT )  
+Notification . Builder notificationBuilder = new Notification . Builder ( context ) . setContentTitle ( app . getName ( ) ) . setSmallIcon ( R . drawable . cast_ic_notification_0 ) . setContentText ( "Click to Install " ) . setContentIntent ( resultPendingIntent ) . setAutoCancel ( true ) . setOngoing ( true )  
+return UUID . randomUUID ( ) . hashCode ( )  

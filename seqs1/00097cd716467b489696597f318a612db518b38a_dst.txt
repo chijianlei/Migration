@@ -1,0 +1,1 @@
+trait . setId ( rs . getInt ( "maxid" ) + 1 )  

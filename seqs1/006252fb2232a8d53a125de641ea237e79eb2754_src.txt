@@ -1,0 +1,19 @@
+private Map < List < Double > , Long > combinations  
+combinations = new HashMap < > ( )  
+currentCount = combinations . get ( bucketedCombination )  
+combinations . put ( currentCombination , currentCount )  
+Long count = combinations . get ( combination )  
+return combinations . size ( )  
+return combinations . keySet ( )  
+res . combinations . putAll ( combinations )  
+if ( bss . size ( ) == 0 && combinations . size ( ) == 0 )  
+for ( List < Double > key : other . combinations . keySet ( ) )  
+Long count = combinations . get ( key )  
+count += other . combinations . get ( key )  
+res . combinations . put ( key , count )  
+for ( List < Double > key : combinations . keySet ( ) ) { width = key . size ( ) ; break  
+sb . append ( String . format ( "Ledger(%dx%d)" , width , combinations . size ( ) ) )  
+public Map < List < Double > , Long > getCombinations ( )  
+public void setCombinations ( Map < List < Double > , Long > combinations )  
+this . combinations = combinations  
+assertEquals ( ledger . getCombinations ( ) , foldedLedger . getCombinations ( ) )  

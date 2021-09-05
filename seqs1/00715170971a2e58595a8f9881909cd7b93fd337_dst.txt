@@ -1,0 +1,1 @@
+if ( item . getCourseSummary ( ) != null && item . getCourseSummary ( ) . getLessonCount ( ) != null && item . getCourseSummary ( ) . getLessonCount ( ) >= 20 )  

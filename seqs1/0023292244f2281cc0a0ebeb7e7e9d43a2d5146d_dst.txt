@@ -1,0 +1,57 @@
+resultString += "\t" + alias + "_bool_array = new bool[metadata.idx_domains[" + gqFastIndexID + "][0]]();\n"  
+String nextMain = "\n\t" + alias + "_col" + j + "_bits_info = idx[" + gqFastIndexID + "]->dict[" + columnID + "]->bits_info;\n"  
+String nextMain = "\n\t" + alias + "_col" + j + "_huffman_tree_array = idx[" + gqFastIndexID + "]->huffman_tree_array[" + columnID + "];\n"  
+nextMain += "\t" + alias + "_col" + j + "_huffman_terminator_array = idx[" + gqFastIndexID + "]->huffman_terminator_array[" + columnID + "];\n"  
+private static String generateDecodeFunctionBody ( boolean preThreading , int gqFastIndexID , String alias , int currentEncoding , int columnIteration , int currentCol , String sizeName , String currentFragmentBytesName , String pointerName , int [ ] [ ] bufferPoolTrackingArray , int currPool , int currentByteSize )  
+bufferArraysPart = "buffer_arrays[" + gqFastIndexID + "][" + currentCol + "][0][" + currPool + "]"  
+bufferArraysPart = "buffer_arrays[" + gqFastIndexID + "][" + currentCol + "][thread_id][" + currPool + "]"  
+private static String joinGenerateDecodeFragmentFunction ( boolean preThreading , String alias , int aliasID , int columnIteration , StringBuilder tabString , MetaIndex currMetaIndex , MetaQuery query , List < String > functionHeadersCppCode , List < String > functionsCppCode , int gqFastIndexID , int currentCol , String currentFragmentRow , String currentFragmentBytesName , int [ ] [ ] bufferPoolTrackingArray , boolean entityFlag , int indexID )  
+String pointerName = alias + "_col" + currentCol + "_ptr"  
+if ( currentEncoding == Metadata . ENCODING_UA )  
+switch ( currentBytesSize ) { case Metadata . BYTES_1 : pointerString = "unsigned char* " + pointerName + " = &(idx[" + gqFastIndexID + "]->fragment_data[" + currentCol + "][" + currentFragmentRow + "[" + currentCol + "]]);\n" ; functionParameters += "unsigned char* " + pointerName ; break ; case Metadata . BYTES_2 : pointerString = "uint16_t* " + pointerName + " = reinterpret_cast<uint16_t *>(&(idx[" + gqFastIndexID + "]->fragment_data[" + currentCol + "][" + currentFragmentRow + "[" + currentCol + "]]));\n" ; functionParameters += "uint16_t* " + pointerName ; break ; case Metadata . BYTES_4 : pointerString = "uint32_t* " + pointerName + " = reinterpret_cast<uint32_t *>(&(idx[" + gqFastIndexID + "]->fragment_data[" + currentCol + "][" + currentFragmentRow + "[" + currentCol + "]]));\n" ; functionParameters += "uint32_t* " + pointerName ; break ; case Metadata . BYTES_8 : pointerString = "uint64_t* " + pointerName + " = reinterpret_cast<uint64_t *>(&(idx[" + gqFastIndexID + "]->fragment_data[" + currentCol + "][" + currentFragmentRow + "[" + currentCol + "]]));\n" ; functionParameters += "uint64_t* " + pointerName ; break  
+functionParameters += "unsigned char* " + pointerName  
+functionParameters += "uint16_t* " + pointerName  
+functionParameters += "uint32_t* " + pointerName  
+functionParameters += "uint64_t* " + pointerName  
+else if ( entityFlag && currentEncoding == Metadata . ENCODING_BCA )  
+functionParameters += "uint64_t* " + pointerName  
+functionParameters += "unsigned char* " + pointerName  
+currFunction += generateDecodeFunctionBody ( preThreading , gqFastIndexID , alias , currentEncoding , columnIteration , currentCol , sizeName , currentFragmentBytesName , pointerName , bufferPoolTrackingArray , currPool , currentBytesSize )  
+private static String evaluatePreviousJoinEntityFlag ( Operator currentOp , MetaQuery query , boolean threadID , StringBuilder tabString , int [ ] closingBraces , String drivingAlias , int drivingAliasCol , String currAlias , List < Integer > columnIDs , int drivingAliasID , int indexByteSize , String currentFragmentRow , int gqFastIndexID , boolean preThreading , int currentAliasID , MetaIndex currMetaIndex , List < String > functionHeadersCppCode , List < String > functionsCppCode , int [ ] [ ] bufferPoolTrackingArray , boolean entityFlag , Metadata metadata , int indexID )  
+String mainString = new String ( )  
+String elementString = drivingAlias + "_col" + drivingAliasCol + "_element"  
+mainString += "\n" + tabString + getPrimitive ( indexByteSize ) + "* "  
+String currentFragmentBytesName = new String ( )  
+for ( int k = 0 ; k < columnIDs . size ( ) ; k ++ )  
+int currentCol = columnIDs . get ( k )  
+if ( k == 0 )  
+currentFragmentBytesName = currAlias + "_col" + currentCol + "_bytes"  
+mainString += tabString + "uint32_t " + currentFragmentBytesName + " = " + "idx[" + gqFastIndexID + "]->index_map[" + elementString + "+1]" + "[" + currentCol + "] - " + currentFragmentRow + "[" + currentCol + "];\n"  
+mainString += tabString + "if(" + currentFragmentBytesName + ") {\n"  
+closingBraces [ 0 ] ++  
+tabString . append ( "\t" )  
+mainString += joinGenerateDecodeFragmentFunction ( preThreading , currAlias , currentAliasID , k , tabString , currMetaIndex , query , functionHeadersCppCode , functionsCppCode , gqFastIndexID , currentCol , currentFragmentRow , currentFragmentBytesName , bufferPoolTrackingArray , entityFlag , indexID )  
+private static String evaluatePreviousJoinRelationshipTable ( Operator currentOp , MetaQuery query , boolean threadID , StringBuilder tabString , int [ ] closingBraces , String drivingAlias , int drivingAliasCol , String currAlias , List < Integer > columnIDs , int drivingAliasID , int indexByteSize , String currentFragmentRow , int gqFastIndexID , boolean preThreading , int currentAliasID , MetaIndex currMetaIndex , List < String > functionHeadersCppCode , List < String > functionsCppCode , int [ ] [ ] bufferPoolTrackingArray , boolean entityFlag , String previousAlias , int previousIndexID , List < Integer > previousColumnIDs , Metadata metadata , boolean justStartedThreading , int indexID )  
+int drivingPool = query . getBufferPoolID ( drivingAliasID , drivingAliasCol )  
+mainString += currentFragmentRow + " = idx[" + gqFastIndexID + "]->" + "index_map[" + elementString + "];\n" ; 
+mainString += tabString + "uint32_t " + currentFragmentBytesName + " = " + "idx[" + gqFastIndexID + "]->index_map[" + elementString + "+1]" + "[" + currentCol + "] - " + currentFragmentRow + "[" + currentCol + "];\n"  
+mainString += joinGenerateDecodeFragmentFunction ( preThreading , currAlias , currentAliasID , k , tabString , currMetaIndex , query , functionHeadersCppCode , functionsCppCode , gqFastIndexID , currentCol , currentFragmentRow , currentFragmentBytesName , bufferPoolTrackingArray , entityFlag , indexID )  
+private static String evaluatePreviousSelection ( Operator previousOp , MetaQuery query , StringBuilder tabString , int [ ] closingBraces , String drivingAlias , int drivingAliasCol , int indexByteSize , String currentFragmentRow , int gqFastIndexID , List < Integer > columnIDs , boolean entityFlag , String currAlias , int currentAliasID , MetaIndex currMetaIndex , List < String > functionHeadersCppCode , List < String > functionsCppCode , boolean preThreading , int [ ] [ ] bufferPoolTrackingArray , boolean justStartedThreading , int indexID )  
+mainString += currentFragmentRow + " = idx[" + gqFastIndexID + "]->" + "index_map[" + elementString + "];\n" ; 
+mainString += tabString + "uint32_t " + currentFragmentBytesName + " = " + "idx[" + gqFastIndexID + "]->index_map[" + elementString + "+1]" + "[" + currentCol + "] - " + currentFragmentRow + "[" + currentCol + "];\n"  
+mainString += joinGenerateDecodeFragmentFunction ( preThreading , currAlias , currentAliasID , k , tabString , currMetaIndex , query , functionHeadersCppCode , functionsCppCode , gqFastIndexID , currentCol , currentFragmentRow , currentFragmentBytesName , bufferPoolTrackingArray , entityFlag , indexID )  
+int indexID  
+List < Integer > columnIDs  
+while ( loopAgain )  
+mainString += evaluatePreviousJoinEntityFlag ( currentOp , query , threadID , tabString , closingBraces , drivingAlias , drivingAliasCol , currAlias , columnIDs , drivingAliasID , indexByteSize , currentFragmentRow , gqFastIndexID , preThreading , currentAliasID , currMetaIndex , functionHeadersCppCode , functionsCppCode , bufferPoolTrackingArray , entityFlag , metadata , indexID )  
+mainString += evaluatePreviousJoinRelationshipTable ( currentOp , query , threadID , tabString , closingBraces , drivingAlias , drivingAliasCol , currAlias , columnIDs , drivingAliasID , indexByteSize , currentFragmentRow , gqFastIndexID , preThreading , currentAliasID , currMetaIndex , functionHeadersCppCode , functionsCppCode , bufferPoolTrackingArray , entityFlag , previousAlias , previousIndexID , previousColumnIDs , metadata , justStartedThreading , indexID )  
+mainString += evaluatePreviousSelection ( previousOp , query , tabString , closingBraces , drivingAlias , drivingAliasCol , indexByteSize , currentFragmentRow , gqFastIndexID , columnIDs , entityFlag , currAlias , currentAliasID , currMetaIndex , functionHeadersCppCode , functionsCppCode , preThreading , bufferPoolTrackingArray , justStartedThreading , indexID )  
+String selectionAlias = query . getAliases ( ) . get ( selectionAliasID )  
+mainSelectionString += tabString + selectionAlias + "_list[" + j + "] = " + currSelection + ";\n"  
+private static String evaluateAggregation ( boolean preThreading , int i , List < Operator > operators , Operator currentOp , Metadata metadata , StringBuilder tabString , int [ ] closingBraces , int [ ] [ ] bufferPoolTrackingArray , MetaQuery query )  
+if ( max < index . getGQFastIndexID ( ) )  
+max = index . getGQFastIndexID ( )  
+private int gqFastIndexID  
+public MetaIndex ( int gqFastIndexID , int numColumns , int indexMapByteSize , List < Integer > columnEncodingsList , List < Integer > columnEncodedByteSizesList )  
+this . gqFastIndexID = gqFastIndexID  
+public int getGQFastIndexID ( )  

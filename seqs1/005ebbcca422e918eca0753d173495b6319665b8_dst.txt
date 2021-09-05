@@ -1,0 +1,2 @@
+if ( inTidsList . size ( ) <= 1 ) { 
+return new ItemsetAndTids ( newItemset , newTids , supportCnt , isTidsDiffSet )  

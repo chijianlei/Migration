@@ -1,0 +1,3 @@
+String command = getJsonObject ( "EXECUTE" , script , env ) . toString ( )  
+private JsonObject getJsonObject ( String action , String payload , Map < String , String > env )  
+jsonMessage . add ( "env" , parser . fromJson ( parser . toJson ( env ) , JsonObject . class ) )  

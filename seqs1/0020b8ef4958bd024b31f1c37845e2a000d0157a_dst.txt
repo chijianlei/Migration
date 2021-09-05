@@ -1,0 +1,1 @@
+final int valueCount = defaultValues != null ? defaultValues . length : 0  

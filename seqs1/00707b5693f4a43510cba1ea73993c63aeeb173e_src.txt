@@ -1,0 +1,7 @@
+public ImplementThirteenthMonthRunnable ( Grid grid , ProgressBar progress , Label status , Button exportToExcelButton , int branchId , int year , double current , double dataSize )  
+for ( Employee e : es . findEmployeeByBranch ( getBranchId ( ) ) )  
+ComboBox trade = new ComboBox ( )  
+public ThirteenthMonth ( int branchId )  
+ImplementThirteenthMonthRunnable ir = new ImplementThirteenthMonthRunnable ( grid , progress , status , exportToExcelButton , getBranchId ( ) , CommonUtil . convertStringToInteger ( year . getValue ( ) . toString ( ) ) , current , dataSize )  
+dataSize = es . findEmployeeByBranch ( getBranchId ( ) ) . size ( )  
+public interface EmployeeService  

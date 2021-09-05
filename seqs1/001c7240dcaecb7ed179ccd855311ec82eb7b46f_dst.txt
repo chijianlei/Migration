@@ -1,0 +1,3 @@
+sCrimeLab = new CrimeLab ( context )  
+private CrimeLab ( Context context )  
+mCrimes = new ArrayList < > ( )  

@@ -1,0 +1,4 @@
+String projectKey = this . getProjectKey ( pullRequestUrl )  
+String repositoryName = this . getRepositoryName ( pullRequestUrl )  
+HttpPost req = new HttpPost ( url + "/rest/api/1.0/projects/" + projectKey + "/repos/" + repositoryName + "/pull-requests/" + "82" + "/comments" )  
+Matcher matcher = Pattern . compile ( "projects/(.*?)/repos" ) . matcher ( pullRequestUrl )  

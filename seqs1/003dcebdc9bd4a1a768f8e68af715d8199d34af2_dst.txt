@@ -1,0 +1,7 @@
+public static ArrayList < Thread > onlineThreads = new ArrayList < Thread > ( )  
+public static ArrayList < OutputStream > notClosedWriters = new ArrayList < OutputStream > ( )  
+public static ArrayList < Thread > onlineThreads = new ArrayList < Thread > ( )  
+@ Override public void stop ( )  
+if ( ! onlineThreads . isEmpty ( ) ) 
+for ( Thread t : onlineThreads ) 
+t . stop ( ) ; 

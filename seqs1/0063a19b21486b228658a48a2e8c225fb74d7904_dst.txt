@@ -1,0 +1,4 @@
+public enum EResourceType { ACCESS , ASSESSMENT , COLLABORATION , 
+if ( ( resourceType != null ) && resourceType . equals ( EResourceType . ASSESSMENT ) )  
+if ( ( resourceType != null ) && resourceType . equals ( EResourceType . COLLABORATION ) )  
+if ( ( resourceType != null ) && resourceType . equals ( EResourceType . ACCESS ) )  

@@ -1,0 +1,4 @@
+float offset = boardView . getOffset ( )  
+float hitX = e . getX ( )  
+float hitY = e . getY ( )  
+public float getOffset ( ) { return tileWidth * scaling ;  

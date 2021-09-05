@@ -1,0 +1,3 @@
+if ( result != null )  
+String fact = factGenerator . random ( )  
+action = new RoundhouseAction ( style , fact )  

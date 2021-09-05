@@ -1,0 +1,2 @@
+for ( Iterator < Integer > itr = this . heap . iterator ( ) ; itr . hasNext ( ) ; itr . next ( ) )  
+Rectangle ground = new Rectangle ( 0 , rectangle . getY ( ) + rectangle . getHeight ( ) , GROUND_WIDTH , GROUND_HEIGHT )  

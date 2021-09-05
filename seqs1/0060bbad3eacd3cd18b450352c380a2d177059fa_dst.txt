@@ -1,0 +1,2 @@
+m_chunkSizeSpinner . setEnabled ( ! m_inMemoryCheckBox . isSelected ( ) )  
+m_chunkSizeSpinner . setEnabled ( ! settings . isInMemory ( ) )  

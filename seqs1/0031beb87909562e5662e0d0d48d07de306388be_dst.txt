@@ -1,0 +1,5 @@
+catch ( CloudControllerServiceNetworkPartitionAlreadyExistsExceptionException e )  
+return Response . status ( Response . Status . CONFLICT ) . entity ( new ResponseMessageBean ( ResponseMessageBean . ERROR , backendErrorMessage ) ) . build ( )  
+catch ( CloudControllerServiceInvalidNetworkPartitionExceptionException e )  
+return Response . status ( Response . Status . BAD_REQUEST ) . entity ( new ResponseMessageBean ( ResponseMessageBean . ERROR , backendErrorMessage ) ) . build ( )  
+return Response . ok ( ) . entity ( new ResponseMessageBean ( ResponseMessageBean . SUCCESS , String . format ( "Autoscaling policy updated successfully: [autoscale-policy] %s" , autoscalePolicy . getId ( ) ) ) ) . build ( )  

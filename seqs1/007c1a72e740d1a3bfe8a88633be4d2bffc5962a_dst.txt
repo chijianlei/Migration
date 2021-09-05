@@ -1,0 +1,32 @@
+e . printStackTrace ( )  
+for ( int i = 0 ; i < dim ; i ++ )  
+for ( DStabBus b : subNet . getBusList ( ) )  
+Hashtable < String , Complex > posVoltTable = this . solveSeqNetwork ( subNet , SequenceCode . POSITIVE , posCurTable ) ; 
+for ( DStabBus b : subNet . getBusList ( ) )  
+Hashtable < String , Complex > negVoltTable = this . solveSeqNetwork ( subNet , SequenceCode . NEGATIVE , negCurTable )  
+for ( Entry < String , Complex > e : zeroVoltTable . entrySet ( ) )  
+subNet . getBus ( e . getKey ( ) ) . get3SeqVoltage ( ) . a_0 = e . getValue ( )  
+Hashtable < String , Complex > zeroVoltTable = this . solveSeqNetwork ( subNet , SequenceCode . ZERO , zeroCurTable )  
+for ( Entry < String , Complex > e : negVoltTable . entrySet ( ) )  
+subNet . getBus ( e . getKey ( ) ) . get3SeqVoltage ( ) . c_2 = e . getValue ( )  
+private Hashtable < String , Complex > solveSeqNetwork ( DStabilityNetwork subnet , SequenceCode seq , Hashtable < String , Complex > seqCurInjTable )  
+Hashtable < String , Complex > busVoltResults = new Hashtable < > ( )  
+switch ( seq ) { case POSITIVE : subnet . setCustomBusCurrInjHashtable ( null ) ; ISparseEqnComplex subNetY = subnet . getYMatrix ( ) ; subNetY . setB2Zero ( ) ; for ( Entry < String , Complex > e : seqCurInjTable . entrySet ( ) ) { subNetY . setBi ( e . getValue ( ) , subnet . getBus ( e . getKey ( ) ) . getSortNumber ( ) ) ; } try { subNetY . solveEqn ( ) ; } catch ( IpssNumericException e1 ) { e1 . printStackTrace ( ) ; return null ; } for ( DStabBus bus : subnet . getBusList ( ) ) { busVoltResults . put ( bus . getId ( ) , subNetY . getX ( bus . getSortNumber ( ) ) ) ; } break ; case NEGATIVE : ISparseEqnComplex negSeqYMatrix = subnet . getNegSeqYMatrix ( ) ; negSeqYMatrix . setB2Zero ( ) ; for ( Entry < String , Complex > e : seqCurInjTable . entrySet ( ) ) { negSeqYMatrix . setBi ( e . getValue ( ) , subnet . getBus ( e . getKey ( ) ) . getSortNumber ( ) ) ; } try { negSeqYMatrix . solveEqn ( ) ; } catch ( IpssNumericException e1 ) { e1 . printStackTrace ( ) ; return null ; } for ( DStabBus bus : subnet . getBusList ( ) ) { busVoltResults . put ( bus . getId ( ) , negSeqYMatrix . getX ( bus . getSortNumber ( ) ) ) ; } break ; case ZERO : ISparseEqnComplex zeroSeqYMatrix = subnet . getZeroSeqYMatrix ( ) ; zeroSeqYMatrix . setB2Zero ( ) ; for ( Entry < String , Complex > e : seqCurInjTable . entrySet ( ) ) { zeroSeqYMatrix . setBi ( e . getValue ( ) , subnet . getBus ( e . getKey ( ) ) . getSortNumber ( ) ) ; } try { zeroSeqYMatrix . solveEqn ( ) ; } catch ( IpssNumericException e1 ) { e1 . printStackTrace ( ) ; return null ; } for ( DStabBus bus : subnet . getBusList ( ) ) { busVoltResults . put ( bus . getId ( ) , zeroSeqYMatrix . getX ( bus . getSortNumber ( ) ) ) ; } break  
+subnet . setCustomBusCurrInjHashtable ( null )  
+ISparseEqnComplex subNetY = subnet . getYMatrix ( )  
+subNetY . setBi ( e . getValue ( ) , subnet . getBus ( e . getKey ( ) ) . getSortNumber ( ) )  
+for ( DStabBus bus : subnet . getBusList ( ) )  
+ISparseEqnComplex negSeqYMatrix = subnet . getNegSeqYMatrix ( )  
+negSeqYMatrix . setBi ( e . getValue ( ) , subnet . getBus ( e . getKey ( ) ) . getSortNumber ( ) )  
+for ( DStabBus bus : subnet . getBusList ( ) )  
+ISparseEqnComplex zeroSeqYMatrix = subnet . getZeroSeqYMatrix ( )  
+zeroSeqYMatrix . setBi ( e . getValue ( ) , subnet . getBus ( e . getKey ( ) ) . getSortNumber ( ) )  
+for ( DStabBus bus : subnet . getBusList ( ) )  
+for ( DStabBus bus : dsNet . getBusList ( ) )  
+protected AbstractMultiNetDStabSimuHelper simuHelper = null  
+public MultiNetDynamicEventProcessor ( AbstractMultiNetDStabSimuHelper mNetSimuHelper )  
+if ( fault . getFaultCode ( ) == SimpleFaultCode . GROUND_LG )  
+else if ( fault . getFaultCode ( ) == SimpleFaultCode . GROUND_LL )  
+else if ( fault . getFaultCode ( ) == SimpleFaultCode . GROUND_LLG )  
+public void test_MultiSubNetTieLineCurrent_IEEE9Bus ( ) throws InterpssException  
+@ Test public void test_3phase3SeqMultiSubNetTS_IEEE9Bus ( ) throws InterpssException  

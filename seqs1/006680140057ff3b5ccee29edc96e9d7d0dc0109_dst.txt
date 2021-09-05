@@ -1,0 +1,3 @@
+@ Transactional @ Override public void work ( )  
+public List < SubscriptionEntry > updateUserSubscriptionEntries ( Feed feed , List < FetcherEntry > fetchedEntries )  
+public void setExclusionChecker ( ExclusionChecker exclusionChecker )  

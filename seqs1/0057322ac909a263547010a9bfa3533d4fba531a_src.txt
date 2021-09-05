@@ -1,0 +1,9 @@
+final static PositionalInvertedIndex index = new PositionalInvertedIndex ( )  
+final static List < String > fileNames = new ArrayList < String > ( )  
+final static BiwordIndex bindex = new BiwordIndex ( )  
+outputcontent += "\n\t" + fileNames . get ( i )  
+outputcontent += "\n\t" + fileNames . get ( i )  
+if ( file . toString ( ) . endsWith ( ".txt" ) )  
+if ( file . toString ( ) . endsWith ( ".json" ) )  
+public static void main ( String [ ] args ) throws IOException  
+System . out . println ( "Indexing file " + file . getFileName ( ) )  

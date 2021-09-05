@@ -1,0 +1,2 @@
+targetName = findProxiedClass ( target ) . getSimpleName ( )  
+throw new IllegalStateException ( fullName + " already registered" )  

@@ -1,0 +1,3 @@
+String city = request . getParameter ( "newCity" )  
+String state = request . getParameter ( "newState" )  
+String zip = request . getParameter ( "newZip" )  

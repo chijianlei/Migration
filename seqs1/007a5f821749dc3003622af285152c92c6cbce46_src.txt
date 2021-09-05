@@ -1,0 +1,2 @@
+return input . replaceAll ( "\"" , "\\\"" )  
+buffer . append ( "\"" ) . append ( escapeQuotes ( blankTxt ) ) . append ( "\"" )  

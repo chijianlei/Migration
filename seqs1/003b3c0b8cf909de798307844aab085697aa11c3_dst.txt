@@ -1,0 +1,5 @@
+public static @ Nullable AbstractTableConfig getOfflineTableConfig ( ZkHelixPropertyStore < ZNRecord > propertyStore , String tableName )  
+StorageQuotaChecker . QuotaCheckerResponse quotaResponse = checkStorageQuota ( indexDir , metadata , offlineTableConfig )  
+downloadUrl = ControllerConf . constructDownloadUrl ( tableName , dataFile . getName ( ) , vip )  
+private StorageQuotaChecker . QuotaCheckerResponse checkStorageQuota ( @ Nonnull File segmentFile , @ Nonnull SegmentMetadata metadata , @ Nonnull OfflineTableConfig offlineTableConfig )  
+return quotaChecker . isSegmentStorageWithinQuota ( segmentFile , offlineTableName , metadata . getName ( ) , _controllerConf . getServerAdminRequestTimeoutSeconds ( ) * 1000 )  

@@ -1,0 +1,2 @@
+@ RestController @ RequestMapping ( "/api" ) @ Transactional public class EntryResource  
+@ GetMapping ( "/entries" ) @ Timed public ResponseEntity < List < Entry >> getAllEntries ( @ ApiParam Pageable pageable )  

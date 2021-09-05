@@ -1,0 +1,52 @@
+return "downloads" + File . separator + "harFiles" + currentTime + ".zip"  
+HarLog firstHarLog = harReader . readHarFile ( new File ( tempDir + "/" + firstHarfileLocation ) , harWarnings )  
+List < HarEntry > entries1 = secondHarLog . getEntries ( ) . getEntries ( )  
+HarLog secondHarLog = harReader . readHarFile ( new File ( tempDir + "/" + secondHarfileLocation ) , harWarnings )  
+List < HarEntry > entries = firstHarLog . getEntries ( ) . getEntries ( )  
+List < HarPage > secondPages = secondHarLog . getPages ( ) . getPages ( )  
+List < HarPage > firstPages = firstHarLog . getPages ( ) . getPages ( )  
+String pageref = entry . getPageRef ( )  
+String pageref = entry . getPageRef ( )  
+ResponseBean responseBean = HarAnalyzerUtil . xlsReadWriteUpdate ( firstEntry , secondEntry )  
+for ( int i = 0 ; i < fields . size ( ) ; i ++ )  
+HarReportUtil harReportUtil = new HarReportUtil ( reportFile )  
+File zipDir = HarAnalyzerUtil . getDownoadsDirectory ( )  
+String downloadHarFile = DownloadHar . downloadHarFile ( wptURL , zipDir . getAbsolutePath ( ) , releaseName , browser , environment , bandwidth )  
+bean . setDownloadUrl ( downloadHarFile )  
+private static File reportFile  
+private static long firstPageOnload = 0  
+private static long secondPageOnLoad = 0  
+private static List < String > sheet2CellHeader  
+private static List < String > sheet3Cells  
+DateFormat df = new SimpleDateFormat ( "ddMMYYYYHHmmss" )  
+reportFile = new File ( workingFolder . getAbsolutePath ( ) + "\\" + downloadFile )  
+sheet1cellHeaders . add ( "URL" )  
+sheet1cellHeaders . add ( "ResponseCode" )  
+sheet1cellHeaders . add ( "Time Taken" )  
+sheet1cellHeaders . add ( "File Size" )  
+sheet1cellHeaders . add ( "Onload" )  
+secondPageOnLoad = secondPage . getPageTimings ( ) . getOnLoad ( )  
+createXLSHeaderColumnName ( )  
+FileOutputStream fileOut = new FileOutputStream ( reportFile )  
+public static ResponseBean xlsReadWriteUpdate ( List < HarEntry > firstEntryList , List < HarEntry > secondEntryList ) throws IOException , JSONException  
+responseBean . setJsonObject ( rootObject . toString ( ) )  
+FileInputStream fsIP = new FileInputStream ( reportFile )  
+for ( HarEntry harEntry : harEntries )  
+FileOutputStream output_file = new FileOutputStream ( reportFile )  
+FileInputStream fsIP = new FileInputStream ( reportFile )  
+long time = harEntry . getTime ( )  
+String loadStarts = harEntry . getCustomFields ( ) . getCustomFieldValue ( "_load_start" )  
+long onloadtime = Long . parseLong ( loadStarts )  
+FileOutputStream output_file = new FileOutputStream ( reportFile )  
+FileInputStream fsIP = new FileInputStream ( reportFile )  
+Long secondEntryTime = null  
+Long firstTime = null  
+String loadStarts = firstEntry . getCustomFields ( ) . getCustomFieldValue ( "_load_start" )  
+long time = Long . parseLong ( loadStarts )  
+String loadStarts = secondEntry . getCustomFields ( ) . getCustomFieldValue ( "_load_start" )  
+long time = Long . parseLong ( loadStarts )  
+long timeDiff = secondEntryTime - firstTime  
+FileOutputStream output_file = new FileOutputStream ( reportFile )  
+public HarReportUtil ( String fileName )  
+workingFolder = HarAnalyzerUtil . getDownoadsDirectory ( )  
+reportFile = new File ( workingFolder . getAbsolutePath ( ) + "\\" + fileName )  

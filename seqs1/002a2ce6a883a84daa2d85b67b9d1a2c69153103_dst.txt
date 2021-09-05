@@ -1,0 +1,52 @@
+for ( int gi = 0 ; gi < repeat ; gi ++ )  
+futures . add ( CommandLine . eService . submit ( new greedyConsensusLoop ( taxonIdentifier , keepclusters , clusterCopy ) ) )  
+ti --  
+public static class greedyConsensusLoop implements Callable < Tree >  
+List < STITreeCluster > clusters  
+TaxonIdentifier taxonIdentifier  
+public greedyConsensusLoop ( TaxonIdentifier taxonIdentifier , boolean keepclusters , List < STITreeCluster > clusters )  
+this . keepclusters = keepclusters  
+this . clusters = clusters  
+this . taxonIdentifier = taxonIdentifier  
+public Tree call ( )  
+public static List < STITreeCluster > getGeneClusters ( Tree tree , TaxonIdentifier taxonIdentifier )  
+for ( int ii = 0 ; ii < secondRoundSampling ; ii ++ )  
+for ( int j = 0 ; j < allGreedies . length ; j ++ )  
+addBipartitionsFromSignleIndTreesToX ( tree , baseTrees , GlobalMaps . taxonNameMap . getSpeciesIdMapper ( ) . getSTTaxonIdentifier ( ) )  
+CommandLine . eService . execute ( new FormSetXLoop ( allGreedies [ j ] . get ( ii ) , baseTrees , latch ) )  
+e . printStackTrace ( )  
+prev = clusters . getClusterCount ( )  
+stringOutput . add ( "Adding to X using resolutions of greedy consensus ...\n" )  
+stringOutput . add ( "Limit for sigma of degrees:" + N + "\n" )  
+stringOutput . add ( d + " \n" )  
+stringOutput . add ( " " + deg + "\n" )  
+Integer max = 0  
+double thresh = this . GREEDY_ADDITION_THRESHOLDS [ th ]  
+if ( greedyNode . isLeaf ( ) )  
+if ( greedyNode . getChildCount ( ) <= 2 )  
+BitSet greedyBS = ( BitSet ) ( ( STITreeCluster ) ( ( STINode ) greedyNode ) . getData ( ) ) . getBitSet ( )  
+BitSet [ ] childbs = new BitSet [ greedyNode . getChildCount ( ) + 1 ]  
+int i1 = 0  
+for ( TNode c : greedyNode . getChildren ( ) )  
+childbs [ i1 ] = ( BitSet ) ( ( STITreeCluster ) ( ( STINode ) c ) . getData ( ) ) . getBitSet ( )  
+i1 ++  
+BitSet comp = ( BitSet ) greedyBS . clone ( )  
+comp . flip ( 0 , tid . taxonCount ( ) )  
+childbs [ i1 ] = comp  
+ret = "polytomy of size " + greedyNode . getChildCount ( )  
+addSubSampledBitSetToX ( speciesSimilarityMatrix . resolveByUPGMA ( Arrays . asList ( childbs ) , true ) , tid )  
+int k = 0  
+for ( int j = 0 ; j < GREEDY_ADDITION_DEFAULT_RUNS + k ; j ++ )  
+boolean quadratic = ( SLOW || ( th < GREEDY_DIST_ADDITTION_LAST_THRESHOLD_INDX && j < GREEDY_ADDITION_DEFAULT_RUNS ) ) && greedyNode . getChildCount ( ) <= polytomySizeLimit  
+if ( sampleAndResolve ( childbs , contractedTrees , quadratic , sm , tid , true , false ) && k < GREEDY_ADDITION_MAX )  
+if ( k > max ) 
+max = k  
+ret += "; rounds with additions with at least " + GREEDY_ADDITION_MIN_FREQ + " support: " + k / GREEDY_ADDITION_IMPROVEMENT_REWARD + "; clusters: " + clusters . getClusterCount ( ) + "\n"  
+th = ( th + 1 ) % this . GREEDY_ADDITION_THRESHOLDS . length  
+stringOutput . add ( "max k is :" + max + "\n" )  
+TreeSet < Entry < BitSet , Integer >> countSorted = new TreeSet < Entry < BitSet , Integer >> ( new Utils . BSComparator ( true , sampleSize ) )  
+MutableTree greedyTree = new STITree < BitSet > ( )  
+for ( int i = 0 ; i < sampleSize ; i ++ )  
+tmpnodes [ i ] = greedyTree . getRoot ( ) . createChild ( i + "" )  
+bs . set ( i )  
+List < BitSet > newBSList = new ArrayList < BitSet > ( )  

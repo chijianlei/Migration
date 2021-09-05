@@ -1,0 +1,8 @@
+for ( int i = 1 ; i < numCodeBlocks ; i ++ )  
+MethodInsnNode min = ( MethodInsnNode ) ( mn . instructions . get ( fi . endInstruction ) )  
+if ( isYieldMethod ( min . owner , min . name ) ) { 
+final int numYieldArgs = TypeAnalyzer . getNumArguments ( min . desc )  
+final boolean yieldReturnsValue = ( Type . getReturnType ( min . desc ) != Type . VOID_TYPE )  
+if ( isReflectInvocation ( min . owner , min . name ) )  
+return className . equals ( "java/lang/reflect/Method" ) && methodName . equals ( "invoke" )  
+public static boolean isSyntheticAccess ( String className , String methodName )  

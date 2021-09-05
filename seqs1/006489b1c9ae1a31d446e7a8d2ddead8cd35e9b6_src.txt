@@ -1,0 +1,25 @@
+String clean [ ] = results [ 1 ] . split ( ":" )  
+values [ 0 ] += clean [ 1 ] + ","  
+clean = results [ 2 ] . split ( ":" )  
+values [ 1 ] += clean [ 1 ] + ","  
+String clean [ ] = results [ 1 ] . split ( ":" )  
+values [ 0 ] += clean [ 1 ] + ","  
+clean = results [ 2 ] . split ( ":" )  
+values [ 1 ] += clean [ 1 ] + ","  
+String clean [ ] = results [ 1 ] . split ( ":" )  
+values [ 0 ] += clean [ 1 ] + ","  
+clean = results [ 2 ] . split ( ":" )  
+values [ 1 ] += clean [ 1 ] + ","  
+String clean [ ] = results [ 1 ] . split ( ":" )  
+values [ 0 ] += clean [ 1 ] + ","  
+clean = results [ 2 ] . split ( ":" )  
+values [ 1 ] += clean [ 1 ] + ","  
+String train = "../datasets/classification/flags/flags-train.arff"  
+String test = "../datasets/classification/flags/flags-test.arff"  
+ClusWrapper . initialization ( train , test , "20-26" , false , true ) ; 
+myMeasures measure = ClusWrapper . evaluateIndividualClassification ( all , true )  
+System . out . println ( "\nTest error: " )  
+System . out . println ( "AUROC: " + measure . getAUROC ( ) [ 1 ] ) ; 
+System . out . println ( "AUPRC: " + measure . getAUPRC ( ) [ 1 ] ) ; 
+System . out . println ( "AUROC: " + measure . getAUROC ( ) [ 0 ] ) ; 
+System . out . println ( "AUPRC: " + measure . getAUPRC ( ) [ 0 ] ) ; 

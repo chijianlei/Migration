@@ -1,0 +1,28 @@
+public void onSolvedEquation ( )  
+session . addScore ( session . getLevel ( ) . getEquationSolvingScore ( ) )  
+scoreLabel . setText ( String . format ( "Score: %d" , session . getScore ( ) ) )  
+++ solvedCorrectly  
+if ( session . getScore ( ) >= session . getLevel ( ) . getMinimumAdvancePoints ( ) && ( ( float ) solvedCorrectly ) / ( float ) ( solvedCorrectly + solvedIncorrectly ) >= session . getLevel ( ) . getMinimumAdvanceAccuracy ( ) )  
+session . setLevel ( Level . values ( ) [ session . getLevel ( ) . ordinal ( ) + 1 ] )  
+loadLevel ( session . getLevel ( ) )  
+solvedCorrectly = 0  
+solvedIncorrectly = 0  
+List < EquationContainer > unsolved = new ArrayList < > ( )  
+for ( int i = 0 ; i < equationList . getChildCount ( ) ; ++ i )  
+EquationContainer equation = ( EquationContainer ) equationList . getChildAt ( i )  
+if ( ! equation . isSolved ( ) )  
+unsolved . add ( equation )  
+for ( EquationContainer equation : unsolved )  
+equationList . removeView ( equation )  
+for ( int i = 0 ; i < session . getLevel ( ) . getMaximumUnsolvedPuzzles ( ) ; ++ i )  
+addEquation ( )  
+addEquation ( )  
+public void onFailedSolution ( )  
+++ solvedIncorrectly  
+if ( savedInstanceState == null )  
+super . onRestoreInstanceState ( savedInstanceState )  
+session = savedInstanceState . getParcelable ( "GameSession" )  
+loadLevel ( session . getLevel ( ) )  
+solvedCorrectly = savedInstanceState . getInt ( "SolvedCorrectly" )  
+solvedIncorrectly = savedInstanceState . getInt ( "SolvedIncorrectly" )  
+operationList = ( OperationListView ) findViewById ( R . id . operationList )  

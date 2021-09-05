@@ -1,0 +1,14 @@
+if ( rawServices == null )  
+vcapString = System . getenv ( "VCAP_SERVICES" )  
+if ( vcapString == null )  
+throw new IllegalStateException ( "VCAP_SERVICES are not defined, please set environment variable VCAP_SERVICES or configuration property: " + VCAP_SERVICES )  
+if ( rawString . startsWith ( File . separator ) )  
+Path vcapFile = Paths . get ( rawString )  
+vcapContents = new String ( Files . readAllBytes ( vcapFile ) , StandardCharsets . UTF_8 )  
+vcapContents = rawString  
+Path vcapFile = Paths . get ( vcapString )  
+serviceName = System . getenv ( "SERVICE_NAME" )  
+for ( JsonElement ja : streamsServices )  
+JsonObject possibleService = ja . getAsJsonObject ( )  
+if ( serviceName . equals ( possibleService . get ( "name" ) . getAsString ( ) ) )  
+service = possibleService  

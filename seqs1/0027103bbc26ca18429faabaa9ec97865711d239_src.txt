@@ -1,0 +1,24 @@
+if ( socketSession == null && socketMsg . isEncrypted ( ) )  
+socketMsg . decryptMessage ( socketSession . getAESParams ( ) )  
+CertValidationDto certValidationDto = CertValidationDto . validationRequest ( "7553172H" , "000000000000000" )  
+messageDto . setEncryptedMessage ( Encryptor . encryptAES ( JSON . getMapper ( ) . writeValueAsString ( messageContentDto ) , aesEncryptParams ) )  
+public static SocketMessageDto getSignRequest ( DeviceVS deviceVS , String toUser , String textToSign , String subject ) throws Exception  
+WebSocketSession socketSession = checkWebSocketSession ( deviceVS , null , TypeVS . MESSAGEVS_SIGN )  
+socketMessageDto . setDeviceToId ( deviceVS . getId ( ) )  
+socketMessageDto . setDeviceToName ( deviceVS . getDeviceName ( ) )  
+SocketMessageContentDto messageContentDto = SocketMessageContentDto . getSignRequest ( deviceVS , toUser , textToSign , subject )  
+byte [ ] base64EncryptedAESDataRequestBytes = Encryptor . encryptToCMS ( aesParams . getBytes ( ) , deviceVS . getX509Certificate ( ) )  
+public static SocketMessageDto getCurrencyWalletChangeRequest ( DeviceVS deviceVS , List < Currency > currencyList ) throws Exception  
+WebSocketSession socketSession = checkWebSocketSession ( deviceVS , currencyList , TypeVS . CURRENCY_WALLET_CHANGE )  
+socketMessageDto . setDeviceToId ( deviceVS . getId ( ) )  
+socketMessageDto . setDeviceToName ( deviceVS . getDeviceName ( ) )  
+byte [ ] base64EncryptedAESDataRequestBytes = Encryptor . encryptToCMS ( aesParams . getBytes ( ) , deviceVS . getX509Certificate ( ) )  
+public static SocketMessageDto getMessageVSToDevice ( UserVS userVS , DeviceVS deviceVS , String toUser , String textToEncrypt ) throws Exception  
+WebSocketSession socketSession = checkWebSocketSession ( deviceVS , null , TypeVS . MESSAGEVS )  
+socketMessageDto . setDeviceToId ( deviceVS . getId ( ) )  
+socketMessageDto . setDeviceToName ( deviceVS . getDeviceName ( ) )  
+byte [ ] base64EncryptedAESDataRequestBytes = Encryptor . encryptToCMS ( aesParams . getBytes ( ) , deviceVS . getX509Certificate ( ) )  
+public static < T > WebSocketSession checkWebSocketSession ( DeviceVS deviceVS , T data , TypeVS typeVS ) throws NoSuchAlgorithmException  
+if ( deviceVS != null ) webSocketSession = ContextVS . getInstance ( ) . getWSSession ( deviceVS . getId ( ) )  
+webSocketSession = ContextVS . getInstance ( ) . getWSSession ( deviceVS . getId ( ) )  
+webSocketSession = new WebSocketSession ( aesParams , deviceVS , null , null )  

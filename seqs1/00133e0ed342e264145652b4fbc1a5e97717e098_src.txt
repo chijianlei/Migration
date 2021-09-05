@@ -1,0 +1,7 @@
+while ( events . size ( ) != 0 )  
+afternoonSlot . addNetworkingEvent ( )  
+public void addNetworkingEvent ( )  
+events . add ( new Event ( NETWORKING_EVENT_NAME , NETWORKING_EVENT_DURATION , NETWORKING_EVENT_DURATION_UNIT ) )  
+StringBuilder str = new StringBuilder ( )  
+str . append ( Time . minutesToDisplayTime ( nextEventStartTime ) + " " + event + NEW_LINE )  
+return str . toString ( )  

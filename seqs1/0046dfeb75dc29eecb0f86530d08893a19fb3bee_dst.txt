@@ -1,0 +1,11 @@
+protected CommandChain getPopulatedInstall ( )  
+for ( CommandBlockChain chain : chains )  
+String name = chain . getName ( )  
+result . add ( index , new Command ( "/summon ArmorStand ${origin + (" + chainStart . toAbsoluteString ( ) + ")} {CustomName:" + name + ",NoGravity:1b,Invisible:1b,Invulnerable:1b,Marker:1b}" ) )  
+String name = chain . getName ( )  
+protected List < MplBlock > toBlocks ( List < ChainLink > commands , LinkedHashMap < Position , ChainLinkType > placed )  
+protected void generateUnInstall ( ) throws NotEnoughSpaceException  
+addChain ( getPopulatedInstall ( ) )  
+addChain ( getPopulatedUninstall ( ) )  
+CommandChain uninstall = getPopulatedUninstall ( )  
+CommandChain install = getPopulatedInstall ( )  

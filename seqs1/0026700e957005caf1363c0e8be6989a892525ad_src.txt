@@ -1,0 +1,3 @@
+query . replace ( " " , "+" )  
+URL url = new URL ( googleBooksAPIUrl + query )  
+if ( bookInfo == null )  

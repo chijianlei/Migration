@@ -1,0 +1,2 @@
+if ( node . getName ( ) . equals ( "Niv氓" ) )  
+String path = "C:\\Users\\Jon-Erik\\Desktop\\Testartikel.xml"  

@@ -1,0 +1,4 @@
+int parentIndex = this . createSpace ( parent , 0 , children , 1 )  
+int parentIndex = this . createSpace ( parent , children . size ( ) , children , - 1 )  
+private int createSpace ( CardEntity parent , int indexOffset , List < CardEntity > children , int direction )  
+this . createSpaceAtIndex ( parentIndex + indexOffset + 1 , necessarySpace * direction )  

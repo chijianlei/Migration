@@ -1,0 +1,2 @@
+makeStringBlocks ( mStringBlocks )  
+public native final int addOverlayPath ( String idmapPath )  

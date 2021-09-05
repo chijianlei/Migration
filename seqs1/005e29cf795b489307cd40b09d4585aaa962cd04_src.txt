@@ -1,0 +1,2 @@
+private double linkLength = 100  
+if ( nextPart == null ) return false  

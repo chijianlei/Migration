@@ -1,0 +1,3 @@
+web . ignoring ( ) . antMatchers ( "/scripts/**/*.{js,html}" ) . antMatchers ( "/bower_components/**" ) . antMatchers ( "/i18n/**" ) . antMatchers ( "/assets/**" ) . antMatchers ( "/swagger-ui.html" ) . antMatchers ( "/api/register" ) . antMatchers ( "/api/activate" ) . antMatchers ( "/api/settings" ) . antMatchers ( "/api/account/reset_password/init" ) . antMatchers ( "/api/account/reset_password/finish" ) . antMatchers ( "/test/**" )  
+@ Override @ Bean public AuthenticationManager authenticationManagerBean ( ) throws Exception  
+@ Value ( "${aws.s3.bucketName}" ) private String awsS3BucketName  

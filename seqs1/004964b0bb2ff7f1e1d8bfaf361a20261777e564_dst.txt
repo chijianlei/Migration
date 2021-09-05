@@ -1,0 +1,1 @@
+return roiList . toArray ( new Roi [ rois . length ] )  

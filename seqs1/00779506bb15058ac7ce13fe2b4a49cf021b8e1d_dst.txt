@@ -1,0 +1,36 @@
+@ Override public Set < NShrinkResult < NShrinkable < T >>> shrinkNext ( Predicate < T > falsifier )  
+Set < NShrinkResult < NShrinkable < T >>> shrinkResults = new HashSet < > ( )  
+for ( int i = 0 ; i < shrinkables . size ( ) ; i ++ )  
+List < NShrinkable < Object >> newShrinkables = new ArrayList < > ( shrinkables )  
+newShrinkables . set ( position , NShrinkableValue . unshrinkable ( s ) )  
+return falsifier . test ( combine ( newShrinkables ) )  
+Set < NShrinkResult < NShrinkable < Object >>> singleShrinkableShrinkResults = shrinkables . get ( i ) . shrinkNext ( shrinkableFalsifier )  
+return singleSet . stream ( ) . map ( shrinkResult -> shrinkResult . map ( shrunkValue -> { List < NShrinkable < Object >> newShrinkables = new ArrayList < > ( shrinkables ) ; newShrinkables . set ( position , shrunkValue ) ; return ( NShrinkable < T > ) new NCombinedShrinkable < > ( newShrinkables , combineFunction )  
+return singleSet . stream ( ) . map ( shrinkResult -> shrinkResult . map ( shrunkValue -> { List < NShrinkable < Object >> newShrinkables = new ArrayList < > ( shrinkables ) ; newShrinkables . set ( position , shrunkValue ) ; return ( NShrinkable < T > ) new NCombinedShrinkable < > ( newShrinkables , combineFunction )  
+return singleSet . stream ( ) . map ( shrinkResult -> shrinkResult . map ( shrunkValue -> { List < NShrinkable < Object >> newShrinkables = new ArrayList < > ( shrinkables ) ; newShrinkables . set ( position , shrunkValue ) ; return ( NShrinkable < T > ) new NCombinedShrinkable < > ( newShrinkables , combineFunction )  
+. collect ( Collectors . toSet ( ) )  
+@ Override public T value ( )  
+@ Override public int distance ( )  
+return shrinkables . stream ( ) . mapToInt ( NShrinkable : : distance ) . sum ( )  
+private T combine ( List < NShrinkable < Object >> shrinkables )  
+List < Object > params = shrinkables . stream ( ) . map ( NShrinkable : : value ) . collect ( Collectors . toList ( ) )  
+return combineFunction . apply ( params )  
+@ Override public String toString ( )  
+return String . format ( "CombinedShrinkable[%s:%d]" , value ( ) , distance ( ) )  
+@ Override public boolean equals ( Object o )  
+if ( this == o ) return true  
+if ( this == o ) return true  
+if ( o == null || getClass ( ) != o . getClass ( ) ) return false  
+o == null || getClass ( ) != o . getClass ( ) ) return false  
+NCombinedShrinkable < ? > that = ( NCombinedShrinkable < ? > ) o  
+NCombinedShrinkable < ? > that = ( NCombinedShrinkable < ? > ) o  
+return Objects . equals ( value , that . value )  
+@ Override public int hashCode ( )  
+return Objects . hash ( value )  
+@ Example void shrinkTwoIntegersCombinedToString ( )  
+NArbitrary < Integer > a1 = NArbitraries . integer ( 0 , 5 )  
+NArbitrary < Integer > a2 = NArbitraries . integer ( 5 , 9 )  
+NArbitrary < String > combined = NCombinators . combine ( a1 , a2 ) . as ( ( i1 , i2 ) -> Integer . toString ( i1 ) + Integer . toString ( i2 ) )  
+NShrinkable < String > stringShrinkable = combined . generator ( 10 ) . next ( new Random ( 42L ) )  
+Assertions . assertThat ( shrinkResult . shrunkValue ( ) . value ( ) ) . isEqualTo ( "05" )  
+Assertions . assertThat ( shrinkResult . shrunkValue ( ) . distance ( ) ) . isEqualTo ( 0 )  

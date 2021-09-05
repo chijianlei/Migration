@@ -1,0 +1,1 @@
+if ( ( toInspect . isEnroled ( ) || toInspect . isNotEvaluated ( ) || toInspect . isFlunked ( ) ) && ( toInspect . isValid ( semester ) && ( ! toInspect . isAnual ( ) || semester . isFirstOfYear ( ) ) ) )  

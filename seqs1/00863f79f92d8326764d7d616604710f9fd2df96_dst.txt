@@ -1,0 +1,15 @@
+spriteBatch_ . setColor ( 1 , 1 , 1 , Math . max ( 0 , Math . min ( 1 , ( world_ . song_ . streak ( ) - 10 ) ) / 100 f ) )  
+spriteBatch_ . draw ( bgTexture_ , 0 , 0 , world_ . res_ . x , world_ . res_ . y )  
+private Label text_ , score_  
+private boolean initialized_ = false  
+text_ = new Label ( "Song finished!" , Resources . uiSkin )  
+add ( text_ ) . center ( )  
+row ( )  
+void initialize ( Song song )  
+row ( )  
+initialized_ = true  
+initialize ( gameWorld_ . song_ )  
+private Label songName_ , labelStreak , labelAccuracy  
+public GameUI ( Vector2 res , GameWorld gameWorld )  
+public String name_  
+currentSong = Resources . songData [ 2 ]  

@@ -1,0 +1,7 @@
+TextView password = ( TextView ) localView . findViewById ( R . id . password )  
+password . setText ( "" + password ( device . getAddress ( ) ) )  
+unlock ( )  
+params . rightMargin = - ( int ) deltaX  
+params . leftMargin = ( int ) deltaX  
+mainLayout . setLayoutParams ( params )  
+deleteLayout . setVisibility ( View . INVISIBLE )  

@@ -1,0 +1,3 @@
+expensewb = report . exportReport ( expensewb , reportCriteria . getStartDate ( ) , reportCriteria . getEndDate ( ) , null )  
+List < Workbook > wbList = new ArrayList < Workbook > ( )  
+wbList . add ( invoiceWb )  

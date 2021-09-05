@@ -1,0 +1,3 @@
+questionText . setText ( question . getQuestionText ( ) )  
+questionText . setText ( question . getQuestionText ( ) )  
+questionText . setText ( question . getQuestionText ( ) )  

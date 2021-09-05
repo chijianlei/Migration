@@ -1,0 +1,17 @@
+@ MessageBundle public interface DeviceControllerErrors  
+List < URI > vNASURIList = FileOrchestrationUtils . getVNASServersOfStorageSystemAndVarrayOfVpool ( s_dbClient , storageSystemURI , vpoolURI )  
+for ( Iterator < URI > iterator = vNASURIList . iterator ( ) ; iterator . hasNext ( ) ; )  
+List < URI > vNASURIList = FileOrchestrationUtils . getVNASServersOfStorageSystemAndVarrayOfVpool ( s_dbClient , storageSystemURI , vpoolURI )  
+if ( vNASURIList != null && ! vNASURIList . isEmpty ( ) )  
+for ( Iterator < URI > projectIterator = projectURIs . iterator ( ) ; projectIterator . hasNext ( ) ; )  
+String stepId = workflow . createStepId ( )  
+String stepDes = String . format ( "Assigning file policy: %s, to project: %s on storage system: %s" , filePolicy . getId ( ) , vpoolURI , storageSystemURI )  
+Object [ ] args = new Object [ ] { storageSystemURI , vNASURI , filePolicyToAssign , vpoolURI , projectURI }  
+waitFor = _fileDeviceController . createMethod ( workflow , waitFor , ASSIGN_FILE_SNAPSHOT_POLICY_TO_PROJECTS_METHOD , stepId , stepDes , storageSystemURI , args )  
+StorageSystem storagesystem = s_dbClient . queryObject ( StorageSystem . class , storageSystemURI )  
+for ( Iterator < URI > projectIterator = projectURIs . iterator ( ) ; projectIterator . hasNext ( ) ; )  
+if ( storagesystem . getSystemType ( ) . equals ( Type . isilon . toString ( ) ) )  
+public static List < URI > getVNASServersOfStorageSystemAndVarrayOfVpool ( DbClient dbClient , URI storageSystemURI , URI vpoolURI )  
+int numStepsFailed = 0  
+setStatus ( dbClient , status , coded )  
+WorkflowStep step = dbClient . queryObject ( WorkflowStep . class , workflowStepURI )  

@@ -1,0 +1,5 @@
+@ RequestMapping ( value = "/home" ) public String doWelcome ( @ RequestParam ( value = "lang" , required = false ) String lang , Model model )  
+@ RequestMapping ( value = "/contact" ) public String doContact ( @ RequestParam ( value = "lang" , required = false ) String lang , Model model )  
+private Locale locale  
+if ( key . contains ( page ) )  
+innerTexts . put ( key . replace ( ( page + "." ) , "" ) , resourceBundle . getString ( key ) )  

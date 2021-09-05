@@ -1,0 +1,1 @@
+String setter = "public void set" + getFirstUpCaseName ( field . getName ( ) ) + "(" + field . getType ( ) . getPresentableText ( ) + " " + field . getName ( ) + "){\n " + "        this." + field . getName ( ) + " = " + field . getName ( ) + ";\n" + "        notifyPropertyChanged( BR." + field . getName ( ) + ");\n" + "    }"  

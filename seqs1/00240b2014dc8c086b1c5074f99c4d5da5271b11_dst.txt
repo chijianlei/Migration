@@ -1,0 +1,15 @@
+WeaponState curState  
+int ammo = 10  
+curState = noAmmo  
+if ( ammo < 1 ) 
+curState = hasAmmo  
+curState = newState  
+curState . fire ( )  
+curState . addAmmo ( ammo )  
+curState . reload ( )  
+public class HasAmmo extends Actor implements WeaponState 
+h . getWorld ( ) . addObject ( new Default ( ) , h . getX ( ) , h . getY ( ) )  
+if ( Greenfoot . mouseClicked ( null ) ) 
+a . fire ( )  
+public class NoAmmo extends Actor implements WeaponState 
+public class Reload extends Actor implements WeaponState 

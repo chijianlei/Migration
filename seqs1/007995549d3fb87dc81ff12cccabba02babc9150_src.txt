@@ -1,0 +1,10 @@
+protected String look ( char [ ] [ ] map ) 
+Map mapClass = new Map ( )  
+int [ ] playerPosition = mapClass . getPlayersPosition ( )  
+String viewPlayer = ""  
+viewPlayer += map [ j ] [ i ] + " "  
+viewPlayer += "\n"  
+System . out . println ( mapClass . getTile ( mapClass . getPlayersPosition ( ) ) )  
+System . out . println ( "Welcome to Dungeons of Doom.\nThe map name is: " + mapClass . getMapName ( ) + "." )  
+int randomHeight = random . nextInt ( height - 1 ) + 1  
+int randomWidth = random . nextInt ( width - 1 ) + 1  

@@ -1,0 +1,3 @@
+if ( mob . getVision ( ) . isVisible ( hero . getLocation ( ) ) ) 
+setTarget ( hero . getLocation ( ) )  
+if ( mob . getVision ( ) . isVisible ( hero . getLocation ( ) ) ) 

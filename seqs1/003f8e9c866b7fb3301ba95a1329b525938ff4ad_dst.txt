@@ -1,0 +1,2 @@
+if ( type == null || type . getVersion ( ) == null )  
+if ( type == null || type . getVersion ( ) == null )  

@@ -1,0 +1,5 @@
+if ( resourceManagerAttributes == null )  
+resourceManagerAttributes = new HashMap < > ( )  
+if ( study . getDataStores ( ) != null && study . getDataStores ( ) . containsKey ( file . getBioformat ( ) ) )  
+if ( project . getDataStores ( ) != null && project . getDataStores ( ) . containsKey ( file . getBioformat ( ) ) )  
+public Project ( int id , String name , String alias , String creationDate , String description , String organization , String status , String lastActivity , long diskUsage , List < Acl > acl , List < Study > studies , Map < String , Object > attributes )  

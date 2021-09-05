@@ -1,0 +1,6 @@
+Location explorer2Location = new Location ( loc . getX ( ) , loc . getY ( ) + 1 )  
+private ArrayList < Unit > player1Units  
+private void drawUnits ( )  
+player1Units = game . getPlayer ( 0 ) . getAllUnit ( )  
+for ( int i = 0 ; i < player1Units . size ( ) ; i ++ )  
+drawUnit ( player1Units . get ( i ) . getLocation ( ) . getX ( ) , player1Units . get ( i ) . getLocation ( ) . getY ( ) , player1Units . get ( i ) . getUnitType ( ) , player1Units . get ( i ) . getOwnerID ( ) , 0 )  

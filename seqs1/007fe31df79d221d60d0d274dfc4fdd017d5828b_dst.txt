@@ -1,0 +1,4 @@
+if ( ! autoTrackerMarking && trackerPanel != null && trackerPanel . isAutoRefresh )  
+for ( int i = 0 ; i < 10001 ; i ++ )  
+trackerPanel . getPlayer ( ) . play ( )  
+testTimer . setInitialDelay ( 20 )  

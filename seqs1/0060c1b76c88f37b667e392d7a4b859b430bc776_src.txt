@@ -1,0 +1,2 @@
+this . nbRocks += rockStolen  
+return "Graine(s)=" + nbRocks + "\n" + "Menhir(s)=" + nbMenhirs + "\n\n" + " Main=" + hand . toString ( ) + "\n"  

@@ -1,0 +1,1 @@
+double selectedMz = isolationInfo . get ( 0 ) . getIsolationMzRange ( ) . lowerEndpoint ( )  

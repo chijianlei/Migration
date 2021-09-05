@@ -1,0 +1,2 @@
+ImageView remainderShowDetails = ( ImageView ) rowView . findViewById ( R . id . button_reminderlist_details )  
+ImageView remainderDelete = ( ImageView ) rowView . findViewById ( R . id . button_reminderlist_delete )  

@@ -1,0 +1,3 @@
+public Map < String , List < String >> readAccessMatrix ( File file ) throws IOException { 
+try ( BufferedReader br = new BufferedReader ( new FileReader ( file ) ) )  
+roleHierarchy = matrixReader . readAccessMatrix ( new File ( AccessServices . class . getClassLoader ( ) . getResource ( "DefaultAccessMatrix.csv" ) . getFile ( ) ) )  

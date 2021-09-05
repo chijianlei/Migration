@@ -1,0 +1,6 @@
+myRealm . executeTransaction ( new Realm . Transaction ( ) { @ Override public void execute ( Realm bgRealm ) { for ( int i = 0 ; i < 14 ; i ++ ) { EarnBurn earn = bgRealm . createObject ( EarnBurn . class ) ; earn . setId ( Util . generateUUID ( ) ) ; earn . setName ( "Earn " + i ) ; earn . setType ( BalanceType . EARN . toString ( ) ) ; earnList . add ( earn ) ; } for ( int i = 0 ; i < 14 ; i ++ ) { EarnBurn burn = bgRealm . createObject ( EarnBurn . class ) ; burn . setId ( Util . generateUUID ( ) ) ; burn . setName ( "Burn " + i ) ; burn . setType ( BalanceType . BURN . toString ( ) ) ; burnList . add ( burn ) ; } } } )  
+Toast . makeText ( getContext ( ) , "second time" , Toast . LENGTH_SHORT ) . show ( )  
+earnRecyclerView . setVisibility ( View . VISIBLE )  
+earnView . setVisibility ( View . GONE )  
+burnRecyclerView . setVisibility ( View . VISIBLE )  
+burnView . setVisibility ( View . GONE )  

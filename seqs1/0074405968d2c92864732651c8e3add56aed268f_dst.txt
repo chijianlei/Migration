@@ -1,0 +1,4 @@
+summaryPeriod = conf . getDouble ( MacroBaseConf . SUMMARY_UPDATE_PERIOD , MacroBaseDefaults . SUMMARY_UPDATE_PERIOD ) . intValue ( )  
+modelRefreshPeriod = conf . getDouble ( MacroBaseConf . MODEL_UPDATE_PERIOD , MacroBaseDefaults . MODEL_UPDATE_PERIOD ) . intValue ( )  
+protected final Iterator < OutlierClassificationResult > input  
+public Summarizer ( MacroBaseConf conf , Iterator < OutlierClassificationResult > classificationResults )  

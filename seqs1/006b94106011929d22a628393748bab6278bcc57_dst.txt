@@ -1,0 +1,1 @@
+@ RequestMapping ( value = { "/{userId}/sltSkillsAjax" } , method = RequestMethod . POST ) public @ ResponseBody UserTechModel sltSkillsAjax ( @ RequestBody SltUserTechPara sltUserTechPara ) throws Exception  

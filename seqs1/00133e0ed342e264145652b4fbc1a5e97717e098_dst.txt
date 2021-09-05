@@ -1,0 +1,7 @@
+while ( events . size ( ) != 0 )  
+afternoonSlot . addSupplementSlot ( networkingSlot )  
+public void addSupplementSlot ( Slot slot )  
+nextEventStartTime = addEventsSchedule ( supplement . events , supplementStartTime , str )  
+StringBuilder str = new StringBuilder ( )  
+str . append ( Time . minutesToDisplayTime ( nextEventStartTime ) + " " + event + NEW_LINE )  
+return str . toString ( )  

@@ -1,0 +1,4 @@
+return backTrace ( goalState )  
+return this . adaptPosition ( maze . getStartPosition ( ) )  
+SimpleMaze3dGenerator mg = new SimpleMaze3dGenerator ( )  
+System . out . println ( maze )  

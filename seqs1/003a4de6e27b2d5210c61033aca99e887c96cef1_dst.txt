@@ -1,0 +1,1 @@
+@ Repository public class TransferCollegeDao  

@@ -1,0 +1,2 @@
+Concept orphan = uninstall ( MetadataUtils . possible ( Concept . class , "94807725-b1cf-437e-b439-c5885440121e" ) )  
+Concept trading = uninstall ( MetadataUtils . possible ( Concept . class , "3cd9786c-26fe-102b-80cb-0017a47871b2" ) )  

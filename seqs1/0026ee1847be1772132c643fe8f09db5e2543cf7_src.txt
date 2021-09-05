@@ -1,0 +1,5 @@
+if ( temp . length == 8 && temp [ 7 ] == "en" )  
+context . write ( new Text ( temp [ 6 ] ) , new Text ( temp [ 4 ] + "." + temp [ 5 ] ) )  
+@ Override public void reduce ( Text key , Iterable < Text > values , Context context ) throws IOException , InterruptedException  
+for ( Text value : values )  
+context . write ( key , new Text ( value ) )  

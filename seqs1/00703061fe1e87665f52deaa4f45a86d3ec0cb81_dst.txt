@@ -1,0 +1,1 @@
+while ( returnLength . value ( ) . doubleValue ( ) < Constants . EPSILON && ordinal < ( UnitsLength . values ( ) . length - 2 ) ) { 

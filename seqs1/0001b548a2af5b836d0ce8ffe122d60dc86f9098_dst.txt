@@ -1,0 +1,7 @@
+if ( ! executor . awaitTermination ( 30 , TimeUnit . SECONDS ) )  
+catch ( InterruptedException e )  
+this . identifyingDataTracker . close ( )  
+this . activitySender . close ( )  
+this . httpConnection . close ( )  
+public interface ErrorCollector  
+private ExecutorService executor  

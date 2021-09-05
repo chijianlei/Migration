@@ -1,0 +1,4 @@
+VisibilityInfo ( int readerOrd , int maxdoc , int docid , long xid )  
+matchingDocs . add ( new VisibilityInfo ( ord , maxdoc , doc , xid ) )  
+cmp == 0 ? Integer . compare ( o2 . docid , o1 . docid ) : cmp  
+if ( foundVisible || mapping . xid >= xmax || activeXids . contains ( mapping . xid ) || ( mapping . xid != myXid && ! isCommitted ( committedXidsEnum , mapping . xid , bytesRefBuilder ) ) )  

@@ -1,0 +1,2 @@
+dataBuffer = new TransactionDataBuffer ( agentConfig . getSizeThreshold ( ) )  
+this . transactions . drainTo ( entries , elementsToDrain ( ) )  

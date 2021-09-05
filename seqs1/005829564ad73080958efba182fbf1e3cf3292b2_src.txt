@@ -1,0 +1,1 @@
+String result = CharStreams . toString ( new InputStreamReader ( exchange . getRequestBody ( ) , Charsets . UTF_8 ) )  

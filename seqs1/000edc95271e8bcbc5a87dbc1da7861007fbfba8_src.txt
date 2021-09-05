@@ -1,0 +1,21 @@
+while ( informationSpaces ( ) . hasNext ( ) )  
+ASIPInformationSpace current = informationSpaces ( ) . next ( )  
+if ( source instanceof InMemoPeerTaxonomy )  
+private static ASIPInterest _createInMemoCopy ( ASIPSpace as ) throws SharkKBException  
+i . setTopics ( InMemoSharkKB . createInMemoCopy ( as . getTopics ( ) ) )  
+i . setApprovers ( InMemoSharkKB . createInMemoCopy ( as . getApprovers ( ) ) )  
+i . setSender ( InMemoSharkKB . createInMemoCopy ( as . getSender ( ) ) )  
+i . setReceivers ( InMemoSharkKB . createInMemoCopy ( as . getReceivers ( ) ) )  
+i . setTimes ( InMemoSharkKB . createInMemoCopy ( as . getTimes ( ) ) )  
+i . setLocations ( InMemoSharkKB . createInMemoCopy ( as . getLocations ( ) ) )  
+public static Interest createInMemoCopy ( Interest interest ) throws SharkKBException  
+return InMemoSharkKB . _createInMemoCopy ( interest )  
+public static Interest createInMemoCopy ( SharkCS cs ) throws SharkKBException  
+public static Taxonomy createInMemoTaxonomy ( )  
+public static SpatialSemanticTag createInMemoSpatialSemanticTag ( SharkGeometry geometry )  
+@ Override public ASIPInformation addInformation ( byte [ ] content , ASIPSpace semanticalAnnotations ) throws SharkKBException  
+return this . getKnowledge ( ) . addInformation ( content , semanticalAnnotations )  
+return this . getKnowledge ( ) . addInformation ( contentIS , numberOfBytes , semanticalAnnotations )  
+@ Override public ASIPInformation addInformation ( String content , ASIPSpace semanticalAnnotations ) throws SharkKBException  
+return this . getKnowledge ( ) . addInformation ( content , semanticalAnnotations )  
+if ( toMerge instanceof InMemoTaxonomy )  

@@ -1,0 +1,1 @@
+Document d = reader . read ( ModelService . class . getClassLoader ( ) . getResource ( "stu.xml" ) )  

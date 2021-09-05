@@ -1,0 +1,14 @@
+try ( BufferedReader config = new BufferedReader ( new FileReader ( path ) ) )  
+private class Self  
+private class Party2  
+private static String stringJoin ( String delimiter , Iterable < ? extends String > elements )  
+for ( String el : elements )  
+retval . append ( delimiter )  
+! userNames . isEmpty ( ) ? "<< Here now >>\n " + stringJoin ( "\n " , userNames ) : "<< No one else is here >>" ) 
+if ( ! usr . equals ( userName ) ) outputLine += " " + usr + "\n"  
+private class Self  
+private class Party2  
+ChatCrypt . this . notify ( )  
+try ( PrintWriter out = new PrintWriter ( new OutputStreamWriter ( conn . getResponseBody ( ) , UTF_8 ) , true ) ) { String data = "" ; synchronized ( outQueueLock )  
+String data = ""  
+data += outQueue . remove ( 0 )  

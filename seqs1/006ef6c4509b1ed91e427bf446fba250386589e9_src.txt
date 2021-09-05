@@ -1,0 +1,14 @@
+public double getMoney ( )  
+public Person_Hinzu ( java . awt . Frame parent , boolean modal )  
+btexit . setText ( "Exit" )  
+btexit . setText ( "Fertig" )  
+btexit . setAction ( new AbstractAction ( ) { @ Override public void actionPerformed ( ActionEvent ae ) { boolean isOk = false ; while ( isOk == false ) { try { p = new Person ( vn . getText ( ) , nn . getText ( ) , LocalDate . parse ( geb . getText ( ) , DateTimeFormatter . ISO_DATE ) . toString ( ) , adresse . getText ( ) , Double . parseDouble ( mon . getText ( ) ) ) ; isOk = true ; isKorrekt = true ; } catch ( Exception ex ) { System . out . println ( ex ) ; } } } } )  
+AbstractAction ( )  
+@ Override public void actionPerformed ( ActionEvent ae )  
+boolean isOk = false  
+p = new Person ( vn . getText ( ) , nn . getText ( ) , LocalDate . parse ( geb . getText ( ) , DateTimeFormatter . ISO_DATE ) . toString ( ) , adresse . getText ( ) , Double . parseDouble ( mon . getText ( ) ) )  
+isOk = true  
+isKorrekt = true  
+catch ( Exception ex )  
+System . out . println ( ex )  
+@ SuppressWarnings ( "unchecked" ) private void initComponents ( )  

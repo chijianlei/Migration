@@ -1,0 +1,8 @@
+@ Override public void onClick ( View v )  
+new ImageLoadTask ( Container . getInstance ( ) . objectList [ i ] . logo , photoimg ) . execute ( )  
+if ( Container . getInstance ( ) . alerton . equals ( "1" ) )  
+if ( Container . getInstance ( ) . soundon . equals ( "1" ) )  
+String latitude = "59.328720"  
+Float radius = 300.00f  
+String latitude = "59.328720"  
+Float radius = 300.00f  

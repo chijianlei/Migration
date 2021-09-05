@@ -1,0 +1,26 @@
+connection = DriverManager . getConnection ( DB_URL + "user=" + USER + "&password=" + PASS ) ; 
+connection . close ( ) ; 
+Statement stmt = connection . createStatement ( )  
+Class . forName ( JDBC_DRIVER ) ; 
+connection = DriverManager . getConnection ( DB_URL + "user=" + USER + "&password=" + PASS ) ; 
+connection . close ( ) ; 
+sql = "SELECT `FIRM_NAME` FROM `client` WHERE `ID` = " + ClientId + " AND STATUS='REGISTERED' LIMIT 1 "  
+public String getECSconsignmentStatus ( int ConsignmentId , String Status )  
+connection = DriverManager . getConnection ( DB_URL + "user=" + USER + "&password=" + PASS )  
+connection . close ( )  
+String sql = "SELECT  STATUS   FROM    `consignementstatuslog` WHERE CGT_ID='" + ConsignmentId + "' and STATUS='" + Status + "' ORDER BY id DESC LIMIT  0, 1"  
+Logger . getLogger ( EcsEntitiesControllerCaller . class . getName ( ) ) . log ( Level . SEVERE , null , ex )  
+Class . forName ( JDBC_DRIVER ) ; 
+connection = DriverManager . getConnection ( DB_URL + "user=" + USER + "&password=" + PASS )  
+connection . close ( ) ; 
+Class . forName ( JDBC_DRIVER ) ; 
+connection = DriverManager . getConnection ( DB_URL + "user=" + USER + "&password=" + PASS )  
+connection = DriverManager . getConnection ( DB_URL + "user=" + USER + "&password=" + PASS )  
+connection . close ( )  
+Class . forName ( JDBC_DRIVER ) ; 
+connection = DriverManager . getConnection ( DB_URL + "user=" + USER + "&password=" + PASS )  
+connection . close ( ) ; 
+System . out . println ( p_changed_date )  
+INDCUST2 = "" + ClientName . substring ( 0 , 1 ) + count + ""  
+connection = DriverManager . getConnection ( DB_URL + "user=" + USER + "&password=" + PASS ) ; 
+connection . close ( ) ; 

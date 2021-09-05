@@ -1,0 +1,4 @@
+int cid1 = Integer . parseInt ( cid . getText ( ) ) ; 
+int cid1 = Integer . parseInt ( cid . getText ( ) ) ; 
+int cid1 = Integer . parseInt ( cid . getText ( ) ) ; 
+int cid1 = Integer . parseInt ( cid . getText ( ) ) ; 

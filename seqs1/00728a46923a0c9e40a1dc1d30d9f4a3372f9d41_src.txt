@@ -1,0 +1,5 @@
+this . evolvioColor . text ( list [ i ] . getCreatureName ( ) + " [" + list [ i ] . getId ( ) + "] (" + toAge ( list [ i ] . getAge ( ) ) + ")" , 90 , y )  
+this . evolvioColor . text ( "Name: " + selectedCreature . getCreatureName ( ) , 10 , 225 )  
+this . evolvioColor . text ( getCreatureName ( ) , ( float ) ( getPx ( ) * scaleUp ) , ( float ) ( ( getPy ( ) - getRadius ( ) * 1.4f - 0.07f ) * scaleUp ) )  
+for ( int i = 0 ; i < s . length ; i ++ )  
+return ( char ) ( letterChoice + 'a' )  

@@ -1,0 +1,5 @@
+Observable < Lesson > call = MediaStoreService . contentStore . fetchContent ( )  
+Log . i ( "WeeksListFragment" , "Api call success" )  
+Log . i ( "WeeksListFragment" , "in error" )  
+Log . i ( "WeeksListFragment" , e . toString ( ) )  
+Log . i ( "WeeksListFragment" , lesson . getTitle ( ) )  

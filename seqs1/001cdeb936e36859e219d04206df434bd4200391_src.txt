@@ -1,0 +1,1 @@
+if ( ( ! use1904windowing && yr < 1900 ) || ( use1904windowing && yr < 1900 ) )  

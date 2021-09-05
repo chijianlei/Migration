@@ -1,0 +1,9 @@
+if ( tokens . length >= 2 && tokens [ 0 ] . toLowerCase ( ) . equals ( "delete" ) )  
+int deleteIndex = Integer . parseInt ( tokens [ 1 ] )  
+if ( tokens . length >= 2 && tokens [ 0 ] . toLowerCase ( ) . equals ( "modify" ) )  
+int modifyIndex = Integer . parseInt ( tokens [ 1 ] )  
+public static int isValidComplete ( String input )  
+if ( completeIndex <= UserInterface . taskList . size ( ) )  
+UserInterface . completeIndex = completeIndex  
+} catch ( Exception e )  
+return - 1  

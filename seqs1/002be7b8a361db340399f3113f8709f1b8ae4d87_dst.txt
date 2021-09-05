@@ -1,0 +1,3 @@
+public SchemaGenerator ( String [ ] packages , boolean v1_0_compatible ) throws Exception  
+root . setAttribute ( "targetNamespace" , NS_FUJION )  
+Element child = createElement ( "element" , seq , "ref" , "fsp:" + childDef . getTag ( ) )  

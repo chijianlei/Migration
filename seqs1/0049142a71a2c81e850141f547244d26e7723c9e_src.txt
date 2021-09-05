@@ -1,0 +1,2 @@
+if ( latest == null )  
+save ( wantedTransport , latest )  

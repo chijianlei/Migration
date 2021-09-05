@@ -1,0 +1,8 @@
+reconnectBlocking ( requestGatewayBlocking ( ) , null , - 1 )  
+public void reconnectBlocking ( String gateway , String sessionId , int lastSeq )  
+socketAdapter = new DiscordWebsocketAdapter ( new URI ( gateway ) , this , true , sessionId , lastSeq )  
+this ( serverURI , api , reconnect , null , - 1 )  
+public DiscordWebsocketAdapter ( URI serverURI , ImplDiscordAPI api , boolean reconnect , String sessionId , int lastSeq )  
+api . reconnectBlocking ( urlForReconnect , sessionId , lastSeq )  
+api . reconnectBlocking ( api . requestGatewayBlocking ( ) , sessionId , lastSeq )  
+api . reconnectBlocking ( api . requestGatewayBlocking ( ) , sessionId , lastSeq )  

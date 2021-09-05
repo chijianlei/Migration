@@ -1,0 +1,13 @@
+if ( headBob < 360 )  
+headBob += 10 * tpf  
+headBob = 0  
+if ( lightSway < 360 )  
+lightSway += 7 * tpf  
+lightSway = 0  
+speed = PLAYER_SPRINT  
+if ( headBob != 0 )  
+headBob = 0  
+if ( lightSway != 0 )  
+lightSway = 0  
+flashLightRim . setSpotInnerAngle ( 23 f * FastMath . DEG_TO_RAD )  
+flashLightRim . setSpotOuterAngle ( 24 f * FastMath . DEG_TO_RAD )  

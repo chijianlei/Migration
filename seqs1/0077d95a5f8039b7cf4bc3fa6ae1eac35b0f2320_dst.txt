@@ -1,0 +1,3 @@
+if ( sContextThemeWrapper_mResources_field == null )  
+if ( sContextThemeWrapper_mResources_field == null ) return  
+setValue ( sContextThemeWrapper_mResources_field , target , resources )  

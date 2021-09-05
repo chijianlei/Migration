@@ -1,0 +1,7 @@
+public Triangle ( int x , int y , int x1 , int y1 , int x2 , int y2 , int x3 , int y3 , int i , int j , int k , int l )  
+this . x1 = x1 ; this . y1 = y1  
+this . x1 = x1 ; this . y1 = y1  
+this . x2 = x2 ; this . y2 = y2  
+this . x2 = x2 ; this . y2 = y2  
+this . x3 = x3 ; this . y3 = y3  
+this . x3 = x3 ; this . y3 = y3  

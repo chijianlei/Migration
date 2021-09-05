@@ -1,0 +1,8 @@
+if ( item instanceof ItemDye ) 
+int md = is . getItemDamage ( )  
+int oldMeta = w . getBlockMetadata ( x , y , z )  
+oldMeta == color ) return false  
+w . setBlockMetadataWithNotify ( x , y , z , color , 3 )  
+if ( coloredUsesDye && ! pl . capabilities . isCreativeMode ) is . stackSize --  
+coloredUsesDye && ! pl . capabilities . isCreativeMode ) is . stackSize --  
+return true  

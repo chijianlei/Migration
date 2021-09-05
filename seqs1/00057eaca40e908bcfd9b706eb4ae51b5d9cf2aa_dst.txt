@@ -1,0 +1,10 @@
+protected LinkedHashMap < String , Permission > registeredPermissions = new LinkedHashMap < String , Permission > ( )  
+this . updatePermissions ( player , null )  
+List < String > playerPermArray = new ArrayList < String > ( worldData . getPermissionsHandler ( ) . getAllPlayersPermissions ( player . getName ( ) , false ) )  
+for ( String key : registeredPermissions . keySet ( ) )  
+if ( ! perms . contains ( key ) )  
+perms . add ( key )  
+Map < String , Boolean > allchildren = GroupManager . BukkitPermissions . getAllChildren ( a , new HashSet < String > ( ) )  
+if ( allchildren . containsKey ( b ) )  
+itr . previous ( )  
+return null  

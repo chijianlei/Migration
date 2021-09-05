@@ -1,0 +1,2 @@
+public class TestStoreManager  
+private static final String NAME_PREFIX = TestStoreManager . class . getSimpleName ( )  

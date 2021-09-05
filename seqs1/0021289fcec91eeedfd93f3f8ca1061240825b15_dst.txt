@@ -1,0 +1,1 @@
+public static Energy photonEnergyOf ( Quantity edge , Quantity k )  

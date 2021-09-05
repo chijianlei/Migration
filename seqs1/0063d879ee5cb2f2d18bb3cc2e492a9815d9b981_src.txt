@@ -1,0 +1,1 @@
+todoTitle = input . getText ( ) . toString ( ) + ";" + name  

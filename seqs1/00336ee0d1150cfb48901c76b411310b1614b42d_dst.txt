@@ -1,0 +1,2 @@
+public interface CatPagosRepository extends JpaRepository < CatPagos , Integer >  
+CatPagos catPagos = catPagosRepository . findById ( id )  

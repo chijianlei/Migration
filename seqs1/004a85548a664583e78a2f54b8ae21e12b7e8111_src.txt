@@ -1,0 +1,4 @@
+if ( rows . size ( ) == 1 && ! isAllowCustomText ( ) )  
+@ RunWith ( ClientTestRunner . class ) @ RunWithSubject ( "default" ) @ RunWithClientSession ( TestEnvironmentClientSession . class ) @ SuppressWarnings ( "deprecation" ) public class SmartFieldParseValueTest  
+private SmartField m_smartField  
+private static final long serialVersionUID = - 7536271824820806283L  

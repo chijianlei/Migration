@@ -1,0 +1,2 @@
+String tempDirStr = Config . workDirName + File . separator + Config . outDirName + File . separator + "temp"  
+} catch ( Exception e ) {  

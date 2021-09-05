@@ -1,0 +1,3 @@
+int dropAmount = Math . max ( 1 , ( int ) ( itemStack . getAmount ( ) * 0.75 ) )  
+inventory . clear ( i )  
+world . dropItemNaturally ( event . getEntity ( ) . getLocation ( ) , itemStack )  

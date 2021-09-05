@@ -1,0 +1,6 @@
+for ( int z = 1 ; z < trainN ; z ++ ) assert ascendingFeatures . get ( z - 1 ) . getValue ( ) < ascendingFeatures . get ( z ) . getValue ( )  
+Files . delete ( Paths . get ( filePath ) )  
+catch ( IOException e )  
+assertEquals ( false , true )  
+assertEquals ( result . size ( ) , 4 )  
+assertEquals ( result . get ( 3 ) , new Integer ( 9 ) )  

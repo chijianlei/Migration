@@ -1,0 +1,2 @@
+private static final int [ ] INT_BORDERTYPE = { 1 , 2 , 4 , 3 , 0 }  
+Mat dst_mat = new Mat ( imh , imw , CvType . CV_8SC3 )  

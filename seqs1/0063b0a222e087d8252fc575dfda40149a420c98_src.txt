@@ -1,0 +1,5 @@
+@ Override public String eng_renv ( ) throws Exception  
+this . life = 0  
+return this . carteFileName  
+printer . println ( "Nom du deck (Attention par pur fleme du developpeur si un deck porte d茅ja ce nom il seras remplacer par ce nouveau deck)" )  
+if ( args . size ( ) > 3 )  

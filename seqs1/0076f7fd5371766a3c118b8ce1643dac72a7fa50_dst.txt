@@ -1,0 +1,27 @@
+private Stack < Boolean > fEventExpr  
+private Stack < Boolean > fAssertionExpr  
+public SVExprParser ( ISVParser parser )  
+super ( parser )  
+public SVDBExpr assert_expression ( ) throws SVParseException  
+fAssertionExpr . push ( true )  
+fEventExpr . push ( true )  
+return expression ( )  
+fEventExpr . push ( true )  
+return expression ( )  
+if ( fEventExpr . peek ( ) && fLexer . peekKeyword ( "iff" ) )  
+if ( fEventExpr . peek ( ) && fLexer . peekOperator ( "," ) )  
+if ( fDebugEn ) { debug ( "<-- assignmentExpression() " + fLexer . peek ( ) ) ;  
+if ( fDebugEn ) { debug ( "<-- assignmentExpression() " + fLexer . peek ( ) ) ;  
+while ( peekOperator ( "||" ) || ( fEventExpr . peek ( ) && fLexer . peekKeyword ( "or" ) ) )  
+} else if ( fEventExpr . peek ( ) && fLexer . peekKeyword ( "posedge" , "negedge" , "edge" ) )  
+if ( peekOperator ( "+" , "-" , "~" , "!" , "&" , "~&" , "|" , "~|" , "^" , "~^" , "^~" ) || ( fAssertionExpr . peek ( ) && peekOperator ( "*" ) ) )  
+} else if ( fEventExpr . peek ( ) && fLexer . peekOperator ( "@" ) )  
+} else if ( fEventExpr . peek ( ) && fLexer . peekOperator ( "##" ) )  
+private SVDBRandomizeCallExpr randomize_call ( SVDBExpr target ) throws SVParseException  
+List < SVDBExpr > arguments = null  
+if ( fLexer . peekOperator ( "(" ) )  
+arguments = arguments ( )  
+rand_call = new SVDBRandomizeCallExpr ( target , "randomize" , arguments )  
+if ( fLexer . peekKeyword ( "with" ) )  
+fLexer . eatToken ( )  
+rand_call . setWithBlock ( fParsers . constraintParser ( ) . constraint_set ( true ) )  

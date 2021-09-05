@@ -1,0 +1,3 @@
+public GameState ( GameState original , Peasant pToRemove , Peasant pToAdd , StripsAction action , int addTurns )  
+turn = original . turn + addTurns  
+initial = curMove . apply ( cur )  

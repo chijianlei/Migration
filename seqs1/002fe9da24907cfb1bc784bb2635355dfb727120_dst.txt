@@ -1,0 +1,6 @@
+@ Override public void didSelectTile ( TileView tileView )  
+tileView . revealImage ( )  
+model . pushTileIndex ( tileView . getTileIndex ( ) )  
+this . tileViews . add ( tileViewInstance )  
+public TileView ( Context context , AttributeSet attr ) 
+if ( ! isFlipped && ! isTapped )  

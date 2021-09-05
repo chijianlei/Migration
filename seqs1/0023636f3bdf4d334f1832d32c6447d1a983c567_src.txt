@@ -1,0 +1,57 @@
+@ Override public void addMessageId ( String queueName , long messageId ) throws AndesException  
+andesContextStore . addMessageId ( queueName , messageId )  
+throw new AndesException ( "Error occurred while " + errMsg , e )  
+preparedStatement . setLong ( 1 , startMessageId )  
+preparedStatement . setLong ( 2 , endMessageId )  
+logger . error ( "Error occurred while " + errMsg , e )  
+throw new AndesException ( "Error occurred while " + errMsg , e )  
+close ( connection , RDBMSConstants . TASK_DELETE_SLOT )  
+rollback ( connection , RDBMSConstants . TASK_DELETE_SLOT_BY_QUEUE_NAME )  
+throw new AndesException ( "Error occurred while " + errMsg , e )  
+rollback ( connection , RDBMSConstants . TASK_DELETE_MESSAGE_ID_BY_QUEUE_NAME )  
+throw new AndesException ( "Error occurred while " + errMsg , e )  
+@ Override public void createSlotAssignment ( String nodeId , String queueName , long startMsgId , long endMsgId ) throws AndesException  
+preparedStatement . setLong ( 3 , startMsgId )  
+preparedStatement . setLong ( 4 , endMsgId )  
+throw new AndesException ( "Error occurred while " + errMsg , e )  
+logger . error ( "Error occurred while " + errMsg , e )  
+throw new AndesException ( "Error occurred while " + errMsg , e )  
+throw new AndesException ( "Error occurred while " + errMsg , e )  
+String errMsg = RDBMSConstants . TASK_SELECT_UNASSIGNED_SLOTS + " queueName: " + queueName  
+catch ( SQLException e )  
+throw new AndesException ( "Error occurred while " + errMsg , e )  
+String errMsg = RDBMSConstants . TASK_GET_QUEUE_TO_LAST_ASSIGNED_ID + " queueName: " + queueName  
+catch ( SQLException e )  
+throw new AndesException ( "Error occurred while " + errMsg , e )  
+preparedStatement = connection . prepareStatement ( RDBMSConstants . PS_UPDATE_QUEUE_TO_LAST_ASSIGNED_ID )  
+String errMsg = RDBMSConstants . TASK_SET_QUEUE_TO_LAST_ASSIGNED_ID + " queueName: " + queueName + " messageId: " + messageId  
+throw new AndesException ( "Error occurred while " + errMsg , e )  
+String errMsg = RDBMSConstants . TASK_GET_NODE_TO_LAST_PUBLISHED_ID + " nodeId: " + nodeId  
+catch ( SQLException e )  
+logger . error ( "Error occurred while " + errMsg , e )  
+throw new AndesException ( "Error occurred while " + errMsg , e )  
+preparedStatement = connection . prepareStatement ( RDBMSConstants . PS_INSERT_NODE_TO_LAST_PUBLISHED_ID )  
+logger . error ( "Error occurred while " + errMsg , e )  
+throw new AndesException ( "Error occurred while " + errMsg , e )  
+public TreeSet < String > getMessagePublishedNodes ( ) throws AndesException  
+String errMsg = RDBMSConstants . TASK_GET_MESSAGE_PUBLISHED_NODES  
+catch ( SQLException e )  
+throw new AndesException ( "Error occurred while " + errMsg , e )  
+throw new AndesException ( "Error occurred while " + errMsg , e )  
+String errMsg = RDBMSConstants . TASK_GET_OVERLAPPED_SLOT + " queueName: " + queueName  
+catch ( SQLException e )  
+logger . error ( "Error occurred while " + errMsg , e )  
+throw new AndesException ( "Error occurred while " + errMsg , e )  
+throw new AndesException ( "Error occurred while " + errMsg , e )  
+String errMsg = RDBMSConstants . TASK_GET_MESSAGE_IDS + " queueName: " + queueName  
+catch ( SQLException e )  
+throw new AndesException ( "Error occurred while " + errMsg , e )  
+throw new AndesException ( "Error occurred while " + errMsg , e )  
+String errMsg = RDBMSConstants . TASK_GET_ASSIGNED_SLOTS_BY_NODE_ID + " nodeId: " + nodeId  
+catch ( SQLException e )  
+throw new AndesException ( "Error occurred while " + errMsg , e )  
+String errMsg = RDBMSConstants . TASK_GET_ALL_SLOTS_BY_QUEUE_NAME + " queueName: " + queueName  
+catch ( SQLException e )  
+throw new AndesException ( "Error occurred while " + errMsg , e )  
+String errMsg = RDBMSConstants . TASK_GET_ALL_QUEUES  
+catch ( SQLException e )  

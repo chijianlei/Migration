@@ -1,0 +1,14 @@
+@ Override public void onTick ( final int seconds )  
+@ Override public void onStart ( final int seconds )  
+public final void dispose ( )  
+@ Override public void onTick ( final int seconds )  
+@ Override public void onStart ( final int seconds )  
+switch ( operationNr ) { case MOVE_LEFT : cLabel . setText ( "Move your phone to the left!" ) ; break ; case MOVE_RIGHT : cLabel . setText ( "Move your phone to the right!" ) ; break ; case MOVE_DOWN : cLabel . setText ( "Move your phone down!" ) ; break ; case MOVE_UP : cLabel . setText ( "Move your phone up!" ) ; break ; case MOVE_AWAY : cLabel . setText ( "Move your phone away from you!" ) ; break ; case MOVE_TOWARDS : cLabel . setText ( "Move your phone towards you!" ) ; break ; default : break  
+switch ( operationNr ) { case MOVE_LEFT : if ( accelData . x <= - delta ) { System . out . println ( "Left Succes!" ) ; base . x = - 1 * accelData . x ; taskCompleted ( ) ; } break ; case MOVE_RIGHT : if ( accelData . x >= delta ) { System . out . println ( "Right Succes!" ) ; base . x = - 1 * accelData . x ; taskCompleted ( ) ; } break ; case MOVE_DOWN : if ( accelData . y <= - delta ) { System . out . println ( "Down Succes!" ) ; base . y = - 1 * accelData . y ; taskCompleted ( ) ; } break ; case MOVE_UP : if ( accelData . y >= delta ) { System . out . println ( "Up Succes!" ) ; base . y = - 1 * accelData . y ; taskCompleted ( ) ; } break ; case MOVE_AWAY : if ( accelData . z <= - delta ) { System . out . println ( "Away Succes!" ) ; base . z = - 1 * accelData . z ; taskCompleted ( ) ; } break ; case MOVE_TOWARDS : if ( accelData . z >= delta ) { System . out . println ( "Toward Succes!" ) ; base . z = - 1 * accelData . z ; taskCompleted ( ) ; } break ; default : break  
+@ Override public final int getReward ( )  
+@ Override public void onTick ( final int seconds )  
+@ Override public void onStart ( final int seconds )  
+@ Override public final void update ( )  
+public final void resume ( )  
+protected final void generatePossibleEvent ( )  
+public final void eventFinished ( final int rewards )  

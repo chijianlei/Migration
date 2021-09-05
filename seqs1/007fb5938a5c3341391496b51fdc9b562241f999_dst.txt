@@ -1,0 +1,102 @@
+switch ( position ) { case 1 : mToolbar . setTitle ( getResources ( ) . getString ( R . string . main_home ) ) ; clazz = RecentlyFragment . class ; break ; case 2 : mSortMenu . setVisible ( true ) ; mToolbar . setTitle ( getResources ( ) . getString ( R . string . main_category ) ) ; clazz = CategoryFragment . class ; break ; case 3 : mToolbar . setTitle ( getResources ( ) . getString ( R . string . main_collect ) ) ; clazz = CollectFragment . class ; break ; case 6 : SystemShareUtils . shareText ( MainActivity . this , "銆愬共璐O涓嬭浇鍦板潃锛歨ttp://android.myapp.com/myapp/detail.htm?apkName=ren.solid.ganhuoio銆);
+                break;
+            case 7:
+                AppUtils.feedBack(this, mToolbar);
+                break;
+            case 8:
+                logOut();
+                break;
+            default:
+
+                break;
+        }
+
+        return clazz;
+    }
+
+
+    private void logOut() {
+        MaterialDialog.Builder builder = new MaterialDialog.Builder(this)
+                .title(" 
+"銆愬共璐O涓嬭浇鍦板潃锛歨ttp://android.myapp.com/myapp/detail.htm?apkName=ren.solid.ganhuoio銆);
+                break;
+            case 7:
+                AppUtils.feedBack(this, mToolbar);
+                break;
+            case 8:
+                logOut();
+                break;
+            default:
+
+                break;
+        }
+
+        return clazz;
+    }
+
+
+    private void logOut() {
+        MaterialDialog.Builder builder = new MaterialDialog.Builder(this)
+                .title(" � � � � � � � � � ")
+                .content(" � � � � � � � � � � � � � � � � � � � � � � � � � � � ")
+                .positiveText(" � � � � � � � � � ").onPositive(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(MaterialDialog dialog, DialogAction which) {
+                        AuthorityUtils.logout();
+                        finish();
+                    }
+                }).negativeText(" � � � � � � � � � ").onNegative(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(MaterialDialog dialog, DialogAction which) {
+
+                    }
+                });
+
+        MaterialDialog dialog = builder.build();
+        dialog.show();
+    }
+
+    //鍒囨崲Fragment
+    private void switchFragment(Class<?> clazz) {
+        if (clazz == null) return;
+        BaseFragment to = ViewUtils.createFragment(clazz);
+        if (to.isAdded()) {
+            mFragmentManager.beginTransaction().hide(mCurrentFragment).show(to).commitAllowingStateLoss();
+        } else {
+            mFragmentManager.beginTransaction().hide(mCurrentFragment).add(R.id.frame_content, to).commitAllowingStateLoss();
+        }
+        mCurrentFragment = to;
+
+        if (mCurrentFragment instanceof CategoryFragment) {
+            mSortMenu.setVisible(true);
+        }
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        mSortMenu = menu.getItem(0);
+        mSortMenu.setVisible(false);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_sort) {
+            startActivityWithoutExtras(SortActivity.class);
+        } else if (id == R.id.action_about) {
+            startActivityWithoutExtras(AboutActivity.class);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
+    @Override
+    public void getCollect(List<CollectTable> list) {
+        mDrawer.updateItem(mItemCollect.withBadge(list.size() + " 
+public class AppUtils  
+public static boolean isFirstRun ( )  
+return PrefUtils . getBoolean ( GanHuoIOApplication . getInstance ( ) , "isFirstRun" , true )  
+public static void setFirstRun ( boolean isFirstRun )  

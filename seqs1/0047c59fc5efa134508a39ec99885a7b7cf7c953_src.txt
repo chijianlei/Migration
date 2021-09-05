@@ -1,0 +1,7 @@
+@ Override public void onTurnEnded ( final TurnEndedEvent event ) 
+@ Override public void onRoundEnded ( final RoundEndedEvent event ) { roundResults . add ( newRoundResult ) ;  
+@ Override public void onBattleCompleted ( BattleCompletedEvent e ) { notifyAll ( ) ;  
+BattleCompletedEvent e ) { notifyAll ( ) ;  
+public List < List < RoundResult >> getRoundResults ( ) 
+for ( int i = 0 ; i < roundResults . size ( ) ; i ++ )  
+double ramDamage = snapshot . getCurrentRammingDamageScore ( ) + snapshot . getCurrentRammingKillBonus ( )  

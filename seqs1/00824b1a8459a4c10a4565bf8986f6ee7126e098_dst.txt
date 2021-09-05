@@ -1,0 +1,96 @@
+private ScrollingBackground background  
+public GameOverScreen ( final DeepUniverse game )  
+playButton = new ImageButton ( new TextureRegionDrawable ( game . uiAtlas . findRegion ( "play" ) ) )  
+mainMenuButton = new ImageButton ( new TextureRegionDrawable ( game . uiAtlas . findRegion ( "menu" ) ) )  
+stage . addActor ( highScoreLabel )  
+stage . addActor ( scoreLabel )  
+mainMenuButton = new ImageButton ( new TextureRegionDrawable ( game . uiAtlas . findRegion ( "menu" ) ) )  
+@ Override public void show ( )  
+score = game . playScreen . score  
+if ( score > highScore )  
+prefs . putInteger ( "highscore" , score )  
+prefs . flush ( )  
+highScoreLabel . setText ( "HIGH SCORE: " + Integer . toString ( highScore ) )  
+scoreLabel . setText ( "SCORE: " + Integer . toString ( score ) )  
+game . batch . end ( )  
+game . setScreen ( game . playScreen )  
+@ Override public void resize ( int width , int height )  
+public MainMenuScreen ( final DeepUniverse game )  
+stage = new Stage ( )  
+@ Override public void show ( )  
+Gdx . input . setInputProcessor ( stage )  
+buttonsAddListener ( )  
+stage . addActor ( buttonPlay )  
+buttonPlay . setPosition ( DeepUniverse . V_WIDTH / 2 - buttonPlay . getPrefWidth ( ) / 2 , DeepUniverse . V_HEIGHT / 2 + 1 )  
+stage . addActor ( buttonSound )  
+stage . addActor ( buttonMusic )  
+stage . addActor ( buttonExit )  
+background = new ScrollingBackground ( game )  
+update ( delta )  
+stage . getViewport ( ) . update ( width , height , true )  
+private final static float MIN_ASTEROID_SPAWN_TIME = 0.6f  
+private final static float MAX_ASTEROID_SPAWN_TIME = 1 f  
+private final static float MIN_ENEMY_SHIP_SPAWN_TIME = 2 f  
+private final static float MAX_ENEMY_SHIP_SPAWN_TIME = 3 f  
+private final static int SCORE_FOR_ASTEROID = 50  
+private final static int SCORE_FOR_ENEMY_SHIP = 100  
+private final static float ENEMY_SHIP_SHOOT_TIME = 0.7f  
+private final DeepUniverse game  
+private Stage stage  
+private Ship ship  
+private ArrayList < Image > lifes  
+score = 0  
+leftMove = new ImageButton ( new TextureRegionDrawable ( game . uiAtlas . findRegion ( "left" ) ) )  
+rightMove = new ImageButton ( new TextureRegionDrawable ( game . uiAtlas . findRegion ( "right" ) ) )  
+shoot = new ImageButton ( new TextureRegionDrawable ( game . uiAtlas . findRegion ( "fire" ) ) )  
+ship = new Ship ( game )  
+random = new Random ( )  
+Gdx . input . setInputProcessor ( stage )  
+lifes = new ArrayList < Image > ( )  
+leftMove . setPosition ( 0 , 0 )  
+rightMove . setPosition ( leftMove . getWidth ( ) + 20 , 0 )  
+shoot . setPosition ( DeepUniverse . V_WIDTH - shoot . getWidth ( ) - 10 , 0 )  
+background = new ScrollingBackground ( game )  
+stage . addActor ( labelScore )  
+if ( DeepUniverse . IS_MOBILE )  
+stage . addActor ( leftMove )  
+stage . addActor ( rightMove )  
+stage . addActor ( shoot )  
+if ( enemyShipSpawnTimer <= 0 )  
+enemyShipSpawnTimer = random . nextFloat ( ) * ( MAX_ENEMY_SHIP_SPAWN_TIME - MIN_ENEMY_SHIP_SPAWN_TIME ) + MIN_ENEMY_SHIP_SPAWN_TIME  
+enemyShips . add ( new EnemyShip ( game , random . nextInt ( DeepUniverse . V_WIDTH - EnemyShip . ENEMY_SHIP_WIDTH ) , random . nextBoolean ( ) ) )  
+if ( asteroidSpawnTimer <= 0 )  
+asteroidSpawnTimer = random . nextFloat ( ) * ( MAX_ASTEROID_SPAWN_TIME - MIN_ASTEROID_SPAWN_TIME ) + MIN_ASTEROID_SPAWN_TIME  
+asteroids . add ( new Asteroid ( game , random . nextInt ( DeepUniverse . V_WIDTH - Asteroid . ASTEROIDBROWN_WIDTH ) , random . nextBoolean ( ) , random . nextBoolean ( ) ) )  
+if ( enemyShipShootTimer < 0 )  
+for ( EnemyShip enemyShip : enemyShips )  
+enemyBullets . add ( new EnemyBullet ( game , enemyShip . getEnemyShipX ( ) + EnemyShip . ENEMY_SHIP_WIDTH / 2 , enemyShip . getEnemyShipY ( ) ) )  
+enemyShipShootTimer = ENEMY_SHIP_SHOOT_TIME  
+if ( lifeBonusSpawnTimer < 0 )  
+lifeBonuses . add ( new Life ( game , random . nextInt ( DeepUniverse . V_WIDTH - Life . LIFE_WIDTH ) ) )  
+lifeBonusSpawnTimer = random . nextFloat ( ) * ( BONUS_LIFE_MAX_SPAWN_TIME - BONUS_LIFE_MIN_SPAWN_TIME ) + BONUS_LIFE_MIN_SPAWN_TIME  
+if ( meteor . remove ) asteroidsToRemove . add ( meteor )  
+asteroidsToRemove . add ( meteor )  
+for ( EnemyBullet enemyBullet : enemyBullets )  
+enemyBullet . update ( delta )  
+if ( enemyBullet . remove ) enemyBulletsToRemove . add ( enemyBullet )  
+enemyBulletsToRemove . add ( enemyBullet )  
+if ( ship . collision . collidesWith ( enemyBullet . getCollision ( ) ) )  
+explosions . add ( new Explosions ( game , null , null , enemyBullet ) )  
+shipHealthUpdate ( false )  
+enemyBulletsToRemove . add ( enemyBullet )  
+for ( Explosions explosion : explosions )  
+asteroidsToRemove . add ( asteroid )  
+ship . bulletsToRemove . add ( bullet )  
+enemyShipsToRemove . add ( enemyShip )  
+ship . bulletsToRemove . add ( bullet )  
+if ( ship . collision . collidesWith ( enemyShip . getCollision ( ) ) )  
+asteroids . removeAll ( asteroidsToRemove )  
+ship . bullets . removeAll ( ship . bulletsToRemove )  
+ship . shipHealth < 5 ) ship . shipHealth ++  
+if ( ! ship . shieldBonusOn )  
+ship . shipHealth --  
+if ( ship . shipHealth < 1 ) game . setScreen ( game . gameOverScreen )  
+game . setScreen ( game . gameOverScreen )  
+shipHealthRender ( )  
+@ Override public void pause ( )  

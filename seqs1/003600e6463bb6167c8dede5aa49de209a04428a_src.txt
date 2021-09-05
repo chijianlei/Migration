@@ -1,0 +1,2 @@
+if ( ! limitSwitch . get ( ) || System . currentTimeMillis ( ) - startFastCalibration > 1000 )  
+setSpeed ( 0 )  

@@ -1,0 +1,2 @@
+for ( IMarker marker : workingCopy )  
+marker . delete ( )  

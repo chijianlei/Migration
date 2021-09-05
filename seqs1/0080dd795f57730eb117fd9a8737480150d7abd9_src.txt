@@ -1,0 +1,6 @@
+public CustomViewHolder ( View view )  
+for ( int i = 0 ; i < no ; i ++ )  
+handlerecycle ( )  
+optsel ( )  
+optsel ( )  
+swipeContainer . setRefreshing ( false )  

@@ -1,0 +1,2 @@
+switch ( size ) { case SMALL : mapSize = SMALL ; width = 400 ; height = 320 ; label . setText ( "Small" ) ; return ; case MEDIUM : mapSize = MEDIUM ; width = 800 ; height = 640 ; label . setText ( "Medium" ) ; return ; case LARGE : mapSize = LARGE ; width = 1200 ; height = 960 ; label . setText ( "Large" ) ; return ; case EXTRA_LARGE : mapSize = EXTRA_LARGE ; width = 1600 ; height = 1280 ; label . setText ( "Extra Large" ) ; return ; default : 
+mapTable . add ( map . getLabel ( ) ) . width ( 100 )  

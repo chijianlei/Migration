@@ -1,0 +1,11 @@
+public class MinesweeperGUI extends AppCompatActivity implements View . OnClickListener  
+private final int size = 10  
+private LinearLayout myLayout  
+myLayout = ( LinearLayout ) findViewById ( R . id . linLay )  
+for ( int y = 0 ; y < size ; y ++ )  
+for ( int x = 0 ; x < size ; x ++ )  
+rows [ y ] . addView ( board [ y ] [ x ] )  
+board [ y ] [ x ] . setOnClickListener ( this )  
+getSupportActionBar ( ) . setDisplayHomeAsUpEnabled ( true )  
+public class Tictactoe extends AppCompatActivity  
+@ Override protected void onCreate ( final Bundle savedInstanceState )  

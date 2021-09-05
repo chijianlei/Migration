@@ -1,0 +1,2 @@
+DialogInterface . OnClickListener ( )  
+super ( context , DATABASE_NAME , null , 1 )  

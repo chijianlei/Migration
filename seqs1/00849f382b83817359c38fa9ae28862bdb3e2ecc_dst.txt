@@ -1,0 +1,8 @@
+private int light  
+public MessageHandler ( UDPClient client , UDPServer server ) throws Exception  
+this . info = new long [ 2 ]  
+public void setLight ( int newLight )  
+client . sendMessage ( Integer . toString ( light ) )  
+private DatagramSocket clientSocket  
+clientSocket = new DatagramSocket ( )  
+clientSocket . close ( )  

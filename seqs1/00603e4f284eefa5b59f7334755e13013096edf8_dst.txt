@@ -1,0 +1,3 @@
+Position ( int a , int b , char c )  
+scanner . close ( )  
+System . err . println ( "*** Invalid file: has wrong number of rows: " + i )  

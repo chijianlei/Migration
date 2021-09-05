@@ -1,0 +1,2 @@
+if ( getLocaleFile ( ) . exists ( key ) )  
+if ( ! getLocaleFile ( ) . exists ( key ) )  

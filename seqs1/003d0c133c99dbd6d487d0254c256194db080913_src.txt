@@ -1,0 +1,9 @@
+return wishlistService . getWishlists ( currentUserId )  
+@ JsonIgnore @ ManyToOne private WishlistEntity wishlist  
+public List < ItemCategory > getCategory ( )  
+public void setCategory ( List < ItemCategory > category )  
+this . category = category  
+@ OneToMany ( fetch = FetchType . EAGER ) private List < WishlistEntity > wishlists  
+@ Id @ GeneratedValue ( strategy = GenerationType . IDENTITY ) private Long id  
+@ OneToMany ( fetch = FetchType . EAGER ) private List < ItemEntity > items  
+return userRepository . findOne ( currentUserId ) . getWishlists ( )  

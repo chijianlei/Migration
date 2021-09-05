@@ -1,0 +1,7 @@
+@ Override public void close ( )  
+if ( consulClient != null )  
+HttpRequest releaseLock = HttpRequest . newBuilder ( ) . httpMethod ( HttpMethod . PUT ) . uri ( "/v1/kv/" + mastershipKey ) . queryParams ( "release" , sessionId ) . build ( )  
+execute ( releaseLock , false , "release lock" )  
+closeSession ( )  
+private HttpResponse execute ( HttpRequest request , boolean throwOnError , String opName )  
+public interface MastershipElector  

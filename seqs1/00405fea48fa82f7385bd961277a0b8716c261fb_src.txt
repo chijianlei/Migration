@@ -1,0 +1,4 @@
+bind ( Sender . class ) . to ( JMSSender . class )  
+@ Inject public JMSReceiver ( @ Assisted Logger logger , @ Assisted Type type , @ Assisted String name , @ Assisted Class < T > tClass , MessageConverter messageConverter , Connection connection ) throws JMSException  
+Receiver < ? > create ( Logger logger , Type type , String name , Class tClass )  
+public class FactoryImpl implements Receiver . Factory  

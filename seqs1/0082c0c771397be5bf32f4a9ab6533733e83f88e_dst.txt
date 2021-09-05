@@ -1,0 +1,12 @@
+private synchronized boolean readWait ( )  
+int waitcount = 10  
+while ( waiting > 0 )  
+wait ( 1000 ) ; 
+catch ( InterruptedException e )  
+Thread . currentThread ( ) . interrupt ( ) ; 
+if ( waitcount -- < 0 )  
+log . error ( "read timeout" )  
+syncOK = false ; 
+return false  
+return true  
+@ edu . umd . cs . findbugs . annotations . SuppressFBWarnings ( value = { "NN_NAKED_NOTIFY" , "NO_NOTIFY_NOT_NOTIFYALL" } , justification = "Only want to notify this thread" ) public void reply ( NceReply r )  

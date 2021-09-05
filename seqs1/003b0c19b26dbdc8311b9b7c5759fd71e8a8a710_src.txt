@@ -1,0 +1,3 @@
+button_more = fragmentView . findViewById ( R . id . button_more )  
+button_more . setText ( "View " + userName + "'s Expenses in details" )  
+button_more . setOnClickListener ( new View . OnClickListener ( ) { @ Override public void onClick ( View view ) { Bundle bundle = new Bundle ( ) ; bundle . putString ( "userName" , userName ) ; bundle . putString ( "userId" , userId ) ; bundle . putString ( "groupId" , groupId ) ; bundle . putString ( "userExpense" , userExpense ) ; BottomSheetDialogFragment fragment = new GroupExpenseFragment ( ) ; fragment . setArguments ( bundle ) ; fragment . show ( getFragmentManager ( ) , fragment . getTag ( ) ) ; } } )  

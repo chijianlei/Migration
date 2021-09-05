@@ -1,0 +1,2 @@
+if ( validationType == ValidationType . XSD )  
+validateXliffFile ( new StreamSource ( file ) )  

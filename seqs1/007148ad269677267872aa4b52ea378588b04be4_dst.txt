@@ -1,0 +1,7 @@
+if ( mpl1ba004a . isChecked ( ) )  
+if ( mpl1c010 . getText ( ) . toString ( ) . isEmpty ( ) )  
+Toast . makeText ( this , "ERROR(Empty)" + getString ( R . string . mpl1c010 ) , Toast . LENGTH_SHORT ) . show ( )  
+mpl1c010 . setError ( "This data is required" )  
+Log . d ( TAG , " mpl1c010 :empty " )  
+return false  
+mpl1c010 . setError ( null )  

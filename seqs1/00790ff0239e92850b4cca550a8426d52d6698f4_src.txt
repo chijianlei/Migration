@@ -1,0 +1,2 @@
+if ( worldList . getChildren ( ) [ worldComponent . getIndex ( ) + 2 ] . getText ( ) . equals ( String . valueOf ( world ) ) ) 
+General . sleep ( 850 , 1300 )  

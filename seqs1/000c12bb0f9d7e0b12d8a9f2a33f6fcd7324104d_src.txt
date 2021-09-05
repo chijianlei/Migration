@@ -1,0 +1,1 @@
+mSearchQuery = args . getString ( FileDisplayActivity . EXTRA_SEARCH_QUERY )  

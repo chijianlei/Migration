@@ -1,0 +1,6 @@
+final int origRow = table . rowAtPoint ( e . getPoint ( ) )  
+table . getSelectionModel ( ) . setSelectionInterval ( origRow , origRow )  
+final int origRow = rowAtPoint ( e . getPoint ( ) )  
+getSelectionModel ( ) . setSelectionInterval ( origRow , origRow )  
+final int origRow = rowAtPoint ( e . getPoint ( ) )  
+getSelectionModel ( ) . setSelectionInterval ( origRow , origRow )  

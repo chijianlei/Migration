@@ -1,0 +1,8 @@
+injectorType = typeOracle . findType ( injector . getName ( ) )  
+sourceWriter . println ( "//code for the CachePolicy.NEVER:" )  
+printInjectorMethod ( sourceWriter , className , injectorType , injectorMethod )  
+printInjectorMethod ( sourceWriter , className , injectorType , injectorMethod )  
+printInjectorMethod ( sourceWriter , className , injectorType , injectorMethod )  
+private void printInjectorMethod ( SourceWriter sourceWriter , String className , JClassType injectorType , String injectorMethod )  
+if ( injectorType != null && injectorMethod != null )  
+sourceWriter . println ( "view = (" + className + ") injector." + injectorMethod + "();" )  

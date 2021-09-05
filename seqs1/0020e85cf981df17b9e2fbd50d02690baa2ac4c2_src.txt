@@ -1,0 +1,3 @@
+object = this . entityManager . merge ( object )  
+this . entityManager . remove ( object )  
+catch ( Exception e )  

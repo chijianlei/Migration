@@ -1,0 +1,3 @@
+private final HashSet < Class < ? extends Model >> mModels = new HashSet < > ( )  
+if ( this . mModels . contains ( model ) )  
+this . mModels . add ( model )  

@@ -1,0 +1,4 @@
+la . notifyDataSetChanged ( )  
+custom . replaceWithPoiFilter ( f )  
+this . filter . replaceWithPoiFilter ( custom )  
+public void replaceWithPoiFilter ( PoiUIFilter f )  

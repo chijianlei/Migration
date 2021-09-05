@@ -1,0 +1,3 @@
+txtMessage . append ( "This email is a notification from a smap server.  " )  
+txtMessage . append ( " The server administrator email is " )  
+txtMessage . append ( " You can send an email to the administrator if you think that you should not be receiving these notifications." )  

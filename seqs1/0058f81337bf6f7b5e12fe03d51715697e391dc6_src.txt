@@ -1,0 +1,7 @@
+mRealm = Realm . getDefaultInstance ( )  
+mRealm = Realm . getDefaultInstance ( )  
+mRealm = Realm . getDefaultInstance ( )  
+mRealm = Realm . getDefaultInstance ( )  
+for ( int i = 0 ; i < resultsArray . length ( ) ; i ++ )  
+Log . d ( "MAIN" , urlString )  
+mContext . getContentResolver ( ) . applyBatch ( QuoteProvider . AUTHORITY , Utils . quoteJsonToContentVals ( getResponse ) )  

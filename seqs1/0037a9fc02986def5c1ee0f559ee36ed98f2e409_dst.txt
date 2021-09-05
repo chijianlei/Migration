@@ -1,0 +1,33 @@
+protected void compareUnorderedResults ( ) throws Exception  
+BaseTestQuery . test ( testOptionSettingQueries )  
+addTypeInfoIfMissing ( actual . get ( 0 ) , testBuilder )  
+List < Map > expectedRecords = new ArrayList < > ( )  
+addToMaterializedResults ( expectedRecords , expected , loader , schema )  
+List < QueryDataBatch > expected = Collections . EMPTY_LIST  
+if ( baselineRecords == null )  
+BaseTestQuery . test ( baselineOptionSettingQueries )  
+expected = BaseTestQuery . testRunAndReturn ( baselineQueryType , testBuilder . getValidationQuery ( ) )  
+addToMaterializedResults ( actualRecords , actual , loader , schema )  
+expectedRecords = baselineRecords  
+compareResults ( actualRecords , expectedRecords )  
+cleanupBatches ( actual , expected )  
+throw new Exception ( "Cannot do a high performance comparison without using a baseline file" )  
+BaseTestQuery . test ( testOptionSettingQueries )  
+addTypeInfoIfMissing ( actual . get ( 0 ) , testBuilder )  
+Map < String , List > actualSuperVectors  
+List < QueryDataBatch > expected = Collections . EMPTY_LIST  
+Map < String , List > expectedSuperVectors  
+if ( baselineRecords == null )  
+BaseTestQuery . test ( baselineOptionSettingQueries )  
+expected = BaseTestQuery . testRunAndReturn ( baselineQueryType , testBuilder . getValidationQuery ( ) )  
+expectedSuperVectors = addToCombinedVectorResults ( expected , loader , schema )  
+expectedSuperVectors = new HashMap ( )  
+expected = new ArrayList ( )  
+for ( String s : ( ( Map < String , Object > ) baselineRecords . get ( 0 ) ) . keySet ( ) )  
+expectedSuperVectors . put ( s , new ArrayList ( ) )  
+for ( Map < String , Object > m : baselineRecords )  
+for ( String s : m . keySet ( ) )  
+expectedSuperVectors . get ( s ) . add ( m . get ( s ) )  
+compareMergedVectors ( expectedSuperVectors , actualSuperVectors )  
+cleanupBatches ( expected , actual )  
+BaseTestQuery . test ( testOptionSettingQueries )  

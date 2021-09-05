@@ -1,0 +1,7 @@
+if ( ama . getTextValue ( ) != null && ama . getTextValue ( ) . equals ( value . getTextValue ( ) ) )  
+valid = true  
+throw new IllegalArgumentException ( String . format ( "%s is not a valid value for attribute %s" , value . getTextValue ( ) , attribute ) )  
+return method . invoke ( this , args )  
+if ( method . getName ( ) . startsWith ( GET ) )  
+@ Key ( namespace = "kernel" , name = "HasMember" ) List < Step > getSteps ( )  
+@ Key ( namespace = "kernel" , name = "HasMember" ) void addStep ( Step step )  

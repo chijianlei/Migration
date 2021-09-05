@@ -1,0 +1,6 @@
+DecimalFormat formatter = new DecimalFormat ( formatString )  
+DecimalFormat formatter = new DecimalFormat ( formatString )  
+DecimalFormat formatter = new DecimalFormat ( formatString )  
+DecimalFormat formatter = new DecimalFormat ( formatString )  
+DecimalFormat formatter = new DecimalFormat ( formatString )  
+DecimalFormat formatter = new DecimalFormat ( DefaultSenseiInterpreter . DEFAULT_FORMAT_STRING_MAP . get ( MetaType . Long ) )  

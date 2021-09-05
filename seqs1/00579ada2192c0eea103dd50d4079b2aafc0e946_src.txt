@@ -1,0 +1,3 @@
+String emailsInMbox = doForeachMboxFile ( 0 , 5 , parser , mboxLink )  
+private String doForeachMboxFile ( int i , int limit , EmailParser parser , String mboxLink )  
+doForeachMboxFile ( i ++ , limit , parser , mboxLink )  

@@ -1,0 +1,6 @@
+setTimeZoneImpl ( SystemProperties . get ( TIMEZONE_PROPERTY ) )  
+void setTimeZoneImpl ( String tz )  
+if ( firstRtcWakeup != null && mNextRtcWakeup != firstRtcWakeup . start )  
+if ( ! isEncryptStatus )  
+AlarmManager . writePowerOffAlarmFile ( AlarmManager . POWER_OFF_ALARM_SET_FILE , AlarmManager . POWER_OFF_ALARM_NOT_SET )  
+if ( nextNonWakeup == 0 || mNextNonWakeupDeliveryTime < nextNonWakeup )  

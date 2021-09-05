@@ -1,0 +1,9 @@
+public static String getLeague ( int league_num ) 
+switch ( league_num ) { case SERIE_A : return "Seria A" ; case PREMIER_LEGAUE : return "Premier League" ; case CHAMPIONS_LEAGUE : return "UEFA Champions League" ; case PRIMERA_DIVISION : return "Primera Division" ; case BUNDESLIGA : return "Bundesliga" ; default : return "Not known League Please report"  
+public static String getMatchDay ( int match_day , int league_num ) 
+if ( league_num == CHAMPIONS_LEAGUE ) 
+if ( match_day <= 6 ) 
+if ( match_day == 7 || match_day == 8 ) 
+if ( match_day == 9 || match_day == 10 ) 
+if ( match_day == 11 || match_day == 12 ) 
+return "Matchday : " + String . valueOf ( match_day )  

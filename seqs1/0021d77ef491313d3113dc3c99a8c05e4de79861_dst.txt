@@ -1,0 +1,4 @@
+public static String getMimeType ( String url )  
+String type = null  
+MimeTypeMap mime = MimeTypeMap . getSingleton ( )  
+type = mime . getMimeTypeFromExtension ( extension )  

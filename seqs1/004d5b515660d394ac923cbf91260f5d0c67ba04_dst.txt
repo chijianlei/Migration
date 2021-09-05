@@ -1,0 +1,3 @@
+private boolean initConnection ( )  
+catch ( IOException e )  
+if ( ! initConnection ( ) ) 

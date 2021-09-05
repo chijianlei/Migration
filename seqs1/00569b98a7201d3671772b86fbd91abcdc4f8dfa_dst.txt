@@ -1,0 +1,2 @@
+public Message ( String receiverUserCode , String senderUserCode , String text , Date sendingDate , MessageType type )  
+this . sendingDate = new Date ( sendingDate . getTime ( ) )  

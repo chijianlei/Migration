@@ -1,0 +1,28 @@
+PsiBuilder . Marker outerMarer = b . mark ( )  
+if ( tokenType == BLOCK_DIRECTIVE_EXPR ) 
+boolean complete = parseBlockContent ( b , l )  
+outerMarer . done ( NAMED_BLOCK )  
+outerMarer = null  
+else if ( tokenType == ANON_BLOCK_DIRECTIVE_EXPR ) 
+boolean complete = parseBlockContent ( b , l )  
+outerMarer . done ( ANON_BLOCK )  
+outerMarer = null  
+else if ( tokenType == WRAPPER_DIRECTIVE_EXPR ) 
+boolean complete = parseBlockContent ( b , l )  
+if ( ! complete ) 
+outerMarer . setCustomEdgeTokenBinders ( WhitespacesBinders . DEFAULT_LEFT_BINDER , WhitespacesBinders . GREEDY_RIGHT_BINDER )  
+outerMarer . precede ( ) . error ( PerlBundle . message ( "ttk2.error.unclosed.block.directive" ) )  
+outerMarer = null  
+outerMarer . done ( SWITCH_BLOCK )  
+outerMarer = null  
+PsiBuilder . Marker branchMarker = outerMarer  
+outerMarer = outerMarer . precede ( )  
+outerMarer . done ( IF_BLOCK )  
+outerMarer = null  
+PsiBuilder . Marker branchMarker = outerMarer  
+outerMarer = outerMarer . precede ( )  
+outerMarer . done ( UNLESS_BLOCK )  
+outerMarer = null  
+if ( outerMarer != null ) 
+outerMarer . drop ( )  
+public static boolean parseBlockContent ( PsiBuilder b , int l ) 

@@ -1,0 +1,27 @@
+Object [ ] args = null  
+if ( sArgs != null )  
+args = new Object [ sArgs . length ]  
+for ( int i = 0 ; i < sArgs . length ; i ++ )  
+for ( int i = 0 ; i < methods . length ; i ++ )  
+Method method = methods [ i ]  
+if ( method . getName ( ) . equalsIgnoreCase ( methodName ) )  
+if ( canExecuteCommand ( method ) )  
+possible . add ( i )  
+args == null ? 0 : args . length  
+for ( int i = 0 ; i < size ; i ++ )  
+Method m = methods [ possible . get ( i ) ]  
+Class < ? > [ ] params = m . getParameterTypes ( )  
+m . setAccessible ( true )  
+m . invoke ( exec , args )  
+} catch ( ReflectionException e )  
+String msg = e . getMessage ( )  
+if ( msg == null || msg . length ( ) <= 0 || msg . equals ( "" ) )  
+msg = "Unknown Error"  
+e . printStackTrace ( )  
+log ( msg , LogLevel . ERROR )  
+if ( m . isPublic ( ) && canDisplayCommand ( m ) )  
+protected boolean canExecuteCommand ( Method method )  
+protected boolean canDisplayCommand ( Method method )  
+if ( name . toLowerCase ( ) . startsWith ( setString ) )  
+protected Console console  
+public interface Console  

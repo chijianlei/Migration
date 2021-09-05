@@ -1,0 +1,5 @@
+List < ArchiveField > termsWithDefaultValues = new ArrayList < > ( )  
+maxIndex = Math . max ( maxIndex , darwinCoreComponent . getId ( ) . getIndex ( ) )  
+for ( ArchiveField af : archiveFields )  
+if ( af . getIndex ( ) != null )  
+System . arraycopy ( defaultValues , 0 , line , line . length - 1 , defaultValuesTerm . length )  

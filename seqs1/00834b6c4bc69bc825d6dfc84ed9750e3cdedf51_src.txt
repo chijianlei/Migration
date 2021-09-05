@@ -1,0 +1,4 @@
+return null  
+Random tRandom = new Random ( ( aWorld . getSeed ( ) + ( ( int ) Math . floor ( aX / 96.d ) ) + ( 7 * ( ( int ) Math . floor ( aZ / 96.d ) ) ) ) )  
+double amount = tRandom . nextInt ( 50 ) + tRandom . nextDouble ( )  
+ChunkPosition tPos = new ChunkPosition ( aX / 16 , 1 , aZ / 16 )  

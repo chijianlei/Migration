@@ -1,0 +1,13 @@
+private boolean isAtKingsEdge ( int index )  
+return ( aiEdge . contains ( index ) || myEdge . contains ( index ) )  
+if ( ( neighbor . equals ( enemyPlayer ) || neighbor . equals ( enemyPlayerKing ) ) && ! isAtEdges ( index2 ) && getNeighbor ( index2 , indices [ i ] ) == null )  
+if ( index2 != indexOfPath . get ( indexOfPath . size ( ) - 1 ) )  
+Icon icon = getNeighbor ( index , indices [ i ] )  
+if ( icon != null )  
+String neighbor = icon . toString ( )  
+System . out . println ( "!isAtEdges(index2): " + ! isAtEdges ( index2 ) )  
+if ( ( neighbor . equals ( enemyPlayer ) || neighbor . equals ( enemyPlayerKing ) ) && ! isAtEdges ( index2 ) && getNeighbor ( index2 , indices [ i ] ) == null ) { 
+squarePanels [ index2 ] . setBackground ( Color . RED )  
+squarePanels [ index2 + indices [ i ] ] . setBackground ( Color . CYAN )  
+eatSquares . add ( index2 + indices [ i ] )  
+checkForFood ( index2 + indices [ i ] )  

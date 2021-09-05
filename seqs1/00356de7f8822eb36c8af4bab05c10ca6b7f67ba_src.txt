@@ -1,0 +1,6 @@
+public void setBody ( ArgumentBody body )  
+this . body = body  
+public static void forgetBody ( ArgumentBody body )  
+session . clear ( )  
+AssertionNode publishedAssertion = ( AssertionNode ) argumentService . publishNode ( kyle . getNodeId ( ) , assertionDraft . getId ( ) ) . getRootNode ( )  
+User kyle = registerUser ( "5678" , "Kyle" )  

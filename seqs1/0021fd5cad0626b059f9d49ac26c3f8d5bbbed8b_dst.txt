@@ -1,0 +1,13 @@
+private final String BINARY_MODIFIED_TIME_KEY = "binaryModifiedTime"  
+public long getBinaryResourcesModifiedTime ( )  
+this . assetsBundleFileName = assetsBundleFileName  
+String binaryJsBundleUrl = ASSETS_BUNDLE_PREFIX + assetsBundleFileName  
+return classesDexEntry . getTime ( )  
+applicationFile . close ( )  
+String packageFilePath = codePushPackage . getCurrentPackageBundlePath ( )  
+if ( packageFilePath == null )  
+catch ( IOException e )  
+throw new CodePushUnknownException ( "Error in getting current package bundle path" , e )  
+CodePushUtils . log ( "Unable to parse pending update metadata " + pendingUpdateString + " stored in SharedPreferences" )  
+rollbackPackage ( )  
+codePushPackage . downloadPackage ( applicationContext , mutableUpdatePackage , new DownloadProgressCallback ( ) { @ Override public void call ( DownloadProgress downloadProgress ) { getReactApplicationContext ( ) . getJSModule ( DeviceEventManagerModule . RCTDeviceEventEmitter . class ) . emit ( DOWNLOAD_PROGRESS_EVENT_NAME , downloadProgress . createWritableMap ( ) ) ; } } )  

@@ -1,0 +1,4 @@
+kudosService . retrieveSystemKudos ( creator , challenge . getAmount ( ) , challenge . getName ( ) , Transaction . Status . DECLINED_CHALLENGE )  
+kudosService . retrieveSystemKudos ( creator , challenge . getAmount ( ) , challenge . getName ( ) , Transaction . Status . CANCELED_CHALLENGE )  
+kudosService . retrieveSystemKudos ( challenge . getCreatorUser ( ) , challenge . getAmount ( ) , challenge . getName ( ) , Transaction . Status . EXPIRED_CHALLENGE )  
+throw new WrongChallengeEditorException ( "not_a_participant" )  

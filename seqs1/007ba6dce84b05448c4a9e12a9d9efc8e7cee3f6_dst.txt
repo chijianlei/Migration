@@ -1,0 +1,2 @@
+binaryOther . bitSet . flip ( 0 , binaryOther . getDimension ( ) )  
+binaryOther . bitSet . flip ( 0 , binaryOther . getDimension ( ) ) ; 

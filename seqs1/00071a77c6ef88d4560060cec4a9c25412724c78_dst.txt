@@ -1,0 +1,11 @@
+private static void tryAvailability ( final OPDSAcquisitionFeedEntryBuilderType eb , final Element e , final OptionType < URI > revoke ) throws OPDSParseException , ParseException 
+private static OPDSAvailabilityType inferAvailability ( final Element e , final OptionType < Element > holds_opt , final OptionType < URI > revoke ) throws OPDSParseException 
+final OptionType < Element > holds_opt = OPDSXML . getFirstChildElementWithNameOptional ( e , OPDSFeedConstants . OPDS_URI , "holds" )  
+if ( holds_opt . isSome ( ) )  
+final Some < Element > holds_some = ( Some < Element > ) holds_opt  
+queue = OPDSXML . getAttributeIntegerOptional ( holds_some . get ( ) , "position" )  
+eb . setAvailability ( OPDSAcquisitionFeedEntryParser . inferAvailability ( e , holds_opt , revoke ) )  
+private static OPDSAvailabilityType inferAvailability ( final Element e , final OptionType < Element > holds_opt , final OptionType < URI > revoke ) throws OPDSParseException 
+OptionType < Integer > queue = Option . none ( )  
+return OPDSAvailabilityLoaned . get ( start_date , end_date , revoke )  
+return OPDSAvailabilityLoanable . get ( )  

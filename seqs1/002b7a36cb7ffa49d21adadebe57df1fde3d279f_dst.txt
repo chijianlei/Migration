@@ -1,0 +1,13 @@
+public EventPollingDao ( DataSource dataSource , int maxEventsPerPolling , int maxAttemptsForPolling , int delayPerPollingAttemptInMilliseconds )  
+@ Autowired private EventTableChangesToAggregateTopicRelay eventTableChangesToAggregateTopicRelay  
+private String createEvents ( ) throws Exception  
+eventTableChangesToAggregateTopicRelay . stopCapturingChanges ( )  
+@ Test public void testFindAndPublish ( ) throws Exception  
+List < EventToPublish > eventsToTest = new ArrayList < > ( )  
+EventToPublish event1 = eventsToTest . get ( 0 )  
+Assert . assertEquals ( idPrefix + "_1" , event1 . getEventId ( ) )  
+Assert . assertEquals ( "entityId1" , event1 . getEntityId ( ) )  
+EventToPublish event2 = eventsToTest . get ( 1 )  
+Assert . assertEquals ( idPrefix + "_2" , event2 . getEventId ( ) )  
+@ Test public void testLimit ( ) throws Exception  
+List < EventToPublish > eventsToPublish = eventPollingDao . findEventsToPublish ( )  

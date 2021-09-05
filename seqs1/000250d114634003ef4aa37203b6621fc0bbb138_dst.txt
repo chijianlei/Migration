@@ -1,0 +1,1 @@
+return new SpotCheckObservation < > ( referenceId , new CalendarEntryListId ( reference . getId ( ) , CalendarType . SUPPLEMENTAL_CALENDAR , reference . getSupplementalMap ( ) . firstEntry ( ) . getKey ( ) , 0 ) )  

@@ -1,0 +1,2 @@
+super ( AnimeIndex . frame , false )  
+String value = ( String ) mainArray [ i ]  

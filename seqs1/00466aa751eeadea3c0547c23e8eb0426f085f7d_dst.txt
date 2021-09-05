@@ -1,0 +1,1 @@
+pt = new POINT2 ( pts . get ( j ) . x , pts . get ( j ) . y , pts . get ( j ) . style )  

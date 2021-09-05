@@ -1,0 +1,8 @@
+new SaveLoans ( saveLoansArg )  
+public SaveLoans ( String pathToVuFind )  
+for ( User userForSave : usersForSave )  
+private void saveLoansToDb ( Connection connection , ArrayList < Loan > loans )  
+for ( Loan loan : loans )  
+stmt . executeUpdate ( query )  
+} catch ( SQLException e )  
+e . printStackTrace ( )  

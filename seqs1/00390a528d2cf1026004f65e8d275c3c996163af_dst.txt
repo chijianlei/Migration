@@ -1,0 +1,1 @@
+final MixedTransformView < T > translated = ops . transform ( ) . translate ( ops . transform ( ) . zeroMin ( images [ i ] ) , offset )  

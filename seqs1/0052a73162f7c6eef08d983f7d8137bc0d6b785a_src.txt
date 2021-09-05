@@ -1,0 +1,6 @@
+if ( getForwardSlashIsSeparator ( ) && ! allowHttpSepsInV0 )  
+allowedWithoutQuotes . set ( '/' )  
+allowedWithoutQuotes . clear ( '/' )  
+if ( forwardSlashIsSeparator && ! getAllowHttpSepsInV0 ( ) )  
+allowedWithoutQuotes . set ( '/' )  
+allowedWithoutQuotes . clear ( '/' )  

@@ -1,0 +1,5 @@
+@ JsonProperty ( SerializationConstants . PERMISSIONS ) private Map < Permission , Boolean > permissions  
+public Authorization ( List < UUID > aclKey , Map < Permission , Boolean > permissionsMap )  
+this . permissions = permissionsMap  
+public List < UUID > getAclKey ( )  
+public Map < Permission , Boolean > getPermissions ( )  

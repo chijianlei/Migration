@@ -1,0 +1,9 @@
+private static final String DATABASE_NAME = "Lokoxi.db"  
+int resId = PracticeScene . this . getResources ( ) . getIdentifier ( practiceModel . getImage ( ) , "drawable" , PracticeScene . this . getPackageName ( ) )  
+int resId = PracticeScene . this . getResources ( ) . getIdentifier ( practiceModel . getImage ( ) , "drawable" , PracticeScene . this . getPackageName ( ) )  
+int resId = PracticeScene . this . getResources ( ) . getIdentifier ( practiceModel . getImage ( ) , "drawable" , PracticeScene . this . getPackageName ( ) )  
+givImage . setImageResource ( resId )  
+@ Override public void onClick ( View v )  
+if ( v == btStart )  
+tvCountDown . setVisibility ( View . VISIBLE )  
+btStart . setText ( "STOP" )  

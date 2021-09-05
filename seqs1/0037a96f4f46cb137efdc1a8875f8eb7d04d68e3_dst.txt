@@ -1,0 +1,2 @@
+public class CQLGraphTest extends CassandraGraphTest  
+@ Override public WriteConfiguration getConfiguration ( )  

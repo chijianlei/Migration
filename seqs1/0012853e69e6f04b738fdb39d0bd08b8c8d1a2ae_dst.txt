@@ -1,0 +1,4 @@
+public ArrayList < Integer > getNormalFish ( FishingRodItem fishingRod , BaitItem bait )  
+ArrayList < Integer > out = super . getNormalFish ( fishingRod , bait )  
+public ArrayList < Integer > getNormalFish ( FishingRodItem fishingRod , BaitItem bait )  
+ArrayList < Integer > out = super . getNormalFish ( fishingRod , bait )  

@@ -1,0 +1,9 @@
+if ( lhs == null && rhs == null )  
+return 0  
+if ( ( left != - 1 && right == - 1 ) || rhs == null )  
+return - 1  
+if ( ( left == - 1 && right != - 1 ) || lhs == null )  
+return 1  
+if ( left - right == 0 )  
+return left - right  
+return String . CASE_INSENSITIVE_ORDER . compare ( lhs , rhs )  

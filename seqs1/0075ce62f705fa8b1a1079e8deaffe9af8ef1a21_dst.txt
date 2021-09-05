@@ -1,0 +1,2 @@
+public static final String CUSTOM_RESPONSE_HEADERS = "HtmlServlet.customResponseHeaders"  
+public static final String OBJECT_RESOLUTION_PROPERTIES = "HtmlServlet.resolveProperties"  

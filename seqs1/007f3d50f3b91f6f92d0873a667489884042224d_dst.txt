@@ -1,0 +1,6 @@
+SQLQuery q = dataSourceMgr . getSession ( ) . createSQLQuery ( sql )  
+q . setString ( "sourcesystemCd" , getSourcesystemCd ( ) )  
+q . setString ( "sourcesystemCd" , getSourcesystemCd ( ) )  
+q . executeUpdate ( )  
+q = dataSourceMgr . getSession ( ) . createSQLQuery ( sql )  
+i2b2DemoDataWriter . cleanOldRecordsIfExist ( )  

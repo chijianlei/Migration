@@ -1,0 +1,5 @@
+private Stack < Integer > previousStartOfKeys = new Stack < > ( )  
+if ( deleted == ' ' ) { 
+startOfKey = previousStartOfKeys . pop ( )  
+startOfKey = previousStartOfKeys . pop ( ) ; 
+output . setText ( output . getText ( ) . substring ( 0 , location ) + code . get ( input . getText ( ) . substring ( startOfKey , input . getText ( ) . length ( ) - 1 ) ) )  

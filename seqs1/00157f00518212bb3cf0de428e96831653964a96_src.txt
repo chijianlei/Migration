@@ -1,0 +1,29 @@
+File sourcer = new File ( "houses.dat" ) ; 
+System . out . println ( "Error " + e )  
+inputFile = new BufferedReader ( new FileReader ( "houses.dat" ) )  
+System . out . println ( "Error " + e ) ; 
+outputFile = new PrintWriter ( new FileWriter ( "houses.dat" ) )  
+System . out . println ( "Error " + e ) ; 
+int lotNumber = 0  
+lotNumber = Integer . parseInt ( inputFile . readLine ( ) )  
+System . out . println ( "Error " + e ) ; 
+ListHouse house = new ListHouse ( lotNumber , lastName , firstName , listedPrice , squareFeet , noOfBedRooms )  
+outputFile . println ( house . lotNumber ( ) )  
+System . out . println ( "Error " + e ) ; 
+System . out . println ( "Error " + e ) ; 
+private String lastName  
+public ListHouse ( int lotNumber , String lastName , String firstName , int price , int squareFeet , int bedRooms ) 
+this . lastName = lastName  
+ListHouse result = new ListHouse ( lotNumber , lastName , firstName , listedPrice , squareFeet , noOfBedRooms )  
+public String lastName ( ) 
+public MenuJFrame ( )  
+jLabel2 . setBounds ( 755 , 12 , 15 , 20 )  
+jButtonNext . setBounds ( 575 , 503 , 175 , 70 )  
+jLabelFooter . setText ( "Lot number is already in use" ) ; 
+jLabelFooter . setText ( "New house added to the list" ) ; 
+jLabelFooter . setText ( list . lengthIs ( ) + " houses on the list" )  
+jLabelFooter . setText ( "Request Completed" ) ; 
+jLabelFooter . setText ( "Incomplete Request" )  
+jLabelFooter . setText ( "Invalid data format" + badHouseData . getMessage ( ) )  
+private void jLabelCloseMouseClicked ( java . awt . event . MouseEvent evt ) { 
+dispose ( )  

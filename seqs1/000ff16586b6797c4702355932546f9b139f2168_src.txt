@@ -1,0 +1,52 @@
+return "harFiles" + File . separator + "harFiles" + currentTime + ".zip"  
+Har firstHar = harReader . readFromFile ( new File ( tempDir + "/" + firstHarfileLocation ) )  
+List < HarEntry > entries = firstHar . getLog ( ) . getEntries ( )  
+Har secondHar = harReader . readFromFile ( new File ( tempDir + "/" + secondHarfileLocation ) )  
+List < HarEntry > entries1 = secondHar . getLog ( ) . getEntries ( )  
+List < HarPage > firstPages = firstHar . getLog ( ) . getPages ( )  
+List < HarPage > secondPages = secondHar . getLog ( ) . getPages ( )  
+String pageref = entry . getPageref ( )  
+String pageref = entry . getPageref ( )  
+JsonResponse = HarAnalyzerUtil . xlsReadWriteUpdate ( firstEntry , secondEntry )  
+for ( int i = 0 ; i < fields . size ( ) ; i ++ )  
+HarReportUtil harReportUtil = new HarReportUtil ( "harReport" )  
+String zipDir = rootDir . getParent ( ) + File . separator + "webapps" + File . separator + "HarFileAnalyzer/harFiles/"  
+String downloadHarFile = DownloadHar . downloadHarFile ( wptURL , zipDir , releaseName , browser , environment , bandwidth )  
+bean . setJsonObject ( downloadHarFile )  
+private static File f  
+private static int firstPageOnload = 0  
+private static int secondPageOnLoad = 0  
+private static List < String > sheet2CellHeader  
+private static List < String > sheet3Cells  
+File currentFolder = new File ( "." )  
+f = new File ( workingFolder . getAbsolutePath ( ) + "\\" + "report" + ".xls" )  
+sheet1cellHeaders . add ( "URL" )  
+sheet1cellHeaders . add ( "ResponseCode" )  
+sheet1cellHeaders . add ( "Time Taken" )  
+sheet1cellHeaders . add ( "File Size" )  
+sheet1cellHeaders . add ( "Onload" )  
+secondPageOnLoad = secondPage . getPageTimings ( ) . getOnLoad ( )  
+createXLSHeaderColumnName ( ) ; 
+FileOutputStream fileOut = new FileOutputStream ( workingFolder . getAbsolutePath ( ) + "\\" + "report" + ".xls" )  
+public static JSONObject xlsReadWriteUpdate ( List < HarEntry > firstEntryList , List < HarEntry > secondEntryList ) throws IOException , JSONException  
+System . out . println ( "rootObject=========> " + rootObject . toString ( ) )  
+FileInputStream fsIP = new FileInputStream ( new File ( workingFolder . getAbsolutePath ( ) + "\\" + "report" + ".xls" ) )  
+for ( HarEntry harEntry : harEntries )  
+FileOutputStream output_file = new FileOutputStream ( new File ( workingFolder . getAbsolutePath ( ) + "\\" + "report" + ".xls" ) )  
+FileInputStream fsIP = new FileInputStream ( new File ( workingFolder . getAbsolutePath ( ) + "\\" + "report" + ".xls" ) )  
+int time = harEntry . getTime ( )  
+Date startedDateTime = harEntry . getStartedDateTime ( )  
+long onloadtime = startedDateTime . getTime ( )  
+FileOutputStream output_file = new FileOutputStream ( new File ( workingFolder . getAbsolutePath ( ) + "\\" + "report" + ".xls" ) )  
+FileInputStream fsIP = new FileInputStream ( new File ( workingFolder . getAbsolutePath ( ) + "\\" + "report" + ".xls" ) )  
+Integer firstTime = null  
+Integer secondEntryTime = null  
+Date startedDateTime = firstEntry . getStartedDateTime ( )  
+long time = startedDateTime . getTime ( )  
+Date startedDateTime = secondEntry . getStartedDateTime ( )  
+long time = startedDateTime . getTime ( )  
+int timeDiff = secondEntryTime - firstTime  
+FileOutputStream output_file = new FileOutputStream ( new File ( workingFolder . getAbsolutePath ( ) + "\\" + "report" + ".xls" ) )  
+public HarReportUtil ( String fileName )  
+workingFolder = new File ( currentFolder , "WebPageReport_XLS" )  
+reportFile = new File ( workingFolder . getAbsolutePath ( ) + "\\" + this . fileName + ".xls" )  

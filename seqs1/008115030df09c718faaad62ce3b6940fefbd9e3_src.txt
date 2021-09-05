@@ -1,0 +1,6 @@
+public Software ( Parcel in )  
+in . readStringArray ( platforms )  
+in . readStringArray ( tags )  
+items = new Software [ parcels . length ]  
+for ( int i = 0 ; i < parcels . length ; i ++ )  
+items [ i ] = ( Software ) parcels [ i ]  

@@ -1,0 +1,5 @@
+notifs . putInt ( "Textra" , this . textIds . size ( ) )  
+notifs . putInt ( "Messenger" , this . messageIds . size ( ) )  
+notifs . putInt ( "Snapchat" , this . snaps )  
+notifs . putInt ( "Emails" , this . gmails )  
+Log . d ( TAG , "Notification package received...parsing." )  

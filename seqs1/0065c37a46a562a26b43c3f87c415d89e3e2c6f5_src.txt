@@ -1,0 +1,4 @@
+return R . id . easy  
+return R . id . medium  
+return R . id . difficult  
+return R . id . expert  

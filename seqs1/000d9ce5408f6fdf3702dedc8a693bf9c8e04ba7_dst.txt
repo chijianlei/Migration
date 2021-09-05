@@ -1,0 +1,2 @@
+for ( String initiatorId : ids )  
+HostUtils . deactivateInitiator ( initiator )  

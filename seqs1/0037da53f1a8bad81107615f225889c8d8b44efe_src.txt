@@ -1,0 +1,8 @@
+DataFrame solution_id = sc . getVertexDataFrame ( "SOLUTION_IDS_WITH_ENDING_VERTEX" , - 1234 , sc . getSparkContext ( ) )  
+JavaRDD < Row > ff = vertex_dataframe . javaRDD ( ) . zipWithIndex ( ) . map ( myFunc )  
+return new Tuple2 < String , String > ( v1 . getString ( 1 ) , v1 . getString ( 2 ) )  
+if ( ids . _1 ( ) . trim ( ) . equals ( str [ i + 1 ] ) )  
+break innerLoop  
+sqlCtx . sql ( "CREATE TEMPORARY TABLE SOLUTION_IDS_WITH_ENDING_VERTEX USING org.wso2.carbon.analytics.spark.core.sources.AnalyticsRelationProvider " + "OPTIONS (" + "tenantId \"" + tenantId + "\", " + "tableName \"" + tableName + "\", " + "schema \"" + tableSchema + "\"" + ")" )  
+DataFrame dataFrame = sqlCtx . sql ( "select * from SOLUTION_IDS_WITH_ENDING_VERTEX" )  
+dataFrame = dataFrame . drop ( "_timestamp" ) . drop ( "solution_id" )  

@@ -1,0 +1,10 @@
+@ SuppressWarnings ( "unchecked" ) public BaseResponse route ( IHTTPSession session )  
+String uri = session . getUri ( )  
+catch ( NotYetImplementedException e )  
+Map < String , String > files = new HashMap < > ( )  
+result = files . get ( "postData" )  
+public Server ( ) throws IOException , DuplicateRouteException  
+super ( 8080 )  
+System . out . println ( "\nRunning! Point your browsers to http://localhost:8080/ \n" )  
+@ Override public Response serve ( IHTTPSession session )  
+response = router . route ( session )  

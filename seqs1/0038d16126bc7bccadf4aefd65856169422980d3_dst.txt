@@ -1,0 +1,2 @@
+for ( Edge currentEdge : currentNode . getEdgeList ( ) )  
+algorithm . addNode ( neighbor )  

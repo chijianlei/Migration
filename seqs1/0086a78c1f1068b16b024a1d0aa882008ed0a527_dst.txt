@@ -1,0 +1,6 @@
+LinkedList < Task > tasks  
+tasks . addLast ( newTask ) ; 
+Task task = tasks . pollFirst ( )  
+task . setWaitingTime ( MainScheduler . counter - task . getInitialCpuBurst ( ) - task . getStartTime ( ) ) ; 
+return i1 . compareTo ( i2 )  
+return i1 . compareTo ( i2 )  

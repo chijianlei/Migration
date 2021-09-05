@@ -1,0 +1,27 @@
+switch ( args [ i ] . toLowerCase ( ) ) { case "keepdb" : if ( AvMet . verbose ) System . out . println ( "Keep DB!" ) ; AvMet . keepdb = true ; break ; case "keepdupes" : if ( AvMet . verbose ) System . out . println ( "Keep Dupe Records!" ) ; AvMet . keepdupes = true ; break ; case "untaint" : case "untaintdb" : case "scrub" : case "scrubdb" : if ( AvMet . verbose ) System . out . println ( "Scrub DB!" ) ; AvMet . scrubdb = true ; break ; case "cond" : case "condense" : break ; case "tempdb" : case "usetemp" : if ( AvMet . verbose ) System . out . println ( "Condense DB!" ) ; AvMet . usetemp = true ; break ; case "verbose" : AvMet . verbose = true ; if ( AvMet . verbose ) System . out . println ( "Be Verbose!" ) ; break ; default : 
+String sql = "SELECT DISTINCT Icao_addr,Tail,Squawk,Alt,speed FROM traffic WHERE Squawk IN(7500,7600,7700,7777) order by Alt desc"  
+try { ResultSet result = traffic . DB . getResultSet ( sql ) ; if ( ! result . isBeforeFirst ( ) ) { return false ; } do { if ( traffic . DB . getResultNextRecord ( result ) ) { int Icao_addr = result . getInt ( "Icao_addr" ) ; String ICOA24 = ICAO . int2ICAO24 ( Icao_addr ) ; String Tail = findTail ( result . getString ( "Tail" ) , Icao_addr ) ; String Message = Squawk . getMessage ( result . getInt ( "Squawk" ) ) ; System . out . printf ( "\tALERT: %s [%s] @ %d ft - %s\n" , Tail , ICOA24 , result . getInt ( "Alt" ) , Message ) ; } } while ( ! result . isAfterLast ( ) ) ; 
+ResultSet result = traffic . DB . getResultSet ( sql )  
+if ( ! result . isBeforeFirst ( ) )  
+return false ; 
+if ( traffic . DB . getResultNextRecord ( result ) )  
+return true  
+catch ( Exception ex )  
+System . err . printf ( "DB Error: %s\n" , ex . getMessage ( ) )  
+ex . printStackTrace ( )  
+return false  
+try { ResultSet result = traffic . DB . getResultSet ( sql ) ; if ( ! result . isBeforeFirst ( ) ) { return false ; } do { if ( traffic . DB . getResultNextRecord ( result ) ) { int Icao_addr = result . getInt ( "Icao_addr" ) ; String ICOA24 = ICAO . int2ICAO24 ( Icao_addr ) ; String Tail = findTail ( result . getString ( "Tail" ) , Icao_addr ) ; String Message = Squawk . getMessage ( result . getInt ( "Squawk" ) ) ; System . out . printf ( "\tALERT: %s [%s] %d kts @ %d ft. - %s\n" , Tail , ICOA24 , result . getInt ( "speed" ) , result . getInt ( "Alt" ) , Message ) ; } } while ( ! result . isAfterLast ( ) ) ; 
+ResultSet result = traffic . DB . getResultSet ( sql )  
+if ( ! result . isBeforeFirst ( ) )  
+return false ; 
+if ( traffic . DB . getResultNextRecord ( result ) )  
+int Icao_addr = result . getInt ( "Icao_addr" )  
+String ICOA24 = ICAO . int2ICAO24 ( Icao_addr ) ; 
+String Tail = findTail ( result . getString ( "Tail" ) , Icao_addr )  
+String Message = Squawk . getMessage ( result . getInt ( "Squawk" ) )  
+return true  
+catch ( Exception ex )  
+System . err . printf ( "DB Error: %s\n" , ex . getMessage ( ) )  
+ex . printStackTrace ( )  
+return false  
+String Tail = findTail ( result . getString ( "Tail" ) , Icao_addr )  

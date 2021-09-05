@@ -1,0 +1,3 @@
+if ( getFlexoConcept ( ) != null )  
+boolean returned = super . delete ( context )  
+boolean returned = super . delete ( )  

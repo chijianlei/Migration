@@ -1,0 +1,4 @@
+int patchCount = 0  
+for ( int y = 0 ; y + h <= H ; y += dy )  
+if ( pIndex % this . thisTaskCnt == this . thisTaskIndex )  
+@ Override public void declareOutputFields ( OutputFieldsDeclarer outputFieldsDeclarer )  

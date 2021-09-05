@@ -1,0 +1,2 @@
+Logger . logProgress ( "I am %s, my %s is properly wired with %s" , dht . getMyself ( ) , getSideStr ( checkAliveMessage . reachingRight ) , dht . getSide ( checkAliveMessage . reachingRight ) )  
+dht . sentMessage ( new UpdateLeftRequest ( newNodeInfo ) , right )  

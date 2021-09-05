@@ -1,0 +1,3 @@
+Tag . setId ( position )  
+Tag . setText ( ExploreFragment . Tags . get ( position ) )  
+Tags . add ( Tag )  

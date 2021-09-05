@@ -1,0 +1,3 @@
+editSession . setBlockFast ( pos , block )  
+while ( iter . hasNext ( ) )  
+editSession . setBlockFast ( loc , block )  

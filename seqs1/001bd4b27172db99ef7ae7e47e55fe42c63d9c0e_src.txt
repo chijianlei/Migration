@@ -1,0 +1,9 @@
+throw new EucalyptusCloudException ( "Not authorized to use snapshot " + snapId + " by " + ctx . getUser ( ) . getName ( ) )  
+if ( ! ( ex . getCause ( ) instanceof ExecutionException ) )  
+lastEx = ex  
+throw Exceptions . toUndeclared ( "Not authorized to delete volume by " + ctx . getUser ( ) . getName ( ) )  
+VmVolumeAttachment attachment = VmInstances . lookupVolumeAttachment ( input )  
+catch ( Exception ex )  
+throw new EucalyptusCloudException ( "Not authorized to attach volume " + volumeId + " by " + ctx . getUser ( ) . getName ( ) )  
+throw new EucalyptusCloudException ( "Not authorized to detach volume " + volumeId + " by " + ctx . getUser ( ) . getName ( ) )  
+throw new EucalyptusCloudException ( "Not authorized to detach volume from instance " + instanceId + " by " + ctx . getUser ( ) . getName ( ) )  

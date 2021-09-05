@@ -1,0 +1,14 @@
+nerd = new Nerd ( game , ladders )  
+public Nerd ( BrickGame game , LadderManager ladders )  
+@ Override public void setState ( STATE _state )  
+allowedStates . add ( STATE . DOWN )  
+allowedStates . add ( STATE . UP )  
+allowedStates . add ( STATE . LEFT )  
+allowedStates . add ( STATE . RIGHT )  
+if ( BrickUtils . isOnFloor ( y , FLOOR_TOLERANCE ) )  
+state = _state ;  
+lastState = state  
+if ( state == STATE . LEFT )  
+return true  
+private TYPE [ ] [ ] types = new TYPE [ Const . WORLD_WIDTH ] [ Const . WORLD_HEIGHT ]  
+for ( int y = floorY + 1 ; y < floorY + Const . FLOOR_HEIGHT + 1 ; y ++ )  

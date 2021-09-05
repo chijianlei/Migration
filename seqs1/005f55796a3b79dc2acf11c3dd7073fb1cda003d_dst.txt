@@ -1,0 +1,6 @@
+@ Override public void initAddOn ( org . intellimate . izou . system . Context context )  
+this . context = new Context ( context )  
+this . defaultPropertiesPath = getContext ( ) . getFiles ( ) . getLibLocation ( ) + getContext ( ) . getAddOn ( ) . getPlugin ( ) . getPluginPath ( ) + File . separator + "classes" + File . separator + "default_properties.txt"  
+@ Deprecated public void setPropertiesPath ( String propertiesPath )  
+propertiesPath = getContext ( ) . getFiles ( ) . getPropertiesLocation ( ) + File . separator + getContext ( ) . getAddOn ( ) . getID ( ) + ".properties"  
+error ( "Error while trying to copy the Default-Properties File" , e )  

@@ -1,0 +1,2 @@
+public CommentStore ( long duration , Graph friendshipGraph , int k )  
+public long computeKLargestComments ( String delimiter , boolean printKComments , boolean writeToFile )  

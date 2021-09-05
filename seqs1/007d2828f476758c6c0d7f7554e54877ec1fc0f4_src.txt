@@ -1,0 +1,17 @@
+public void checkForMasterSync ( Context mContext )  
+if ( status == null || status . length ( ) == 0 || status . equalsIgnoreCase ( "" ) || status . equalsIgnoreCase ( "false" ) )  
+age = ( ( DashboardActivity ) getActivity ( ) ) . getAge ( newDate . getTime ( ) )  
+if ( nomineeMonth < 1 )  
+age = ( ( DashboardActivity ) getActivity ( ) ) . getAge ( newDate . getTime ( ) )  
+age = ( ( DashboardActivity ) getActivity ( ) ) . getAge ( newDate . getTime ( ) )  
+edtProposerDob . setText ( samedob )  
+edt_Proposer_Firstname . setError ( null )  
+edt_Proposer_LastName . setError ( null )  
+lifeIssuredAge = addLifeInsuredProposalDetails ( )  
+proposerAge = lifeIssuredAge  
+if ( txtLifeInsuredAge . getText ( ) . toString ( ) . equalsIgnoreCase ( "Minimum Age at entry of Insured Person is 1 Month" ) )  
+txtProposerAge . setText ( "Minimum Age at entry of Policy Owner is 18" )  
+txtProposerAge . setText ( "Minimum Age at entry of Policy Owner is 18" )  
+txtProposerAge . setText ( txtLifeInsuredAge . getText ( ) . toString ( ) )  
+if ( selectedID == 1 )  
+private boolean screenstatus  

@@ -1,0 +1,2 @@
+StringBuilder tmpParameter = new StringBuilder ( ( parameter != null ) ? parameter : "" )  
+( ( parameter != null ) ? parameter : "" )  

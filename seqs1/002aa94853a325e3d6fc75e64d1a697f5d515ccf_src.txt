@@ -1,0 +1,7 @@
+if ( matched . isEmpty ( ) )  
+for ( Pattern pattern : patterns )  
+Matcher matcher = pattern . matcher ( player . getName ( ) )  
+if ( result == null )  
+for ( OfflinePlayer player : Bukkit . getOfflinePlayers ( ) )  
+if ( player . getName ( ) . equals ( value ) )  
+if ( player . getName ( ) . startsWith ( value ) || player . getUniqueId ( ) . toString ( ) . startsWith ( value ) )  

@@ -1,0 +1,4 @@
+public abstract class AbstractDao < T extends IdObject >  
+item = getEntityManager ( ) . merge ( item )  
+@ Stateless public class ConfigItemDao extends AbstractDao < ConfigItem >  
+public abstract class AbstractSetObjectService < I extends AbstractRestModel , O extends IdObject > extends AbstractService  

@@ -1,0 +1,2 @@
+public @ ResponseBody Result newsAdd ( Model model , News news , HttpSession httpSession ) { 
+String newsAddjsp ( Model model , News news , HttpSession httpSession ) { return STATIC_PREFIX + "/add"  

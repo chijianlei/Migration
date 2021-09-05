@@ -1,0 +1,2 @@
+if ( ! addedAtoms . contains ( a . toString ( sortRenaming ) ) )  
+addedAtoms . add ( a . toString ( sortRenaming ) )  

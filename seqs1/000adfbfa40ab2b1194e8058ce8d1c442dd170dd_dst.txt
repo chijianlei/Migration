@@ -1,0 +1,1 @@
+document . setRequesterId ( serviceRequest . getCitizenUserId ( ) )  

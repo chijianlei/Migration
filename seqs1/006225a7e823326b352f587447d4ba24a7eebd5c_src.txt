@@ -1,0 +1,5 @@
+PageSource resourcePageSource = getPageSource ( name , serverStoreConfiguration . getPoolAllocation ( ) )  
+private PageSource getPageSource ( String name , PoolAllocation allocation ) throws ConfigurationException  
+public OffHeapServerStore ( PageSource source , KeySegmentMapper mapper )  
+private final PageSource pageSource  
+public ServerStoreImpl ( ServerStoreConfiguration storeConfiguration , PageSource pageSource , KeySegmentMapper mapper )  

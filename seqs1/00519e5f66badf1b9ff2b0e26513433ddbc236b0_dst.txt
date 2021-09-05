@@ -1,0 +1,7 @@
+private String paymentAmount  
+paymentAmount = editTextAmount . getText ( ) . toString ( )  
+PayPalPayment payment = new PayPalPayment ( new BigDecimal ( String . valueOf ( paymentAmount ) ) , "USD" , "Simplified Coding Fee" , PayPalPayment . PAYMENT_INTENT_SALE )  
+Intent intent = new Intent ( this , PaymentActivity . class )  
+intent . putExtra ( PayPalService . EXTRA_PAYPAL_CONFIGURATION , config )  
+intent . putExtra ( PaymentActivity . EXTRA_PAYMENT , payment )  
+startActivityForResult ( intent , PAYPAL_REQUEST_CODE )  

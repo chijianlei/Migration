@@ -1,0 +1,6 @@
+throw new RuntimeException ( e )  
+throw new RuntimeException ( "Images have different sizes" )  
+throw new RuntimeException ( e )  
+throw new RuntimeException ( e )  
+throw new RuntimeException ( e )  
+throw new RuntimeException ( e )  

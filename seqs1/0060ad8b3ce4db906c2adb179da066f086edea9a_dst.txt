@@ -1,0 +1,5 @@
+public static double rint ( double x )  
+return NativeMath . floor ( x )  
+return NativeMath . round ( x )  
+if ( Double . compare ( obj1 , obj2 ) == 0 )  
+if ( Float . compare ( obj1 , obj2 ) == 0 )  

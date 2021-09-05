@@ -1,0 +1,2 @@
+long lastAuthTime1 = Calendar . getInstance ( ) . getTimeInMillis ( ) - 20000  
+long lastAuthTime2 = Calendar . getInstance ( ) . getTimeInMillis ( ) - 40000  

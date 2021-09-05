@@ -1,0 +1,6 @@
+List < Product > products = Product . parseProducts ( response . getJSONArray ( "products" ) )  
+runOnUiThread ( ( ) -> { toggleRecyclerviewState ( ) ; populateRecyclerView ( ) ; stockProgressbar . setVisibility ( View . INVISIBLE ) ; stopSwipeRefresh ( ) ; } )  
+toggleRecyclerviewState ( )  
+populateRecyclerView ( )  
+stockProgressbar . setVisibility ( View . INVISIBLE )  
+stopSwipeRefresh ( )  

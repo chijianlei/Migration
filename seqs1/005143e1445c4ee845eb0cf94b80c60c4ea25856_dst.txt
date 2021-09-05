@@ -1,0 +1,5 @@
+user . sendMessage ( ChatMessageType . ACTION_BAR , EMPTY )  
+user . sendMessage ( ChatMessageType . ACTION_BAR , EMPTY )  
+if ( ! Strings . isNullOrEmpty ( Reconnect . getInstance ( ) . getReconnectingTitle ( ) ) || ! Strings . isNullOrEmpty ( Reconnect . getInstance ( ) . getConnectingTitle ( ) ) )  
+bungee . createTitle ( ) . reset ( ) . clear ( ) . send ( user )  
+if ( ! Strings . isNullOrEmpty ( Reconnect . getInstance ( ) . getConnectingActionBar ( ) ) )  

@@ -1,0 +1,4 @@
+clusters = new ArrayList < ClusterWithMean > ( )  
+ClusterKnot ck = new ClusterKnot ( clusters . get ( index ) . getNames ( ) , maxDistance + 100 , clusters . get ( index ) . getVectors ( ) . get ( 0 ) , clusters . get ( index ) . getAtoms ( ) )  
+browser . getFinalCluster ( ) . add ( newNode )  
+else if ( clusterToMerge1 . getVectors ( ) . size ( ) == 2 )  

@@ -1,0 +1,3 @@
+final int parameterSIZE = 2  
+if ( values . size ( ) != parameterSIZE )  
+throw new UnsupportedOperationException ( HAVING_CUSTOM_OPERATOR_TOO_FEW_PARAMETERS . format ( operation . name ( ) , operation . name ( ) , parameterSIZE ) )  

@@ -1,0 +1,18 @@
+protected C emitJumpIndex ( byte [ ] indexMap , boolean isAllConsumed )  
+C index = this . emitUnsigned ( this . emitFunc ( isAllConsumed ? "nextbyte" : "getbyte" , this . V ( "px" ) ) )  
+protected C matchAnd ( Expression e )  
+return String . format ( "(%s)%s" , this . T ( var ) , expr )  
+static String readInputs ( String [ ] a ) throws IOException  
+StringBuilder sb = new StringBuilder ( )  
+File file = new File ( a [ 0 ] )  
+if ( file . exists ( ) )  
+BufferedReader br = new BufferedReader ( new FileReader ( file ) )  
+String str = br . readLine ( )  
+while ( str != null )  
+sb . append ( str )  
+sb . append ( "\n" )  
+str = br . readLine ( )  
+br . close ( )  
+return sb . toString ( )  
+public final static void main ( String [ ] args ) throws IOException  
+System . out . println ( parse ( readInputs ( args ) ) )  

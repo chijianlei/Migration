@@ -1,0 +1,29 @@
+File sourcer = new File ( "house.dat" ) ; 
+System . out . println ( "Issue in " + e )  
+inputFile = new BufferedReader ( new FileReader ( "house.dat" ) )  
+System . out . println ( "Issue in " + e )  
+outputFile = new PrintWriter ( new FileWriter ( "house.dat" ) )  
+System . out . println ( "Issue in " + e )  
+int lotNumber = 0  
+lotNumber = Integer . parseInt ( inputFile . readLine ( ) )  
+System . out . println ( "Issue in " + e )  
+ListHouse house = new ListHouse ( lotNumber , firstName , lastName , listedPrice , squareFeet , noOfBedRooms )  
+outputFile . println ( house . lotNumber ( ) )  
+System . out . println ( "Issue in " + e )  
+System . out . println ( "Issue in " + e )  
+private String lastName  
+public ListHouse ( int lotNumber , String firstName , String lastName , int listedPrice , int squareFeet , int noOfBedRooms ) 
+this . lastName = lastName  
+ListHouse result = new ListHouse ( lotNumber , firstName , lastName , listedPrice , squareFeet , noOfBedRooms )  
+public String lastName ( ) 
+public MenuJFrame ( )  
+jLabel2 . setBounds ( 758 , 12 , 15 , 20 )  
+jButtonNext . setBounds ( 576 , 502 , 175 , 70 )  
+jLabelFooter . setText ( "Lot number already in use" ) ; 
+jLabelFooter . setText ( "House added to list" ) ; 
+jLabelFooter . setText ( list . lengthIs ( ) + " houses on list" )  
+jLabelFooter . setText ( "House found" ) ; 
+jLabelFooter . setText ( "House not found" )  
+jLabelFooter . setText ( "Number? " + badHouseData . getMessage ( ) )  
+private void jLabelCloseMouseClicked ( java . awt . event . MouseEvent evt ) { 
+HouseFile . close ( )  

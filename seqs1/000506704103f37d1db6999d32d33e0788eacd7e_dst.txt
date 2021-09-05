@@ -1,0 +1,7 @@
+private static Double latitude  
+if ( mSupportMapFragment != null )  
+if ( googleMap != null )  
+latitude = 40.733460  
+longitude = - 73.986400  
+mApartmentImageView . setImageBitmap ( PictureCompression . decodeSampledBitmapFromResource ( getResources ( ) , R . drawable . livingroom , 100 , 100 ) )  
+mSupportMapFragment = ( SupportMapFragment ) getChildFragmentManager ( ) . findFragmentById ( R . id . location_map )  

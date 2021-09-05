@@ -1,0 +1,14 @@
+public class MainActivity extends AbstractRememberMeActivity implements LoaderManager . LoaderCallbacks < Language [ ] > , QueryWordFragment . AnswerListener , ShowWordFragment . ShowWordCallback , AddWordFragment . Callback , EditWordFragment . Callback  
+updateOverviewTable ( )  
+updateOverviewTable ( )  
+updateOverviewTable ( )  
+showEmptyFragment ( )  
+private void showEmptyFragment ( )  
+removeFragments ( MemorizeFragment . TAG , WordListFragment . TAG , QueryWordFragment . TAG , ShowWordFragment . TAG , AddWordFragment . TAG , EditWordFragment . TAG )  
+showEmptyFragment ( )  
+public class MemorizeActivity extends AbstractRememberMeActivity  
+goUp ( )  
+goUp ( )  
+protected void hideKeyboard ( )  
+InputMethodManager imm = ( InputMethodManager ) getActivity ( ) . getSystemService ( Activity . INPUT_METHOD_SERVICE )  
+imm . hideSoftInputFromWindow ( getActivity ( ) . getCurrentFocus ( ) . getWindowToken ( ) , 0 )  

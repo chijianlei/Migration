@@ -1,0 +1,2 @@
+Instance currentInstance = new Instance ( 1.0 , values . clone ( ) )  
+Agent agentMy = new LearningAgent ( deck . clone ( ) , msConstruct , msPerMove , msLearning ) ; 

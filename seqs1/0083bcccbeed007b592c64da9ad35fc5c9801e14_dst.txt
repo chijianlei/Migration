@@ -1,0 +1,15 @@
+finishHim ( p , bot )  
+if ( card . heroP == 1 )  
+bot . heroPowerTarget ( bot . enP , i , bot . enPlayHeight )  
+myMana -= 2  
+System . out . println ( myMana + " available mana the highest playable card is " + p . hand [ cardIndex ] + " with cost " + cost + " at index " + cardIndex )  
+if ( costs [ i ] <= myMana && costs [ i ] > 0 && p . hand [ cardIndex ] != null ) 
+if ( p . myPlayCards [ i ] . atk != - 1 )  
+System . out . println ( m . heroP [ 0 ] + " " + m . heroP [ 1 ] )  
+moveNaturally ( lastX , lastY , heroP [ 0 ] , heroP [ 1 ] )  
+moveNaturally ( heroP [ 0 ] , heroP [ 1 ] , i [ j ] , k )  
+Thread . sleep ( 200 )  
+r . mouseRelease ( InputEvent . BUTTON1_MASK )  
+Thread . sleep ( 2 )  
+String file = "C:\\Users\\Erik\\Desktop\\HearthBot\\log.txt"  
+ProcessBuilder pb = new ProcessBuilder ( "C:\\Users\\Erik\\AppData\\Local\\Blizzard\\Hearthstone\\Logs\\getLog.bat" )  

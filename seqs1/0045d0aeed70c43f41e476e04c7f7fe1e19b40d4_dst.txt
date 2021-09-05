@@ -1,0 +1,15 @@
+return entity . hasMetadata ( STACKMOB_STACK_SIZE )  
+public static int getStackSize ( Entity entity )  
+return ( Integer ) entity . getMetadata ( STACKMOB_STACK_SIZE ) . get ( 0 ) . value ( )  
+public void update ( )  
+++ mTypeIndex  
+if ( mTypeIndex >= mType . length )  
+mTypeIndex = 0  
+++ mPeriodIndex  
+if ( mPeriodIndex >= mPeriod . length ) 
+mPeriodIndex = 0  
+MobHunting . getDataStoreManager ( ) . requestStats ( getType ( ) , getPeriod ( ) , mWidth * mHeight * 2 , this )  
+if ( event . getEntity ( ) . getShooter ( ) instanceof Skeleton )  
+Messages . debug ( "WARNING: The arrow was shut from %s, this situation is not handled by MobHunting." , event . getEntity ( ) . getShooter ( ) . toString ( ) )  
+if ( event . getEntity ( ) . getShooter ( ) instanceof Blaze )  
+Messages . debug ( "WARNING: The firewall was shut from %s, this situation is not handled by MobHunting." , event . getEntity ( ) . getShooter ( ) . toString ( ) )  

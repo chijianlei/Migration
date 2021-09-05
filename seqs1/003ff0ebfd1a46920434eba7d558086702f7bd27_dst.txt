@@ -1,0 +1,2 @@
+@ SuppressWarnings ( "unused" ) @ Specialization public void execute ( LLVMMetadata m1 , LLVMMetadata m2 )  
+@ SuppressWarnings ( "unused" ) @ Specialization public void execute ( LLVMMetadata m1 , LLVMI64Node i64 , LLVMMetadata m2 )  

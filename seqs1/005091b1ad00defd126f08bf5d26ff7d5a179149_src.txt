@@ -1,0 +1,11 @@
+private static final String CURR_VERSION = "0.0.8"  
+@ Parameter ( names = { "-sb" , "--showScrollbars" } , description = "Set to show scrollbars before screenshot" ) protected boolean showScrollbars = true  
+HashMap options = ( HashMap ) caps . getCapability ( ChromeOptions . CAPABILITY )  
+switch ( browser ) { case Chrome : ChromeOptions options = new ChromeOptions ( ) ; options . addArguments ( "disable-infobars" ) ; DesiredCapabilities ds = DesiredCapabilities . chrome ( ) ; ds . setCapability ( ChromeOptions . CAPABILITY , options ) ; return ds ; case IE : return DesiredCapabilities . internetExplorer ( ) ; case Safari : return DesiredCapabilities . safari ( ) ; case Firefox : 
+options . addArguments ( "disable-infobars" )  
+DesiredCapabilities ds = DesiredCapabilities . chrome ( )  
+ds . setCapability ( ChromeOptions . CAPABILITY , options )  
+Validator . givenString ( testName , "Test name (-tn)" ) . isNotSetThen ( ) . required ( pageURL , "Page url (-pu)" )  
+if ( ! Strings . isNullOrEmpty ( pageURL ) ) driver_ . get ( pageURL )  
+driver_ . get ( pageURL )  
+SeleniumTest . writeCapabilities ( capabilities , new File ( "emulated_device.json" ) )  

@@ -1,0 +1,1 @@
+ContainerUtil . runCommand ( "docker" , "run" , "-p" , UPSTREAM_SERVICE_PORT + ":3000" , "--network=" + SNOW_GLOBE_NETWORK , "--name" , UPSTREAM_NAME , "--detach" , props . getUpstreamBounceImage ( ) )  

@@ -1,0 +1,4 @@
+player . takeBet ( bet )  
+if ( matches > 0 ) { 
+private static final String NAME = "Sam"  
+private static final int STARTING_BALANCE = 1000  

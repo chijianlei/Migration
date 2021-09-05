@@ -1,0 +1,11 @@
+TimePicker picker  
+if ( Build . VERSION . SDK_INT != Build . VERSION_CODES . LOLLIPOP )  
+picker = new TimePicker ( activity ) 
+picker = new TimePicker ( activity ) 
+@ Override protected void onLayout ( boolean changed , int left , int top , int right , int bottom ) 
+super . onLayout ( changed , left , top , right , bottom )  
+TiUIHelper . firePostLayoutEvent ( proxy )  
+if ( ! suppressChangeEvent )  
+KrollDict data = new KrollDict ( )  
+data . put ( "value" , calendar . getTime ( ) )  
+fireEvent ( "change" , data ) ; 

@@ -1,0 +1,5 @@
+registerErrorMessage = LanguageHelper . createValidationFaultOutput ( REGISTER_FORM_NAME , validationFaults )  
+private static String getValidationFaultTranslation ( String formName , String field , byte errorCode )  
+public static String createValidationFaultOutput ( String formName , List < ValidationFault > validationFaults )  
+errorMessage += LanguageHelper . getValidationFaultTranslation ( formName , validationFault . getField ( ) , validationFault . getFaultCode ( ) ) + "<br/>"  
+if ( ! email . contains ( "@" ) && ! email . contains ( "." ) )  

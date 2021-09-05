@@ -1,0 +1,4 @@
+GameScreen . damageEarth ( ( int ) health * 5 )  
+public GameScreen ( )  
+public static void damageEarth ( int hits )  
+public MenuScreen ( )  

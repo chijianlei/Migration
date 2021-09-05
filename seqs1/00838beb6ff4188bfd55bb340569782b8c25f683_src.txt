@@ -1,0 +1,6 @@
+public static final double UI_START_GUIDE_BUTTON_OK_ANCHOR_TOP = 35.0  
+@ Test public void test_read_preference ( )  
+assertEquals ( "Is key empty?" , false , isStringEmpty ( Constants . PREFERENCE_XML_FILE_LOCATION ) )  
+assertEquals ( "Is value empty?" , false , isStringEmpty ( fileLocation ) )  
+@ Test public void test_Storage_Set_Folder_location ( )  
+assertEquals ( "Assume task list size" , 1 , mList . size ( ) )  

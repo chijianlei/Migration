@@ -1,0 +1,9 @@
+if ( ( ( matchStr != null ) && ( matchStr . length ( ) > 0 ) ) )  
+bldr . append ( matchStr )  
+bldr . append ( "\" result=" )  
+if ( matchStr . matches ( givenStr ) )  
+bldr . append ( "MATCH" )  
+bldr . append ( "NO MATCH" )  
+if ( _logger . isInfoEnabled ( ) )  
+_logger . info ( bldr . toString ( ) )  
+success = false  

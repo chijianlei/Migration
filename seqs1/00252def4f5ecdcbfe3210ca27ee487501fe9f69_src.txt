@@ -1,0 +1,37 @@
+if ( i == 0 )  
+tryPos = new Vec3 ( pos . xCoord , layers . get ( layer ) , pos . zCoord )  
+double spawnRad = 120 ; 
+double speed = 2 D / ( spawnRad )  
+if ( isSpinning ( ) )  
+speed = 50 D / ( spawnRad )  
+double x = - Math . sin ( rad ) * spawnRad  
+double z = Math . cos ( rad ) * spawnRad  
+count = 16 + 1  
+it = lookupParticlesCloudLower . entrySet ( ) . iterator ( )  
+while ( it . hasNext ( ) )  
+Map . Entry < Integer , EntityRotFX > entry = it . next ( )  
+EntityRotFX ent = entry . getValue ( )  
+if ( ! ent . isAlive ( ) )  
+it . remove ( )  
+int i = entry . getKey ( )  
+Vec3 tryPos = null  
+double spawnRad = 80 ; 
+double x = - Math . sin ( rad ) * spawnRad  
+double z = Math . cos ( rad ) * spawnRad  
+tryPos = new Vec3 ( pos . xCoord + x , layers . get ( layer ) - 20 , pos . zCoord + z )  
+double var16 = this . pos . xCoord - ent . getPosX ( )  
+double var18 = this . pos . zCoord - ent . getPosZ ( )  
+ent . rotationYaw = ( float ) ( Math . atan2 ( var18 , var16 ) * 180.0D / Math . PI ) - 90.0F  
+ent . rotationPitch = - 20 F ; 
+ent . setScale ( 800 )  
+ent . setPosition ( tryPos . xCoord , tryPos . yCoord , tryPos . zCoord )  
+Vec3 tryPos = null  
+tryPos = new Vec3 ( pos . xCoord , layers . get ( layer ) , pos . zCoord )  
+float rad = ( float ) Math . toRadians ( ( 360 D / ( double ) ( count - 1 ) ) * ( ( double ) ( i - 1 ) ) )  
+float x = ( float ) - Math . sin ( rad ) * spawnRad  
+float z = ( float ) Math . cos ( rad ) * spawnRad  
+count = 16 + 1  
+Vec3 tryPos = null  
+tryPos = new Vec3 ( pos . xCoord , layers . get ( layer ) , pos . zCoord )  
+float rad = ( float ) Math . toRadians ( ( 360 D / ( double ) ( count - 1 ) ) * ( ( double ) ( i - 1 ) ) )  
+tryPos = new Vec3 ( pos . xCoord + x , layers . get ( layer ) , pos . zCoord + z )  

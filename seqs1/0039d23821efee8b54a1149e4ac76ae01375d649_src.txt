@@ -1,0 +1,12 @@
+private final Class < T > clientType  
+this . clientType = ( Class < T > ) ( ( ParameterizedType ) getClass ( ) . getGenericSuperclass ( ) ) . getActualTypeArguments ( ) [ 0 ]  
+protected BaseOperation ( K client , String resourceT , String namespace , String name , Boolean cascading , T item , Class < T > clientType , Class < T > type , Class < L > listType , Class < D > doneableType )  
+return ( R ) getClass ( ) . getConstructor ( clientType , String . class , String . class , Boolean . class ) . newInstance ( client , namespace , name , cascading )  
+return getClass ( ) . getConstructor ( clientType , String . class , String . class , Boolean . class ) . newInstance ( client , namespace , name , cascading )  
+return getClass ( ) . getConstructor ( clientType , String . class , String . class , Boolean . class ) . newInstance ( client , namespace , name , enabled )  
+protected HasMetadataOperation ( K client , String resourceT , String namespace , String name , Boolean cascading , T item , Class < T > clientType , Class < T > type , Class < L > listType , Class < D > doneableType )  
+@ Override public BuildConfigClientResource < BuildConfig , DoneableBuildConfig , Void , Void > withName ( String name )  
+throw KubernetesClientException . launderThrowable ( t )  
+@ Override public ClientNonNamespaceOperation < OpenShiftClient , BuildConfig , BuildConfigList , DoneableBuildConfig , BuildConfigClientResource < BuildConfig , DoneableBuildConfig , Void , Void >> inNamespace ( String namespace )  
+return getClass ( ) . getConstructor ( OpenShiftClient . class , String . class , String . class , String . class , String . class ) . newInstance ( getClient ( ) , namespace , getName ( ) , secret , triggerType )  
+return new BuildConfigOperationsImpl ( getClient ( ) , getNamespace ( ) , getName ( ) , isCascading ( ) , getItem ( ) , secret , triggerType )  

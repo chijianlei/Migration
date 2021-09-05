@@ -1,0 +1,11 @@
+for ( final String unitId : unitIDList )  
+for ( ServiceConfig serviceConfig : unitConfig . getServiceConfigList ( ) )  
+serviceMap . get ( serviceConfig . getServiceTemplate ( ) . getType ( ) ) . add ( unitConfig )  
+for ( UnitConfig config : locationRegistryRemote . getUnitConfigsByLocation ( selectedLocationConfigHolder . getConfig ( ) . getId ( ) ) )  
+private RS remoteService  
+if ( this . remoteService != null )  
+this . remoteService . shutdown ( )  
+this . remoteService = remoteService  
+if ( remoteService == null )  
+remoteService . shutdown ( )  
+if ( remoteService == null )  

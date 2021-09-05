@@ -1,0 +1,25 @@
+String clean [ ] = results [ 0 ] . split ( ":" )  
+values [ 0 ] += clean [ clean . length - 1 ] + ","  
+clean = results [ 1 ] . split ( ":" )  
+values [ 1 ] += clean [ clean . length - 1 ] + ","  
+String clean [ ] = results [ 0 ] . split ( ":" )  
+values [ 0 ] += clean [ clean . length - 1 ] + ","  
+clean = results [ 1 ] . split ( ":" )  
+values [ 1 ] += clean [ clean . length - 1 ] + ","  
+String clean [ ] = results [ 0 ] . split ( ":" )  
+values [ 0 ] += clean [ clean . length - 1 ] + ","  
+clean = results [ 1 ] . split ( ":" )  
+values [ 1 ] += clean [ clean . length - 1 ] + ","  
+String clean [ ] = results [ 0 ] . split ( ":" )  
+values [ 0 ] += clean [ clean . length - 1 ] + ","  
+clean = results [ 1 ] . split ( ":" )  
+values [ 1 ] += clean [ clean . length - 1 ] + ","  
+String train = "../datasets/classification/flags/flags_fold0.train"  
+String test = "../datasets/classification/flags/flags_fold0.valid"  
+object . initialization ( train , test , "20-26" , false , true ) ; 
+myMeasures measure2 = object . evaluateIndividualClassification ( all , true )  
+System . out . println ( "\nTest error: " )  
+System . out . println ( "AUPRC: " + measure2 . getAUPRC ( ) [ 1 ] ) ; 
+System . out . println ( "AUROC: " + measure2 . getAUROC ( ) [ 1 ] ) ; 
+System . out . println ( "AUROC: " + measure2 . getAUROC ( ) [ 1 ] ) ; 
+System . out . println ( "AUPRC: " + measure2 . getAUPRC ( ) [ 1 ] ) ; 

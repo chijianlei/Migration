@@ -1,0 +1,2 @@
+public int signIn ( String name , String surname , String username , String mail , String password )  
+if ( name . equals ( "" ) || surname . equals ( "" ) || username . equals ( "" ) || mail . equals ( "" ) || password . equals ( "" ) ) 

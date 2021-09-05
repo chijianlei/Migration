@@ -1,0 +1,4 @@
+for ( int i = 0 ; i < incoming . getNumberLegs ( ) ; i ++ )  
+if ( ( incoming . getLegs ( ) . get ( i ) . getSeatType ( ) == 'c' ) | ( incoming . getLegs ( ) . get ( i ) . getSeatType ( ) == 'C' ) )  
+JSpinner . DateEditor timeEditorS = new JSpinner . DateEditor ( timeSpinnerS , "HH:mm" )  
+JSpinner . DateEditor timeEditorE = new JSpinner . DateEditor ( timeSpinnerE , "HH:mm" )  

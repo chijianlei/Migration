@@ -1,0 +1,79 @@
+public class TXCyFairParser extends FieldProgramParser  
+public TXCyFairParser ( )  
+super ( "HARRIS" , "TX" , "UNIT CALL ( ADDR/ZSXx PLACE MAP! END" + "| ADDR/Z ( PLACE2 X/Z END | " + "X APT PLACE! SUB:CITY! MAP:MAP! UNITS_ASSIGNED:UNIT! RespInfo%EMPTY END ) )" )  
+@ Override public String getFilter ( )  
+@ Override public String getLocName ( )  
+@ Override public int getMapFlags ( )  
+return MAP_FLG_SUPPR_LA  
+@ Override protected boolean parseMsg ( String body , Data data )  
+Matcher match = MASTER1 . matcher ( body )  
+return true  
+private static final Pattern CODE_PTN = Pattern . compile ( "^(\\d{1,2}[A-Z]\\d{2}[A-Z]?) +" )  
+private class MyCallField extends CallField  
+@ Override public void parse ( String field , Data data )  
+Matcher match = CODE_PTN . matcher ( field )  
+if ( match . find ( ) )  
+data . strCode = match . group ( 1 )  
+field = field . substring ( match . end ( ) )  
+super . parse ( field , data )  
+@ Override public String getFieldNames ( )  
+@ Override public void parse ( String field , Data data )  
+body = match . group ( 1 ) + ' ' + match . group ( 2 )  
+private class MyCrossField extends CrossField  
+@ Override public void parse ( String field , Data data )  
+private static final Properties ADJUST_CITY_TABLE = buildCodeTable ( new String [ ] { "FAIRFIELD" , "" , "MUELLER CEMETERY" , "" } )  
+class Active911Vendor extends Vendor  
+Active911Vendor ( )  
+super ( R . string . active911_title , R . string . active911_summary , R . string . active911_text , R . drawable . active_911_vendor , R . drawable . active_911_logo , "https://www.active911.com" , ">A91" , null )  
+@ Override boolean isSponsored ( )  
+return true  
+@ Override boolean isAvailable ( )  
+return true  
+@ Override String getResponseMenu ( int index )  
+switch ( index ) { case 1 : return "R=Respond;A=Arrive;Y=Available;N=Unavailable;C=Cancel" ; default : 
+return null  
+@ Override Uri getBaseURI ( String req )  
+Uri uri = super . getBaseURI ( )  
+if ( req . equals ( "register" ) || req . equals ( "info" ) || req . equals ( "profile" ) )  
+return uri . buildUpon ( ) . appendPath ( "cadpage_registration" ) . build ( )  
+return uri . buildUpon ( ) . appendPath ( "interface" ) . appendPath ( "cadpage_api.php" ) . build ( )  
+@ Override protected Uri buildRequestUri ( String req , String registrationId )  
+if ( req . equals ( "profile" ) ) return getBaseURI ( ) . buildUpon ( ) . appendPath ( "node" ) . appendPath ( "3#" ) . build ( )  
+return getBaseURI ( ) . buildUpon ( ) . appendPath ( "node" ) . appendPath ( "3#" ) . build ( )  
+return super . buildRequestUri ( req , registrationId )  
+@ Override boolean isVendorAddress ( String address )  
+if ( address . startsWith ( "+" ) ) address = address . substring ( 1 )  
+address . startsWith ( "+" ) ) address = address . substring ( 1 )  
+return PHONE_SET . contains ( address )  
+@ Override String [ ] convertLocationCode ( String location )  
+String missingParsers = null  
+StringBuilder sb = new StringBuilder ( )  
+Set < String > parserSet = new HashSet < String > ( )  
+for ( String loc : location . split ( "," ) )  
+loc = loc . trim ( )  
+if ( loc . contains ( "/" ) || loc . equals ( "Active911Summary" ) )  
+String newLoc = POLY_CODE_TABLE . getProperty ( loc )  
+if ( newLoc == null )  
+if ( missingParsers == null )  
+missingParsers = loc  
+missingParsers = missingParsers + ',' + loc  
+newLoc = "General"  
+if ( newLoc . equals ( "N/A" ) ) continue  
+loc = newLoc  
+if ( parserSet . add ( loc ) )  
+if ( sb . length ( ) > 0 ) sb . append ( ',' )  
+sb . length ( ) > 0 ) sb . append ( ',' )  
+sb . append ( loc )  
+return new String [ ] { sb . toString ( ) , missingParsers }  
+@ Override protected boolean isTestMsg ( String msg )  
+return msg . equals ( "This is a test message from Active911" )  
+@ Override protected boolean isActiveSponsor ( String account , String token )  
+return account != null && ACTIVE_ACCTS . getProperty ( account ) != null  
+private static final Properties ACTIVE_ACCTS = MsgParser . buildCodeTable ( new String [ ] { "21301" , "06082016" , "191976" , "06232016" , "100157" , "07082016" , "180674" , "07122016" , "40803" , "07282016" , "143290" , "07282016" , "45018" , "07282016" } )  
+private static final Set < String > PHONE_SET = new HashSet < String > ( Arrays . asList ( new String [ ] { "15123376259" , "19145173586" , "17272191279" , "15417047704" , "18434800223" , "17172203767" , "13364058803" , "17783836218" , "12027690862" , "12032083335" , "12052010901" , "12072093315" , "12706810905" , "12765240572" , "13046587002" , "13072222635" , "13134010041" , "13172967331" , "13603424100" , "14012973063" , "14029881004" , "14046926092" , "14052534266" , "14062244055" , "14242208369" , "14433202484" , "14805356958" , "15013131847" , "15046621719" , "15052065036" , "15132024579" , "15744008669" , "16013452163" , "16052207124" , "16086207759" , "16093087467" , "16122000004" , "16156252978" , "16363233043" , "16418470032" , "16783903000" , "17012044024" , "17196025911" , "17572062724" , "17736146018" , "17752307392" , "18019006459" , "18022304149" , "19134989068" , "19783931289" } ) )  
+choyvp GKPlSnveCnefreGrfg ( )  
+frgCnefre ( arj GKPlSnveCnefre ( ) , "UNEEVF" , "GK" )  
+choyvp fgngvp ibvq znva ( Fgevat [ ] netf )  
+arj GKPlSnveCnefreGrfg ( ) . trarengrGrfgf ( "G1" )  
+choyvp fgngvp svany Cnggrea ZNFGRE = Cnggrea . pbzcvyr ( "(.*?) ([N-M]{4,5}\\q{10}) (?:(\\q{1,2}[N-M]\\q{1,2}[N-M]?) \\q+ )?(.*?) ([N-M]+\\q+) (\\q\\q/\\q\\q/\\q{4}) (\\q\\q:\\q\\q:\\q\\q)(\\q\\q/\\q\\q/\\q{4} \\q\\q:\\q\\q:\\q\\q)*" )  
+qbGrfg ( "A Fu 6 & J Yvggyr Lbex Eq PSIA Fu 6 & J Yvggyr Lbex Eq PSISQ2016017860 29O05 77084 ZIN Haxabja Fvghngvba PS17Q 09/10/2016 12:38:0209/10/2016 12:38:0209/10/2016 12:39:06SQ2016017860 29O05 77084 ZIN Haxabja Fvghngvba PS17Q 09/10/2016 12:38:0209/10/2016 12:38:0209/10/2016 12:39:06" )  

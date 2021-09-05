@@ -1,0 +1,65 @@
+private static int count = 0 , currentMap = 0 , roundCount = 0 , delay1 = 0 , delay2 = 0  
+switch ( gameState ) { case MAIN : map1p . getChildren ( ) . clear ( ) ; map2p . getChildren ( ) . clear ( ) ; map3p . getChildren ( ) . clear ( ) ; endingPagep . getChildren ( ) . clear ( ) ; roundinputp . getChildren ( ) . clear ( ) ; primaryStage . setScene ( mainmenu ) ; break ; case ROUNDINPUT : primaryStage . setScene ( roundinput ) ; break ; case MAP1 : reload1 = 0 ; reload2 = 0 ; map1p . getChildren ( ) . clear ( ) ; map2p . getChildren ( ) . clear ( ) ; map3p . getChildren ( ) . clear ( ) ; currentMap = 1 ; primaryStage . setScene ( map1 ) ; player1 = new Tank ( ) ; player2 = new Tank ( ) ; addToGame ( player1 , 30 , 285 , map1p ) ; addToGame ( player2 , 525 , 255 , map1p ) ; gameStarted = true ; Random r = new Random ( ) ; createWall ( 10 , 400 , 0 , 0 , map1p ) ; createWall ( 10 , 400 , 590 , 0 , map1p ) ; createWall ( 600 , 10 , 0 , 0 , map1p ) ; createWall ( 600 , 10 , 0 , 390 , map1p ) ; createWall ( 90 , 10 , 10 , 65 , map1p ) ; createWall ( 90 , 10 , 10 , 125 , map1p ) ; createWall ( 150 , 10 , 10 , 190 , map1p ) ; createWall ( 10 , 75 , 160 , 160 , map1p ) ; createWall ( 90 , 10 , 10 , 255 , map1p ) ; createWall ( 90 , 10 , 10 , 320 , map1p ) ; createWall ( 10 , 70 , 160 , 0 , map1p ) ; createWall ( 10 , 75 , 160 , 335 , map1p ) ; createWall ( 10 , 75 , 250 , 325 , map1p ) ; createWall ( 250 , 10 , 220 , 65 , map1p ) ; createWall ( 10 , 125 , 340 , 70 , map1p ) ; createWall ( 10 , 125 , 250 , 125 , map1p ) ; createWall ( 230 , 10 , 255 , 190 , map1p ) ; createWall ( 10 , 125 , 480 , 150 , map1p ) ; createWall ( 10 , 75 , 390 , 255 , map1p ) ; createWall ( 300 , 10 , 335 , 330 , map1p ) ; Rectangle dummyrectangle = new Rectangle ( 100000 , 1 , 1000 , 1000 ) ; map1p . getChildren ( ) . add ( dummyrectangle ) ; labelplayer1score . setTranslateX ( 0 ) ; labelplayer1score . setTranslateY ( 390 ) ; labelplayer1score . setFont ( new Font ( "Arial" , 10 ) ) ; labelplayer1score . setTextFill ( Color . WHITE ) ; map1p . getChildren ( ) . add ( labelplayer1score ) ; labelplayer2score . setTranslateX ( 548 ) ; labelplayer2score . setTranslateY ( 390 ) ; labelplayer2score . setFont ( new Font ( "Arial" , 10 ) ) ; labelplayer2score . setTextFill ( Color . WHITE ) ; map1p . getChildren ( ) . add ( labelplayer2score ) ; createListeners ( map1p ) ; roundCount ++ ; break ; case MAP2 : reload1 = 0 ; reload2 = 0 ; map1p . getChildren ( ) . clear ( ) ; map2p . getChildren ( ) . clear ( ) ; map3p . getChildren ( ) . clear ( ) ; currentMap = 2 ; createWall ( 10 , 400 , 0 , 0 , map2p ) ; createWall ( 10 , 400 , 590 , 0 , map2p ) ; createWall ( 600 , 10 , 0 , 0 , map2p ) ; createWall ( 600 , 10 , 0 , 390 , map2p ) ; createWall ( 90 , 10 , 0 , 165 , map2p ) ; createWall ( 10 , 90 , 80 , 0 , map2p ) ; createWall ( 10 , 160 , 160 , 80 , map2p ) ; createWall ( 10 , 100 , 160 , 325 , map2p ) ; createWall ( 150 , 10 , 90 , 315 , map2p ) ; createWall ( 160 , 10 , 240 , 80 , map2p ) ; createWall ( 80 , 10 , 240 , 165 , map2p ) ; createWall ( 10 , 250 , 315 , 85 , map2p ) ; createWall ( 85 , 10 , 325 , 240 , map2p ) ; createWall ( 10 , 100 , 390 , 315 , map2p ) ; createWall ( 10 , 90 , 500 , 0 , map2p ) ; createWall ( 110 , 10 , 400 , 165 , map2p ) ; createWall ( 130 , 10 , 495 , 270 , map2p ) ; createWall ( 10 , 100 , 490 , 230 , map2p ) ; Rectangle dummyrectangle2 = new Rectangle ( 10000 , 1 , 1000 , 1000 ) ; map2p . getChildren ( ) . add ( dummyrectangle2 ) ; labelplayer1score . setTranslateX ( 0 ) ; labelplayer1score . setTranslateY ( 390 ) ; labelplayer1score . setFont ( new Font ( "Arial" , 10 ) ) ; labelplayer1score . setTextFill ( Color . WHITE ) ; map2p . getChildren ( ) . add ( labelplayer1score ) ; labelplayer2score . setTranslateX ( 548 ) ; labelplayer2score . setTranslateY ( 390 ) ; labelplayer2score . setFont ( new Font ( "Arial" , 10 ) ) ; labelplayer2score . setTextFill ( Color . WHITE ) ; map2p . getChildren ( ) . add ( labelplayer2score ) ; primaryStage . setScene ( map2 ) ; player1 = new Tank ( ) ; player2 = new Tank ( ) ; addToGame ( player1 , 115 , 30 , map2p ) ; addToGame ( player2 , 455 , 30 , map2p ) ; gameStarted = true ; createListeners ( map2p ) ; roundCount ++ ; break ; case MAP3 : reload1 = 0 ; reload2 = 0 ; map1p . getChildren ( ) . clear ( ) ; map2p . getChildren ( ) . clear ( ) ; map3p . getChildren ( ) . clear ( ) ; currentMap = 3 ; createWall ( 10 , 400 , 0 , 0 , map3p ) ; createWall ( 10 , 400 , 590 , 0 , map3p ) ; createWall ( 600 , 10 , 0 , 0 , map3p ) ; createWall ( 600 , 10 , 0 , 390 , map3p ) ; createWall ( 90 , 10 , 0 , 100 , map3p ) ; createWall ( 90 , 10 , 0 , 225 , map3p ) ; createWall ( 90 , 10 , 0 , 310 , map3p ) ; createWall ( 10 , 105 , 90 , 60 , map3p ) ; createWall ( 95 , 10 , 90 , 160 , map3p ) ; createWall ( 10 , 105 , 180 , 0 , map3p ) ; createWall ( 90 , 10 , 180 , 225 , map3p ) ; createWall ( 420 , 10 , 180 , 310 , map3p ) ; createWall ( 10 , 90 , 180 , 310 , map3p ) ; createWall ( 90 , 10 , 180 , 60 , map3p ) ; createWall ( 10 , 100 , 270 , 60 , map3p ) ; createWall ( 95 , 10 , 270 , 100 , map3p ) ; createWall ( 10 , 70 , 355 , 165 , map3p ) ; createWall ( 60 , 10 , 355 , 225 , map3p ) ; createWall ( 10 , 90 , 415 , 225 , map3p ) ; createWall ( 10 , 125 , 455 , 0 , map3p ) ; createWall ( 60 , 10 , 455 , 125 , map3p ) ; createWall ( 10 , 110 , 505 , 135 , map3p ) ; Rectangle dummyrectangle3 = new Rectangle ( 100000 , 1 , 1000 , 1000 ) ; map3p . getChildren ( ) . add ( dummyrectangle3 ) ; labelplayer1score . setTranslateX ( 0 ) ; labelplayer1score . setTranslateY ( 390 ) ; labelplayer1score . setFont ( new Font ( "Arial" , 10 ) ) ; labelplayer1score . setTextFill ( Color . WHITE ) ; map3p . getChildren ( ) . add ( labelplayer1score ) ; labelplayer2score . setTranslateX ( 548 ) ; labelplayer2score . setTranslateY ( 390 ) ; labelplayer2score . setFont ( new Font ( "Arial" , 10 ) ) ; labelplayer2score . setTextFill ( Color . WHITE ) ; map3p . getChildren ( ) . add ( labelplayer2score ) ; player1 = new Tank ( ) ; player2 = new Tank ( ) ; addToGame ( player1 , 120 , 115 , map3p ) ; addToGame ( player2 , 315 , 60 , map3p ) ; gameStarted = true ; primaryStage . setScene ( map3 ) ; createListeners ( map3p ) ; roundCount ++ ; break  
+createWall ( 10 , 125 , 480 , 150 , map1p )  
+createWall ( 10 , 125 , 250 , 125 , map1p )  
+createWall ( 230 , 10 , 255 , 190 , map1p )  
+createWall ( 300 , 10 , 335 , 330 , map1p )  
+createWall ( 10 , 100 , 160 , 325 , map2p )  
+createWall ( 150 , 10 , 90 , 315 , map2p )  
+createWall ( 150 , 10 , 90 , 315 , map2p )  
+createWall ( 160 , 10 , 240 , 80 , map2p )  
+createWall ( 10 , 250 , 315 , 85 , map2p )  
+createWall ( 10 , 100 , 490 , 230 , map2p )  
+createWall ( 130 , 10 , 495 , 270 , map2p )  
+createWall ( 10 , 110 , 505 , 135 , map3p )  
+addToGame ( player1 , 120 , 115 , map3p )  
+private static void createWall ( int width , int height , int x , int y , Pane map )  
+walls . add ( right )  
+map . getChildren ( ) . addAll ( top , right , bottom , left )  
+private static void colDetect ( Tank player , int playerNumber , Rectangle wall )  
+if ( playerNumber == 1 )  
+if ( player . isHitting ( wall ) && collisionup1 )  
+player . updateLocation ( - 1.75 )  
+if ( player . isHitting ( wall ) && ! collisionup1 )  
+player . updateLocation ( 1.75 )  
+if ( playerNumber == 2 )  
+
+if ( player . isHitting ( wall ) && collisionup2 )  
+player . updateLocation ( - 1.75 )  
+if ( player . isHitting ( wall ) && ! collisionup2 )  
+player . updateLocation ( 1.75 )  
+for ( Element bullet : bullets )  
+for ( int i = 0 ; i < walls . size ( ) ; i ++ )  
+bullet . setVelocity ( new Point2D ( bullet . getVelocity ( ) . getX ( ) * - 1 , bullet . getVelocity ( ) . getY ( ) ) )  
+if ( wall . getWidth ( ) > wall . getHeight ( ) && recentIntWall1 != i / 4 && nonhittableX != i % 4 && nonhittableY != i % 4 )  
+bullet . setVelocity ( new Point2D ( bullet . getVelocity ( ) . getX ( ) , bullet . getVelocity ( ) . getY ( ) * - 1 ) )  
+for ( int i = 0 ; i < walls . size ( ) ; i ++ )  
+bullet2 . setVelocity ( new Point2D ( bullet2 . getVelocity ( ) . getX ( ) * - 1 , bullet2 . getVelocity ( ) . getY ( ) ) )  
+if ( wall . getWidth ( ) > wall . getHeight ( ) && recentIntWall2 != i / 4 && delay2 == 0 )  
+bullet2 . setVelocity ( new Point2D ( bullet2 . getVelocity ( ) . getX ( ) , bullet2 . getVelocity ( ) . getY ( ) * - 1 ) )  
+switch ( currentMap ) { case 1 : try { walls . clear ( ) ; bullets . clear ( ) ; bullets2 . clear ( ) ; setGameState ( gameState . MAP2 ) ; reload1 = 0 ; reload2 = 0 ; } catch ( IOException e ) { e . printStackTrace ( ) ; } break ; case 2 : try { walls . clear ( ) ; bullets . clear ( ) ; bullets2 . clear ( ) ; setGameState ( gameState . MAP3 ) ; reload1 = 0 ; reload2 = 0 ; } catch ( IOException e ) { e . printStackTrace ( ) ; } break ; case 3 : 
+switch ( currentMap ) { case 1 : keyCheck ( map1p ) ; bulletCol ( ) ; if ( delay1 > 0 ) delay1 -- ; if ( delay2 > 0 ) delay2 -- ; if ( count > 15 ) killDetect ( map1p ) ; for ( Element bullet : bullets ) { bullet . counter ++ ; bullet . updateLocation ( 1 ) ; if ( bullet . getCounter ( ) > 300 || bullet . dead ( ) ) { map1p . getChildren ( ) . remove ( bullet . getView ( ) ) ; bullet . setStatus ( false ) ; recentwall = dummyrectangle ; } } for ( int i = 0 ; i < bullets . size ( ) ; i ++ ) { if ( bullets . get ( i ) . dead ( ) ) bullets . remove ( i ) ; } for ( Element bullet2 : bullets2 ) { bullet2 . counter ++ ; bullet2 . updateLocation ( 1 ) ; if ( bullet2 . getCounter ( ) > 300 || bullet2 . dead ( ) ) { map1p . getChildren ( ) . remove ( bullet2 . getView ( ) ) ; bullet2 . setStatus ( false ) ; recentwall2 = dummyrectangle ; } } for ( int i = 0 ; i < bullets2 . size ( ) ; i ++ ) { if ( bullets2 . get ( i ) . dead ( ) ) bullets2 . remove ( i ) ; } count ++ ; labelplayer1score . setText ( "Player 1: " + player1Score ) ; labelplayer2score . setText ( "Player 2: " + player2Score ) ; break ; case 2 : keyCheck ( map2p ) ; bulletCol ( ) ; if ( delay1 > 0 ) delay1 -- ; if ( delay2 > 0 ) delay2 -- ; if ( count > 15 ) killDetect ( map2p ) ; for ( Element bullet : bullets ) { bullet . counter ++ ; bullet . updateLocation ( 1 ) ; if ( bullet . getCounter ( ) > 300 || bullet . dead ( ) ) { map2p . getChildren ( ) . remove ( bullet . getView ( ) ) ; bullet . setStatus ( false ) ; recentwall = dummyrectangle2 ; } } for ( int i = 0 ; i < bullets . size ( ) ; i ++ ) { if ( bullets . get ( i ) . dead ( ) ) bullets . remove ( i ) ; } for ( Element bullet2 : bullets2 ) { bullet2 . counter ++ ; bullet2 . updateLocation ( 1 ) ; if ( bullet2 . getCounter ( ) > 300 || bullet2 . dead ( ) ) { map2p . getChildren ( ) . remove ( bullet2 . getView ( ) ) ; bullet2 . setStatus ( false ) ; recentwall2 = dummyrectangle2 ; } } for ( int i = 0 ; i < bullets2 . size ( ) ; i ++ ) { if ( bullets2 . get ( i ) . dead ( ) ) bullets2 . remove ( i ) ; } count ++ ; labelplayer1score . setText ( "Player 1: " + player1Score ) ; labelplayer2score . setText ( "Player 2: " + player2Score ) ; break ; case 3 : keyCheck ( map3p ) ; bulletCol ( ) ; if ( delay1 > 0 ) delay1 -- ; if ( delay2 > 0 ) delay2 -- ; if ( count > 15 ) killDetect ( map3p ) ; for ( Element bullet : bullets ) { bullet . counter ++ ; bullet . updateLocation ( 1 ) ; if ( bullet . getCounter ( ) > 300 || bullet . dead ( ) ) { map3p . getChildren ( ) . remove ( bullet . getView ( ) ) ; bullet . setStatus ( false ) ; recentwall = dummyrectangle3 ; } } for ( int i = 0 ; i < bullets . size ( ) ; i ++ ) { if ( bullets . get ( i ) . dead ( ) ) bullets . remove ( i ) ; } for ( Element bullet2 : bullets2 ) { bullet2 . counter ++ ; bullet2 . updateLocation ( 1 ) ; if ( bullet2 . getCounter ( ) > 300 || bullet2 . dead ( ) ) { map3p . getChildren ( ) . remove ( bullet2 . getView ( ) ) ; bullet2 . setStatus ( false ) ; recentwall = dummyrectangle3 ; } } for ( int i = 0 ; i < bullets2 . size ( ) ; i ++ ) { if ( bullets2 . get ( i ) . dead ( ) ) bullets2 . remove ( i ) ; } count ++ ; labelplayer1score . setText ( "Player 1: " + player1Score ) ; labelplayer2score . setText ( "Player 2: " + player2Score ) ; break  
+map2p . getChildren ( ) . remove ( bullet2 . getView ( ) )  
+bullet2 . setStatus ( false )  
+recentwall2 = dummyrectangle  
+map1p . getChildren ( ) . remove ( bullet2 . getView ( ) )  
+bullet2 . setStatus ( false )  
+recentwall2 = dummyrectangle2  
+for ( int i = 0 ; i < bullets . size ( ) ; i ++ )  
+for ( Rectangle wall : walls )  
+collisionup1 = true  
+colDetect ( player1 , 1 , wall )  
+collisionup1 = false  
+colDetect ( player1 , 1 , wall )  
+player2 . updateLocation ( 1.75 ) ; 
+for ( Rectangle wall : walls )  
+if ( player2 . isHitting ( wall ) )  
+collisionup2 = true  
+colDetect ( player2 , 2 , wall )  
+collisionup2 = false  
+colDetect ( player2 , 2 , wall )  
+if ( bullet . isHitting ( player2 . getView ( ) ) )  
+map . getChildren ( ) . remove ( bullet . getView ( ) )  
+player1 . setStatus ( false )  
+map . getChildren ( ) . remove ( player1 . getView ( ) )  
+if ( bullet2 . isHitting ( player2 . getView ( ) ) )  

@@ -1,0 +1,5 @@
+snakeHeadP2 . setX ( 63 )  
+snakeHeadP2 . setY ( 47 )  
+xPositionP2 = 630  
+yPositionP2 = 470  
+moveCellGridP2SnakeOnly ( )  

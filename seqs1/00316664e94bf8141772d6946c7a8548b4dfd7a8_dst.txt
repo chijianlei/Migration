@@ -1,0 +1,3 @@
+public class FunctionExtension implements Feature  
+"wycc.functions" , new Plugin . ExtensionPoint ( )  
+@ Override public void register ( Feature extension )  

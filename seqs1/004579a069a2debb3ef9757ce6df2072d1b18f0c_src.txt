@@ -1,0 +1,2 @@
+boolean privacyNotification = ( CMSettings . Secure . getInt ( mService . mContext . getContentResolver ( ) , CMSettings . Secure . PRIVACY_GUARD_NOTIFICATION , 1 ) == 1 )  
+boolean privacyGuard = CMSettings . Secure . getIntForUser ( mContext . getContentResolver ( ) , CMSettings . Secure . PRIVACY_GUARD_DEFAULT , 0 , UserHandle . USER_CURRENT ) == 1  

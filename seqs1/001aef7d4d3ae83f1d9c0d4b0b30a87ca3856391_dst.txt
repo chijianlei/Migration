@@ -1,0 +1,10 @@
+private static final float DEFAULT_SCALE = 0.33333f  
+handler . removeCallbacksAndMessages ( null )  
+handler . postDelayed ( new Runnable ( ) { @ Override public void run ( ) { executeTask ( ) ; } } , 500 )  
+Runnable ( )  
+@ Override public void run ( )  
+executeTask ( )  
+bounds = map . getProjection ( ) . getVisibleRegion ( ) . latLngBounds  
+LOGGER . debug ( "Camera idle" )  
+flagLoading = false  
+@ Override public void onFailure ( Call < PokeRadarResponse > call , Throwable t )  

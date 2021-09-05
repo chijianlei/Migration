@@ -1,0 +1,2 @@
+final String expectedPath = getFilePath ( "checks/metrics" ) + File . separator  
+Main . main ( "-c" , getPath ( "config-filelength.xml" ) , getPath ( "checks/metrics" ) )  

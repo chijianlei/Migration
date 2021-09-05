@@ -1,0 +1,18 @@
+@ Override public void onStickerClicked ( Sticker sticker )  
+if ( sticker != null ) 
+deleteIcon . setVisibility ( View . VISIBLE )  
+deleteIcon . setVisibility ( View . INVISIBLE )  
+stickerClicked = getStickerLocation ( event . getX ( ) , event . getY ( ) )  
+if ( captionTextClicked != null && stickerClicked != null ) 
+if ( captionTextClicked == null ) 
+listener . onCaptionTextClicked ( null )  
+if ( stickerClicked != null ) 
+listener . onStickerClicked ( stickerClicked )  
+listener . onStickerClicked ( null )  
+listener . onCaptionTextClicked ( captionTextClicked )  
+mode = DRAG  
+Matrix . rotateM ( modelMatrix , 0 , - myRotation , 0 , 0 , 1.0f )  
+GLES20 . glDrawElements ( GLES20 . GL_TRIANGLES , indices . length , GLES20 . GL_UNSIGNED_SHORT , indicesBuffer )  
+private float storeScaleFactore  
+private float scaleFactor  
+private ImageSprite ( Sticker sticker , int textureId ) 

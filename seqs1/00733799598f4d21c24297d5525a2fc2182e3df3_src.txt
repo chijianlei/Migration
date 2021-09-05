@@ -1,0 +1,21 @@
+private final static int COLL_SECS_COUNT = 46  
+getBallCoords ( ) . getX ( ) + ( ai_world_state . getMyGoalLeft ( ) ? - dist : dist ) , ai_world_state . getBallCoords ( ) . getY ( ) )  
+comm = goTowardsPoint ( target , true , false )  
+if ( targ_dist < 10 )  
+comm . turning_speed = 0  
+comm . acceleration = 127  
+@ Override protected Commands penaltiesDefend ( ) throws IOException  
+if ( ! Tools . reachability ( ai_world_state , point , ai_world_state . getMyTeamBlue ( ) , include_ball_as_obstacle ) ) 
+if ( sectors [ i ] > point_coll_dist + Robot . LENGTH_CM / 2 )  
+command . turning_speed = ang + ( point_left_coll_dist < point_right_coll_dist ? turn_ang_more : - turn_ang_more )  
+command . turning_speed = point_dir + ( point_left_coll_dist < point_right_coll_dist ? turn_ang_more : - turn_ang_more )  
+turning_speed = point_dir + ( point_left_coll_dist < point_right_coll_dist ? turn_ang_more : - turn_ang_more )  
+point_right_coll_dist ? turn_ang_more : - turn_ang_more )  
+command . turning_speed = point_dir  
+command . turning_speed = ang + ( point_left_coll_dist < point_right_coll_dist ? turn_ang_more : - turn_ang_more )  
+command . turning_speed = ang + ( point_left_coll_dist < point_right_coll_dist ? turn_ang_more : - turn_ang_more )  
+point_right_coll_dist ? turn_ang_more : - turn_ang_more )  
+if ( command . turning_speed > 90 || command . turning_speed < - 90 ) 
+command . speed = MAX_SPEED_CM_S  
+command . turning_speed *= 2  
+final Vector2D front_left = Tools . getLocalVector ( ai_world_state . getRobot ( ) , Vector2D . add ( new Vector2D ( ai_world_state . getRobot ( ) . getBackLeft ( ) ) , Tools . getNearestCollisionPoint ( ai_world_state , ai_world_state . getMyTeamBlue ( ) , ai_world_state . getRobot ( ) . getCoords ( ) ) ) ) , front_right = Tools . getLocalVector ( ai_world_state . getRobot ( ) , Vector2D . add ( new Vector2D ( ai_world_state . getRobot ( ) . getBackRight ( ) ) , Tools . getNearestCollisionPoint ( ai_world_state , ai_world_state . getMyTeamBlue ( ) , ai_world_state . getRobot ( ) . getCoords ( ) ) ) ) , back_left = Tools . getLocalVector ( ai_world_state . getRobot ( ) , Vector2D . add ( new Vector2D ( ai_world_state . getRobot ( ) . getFrontLeft ( ) ) , Tools . getNearestCollisionPoint ( ai_world_state , ai_world_state . getMyTeamBlue ( ) , ai_world_state . getRobot ( ) . getCoords ( ) ) ) ) , back_right = Tools . getLocalVector ( ai_world_state . getRobot ( ) , Vector2D . add ( new Vector2D ( ai_world_state . getRobot ( ) . getFrontRight ( ) ) , Tools . getNearestCollisionPoint ( ai_world_state , ai_world_state . getMyTeamBlue ( ) , ai_world_state . getRobot ( ) . getCoords ( ) ) ) )  

@@ -1,0 +1,3 @@
+TextArea textArea = clientController . getDestinyRoom ( "Lobby" )  
+isEmpty ? "" : "\n" ) + messageText )  
+? "" : "\n" ) + messageText )  

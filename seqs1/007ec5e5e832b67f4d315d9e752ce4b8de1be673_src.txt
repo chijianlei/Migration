@@ -1,0 +1,1 @@
+config = new ConfigHack ( ConfigInfoJUnit . values ( ) , true , "config/config.txt" , "test" )  

@@ -1,0 +1,3 @@
+Contact . createContactFromForm ( cfd1 )  
+Contact . createContactFromForm ( cfd2 )  
+Contact . createContactFromForm ( cfd3 )  

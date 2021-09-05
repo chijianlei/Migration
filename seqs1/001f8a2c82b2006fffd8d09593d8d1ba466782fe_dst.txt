@@ -1,0 +1,13 @@
+if ( Math . abs ( y ) <= DEADZONE )  
+y = 0  
+return y ; 
+public static double getRightStick ( )  
+Pneumatics . DoubleSolenoidTOGGLE ( )  
+if ( p . getIsUP ( ) )  
+if ( ! p . getIsUP ( ) )  
+piston1 . set ( DoubleSolenoid . Value . kForward )  
+piston2 . set ( DoubleSolenoid . Value . kForward )  
+IsUP = false  
+piston1 . set ( DoubleSolenoid . Value . kReverse )  
+piston2 . set ( DoubleSolenoid . Value . kReverse )  
+IsUP = true  

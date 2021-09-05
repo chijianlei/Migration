@@ -1,0 +1,3 @@
+for ( int k = most . cards . size ( ) - 1 ; k > 0 ; k -- )  
+if ( most . cards . get ( k ) . getMana ( ) == i + 1 )  
+disp [ i ] [ j ] = most . cards . get ( k )  

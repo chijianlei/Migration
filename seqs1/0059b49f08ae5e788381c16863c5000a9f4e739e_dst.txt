@@ -1,0 +1,7 @@
+public synchronized void mount ( Storage storage , Path path , boolean readWrite , Path overlay , int prio ) throws StorageException  
+public synchronized void remount ( Path path , boolean readWrite , Path overlay , int prio ) throws StorageException  
+public synchronized void unmount ( Path path ) throws StorageException  
+public synchronized void unmountAll ( )  
+public synchronized void store ( Path path , Object data ) throws StorageException  
+public synchronized void remove ( Path path ) throws StorageException  
+public synchronized void cacheClean ( boolean force )  

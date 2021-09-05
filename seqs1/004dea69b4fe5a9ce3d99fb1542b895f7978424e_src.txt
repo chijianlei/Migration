@@ -1,0 +1,2 @@
+stars = ( String ) jsonReview . get ( "stars" )  
+System . out . println ( a + b + rsquared ) ; 

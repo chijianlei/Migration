@@ -1,0 +1,3 @@
+if ( ! questionHasBeenAnswered ( ) )  
+if ( ! questionHasBeenAnswered ( ) )  
+StringBuilder str = new StringBuilder ( new QuestionLine ( currentQuestion ) . getResultString ( ) )  

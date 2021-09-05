@@ -1,0 +1,2 @@
+public interface CatPagosRepository extends JpaRepository < CatPagos , Integer >  
+PagoGrado pagoGrado = pagoGradoRepository . findOne ( id )  

@@ -1,0 +1,2 @@
+Thread . sleep ( 500 )  
+LOGGER . info ( "SESSION[{}] closed from {}" , session . getId ( ) , session . getClientAddress ( ) )  

@@ -1,0 +1,1 @@
+if ( publication . getPublicationDate ( ) == null && publicationDate == null && pubSource . getDate ( ) != null ) 

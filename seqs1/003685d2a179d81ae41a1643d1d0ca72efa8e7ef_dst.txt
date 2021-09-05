@@ -1,0 +1,16 @@
+int selectedLotId = getCurLotId ( )  
+switch ( type ) { case NEW_LOT : lotsTable . addItem ( new Object [ ] { ( ( LotFromService ) smthNew ) . getCode ( ) , ( ( LotFromService ) smthNew ) . getName ( ) , ( ( LotFromService ) smthNew ) . getFinish ( ) , ( ( LotFromService ) smthNew ) . getState ( ) } , lotsTable . size ( ) + 1 ) ; break ; case NEW_BID : if ( selectedLotId != NO_LOT_IS_SELECTED ) { if ( selectedLotId == Integer . parseInt ( ( ( BidFromService ) smthNew ) . getLot ( ) ) ) { bidsTable . addItem ( new Object [ ] { ( ( BidFromService ) smthNew ) . getBid ( ) , ( ( BidFromService ) smthNew ) . getDate ( ) , ( ( BidFromService ) smthNew ) . getBidder ( ) } , bidsTable . size ( ) + 1 ) ; } } break ; case CHANGED_LOT_STATE : String changedLotId = ( ( LotFromService ) smthNew ) . getCode ( ) ; Item currentRow = null ; for ( Iterator < ? > it = lotsTable . getItemIds ( ) . iterator ( ) ; it . hasNext ( ) ; ) { currentRow = lotsTable . getItem ( it . next ( ) ) ; if ( changedLotId . equalsIgnoreCase ( ( String ) currentRow . getItemProperty ( "Code" ) . getValue ( ) ) ) { currentRow . getItemProperty ( "State" ) . setValue ( ( ( LotFromService ) smthNew ) . getState ( ) ) ; } } if ( selectedLotId != NO_LOT_IS_SELECTED ) { if ( selectedLotId == Integer . parseInt ( ( ( LotFromService ) smthNew ) . getCode ( ) ) ) { ( ( Label ) grLayout . getComponent ( 1 , 2 ) ) . setValue ( ( ( LotFromService ) smthNew ) . getState ( ) ) ; ( ( Label ) grLayout . getComponent ( 1 , 5 ) ) . setValue ( "Trades is finished" ) ; btnCancelTrades . setVisible ( false ) ; btnNewBid . setVisible ( false ) ; } } break ; default : break  
+if ( selectedLotId == Integer . parseInt ( ( ( BidFromService ) smthNew ) . getLot ( ) ) )  
+bidsTable . addItem ( new Object [ ] { ( ( BidFromService ) smthNew ) . getBid ( ) , ( ( BidFromService ) smthNew ) . getDate ( ) , ( ( BidFromService ) smthNew ) . getBidder ( ) } , bidsTable . size ( ) + 1 )  
+if ( selectedLotId == Integer . parseInt ( ( ( LotFromService ) smthNew ) . getCode ( ) ) )  
+( ( Label ) grLayout . getComponent ( 1 , 2 ) ) . setValue ( ( ( LotFromService ) smthNew ) . getState ( ) )  
+( ( Label ) grLayout . getComponent ( 1 , 5 ) ) . setValue ( "Trades is finished" )  
+btnCancelTrades . setVisible ( false )  
+btnNewBid . setVisible ( false )  
+if ( newlot == null )  
+Broadcaster . broadcast ( BroadcastType . NEW_LOT , newlot )  
+log . trace ( "broadcasted new lot" )  
+public void buttonClick ( ClickEvent event )  
+final float currentMaxBid = ( bidsTable . size ( ) != 0 ) ? Float . valueOf ( ( String ) bidsTable . getItem ( bidsTable . size ( ) ) . getItemProperty ( "Bid" ) . getValue ( ) ) : 
+log . trace ( "currentMaxBid=" + currentMaxBid ) ; 
+bidField . setValue ( String . valueOf ( currentMaxBid + 1 ) )  

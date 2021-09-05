@@ -1,0 +1,1 @@
+mycontent = new FileStringReader ( ) . removeUselessStmtMetric5 ( content )  

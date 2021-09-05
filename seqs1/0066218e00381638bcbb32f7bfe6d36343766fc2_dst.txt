@@ -1,0 +1,4 @@
+if ( entity instanceof EntityLivingBase && ! ( entity instanceof EntityPlayer ) && ! ( entity instanceof EntityAnimal ) ) 
+if ( Ability . values ( ) [ i ] . hasAbility ( nbt ) && Ability . values ( ) [ i ] . canUpgradeLevel ( nbt ) ) 
+if ( Ability . values ( ) [ i ] . hasAbility ( nbt ) && Ability . values ( ) [ i ] . canUpgradeLevel ( nbt ) ) 
+if ( Ability . values ( ) [ i ] . hasAbility ( nbt ) && Ability . values ( ) [ i ] . canUpgradeLevel ( nbt ) ) 

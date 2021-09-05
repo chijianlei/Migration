@@ -1,0 +1,2 @@
+fragmentManager . beginTransaction ( ) . replace ( R . id . flContent , consumerCheckoutFragment ) . commit ( )  
+Glide . with ( getContext ( ) ) . load ( response . order . getChef ( ) . getProfileImage ( ) . getUrl ( ) ) . into ( binding . consumerCartChefIv )  

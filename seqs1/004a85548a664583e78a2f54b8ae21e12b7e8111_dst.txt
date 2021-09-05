@@ -1,0 +1,4 @@
+if ( rows . size ( ) == 1 && ! isAllowCustomText ( ) && ! isBrowseAll ( ) )  
+@ RunWith ( ClientTestRunner . class ) @ RunWithSubject ( "default" ) @ RunWithClientSession ( TestEnvironmentClientSession . class ) public class SmartFieldParseValueTest  
+private AbstractSmartField m_smartField  
+private static final long serialVersionUID = 1  

@@ -1,0 +1,7 @@
+public void mount ( Storage storage , Path path , boolean readWrite , Path overlay , int prio ) throws StorageException  
+public void remount ( Path path , boolean readWrite , Path overlay , int prio ) throws StorageException  
+public void unmount ( Path path ) throws StorageException  
+public void unmountAll ( )  
+public void store ( Path path , Object data ) throws StorageException  
+public void remove ( Path path ) throws StorageException  
+public void cacheClean ( boolean force )  

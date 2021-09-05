@@ -1,0 +1,5 @@
+notifs . putInt ( "textra" , this . textIds . size ( ) )  
+notifs . putInt ( "messenger" , this . messageIds . size ( ) )  
+notifs . putInt ( "snapchat" , this . snaps )  
+notifs . putInt ( "emails" , this . gmails )  
+Log . d ( TAG , "Notification package received... " + dataMap )  

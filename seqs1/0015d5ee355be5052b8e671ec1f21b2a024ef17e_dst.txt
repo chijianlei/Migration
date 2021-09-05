@@ -1,0 +1,12 @@
+RigidBody chest = drcBehaviorTestHelper . getControllerFullRobotModel ( ) . getChest ( )  
+Quaternion controllerDesiredChestOrientation = EndToEndChestTrajectoryMessageTest . findControllerDesiredOrientation ( scs , chest )  
+RigidBody chest = drcBehaviorTestHelper . getControllerFullRobotModel ( ) . getChest ( )  
+Quaternion controllerDesiredChestOrientation = EndToEndChestTrajectoryMessageTest . findControllerDesiredOrientation ( scs , chest )  
+RigidBody chest = drcBehaviorTestHelper . getControllerFullRobotModel ( ) . getChest ( )  
+Quaternion controllerDesiredChestOrientation = EndToEndChestTrajectoryMessageTest . findControllerDesiredOrientation ( scs , chest )  
+executeMessage ( message2 , chest )  
+private void executeMessage ( ChestTrajectoryMessage message , RigidBody chest ) throws SimulationExceededMaximumTimeException 
+assertChestDesired ( drcSimulationTestHelper . getSimulationConstructionSet ( ) , desired , chest )  
+private static void assertChestDesired ( SimulationConstructionSet scs , Quaternion desired , RigidBody chest ) 
+Quaternion controllerDesired = EndToEndChestTrajectoryMessageTest . findControllerDesiredOrientation ( scs , chest )  
+EndToEndChestTrajectoryMessageTest . assertSingleWaypointExecuted ( desiredChestOrientation , scs , chest )  

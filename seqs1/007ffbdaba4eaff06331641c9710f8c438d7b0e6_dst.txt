@@ -1,0 +1,6 @@
+private Context parse ( Object localContext , List < String > remoteContexts , boolean parsingARemoteContext ) throws JsonLdError  
+for ( final Object context : ( ( List < Object > ) localContext ) )  
+Object tempContext = ( ( Map < String , Object > ) remoteContext ) . get ( JsonLdConsts . CONTEXT )  
+result = result . parse ( tempContext , remoteContexts , true )  
+if ( ! parsingARemoteContext && ( ( Map < String , Object > ) context ) . containsKey ( JsonLdConsts . BASE ) )  
+result . remove ( JsonLdConsts . BASE )  

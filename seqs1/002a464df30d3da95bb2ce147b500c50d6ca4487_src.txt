@@ -1,0 +1,8 @@
+public enum SkinAttrType { BACKGROUND ( "background" ) { @ Override public void apply ( View view , String resName ) { Drawable drawable = getResourceManager ( ) . getDrawableByName ( resName ) ; if ( drawable != null ) { view . setBackgroundDrawable ( drawable ) ; } else { int color = getResourceManager ( ) . getColor ( resName ) ; if ( color == - 1 ) return ; view . setBackgroundColor ( color ) ; } } } , COLOR ( "textColor" ) { @ Override public void apply ( View view , String resName ) { ColorStateList colorList = getResourceManager ( ) . getColorStateList ( resName ) ; if ( colorList == null ) return ; ( ( TextView ) view ) . setTextColor ( colorList ) ; } } , SRC ( "src" ) 
+int color = getResourceManager ( ) . getColor ( resName )  
+view . setBackgroundColor ( color )  
+public int getColor ( String name ) 
+name = appendSuffix ( name )  
+L . e ( "name = " + name )  
+return mResources . getColor ( mResources . getIdentifier ( name , DEFTYPE_COLOR , mPluginPackageName ) )  
+catch ( Resources . NotFoundException e ) 

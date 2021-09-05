@@ -1,0 +1,1 @@
+builder . append ( request . getScheme ( ) ) . append ( "://" ) . append ( serverName ) . append ( ":" ) . append ( request . getServerPort ( ) ) . append ( "/auth/oauth2.0/profile?access_token=" ) . append ( accessToken )  

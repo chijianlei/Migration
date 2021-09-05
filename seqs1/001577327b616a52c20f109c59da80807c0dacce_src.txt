@@ -1,0 +1,14 @@
+boolean rootCategoryExists ( String rootCategoryName )  
+NodeRef getOrCreateRootCategory ( String rootCategoryName )  
+Collection < ChildAssociationRef > rootCategories = categoryService . getRootCategories ( repositoryHelper . getCompanyHome ( ) . getStoreRef ( ) , ContentModel . ASPECT_GEN_CLASSIFIABLE , rootCategoryName , true )  
+void deleteRootCategoryIfExists ( String rootCategoryName )  
+@ Override protected void onBootstrap ( ApplicationEvent event )  
+if ( ! syncEnabled || ! syncOnStartupIfMissing )  
+AuthenticationUtil . runAsSystem ( new AuthenticationUtil . RunAsWork < Object > ( ) { @ Override public Object doWork ( ) throws Exception { if ( ! rootCategoryExists ( KLE_EMNEPLAN_ROOT_CATEGORY_NAME ) ) { logger . info ( "KLE categories have never been synced. Performing " + "initial sync." ) ; synchronize ( ) ; } return null ; } } )  
+AuthenticationUtil . RunAsWork < Object > ( )  
+@ Override public Object doWork ( ) throws Exception  
+if ( ! rootCategoryExists ( KLE_EMNEPLAN_ROOT_CATEGORY_NAME ) )  
+logger . info ( "KLE categories have never been synced. Performing " + "initial sync." )  
+synchronize ( )  
+return null  
+@ Override protected void onShutdown ( ApplicationEvent event )  

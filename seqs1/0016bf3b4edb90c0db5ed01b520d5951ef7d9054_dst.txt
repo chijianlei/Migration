@@ -1,0 +1,14 @@
+public class MainActivity extends AbstractRememberMeActivity implements LoaderManager . LoaderCallbacks < Language [ ] > , QueryWordFragment . AnswerListener , ShowWordFragment . ShowWordCallback , AddWordFragment . Callback , EditWordFragment . Callback , MemorizeFragment . Callback  
+clearState ( )  
+clearState ( )  
+clearState ( )  
+clearState ( )  
+private void clearState ( )  
+removeFragments ( MemorizeFragment . TAG , WordListFragment . TAG , QueryWordFragment . TAG , ShowWordFragment . TAG , AddWordFragment . TAG , EditWordFragment . TAG )  
+clearState ( )  
+public class MemorizeActivity extends AbstractRememberMeActivity implements MemorizeFragment . Callback  
+callback . memorizeDone ( )  
+callback . memorizeDone ( )  
+protected void hideKeyboard ( )  
+( ( AbstractRememberMeActivity ) getActivity ( ) ) . hideKeyboard ( )  
+( ( AbstractRememberMeActivity ) getActivity ( ) ) . hideKeyboard ( )  

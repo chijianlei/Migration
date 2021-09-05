@@ -1,0 +1,6 @@
+@ Test public void testItemCollectionContainingFiles ( )  
+Map < String , List < Object >> files = itemColTest . getFiles ( )  
+List < Object > testFile = files . get ( "test.txt" )  
+Assert . assertEquals ( 2 , testFile . size ( ) )  
+Assert . assertTrue ( Arrays . equals ( empty , ( byte [ ] ) testFile . get ( 1 ) ) )  
+Assert . assertTrue ( Arrays . equals ( empty , ( byte [ ] ) testFile . get ( 1 ) ) )  

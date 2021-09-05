@@ -1,0 +1,1 @@
+List < Hotel > hotels = finder . where ( ) . eq ( "showOnHomePage" , true ) . orderBy ( "rating desc" ) . findList ( )  

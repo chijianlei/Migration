@@ -1,0 +1,39 @@
+public class SquatDecisioner implements Decision < AdvancedMurderBot . GameContext , BotMove >  
+private static final Logger logger = LogManager . getLogger ( SquatDecisioner . class )  
+@ Override public BotMove makeDecision ( AdvancedMurderBot . GameContext context )  
+GameState . Hero me = context . getGameState ( ) . getMe ( )  
+Map < GameState . Position , AdvancedMurderBot . DijkstraResult > dijkstraResultMap = context . getDijkstraResultMap ( )  
+Pub nearestPub = null  
+AdvancedMurderBot . DijkstraResult nearestPubDijkstraResult = null  
+for ( Pub pub : context . getGameState ( ) . getPubs ( ) . values ( ) )  
+AdvancedMurderBot . DijkstraResult dijkstraResult = dijkstraResultMap . get ( pub . getPosition ( ) )  
+if ( nearestPub == null && dijkstraResult != null )  
+nearestPub = pub  
+nearestPubDijkstraResult = dijkstraResultMap . get ( pub . getPosition ( ) )  
+if ( dijkstraResult != null && dijkstraResultMap . get ( nearestPub . getPosition ( ) ) . getDistance ( ) > dijkstraResult . getDistance ( ) )  
+nearestPub = pub  
+nearestPubDijkstraResult = dijkstraResultMap . get ( pub . getPosition ( ) )  
+List < GameState . Hero > heroes = new ArrayList ( context . getGameState ( ) . getHeroesById ( ) . values ( ) )  
+List < Integer > coinValues = new ArrayList < Integer > ( )  
+if ( hero . getId ( ) != me . getId ( ) ) 
+coinValues . add ( hero . getGold ( ) )  
+List < Integer > mineCounts = new ArrayList < Integer > ( )  
+for ( GameState . Hero hero : heroes )  
+if ( hero . getId ( ) != me . getId ( ) )  
+coinValues . add ( hero . getGold ( ) )  
+mineCounts . add ( hero . getMineCount ( ) )  
+if ( null == nearestPubDijkstraResult || ( me . getGold ( ) > Collections . max ( coinValues ) && me . getMineCount ( ) > Collections . max ( mineCounts ) ) )  
+return BotMove . STAY  
+if ( nearestPubDijkstraResult . getDistance ( ) > 1 )  
+AdvancedMurderBot . DijkstraResult currentResult = nearestPubDijkstraResult  
+GameState . Position currentPosition = nearestPub . getPosition ( )  
+while ( currentResult . getDistance ( ) > 1 )  
+currentPosition = currentResult . getPrevious ( )  
+currentResult = dijkstraResultMap . get ( currentPosition )  
+logger . info ( "Moving towards a pub to squat." )  
+return BotUtils . directionTowards ( me . getPos ( ) , currentPosition )  
+if ( me . getLife ( ) < 45 )  
+logger . info ( "Getting health while squatting." )  
+return BotUtils . directionTowards ( me . getPos ( ) , nearestPub . getPosition ( ) )  
+logger . info ( "Squatting at pub." )  
+return BotMove . STAY  

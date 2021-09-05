@@ -1,0 +1,15 @@
+WeaponState backpackState  
+int ammo = 50  
+backpackState = reload  
+if ( ammo < 1 ) 
+backpackState = noAmmo  
+backpackState = newState  
+backpackState . fire ( )  
+backpackState . addAmmo ( ammo )  
+backpackState . reload ( )  
+public class HasAmmo implements WeaponState 
+hbp . ammo -= 1  
+if ( Greenfoot . mouseClicked ( null ) ) 
+getWorld ( ) . addObject ( new Default ( ) , getX ( ) , getY ( ) ) ; 
+public class NoAmmo implements WeaponState 
+public class Reload implements WeaponState 

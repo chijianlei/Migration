@@ -1,0 +1,2 @@
+@ Getter @ Setter private boolean looping = true  
+regions . put ( ID . toLowerCase ( ) , URL )  

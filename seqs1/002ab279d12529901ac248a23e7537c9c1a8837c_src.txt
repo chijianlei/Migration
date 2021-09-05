@@ -1,0 +1,2 @@
+if ( ! addedAtoms . contains ( a . toString ( ) ) )  
+addedAtoms . add ( a . toString ( ) )  

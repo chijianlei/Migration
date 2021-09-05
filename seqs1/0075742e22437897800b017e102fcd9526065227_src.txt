@@ -1,0 +1,10 @@
+public static void main ( String [ ] args )  
+registerFile . getRegister ( 2 ) . setdata ( 2 )  
+registerFile . getRegister ( 3 ) . setdata ( 3 )  
+Instruction i = new Instruction ( "ADD" , 1 , 2 , 3 )  
+rob . tostring ( )  
+RS . tostring ( )  
+this . status = status - 1 ; 
+if ( rob [ 0 ] . getType ( ) . equals ( "" ) )  
+if ( ins . cyclesLeft <= 0 ) { 
+main . rob . incHead ( )  

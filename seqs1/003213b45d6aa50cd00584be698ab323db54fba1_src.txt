@@ -1,0 +1,1 @@
+System . err . printf ( "\"%s\" #%d%n" , thread . getName ( ) , thread . getId ( ) , thread . getId ( ) )  

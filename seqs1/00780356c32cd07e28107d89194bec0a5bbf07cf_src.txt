@@ -1,0 +1,13 @@
+under18HeadofHouse ( ) ; 
+Assert . assertTrue ( checkElementTextViewRoboReturn ( "Bishopric First Counselor" ) )  
+Assert . assertTrue ( checkElementTextViewRoboReturn ( "AFPMisc, Member15" ) )  
+Assert . assertTrue ( checkElementTextViewRoboReturn ( "Ward Assistant Clerk--Membership" ) )  
+Assert . assertTrue ( checkElementTextViewRoboReturn ( "Whitesel, Jason Raymond" ) )  
+Assert . assertTrue ( checkElementTextViewRoboReturn ( "Kitara, Peaulele" ) )  
+Thread . sleep ( 2000 )  
+clickItemByXpathRoboText ( "Priests Quorum" )  
+Thread . sleep ( 2000 )  
+clickButtonByXpath ( "TopYoungMen" )  
+clickButtonByXpath ( "TopOrganizations" )  
+clickButtonByXpath ( "TopOrganizations" )  
+Assert . assertTrue ( checkElementTextViewRoboReturn ( "Elder Kawika Tupuola" ) )  

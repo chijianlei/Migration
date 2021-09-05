@@ -1,0 +1,2 @@
+System . arraycopy ( modelviewMatrix , 0 , mesh . getUniformMatrices ( ) , 0 , v . getSizeInFloats ( ) )  
+System . arraycopy ( modelviewMatrix , 0 , mesh . getUniformMatrices ( ) , 0 , v . getSizeInFloats ( ) )  

@@ -1,0 +1,6 @@
+this . demoPoints = ControlPointsCalculator . getControlPointsForScreenshot ( ControlPointsCalculator . SCREENSHOT_CASCADING_RECTANGLES , DemonstrationActivity . this . viewWidth , DemonstrationActivity . this . viewHeight )  
+float centerX = viewWidth / 2  
+float centerY = viewHeight / 2  
+float deltaX = viewWidth / ( float ) NumDemoEdges  
+float deltaY = viewHeight / ( float ) NumDemoEdges  
+private static float currentY  

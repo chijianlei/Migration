@@ -1,0 +1,1 @@
+List list = intent . getParcelableArrayListExtra ( Constants . DATA_LIST )  

@@ -1,0 +1,4 @@
+public abstract class AbstractDao < T extends Serializable >  
+getEntityManager ( ) . merge ( item )  
+@ Singleton public class ConfigItemDao extends AbstractDao < ConfigItem >  
+public abstract class AbstractSetObjectService < I extends AbstractRestModel , O extends Serializable > extends AbstractService  

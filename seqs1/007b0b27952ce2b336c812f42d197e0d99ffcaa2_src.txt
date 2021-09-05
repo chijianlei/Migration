@@ -1,0 +1,1 @@
+Assert . assertEquals ( "Test: TripProcessing.analyzeTrips - car mode time sum not as expected." , 442532 , car [ 0 ] , 0 )  

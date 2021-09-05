@@ -1,0 +1,31 @@
+rectangle . setMousePosition ( graphIO . getMousePosition ( ) , graphIO . getMousePosition3d ( ) )  
+if ( ! rectangleSelection && graphIO . isDragging ( ) )  
+private static final float [ ] POINT_RECT = { 1 , 1 }  
+private final float [ ] center = new float [ 2 ]  
+private final float [ ] rectangle = new float [ 2 ]  
+private final float [ ] rectangle3d = new float [ 2 ]  
+if ( startPosition3d [ 0 ] > rectangle3d [ 0 ] )  
+if ( x - rad > startPosition3d [ 0 ] || x + rad < rectangle3d [ 0 ] )  
+res = false  
+if ( startPosition3d [ 0 ] > rectangle3d [ 0 ] )  
+res = false  
+if ( startPosition3d [ 1 ] < rectangle3d [ 1 ] )  
+if ( y + rad < startPosition3d [ 1 ] || y - rad > rectangle3d [ 1 ] )  
+res = false  
+if ( startPosition3d [ 1 ] < rectangle3d [ 1 ] )  
+res = false  
+public void start ( float [ ] mousePosition , float [ ] mousePosition3d )  
+this . startPosition = Arrays . copyOf ( mousePosition , 2 )  
+this . rectangle [ 0 ] = startPosition [ 0 ]  
+this . rectangle [ 1 ] = startPosition [ 1 ]  
+public void setMousePosition ( float [ ] mousePosition , float [ ] mousePosition3d )  
+public void setBlocking ( boolean blocking )  
+gl . glPushMatrix ( )  
+boolean ctrl = ( e . getModifiers ( ) & InputEvent . CTRL_DOWN_MASK ) != 0 || ( e . getModifiers ( ) & InputEvent . CTRL_MASK ) != 0 || ( e . getModifiers ( ) & InputEvent . META_MASK ) != 0  
+mousePosition3d [ 0 ] = ( float ) ( ( x - graphDrawable . viewport . get ( 2 ) / 2.0 ) / - marker [ 0 ] ) + graphDrawable . cameraTarget [ 0 ] / globalScale ; 
+mousePosition3d [ 1 ] = ( float ) ( ( y - graphDrawable . viewport . get ( 3 ) / 2.0 ) / - marker [ 1 ] ) + graphDrawable . cameraTarget [ 1 ] / globalScale  
+mouseDrag3d [ 0 ] = mousePosition3d [ 0 ]  
+mouseDrag3d [ 1 ] = mousePosition3d [ 1 ]  
+if ( vizController . getVizConfig ( ) . isSelectionEnable ( ) && engine . isRectangleSelection ( ) )  
+Rectangle rectangle = ( Rectangle ) engine . getCurrentSelectionArea ( )  
+rectangle . start ( mousePosition , mousePosition3d )  

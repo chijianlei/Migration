@@ -1,0 +1,29 @@
+RestrictedHostsUtil rhUtil = restrictHosts ? new RestrictedHostsUtil ( outputHosts ) : null  
+new RestrictedHostsUtil ( outputHosts ) : null  
+: null  
+forestSplits . get ( forestSplits . size ( ) - 1 ) . hostName = rhUtil . getNextHost ( forestHost )  
+public static final Log LOG = LogFactory . getLog ( RestrictedHostsUtil . class )  
+protected Map < String , Integer > hostForestCount = new HashMap < > ( )  
+protected List < String > hosts  
+public RestrictedHostsUtil ( String [ ] hosts )  
+public String getNextHost ( String hostName )  
+hostForestCount . put ( hostName , hostForestCount . get ( hostName ) . intValue ( ) + 1 )  
+class MockRestrictedHostsUtil extends RestrictedHostsUtil  
+public MockRestrictedHostsUtil ( String [ ] hosts )  
+super ( hosts )  
+@ Before public void setUp ( ) throws Exception  
+String [ ] enodes = { "host-1" , "host-2" , "host-3" , "host-4" }  
+rhUtil = new MockRestrictedHostsUtil ( enodes )  
+String host = "host-2"  
+for ( int i = 0 ; i < 10 ; i ++ )  
+String nextHost = rhUtil . getNextHost ( host )  
+assertTrue ( nextHost . equalsIgnoreCase ( host ) )  
+String key = "{host-4=0, host-3=0, host-2=10, host-1=0}"  
+String host = "host-5"  
+for ( int i = 0 ; i < 10 ; i ++ )  
+rhUtil . getNextHost ( host )  
+String key = "{host-4=2, host-3=2, host-2=3, host-1=3}"  
+rhUtil . getNextHost ( "host-2" )  
+rhUtil . getNextHost ( "host-2" )  
+rhUtil . getNextHost ( "host-2" )  
+rhUtil . getNextHost ( "host-2" )  

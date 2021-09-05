@@ -1,0 +1,5 @@
+if ( ! "" . equals ( yRec ) )  
+@ Parameters ( name = "{2}" ) public static List < Object [ ] > data ( )  
+return Arrays . asList ( new Object [ ] [ ] { { "" , "gThreeNodesSixEdges.gv" } , { "" , "gFourNodesEightEdges.gv" } , { "" , "gFourNodesEightEdgesABC.gv" } , { "" , "gFourNodesEightEdgesABCD.gv" } , } )  
+public SequenceParameterizedTest ( String expSync , String file )  
+Assert . assertEquals ( syncExpected , syncSequence . getSequence ( graphLoader . loadGraph ( fileName ) ) )  

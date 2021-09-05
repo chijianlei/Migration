@@ -1,0 +1,7 @@
+Pose leadingRobotNextPose = leadingRobotTE . getTrajectory ( ) . getPose ( ) [ leadingRobotCurrentPathIndex + i ]  
+leadingRobotInPose = leadingRobotInPose . union ( TrajectoryEnvelope . getFootprint ( leadingRobotTE . getFootprint ( ) , leadingRobotNextPose . getX ( ) , leadingRobotNextPose . getY ( ) , leadingRobotNextPose . getTheta ( ) ) ) ; 
+for ( int i = yieldingRobotStart ; i < yieldingRobotEnd ; i ++ )  
+if ( leadingRobotInPose . intersects ( yieldingRobotInPose ) ) return Math . max ( 0 , ret - TRAILING_PATH_POINTS )  
+yieldingRobotInPose ) ) return Math . max ( 0 , ret - TRAILING_PATH_POINTS )  
+return Math . max ( 0 , ret - TRAILING_PATH_POINTS )  
+@ Deprecated public int getCriticalPoint ( TrajectoryEnvelope te1 , TrajectoryEnvelope te2 , int currentPIR1 , int te1Start , int te1End , int te2Start )  

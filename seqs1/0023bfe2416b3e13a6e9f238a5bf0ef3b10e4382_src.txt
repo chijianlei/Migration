@@ -1,0 +1,1 @@
+Log . w ( TAG , "device offset " + offset + " not a multiple of block size" )  

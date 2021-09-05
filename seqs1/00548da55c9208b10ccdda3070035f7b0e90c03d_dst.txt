@@ -1,0 +1,5 @@
+public GUI ( Configure configure )  
+if ( e . getKeyCode ( ) == KeyEvent . VK_F4 )  
+if ( e . getKeyCode ( ) == KeyEvent . VK_F4 )  
+try { Thread . sleep ( 20 ) ; } catch ( Exception ex ) {  
+this . addWindowListener ( new WindowListener ( ) { public void windowOpened ( WindowEvent e ) { } public void windowClosed ( WindowEvent e ) { } public void windowClosing ( WindowEvent e ) { int ans = JOptionPane . showOptionDialog ( panel , "Are you sure you want to exit without saving?" , "Save?" , JOptionPane . YES_NO_CANCEL_OPTION , JOptionPane . WARNING_MESSAGE , null , new String [ ] { "Save" , "Don't save" , "Cancel" } , "Save" ) ; switch ( ans ) { case 0 : exit ( ) ; break ; case 1 : System . exit ( 0 ) ; break ; default : break ; } } public void windowDeactivated ( WindowEvent e ) { } public void windowIconified ( WindowEvent e ) { } public void windowDeiconified ( WindowEvent e ) { } public void windowActivated ( WindowEvent e ) { } } )  

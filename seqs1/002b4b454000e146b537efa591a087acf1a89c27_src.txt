@@ -1,0 +1,17 @@
+switch ( earlyStopMeasure ) { case Loss : measure = loss ; last_measure = last_loss ; break ; default : boolean flag = isResultsOut ; isResultsOut = false ; measure = evalRatings ( ) . get ( earlyStopMeasure ) ; isResultsOut = flag ; break  
+measure = loss  
+last_measure = last_loss  
+boolean flag = isResultsOut  
+isResultsOut = false ; 
+measure = evalRatings ( ) . get ( earlyStopMeasure )  
+isResultsOut = flag ; 
+if ( earlyStopMeasure != Measure . Loss )  
+boolean cond2 = ( iter > 2 ) && ( delta_measure < 1e-5 )  
+protected static Measure earlyStopMeasure  
+protected static boolean isResultsOut = true  
+public Recommender ( SparseMatrix trainMatrix , SparseMatrix testMatrix , int fold )  
+String earlyStop = evalOptions . getString ( "--early-stop" , "loss" )  
+for ( Measure m : Measure . values ( ) )  
+if ( m . name ( ) . equalsIgnoreCase ( earlyStop ) )  
+earlyStopMeasure = m  
+isResultsOut = outputOptions . isMainOn ( )  

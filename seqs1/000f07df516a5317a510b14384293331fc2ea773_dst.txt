@@ -1,0 +1,3 @@
+public interface LogicBase  
+public static void main ( String [ ] args )  
+return this . validity . part ( this . examples . get ( example ) , 0 , 1 , this . validity . rows ( ) ) . toBitVector ( )  

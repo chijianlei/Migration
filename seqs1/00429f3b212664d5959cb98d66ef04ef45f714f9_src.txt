@@ -1,0 +1,7 @@
+AsyncContextImpl asyncConImpl = ( AsyncContextImpl ) request . getAsyncContext ( )  
+protected volatile AsyncContextImpl asyncContext = null  
+@ Override public AsyncContext getAsyncContext ( )  
+return this . asyncContext  
+if ( request . getAsyncContext ( ) != null )  
+( ( AsyncContextImpl ) request . getAsyncContext ( ) ) . doInternalDispatch ( )  
+( ( AsyncContextImpl ) request . getAsyncContext ( ) ) . doInternalDispatch ( )  

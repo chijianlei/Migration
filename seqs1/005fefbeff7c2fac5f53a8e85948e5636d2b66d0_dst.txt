@@ -1,0 +1,3 @@
+public enum JavaFxHelper  
+Optional . ofNullable ( onAppsChange ) . ifPresent ( a -> JavaFxHelper . surroundConsumerWithFx ( a ) . run ( ) )  
+NotificationsCenter . sendNewAppInstalled ( $ . getApplicationName ( ) )  

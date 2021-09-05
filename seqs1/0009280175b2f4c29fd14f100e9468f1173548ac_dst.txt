@@ -1,0 +1,27 @@
+Object [ ] args = null  
+if ( sArgs != null )  
+sArgs == null ? 0 : sArgs . length  
+for ( int j = 0 ; j < params . length ; j ++ )  
+for ( int i = 0 ; i < methods . length ; i ++ )  
+Method method = methods [ i ]  
+if ( method . getName ( ) . equalsIgnoreCase ( methodName ) && ConsoleUtils . canExecuteCommand ( this , method ) )  
+if ( method . getName ( ) . equalsIgnoreCase ( methodName ) && ConsoleUtils . canExecuteCommand ( this , method ) )  
+possible . add ( i )  
+sArgs == null ? 0 : sArgs . length  
+for ( int i = 0 ; i < size ; i ++ )  
+Method m = methods [ possible . get ( i ) ]  
+Class < ? > [ ] params = m . getParameterTypes ( )  
+m . setAccessible ( true )  
+m . invoke ( exec , args )  
+} catch ( ReflectionException e )  
+String msg = e . getMessage ( )  
+if ( msg == null || msg . length ( ) <= 0 || msg . equals ( "" ) )  
+msg = "Unknown Error"  
+e . printStackTrace ( )  
+log ( msg , LogLevel . ERROR )  
+if ( m . isPublic ( ) && ConsoleUtils . canDisplayCommand ( this , m ) )  
+@ Override public boolean isExecuteHiddenCommandsEnabled ( )  
+@ Override public boolean isDisplayHiddenCommandsEnabled ( )  
+if ( name . toLowerCase ( ) . startsWith ( setString ) && ConsoleUtils . canDisplayCommand ( ce . console , m ) )  
+Console console  
+public interface Console  

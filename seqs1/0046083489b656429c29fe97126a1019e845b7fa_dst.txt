@@ -1,0 +1,6 @@
+private static int increment  
+private static boolean debugging = true  
+if ( s . equals ( word2 . toString ( ) ) )  
+if ( s . equals ( word1 . toString ( ) ) )  
+if ( s . equals ( word2 . toString ( ) ) )  
+if ( s . equals ( word1 . toString ( ) ) )  

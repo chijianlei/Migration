@@ -1,0 +1,45 @@
+"
+			
+
+			return inStr.substring(0, inStr.length() - 1)
+		 catch (Exception e) 
+			e.printStackTrace()
+			return null
+		
+	
+
+	private void updateUserScore(String game, int choiceId, int questionId) 
+		Choice tempChoice = gameService.getChoiceById(choiceId)
+		int tempScore = tempChoice.getScore()
+		String inStr = this.getAddScoreUser(game, questionId, choiceId)
+
+		AddScore as = new AddScore()
+		as.setInStr(inStr)
+		as.setScore(tempScore)
+		as.setGame(game)
+
+		gameService.updateUserScore(as)
+	
+
+	private void updateMutiChoice(String[] ss, int questionId, String game) 
+		UserChoiceDisplay uc = new UserChoiceDisplay()
+		uc.setQuestionId(questionId)
+		String choice = " ";
+		for (String s : ss) {
+			choice = choice + s + " 
+"
+		
+		uc.setChoice(choice.substring(0, choice.length() - 1))
+		List<UserChoice> list = gameService.getUserByMutiChoice(uc)
+		List<Choice> choices = gameService.getChoiceByQuestionId(questionId)
+		if (choices != null && choices.size() > 0)
+			gameService.updateUserScore(list, choices.get(0).getScore())
+	
+
+	private void updateMutiWrongChoice(String[] ss, int questionId, String game) 
+		UserChoiceDisplay uc = new UserChoiceDisplay()
+		uc.setQuestionId(questionId)
+		String choice = " ";
+		for (String s : ss) {
+			choice = choice + s + " 
+public interface GameService  

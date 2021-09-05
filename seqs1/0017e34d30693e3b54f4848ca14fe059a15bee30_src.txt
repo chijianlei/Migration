@@ -1,0 +1,1 @@
+@ Deprecated public static final String InvalidMagicValueForBmp = "Invalid magic value for bmp file. Must be 'BM'"  

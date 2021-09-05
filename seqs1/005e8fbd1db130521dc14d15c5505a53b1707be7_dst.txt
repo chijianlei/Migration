@@ -1,0 +1,4 @@
+lnPractice . setVisibility ( View . VISIBLE )  
+fragHeader . setVisibility ( View . GONE )  
+lnPractice . setVisibility ( View . VISIBLE )  
+fragHeader . setVisibility ( View . VISIBLE )  

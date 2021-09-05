@@ -1,0 +1,3 @@
+ByteArrayOutputStream out = new ByteArrayOutputStream ( size )  
+while ( ! stopped )  
+} catch ( Throwable e )  

@@ -1,0 +1,2 @@
+private Map < String , String > compoundId = new HashMap < > ( )  
+public void setCompoundId ( HashMap < String , String > compoundId )  

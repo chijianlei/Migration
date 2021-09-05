@@ -1,0 +1,10 @@
+private InstructionDifficultyScreen difficultyPanel = new InstructionDifficultyScreen ( this , panelContainer )  
+public InstructionDifficultyScreen ( CLayout layout , JPanel panelContainer )  
+this . cl = layout . cl  
+new Game ( layout , panelContainer )  
+new Game ( layout , panelContainer )  
+new Game ( layout , panelContainer )  
+public MainGameScreen ( ImageLoader imgLoader , CLayout layout , final JPanel panelContainer )  
+this . cl = layout . cl  
+public Game ( CLayout layout , JPanel panelContainer )  
+MainGameScreen w = new MainGameScreen ( imgLoader , layout , panelContainer )  

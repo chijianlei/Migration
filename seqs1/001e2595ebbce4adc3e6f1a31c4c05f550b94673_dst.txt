@@ -1,0 +1,6 @@
+
+
+
+ 
+L . e ( "failed to process packet:" )  
+public final static String DEFAULT_JABBER = "灏忎竵"  

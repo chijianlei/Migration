@@ -1,0 +1,14 @@
+@ Vetoed @ Prayer public class Application  
+public void setTitle ( String title )  
+this . title = title  
+public String getVersion ( )  
+public void setVersion ( String version )  
+this . version = version  
+public String getUrl ( )  
+this . url = url  
+@ Produces @ Prayer public Application produceApplication ( )  
+Application application = new Application ( )  
+application . setTitle ( attributes . getValue ( "Implementation-Title" ) )  
+application . setVersion ( attributes . getValue ( "Implementation-Version" ) )  
+application . setUrl ( attributes . getValue ( "Implementation-URL" ) )  
+@ Inject @ Prayer protected Application application  

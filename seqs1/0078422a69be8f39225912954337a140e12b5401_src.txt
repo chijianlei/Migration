@@ -1,0 +1,4 @@
+if ( ! isValidCoordinate ( mView . getInputLatitude ( ) ) || TextUtils . isEmpty ( mView . getInputLatitude ( ) ) )  
+mView . setLongitudeErrorMessage ( )  
+if ( ! isValidCoordinate ( mView . getInputLongitude ( ) ) || TextUtils . isEmpty ( mView . getInputLongitude ( ) ) )  
+mView . setLatitudeErrorMessage ( )  

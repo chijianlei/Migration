@@ -1,0 +1,35 @@
+private int mStartBeforeColapse = - 1  
+private int mEndBeforeBleed = - 1  
+@ Override public int getStartBeforeCollapse ( )  
+@ Override public void setStartBeforeCollapse ( int startBeforeCollapse )  
+mStartBeforeColapse = startBeforeCollapse  
+@ Override public void clearStartBeforeCollapse ( )  
+mStartBeforeColapse = - 1  
+@ Override public boolean hasCollapsed ( )  
+return mStartBeforeColapse != - 1  
+@ Override public int getEndBeforeBleed ( )  
+@ Override public void setEndBeforeBleed ( int endBeforeBleed )  
+mEndBeforeBleed = endBeforeBleed  
+@ Override public void clearEndBeforeBleed ( )  
+mEndBeforeBleed = - 1  
+@ Override public boolean hasBled ( )  
+return mEndBeforeBleed > - 1  
+private int mStartBeforeColapse = - 1  
+private int mEndBeforeBleed = - 1  
+ListSpan ( )  
+this ( "serif" )  
+ListSpan ( String family )  
+@ Override public int getStartBeforeCollapse ( )  
+@ Override public void setStartBeforeCollapse ( int startBeforeCollapse )  
+mStartBeforeColapse = startBeforeCollapse  
+@ Override public void clearStartBeforeCollapse ( )  
+mStartBeforeColapse = - 1  
+@ Override public boolean hasCollapsed ( )  
+return mStartBeforeColapse != - 1  
+@ Override public int getEndBeforeBleed ( )  
+@ Override public void setEndBeforeBleed ( int endBeforeBleed )  
+mEndBeforeBleed = endBeforeBleed  
+@ Override public void clearEndBeforeBleed ( )  
+mEndBeforeBleed = - 1  
+@ Override public boolean hasBled ( )  
+return mEndBeforeBleed > - 1  

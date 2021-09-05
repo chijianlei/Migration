@@ -1,0 +1,2 @@
+private XWalkCookieManager mCookieManager = null  
+mCookieManager = new XWalkCookieManager ( )  

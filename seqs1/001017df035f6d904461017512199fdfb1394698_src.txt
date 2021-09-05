@@ -1,0 +1,3 @@
+public AgencyResultsDao ( Agency agency , Double trxAmount , Long transactionStatusId , Long transactionTypeId )  
+public PhysicalStatusDao ( PhysicalStatus physicalStatus , Double trxAmount , Long transactionStatusId , Long transactionTypeId )  
+public SectorResultsDao ( Sector sector , Double trxAmount , Long transactionStatusId , Long transactionTypeId )  

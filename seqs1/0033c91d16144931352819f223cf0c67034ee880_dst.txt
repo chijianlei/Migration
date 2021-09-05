@@ -1,0 +1,7 @@
+String_show . string_show ( arguments . get ( 1 ) , display )  
+MovieReader . ReadMovie ( display )  
+public static void ReadMovie ( Display display )  
+String_show . string_show ( strLine , display )  
+public static void ReadMovie ( String filepath , Display display ) 
+String_show . string_show ( strLine , display )  
+public static void string_show ( String str , Display display ) throws Exception 

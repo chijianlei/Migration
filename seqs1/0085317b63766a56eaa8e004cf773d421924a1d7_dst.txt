@@ -1,0 +1,12 @@
+public static MainDisplayConfig getConfig ( String path )  
+InputStream is = null  
+is = new FileInputStream ( path )  
+} catch ( FileNotFoundException e )  
+e . printStackTrace ( )  
+JSONTokener tk = new JSONTokener ( is )  
+JSONObject jsonConfig = new JSONObject ( tk )  
+MainDisplayConfig config = MainDisplayConfig . createMainDisplayConfigFromJSONObject ( jsonConfig . getJSONObject ( "MainDisplayConfig" ) )  
+public static boolean runFromJar = MainDisplay . isRunFromJar ( )  
+return MainDisplayConfig . getConfig ( MainDisplay . defaultConfigPath , runFromJar )  
+return MainDisplayConfig . getConfig ( MainDisplay . minConfigPath , runFromJar )  
+return MainDisplayConfig . getConfig ( MainDisplay . displayConfigPath , runFromJar )  

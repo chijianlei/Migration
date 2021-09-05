@@ -1,0 +1,4 @@
+String string = spinner_time . getSelectedItem ( ) . toString ( )  
+e . printStackTrace ( )  
+final Spinner spinner_range = ( Spinner ) findViewById ( R . id . spinner_range )  
+String string = spinner_range . getSelectedItem ( ) . toString ( )  

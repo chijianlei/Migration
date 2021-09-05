@@ -1,0 +1,5 @@
+public static FingerLock initialize ( @ NonNull AppCompatActivity activity , @ NonNull String keyName )  
+if ( activity == null )  
+return null  
+fragment = createInstance ( keyName )  
+activity . getSupportFragmentManager ( ) . beginTransaction ( ) . add ( fragment , TAG_FINGER_LOCK_FRAGMENT ) . commitNow ( )  

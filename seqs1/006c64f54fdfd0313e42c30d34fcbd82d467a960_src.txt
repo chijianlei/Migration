@@ -1,0 +1,37 @@
+public class NJBurlingtonCountyCParser extends DispatchA5Parser  
+private static final String TRIM_SUBJ_LEADER = "([ "  
+private static final String TRIM_SUBJ_TRAILER = ")]. "  
+private static final Pattern STR_PTN = Pattern . compile ( " +(STR +[^ ]+)$" )  
+public NJBurlingtonCountyCParser ( )  
+super ( CITY_ABBRV , CALL_CODES , "BURLINGTON COUNTY" , "NJ" )  
+setupGpsLookupTable ( GPS_LOOKUP_TABLE )  
+@ Override public String adjustMapAddress ( String addr )  
+return TN_PTN . matcher ( addr ) . replaceAll ( "TURN" )  
+private static final Pattern TN_PTN = Pattern . compile ( "\\bTN\\b" , Pattern . CASE_INSENSITIVE )  
+@ Override protected boolean parseMsg ( String subject , String body , Data data )  
+body = body . replace ( "=20" , "" )  
+String source = null  
+if ( ! subject . equals ( SUBJECT_SIGNATURE ) )  
+subject = subject . replace ( SUBJECT_SIGNATURE , "" ) . trim ( )  
+int pt1 = 0  
+while ( pt1 < subject . length ( ) && TRIM_SUBJ_LEADER . indexOf ( subject . charAt ( pt1 ) ) >= 0 ) pt1 ++  
+pt1 < subject . length ( ) && TRIM_SUBJ_LEADER . indexOf ( subject . charAt ( pt1 ) ) >= 0 ) pt1 ++  
+int pt2 = subject . length ( ) - 1  
+while ( pt2 >= pt1 && TRIM_SUBJ_TRAILER . indexOf ( subject . charAt ( pt2 ) ) >= 0 ) pt2 --  
+pt2 >= pt1 && TRIM_SUBJ_TRAILER . indexOf ( subject . charAt ( pt2 ) ) >= 0 ) pt2 --  
+source = subject . substring ( pt1 , pt2 + 1 )  
+subject = SUBJECT_SIGNATURE  
+body = body . replace ( "\nDispatchNature of Call :" , "\nDispatch -              En-route-              On-scene-              Depart 1-  \nArrive 2 -              Depart 2-              In-statn-\n\nArea:  Section :   Beat :   Map :\nGrid:  Quadrant:  District:\nPhone Number:  Call Source:\nNature of Call :" )  
+int pt = body . indexOf ( "\nThe information in this e-mail" )  
+if ( pt >= 0 ) body = body . substring ( 0 , pt ) . trim ( )  
+body = body . substring ( 0 , pt ) . trim ( )  
+if ( ! super . parseMsg ( subject , body , data ) ) return false  
+return false  
+Matcher match = STR_PTN . matcher ( data . strAddress )  
+if ( match . find ( ) )  
+data . strApt = append ( data . strApt , "-" , match . group ( 1 ) )  
+data . strAddress = data . strAddress . substring ( 0 , match . start ( ) )  
+if ( data . strSource . length ( ) == 0 && source != null ) data . strSource = source  
+data . strSource . length ( ) == 0 && source != null ) data . strSource = source  
+return true  
+private static final CodeTable CALL_CODES = new CodeTable ( "101" , "Abdominal Pain/Problems" , "102" , "Allergies/Hives/Reaction/Stings" , "103" , "Animal Bites" , "104" , "Assault/Rape" , "105" , "Back Pain" , "106" , "Breathing Problems" , "107" , "Burns-Thermal/Chemical" , "108" , "Carbon Mono/Inhalation/Haz Mat" , "109" , "Cardiac/Respiratory Arrest" , "110" , "Chest Pain" , "111" , "Choking" , "112" , "Convulsions/Seizures" , "113" , "Diabetic Problems" , "114" , "Drowning (near)/Diving Accident" , "115" , "Electrocution" , "116" , "Eye Problems" , "117" , "Falls/Fractures" , "118" , "Headache" , "119" , "Heart Problems" , "120" , "Heat/Cold Exposure" , "121" , "Hemorrhage" , "122" , "Industrial/Machinery Accidents" , "123" , "Overdose/Poisoning/Ingestion" , "124" , "Pregnancy" , "125" , "Psychiatric/Behavorial Problems" , "126" , "Sick Person (specific diagnosis)" , "127" , "Pentrating Wound/Stab/Gun" , "128" , "Stroke/CVA" , "129" , "Traffic Injury Accidents" , "129F" , "Motor Vehicle Accident Fire Response" , "130" , "Traumatic Injuries/Lacerations" , "131" , "Unconsciousness/Fainting" , "132" , "Medical Emergency (Unknown Problem)" , "133" , "Traffic Accidents/Entrapment" , "134" , "Special Assignment" , "135" , "Fire Standby" , "136" , "Non Emergency Transportation" , "137" , "Cover Assignment" , "138" , "Training Session/Drills" , "139" , "School Standyby,Education" , "11" , "Structure,Building Fire" , "12" , "Structure-Non Fire" , "13" , "Vehicles/Non Structure Fires" , "14" , "Brush, Trees, Woods" , "15" , "Non-Fire/Investigations, Odors," , "16" , "Alarm Systems" , "17" , "Natural Gas, Propane Gas, Fumes," , "18" , "Wash Highway, Wash Roadway" , "30" , "Rescue Assignment" , "32" , "Medical Call, Assist BLS" , "42" , "Explosive Device, Bomb Threat" , "44" , "Wires, Transformers, Poles" , "46" , "Helicopter Landings, Aircraft Stand By" , "47" , "Hazardous Materials Incident" , "51" , "Lock Out,Assist Police" , "52" , "Pump Out, Water in Basement" , "54" , "Animal Rescue" , "55" , "Assist Police, Fire Police" , "57" , "Cover Assignment" , "AOS" , "Alarm Out of Service" , "BURN" , "Controlled Burn" , "CCD" , "Critical Care Divert" , "DUP" , "Duplicate Incident" , "DUP" , "Duplicate Incident" , "EMS" , "EMS Call" , "ERB" , "ER ByPass" , "FIRE" , "Fire Call" , "TCD" , "Total Care Divert" )  

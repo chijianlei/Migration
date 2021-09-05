@@ -1,0 +1,5 @@
+public GameObjectPicker ( )  
+Graphics . DisplayMode [ ] dps = Gdx . graphics . getDisplayModes ( )  
+for ( Graphics . DisplayMode dp : dps )  
+fbHeight += dp . height  
+fbo = new FrameBuffer ( Pixmap . Format . RGBA8888 , fbWidth , fbHeight , true )  

@@ -1,0 +1,3 @@
+String roomText = clientController . getCurrentRoom ( ) . getText ( )  
+( ( TextArea ) ( clientController . getSelectedTab ( ) . getContent ( ) ) ) . appendText ( ( ( ( TextArea ) ( clientController . getSelectedTab ( ) . getContent ( ) ) ) . getText ( ) . isEmpty ( ) ? "" : "\n" ) + messageText )  
+? "" : "\n" ) + messageText )  

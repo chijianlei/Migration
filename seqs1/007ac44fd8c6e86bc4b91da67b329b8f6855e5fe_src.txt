@@ -1,0 +1,5 @@
+wasDrawerDisabled = menu . getMapActivity ( ) . isDrawerDisabled ( )  
+if ( ! wasDrawerDisabled )  
+menu . getMapActivity ( ) . disableDrawer ( )  
+if ( ! wasDrawerDisabled )  
+menu . getMapActivity ( ) . enableDrawer ( )  

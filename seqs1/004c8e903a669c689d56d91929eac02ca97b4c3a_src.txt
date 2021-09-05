@@ -1,0 +1,97 @@
+
+clipboard = ( ClipboardManager ) getSystemService ( Context . CLIPBOARD_SERVICE )  
+manager = ( InputMethodManager ) getSystemService ( Context . INPUT_METHOD_SERVICE )  
+wakeLock = ( ( PowerManager ) getSystemService ( Context . POWER_SERVICE ) ) . newWakeLock ( 
+PowerManager . SCREEN_DIM_WAKE_LOCK , "demo" )  
+
+chatType = getIntent ( ) . getIntExtra ( "chatType" , CHATTYPE_SINGLE ) ; 
+toChatUsername = getIntent ( ) . getStringExtra ( "userId" )  
+
+
+} else  
+findViewById ( R . id . container_video_call ) . setVisibility ( View . GONE )  
+toChatUsername = getIntent ( ) . getStringExtra ( "groupId" )  
+
+if ( chatType == CHATTYPE_GROUP )  
+group = EMChatManager . getInstance ( ) . getGroup ( toChatUsername )  
+if ( group != null )  
+( ( TextView ) findViewById ( R . id . name ) ) . setText ( group . getGroupName ( ) )  
+( ( TextView ) findViewById ( R . id . name ) ) . setText ( toChatUsername )  
+ 
+
+
+@ Override 
+public void onSuccess ( EMChatRoom value ) { runOnUiThread ( new Runnable ( ) { @ Override public void run ( ) { pd . dismiss ( ) ; room = EMChatManager . getInstance ( ) . getChatRoom ( toChatUsername ) ; if ( room != null ) { ( ( TextView ) findViewById ( R . id . name ) ) . setText ( room . getName ( ) ) ; } else { ( ( TextView ) findViewById ( R . id . name ) ) . setText ( toChatUsername ) ; } EMLog . d ( TAG , "join room success : " + room . getName ( ) ) ; conversation = EMChatManager . getInstance ( ) . getConversation ( toChatUsername ) ; conversation . markAllMessagesAsRead ( ) ; int msgCount = msgs != null ? msgs . size ( ) : 0 ; if ( msgCount < conversation . getAllMsgCount ( ) && msgCount < pagesize ) { String msgId = null ; if ( msgs != null && msgs . size ( ) > 0 ) { msgId = msgs . get ( 0 ) . getMsgId ( ) ; } conversation . loadMoreGroupMsgFromDB ( msgId , pagesize ) ; } adapter = new MessageAdapter ( ChatActivity . this , toChatUsername , chatType ) ; listView . setAdapter ( adapter ) ; adapter . refreshSelectLast ( ) ; } } ) ; } @ Override public void onError ( final int error , String errorMsg ) { EMLog . d ( TAG , "join room failure : " + error ) ; runOnUiThread ( new Runnable ( ) { @ Override public void run ( ) { pd . dismiss ( ) ; } } ) ; finish ( ) ; } } ) ; } 
+value )  
+runOnUiThread ( new Runnable ( ) { @ Override 
+pd . dismiss ( ) ; room = EMChatManager . getInstance ( ) . getChatRoom ( toChatUsername ) ; if ( room != null ) { ( ( TextView ) findViewById ( R . id . name ) ) . setText ( room . getName ( ) ) ; } else { ( ( TextView ) findViewById ( R . id . name ) ) . setText ( toChatUsername ) ; } EMLog . d ( TAG , "join room success : " + room . getName ( ) ) ; conversation = EMChatManager . getInstance ( ) . getConversation ( toChatUsername ) ; conversation . markAllMessagesAsRead ( ) ; int msgCount = msgs != null ? msgs . size ( ) : 0 ; if ( msgCount < conversation . getAllMsgCount ( ) && msgCount < pagesize ) { String msgId = null ; if ( msgs != null && msgs . size ( ) > 0 ) { msgId = msgs . get ( 0 ) . getMsgId ( ) ; } conversation . loadMoreGroupMsgFromDB ( msgId , pagesize ) ; } adapter = new MessageAdapter ( ChatActivity . this , toChatUsername , chatType ) ; listView . setAdapter ( adapter ) ; adapter . refreshSelectLast ( ) ; } } ) ; } @ Override public void onError ( final int error , String errorMsg )  
+pd . dismiss ( )  
+room = EMChatManager . getInstance ( ) . getChatRoom ( toChatUsername ) ; if ( room != null )  
+( ( TextView ) findViewById ( R . id . name ) ) . setText ( room . getName ( ) )  
+} else  
+( ( TextView ) findViewById ( R . id . name ) ) . setText ( toChatUsername )  
+ 
+conversation = EMChatManager . getInstance ( ) . getConversation ( toChatUsername )  
+conversation . markAllMessagesAsRead ( )  
+
+
+if ( msgs != null && msgs . size ( ) > 0 )  
+msgId = msgs . get ( 0 ) . getMsgId ( )  
+msgId = msgs . get ( 0 ) . getMsgId ( )  
+msgId = msgs . get ( 0 ) . getMsgId ( )  
+. get ( 0 ) . getMsgId ( )  
+ 
+conversation . loadMoreGroupMsgFromDB ( msgId , pagesize )  
+ 
+adapter = new MessageAdapter ( ChatActivity . this , toChatUsername , chatType )  
+listView . setAdapter ( adapter )  
+
+ 
+runOnUiThread ( new Runnable ( ) { @ Override 
+pd . dismiss ( )  
+} } ) ; finish ( ) ; } } ) ; 
+
+finish ( )  
+ 
+ 
+
+int msgCount = msgs != null ? msgs . size ( ) : 0  
+msgId = msgs . get ( 0 ) . getMsgId ( )  
+ 
+ 
+ 
+
+if ( chatType == CHATTYPE_SINGLE )  
+conversation . loadMoreMsgFromDB ( msgId , pagesize )  
+} else  
+conversation . loadMoreGroupMsgFromDB ( msgId , pagesize )  
+ 
+adapter = new MessageAdapter ( this , toChatUsername , chatType )  
+listView . setAdapter ( adapter )  
+listView . setOnTouchListener ( new OnTouchListener ( )  
+
+@ Override 
+more . setVisibility ( View . GONE ) ; iv_emoticons_normal . setVisibility ( View . VISIBLE ) ; iv_emoticons_checked . setVisibility ( View . INVISIBLE ) ; emojiIconContainer . setVisibility ( View . GONE ) ; btnContainer . setVisibility ( View . GONE ) ; return false ; } } ) ; groupListener = new GroupListener ( ) ; EMChatManager . getInstance ( ) . addGroupChangeListener ( groupListener ) ; 
+more . setVisibility ( View . GONE )  
+iv_emoticons_checked . setVisibility ( View . INVISIBLE ) ; emojiIconContainer . setVisibility ( View . GONE )  
+btnContainer . setVisibility ( View . GONE )  
+return false  
+ 
+} )  
+
+
+groupListener = new GroupListener ( )  
+if ( forward_msg_id != null )  
+
+
+
+
+ 
+VoicePlayClickListener . currentPlayListener . stopPlayVoice ( )  
+intent . putExtra ( "groupId" , username )  
+} else  
+sortConversationByLastChatTime ( sortList )  
+} catch ( Exception e )  
+ 
+
+

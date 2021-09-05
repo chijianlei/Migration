@@ -1,0 +1,13 @@
+public class SwrveGoogleUnitTest extends SwrveBaseTest  
+super . setUp ( )  
+@ After public void tearDown ( ) throws Exception  
+SwrveTestUtils . removeSwrveSDKSingletonInstance ( )  
+@ Before public void setUp ( ) throws Exception  
+Swrve swrve = ( Swrve ) SwrveSDK . createInstance ( mActivity , 1 , "apiKey" , config )  
+config . setSenderId ( "12345" )  
+config . setPushRegistrationAutomatic ( false )  
+swrve . onCreate ( mActivity )  
+swrve . setRegistrationId ( "manual_reg_id" )  
+JSONObject deviceValuesToSend = swrve . getDeviceInfo ( )  
+assertEquals ( "manual_reg_id" , deviceValuesToSend . get ( "swrve.gcm_token" ) )  
+swrve . onDestroy ( mActivity )  

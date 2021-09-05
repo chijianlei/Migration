@@ -1,0 +1,29 @@
+while ( true )  
+private int serverCount  
+public Communicate ( Node currNode , ConnectionManager cm )  
+serverCount = cm . getServerCount ( )  
+turns = new ArrayList < > ( serverCount )  
+for ( int i = 0 ; i < serverCount ; i ++ )  
+Message [ ] values = new Message [ serverCount ]  
+ArrayList < Status > status = new ArrayList < > ( serverCount )  
+for ( int i = 0 ; i < serverCount ; i ++ )  
+for ( int i = 0 ; i < serverCount ; i ++ )  
+System . out . println ( "Channel doesn't exist anymore, removing it" )  
+i --  
+serverCount = caller . getServerCount ( )  
+turns . set ( i , false )  
+while ( ackCounter < serverCount / 2 + 1 )  
+for ( int i = 0 ; i < serverCount ; i ++ )  
+System . out . println ( "Channel doesn't exist anymore, removing it" )  
+serverCount = caller . getServerCount ( )  
+n . getFD ( ) . updateFDForNode ( reply . getSenderId ( ) )  
+} catch ( IOException e ) { System . out . println ( "Channel doesn't exist anymore, removing it" ) ; removeCrashedServer ( i , chan ) ; status . remove ( i ) ; serverCount = caller . getServerCount ( ) ; i -- ; continue  
+System . out . println ( "Channel doesn't exist anymore, removing it" )  
+serverCount = caller . getServerCount ( )  
+status . set ( i , Status . NOTACK )  
+public int getServerCount ( )  
+public void setServerCount ( int serverCount )  
+this . serverCount = serverCount  
+catch ( IOException e ) { System . out . println ( "Server or reader/writer crashed, keep executing" ) ; key . channel ( ) . close ( ) ; key . cancel ( ) ; continue  
+System . out . println ( "Server or reader/writer crashed, keep executing" )  
+boolean wasInit = handleInit ( m )  

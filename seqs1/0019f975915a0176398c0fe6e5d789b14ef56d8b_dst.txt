@@ -1,0 +1,35 @@
+@ RequestMapping ( value = "/api/v1/convos" , method = RequestMethod . POST ) public long createConvo ( @ RequestBody final CreateConvo convo )  
+@ RequestMapping ( value = "/api/v1/convos/{convoId}/replies" , method = RequestMethod . POST ) public long replyToConvo ( @ PathVariable final long convoId , @ RequestBody final CreateConvo convo )  
+Convo c = convoService . getSentConvo ( userId , convoId )  
+Convo c = convoService . getReceivedConvo ( userId , convoId )  
+@ RequestMapping ( value = "/api/v1/{userId}/convos/received/{convoId}" , method = RequestMethod . PUT ) public void changeConvoReadStatus ( @ PathVariable final long userId , @ PathVariable final long convoId )  
+convoService . changeConvoReadStatus ( userId , convoId )  
+@ RequestMapping ( value = "/api/v1/{userId}/convos/sent" , method = RequestMethod . GET ) public ConvosResponse getConvosSent ( @ PathVariable final long userId , @ RequestParam ( defaultValue = "0" ) final int offset , @ RequestParam ( defaultValue = "0" ) final int limit , @ RequestParam ( defaultValue = "desc" ) final String direction )  
+return convoService . getConvosSent ( userId , offset , limit , SortDirection . fromJson ( direction ) )  
+@ RequestMapping ( value = "/api/v1/{userId}/convos/received" , method = RequestMethod . GET ) public ConvosResponse getConvosReceived ( @ PathVariable final long userId , @ RequestParam ( defaultValue = "0" ) final int offset , @ RequestParam ( defaultValue = "0" ) final int limit , @ RequestParam ( defaultValue = "desc" ) final String direction )  
+return convoService . getConvosReceived ( userId , offset , limit , SortDirection . fromJson ( direction ) )  
+@ RequestMapping ( value = "/api/v1/{userId}/threads" , method = RequestMethod . GET ) public ThreadsResponse getThreads ( @ PathVariable final long userId , @ RequestParam ( defaultValue = "0" ) final int offset , @ RequestParam ( defaultValue = "0" ) final int limit , @ RequestParam ( defaultValue = "desc" ) final String direction )  
+return convoService . getThreads ( userId , offset , limit , SortDirection . fromJson ( direction ) )  
+@ RequestMapping ( value = "/api/v1/{userId}/threads/{threadId}" , method = RequestMethod . GET ) public ConvosResponse getThread ( @ PathVariable final long userId , @ PathVariable final long threadId , @ RequestParam ( defaultValue = "0" ) final int offset , @ RequestParam ( defaultValue = "0" ) final int limit , @ RequestParam ( defaultValue = "desc" ) final String direction )  
+ConvosResponse resp = convoService . getThread ( userId , threadId , offset , limit , SortDirection . fromJson ( direction ) )  
+return DataAccessUtils . singleResult ( jdbcTemplate . query ( sql , params , convoMapper ) )  
+return DataAccessUtils . singleResult ( jdbcTemplate . query ( sql , params , convoMapper ) )  
+final String sql = "INSERT INTO convo.convo(sender, recipient, subject, body, thread_id, reply_to_convo) " + "VALUES (:sender, :recipient, " + "COALESCE(" + "   (SELECT subject FROM convo.convo where id = :replyToConvo), " + "   :subject), " + ":body, " + "COALESCE(" + "   (SELECT thread_id FROM convo.convo where id = :replyToConvo), " + "   nextval('thread_seq')), " + "CASE WHEN :replyToConvo = 0 THEN null ELSE :replyToConvo END) " + "RETURNING id"  
+public void changeConvoReadStatus ( final long userId , final long id )  
+final String sql = "UPDATE convo.convo SET was_read = not was_read, update_time = now() " + "WHERE id = :id AND recipient = :userId "  
+final Map < String , Object > params = ImmutableMap . of ( "id" , ( Object ) id , "userId" , userId )  
+String sql = "SELECT id, sender, recipient, subject, body, was_read, thread_id, reply_to_convo," + "send_time, update_time " + "FROM convo.convo " + "WHERE recipient = :userId AND NOT deleted_by_recipient " + "ORDER BY send_time " + direction . getVal ( )  
+sql += " LIMIT :limit "  
+final Map < String , Object > params = ImmutableMap . of ( "userId" , ( Object ) userId , "limit" , limit , "offset" , offset )  
+String sql = "SELECT id, sender, recipient, subject, body, was_read, thread_id, reply_to_convo," + "send_time, update_time " + "FROM convo.convo " + "WHERE sender = :userId AND NOT deleted_by_sender " + "ORDER BY send_time " + direction . getVal ( )  
+sql += " LIMIT :limit "  
+final Map < String , Object > params = ImmutableMap . of ( "userId" , ( Object ) userId , "limit" , limit , "offset" , offset )  
+String sql = "SELECT DISTINCT ON (thread_id) id, sender, recipient, subject, body, was_read, thread_id, reply_to_convo," + "send_time, update_time " + "FROM convo.convo " + "WHERE (sender = :userId AND NOT deleted_by_sender) OR (recipient = :userId AND NOT deleted_by_recipient) " + "ORDER BY " + direction . getVal ( )  
+sql += " LIMIT :limit "  
+final Map < String , Object > params = ImmutableMap . of ( "userId" , ( Object ) userId , "limit" , limit , "offset" , offset )  
+String sql = "SELECT id, sender, recipient, subject, body, was_read, thread_id, reply_to_convo," + "send_time, update_time " + "FROM convo.convo " + "WHERE thread_id = :threadId AND ((sender = :userId AND NOT deleted_by_sender) OR (recipient = :userId AND NOT deleted_by_recipient)) " + "ORDER BY send_time " + direction . getVal ( )  
+sql += " LIMIT :limit "  
+final Map < String , Object > params = ImmutableMap . of ( "threadId" , ( Object ) threadId , "limit" , limit , "offset" , offset , "userId" , userId )  
+public enum SortDirection { ASCENDING ( "asc" ) , DESCENDING ( "desc" )  
+public void changeConvoReadStatus ( final long userId , final long id )  
+convoDao . changeConvoReadStatus ( userId , id )  

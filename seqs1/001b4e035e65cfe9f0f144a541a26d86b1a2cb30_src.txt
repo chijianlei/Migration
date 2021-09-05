@@ -1,0 +1,5 @@
+for ( LivermorPair livermorPair : livermorPairDao . getAll ( ) )  
+for ( LivermorPair livermorPair : new LivermorPairDao ( ) . getAll ( ) )  
+livermorPairVisualizer . visualize ( livermorPair , 2015 )  
+public enum BusinessType { PHARMACEUTICS , ENERGETIC , MECHANICAL_ENGINEERING , FINANCE , FOOD , IT , METALLURGY , OIL , MOUNTAIN , PETROCHEMICAL , RETAIL , TRANSPORT , TELECOMMUNICATION , OTHER , BANKING , PROCESSORS 
+if ( sameDate ( companyCandle . getDate ( ) , potentiallyNew . getDate ( ) ) || sameDate ( companyCandle . getDate ( ) , Calendar . getInstance ( ) ) )  

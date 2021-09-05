@@ -1,0 +1,7 @@
+params . comments = ( ( Textbox ) serveCustomerDialogWindow . getFellow ( "editable_comments" ) ) . getText ( )  
+customer . setTempComments ( params . comments ) ; 
+Executer . getInstance ( ) . getTasks ( ) . get ( Uses . TASK_CUSTOMER_RETURN_QUEUE ) . process ( params , "" , new byte [ 4 ] )  
+customer = null  
+setKeyRegim ( KEYS_MAY_INVITE )  
+service_list . setModel ( service_list . getModel ( ) )  
+serveCustomerDialogWindow . setVisible ( false )  

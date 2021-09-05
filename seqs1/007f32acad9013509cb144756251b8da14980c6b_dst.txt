@@ -1,0 +1,4 @@
+throw new UnsupportedOperationException ( "Named mutex on Linux is not implemented yet." )  
+throw new UnsupportedOperationException ( "Named mutex on your platform is not implemented yet." )  
+throw new UnsupportedOperationException ( "Named mutex on Linux is not implemented yet." )  
+throw new UnsupportedOperationException ( "Named mutex on your platform is not implemented yet." )  

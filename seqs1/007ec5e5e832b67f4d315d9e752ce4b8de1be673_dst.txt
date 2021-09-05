@@ -1,0 +1,1 @@
+config = new ConfigHack ( ConfigInfoRobot . values ( ) , true , "config/config.txt" , "test" )  

@@ -1,0 +1,6 @@
+private static final int FIXES = 0  
+if ( Character . isDigit ( keyChar ) && ( currentText . length ( ) + 1 <= 4 && currentTemperature < maxTemperature ) )  
+currentText += keyChar  
+currentTemperature = Integer . parseInt ( currentText )  
+adjustTemperature ( currentTemperature + "" )  
+adjustSlider ( ( int ) currentTemperature )  

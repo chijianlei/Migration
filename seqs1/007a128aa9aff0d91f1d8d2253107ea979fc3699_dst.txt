@@ -1,0 +1,4 @@
+public class ONonBlockingQueryFuture implements Future , List < Future >  
+return null  
+@ Override public void remove ( )  
+throw new UnsupportedOperationException ( "Unsuppored remove on non blocking query result" )  

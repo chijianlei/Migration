@@ -1,0 +1,12 @@
+isDataGot = true  
+tv_alert_dialog_button . setOnClickListener ( new View . OnClickListener ( ) { @ Override public void onClick ( View v ) { if ( mMap != null ) { mMap . clear ( ) ; } for ( int i = 0 ; i < vehicleListModel . getVehicleModelArrayList ( ) . size ( ) ; i ++ ) { VehicleListNewModel vehicleListNewModel = vehicleListModel . getVehicleModelArrayList ( ) . get ( i ) ; vehicleListNewModel . marker = null ; vehicleListModel . getVehicleModelArrayList ( ) . set ( i , vehicleListNewModel ) ; } setMarkersData ( ) ; mDialog . dismiss ( ) ; } } )  
+View . OnClickListener ( )  
+@ Override public void onClick ( View v )  
+setMarkersData ( )  
+mDialog . dismiss ( )  
+if ( mMap != null )  
+mMap . clear ( )  
+if ( locationSpeedModel . getIgnition ( ) == 1 && vehicleListModel . getVehicleModelArrayList ( ) . get ( i ) . marker == null )  
+vehicleListModel . getVehicleModelArrayList ( ) . get ( i ) . marker = mMap . addMarker ( new MarkerOptions ( ) . icon ( BitmapDescriptorFactory . fromResource ( R . drawable . vehicle_ignition_on_marker ) ) . position ( mLatLng ) )  
+vehicleListModel . getVehicleModelArrayList ( ) . get ( i ) . marker = mMap . addMarker ( new MarkerOptions ( ) . icon ( BitmapDescriptorFactory . fromResource ( R . drawable . vehicle_ignition_off_marker ) ) . position ( mLatLng ) )  
+mMap . moveCamera ( CameraUpdateFactory . newLatLng ( mLatLng ) )  

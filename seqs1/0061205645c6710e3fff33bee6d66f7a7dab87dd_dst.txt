@@ -1,0 +1,3 @@
+for ( ConfigurationNode node : modelConfigurationNode . getChildrenList ( ) )  
+params . textureSide . set ( ForgeDirection . getOrientation ( textureIndex ) )  
+if ( faces . isEmpty ( ) )  

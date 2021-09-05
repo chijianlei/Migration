@@ -1,0 +1,7 @@
+mondayDayTemp . setText ( "Day temperature: " + dayTemp + " \u2103" )  
+mondayNightTemp . setText ( "Night temperature: " + nightTemp + " \u2103" )  
+mondayDayTemp . setText ( "Day temperature: " + dayTemp + " \u2103" )  
+mondayNightTemp . setText ( "Night temperature: " + nightTemp + " \u2103" )  
+mondayDaySwitchMins . setFilters ( new InputFilter [ ] { new InputFilterMinMax ( "00" , "59" ) , new InputFilter . LengthFilter ( maxLength ) } )  
+TextView targetTemp , currentTemp , enabled , infoText , dayTempHome , nightTempHome  
+Button bIncrTemp , bDecrTemp , bChangeHome  

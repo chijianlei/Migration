@@ -1,0 +1,5 @@
+if ( ( intent . getFlags ( ) & Intent . FLAG_ACTIVITY_BROUGHT_TO_FRONT ) != Intent . FLAG_ACTIVITY_BROUGHT_TO_FRONT )  
+mWorkspace . snapToScreen ( 0 )  
+private float mEdgeMotion = 130.0f  
+if ( mEdgeEventMode && mEdgeMotionX < mEdgeMotion )  
+if ( mEdgeEventMode && mLastMotionY < mEdgeMotion )  

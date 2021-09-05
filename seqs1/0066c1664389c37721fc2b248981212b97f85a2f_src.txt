@@ -1,0 +1,7 @@
+youMustSpecifyACommandToRun ( )  
+if ( ! firstArg . startsWith ( "-" ) )  
+optionArgs = Arrays . copyOfRange ( filteredArgs , 1 , filteredArgs . length )  
+command = findCommand ( firstArg )  
+youMustSpecifyACommandToRun ( )  
+private void youMustSpecifyACommandToRun ( )  
+Logger . error ( "You must specify the command to run" )  

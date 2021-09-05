@@ -1,0 +1,22 @@
+if ( next > length )  
+if ( value != null && captor . optionalTrailingSlash && tail [ tail . length - 1 ] == SLASH && next == length + 1 )  
+captor . match ( capture )  
+return null  
+if ( tail [ i ] != path . charAt ( index + 1 + i ) )  
+if ( value != null && captor . optionalTrailingSlash && i == tail . length - 1 && tail [ tail . length - 1 ] == SLASH && path . charAt ( index + 1 + i ) == QUERY )  
+captor . query ( index + 2 + i , length )  
+captor . match ( capture )  
+return null  
+if ( this . value != null && captor . optionalTrailingSlash && c == SLASH )  
+if ( next + 1 == length )  
+captor . match ( capture )  
+return this . value  
+if ( path . charAt ( next + 1 ) == QUERY )  
+captor . match ( capture )  
+captor . query ( next + 2 , length )  
+return this . value  
+assertSucc ( r , m , u + "?query" , t , p , "query" )  
+private void assertFail ( final Router < String > r , final String m , final String u )  
+assertNotFound ( r , m , u )  
+assertNotFound ( r , m , u + "?q" )  
+final Router < String > r = Router . builder ( String . class ) . route ( "GET" , "/1-without-trailing-slash" , "1" ) . route ( "GET" , "/2-without-trailing-slash/<param>" , "2" ) . route ( "GET" , "/3-with-trailing-slash/" , "3" ) . route ( "GET" , "/4-with-trailing-slash/<param>/" , "4" ) . route ( "GET" , "/5-without-trailing-slash-path/<param:path>" , "5" ) . route ( "GET" , "/6-with-trailing-slash-nested/entity/" , "6" ) . route ( "GET" , "/7-with-trailing-slash-nested/entity/<param>" , "7" ) . route ( "GET" , "/8-without-trailing-slash-nested/entity" , "8" ) . route ( "GET" , "/9-without-trailing-slash-nested/entity/<param>" , "9" ) . route ( "GET" , "/1x-ambiguous" , "10" ) . route ( "GET" , "/1x-ambiguous/" , "11" ) . route ( "GET" , "/2x-fork" , "20" ) . route ( "GET" , "/2x-fork/" , "21" ) . route ( "GET" , "/2x-fork/a" , "22" ) . route ( "GET" , "/2x-fork/b" , "23" ) . route ( "GET" , "/2x-fork/<param>" , "24" ) . route ( "GET" , "/" , "25" ) . route ( "GET" , "//" , "26" ) . route ( "GET" , "//<param:path>" , "27" ) . optionalTrailingSlash ( true ) . build ( )  

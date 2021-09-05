@@ -1,0 +1,1 @@
+sequence = sequence . subSequence ( markStart , markEnd + 1 )  

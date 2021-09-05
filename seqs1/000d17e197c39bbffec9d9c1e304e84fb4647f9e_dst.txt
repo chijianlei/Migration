@@ -1,0 +1,4 @@
+result = getBlockPlantPoints ( envParams . getGridSize ( ) , plantPerc , occupied )  
+private ArrayList < GridPoint > getBlockPlantPoints ( int gridSize , double plantPerc , ArrayList < GridPoint > occupied )  
+double numPatches = plantPerc * 100 ; 
+percentSpinner . setModel ( new SpinnerNumberModel ( 0.25 , 0.0 , 1.0 , 0.001 ) )  

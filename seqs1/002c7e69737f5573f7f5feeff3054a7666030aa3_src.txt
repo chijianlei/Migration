@@ -1,0 +1,3 @@
+txtMessage . append ( "This is a notification from Smap server http://" )  
+txtMessage . append ( serverName )  
+txtMessage . append ( ". Do not reply to this email address it is not monitored. If you don't think you should be receiving these then send an email to " )  

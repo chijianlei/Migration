@@ -1,0 +1,14 @@
+player . playSound ( IronBackpacksSounds . open_backpack , 1 F , 1 F )  
+NBTUtils . setUUID ( itemStack )  
+PlayerWearingBackpackCapabilities . setCurrentBackpack ( player , itemStack )  
+boolean sneaking = knownShift ? true : player . isSneaking ( )  
+sneaking = knownShift ? true : player . isSneaking ( )  
+: player . isSneaking ( )  
+if ( ! sneaking )  
+int guiId = ItemIBackpackRegistry . getIndexOf ( ( IBackpack ) itemStack . getItem ( ) )  
+player . openGui ( IronBackpacks . instance , guiId , world , ( int ) player . posX , ( int ) player . posY , ( int ) player . posZ ) ; 
+return new ActionResult ( EnumActionResult . SUCCESS , itemStack )  
+int guiId = ItemIBackpackRegistry . getIndexOf ( ( IBackpack ) itemStack . getItem ( ) )  
+player . openGui ( IronBackpacks . instance , ( guiId * - 1 ) - 1 , world , ( int ) player . posX , ( int ) player . posY , ( int ) player . posZ )  
+openAltGui = true  
+return new ActionResult ( EnumActionResult . SUCCESS , itemStack )  

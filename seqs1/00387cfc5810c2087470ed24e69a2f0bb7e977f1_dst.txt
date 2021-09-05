@@ -1,0 +1,42 @@
+private HashMap < String , CustomerTracks > allCustomers = new HashMap < String , CustomerTracks > ( )  
+public HashMap < String , CustomerTracks > getAllCustomers ( )  
+public void setAllCustomers ( HashMap < String , CustomerTracks > allCustomers )  
+private Date createdDate = new Date ( )  
+jPSeperatorLayout . setHorizontalGroup ( jPSeperatorLayout . createParallelGroup ( javax . swing . GroupLayout . Alignment . LEADING ) . addGroup ( jPSeperatorLayout . createSequentialGroup ( ) . addContainerGap ( ) . addComponent ( jSeparator1 , javax . swing . GroupLayout . DEFAULT_SIZE , 1109 , Short . MAX_VALUE ) ) )  
+jScrollPane1 . setPreferredSize ( new java . awt . Dimension ( 240 , 384 ) )  
+javax . swing . tree . DefaultMutableTreeNode treeNode1 = new javax . swing . tree . DefaultMutableTreeNode ( "Mandanten" )  
+jPanel1Layout . setHorizontalGroup ( jPanel1Layout . createParallelGroup ( javax . swing . GroupLayout . Alignment . LEADING ) . addGroup ( javax . swing . GroupLayout . Alignment . TRAILING , jPanel1Layout . createSequentialGroup ( ) . addGroup ( jPanel1Layout . createParallelGroup ( javax . swing . GroupLayout . Alignment . TRAILING ) . addComponent ( jPCustomorMenue , javax . swing . GroupLayout . Alignment . LEADING , javax . swing . GroupLayout . DEFAULT_SIZE , javax . swing . GroupLayout . DEFAULT_SIZE , Short . MAX_VALUE ) . addComponent ( jPTrackItem , javax . swing . GroupLayout . DEFAULT_SIZE , 773 , Short . MAX_VALUE ) ) . addContainerGap ( ) ) )  
+jPanel1Layout . setVerticalGroup ( jPanel1Layout . createParallelGroup ( javax . swing . GroupLayout . Alignment . LEADING ) . addGroup ( javax . swing . GroupLayout . Alignment . TRAILING , jPanel1Layout . createSequentialGroup ( ) . addComponent ( jPCustomorMenue , javax . swing . GroupLayout . PREFERRED_SIZE , javax . swing . GroupLayout . DEFAULT_SIZE , javax . swing . GroupLayout . PREFERRED_SIZE ) . addPreferredGap ( javax . swing . LayoutStyle . ComponentPlacement . RELATED , javax . swing . GroupLayout . DEFAULT_SIZE , Short . MAX_VALUE ) . addComponent ( jPTrackItem , javax . swing . GroupLayout . PREFERRED_SIZE , javax . swing . GroupLayout . DEFAULT_SIZE , javax . swing . GroupLayout . PREFERRED_SIZE ) . addContainerGap ( ) ) )  
+CustomerTracks ct = new CustomerTracks ( S )  
+private void jTreeCustomerValueChanged ( javax . swing . event . TreeSelectionEvent evt ) { 
+DefaultMutableTreeNode selectedNode = ( DefaultMutableTreeNode ) jTreeCustomer . getLastSelectedPathComponent ( )  
+CustomerTracks CT = ( CustomerTracks ) selectedNode . getUserObject ( )  
+jLKlient . setText ( "Klient: " + userObject . getCustomername ( ) )  
+catch ( ClassCastException e )  
+CustomerTracks userObject = ( CustomerTracks ) selectedNode . getUserObject ( )  
+private void jBStartTimeTrackActionPerformed ( java . awt . event . ActionEvent evt ) { 
+createdDate = new java . util . Date ( )  
+Calendar cal = Calendar . getInstance ( )  
+cal . setTime ( createdDate )  
+jSStartTime . setValue ( createdDate )  
+jLTime . setText ( "Zeit " )  
+timer = new Timer ( )  
+timer . scheduleAtFixedRate ( new TimerTask ( ) { @ Override public void run ( ) { jLTime . setText ( "Zeit " + getAgeInSeconds ( ) ) ; } } , 1000 , 1000 )  
+TimerTask ( )  
+@ Override public void run ( )  
+jLTime . setText ( "Zeit " + getAgeInSeconds ( ) )  
+jLTime . setForeground ( Color . red )  
+private void jBDeleteCustomerActionPerformed ( java . awt . event . ActionEvent evt ) { 
+DefaultMutableTreeNode selectedNode = ( DefaultMutableTreeNode ) jTreeCustomer . getLastSelectedPathComponent ( )  
+CustomerTracks CT = ( CustomerTracks ) selectedNode . getUserObject ( )  
+AllTracks instance = AllTracks . getInstance ( )  
+instance . getAllCustomers ( ) . remove ( CT . getCustomername ( ) )  
+buildTree ( )  
+private javax . swing . JSpinner jSStartTime  
+private javax . swing . JSpinner jSStopTime  
+HashMap < String , CustomerTracks > allCustomers = null  
+allCustomers = ( HashMap < String , CustomerTracks > ) confObjekt  
+catch ( IOException e )  
+CustomerTracks cusomer = ( CustomerTracks ) mentry . getValue ( )  
+CustomerTracks cusomer = ( CustomerTracks ) mentry . getValue ( )  
+CustomerTracks ti = instance . getAllCustomers ( ) . get ( customername )  

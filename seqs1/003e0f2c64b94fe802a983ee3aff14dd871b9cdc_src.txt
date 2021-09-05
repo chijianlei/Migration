@@ -1,0 +1,499 @@
+Intent intent = UserActivity . newIntent ( MainActivity . this , userBean )  
+Intent intent = UserActivity . newIntent ( MainActivity . this , userBean )  
+if ( ! TextUtils . isEmpty ( list . get ( position ) . getDescription ( ) ) )  
+" + userBean.getStatus_count());
+    }
+
+    protected LoadListView getListView(){
+        return listView;
+    }
+
+    @Override
+    public void onRefresh() {
+        if(GlobalContext.getInstance().getAccountBean().getUid().equals(userBean.getId())){
+            refreshMyInfo();
+        }else{
+            refreshLayout.setRefreshing(false);
+        }
+    }
+
+    private void refreshMyInfo() {
+        new Thread(){
+            @Override
+            public void run() {
+                super.run();
+                ShowUserDao dao = new ShowUserDao(GlobalContext.getInstance().getSpecialToken());
+                dao.setUid(userBean.getId());
+                try {
+                    UserBean newuserBean = dao.getUserInfo();
+                    AccountDBTask.asyncUpdateMyProfile(GlobalContext.getInstance().getAccountBean(), newuserBean);
+                    Message msg = Message.obtain();
+                    msg.what = REFRESH_MYINFO;
+                    msg.obj = newuserBean;
+                    handler.sendMessage(msg);
+                } catch (WeiboException e) {
+                    e.printStackTrace();
+                    Message msg = Message.obtain();
+                    msg.what = NETWORK_ERROR;
+                    msg.obj = e.getError();
+                    handler.sendMessage(msg);
+                }
+            }
+        }.start();
+    }
+
+    @Override
+    public void onLoadMore() {
+        asyncLoadOldStatus();
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.follow_list:
+                getActivity().startActivity(FollowerListActivity.newIntent(getActivity(), userBean.getId()));
+                getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.stay);
+                break;
+            case R.id.fan_list:
+                getActivity().startActivity(FanListActivity.newIntent(getActivity(), userBean.getId()));
+                getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.stay);
+                break;
+        }
+    }
+
+    private class MyHandler extends Handler{
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case REFRESH_COMPLETE:
+                    MessageListBean result = new MessageListBean();
+                    result.replaceData((MessageListBean) msg.obj);
+                    adapter.setList(result.getItemList());
+                    list.clear();
+                    list.addAll(result.getItemList());
+                    adapter.notifyDataSetChanged();
+                    listView.getFooterView().show();
+                    refreshLayout.setRefreshing(false);
+                    if (list.size() > 0) {
+                        listView.getFooterView().show();
+                    } else {
+                        listView.getFooterView().hide();
+                    }
+                    break;
+                case LOAD_OLD_STATUSES_COMPLETE:
+                    MessageListBean oldResult = (MessageListBean) msg.obj;
+                    int number = oldResult.getSize();
+                    if (number > 0) {
+                        list.addAll(list.size(), oldResult.getItemList());
+                        adapter.setList(list);
+                        adapter.notifyDataSetChanged();
+                        listView.stopLoadMore();
+                        Toast.makeText(GlobalContext.getInstance(), String.format(getString(R.string.old_messages_count), number), Toast.LENGTH_SHORT).show();
+                    } else {
+                        listView.stopLoadMore();
+                        listView.getFooterView().hide();
+                        listView.setPullLoadEnable(false);
+                        Toast.makeText(GlobalContext.getInstance(), getString(R.string.older_message_empty), Toast.LENGTH_SHORT).show();
+                    }
+                    break;
+                case REFRESH_MYINFO:
+                    UserBean newUserBean = (UserBean) msg.obj;
+                    userBean = newUserBean;
+                    buildContent();
+                    refreshLayout.setRefreshing(false);
+                    break;
+                case NETWORK_ERROR:
+                    listView.stopLoadMore();
+                    refreshLayout.setRefreshing(false);
+                    String errStr = (String) msg.obj;
+                    Toast.makeText(GlobalContext.getInstance(), errStr, Toast.LENGTH_SHORT).show();
+                    break;
+            }
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
+}
+ 
+" + userBean.getStatus_count());
+    }
+
+    protected LoadListView getListView(){
+        return listView;
+    }
+
+    @Override
+    public void onRefresh() {
+        if(GlobalContext.getInstance().getAccountBean().getUid().equals(userBean.getId())){
+            refreshMyInfo();
+        }else{
+            refreshLayout.setRefreshing(false);
+        }
+    }
+
+    private void refreshMyInfo() {
+        new Thread(){
+            @Override
+            public void run() {
+                super.run();
+                ShowUserDao dao = new ShowUserDao(GlobalContext.getInstance().getSpecialToken());
+                dao.setUid(userBean.getId());
+                try {
+                    UserBean newuserBean = dao.getUserInfo();
+                    AccountDBTask.asyncUpdateMyProfile(GlobalContext.getInstance().getAccountBean(), newuserBean);
+                    Message msg = Message.obtain();
+                    msg.what = REFRESH_MYINFO;
+                    msg.obj = newuserBean;
+                    handler.sendMessage(msg);
+                } catch (WeiboException e) {
+                    e.printStackTrace();
+                    Message msg = Message.obtain();
+                    msg.what = NETWORK_ERROR;
+                    msg.obj = e.getError();
+                    handler.sendMessage(msg);
+                }
+            }
+        }.start();
+    }
+
+    @Override
+    public void onLoadMore() {
+        asyncLoadOldStatus();
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.follow_list:
+                getActivity().startActivity(FollowerListActivity.newIntent(getActivity(), userBean.getId()));
+                getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.stay);
+                break;
+            case R.id.fan_list:
+                getActivity().startActivity(FanListActivity.newIntent(getActivity(), userBean.getId()));
+                getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.stay);
+                break;
+        }
+    }
+
+    private class MyHandler extends Handler{
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case REFRESH_COMPLETE:
+                    MessageListBean result = new MessageListBean();
+                    result.replaceData((MessageListBean) msg.obj);
+                    adapter.setList(result.getItemList());
+                    list.clear();
+                    list.addAll(result.getItemList());
+                    adapter.notifyDataSetChanged();
+                    listView.getFooterView().show();
+                    refreshLayout.setRefreshing(false);
+                    if (list.size() > 0) {
+                        listView.getFooterView().show();
+                    } else {
+                        listView.getFooterView().hide();
+                    }
+                    break;
+                case LOAD_OLD_STATUSES_COMPLETE:
+                    MessageListBean oldResult = (MessageListBean) msg.obj;
+                    int number = oldResult.getSize();
+                    if (number > 0) {
+                        list.addAll(list.size(), oldResult.getItemList());
+                        adapter.setList(list);
+                        adapter.notifyDataSetChanged();
+                        listView.stopLoadMore();
+                        Toast.makeText(GlobalContext.getInstance(), String.format(getString(R.string.old_messages_count), number), Toast.LENGTH_SHORT).show();
+                    } else {
+                        listView.stopLoadMore();
+                        listView.getFooterView().hide();
+                        listView.setPullLoadEnable(false);
+                        Toast.makeText(GlobalContext.getInstance(), getString(R.string.older_message_empty), Toast.LENGTH_SHORT).show();
+                    }
+                    break;
+                case REFRESH_MYINFO:
+                    UserBean newUserBean = (UserBean) msg.obj;
+                    userBean = newUserBean;
+                    buildContent();
+                    refreshLayout.setRefreshing(false);
+                    break;
+                case NETWORK_ERROR:
+                    listView.stopLoadMore();
+                    refreshLayout.setRefreshing(false);
+                    String errStr = (String) msg.obj;
+                    Toast.makeText(GlobalContext.getInstance(), errStr, Toast.LENGTH_SHORT).show();
+                    break;
+            }
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
+}
+ 
+" + userBean.getStatus_count());
+    }
+
+    protected LoadListView getListView(){
+        return listView;
+    }
+
+    @Override
+    public void onRefresh() {
+        if(GlobalContext.getInstance().getAccountBean().getUid().equals(userBean.getId())){
+            refreshMyInfo();
+        }else{
+            refreshLayout.setRefreshing(false);
+        }
+    }
+
+    private void refreshMyInfo() {
+        new Thread(){
+            @Override
+            public void run() {
+                super.run();
+                ShowUserDao dao = new ShowUserDao(GlobalContext.getInstance().getSpecialToken());
+                dao.setUid(userBean.getId());
+                try {
+                    UserBean newuserBean = dao.getUserInfo();
+                    AccountDBTask.asyncUpdateMyProfile(GlobalContext.getInstance().getAccountBean(), newuserBean);
+                    Message msg = Message.obtain();
+                    msg.what = REFRESH_MYINFO;
+                    msg.obj = newuserBean;
+                    handler.sendMessage(msg);
+                } catch (WeiboException e) {
+                    e.printStackTrace();
+                    Message msg = Message.obtain();
+                    msg.what = NETWORK_ERROR;
+                    msg.obj = e.getError();
+                    handler.sendMessage(msg);
+                }
+            }
+        }.start();
+    }
+
+    @Override
+    public void onLoadMore() {
+        asyncLoadOldStatus();
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.follow_list:
+                getActivity().startActivity(FollowerListActivity.newIntent(getActivity(), userBean.getId()));
+                getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.stay);
+                break;
+            case R.id.fan_list:
+                getActivity().startActivity(FanListActivity.newIntent(getActivity(), userBean.getId()));
+                getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.stay);
+                break;
+        }
+    }
+
+    private class MyHandler extends Handler{
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case REFRESH_COMPLETE:
+                    MessageListBean result = new MessageListBean();
+                    result.replaceData((MessageListBean) msg.obj);
+                    adapter.setList(result.getItemList());
+                    list.clear();
+                    list.addAll(result.getItemList());
+                    adapter.notifyDataSetChanged();
+                    listView.getFooterView().show();
+                    refreshLayout.setRefreshing(false);
+                    if (list.size() > 0) {
+                        listView.getFooterView().show();
+                    } else {
+                        listView.getFooterView().hide();
+                    }
+                    break;
+                case LOAD_OLD_STATUSES_COMPLETE:
+                    MessageListBean oldResult = (MessageListBean) msg.obj;
+                    int number = oldResult.getSize();
+                    if (number > 0) {
+                        list.addAll(list.size(), oldResult.getItemList());
+                        adapter.setList(list);
+                        adapter.notifyDataSetChanged();
+                        listView.stopLoadMore();
+                        Toast.makeText(GlobalContext.getInstance(), String.format(getString(R.string.old_messages_count), number), Toast.LENGTH_SHORT).show();
+                    } else {
+                        listView.stopLoadMore();
+                        listView.getFooterView().hide();
+                        listView.setPullLoadEnable(false);
+                        Toast.makeText(GlobalContext.getInstance(), getString(R.string.older_message_empty), Toast.LENGTH_SHORT).show();
+                    }
+                    break;
+                case REFRESH_MYINFO:
+                    UserBean newUserBean = (UserBean) msg.obj;
+                    userBean = newUserBean;
+                    buildContent();
+                    refreshLayout.setRefreshing(false);
+                    break;
+                case NETWORK_ERROR:
+                    listView.stopLoadMore();
+                    refreshLayout.setRefreshing(false);
+                    String errStr = (String) msg.obj;
+                    Toast.makeText(GlobalContext.getInstance(), errStr, Toast.LENGTH_SHORT).show();
+                    break;
+            }
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
+}
+ 
+" + userBean.getStatus_count());
+    }
+
+    protected LoadListView getListView(){
+        return listView;
+    }
+
+    @Override
+    public void onRefresh() {
+        if(GlobalContext.getInstance().getAccountBean().getUid().equals(userBean.getId())){
+            refreshMyInfo();
+        }else{
+            refreshLayout.setRefreshing(false);
+        }
+    }
+
+    private void refreshMyInfo() {
+        new Thread(){
+            @Override
+            public void run() {
+                super.run();
+                ShowUserDao dao = new ShowUserDao(GlobalContext.getInstance().getSpecialToken());
+                dao.setUid(userBean.getId());
+                try {
+                    UserBean newuserBean = dao.getUserInfo();
+                    AccountDBTask.asyncUpdateMyProfile(GlobalContext.getInstance().getAccountBean(), newuserBean);
+                    Message msg = Message.obtain();
+                    msg.what = REFRESH_MYINFO;
+                    msg.obj = newuserBean;
+                    handler.sendMessage(msg);
+                } catch (WeiboException e) {
+                    e.printStackTrace();
+                    Message msg = Message.obtain();
+                    msg.what = NETWORK_ERROR;
+                    msg.obj = e.getError();
+                    handler.sendMessage(msg);
+                }
+            }
+        }.start();
+    }
+
+    @Override
+    public void onLoadMore() {
+        asyncLoadOldStatus();
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.follow_list:
+                getActivity().startActivity(FollowerListActivity.newIntent(getActivity(), userBean.getId()));
+                getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.stay);
+                break;
+            case R.id.fan_list:
+                getActivity().startActivity(FanListActivity.newIntent(getActivity(), userBean.getId()));
+                getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.stay);
+                break;
+        }
+    }
+
+    private class MyHandler extends Handler{
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case REFRESH_COMPLETE:
+                    MessageListBean result = new MessageListBean();
+                    result.replaceData((MessageListBean) msg.obj);
+                    adapter.setList(result.getItemList());
+                    list.clear();
+                    list.addAll(result.getItemList());
+                    adapter.notifyDataSetChanged();
+                    listView.getFooterView().show();
+                    refreshLayout.setRefreshing(false);
+                    if (list.size() > 0) {
+                        listView.getFooterView().show();
+                    } else {
+                        listView.getFooterView().hide();
+                    }
+                    break;
+                case LOAD_OLD_STATUSES_COMPLETE:
+                    MessageListBean oldResult = (MessageListBean) msg.obj;
+                    int number = oldResult.getSize();
+                    if (number > 0) {
+                        list.addAll(list.size(), oldResult.getItemList());
+                        adapter.setList(list);
+                        adapter.notifyDataSetChanged();
+                        listView.stopLoadMore();
+                        Toast.makeText(GlobalContext.getInstance(), String.format(getString(R.string.old_messages_count), number), Toast.LENGTH_SHORT).show();
+                    } else {
+                        listView.stopLoadMore();
+                        listView.getFooterView().hide();
+                        listView.setPullLoadEnable(false);
+                        Toast.makeText(GlobalContext.getInstance(), getString(R.string.older_message_empty), Toast.LENGTH_SHORT).show();
+                    }
+                    break;
+                case REFRESH_MYINFO:
+                    UserBean newUserBean = (UserBean) msg.obj;
+                    userBean = newUserBean;
+                    buildContent();
+                    refreshLayout.setRefreshing(false);
+                    break;
+                case NETWORK_ERROR:
+                    listView.stopLoadMore();
+                    refreshLayout.setRefreshing(false);
+                    String errStr = (String) msg.obj;
+                    Toast.makeText(GlobalContext.getInstance(), errStr, Toast.LENGTH_SHORT).show();
+                    break;
+            }
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
+}
+ 

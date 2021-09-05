@@ -1,0 +1,2 @@
+public final static String STRINGREP_SIMPLESHORT = "dd.MM.yy HH:mm" ; 
+public final static String STRINGREP_SIMPLESHORTDATE = "dd.MM.yy" ; 

@@ -1,0 +1,6 @@
+if ( ! sender . hasPermission ( "deathspawn.reload" ) )  
+plugin . messageManager . sendPlayerMessage ( sender , "command-success-set-discoverymessage" , deathSpawn . getDisplayName ( ) )  
+deathSpawn . setRespawnMessage ( respawnMessage )  
+plugin . messageManager . sendPlayerMessage ( sender , "command-success-set-respawnmessage" , deathSpawn . getDisplayName ( ) )  
+player . sendMessage ( ChatColor . translateAlternateColorCodes ( '&' , deathSpawn . getDiscoveryMessage ( ) ) )  
+player . sendMessage ( ChatColor . translateAlternateColorCodes ( '&' , closest . getRespawnMessage ( ) ) )  

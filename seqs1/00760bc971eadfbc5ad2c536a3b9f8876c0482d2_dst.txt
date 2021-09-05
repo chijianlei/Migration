@@ -1,0 +1,8 @@
+return ResponseEntity . ok ( statisticService . getMoneyStatistics ( ) )  
+List < Map > getMoneyStatistics ( )  
+@ Override public List < Map > getMoneyStatistics ( )  
+@ RunWith ( SpringJUnit4ClassRunner . class ) @ SpringBootTest public class StatisticServiceTest  
+List < Map > statisctics = statisticService . getMoneyStatistics ( )  
+@ Test public void getBoughtDepartureStatistics ( )  
+@ Test public void getBoughtArrivalStatistics ( )  
+List < Map > statisctics = statisticService . getBoughtStationArrivalStatistics ( )  

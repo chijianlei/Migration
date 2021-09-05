@@ -1,0 +1,4 @@
+int returnCode = res . getReturnValue ( ) . getReturnCode ( )  
+return Result . finished ( result )  
+return Result . failed ( result )  
+catch ( Throwable e )  

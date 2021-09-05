@@ -1,0 +1,2 @@
+catch ( XmlPullParserException | IOException | NumberFormatException e )  
+IoUtils . closeQuietly ( str )  

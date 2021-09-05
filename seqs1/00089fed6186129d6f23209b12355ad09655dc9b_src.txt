@@ -1,0 +1,1 @@
+this . setcontrol ( "Monster Search" )  

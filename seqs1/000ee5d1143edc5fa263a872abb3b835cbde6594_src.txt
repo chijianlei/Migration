@@ -1,0 +1,3 @@
+if ( index == champions . size ( ) )  
+return index == champions . size ( )  
+if ( index == champions . size ( ) )  

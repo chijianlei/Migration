@@ -1,0 +1,5 @@
+public static double rint ( double d )  
+if ( Double . isInfinite ( d ) )  
+return round ( d )  
+if ( obj1 == obj2 )  
+if ( obj1 == obj2 )  

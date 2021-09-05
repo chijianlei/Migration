@@ -1,0 +1,8 @@
+onDiscoverPopularMovie ( )  
+EditText searchEditText = ( EditText ) MenuItemCompat . getActionView ( menu . findItem ( R . id . action_search ) )  
+onSearchPoster ( searchString )  
+private List < Poster > posterList = new ArrayList < > ( )  
+private static int POSTER_THUMBNAIL_WIDTH = 1000  
+@ Override public View getView ( int position , View convertView , ViewGroup parent )  
+ImageView imageView  
+Log . i ( TAG , MoviePosterUrl . getPosterUrl ( poster . getImagePath ( ) , MoviePosterUrl . MoviePosterSize . SMALL ) )  

@@ -1,0 +1,9 @@
+private static final String DATABASE_NAME = "hackathon.db"  
+String [ ] image = practiceModel . getImage ( ) . split ( "," )  
+byte [ ] decodeByte = Base64 . decode ( image [ 1 ] , Base64 . DEFAULT )  
+Bitmap bitmap = BitmapFactory . decodeByteArray ( decodeByte , 0 , decodeByte . length )  
+givImage . setImageBitmap ( bitmap )  
+@ Override public void onClick ( View v )  
+if ( v == btStart )  
+tvCountDown . setVisibility ( View . VISIBLE )  
+btStart . setText ( "STOP" )  

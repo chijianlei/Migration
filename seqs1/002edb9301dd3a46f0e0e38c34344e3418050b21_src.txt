@@ -1,0 +1,2 @@
+@ NotNull @ Column ( name = "contragent_id" , nullable = false ) private Integer contragentId ; 
+@ NotNull @ Column ( name = "authorization_time" ) private LocalDateTime authorizationTime ; 

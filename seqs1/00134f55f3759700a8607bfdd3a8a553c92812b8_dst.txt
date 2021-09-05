@@ -1,0 +1,2 @@
+catch ( IOException e )  
+App . logger . error ( e , "Error reading simple metric store persisted file:%s. Will reset this file" , file . getAbsolutePath ( ) )  

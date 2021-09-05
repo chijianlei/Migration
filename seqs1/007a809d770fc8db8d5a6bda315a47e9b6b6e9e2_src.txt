@@ -1,0 +1,18 @@
+{ 0 , 5 , 12 , 12 } , 
+{ 0 , 5 , 12 , 12 } , 
+
+
+fw = new FileWriter ( file )  
+bw . flush ( )  
+e . printStackTrace ( )  
+ 
+count ++  
+
+} else  
+
+public static void main ( String [ ] args )  
+getFaults ( i )  
+public static void getFaults ( int faultNum )  
+file = new File ( "/home/taozhi/LED_IDFA/possibleDeletaD.txt" )  
+resultFile = new File ( "/Users/taozhi/LED_IDFA/results/result" + faultNum + ".txt " )  
+ResultTemplate resultTemplate = led . findKey ( D , lineNum )  

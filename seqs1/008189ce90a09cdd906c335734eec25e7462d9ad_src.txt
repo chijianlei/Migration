@@ -1,0 +1,22 @@
+saveCallRecord ( 0 )  
+catch ( Exception e )  
+saveCallRecord ( 0 )  
+catch ( Exception e1 )  
+saveCallRecord ( 0 )  
+catch ( Exception e )  
+saveCallRecord ( 0 )  
+message . setFrom ( username )  
+
+
+saveCallRecord ( 1 )  
+isAnswered = true  
+isHandsfreeState = true  
+
+e . printStackTrace ( )  
+saveCallRecord ( 1 )  
+finish ( )  
+
+break  
+try { Thread . sleep ( 1500 ) ; } catch ( InterruptedException e ) { }  
+break ; case R . id . btn_answer_call : answerBtn . setEnabled ( false ) ; callStateTextView . setText ( "姝ｅ湪鎺ュ惉..." ) ; handler . sendEmptyMessage ( MSG_CALL_ANSWER ) ; comingBtnContainer . setVisibility ( View . INVISIBLE ) ; hangupBtn . setVisibility ( View . VISIBLE ) ; voiceContronlLayout . setVisibility ( View . VISIBLE ) ; break ; case R . id . btn_hangup_call : hangupBtn . setEnabled ( false ) ; chronometer . stop ( ) ; endCallTriggerByMe = true ; callStateTextView . setText ( getResources ( ) . getString ( R . string . hanging_up ) ) ; handler . sendEmptyMessage ( MSG_CALL_END ) ; break ; case R . id . iv_mute : muteImage . setImageResource ( R . drawable . em_icon_mute_normal ) ; audioManager . setMicrophoneMute ( false ) ; isMuteState = false ; } else { muteImage . setImageResource ( R . drawable . em_icon_mute_on ) ; audioManager . setMicrophoneMute ( true ) ; isMuteState = true ; } break ; case R . id . iv_handsfree : handsFreeImage . setImageResource ( R . drawable . em_icon_speaker_normal ) ; closeSpeakerOn ( ) ; isHandsfreeState = false ; } else { handsFreeImage . setImageResource ( R . drawable . em_icon_speaker_on ) ; openSpeakerOn ( ) ; isHandsfreeState = true ; } break ; default : break ; } } @ Override public void onBackPressed ( ) { callDruationText = chronometer . getText ( ) . toString ( )  
+

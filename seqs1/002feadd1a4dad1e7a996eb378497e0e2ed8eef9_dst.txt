@@ -1,0 +1,6 @@
+myMpsProject . getModelAccess ( ) . runWriteAction ( ( ) -> mySolution . setModuleDescriptor ( configurationBean . getSolutionDescriptor ( ) ) )  
+ApplicationManager . getApplication ( ) . getComponent ( JdkStubSolutionManager . class ) . claimSdk ( myModule )  
+catch ( final DifferentSdkException e )  
+myModule . getProject ( ) . getComponent ( MultipleSdkProblemNotifier . class ) . reportSdkProblem ( myModule , e )  
+myModule . getProject ( ) . getComponent ( MultipleSdkProblemNotifier . class ) . reportSdkProblem ( myModule , e )  
+private final SModelListener MODEL_RUNTIME_IMPORTER = new SModelAdapter ( )  

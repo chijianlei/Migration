@@ -1,0 +1,8 @@
+sendUpdatePacket ( )  
+this . worldObj . setBlockState ( pos , ProgressionBlocks . FIRE_PIT_UNLIT . getDefaultState ( ) )  
+sendUpdatePacket ( )  
+NetworkManager . getSimpleNetwork ( ProgressionCore . instance ) . sendToAll ( new PacketUdateFirePit ( getItemCooking ( ) , getBurnTimeLeft ( ) , getCookTimeLeft ( ) , getPos ( ) . getX ( ) , getPos ( ) . getY ( ) , getPos ( ) . getZ ( ) ) )  
+this . cooking = stack . copy ( )  
+this . worldObj . setBlockState ( pos , ProgressionBlocks . FIRE_PIT_LIT . getDefaultState ( ) )  
+this . validate ( )  
+this . worldObj . setTileEntity ( pos , this )  

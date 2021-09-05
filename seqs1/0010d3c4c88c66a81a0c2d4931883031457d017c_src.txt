@@ -1,0 +1,4 @@
+sCommand = "cmd /c java -jar jenkins-cli.jar -s \"" + sRootURL + "\""  
+sCommand = sCommand + " create-job \"" + jobName + "\" < \"" + sourceXML + "\""  
+JenkinsCLIWrapper jenks = new JenkinsCLIWrapper ( "http://localhost:8080" )  
+jenks . CreateFolder ( "Oi Fefe folder" )  

@@ -1,0 +1,2 @@
+assertThat ( expected . getMessage ( ) ) . contains ( "Failed to fetch Maven dependency:" )  
+assertThat ( expected . getMessage ( ) ) . contains ( "Failed to fetch Maven dependency:" )  

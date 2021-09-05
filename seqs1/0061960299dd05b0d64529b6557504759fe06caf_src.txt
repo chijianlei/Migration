@@ -1,0 +1,1 @@
+@ ManagedProperty ( value = "#{ditta}" ) private Ditta ditta = new Ditta ( )  

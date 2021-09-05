@@ -1,0 +1,20 @@
+switch ( id ) { case android . R . id . home : onBackPressed ( ) ; break ; case R . id . action_settings : break ; case R . id . action_synchronize : break ; case R . id . action_update : checkApplicationUpdates ( true ) ; break ; case R . id . action_send_mail : sendMail ( ) ; break ; case R . id . action_interviewer : openInterviewerInfo ( ) ; break ; case R . id . action_device : openDeviceInfo ( ) ; break  
+downloadSurveyFormList ( )  
+mDeleteInstancesTask = ( DeleteInstancesTask ) getLastNonConfigurationInstance ( )  
+runDiskSynchronizationTask ( )  
+switch ( item . getItemId ( ) ) { case R . id . action_interviewer_profile : Collect . getInstance ( ) . getActivityLogger ( ) . logAction ( this , "onOptionsItemSelected" , "MENU_PREFERENCES" ) ; startActivity ( new Intent ( FormChooserList . this , org . odk . collect . android . activities . InterviewerActivity . class ) ) ; break ; case R . id . action_update : checkApplicationUpdates ( true ) ; break ; case R . id . action_send_mail : sendMail ( ) ; break ; case R . id . action_device : startActivity ( new Intent ( this , DeviceActivity . class ) ) ; break ; case R . id . action_synchronize : synchronize ( ) ; break  
+if ( id == DATA_LIST_VIEW_ID )  
+mDataList . clear ( )  
+String sortOrder = InstanceProviderAPI . InstanceColumns . STATUS + " DESC, " + InstanceProviderAPI . InstanceColumns . DISPLAY_NAME + " ASC"  
+return new CursorLoader ( this , InstanceProviderAPI . InstanceColumns . CONTENT_URI , null , null , null , sortOrder )  
+String sortOrder = FormsColumns . DISPLAY_NAME + " ASC, " + FormsColumns . JR_VERSION + " DESC"  
+return new CursorLoader ( this , FormsColumns . CONTENT_URI , null , null , null , sortOrder )  
+List < Long > dataIdList = new ArrayList < > ( data . getCount ( ) )  
+runInstanceUploaderTask ( dataIdList . toArray ( new Long [ dataIdList . size ( ) ] ) )  
+if ( mConstructor == null ) 
+mConstructor = new DialogConstructor ( this )  
+mConstructor . updateDialog ( getString ( R . string . uploading_data ) , "Uploading data..." )  
+getSupportLoaderManager ( ) . initLoader ( INSTANCE_DATA_LIST_ID , null , this )  
+if ( totalCount > 0 )  
+mConstructor . stopAnimation ( )  
+if ( ! name . equals ( mFormData . get ( ids . get ( i ) ) . formName ) )  

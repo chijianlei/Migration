@@ -1,0 +1,52 @@
+MintChatBot parent = MintChatBot . getInstance ( )  
+ChatBotConfig config = parent . getCBConfig ( )  
+Player player = event . getPlayer ( )  
+Messages messages = parent . getMessages ( )  
+VaultChatBridge vaultchat = parent . getVaultChat ( )  
+String responce  
+if ( ! player . hasPlayedBefore ( ) )  
+responce = messages . getResponceIfMatch ( "firstJoinResponce" )  
+responce = messages . getResponceIfMatch ( "joinResponce" )  
+if ( responce == null || responce . equals ( "" ) )  
+responce = responce . replace ( "%player" , player . getName ( ) )  
+if ( vaultchat != null )  
+responce = responce . replace ( "%prefix" , vaultchat . getPlayerPrefix ( player ) )  
+responce = responce . replace ( "%suffix" , vaultchat . getPlayerSuffix ( player ) )  
+responce = responce . replace ( "%prefix" , "" )  
+responce = responce . replace ( "%suffix" , "" )  
+final String msg = responce  
+new BukkitRunnable ( ) { public void run ( ) { MintChatBot . getInstance ( ) . say ( msg ) ; } } . runTaskLater ( parent , config . getResponceDelayTicks ( ) )  
+BukkitRunnable ( )  
+public void run ( )  
+MintChatBot . getInstance ( ) . say ( msg )  
+Configuration . Builder < PircBotX > builder = new Configuration . Builder < PircBotX > ( )  
+builder . setServer ( config . getServerHostname ( ) , config . getServerPort ( ) )  
+public class IRCListener extends ListenerAdapter < PircBotX > implements Listener  
+@ Override public void onConnect ( ConnectEvent < PircBotX > event ) throws Exception  
+@ Override public void onDisconnect ( DisconnectEvent < PircBotX > event ) throws Exception  
+@ Override public void onJoin ( JoinEvent < PircBotX > event ) throws Exception  
+@ Override public void onKick ( KickEvent < PircBotX > event ) throws Exception  
+@ Override public void onPart ( PartEvent < PircBotX > event ) throws Exception  
+@ Override public void onQuit ( QuitEvent < PircBotX > event ) throws Exception  
+@ Override public void onMessage ( MessageEvent < PircBotX > event ) throws Exception  
+@ EventHandler ( priority = EventPriority . MONITOR , ignoreCancelled = true ) public void onPlayerChat ( AsyncPlayerChatEvent event )  
+String format = plugin . getMessages ( ) . getResponceIfMatch ( "minecraft_chat" )  
+String message = IRCColor . convRES2IRC ( format . replace ( "%name" , event . getPlayer ( ) . getName ( ) ) . replace ( "%message" , event . getMessage ( ) ) )  
+bot . sendIRC ( ) . message ( config . getChannel ( ) , message )  
+@ EventHandler ( priority = EventPriority . MONITOR , ignoreCancelled = true ) public void onPlayerJoin ( PlayerJoinEvent event )  
+String format = plugin . getMessages ( ) . getResponceIfMatch ( "minecraft_join" )  
+String message = IRCColor . convRES2IRC ( format . replace ( "%name" , event . getPlayer ( ) . getName ( ) ) )  
+bot . sendIRC ( ) . message ( config . getChannel ( ) , message )  
+@ EventHandler ( priority = EventPriority . MONITOR , ignoreCancelled = true ) public void onPlayerQuit ( PlayerQuitEvent event )  
+String format = plugin . getMessages ( ) . getResponceIfMatch ( "minecraft_quit" )  
+String message = IRCColor . convRES2IRC ( format . replace ( "%name" , event . getPlayer ( ) . getName ( ) ) )  
+bot . sendIRC ( ) . message ( config . getChannel ( ) , message )  
+@ EventHandler ( priority = EventPriority . MONITOR , ignoreCancelled = true ) public void onPlayerKick ( PlayerKickEvent event )  
+String format = plugin . getMessages ( ) . getResponceIfMatch ( "minecraft_kick" )  
+String message = IRCColor . convRES2IRC ( format . replace ( "%name" , event . getPlayer ( ) . getName ( ) ) . replace ( "%reason" , event . getReason ( ) ) )  
+bot . sendIRC ( ) . message ( config . getChannel ( ) , message )  
+public void onLunaChat ( String name , String message )  
+String format = plugin . getMessages ( ) . getResponceIfMatch ( "minecraft_chat" )  
+String msg = IRCColor . convRES2IRC ( format . replace ( "%name" , name ) . replace ( "%message" , message ) )  
+bot . sendIRC ( ) . message ( config . getChannel ( ) , msg )  
+public void say ( String message )  

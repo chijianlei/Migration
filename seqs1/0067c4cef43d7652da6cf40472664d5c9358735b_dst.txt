@@ -1,0 +1,2 @@
+if ( this . choosenPaymentReceiptFile != null )  
+studentPaymentTableModel . setPaymentReceiptFilePath ( new PaymentTabUtil ( ) . updatePaymentReceipt ( this . studentPaymentTableModel . getPaymentReceiptFilePath ( ) , this . choosenPaymentReceiptFile , this . studentPaymentTableModel . getId ( ) ) )  

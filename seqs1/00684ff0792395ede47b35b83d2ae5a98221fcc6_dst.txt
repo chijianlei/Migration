@@ -1,0 +1,8 @@
+public static class BookList extends ArrayList < Book >  
+public void add ( String title , String author , String publisher , String date )  
+Book book = new Book ( )  
+book . title = title  
+book . author = author  
+book . publisher = publisher  
+book . date = date  
+super . add ( book )  

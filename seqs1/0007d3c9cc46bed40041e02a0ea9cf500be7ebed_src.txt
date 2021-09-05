@@ -1,0 +1,12 @@
+isDataGot = false  
+tv_alert_dialog_button . setOnClickListener ( new View . OnClickListener ( ) { @ Override public void onClick ( View v ) { setMarkersData ( ) ; mDialog . dismiss ( ) ; } } )  
+View . OnClickListener ( )  
+@ Override public void onClick ( View v )  
+setMarkersData ( )  
+mDialog . dismiss ( )  
+if ( mMap != null )  
+mMap . clear ( )  
+if ( locationSpeedModel . getIgnition ( ) == 1 )  
+myMarker = mMap . addMarker ( new MarkerOptions ( ) . icon ( BitmapDescriptorFactory . fromResource ( R . drawable . vehicle_ignition_on_marker ) ) . position ( mLatLng ) )  
+myMarker = mMap . addMarker ( new MarkerOptions ( ) . icon ( BitmapDescriptorFactory . fromResource ( R . drawable . vehicle_ignition_off_marker ) ) . position ( mLatLng ) )  
+mMap . moveCamera ( CameraUpdateFactory . newLatLng ( mLatLng ) )  

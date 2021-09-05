@@ -1,0 +1,9 @@
+RecyclerView . ViewHolder holder = null  
+listView = ( ListView ) getView ( ) . findViewById ( R . id . listView_fragment_courseList )  
+listView . setOnItemClickListener ( new AdapterView . OnItemClickListener ( ) { @ Override public void onItemClick ( AdapterView < ? > parent , View view , int position , long id ) { cadapter . notifyDataSetChanged ( ) ; listView . getChildAt ( position ) . setBackgroundColor ( Color . parseColor ( "#ffabf6" ) ) ; TextView tv_courseName = ( TextView ) view . findViewById ( R . id . tv_courseName ) ; String stv_courseName = tv_courseName . getText ( ) . toString ( ) . trim ( ) ; TextView tv_coureID = ( TextView ) view . findViewById ( R . id . tv_coureID ) ; String stv_coureID = tv_coureID . getText ( ) . toString ( ) ; Log . i ( "position" , position + "" ) ; RelativeLayout relativeLayout = ( RelativeLayout ) view . findViewById ( R . id . background_layout ) ; if ( selectedCourses . contains ( stv_courseName ) ) { selectedCourses . remove ( stv_courseName ) ; if ( selectedCourses . size ( ) == 0 ) { btn_sendReq . setVisibility ( View . GONE ) ; } } else { relativeLayout . setBackgroundColor ( Color . parseColor ( "#FFFFECB8" ) ) ; if ( selectedCourses . size ( ) > 0 ) { btn_sendReq . setVisibility ( View . VISIBLE ) ; } } cadapter . notifyDataSetChanged ( ) ; Log . i ( "log" , selectedCourses . toString ( ) ) ; } } )  
+listView . getChildAt ( position ) . setBackgroundColor ( Color . parseColor ( "#ffabf6" ) )  
+relativeLayout . setBackgroundColor ( Color . parseColor ( "#FFFFECB8" ) )  
+Log . i ( "log" , selectedCourses . toString ( ) )  
+listView . setAdapter ( cadapter )  
+FragmentTransaction frm = fragmentManager . beginTransaction ( ) . replace ( R . id . content , new RecylceBased_couseListFragment ( ) )  
+FragmentTransaction frm = fragmentManager . beginTransaction ( ) . replace ( R . id . content , new RecylceBased_couseListFragment ( ) )  

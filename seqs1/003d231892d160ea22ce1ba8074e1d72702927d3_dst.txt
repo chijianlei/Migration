@@ -1,0 +1,17 @@
+for ( i = 0 ; i < q1 ; i ++ ) 
+if ( cnt [ newa [ i ] ] == 0 ) cnt [ newa [ i ] ] = 1  
+if ( cnt [ newa [ i ] ] == 0 ) cnt [ newa [ i ] ] = 1  
+newa [ i ] = oldb [ p1 ]  
+while ( cnt [ olda [ p1 ] ] == 1 && p1 < q2 ) p1 ++  
+for ( i = q2 ; i < n ; i ++ ) 
+if ( cnt [ newa [ i ] ] == 0 ) cnt [ newa [ i ] ] = 1  
+if ( cnt [ newa [ i ] ] == 0 ) cnt [ newa [ i ] ] = 1  
+newa [ i ] = oldb [ p1 ]  
+while ( cnt [ oldb [ p1 ] ] == 1 && p1 < q2 ) p1 ++  
+for ( i = q2 ; i < n ; i ++ ) 
+if ( cnt [ newb [ i ] ] == 0 ) cnt [ newb [ i ] ] = 1  
+if ( cnt [ newb [ i ] ] == 0 ) cnt [ newb [ i ] ] = 1  
+newb [ i ] = olda [ p1 ]  
+while ( cnt [ oldb [ p1 ] ] == 1 && p1 < q2 ) p1 ++  
+for ( i = 0 ; i < q1 ; i ++ ) 
+while ( cnt [ olda [ p1 ] ] == 1 && p1 < q2 ) p1 ++  

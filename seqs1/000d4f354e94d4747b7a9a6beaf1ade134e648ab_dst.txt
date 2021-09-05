@@ -1,0 +1,6 @@
+private static final Pattern volumePattern = Pattern . compile ( "^([\\w\\-]+):( *[\\d]+ \\/)? *([\\d]+)% *\\/? *([\\d\\-., dB]+)?$" )  
+source . setMonitorOf ( client . getSink ( Integer . valueOf ( properties . get ( "monitor_of" ) ) ) )  
+private static int parseVolume ( String vol )  
+Matcher matcher = volumePattern . matcher ( channel . trim ( ) )  
+if ( matcher . find ( ) )  
+return 0  

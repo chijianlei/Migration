@@ -1,0 +1,5 @@
+final Observable < Lesson > call = MediaStoreService . contentStore . fetchContent ( )  
+Log . i ( TAG , "Api call success" )  
+Log . i ( TAG , "in error" )  
+Log . i ( TAG , e . toString ( ) )  
+Log . i ( TAG , lesson . getTitle ( ) )  

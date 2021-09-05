@@ -1,0 +1,6 @@
+private static String [ ] ROOM_NUMBERS = { "1206" , "1408" , "1301" }  
+public static void main ( String [ ] args ) throws Exception  
+HotelAvailability avail = getAvailability ( )  
+ExcelWriter . main ( avail )  
+availability . put ( specificDate , markAsAvailable )  
+Calendar date = new GregorianCalendar ( startingYear , yearMonth . getMonth ( ) . getValue ( ) - 1 , i ) ; 

@@ -1,0 +1,5 @@
+private RuntimeExceptionDao < Card , String > cardDao  
+private RuntimeExceptionDao < Card , String > cardDao  
+public CardFactory ( RuntimeExceptionDao < Card , String > cardDao )  
+card . setId ( UUID . randomUUID ( ) . toString ( ) )  
+card . setId ( "card-id" )  

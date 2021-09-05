@@ -1,0 +1,10 @@
+static final int MOVIE_API_MODE_POPULAR = 0  
+static final int MOVIE_API_MODE_TOPRATED = 1  
+SharedPreferences preferences = PreferenceManager . getDefaultSharedPreferences ( getActivity ( ) )  
+if ( preferences . contains ( MOVIE_API_PREFERENCE ) )  
+mApiMode = preferences . getInt ( MOVIE_API_PREFERENCE , MOVIE_API_MODE_TOPRATED )  
+@ Override public void onCreate ( Bundle savedInstanceState )  
+super . onCreate ( savedInstanceState )  
+setHasOptionsMenu ( true )  
+( mApiMode == MOVIE_API_MODE_TOPRATED ) ? 
+Uri uri = Uri . parse ( movieApiUrl ) . buildUpon ( ) . appendQueryParameter ( KEY_PARAM , key ) . build ( )  

@@ -1,0 +1,1 @@
+selectionMode == SELECTION_MODE_SINGLE && adapter . getSelectedDates ( ) . size ( ) > 0 

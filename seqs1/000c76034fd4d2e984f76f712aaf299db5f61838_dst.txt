@@ -1,0 +1,5 @@
+public static final float GRAVITY = - 2.5f  
+public static final float WORLD_UNIT = 1 / 32 f  
+private EmptyActorLight healthBar  
+private EmptyActorLight instructions  
+parallaxBackground . addLayers ( downtownNairobiLayer , uptownNairobiLayer )  

@@ -1,0 +1,3 @@
+int startTime = tt . getArrivalTime ( 0 )  
+dwellTimes [ i ] = tt . getDepartureTime ( i ) - tt . getArrivalTime ( i )  
+hopTimes [ i ] = tt . getArrivalTime ( i + 1 ) - tt . getDepartureTime ( i )  

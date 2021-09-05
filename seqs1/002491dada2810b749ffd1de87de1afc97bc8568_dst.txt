@@ -1,0 +1,16 @@
+private void parseMpoData ( )  
+bShow3DButton = false  
+if ( mParseMpoDateTask . getStatus ( ) != AsyncTask . Status . FINISHED )  
+boolean r = mParseMpoDateTask . cancel ( true )  
+mParseMpoDateTask = new ParseMpoDataTask ( )  
+mParseMpoDateTask . execute ( )  
+DoNotShowAgainDialog dialog = new DoNotShowAgainDialog ( R . string . dual_camera_effects , R . string . dual_camera_effects_intro , R . string . pref_dualcam_intro_show_key )  
+DialogInterface . OnDismissListener ( )  
+@ Override public void onDismiss ( DialogInterface dialog )  
+showPanel ( DUALCAM )  
+dialog . setOnCancelListener ( new DialogInterface . OnCancelListener ( ) { @ Override public void onCancel ( DialogInterface dialog ) { FilterShowActivity activity = ( FilterShowActivity ) mContext ; activity . cancelCurrentFilter ( ) ; activity . leaveSeekBarPanel ( ) ; } } )  
+DialogInterface . OnCancelListener ( )  
+@ Override public void onCancel ( DialogInterface dialog )  
+FilterShowActivity activity = ( FilterShowActivity ) mContext  
+activity . cancelCurrentFilter ( )  
+activity . leaveSeekBarPanel ( )  

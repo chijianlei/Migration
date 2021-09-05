@@ -1,0 +1,4 @@
+getSupportActionBar ( ) . setTitle ( getString ( R . string . default_display_name_for_root_folder ) )  
+getSupportActionBar ( ) . setTitle ( current_dir )  
+ActionBar actionBar = getSupportActionBar ( )  
+@ Override public void onSavedCertificate ( )  

@@ -1,0 +1,3 @@
+@ OneToOne ( mappedBy = "healthProfile" , cascade = CascadeType . ALL , fetch = FetchType . EAGER ) @ XmlTransient private Person person  
+@ OneToMany ( cascade = CascadeType . ALL , fetch = FetchType . EAGER ) @ XmlTransient private List < Measure > measureList  
+@ ManyToOne ( cascade = CascadeType . ALL , fetch = FetchType . EAGER ) @ XmlTransient private HealthProfile healthProfile  

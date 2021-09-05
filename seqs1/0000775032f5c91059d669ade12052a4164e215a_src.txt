@@ -1,0 +1,2 @@
+public class Flickr_login extends ActionBarActivity  
+accessToken = service . getAccessToken ( requestToken , verifier )  

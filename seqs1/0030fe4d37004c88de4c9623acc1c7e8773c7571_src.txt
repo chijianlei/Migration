@@ -1,0 +1,10 @@
+if ( left != right )  
+int leftChild = ( curr - left + 1 ) / 2  
+int rightChild = ( right - curr + 1 ) / 2  
+node . setLeft ( new Node ( points [ leftChild ] , node ) )  
+node . setRight ( new Node ( points [ rightChild ] , node ) )  
+buildTree ( points , node . getLeft ( ) , leftChild , left , curr - 1 )  
+buildTree ( points , node . getRight ( ) , rightChild , curr + 1 , right )  
+node . updateNode ( )  
+public void add ( Point p )  
+add ( p , root )  

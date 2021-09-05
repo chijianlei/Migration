@@ -1,0 +1,2 @@
+sendMsg . setSource ( source )  
+sendMsg . setSourceDesc ( TeminalTypeEnum . H5 . getDesc ( 2 ) )  

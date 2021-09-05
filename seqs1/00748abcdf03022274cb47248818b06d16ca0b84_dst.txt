@@ -1,0 +1,1 @@
+toReturn . add ( propKey . substring ( propertyPrefix . length ( ) + 1 , propKey . lastIndexOf ( "." + propertySuffix ) ) )  

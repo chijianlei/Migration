@@ -1,0 +1,34 @@
+if ( HTTP2Cipher . isBlackListProtocol ( tlsProtocol ) && HTTP2Cipher . isBlackListCipher ( tlsCipher ) ) 
+private class HTTPServerSessionListener extends ServerSessionListener . Adapter implements Stream . Listener 
+private final Connector connector  
+private final EndPoint endPoint  
+public HTTPServerSessionListener ( Connector connector , EndPoint endPoint ) 
+this . connector = connector  
+this . endPoint = endPoint  
+@ Override public Map < Integer , Integer > onPreface ( Session session ) 
+Map < Integer , Integer > settings = new HashMap < > ( )  
+settings . put ( SettingsFrame . HEADER_TABLE_SIZE , getMaxDynamicTableSize ( ) )  
+settings . put ( SettingsFrame . INITIAL_WINDOW_SIZE , getInitialStreamSendWindow ( ) )  
+int maxConcurrentStreams = getMaxConcurrentStreams ( )  
+if ( maxConcurrentStreams >= 0 ) 
+settings . put ( SettingsFrame . MAX_CONCURRENT_STREAMS , maxConcurrentStreams )  
+@ Override public Stream . Listener onNewStream ( Stream stream , HeadersFrame frame ) 
+( ( HTTP2ServerConnection ) endPoint . getConnection ( ) ) . onNewStream ( connector , ( IStream ) stream , frame )  
+frame . isEndStream ( ) ? null : this  
+frame . isEndStream ( ) ? null : this  
+: this  
+@ Override public void onHeaders ( Stream stream , HeadersFrame frame ) 
+close ( stream , "response_headers" )  
+@ Override public Stream . Listener onPush ( Stream stream , PushPromiseFrame frame ) 
+close ( stream , "push_promise" )  
+return null  
+@ Override public void onData ( Stream stream , DataFrame frame , Callback callback ) 
+if ( LOG . isDebugEnabled ( ) ) 
+LOG . debug ( "Processing {} on {}" , frame , stream )  
+HttpChannelOverHTTP2 channel = ( HttpChannelOverHTTP2 ) stream . getAttribute ( IStream . CHANNEL_ATTRIBUTE )  
+channel . requestContent ( frame , callback )  
+@ Override public void onReset ( Stream stream , ResetFrame frame ) 
+@ Override public void onTimeout ( Stream stream , Throwable x ) 
+private void close ( Stream stream , String reason ) 
+final Session session = stream . getSession ( )  
+session . close ( ErrorCode . PROTOCOL_ERROR . code , reason , Callback . Adapter . INSTANCE )  

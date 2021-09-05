@@ -1,0 +1,4 @@
+@ RequestMapping ( value = "/notapprove" ) public ResponseEntity notapproveEntry ( @ RequestBody String index )  
+boolean suc = commandService . notapproveEntry ( index . split ( "=" ) [ 1 ] )  
+public boolean notapproveEntry ( String index )  
+boolean notapproveEntry ( String index )  

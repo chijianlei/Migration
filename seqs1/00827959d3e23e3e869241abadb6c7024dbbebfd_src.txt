@@ -1,0 +1,3 @@
+Log . i ( LOG , "Generating a new dataset to display..." )  
+generateListData ( departureID , destinationID )  
+for ( RealtimeTravel travel : myTravels . getItems ( ) )  

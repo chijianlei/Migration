@@ -1,0 +1,4 @@
+label . setScaleX ( 0.75f )  
+public void setIconSignifier ( int resourceID )  
+iconSignifierResourceId = resourceID  
+imageView . setVisibility ( VISIBLE )  

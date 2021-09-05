@@ -1,0 +1,3 @@
+while ( continueReading && ( bytesRead = inputStream . read ( buffer ) ) != - 1 )  
+responseJSONObject = new JSONObject ( response )  
+super . onPostExecute ( result )  

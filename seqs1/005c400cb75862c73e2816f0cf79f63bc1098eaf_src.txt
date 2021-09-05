@@ -1,0 +1,50 @@
+private static final List < String > debugErrors = Arrays . asList ( defaultErrorMessage , "There seems to have been a problem with the" , "This error page might contain sensitive information because ASP.NET" , "PHP Error" )  
+Files . write ( errorFile , debugErrors , Charset . forName ( "UTF-8" ) )  
+for ( int i = 0 ; i < debugErrors . size ( ) ; i ++ )  
+String debugError = debugErrors . get ( i )  
+HttpMessage msg = new HttpMessage ( )  
+msg . setRequestHeader ( "GET " + URI + " HTTP/1.1" ) ; 
+msg . setResponseBody ( responseBody )  
+msg . setResponseHeader ( "HTTP/1.1 200 OK\r\n" + "Server: Apache-Coyote/1.1\r\n" + "Content-Type: text/html;charset=ISO-8859-1\r\n" + "Content-Length: " + msg . getResponseBody ( ) . length ( ) + "\r\n" )  
+@ Test public void alertsIfMixedCaseDebugErrorsDisclosed ( ) throws HttpMalformedHeaderException  
+int expectedAlerts = 0  
+rule . scanHttpResponseReceive ( msg , - 1 , this . createSource ( msg ) )  
+expectedAlerts ++  
+assertThat ( alertsRaised . size ( ) , equalTo ( expectedAlerts ) )  
+Alert alert = alertsRaised . get ( expectedAlerts - 1 )  
+assertThat ( alert . getCweId ( ) , equalTo ( 200 ) )  
+assertThat ( alert . getWascId ( ) , equalTo ( 13 ) )  
+assertThat ( alert . getEvidence ( ) , equalTo ( defaultErrorMessage ) )  
+rule . scanHttpResponseReceive ( msg , - 1 , this . createSource ( msg ) )  
+expectedAlerts ++  
+assertThat ( alertsRaised . size ( ) , equalTo ( expectedAlerts ) )  
+alert = alertsRaised . get ( expectedAlerts - 1 )  
+assertThat ( alert . getCweId ( ) , equalTo ( 200 ) )  
+assertThat ( alert . getWascId ( ) , equalTo ( 13 ) )  
+assertThat ( alert . getEvidence ( ) , equalTo ( defaultErrorMessage . toLowerCase ( ) ) )  
+rule . scanHttpResponseReceive ( msg , - 1 , this . createSource ( msg ) )  
+assertThat ( alert . getEvidence ( ) , equalTo ( defaultErrorMessage . toUpperCase ( ) ) )  
+String [ ] data = new String [ ] { "Error Management theory" , "a subject can make two possible errors" , "What to Do If You Get a 404" , "500" 
+for ( int i = 0 ; i < data . length ; i ++ )  
+HttpMessage msg = new HttpMessage ( )  
+msg . setResponseBody ( "<html>" + debugError + "</html>" )  
+HttpMessage msg = new HttpMessage ( )  
+msg . setResponseBody ( "" )  
+@ Test public void passesIfResponseIsNotText ( ) throws HttpMalformedHeaderException  
+rule . scanHttpResponseReceive ( msg , - 1 , this . createSource ( msg ) )  
+assertThat ( alertsRaised . size ( ) , equalTo ( 0 ) )  
+HttpMessage msg = new HttpMessage ( )  
+msg . setResponseBody ( "<html>" + defaultErrorMessage + "</html>" )  
+assertThat ( alert . getCweId ( ) , equalTo ( 200 ) )  
+assertThat ( alert . getEvidence ( ) , equalTo ( defaultErrorMessage ) )  
+for ( int i = 0 ; i < alternativeDebugErrors . size ( ) ; i ++ )  
+String debugError = alternativeDebugErrors . get ( i ) ; 
+msg . setResponseBody ( "<html>" + debugError + "</html>" )  
+assertThat ( alertsRaised . size ( ) , equalTo ( expectedAlerts ) )  
+msg = new HttpMessage ( )  
+msg . setResponseBody ( "<html>" + defaultErrorMessage + "</html>" )  
+for ( int i = 0 ; i < alternativeDebugErrors . size ( ) ; i ++ )  
+String debugError = alternativeDebugErrors . get ( i ) ; 
+msg . setResponseBody ( "<html>" + debugError + "</html>" )  
+rule . scanHttpResponseReceive ( msg , - 1 , this . createSource ( msg ) )  
+assertThat ( alert . getEvidence ( ) , equalTo ( debugError ) )  

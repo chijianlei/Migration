@@ -1,0 +1,2 @@
+private static final int DATABASE_VERSION = 1  
+private static final String TABLE_CREATE = "CREATE TABLE " + TABLE_NAME + " (filename STRING, skipped INTEGER, played_at DATETIME DEFAULT CURRENT_TIMESTAMP);"  

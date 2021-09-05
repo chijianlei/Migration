@@ -1,0 +1,1 @@
+Bukkit . getConsoleSender ( ) . sendMessage ( ChatColor . RED + "[MobHunting][WARNING] The leaderboard at " + mLocation . toString ( ) + " has no StatType" )  

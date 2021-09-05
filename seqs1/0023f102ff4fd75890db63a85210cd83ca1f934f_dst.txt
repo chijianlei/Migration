@@ -1,0 +1,14 @@
+String url = null  
+String picture = null  
+if ( parameters . has ( "picture" ) )  
+picture = parameters . getString ( "picture" )  
+catch ( JSONException e )  
+Log . e ( TAG , "Non-string 'picture' parameter provided to dialog" )  
+callbackContext . error ( "Incorrect 'picture' parameter" )  
+if ( parameters . has ( "url" ) )  
+catch ( JSONException e )  
+Log . e ( TAG , "Non-string 'url' parameter provided to dialog" )  
+callbackContext . error ( "Incorrect 'url' parameter" )  
+if ( AppInviteDialog . canShow ( ) )  
+AppInviteContent . Builder builder = new AppInviteContent . Builder ( )  
+private void executeDialog ( JSONArray args , CallbackContext callbackContext )  

@@ -1,0 +1,3 @@
+char choice = input . nextLine ( ) . charAt ( 0 ) ; 
+fName = input . nextLine ( )  
+System . out . println ( "fName: " + fName + "  data: " + data )  

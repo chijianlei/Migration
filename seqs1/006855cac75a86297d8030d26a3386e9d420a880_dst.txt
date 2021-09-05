@@ -1,0 +1,10 @@
+@ SuppressWarnings ( { "all" } ) public class App1  
+private String myPropertyValue = ""  
+private Integer otherPropVal = 0  
+private App1 ( )  
+catch ( IOException e )  
+@ SuppressWarnings ( { "all" } ) public class App2  
+catch ( IOException e )  
+@ SuppressWarnings ( { "all" } ) public class App3  
+catch ( IOException e )  
+catch ( IOException e )  

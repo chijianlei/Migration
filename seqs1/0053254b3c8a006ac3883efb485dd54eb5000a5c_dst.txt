@@ -1,0 +1,29 @@
+while ( true )  
+private int activeServers  
+public Communicate ( Node currNode , ConnectionManager cm )  
+activeServers = chan . size ( )  
+turns = new ArrayList < > ( activeServers )  
+for ( int i = 0 ; i < activeServers ; i ++ )  
+Message [ ] values = new Message [ activeServers ]  
+ArrayList < Status > status = new ArrayList < > ( activeServers )  
+for ( int i = 0 ; i < activeServers ; i ++ )  
+for ( int i = 0 ; i < activeServers ; i ++ )  
+activeServers = caller . getServerChannels ( ) . size ( )  
+i --  
+System . out . println ( "Channel doesn't exist anymore. Active channels left:" + activeServers )  
+turns . set ( i , false )  
+while ( ackCounter < activeServers / 2 + 1 )  
+for ( int i = 0 ; i < activeServers ; i ++ )  
+activeServers = caller . getServerChannels ( ) . size ( )  
+System . out . println ( "Channel doesn't exist anymore. Active channels left:" + activeServers )  
+n . getFD ( ) . updateFDForNode ( reply . getSenderId ( ) )  
+} catch ( IOException e ) { removeCrashedServer ( i , chan ) ; status . remove ( i ) ; i -- ; activeServers = caller . getServerChannels ( ) . size ( ) ; System . out . println ( "Channel doesn't exist anymore. Active channels left:" + activeServers ) ; continue  
+activeServers = caller . getServerChannels ( ) . size ( )  
+System . out . println ( "Channel doesn't exist anymore. Active channels left:" + activeServers )  
+status . set ( i , Status . NOTACK )  
+public int getActiveServers ( )  
+public void setActiveServers ( int activeServers )  
+this . activeServers = activeServers  
+catch ( IOException e ) { key . channel ( ) . close ( ) ; key . cancel ( ) ; serverChannels . remove ( key . channel ( ) ) ; System . out . println ( "Server or reader/writer crashed, remaining channels:" + serverChannels . size ( ) ) ; comm = new Communicate ( n , this ) ; continue  
+System . out . println ( "Server or reader/writer crashed, remaining channels:" + serverChannels . size ( ) )  
+boolean wasInit = handleInit ( m )  

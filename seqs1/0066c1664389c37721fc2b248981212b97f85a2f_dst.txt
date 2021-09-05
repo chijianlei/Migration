@@ -1,0 +1,7 @@
+youMustSpecifyACommandToRun ( null )  
+if ( firstArg . startsWith ( "-" ) )  
+optionArgs = Arrays . copyOfRange ( filteredArgs , 1 , filteredArgs . length )  
+command = findCommand ( firstArg )  
+youMustSpecifyACommandToRun ( firstArg )  
+private void youMustSpecifyACommandToRun ( String firstArg )  
+Logger . error ( String . format ( "'%s' is not a fim command. See 'fim --help'." , firstArg ) )  

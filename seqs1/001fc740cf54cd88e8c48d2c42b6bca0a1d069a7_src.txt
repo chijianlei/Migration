@@ -1,0 +1,3 @@
+id [ u ] = ++ cnt  
+if ( ! vis [ n ] ) 
+dfs2 ( n )  

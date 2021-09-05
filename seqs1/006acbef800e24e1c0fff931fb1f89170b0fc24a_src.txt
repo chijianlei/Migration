@@ -1,0 +1,7 @@
+DateTimeZone . setDefault ( DateTimeZone . UTC )  
+DateTime now = DateTime . now ( ) . withZone ( DateTimeZone . UTC )  
+long startTimeMillis = startTime . getMillis ( ) + timezone . getOffset ( now )  
+System . out . println ( "Start time: " + newStart . toString ( ) )  
+System . out . println ( "Now: " + now . toString ( ) )  
+long diffInMinutes = ( startTimeMillis - now . getMillis ( ) ) / 1000 / 60  
+System . out . println ( "Scheduling the feed auto fetch daemon to kick off in " + String . valueOf ( initialDelay / 60 ) + " hours." )  

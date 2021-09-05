@@ -1,0 +1,3 @@
+stringBuilder . append ( "    exit = function(s, t)" ) . append ( LINE_SEPARATOR )  
+stringBuilder . append ( "    end," ) . append ( LINE_SEPARATOR )  
+stringBuilder . append ( "    end," ) . append ( LINE_SEPARATOR )  

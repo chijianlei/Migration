@@ -1,0 +1,8 @@
+for ( Ex e : exList )  
+e . polish ( )  
+this . unwrap ( )  
+this . sort ( )  
+m . appendReplacement ( sb , input + "\\\\\\\\" + "\n" + output )  
+s += e . reportForTex ( )  
+if ( ( i != ( this . size ( ) - 1 ) ) )  
+s += "\\\\\\cdot "  

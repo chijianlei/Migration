@@ -1,0 +1,6 @@
+private static class ConnectionThread extends Thread  
+Connection connection  
+ConnectionThread ( Connection c )  
+connection = c  
+@ Override public void run ( ) { 
+( new MultiplexData ( ) ) . start ( )  
